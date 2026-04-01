@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CCP", "CCP.vcproj", "{630E623C-FB37-4604-95F6-06DE7474EBC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|MVC100 (ARMV4I) = Debug|MVC100 (ARMV4I)
+		Release|MVC100 (ARMV4I) = Release|MVC100 (ARMV4I)
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{630E623C-FB37-4604-95F6-06DE7474EBC9}.Debug|MVC100 (ARMV4I).ActiveCfg = Debug|MVC100 (ARMV4I)
+		{630E623C-FB37-4604-95F6-06DE7474EBC9}.Debug|MVC100 (ARMV4I).Build.0 = Debug|MVC100 (ARMV4I)
+		{630E623C-FB37-4604-95F6-06DE7474EBC9}.Debug|MVC100 (ARMV4I).Deploy.0 = Debug|MVC100 (ARMV4I)
+		{630E623C-FB37-4604-95F6-06DE7474EBC9}.Release|MVC100 (ARMV4I).ActiveCfg = Release|Syso_6410 (ARMV4I)
+		{630E623C-FB37-4604-95F6-06DE7474EBC9}.Release|MVC100 (ARMV4I).Build.0 = Release|Syso_6410 (ARMV4I)
+		{630E623C-FB37-4604-95F6-06DE7474EBC9}.Release|MVC100 (ARMV4I).Deploy.0 = Release|Syso_6410 (ARMV4I)
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
