@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\_CPLD\LIC-C3\decoder\main.ncd
+OUTFILE=D:\_CPLD\LIC-C3\decoder\main.bit
+FAMILY=Spartan3
+PART=xc3s200-5vq100
+WORKINGDIR=D:\_CPLD\LIC-C3\decoder
+LICENSE=WebPack
+USER_INFO=174675779_0_0_913

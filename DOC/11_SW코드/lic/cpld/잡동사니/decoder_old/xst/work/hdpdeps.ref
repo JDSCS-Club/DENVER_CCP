@@ -1,0 +1,19 @@
+V3 11
+FL D:/_CPLD/LIC-C3/decoder/blk_mem_gen_v6_1.vhd 2012/05/03.10:35:39 M.70d
+EN work/blk_mem_gen_v6_1 1336096690 \
+      FL D:/_CPLD/LIC-C3/decoder/blk_mem_gen_v6_1.vhd PB ieee/std_logic_1164 1284609568
+AR work/blk_mem_gen_v6_1/blk_mem_gen_v6_1_a 1336096691 \
+      FL D:/_CPLD/LIC-C3/decoder/blk_mem_gen_v6_1.vhd EN work/blk_mem_gen_v6_1 1336096690
+FL D:/_CPLD/LIC-C3/decoder/DPRAM.vhd 2012/05/02.20:50:39 M.70d
+EN work/DPRAMxA11xD8 1336009570 FL D:/_CPLD/LIC-C3/decoder/DPRAM.vhd \
+      PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
+      PB ieee/STD_LOGIC_UNSIGNED 1284609570
+AR work/DPRAMxA11xD8/Behavioral 1336009571 \
+      FL D:/_CPLD/LIC-C3/decoder/DPRAM.vhd EN work/DPRAMxA11xD8 1336009570 \
+      CP RAM16X1D
+FL D:/_CPLD/LIC-C3/decoder/main.vhd 2012/05/04.10:58:06 M.70d
+EN work/main 1336096692 FL D:/_CPLD/LIC-C3/decoder/main.vhd PB ieee/std_logic_1164 1284609568 \
+      PB ieee/std_logic_arith 1284609569 PB ieee/STD_LOGIC_UNSIGNED 1284609570
+AR work/main/Behavioral 1336096693 \
+      FL D:/_CPLD/LIC-C3/decoder/main.vhd EN work/main 1336096692 \
+      CP blk_mem_gen_v6_1

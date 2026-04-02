@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE ibis [
+<!ELEMENT ibis (part, pin+)>
+<!ELEMENT part EMPTY>
+<!ELEMENT pin EMPTY>
+<!ATTLIST part
+  arch   CDATA #REQUIRED
+  device CDATA #REQUIRED
+  spg    CDATA #REQUIRED
+  pkg    CDATA #REQUIRED>
+<!ATTLIST pin
+  nm     CDATA #REQUIRED
+  no     CDATA #REQUIRED
+  iostd  (TTL|LVTTL|LVCMOS2|NA) "NA"
+  sr     (SLOW|FAST|slow|fast) "SLOW"
+  dir    (BIDIR|bidir|INPUT|input|OUTPUT|output) "BIDIR">
+]>
+<ibis><part arch="xc9500xl" device="XC95288XL" pkg="TQ144" spg="-10"/><pin dir="input" nm="RST" no="143"/><pin dir="input" nm="STRB" no="116"/><pin dir="input" nm="A&lt;23&gt;" no="56"/><pin dir="input" nm="A&lt;22&gt;" no="54"/><pin dir="input" nm="A&lt;20&gt;" no="52"/><pin dir="input" nm="A&lt;18&gt;" no="50"/><pin dir="input" nm="A&lt;19&gt;" no="51"/><pin dir="input" nm="A&lt;21&gt;" no="53"/><pin dir="input" nm="XL16L784_INT" no="21"/><pin dir="input" nm="ROM_SERIAL_SW" no="117"/><pin dir="input" nm="H3" no="30"/><pin dir="input" nm="RWB" no="118"/><pin dir="input" nm="W5100_INT" no="17"/><pin dir="input" nm="SERVICE_SWITCH" no="94"/><pin dir="output" nm="NVSRAM_CS" no="23" sr="fast"/><pin dir="output" nm="ERR_LED" no="70" sr="fast"/><pin dir="output" nm="RUN_LED" no="69" sr="fast"/><pin dir="output" nm="WDI" no="115" sr="fast"/><pin dir="output" nm="FROM_CS" no="57" sr="fast"/><pin dir="output" nm="INT0" no="103" sr="fast"/><pin dir="output" nm="INT1" no="104" sr="fast"/><pin dir="output" nm="WR" no="16" sr="fast"/><pin dir="output" nm="W5100_CS" no="19" sr="fast"/><pin dir="output" nm="XL16L784_CS" no="20" sr="fast"/><pin dir="output" nm="INT2" no="105" sr="fast"/><pin dir="output" nm="INT3" no="106" sr="fast"/><pin dir="output" nm="RD" no="15" sr="fast"/><pin dir="output" nm="D&lt;7&gt;" no="46" sr="fast"/><pin dir="output" nm="D&lt;6&gt;" no="45" sr="fast"/><pin dir="output" nm="D&lt;5&gt;" no="44" sr="fast"/><pin dir="output" nm="D&lt;4&gt;" no="43" sr="fast"/><pin dir="output" nm="D&lt;3&gt;" no="41" sr="fast"/><pin dir="output" nm="D&lt;2&gt;" no="40" sr="fast"/><pin dir="output" nm="SERVICE_LON" no="93" sr="fast"/><pin dir="output" nm="LRST" no="97" sr="fast"/><pin dir="output" nm="EDGE_MODE" no="102" sr="fast"/><pin dir="output" nm="RDY" no="119" sr="fast"/><pin dir="bidir" nm="D&lt;0&gt;" no="35" sr="fast"/><pin dir="bidir" nm="D&lt;1&gt;" no="39" sr="fast"/></ibis>

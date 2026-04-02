@@ -1,0 +1,1667 @@
+Release 12.3 - xst M.70d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> Reading design: DPRAMxA12xD8.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "DPRAMxA12xD8.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "DPRAMxA12xD8"
+Output Format                      : NGC
+Target Device                      : xc3s200-5-vq100
+
+---- Source Options
+Top Module Name                    : DPRAMxA12xD8
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" in Library work.
+Entity <dpramxa12xd8> compiled.
+Entity <dpramxa12xd8> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <DPRAMxA12xD8> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <DPRAMxA12xD8> in library <work> (Architecture <behavioral>).
+WARNING:Xst:790 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 50: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1433 - Contents of array <SEL> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 56: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1433 - Contents of array <DOUT> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 59: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 60: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 61: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 62: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 63: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 64: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 65: Instantiating black box module <RAM16X1D>.
+WARNING:Xst:2211 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" line 66: Instantiating black box module <RAM16X1D>.
+Entity <DPRAMxA12xD8> analyzed. Unit <DPRAMxA12xD8> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <DPRAMxA12xD8>.
+    Related source file is "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd".
+WARNING:Xst:647 - Input <SA<11:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_28>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_33>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_4>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_29>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_34>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_5>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_35>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_40>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_6>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_36>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_41>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_7>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_37>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_42>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_8>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_38>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_43>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_9>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_39>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_44>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_45>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_50>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_46>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_51>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_47>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_52>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_48>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_53>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_49>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_54>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_55>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_60>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_100>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_56>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_61>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_101>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_57>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_62>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_102>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_58>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_63>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_103>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_59>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_64>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_104>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_65>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_70>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_105>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_110>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_66>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_71>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_106>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_111>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_67>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_72>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_107>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_112>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_68>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_73>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_108>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_113>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_69>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_74>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_109>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_114>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_75>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_80>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_115>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_120>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_76>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_81>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_116>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_121>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_77>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_82>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_117>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_122>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_78>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_83>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_118>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_123>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_10>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_79>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_84>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_119>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_124>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_11>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_85>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_90>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_125>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_12>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_86>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_91>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_126>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_13>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_87>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_92>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_127>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_14>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_88>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_93>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_15>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_20>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_89>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_94>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_16>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_21>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_95>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_17>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_22>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_96>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_18>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_23>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_97>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_19>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_24>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_98>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_25>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_30>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_99>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_26>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_31>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_27>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_32>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <SEL_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 8-bit 128-to-1 multiplexer for signal <DD>.
+    Summary:
+	inferred   8 Multiplexer(s).
+Unit <DPRAMxA12xD8> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Latches                                              : 128
+ 1-bit latch                                           : 128
+# Multiplexers                                         : 1
+ 8-bit 128-to-1 multiplexer                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:453 - Model 'RAM16X1D' has different characteristics in destination library, some ports are missing:
+   SPO 
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Latches                                              : 128
+ 1-bit latch                                           : 128
+# Multiplexers                                         : 1
+ 8-bit 128-to-1 multiplexer                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <DPRAMxA12xD8> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block DPRAMxA12xD8, actual ratio is 78.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : DPRAMxA12xD8.ngr
+Top Level Output File Name         : DPRAMxA12xD8
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 42
+
+Cell Usage :
+# BELS                             : 1199
+#      BUF                         : 33
+#      INV                         : 1
+#      LUT2                        : 2
+#      LUT3                        : 534
+#      LUT4                        : 140
+#      MUXF5                       : 264
+#      MUXF6                       : 128
+#      MUXF7                       : 64
+#      MUXF8                       : 32
+#      VCC                         : 1
+# FlipFlops/Latches                : 128
+#      LDC                         : 127
+#      LDC_1                       : 1
+# RAMS                             : 1024
+#      RAM16X1D                    : 1024
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 32
+#      IBUF                        : 24
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200vq100-5 
+
+ Number of Slices:                     1497  out of   1920    77%  
+ Number of Slice Flip Flops:            128  out of   3840     3%  
+ Number of 4 input LUTs:               2725  out of   3840    70%  
+    Number used as logic:               677
+    Number used as RAMs:               2048
+ Number of IOs:                          42
+ Number of bonded IOBs:                  33  out of     63    52%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+------------------------------------------+------------------------+-------+
+Clock Signal                              | Clock buffer(FF name)  | Load  |
+------------------------------------------+------------------------+-------+
+SEL_0_not0001(SEL_0_not0001:O)            | NONE(*)(SEL_0)         | 1     |
+SEL_3_cmp_eq0000(SEL_3_cmp_eq000011:O)    | NONE(*)(SEL_3)         | 1     |
+SEL_32_cmp_eq0000(SEL_32_cmp_eq000011:O)  | NONE(*)(SEL_32)        | 1     |
+SEL_27_cmp_eq0000(SEL_27_cmp_eq000011:O)  | NONE(*)(SEL_27)        | 1     |
+SEL_2_cmp_eq0000(SEL_2_cmp_eq000011:O)    | NONE(*)(SEL_2)         | 1     |
+SEL_31_cmp_eq0000(SEL_31_cmp_eq000011:O)  | NONE(*)(SEL_31)        | 1     |
+SEL_26_cmp_eq0000(SEL_26_cmp_eq000011:O)  | NONE(*)(SEL_26)        | 1     |
+SEL_99_cmp_eq0000(SEL_99_cmp_eq000011:O)  | NONE(*)(SEL_99)        | 1     |
+SEL_1_cmp_eq0000(SEL_1_cmp_eq00002:O)     | NONE(*)(SEL_1)         | 1     |
+SEL_30_cmp_eq0000(SEL_30_cmp_eq000011:O)  | NONE(*)(SEL_30)        | 1     |
+SEL_25_cmp_eq0000(SEL_25_cmp_eq000011:O)  | NONE(*)(SEL_25)        | 1     |
+SEL_98_cmp_eq0000(SEL_98_cmp_eq000011:O)  | NONE(*)(SEL_98)        | 1     |
+SEL_24_cmp_eq0000(SEL_24_cmp_eq000021:O)  | NONE(*)(SEL_24)        | 1     |
+SEL_19_cmp_eq0000(SEL_19_cmp_eq000011:O)  | NONE(*)(SEL_19)        | 1     |
+SEL_97_cmp_eq0000(SEL_97_cmp_eq000011:O)  | NONE(*)(SEL_97)        | 1     |
+SEL_23_cmp_eq0000(SEL_23_cmp_eq000011:O)  | NONE(*)(SEL_23)        | 1     |
+SEL_18_cmp_eq0000(SEL_18_cmp_eq000011:O)  | NONE(*)(SEL_18)        | 1     |
+SEL_96_cmp_eq0000(SEL_96_cmp_eq000011:O)  | NONE(*)(SEL_96)        | 1     |
+SEL_22_cmp_eq0000(SEL_22_cmp_eq000011:O)  | NONE(*)(SEL_22)        | 1     |
+SEL_17_cmp_eq0000(SEL_17_cmp_eq000011:O)  | NONE(*)(SEL_17)        | 1     |
+SEL_95_cmp_eq0000(SEL_95_cmp_eq000011:O)  | NONE(*)(SEL_95)        | 1     |
+SEL_21_cmp_eq0000(SEL_21_cmp_eq000011:O)  | NONE(*)(SEL_21)        | 1     |
+SEL_16_cmp_eq0000(SEL_16_cmp_eq000021:O)  | NONE(*)(SEL_16)        | 1     |
+SEL_94_cmp_eq0000(SEL_94_cmp_eq000011:O)  | NONE(*)(SEL_94)        | 1     |
+SEL_89_cmp_eq0000(SEL_89_cmp_eq000011:O)  | NONE(*)(SEL_89)        | 1     |
+SEL_20_cmp_eq0000(SEL_20_cmp_eq000011:O)  | NONE(*)(SEL_20)        | 1     |
+SEL_15_cmp_eq0000(SEL_15_cmp_eq000011:O)  | NONE(*)(SEL_15)        | 1     |
+SEL_93_cmp_eq0000(SEL_93_cmp_eq000011:O)  | NONE(*)(SEL_93)        | 1     |
+SEL_88_cmp_eq0000(SEL_88_cmp_eq000021:O)  | NONE(*)(SEL_88)        | 1     |
+SEL_14_cmp_eq0000(SEL_14_cmp_eq000011:O)  | NONE(*)(SEL_14)        | 1     |
+SEL_127_cmp_eq0000(SEL_127_cmp_eq000011:O)| NONE(*)(SEL_127)       | 1     |
+SEL_92_cmp_eq0000(SEL_92_cmp_eq000011:O)  | NONE(*)(SEL_92)        | 1     |
+SEL_87_cmp_eq0000(SEL_87_cmp_eq000011:O)  | NONE(*)(SEL_87)        | 1     |
+SEL_13_cmp_eq0000(SEL_13_cmp_eq000011:O)  | NONE(*)(SEL_13)        | 1     |
+SEL_126_cmp_eq0000(SEL_126_cmp_eq000011:O)| NONE(*)(SEL_126)       | 1     |
+SEL_91_cmp_eq0000(SEL_91_cmp_eq000011:O)  | NONE(*)(SEL_91)        | 1     |
+SEL_86_cmp_eq0000(SEL_86_cmp_eq000011:O)  | NONE(*)(SEL_86)        | 1     |
+SEL_12_cmp_eq0000(SEL_12_cmp_eq000011:O)  | NONE(*)(SEL_12)        | 1     |
+SEL_125_cmp_eq0000(SEL_125_cmp_eq000011:O)| NONE(*)(SEL_125)       | 1     |
+SEL_90_cmp_eq0000(SEL_90_cmp_eq000011:O)  | NONE(*)(SEL_90)        | 1     |
+SEL_85_cmp_eq0000(SEL_85_cmp_eq000011:O)  | NONE(*)(SEL_85)        | 1     |
+SEL_11_cmp_eq0000(SEL_11_cmp_eq000011:O)  | NONE(*)(SEL_11)        | 1     |
+SEL_124_cmp_eq0000(SEL_124_cmp_eq000011:O)| NONE(*)(SEL_124)       | 1     |
+SEL_119_cmp_eq0000(SEL_119_cmp_eq000011:O)| NONE(*)(SEL_119)       | 1     |
+SEL_84_cmp_eq0000(SEL_84_cmp_eq000011:O)  | NONE(*)(SEL_84)        | 1     |
+SEL_79_cmp_eq0000(SEL_79_cmp_eq000011:O)  | NONE(*)(SEL_79)        | 1     |
+SEL_10_cmp_eq0000(SEL_10_cmp_eq000011:O)  | NONE(*)(SEL_10)        | 1     |
+SEL_123_cmp_eq0000(SEL_123_cmp_eq000011:O)| NONE(*)(SEL_123)       | 1     |
+SEL_118_cmp_eq0000(SEL_118_cmp_eq000011:O)| NONE(*)(SEL_118)       | 1     |
+SEL_83_cmp_eq0000(SEL_83_cmp_eq000011:O)  | NONE(*)(SEL_83)        | 1     |
+SEL_78_cmp_eq0000(SEL_78_cmp_eq000011:O)  | NONE(*)(SEL_78)        | 1     |
+SEL_122_cmp_eq0000(SEL_122_cmp_eq000011:O)| NONE(*)(SEL_122)       | 1     |
+SEL_117_cmp_eq0000(SEL_117_cmp_eq000011:O)| NONE(*)(SEL_117)       | 1     |
+SEL_82_cmp_eq0000(SEL_82_cmp_eq000011:O)  | NONE(*)(SEL_82)        | 1     |
+SEL_77_cmp_eq0000(SEL_77_cmp_eq000011:O)  | NONE(*)(SEL_77)        | 1     |
+SEL_121_cmp_eq0000(SEL_121_cmp_eq000011:O)| NONE(*)(SEL_121)       | 1     |
+SEL_116_cmp_eq0000(SEL_116_cmp_eq000011:O)| NONE(*)(SEL_116)       | 1     |
+SEL_81_cmp_eq0000(SEL_81_cmp_eq000011:O)  | NONE(*)(SEL_81)        | 1     |
+SEL_76_cmp_eq0000(SEL_76_cmp_eq000011:O)  | NONE(*)(SEL_76)        | 1     |
+SEL_120_cmp_eq0000(SEL_120_cmp_eq000011:O)| NONE(*)(SEL_120)       | 1     |
+SEL_115_cmp_eq0000(SEL_115_cmp_eq000011:O)| NONE(*)(SEL_115)       | 1     |
+SEL_80_cmp_eq0000(SEL_80_cmp_eq000021:O)  | NONE(*)(SEL_80)        | 1     |
+SEL_75_cmp_eq0000(SEL_75_cmp_eq000011:O)  | NONE(*)(SEL_75)        | 1     |
+SEL_114_cmp_eq0000(SEL_114_cmp_eq000011:O)| NONE(*)(SEL_114)       | 1     |
+SEL_109_cmp_eq0000(SEL_109_cmp_eq000011:O)| NONE(*)(SEL_109)       | 1     |
+SEL_74_cmp_eq0000(SEL_74_cmp_eq000011:O)  | NONE(*)(SEL_74)        | 1     |
+SEL_69_cmp_eq0000(SEL_69_cmp_eq000011:O)  | NONE(*)(SEL_69)        | 1     |
+SEL_113_cmp_eq0000(SEL_113_cmp_eq000011:O)| NONE(*)(SEL_113)       | 1     |
+SEL_108_cmp_eq0000(SEL_108_cmp_eq000011:O)| NONE(*)(SEL_108)       | 1     |
+SEL_73_cmp_eq0000(SEL_73_cmp_eq000011:O)  | NONE(*)(SEL_73)        | 1     |
+SEL_68_cmp_eq0000(SEL_68_cmp_eq000011:O)  | NONE(*)(SEL_68)        | 1     |
+SEL_112_cmp_eq0000(SEL_112_cmp_eq000011:O)| NONE(*)(SEL_112)       | 1     |
+SEL_107_cmp_eq0000(SEL_107_cmp_eq000021:O)| NONE(*)(SEL_107)       | 1     |
+SEL_72_cmp_eq0000(SEL_72_cmp_eq000021:O)  | NONE(*)(SEL_72)        | 1     |
+SEL_67_cmp_eq0000(SEL_67_cmp_eq000011:O)  | NONE(*)(SEL_67)        | 1     |
+SEL_111_cmp_eq0000(SEL_111_cmp_eq000011:O)| NONE(*)(SEL_111)       | 1     |
+SEL_106_cmp_eq0000(SEL_106_cmp_eq000021:O)| NONE(*)(SEL_106)       | 1     |
+SEL_71_cmp_eq0000(SEL_71_cmp_eq000011:O)  | NONE(*)(SEL_71)        | 1     |
+SEL_66_cmp_eq0000(SEL_66_cmp_eq000011:O)  | NONE(*)(SEL_66)        | 1     |
+SEL_110_cmp_eq0000(SEL_110_cmp_eq000011:O)| NONE(*)(SEL_110)       | 1     |
+SEL_105_cmp_eq0000(SEL_105_cmp_eq000021:O)| NONE(*)(SEL_105)       | 1     |
+SEL_70_cmp_eq0000(SEL_70_cmp_eq000011:O)  | NONE(*)(SEL_70)        | 1     |
+SEL_65_cmp_eq0000(SEL_65_cmp_eq000011:O)  | NONE(*)(SEL_65)        | 1     |
+SEL_104_cmp_eq0000(SEL_104_cmp_eq000021:O)| NONE(*)(SEL_104)       | 1     |
+SEL_64_cmp_eq0000(SEL_64_cmp_eq000011:O)  | NONE(*)(SEL_64)        | 1     |
+SEL_59_cmp_eq0000(SEL_59_cmp_eq000011:O)  | NONE(*)(SEL_59)        | 1     |
+SEL_103_cmp_eq0000(SEL_103_cmp_eq000021:O)| NONE(*)(SEL_103)       | 1     |
+SEL_63_cmp_eq0000(SEL_63_cmp_eq000011:O)  | NONE(*)(SEL_63)        | 1     |
+SEL_58_cmp_eq0000(SEL_58_cmp_eq000011:O)  | NONE(*)(SEL_58)        | 1     |
+SEL_102_cmp_eq0000(SEL_102_cmp_eq000021:O)| NONE(*)(SEL_102)       | 1     |
+SEL_62_cmp_eq0000(SEL_62_cmp_eq000011:O)  | NONE(*)(SEL_62)        | 1     |
+SEL_57_cmp_eq0000(SEL_57_cmp_eq000011:O)  | NONE(*)(SEL_57)        | 1     |
+SEL_101_cmp_eq0000(SEL_101_cmp_eq000021:O)| NONE(*)(SEL_101)       | 1     |
+SEL_61_cmp_eq0000(SEL_61_cmp_eq000011:O)  | NONE(*)(SEL_61)        | 1     |
+SEL_56_cmp_eq0000(SEL_56_cmp_eq000021:O)  | NONE(*)(SEL_56)        | 1     |
+SEL_100_cmp_eq0000(SEL_100_cmp_eq000021:O)| NONE(*)(SEL_100)       | 1     |
+SEL_60_cmp_eq0000(SEL_60_cmp_eq000011:O)  | NONE(*)(SEL_60)        | 1     |
+SEL_55_cmp_eq0000(SEL_55_cmp_eq000011:O)  | NONE(*)(SEL_55)        | 1     |
+SEL_54_cmp_eq0000(SEL_54_cmp_eq000011:O)  | NONE(*)(SEL_54)        | 1     |
+SEL_49_cmp_eq0000(SEL_49_cmp_eq000011:O)  | NONE(*)(SEL_49)        | 1     |
+SEL_53_cmp_eq0000(SEL_53_cmp_eq000011:O)  | NONE(*)(SEL_53)        | 1     |
+SEL_48_cmp_eq0000(SEL_48_cmp_eq000021:O)  | NONE(*)(SEL_48)        | 1     |
+SEL_52_cmp_eq0000(SEL_52_cmp_eq000011:O)  | NONE(*)(SEL_52)        | 1     |
+SEL_47_cmp_eq0000(SEL_47_cmp_eq000011:O)  | NONE(*)(SEL_47)        | 1     |
+SEL_51_cmp_eq0000(SEL_51_cmp_eq000011:O)  | NONE(*)(SEL_51)        | 1     |
+SEL_46_cmp_eq0000(SEL_46_cmp_eq000011:O)  | NONE(*)(SEL_46)        | 1     |
+SEL_50_cmp_eq0000(SEL_50_cmp_eq000011:O)  | NONE(*)(SEL_50)        | 1     |
+SEL_45_cmp_eq0000(SEL_45_cmp_eq000011:O)  | NONE(*)(SEL_45)        | 1     |
+SEL_44_cmp_eq0000(SEL_44_cmp_eq000011:O)  | NONE(*)(SEL_44)        | 1     |
+SEL_39_cmp_eq0000(SEL_39_cmp_eq000011:O)  | NONE(*)(SEL_39)        | 1     |
+SEL_9_cmp_eq0000(SEL_9_cmp_eq000011:O)    | NONE(*)(SEL_9)         | 1     |
+SEL_43_cmp_eq0000(SEL_43_cmp_eq000011:O)  | NONE(*)(SEL_43)        | 1     |
+SEL_38_cmp_eq0000(SEL_38_cmp_eq000011:O)  | NONE(*)(SEL_38)        | 1     |
+SEL_8_cmp_eq0000(SEL_8_cmp_eq000011:O)    | NONE(*)(SEL_8)         | 1     |
+SEL_42_cmp_eq0000(SEL_42_cmp_eq000011:O)  | NONE(*)(SEL_42)        | 1     |
+SEL_37_cmp_eq0000(SEL_37_cmp_eq000011:O)  | NONE(*)(SEL_37)        | 1     |
+SEL_7_cmp_eq0000(SEL_7_cmp_eq000011:O)    | NONE(*)(SEL_7)         | 1     |
+SEL_41_cmp_eq0000(SEL_41_cmp_eq000011:O)  | NONE(*)(SEL_41)        | 1     |
+SEL_36_cmp_eq0000(SEL_36_cmp_eq000011:O)  | NONE(*)(SEL_36)        | 1     |
+SEL_6_cmp_eq0000(SEL_6_cmp_eq000011:O)    | NONE(*)(SEL_6)         | 1     |
+SEL_40_cmp_eq0000(SEL_40_cmp_eq000021:O)  | NONE(*)(SEL_40)        | 1     |
+SEL_35_cmp_eq0000(SEL_35_cmp_eq000011:O)  | NONE(*)(SEL_35)        | 1     |
+SEL_5_cmp_eq0000(SEL_5_cmp_eq000011:O)    | NONE(*)(SEL_5)         | 1     |
+SEL_34_cmp_eq0000(SEL_34_cmp_eq000011:O)  | NONE(*)(SEL_34)        | 1     |
+SEL_29_cmp_eq0000(SEL_29_cmp_eq000011:O)  | NONE(*)(SEL_29)        | 1     |
+SEL_4_cmp_eq0000(SEL_4_cmp_eq000011:O)    | NONE(*)(SEL_4)         | 1     |
+SEL_33_cmp_eq0000(SEL_33_cmp_eq000011:O)  | NONE(*)(SEL_33)        | 1     |
+SEL_28_cmp_eq0000(SEL_28_cmp_eq000011:O)  | NONE(*)(SEL_28)        | 1     |
+CLK                                       | BUFGP                  | 1024  |
+------------------------------------------+------------------------+-------+
+(*) These 128 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------+------------------------+-------+
+Control Signal                           | Buffer(FF name)        | Load  |
+-----------------------------------------+------------------------+-------+
+SEL_0_0_not0000(SEL_0_0_not00001_INV_0:O)| NONE(SEL_0)            | 128   |
+-----------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 8.327ns
+   Maximum output required time after clock: 11.324ns
+   Maximum combinational path delay: 17.614ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 9216 / 9216
+-------------------------------------------------------------------------
+Offset:              8.327ns (Levels of Logic = 2)
+  Source:            SA<0> (PAD)
+  Destination:       DPRAM[54].SRAM06X (RAM)
+  Destination Clock: CLK rising
+
+  Data Path: SA<0> to DPRAM[54].SRAM06X
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           441   0.715   3.567  SA_0_IBUF (SA_0_IBUF)
+     BUF:I->O            441   0.479   3.567  SA_0_IBUF_4 (SA_0_IBUF_4)
+     RAM16X1D:A0               0.000          DPRAM[54].SRAM06X
+    ----------------------------------------
+    Total                      8.327ns (1.194ns logic, 7.133ns route)
+                                       (14.3% logic, 85.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 1024 / 8
+-------------------------------------------------------------------------
+Offset:              11.324ns (Levels of Logic = 8)
+  Source:            DPRAM[0].SRAM07X (RAM)
+  Destination:       DD<7> (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: DPRAM[0].SRAM07X to DD<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAM16X1D:WCLK->DPO    1   1.552   0.851  DPRAM[0].SRAM07X (DOUT<0><7>)
+     LUT3:I1->O            1   0.479   0.000  Mmux_DD_1543 (Mmux_DD_1543)
+     MUXF5:I0->O           1   0.314   0.000  Mmux_DD_13_f5_35 (Mmux_DD_13_f536)
+     MUXF6:I0->O           1   0.298   0.000  Mmux_DD_11_f6_28 (Mmux_DD_11_f629)
+     MUXF7:I0->O           1   0.298   0.000  Mmux_DD_9_f7_21 (Mmux_DD_9_f722)
+     MUXF8:I0->O           1   0.298   0.851  Mmux_DD_7_f8_14 (Mmux_DD_7_f815)
+     LUT3:I1->O            1   0.479   0.000  Mmux_DD_47 (Mmux_DD_47)
+     MUXF5:I0->O           1   0.314   0.681  Mmux_DD_2_f5_6 (DD_7_OBUF)
+     OBUF:I->O                 4.909          DD_7_OBUF (DD<7>)
+    ----------------------------------------
+    Total                     11.324ns (8.941ns logic, 2.383ns route)
+                                       (79.0% logic, 21.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 5112 / 8
+-------------------------------------------------------------------------
+Delay:               17.614ns (Levels of Logic = 11)
+  Source:            DA<3> (PAD)
+  Destination:       DD<7> (PAD)
+
+  Data Path: DA<3> to DD<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           342   0.715   3.085  DA_3_IBUF (DA_3_IBUF)
+     BUF:I->O            342   0.479   3.085  DA_3_IBUF_1 (DA_3_IBUF_1)
+     RAM16X1D:DPRA3->DPO    1   0.479   0.851  DPRAM[94].SRAM07X (DOUT<94><7>)
+     LUT3:I1->O            1   0.479   0.000  Mmux_DD_107 (Mmux_DD_107)
+     MUXF5:I1->O           1   0.314   0.000  Mmux_DD_9_f5_6 (Mmux_DD_9_f57)
+     MUXF6:I1->O           1   0.298   0.000  Mmux_DD_8_f6_6 (Mmux_DD_8_f67)
+     MUXF7:I1->O           1   0.298   0.000  Mmux_DD_7_f7_6 (Mmux_DD_7_f77)
+     MUXF8:I1->O           1   0.298   0.851  Mmux_DD_6_f8_6 (Mmux_DD_6_f87)
+     LUT3:I1->O            1   0.479   0.000  Mmux_DD_37 (Mmux_DD_37)
+     MUXF5:I1->O           1   0.314   0.681  Mmux_DD_2_f5_6 (DD_7_OBUF)
+     OBUF:I->O                 4.909          DD_7_OBUF (DD<7>)
+    ----------------------------------------
+    Total                     17.614ns (9.062ns logic, 8.552ns route)
+                                       (51.4% logic, 48.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 47.00 secs
+Total CPU time to Xst completion: 47.06 secs
+ 
+--> 
+
+Total memory usage is 157280 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings : 1156 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

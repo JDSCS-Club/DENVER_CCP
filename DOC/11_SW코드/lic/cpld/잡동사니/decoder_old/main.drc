@@ -1,0 +1,8 @@
+Release 12.3 Drc M.70d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Mon Apr 30 14:43:22 2012
+
+drc -z main.ncd main.pcf
+
+DRC detected 0 errors and 0 warnings.

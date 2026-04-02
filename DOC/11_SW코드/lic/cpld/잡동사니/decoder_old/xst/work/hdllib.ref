@@ -1,0 +1,8 @@
+EN dpramxa11xd8 NULL D:/_CPLD/LIC-C3/decoder/DPRAM.vhd sub00/vhpl04 1336009570
+AR blk_mem_gen_v6_1 blk_mem_gen_v6_1_a D:/_CPLD/LIC-C3/decoder/blk_mem_gen_v6_1.vhd sub00/vhpl07 1336096691
+AR main behavioral D:/_CPLD/LIC-C3/decoder/main.vhd sub00/vhpl01 1336096693
+AR dpramxa12xd8 behavioral D:/_CPLD/LIC-C3/decoder/DPRAM.vhd sub00/vhpl03 1335767669
+EN blk_mem_gen_v6_1 NULL D:/_CPLD/LIC-C3/decoder/blk_mem_gen_v6_1.vhd sub00/vhpl06 1336096690
+EN main NULL D:/_CPLD/LIC-C3/decoder/main.vhd sub00/vhpl00 1336096692
+AR dpramxa11xd8 behavioral D:/_CPLD/LIC-C3/decoder/DPRAM.vhd sub00/vhpl05 1336009571
+EN dpramxa12xd8 NULL D:/_CPLD/LIC-C3/decoder/DPRAM.vhd sub00/vhpl02 1335767668
