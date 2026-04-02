@@ -1,0 +1,128 @@
+; Echelon Dependency File - do not edit.
+; F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.nldep
+; Created Tuesday, January 26, 2016, 13:33:04
+
+[Global]
+Provider=Neuron Linker
+Version=1
+Inputs=4
+Outputs=4
+Switches=15
+Parameters=34
+
+[Input_1]
+Basename=BFT5000.sym
+Fullname=C:\Program Files\LonWorks\Images\Ver19\BFT5000.sym
+Type=3
+Size=10499
+TimestampHigh=0x1ca566e
+TimestampLow=0xa817be00
+
+[Input_2]
+Basename=Denver.no
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.no
+Type=0
+Size=65317
+TimestampHigh=0x1d157f2
+TimestampLow=0xa5d6e080
+
+[Input_3]
+Basename=GEN.LIB
+Fullname=C:\PROGRAM FILES\LONWORKS\IMAGES\GEN.LIB
+Type=3
+Size=81055
+TimestampHigh=0x1ca566e
+TimestampLow=0xa817be00
+
+[Input_4]
+Basename=EXTARITH.LIB
+Fullname=C:\PROGRAM FILES\LONWORKS\IMAGES\EXTARITH.LIB
+Type=3
+Size=56903
+TimestampHigh=0x1ca566e
+TimestampLow=0xa817be00
+
+[Output_1]
+Basename=Denver.dbt
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.dbt
+Type=0
+Size=67092
+TimestampHigh=0x1d157f2
+TimestampLow=0xa6040b00
+
+[Output_2]
+Basename=Denver.nxr
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.nxr
+Type=0
+Size=13
+TimestampHigh=0x1d157f2
+TimestampLow=0xa604f560
+
+[Output_3]
+Basename=Denver.nxe
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.nxe
+Type=0
+Size=16649
+TimestampHigh=0x1d157f2
+TimestampLow=0xa604f560
+
+[Output_4]
+Basename=Denver.map
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.map
+Type=0
+Size=76734
+TimestampHigh=0x1d157f2
+TimestampLow=0xa6062de0
+
+[Switches]
+32=FT 5000
+0=1
+11=1
+9=1
+15=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.dbg
+21=E7
+20=E0
+19=DF
+18=40
+34=0
+30=C:\Program Files\LonWorks\Images\Ver19\BFT5000.sym
+27=C:\Program Files\LonWorks\Images\GEN.LIB
+27=C:\Program Files\LonWorks\Images\EXTARITH.LIB
+27=C:\Program Files\LonWorks\Images\PSG.LIB
+35=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.no
+
+[Parameters]
+Domains=2
+AddressTable=10
+NeuronModel=32
+NeuronKey=104
+RamStart=232
+RamEnd=239
+EEpromStart=240
+EEpromEnd=247
+ImageVersion=19
+RcvTxSize=13
+TxCtlBlkSize=28
+OnchipRamSpace=1315
+OffchipRamSpace=1364
+DomainSize=15
+AddressSize=5
+NvCnfgSize=3
+OnchipEEpromCnfg=175
+AliasSize=4
+RomEnd=63
+OCEEPromStart=64
+OCEEPromEnd=223
+OCRamStart=224
+OCRamEnd=231
+EEWriteTime=0
+FlashEeprom=0
+SectorSize=0
+CapabilityProxy=0
+CapabilityPhaseDetect=0
+CustomMac=0
+PrtCount=0
+Isr=0
+uartClock=4
+dbgfeat=2
+djrnrst=0

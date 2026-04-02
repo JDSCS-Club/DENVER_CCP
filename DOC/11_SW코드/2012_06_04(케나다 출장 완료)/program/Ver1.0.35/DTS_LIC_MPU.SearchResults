@@ -1,0 +1,20 @@
+---- GetFirmwareVersion Matches (29 in 5 files) ----
+Main.asm (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):; 356 | int GetFirmwareVersion(UCHAR nVerBuildData)                            
+User.asm (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):;     | ex2Asc(GetFirmwareVersion(1)/1000%10),ConvHex2Asc(GetFirmwareVersion(1)
+User.asm (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):;     | ex2Asc(GetFirmwareVersion(1)/10%10),ConvHex2Asc(GetFirmwareVersion(1)%1
+User.asm (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):;     | ex2Asc(GetFirmwareVersion(2)/100000%10),ConvHex2Asc(GetFirmwareVersion(
+User.asm (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):;     | ex2Asc(GetFirmwareVersion(2)/1000%10),ConvHex2Asc(GetFirmwareVersion(2)
+User.asm (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):;     | ex2Asc(GetFirmwareVersion(2)/10%10),ConvHex2Asc(GetFirmwareVersion(2)%1
+User.asm (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):; 183 | i = GetFirmwareVersion(1);                                             
+User.asm (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):; 418 | i = GetFirmwareVersion(1);                                             
+User.asm (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):; 428 |         GetFirmwareVersion(2),                                         
+Main.h (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):int GetFirmwareVersion(UCHAR nVerBuildData);
+Main.c (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):int GetFirmwareVersion(UCHAR nVerBuildData)
+User.c (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):								MAKE_BYTE(ConvHex2Asc(GetFirmwareVersion(1)/1000%10),ConvHex2Asc(GetFirmwareVersion(1)/100%10)),
+User.c (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):								MAKE_BYTE(ConvHex2Asc(GetFirmwareVersion(1)/10%10),ConvHex2Asc(GetFirmwareVersion(1)%10))
+User.c (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):								MAKE_BYTE(ConvHex2Asc(GetFirmwareVersion(2)/100000%10),ConvHex2Asc(GetFirmwareVersion(2)/10000%10)),
+User.c (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):								MAKE_BYTE(ConvHex2Asc(GetFirmwareVersion(2)/1000%10),ConvHex2Asc(GetFirmwareVersion(2)/100%10)),
+User.c (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):								MAKE_BYTE(ConvHex2Asc(GetFirmwareVersion(2)/10%10),ConvHex2Asc(GetFirmwareVersion(2)%10))
+User.c (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):	i = GetFirmwareVersion(1);
+User.c (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):			i = GetFirmwareVersion(1);
+User.c (d:\users\jds_ssd\desktop\jds_pro\denver\program\2012_06_04(케나다 출장 완료)\program\ver1.0.35):				GetFirmwareVersion(2),

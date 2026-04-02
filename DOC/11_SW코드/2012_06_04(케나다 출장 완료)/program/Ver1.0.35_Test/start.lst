@@ -1,0 +1,13 @@
+TMS320C3x/4x COFF AssemblerVersion 5.11     Sat Sep 19 09:27:36 2015
+Copyright (c) 1987-1999 Texas Instruments Incorporatedc:\lang\tms320c3x\511\bin\asm30.exe -sl start.asm 
+
+start.asm                                                            PAGE    1
+
+        1                   
+        2                           .globl _c_int00, _c_int06
+        3                   ;       .sect "vectors"
+        4 00000000                  .text
+        5 00000000 60000000!        BR      _c_int00        ; start init. for C routine
+        6                           .end
+
+ No Errors,  No Warnings

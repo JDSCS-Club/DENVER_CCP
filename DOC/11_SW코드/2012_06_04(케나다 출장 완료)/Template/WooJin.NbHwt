@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HardwareTemplate UseExtendedRAM="FALSE">
+	<Contents MajorVersion="0" MinorVersion="0" CreationDate="991847343" Format="1" Content="1">
+		<FileDescription>NodeBuilder Hardware Template File</FileDescription>
+	</Contents>
+	<HardwarePlatform>Custom</HardwarePlatform>
+	<NeuronModelKey>10</NeuronModelKey>
+	<SystemImageName>SYS3150</SystemImageName>
+	<FirmwareVersion>Ver16</FirmwareVersion>
+	<Description></Description>
+	<TransceiverStdID>7</TransceiverStdID>
+	<ClockID>6</ClockID>
+	<ROMstart>0x0000</ROMstart>
+	<ROMend>0x0000</ROMend>
+	<RAMstart>0x8000</RAMstart>
+	<RAMend>0xBFFF</RAMend>
+	<NVstart>0x0000</NVstart>
+	<NVend>0x7FFF</NVend>
+	<IOstart>0xE000</IOstart>
+	<IOend>0xE0FF</IOend>
+	<FlashSectorSize>128</FlashSectorSize>
+	<NonVolMemType>FLASH</NonVolMemType>
+	<EEWriteTime>0</EEWriteTime>
+</HardwareTemplate>

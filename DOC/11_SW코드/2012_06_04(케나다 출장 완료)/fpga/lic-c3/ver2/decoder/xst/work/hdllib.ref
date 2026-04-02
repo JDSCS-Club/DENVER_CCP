@@ -1,0 +1,4 @@
+AR blk_mem_gen_v6_1 blk_mem_gen_v6_1_a D:/_CPLD/LIC-C3/decoder/blk_mem_gen_v6_1.vhd sub00/vhpl01 1337072295
+AR main behavioral D:/_CPLD/LIC-C3/decoder/main.vhd sub00/vhpl03 1337072297
+EN blk_mem_gen_v6_1 NULL D:/_CPLD/LIC-C3/decoder/blk_mem_gen_v6_1.vhd sub00/vhpl00 1337072294
+EN main NULL D:/_CPLD/LIC-C3/decoder/main.vhd sub00/vhpl02 1337072296

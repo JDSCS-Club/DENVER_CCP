@@ -1,0 +1,728 @@
+#include "main.h"
+
+#ifndef _USER_H_
+#define _USER_H_
+
+#define STX 0x02
+#define ETX 0x03
+
+#define SOH 0x01
+#define EOT 0x04
+
+#define ACK 0x06
+#define NAK 0x15
+
+#define GIA_DEV_NO		0x13
+
+#define PAC_DEV_NO		0x21
+#define PAC_BAKDEV_NO	0x25
+
+#define CCP_DEV_NO      0x11
+#define CCP_BAKDEV_NO   0x12
+
+#define LIC_DEV_NO		0x22
+#define LIC_BAKDEV_NO   0x26
+
+
+#define REQ_CMD			0x10
+#define RPY_CMD			0x11
+
+
+#define LIC_33_Ver 0x1000
+
+#define DPRAM_BASE 0xB00000
+#define DPRAM (*(UCHAR *)DPRAM_BASE)
+#define DPRAM_SIZE 0x2000
+
+#define NVSRAM_BASE 0xC00000
+#define NVSRAM (*(UCHAR *)NVSRAM_BASE)
+#define NVSRAM_WAYSIDEONBUF_SIZE 0x3F0000
+#define NVSRAM_UARTMONFIFO_BASE 0xFF0000
+#define NVSRAM_VER 0xFFFE0C
+#define NVSRAM_VER_SIZE 500
+
+#define SINGLE_OR_MARRIED_CAR (*(UCHAR *)(0xFFFFFF))
+
+#define LNWK_TXINTREQ() ((*(UCHAR *)0xA00000) = (~(*(UCHAR *)0xA00000)&0x01))
+
+/*
+#define LW_WAYSIDE_ON_REQ	0x01
+#define LW_WAYSIDE_ON_ACK	0x02
+#define LW_FTP_TX			0x05
+#define LW_FTP_TX_END		0x06
+#define LW_CARNO			0x07
+#define LW_TIME_REQ			0x08
+#define LW_TIME_TX			0x09
+#define LW_COMMST_REQ		0x0A
+#define LW_COMMST_TX		0x0B
+#define LW_VERSION_REQ		0x0C
+#define LW_VERSION_TX		0x0D
+*/
+
+
+#define VER_BDD_MAX_CNT		32
+
+typedef struct
+{
+	UCHAR btStx;
+	UCHAR btCmd;
+	UCHAR btMessCode;
+	UCHAR btLen;
+	UCHAR btDat[196]; // 데이터 버퍼
+	//UCHAR btSp;
+} LNWKFTPIT, *PLNWKFTPIT;
+
+typedef struct
+{
+	UCHAR btStx;
+	UCHAR btCmd;
+	UCHAR btMessCode;
+	UCHAR btLen;
+	UCHAR btDat[196]; // 데이터 버퍼
+	//UCHAR btSp[2];
+} LNWKGERIT, *PLNWKGERIT;
+
+typedef struct
+{
+	UCHAR btKind; // 1~7
+	UCHAR btVerH; // 0x00~0x99
+	UCHAR btVerL; // 0x00~0x99
+	UCHAR btBuildDateHH; // Build date HH
+	UCHAR btBuildDateHL; // Build date HL
+	UCHAR btBuildDateLH; // Build date LH
+	UCHAR btBuildDateLL; // Build date LL
+	UCHAR btSpare[9]; // Spare
+	LNWKFTPIT lfBuf[6]; // LonWork Ftp Buffer
+	LNWKGERIT lgRxBuf; // Lonwork 일반 Rx
+	LNWKGERIT lgTxBuf; // Lonwork 일반 Tx
+} LNWKDP, *PLNWKDP;
+
+
+	// Protocol 정의
+typedef struct
+{
+	UCHAR btSoh;
+	UCHAR chSrcDev[2];    //출발지
+	UCHAR chDestDev[2];   //도착지
+	UCHAR chMsgCnt[2];    //카운터
+	UCHAR chCmdCode[2];   //명령 코드
+	UCHAR chDataLen[2];   //길이
+} PTCHD, *PPTCHD;
+
+typedef struct
+{
+	UCHAR chPacT[2];  //선두 차에 대한 정보를 알수 있다. CRB - bit6/ CRA - bit2
+	UCHAR chCcpM[2];
+	UCHAR chCncsT[2];
+	UCHAR chD0[2];
+	UCHAR chD1[2];
+	UCHAR chTran[3][2];
+	UCHAR chCid[3][2];
+	UCHAR chDs[2];
+}PROTOCOL_1;
+
+typedef struct
+{
+	PTCHD phHdBuf;
+	UCHAR nDdata[2];
+	UCHAR nCRC[4];
+	UCHAR btEot;
+} PACSDR, *PPACSDR;   //PAC -> LIC로 응답요청을 하면.
+
+typedef struct
+{
+	union
+	{
+		unsigned int BYTE;
+		struct
+		{
+			UINT sBCab_ON:1;    		
+			UINT sBSp_1:1;          
+			UINT sBSp_2:1;          
+			UINT sBHead_Bit:1;          
+			UINT sACab_ON:1;    		
+			UINT sASp_1:1;          
+			UINT sASp_2:1;          
+			UINT sAHead_Bit:1;        
+		}BIT;
+	}CRA_1;
+
+	union
+	{
+		unsigned int BYTE;
+		struct
+		{
+			UINT sBWLR:1;    /*    Bit 0     */
+			UINT sBGPS:1;    /*    Bit 1     */
+			UINT sBVOIP:1;   /*    Bit 2     */
+			UINT sBCCP1:1;   /*    Bit 3     */
+			UINT sAWLR:1;    /*    Bit 0     */
+			UINT sAGPS:1;    /*    Bit 1     */
+			UINT sAVOIP:1;   /*    Bit 2     */
+			UINT sACCP1:1;   /*    Bit 3     */
+		}BIT;
+	}CRA_2;
+
+	union
+	{
+		unsigned int BYTE;
+		struct
+		{
+			UINT sBCNCS:1;   /*    Bit 0     */
+			UINT sBVTX:1;    /*    Bit 1     */
+			UINT sBLIC:1;    /*    Bit 2     */
+			UINT sBPAC:1;    /*    Bit 3     */
+			UINT sACNCS:1;   /*    Bit 0     */
+			UINT sAVTX:1;    /*    Bit 1     */
+			UINT sALIC:1;    /*    Bit 2     */
+			UINT sAPAC:1;    /*    Bit 3     */
+		}BIT;
+	}CRA_3;
+
+	union
+	{
+		unsigned int BYTE;
+		struct
+		{
+			UINT sBPII2:1;    		
+			UINT sBPII1:1;           	
+			UINT sBFDI:1;           	
+			UINT sBSp_3:1;           	
+			UINT sAPII2:1;    	
+			UINT sAPII1:1;         
+			UINT sAFDI:1;          
+			UINT sASp_3:1;            	
+		}BIT;
+	}CRA_4;
+
+	union
+	{
+		unsigned int BYTE;
+		struct
+		{
+			UINT sBSDI4:1;    	
+			UINT sBSDI3:1;         
+			UINT sBSDI2:1;         
+			UINT sBSDI1:1;         
+			UINT sASDI4:1;    	
+			UINT sASDI3:1;         
+			UINT sASDI2:1;         
+			UINT sASDI1:1;          
+		}BIT;
+	}CRA_5;
+
+	union
+	{
+		unsigned int BYTE;
+		struct
+		{
+			UINT sBPID1_4:1;    	
+			UINT sBPID1_3:1;       
+			UINT sBPID1_2:1;       
+			UINT sBPID1_1:1;       
+			UINT sAPID1_4:1;    	
+			UINT sAPID1_3:1;       
+			UINT sAPID1_2:1;       
+			UINT sAPID1_1:1;          
+		}BIT;
+	}CRA_6;
+
+	union
+	{
+		unsigned int BYTE;
+		struct
+		{
+			UINT sBPEI1:1;    	
+			UINT sBPEI2:1;         
+			UINT sBSp_3:1;         
+			UINT sBPID2_1:1;       
+			UINT sAPEI1:1;    	
+			UINT sAPEI2:1;         
+			UINT sASp_3:1;         
+			UINT sAPID2_1:1;          
+		}BIT;
+	}CRA_7;
+
+	union
+	{
+		unsigned int BYTE;
+		struct
+		{
+			UINT sBPEI1_Call:1;    
+			UINT sBPEI2_Call:1;    
+			UINT sBSp_2:1;         
+			UINT sBSp_3:1;         
+			UINT sAPEI1_Call:1;    
+			UINT sAPEI2_Call:1;    
+			UINT sASp_2:1;         
+			UINT sASp_3:1;            
+		}BIT;
+	}CRA_8;
+
+
+	union
+	{
+		unsigned int BYTE;
+		struct
+		{
+			UINT sBDPO:1;    		
+			UINT sBSp_2:1;         
+			UINT sBSp_3:1;         
+			UINT sBDPH:1;          
+			UINT sADPO:1;    		
+			UINT sASp_2:1;         
+			UINT sASp_3:1;         
+			UINT sADPH:1;           
+		}BIT;
+	}CRA_9;
+
+	UCHAR CarNum_H;
+	UCHAR CarNum_L;
+
+}CRA_STATION,*PCRA_STATION; //1랑에 대한 각 장치 상태 정보.
+
+
+typedef struct
+{
+	PTCHD phHdBuf;
+
+	UCHAR sPAC_T[2][2];
+	UCHAR sC_ID[2];
+	UCHAR sDO[2];
+	UCHAR sD1[2];
+	UCHAR sODM[4][2];
+	UCHAR sANS[2];
+	UCHAR sTRAN_NO[3][2];
+	UCHAR sCRAW_ID[3][2];
+	UCHAR sTRIP[3][2];
+	UCHAR sD2[2];
+	UCHAR sSTST[2][2];
+	UCHAR sNOST[2][2];
+	UCHAR sNEST[2][2];
+	UCHAR sDEST[2][2];
+	UCHAR sSPK[4][2];
+	UCHAR sD3[2][2];
+	UCHAR sD4[2][2];
+	UCHAR sPR[2];
+	UCHAR sPRVector[2][2];
+	UCHAR sPACVector[2][2];
+	UCHAR sFDI_SDI_Color[2][2];
+	UCHAR sFDI_SDI_Vector1[2][2];
+	UCHAR sFDI_SDI_Vector2[2][2];
+	UCHAR sPII_Vector[2][2];
+	UCHAR sPP_Line_Vector[2][2];
+	UCHAR sPP_Vector[2][2];
+	UCHAR sSP_Vector[2][2];
+	UCHAR sROUTE_SKIP[10][2];
+	UCHAR sCI_Index[8][2];
+	UCHAR sCI_Fault[2];
+	UCHAR sCCI[2];
+
+	UCHAR phCRA_Sta[4][11][2];
+
+	UCHAR nCRC[4];
+	UCHAR btEot;
+
+}PAC_PAC,*PPAC_PAC; //같은 차량에서 Car Line 으로 돌아 다니는 정보.
+
+typedef struct
+{
+	PTCHD phHdBuf;
+
+	UCHAR sDO[2];
+	UCHAR sTRAN_NO[3][2];
+	UCHAR sCRAW_ID[3][2];
+	UCHAR sTRIP[3][2];
+	UCHAR sD1[2];
+	UCHAR sSTST[2][2];
+	UCHAR sNOST[2][2];
+	UCHAR sNEST[2][2];
+	UCHAR sDEST[2][2];
+	UCHAR sSPK[4][2];
+	UCHAR sD2[2][2];
+	UCHAR sD3[2][2];
+	UCHAR sPR[2];
+	UCHAR sPRVector[2][2];
+	UCHAR sPACVector[2][2];
+	UCHAR sFDI_SDI_Color[2][2];
+	UCHAR sFDI_SDI_Vector1[2][2];
+	UCHAR sFDI_SDI_Vector2[2][2];
+	UCHAR sPII_Vector[2][2];
+	UCHAR sPP_Line_Vector[2][2];
+	UCHAR sPP_Vector[2][2];
+	UCHAR sSP_Vector[2][2];
+	UCHAR sROUTE_SKIP[10][2];
+	UCHAR sCI_Index[8][2];
+	UCHAR sCCP_Date[6][2];
+	UCHAR nCRC[4];
+	UCHAR btEot;
+}CCP_PAC,*PCCP_PAC;  //CCP가 PAC로 응답을 보내는 내용.
+		  
+		  
+typedef struct
+{
+	PTCHD phHdBuf;
+
+	union{
+		unsigned int BYTE;
+		struct
+		{
+			UINT Sp_0:1;    			/*    Bit 0     */
+			UINT Sp_1:1;           		/*    Bit 1     */
+			UINT CI_Fault:1;           	/*    Bit 2     */
+			UINT DST:1;           		/*    Bit 3     */
+			UINT Sp_4:1;           		/*    Bit 4     */
+			UINT Sp_5:1;           		/*    Bit 5     */
+			UINT Sp_6:1;           		/*    Bit 6     */
+			UINT Sp_7:1;           		/*    Bit 7     */
+		}BIT;
+	}DATA2;
+
+	union{
+		unsigned int BYTE;
+		struct
+		{
+			UINT All_Doors_Closed:1;	/*    Bit 0     */
+			UINT EP_Mode:1;				/*    Bit 1     */
+			UINT Traction:1;			/*    Bit 2     */
+			UINT Atcive_Cab:1;			/*    Bit 3     */
+			UINT Sp_4:1;           		/*    Bit 4     */
+			UINT Sp_5:1;           		/*    Bit 5     */
+			UINT Sp_6:1;           		/*    Bit 6     */
+			UINT Sp_7:1;           		 /*    Bit 7     */
+		}BIT;
+	}DATA1;
+
+	UCHAR CI_Index_Num[2];
+
+	UCHAR chCarn[2][2];
+	UCHAR nCRC[4];
+	UCHAR btEot;
+} LICSD, *PLICSDR; //LIC -> PAC 로 보내는 정보.
+
+	// Protocol 정의
+typedef struct
+{
+	UCHAR btSoh;
+	UCHAR chSrcDev[2];    //출발지
+	UCHAR chDestDev[2];   //도착지
+	UCHAR chMsgCnt[4];    //카운터
+	UCHAR chCmdCode[2];   //명령 코드
+	UCHAR chDataLen[4];   //길이
+} CNCSHD, *PCNCSHD;
+
+
+typedef struct
+{
+	CNCSHD phHdBuf;
+	UCHAR sCommand[2]; //명령어
+	UCHAR sCarKind[2];
+	UCHAR sTextDataAsc[300]; //ASC Code
+}LIC_CNCS_HD,*PLIC_CNCS_HD;
+
+typedef struct
+{
+	char chVer[4];
+	char chBuildDate[6];
+}CNCS_LIC_VERBDD_SD, *PCNCS_LIC_VERBDD_SD;
+
+typedef struct
+{
+	USHORT VerCnt;
+	CNCS_LIC_VERBDD_SD cvbBuf[VER_BDD_MAX_CNT]; // 버전및 만든시간 업데이트 버퍼
+	USHORT CarNum[2];
+}LIC_DPRAM_Ver,*PLIC_DPRAM_Ver;
+
+typedef struct
+{
+	UCHAR s1TRIC[2][4];
+	UCHAR s2CCP[2][4];
+	UCHAR s3LIC_LON[2][4];
+	UCHAR s4GIA[2][4];
+	UCHAR s5VTX[2][4];
+	UCHAR s6PAC[2][4];
+	UCHAR s7FDI[2][4];
+	UCHAR s8SDI[2][4];
+	UCHAR s9PII[2][4];
+	UCHAR s10VRX[2][4];
+	UCHAR s11CN_MAIN[2][4];
+	UCHAR s12CN_LAVN[2][4];
+	UCHAR s13CN_VP[2][4];
+	UCHAR s14CN_PPLOY[2][4];
+	UCHAR s15CN_SPLAY[2][4];
+	UCHAR s16CN_PTU[2][4];
+}LIC_VER_LIST,*PLIC_VER_LIST;
+
+typedef struct
+{
+	CNCSHD phHdBuf;
+	UCHAR sCommand[2]; //명령어
+	UCHAR sYear[2]; //시스템 시간
+	UCHAR sMonth[2]; //시스템 시간
+	UCHAR sDay[2]; //시스템 시간
+	UCHAR sHour[2]; //시스템 시간
+	UCHAR sMinute[2]; //시스템 시간
+	UCHAR sSecond[2]; //시스템 시간
+	UCHAR sWaySide[2];  //고장 요청 Flag
+	UCHAR sDaType[2];   //Data Type
+	//UCHAR sCarKind;  //차량 종류 A/B
+	UCHAR sFaultTime[8];//고장 요청 시간
+	CNCS_LIC_VERBDD_SD cvbBuf[VER_BDD_MAX_CNT]; // 버젼및 만든시간 업데이트 버퍼
+	UCHAR chChkSum[2]; 
+	UCHAR btEot;
+}CNCS_LIC_SD,*PCNCS_LIC_SD;
+
+
+typedef struct
+{
+	CNCSHD phHdBuf;
+	UCHAR sCommand[2]; //명령어
+	UCHAR sTEXT[4];  //시간 정보 요청(LIC) 및 고장 정보 수신(고장 카운터)
+	UCHAR chContactSignalBuf[2]; // BIT3 : Active Cab, BIT0 : All Doors Closed
+	UCHAR chChkSum[2];
+	UCHAR btEot;
+}CNCS_LIC_T_F,*PCNCS_LIC_T_F;
+
+typedef struct
+{
+	CNCSHD phHdBuf;
+	UCHAR sCommand[2]; //명령어
+	UCHAR sTEXT[4];  //시간 정보 요청(LIC) 및 고장 정보 수신(고장 카운터)
+	UCHAR chChkSum[2];
+	UCHAR btEot;
+}CNCS_LIC_T_F_C,*PCNCS_LIC_T_F_C;
+
+typedef struct
+{
+	UCHAR sChSum[2];
+	UCHAR sETX;
+}LIC_CNCS_ED,*PLIC_CNCS_ED;
+
+typedef struct
+{
+	struct
+	{
+		UINT n1VTX : 1;
+		UINT n2CNCS : 1;
+		UINT n3PAC2 : 1;
+		UINT n4LIC : 1;
+		UINT n5WLAN : 1;
+		UINT n6GPS : 1;
+		UINT n7PAC1 : 1;
+		UINT n8sp : 1;
+	}BYTE_1;
+
+	struct
+	{
+		UINT n1DPO1 : 1;
+		UINT n2DPO2 : 1;
+		UINT n3CCP1 : 1;
+		UINT n4CCP2 : 1;
+		UINT n5TRIC1 : 1;
+		UINT n6TRIC2 : 1;
+		UINT n7TR1 : 1;
+		UINT n8TR2 : 1;
+	}BYTE_2;
+
+	struct
+	{
+		UINT n1Sp : 1;
+		UINT n2Sp : 1;
+		UINT n3CPO1 : 1;
+		UINT n4CPO2 : 1;
+		UINT n5CPO3 : 1;
+		UINT n6CPO4 : 1;
+		UINT n7Sp : 1;
+		UINT n8Sp : 1;
+	}BYTE_3;
+
+	struct
+	{
+		UINT n1PEI1 : 1;
+		UINT n2PEI2 : 1;
+		UINT n3PEI3 : 1;
+		UINT n4PEI4 : 1;
+		UINT n5PEI5 : 1;
+		UINT n6PEI6 : 1;
+		UINT n7FDI1 : 1;
+		UINT n8FDI2 : 1;
+	}BYTE_4;
+
+
+	UCHAR BYTE_5;
+
+
+	struct
+	{
+		UINT n1SDI1 : 1;
+		UINT n2SDI2 : 1;
+		UINT n3SDI3 : 1;
+		UINT n4SDI4 : 1;
+		UINT n5SDI5 : 1;
+		UINT n6SDI6 : 1;
+		UINT n7SDI7 : 1;
+		UINT n8SDI8 : 1;
+	}BYTE_6;
+
+	struct
+	{
+		UINT n1PID1_1 : 1;
+		UINT n2PID1_2 : 1;
+		UINT n3PID1_3 : 1;
+		UINT n4PID1_4 : 1;
+		UINT n5PID1_5 : 1;
+		UINT n6PID1_6 : 1;
+		UINT n7PID1_7 : 1;
+		UINT n8PID1_8 : 1;
+	}BYTE_7;
+
+
+	struct
+	{
+		UINT n1PID2_1 : 1;
+		UINT n2PID2_2 : 1;
+		UINT n3PID2_3 : 1;
+		UINT n4PID2_4 : 1;
+		UINT n5PII1 : 1;
+		UINT n6PII2 : 1;
+		UINT n7PII3 : 1;
+		UINT n8PII4 : 1;
+	}BYTE_8;
+}COMMSTATUS_PA, *PCOMMSTATUS_PA; //
+
+
+typedef struct
+{
+
+	union{
+		UCHAR BYTE;
+		struct{
+			UINT nCncs : 1;
+			UINT nVtx : 1;
+			UINT nLic : 1;
+			UINT nPac : 1;
+			UINT nWlr : 1;
+			UINT nGps : 1;
+			UINT nVoip : 1;
+			UINT nCcp : 1;
+		}BIT;
+	}BYTE_1;
+
+
+	union{
+		UCHAR BYTE;
+		struct{
+			UINT nSdi4 : 1;
+			UINT nSdi3 : 1;
+			UINT nSdi2 : 1;
+			UINT nSdi1 : 1;
+			UINT nPii2 : 1;
+			UINT nPii1 : 1;
+			UINT nFdi : 1;
+			UINT sp_7 : 1;
+		}BIT;
+	}BYTE_2;
+
+	union{
+		UCHAR BYTE;
+		struct{
+			UINT nPid2_1 : 1;
+			UINT nPid1_4 : 1;
+			UINT nPid1_3 : 1;
+			UINT nPid1_2 : 1;
+			UINT nPid1_1 : 1;
+			UINT sp_5 : 1;
+			UINT sp_4 : 1;
+			UINT sp_7 : 1;
+		}BIT;
+	}BYTE_3;
+
+	union{
+		UCHAR BYTE;
+		struct{
+			UINT nPei1 : 1;
+			UINT nPei2 : 1;
+			UINT sp_2 : 1;
+			UINT sp_3 : 1;
+			UINT nDpo : 1;
+			UINT sp_5 : 1;
+			UINT sp_6 : 1;
+			UINT nDph : 1;
+		}BIT;
+	}BYTE_4;
+
+	union{
+		UCHAR BYTE;
+		struct{
+			UINT sp_0 : 1;
+			UINT sp_1 : 1;
+			UINT sp_2 : 1;
+			UINT sp_3 : 1;
+			UINT sp_4 : 1;
+			UINT sp_5 : 1;
+			UINT sp_6 : 1;
+			UINT sp_7 : 1;
+		}BIT;
+	}BYTE_5;
+
+}COMMSTATUS_LIC, *PCOMMSTATUS_LIC; // LIC -> MDS 로 데이터를 보내기 위해 장치 상태 정보를 기억 하는 부분.
+
+typedef struct
+{
+	union{
+		UCHAR BYTE;
+		struct{
+			UINT n1Reverse : 1;
+			UINT n2ForWard : 1;
+			UINT n3Uncouple : 1;
+			UINT n4Simulation : 1;
+			UINT n5Pattern : 1;
+			UINT n6A_CabOn : 1;
+			UINT n7B_CabOn : 1;
+			UINT n8sp : 1;
+		}BIT;
+	}n1DATA;
+}RACK_DI,*PRACK_DI;
+
+// 고장 정보를 관리하는 부분(Y.J 2011-05-13 추가.) 
+enum eCDT_TYPE { eCDT_A, eCDT_B, eCDT_MAXIMUM };
+
+typedef struct
+{
+	int nTCnt;
+	int nStPosi;
+	int nEdPosi;
+} T_FAULT_INFO, *PFAULT_INFO;
+
+void user_Init();
+void user_Loop();
+void user_Lic2LicLoop();
+void user_DebugLoop();
+int user_IsSingleOrMarried();
+int user_PacRx(UCHAR *pBuf,int nRxBuffLen);
+void user_PacTx(UCHAR *pTxBuf,int nTxLen);
+int user_CncsRx(UCHAR *pBuf,int nRxBuffLen);
+void user_CncsTx(UCHAR *pTxBuf,int nTxLen);
+int user_DebugRx(UCHAR *pBuf,int nRxBuffLen);
+void user_DebugPrint(char *pTxBuf);
+void user_LonWorkLoop();
+void user_LonWorkRead();
+UCHAR user_LonWorkRx(int nRxPos, UCHAR *pRxBuf);
+void user_LonWorkTx(UCHAR *pTxBuf,UCHAR nLen);
+int user_GetLonWorkCarCnt();
+void user_WithCncsRs232Loop();
+void user_WithPacRs485Loop();
+void user_1msLoop();
+void user_FaultDataTx(UCHAR *pTxBuf,UCHAR nLen,UCHAR nEndFlag,int nFltIdx);
+void user_FtpEnd_CarNumFun();
+void ClearFltBlkInfo();	// 고장 정보를 Clear
+void SetFltBlkStPos(char chCarKind, int nStPosi);
+void SetFltBlkEdInfo(char chCarKind, int nEndPosi, int nFltTCnt);	// CDT별 고장 정보를 따로 관리.
+int GetFltBlkStPos(char chCarKind);		// CDT 고장 정보의  시작위치를 돌려주는 부분.
+PFAULT_INFO GetFltBlkInfo(char chCarKind);		// CDT 고장 정보를 돌려주는 부분.
+BOOL GetLocalTimeToUTC( DATE_TIME_PTR pLocal, int nHour, DATE_TIME_PTR pUTC ); // UTC Time을 구하는 부분.
+int IsLeapYear( int nYear ); // 윤년 정보를 구하는 부분.
+int GetDaysOfMonth( int nMonth, int nYear );	
+UCHAR BitSwap(UCHAR btDat);
+
+#endif

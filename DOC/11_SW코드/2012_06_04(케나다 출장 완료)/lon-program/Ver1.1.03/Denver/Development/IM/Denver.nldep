@@ -1,0 +1,128 @@
+; Echelon Dependency File - do not edit.
+; C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.nldep
+; Created Wednesday, February 22, 2017, 18:45:13
+
+[Global]
+Provider=Neuron Linker
+Version=1
+Inputs=4
+Outputs=4
+Switches=15
+Parameters=34
+
+[Input_1]
+Basename=BFT5000.sym
+Fullname=C:\Program Files\LonWorks\Images\Ver19\BFT5000.sym
+Type=3
+Size=10499
+TimestampHigh=0x1ca566e
+TimestampLow=0xa817be00
+
+[Input_2]
+Basename=Denver.no
+Fullname=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.no
+Type=0
+Size=65284
+TimestampHigh=0x1d28cf0
+TimestampLow=0x5d15b8b0
+
+[Input_3]
+Basename=GEN.LIB
+Fullname=C:\PROGRAM FILES\LONWORKS\IMAGES\GEN.LIB
+Type=3
+Size=81055
+TimestampHigh=0x1ca566e
+TimestampLow=0xa817be00
+
+[Input_4]
+Basename=EXTARITH.LIB
+Fullname=C:\PROGRAM FILES\LONWORKS\IMAGES\EXTARITH.LIB
+Type=3
+Size=56903
+TimestampHigh=0x1ca566e
+TimestampLow=0xa817be00
+
+[Output_1]
+Basename=Denver.dbt
+Fullname=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.dbt
+Type=0
+Size=66937
+TimestampHigh=0x1d28cf0
+TimestampLow=0x5d3c7a90
+
+[Output_2]
+Basename=Denver.nxr
+Fullname=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.nxr
+Type=0
+Size=13
+TimestampHigh=0x1d28cf0
+TimestampLow=0x5d3d64f0
+
+[Output_3]
+Basename=Denver.nxe
+Fullname=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.nxe
+Type=0
+Size=16647
+TimestampHigh=0x1d28cf0
+TimestampLow=0x5d3e9d70
+
+[Output_4]
+Basename=Denver.map
+Fullname=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.map
+Type=0
+Size=76083
+TimestampHigh=0x1d28cf0
+TimestampLow=0x5d410e70
+
+[Switches]
+32=FT 5000
+0=1
+11=1
+9=1
+15=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.dbg
+21=E7
+20=E0
+19=DF
+18=40
+34=0
+30=C:\Program Files\LonWorks\Images\Ver19\BFT5000.sym
+27=C:\Program Files\LonWorks\Images\GEN.LIB
+27=C:\Program Files\LonWorks\Images\EXTARITH.LIB
+27=C:\Program Files\LonWorks\Images\PSG.LIB
+35=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.no
+
+[Parameters]
+Domains=2
+AddressTable=10
+NeuronModel=32
+NeuronKey=104
+RamStart=232
+RamEnd=239
+EEpromStart=240
+EEpromEnd=247
+ImageVersion=19
+RcvTxSize=13
+TxCtlBlkSize=28
+OnchipRamSpace=1315
+OffchipRamSpace=1364
+DomainSize=15
+AddressSize=5
+NvCnfgSize=3
+OnchipEEpromCnfg=175
+AliasSize=4
+RomEnd=63
+OCEEPromStart=64
+OCEEPromEnd=223
+OCRamStart=224
+OCRamEnd=231
+EEWriteTime=0
+FlashEeprom=0
+SectorSize=0
+CapabilityProxy=0
+CapabilityPhaseDetect=0
+CustomMac=0
+PrtCount=0
+Isr=0
+uartClock=4
+dbgfeat=2
+djrnrst=0

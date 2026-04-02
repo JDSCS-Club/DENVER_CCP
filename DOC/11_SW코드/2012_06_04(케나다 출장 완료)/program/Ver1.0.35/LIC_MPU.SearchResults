@@ -1,0 +1,11 @@
+---- m_tmCurTime Matches (10 in 1 files) ----
+User.c:DATE_TIME_TYPE m_tmCurTime;
+User.c:				m_tmCurTime.second = HEXA2BIN(tmBuf.second);
+User.c:				m_tmCurTime.minute = HEXA2BIN(tmBuf.minute);
+User.c:				m_tmCurTime.hour = HEXA2BIN(tmBuf.hour);
+User.c:				m_tmCurTime.day = HEXA2BIN(tmBuf.day);
+User.c:				m_tmCurTime.month = HEXA2BIN(tmBuf.month);
+User.c:				m_tmCurTime.year = HEXA2BIN(tmBuf.year);
+User.c:				if(m_LIC_CNCS_TimSetFlag = GetLocalTimeToUTC(&m_tmCurTime, -7, &m_tmUtcTime))
+User.c:					memcpy(&m_tmCurTime.second,btTmpBuf,6);
+User.c:					if(m_LIC_CNCS_TimSetFlag = GetLocalTimeToUTC(&m_tmCurTime, -5, &m_tmUtcTime))

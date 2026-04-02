@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator O.87xd
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o C:\Xilinx\JDS_CPLD\decoder//Untitled -x xcf01s -u 00000000 C:/Xilinx/JDS_CPLD/decoder/main.bit 
+
+PROM C:\Xilinx\JDS_CPLD\decoder\Untitled.prm map: Thu May 10 09:19:31 2012
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          128K
+PROM start    0000:0000
+PROM end      0001:ffff
+PROM checksum 000210e8
+
+        Addr1        Addr2                     Date File(s)
+    0000:0000    0001:ff87     May 10 09:19:00 2012 C:/Xilinx/JDS_CPLD/decoder/main.bit

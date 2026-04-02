@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HardwareTemplate UseExtendedRAM="FALSE">
+  <Contents MajorVersion="0" MinorVersion="0" CreationDate="991847343" Format="1" Content="1">
+    <FileDescription>NodeBuilder Hardware Template File</FileDescription>
+  </Contents>
+  <HardwarePlatform>Custom</HardwarePlatform>
+  <NeuronModelKey>104</NeuronModelKey>
+  <SystemImageName>BFT5000</SystemImageName>
+  <FirmwareVersion>Ver19</FirmwareVersion>
+  <Description>This is the standard hardware template for the FT 5000 EVB evaluation board. 
+
+The FT 5000 EVB uses Echelon's FT 5000 Smart Transceiver, which supports an internal system clock speed of 5 MHz to 80 MHz (based on an external crystal of 10 MHz).  
+
+The FT 5000 Smart Transceiver includes 16KB of on-chip ROM to store the system firmware image and 64 KB of on-chip RAM (44 KB of which can be used for application code and data). The FT 5000 Smart Transceiver requires at least 2KB of off-chip EEPROM to store configuration data, and you can use a larger capacity EEPROM device or an additional flash device (up to 64KB) to store your application code, configuration data, and an upgradable system firmware image. The system image and application code is shadowed into the on-chip RAM at runtime. 
+
+This FT 5000 EVB hardware template maps the memory range from 0x4000 to 0xDFFF for EEPROM which can be used to store application code. The memory range 0xE000 to 0xE7FF is configured for on-chip RAM. These memory ranges are configurable based on application requirements.
+
+</Description>
+  <TransceiverStdID>7</TransceiverStdID>
+  <ClockID>5</ClockID>
+  <ROMstart>N/A</ROMstart>
+  <ROMend>N/A</ROMend>
+  <RAMstart>0xE000</RAMstart>
+  <RAMend>0xE7FF</RAMend>
+  <NVstart>0x4000</NVstart>
+  <NVend>0xDFFF</NVend>
+  <IOstart>N/A</IOstart>
+  <IOend>N/A</IOend>
+  <FlashSectorSize>N/A</FlashSectorSize>
+  <NonVolMemType>EEPROM</NonVolMemType>
+  <EEWriteTime>0</EEWriteTime>
+  <ClockMultiplier>8</ClockMultiplier>
+</HardwareTemplate>

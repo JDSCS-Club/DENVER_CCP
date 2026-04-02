@@ -1,0 +1,32 @@
+; Echelon Dependency File - do not edit.
+; F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver.nadep
+; Created Tuesday, January 26, 2016, 13:11:11
+
+[Global]
+Provider=NEURON Assembler
+Version=1
+Inputs=1
+Outputs=1
+Switches=1
+Parameters=0
+
+[Input_1]
+Basename=Denver.ns
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver.ns
+Type=0
+Size=62337
+TimestampHigh=0x1d157ef
+TimestampLow=0x96d95200
+
+[Output_1]
+Basename=Denver.no
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver.no
+Type=0
+Size=57243
+TimestampHigh=0x1d157ef
+TimestampLow=0x96ef23f0
+
+[Switches]
+8=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver
+
+[Parameters]

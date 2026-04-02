@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NBDeviceTemplate ManageProgramID="FALSE" ReRegisterPlugIn="TRUE" UseProjectIncludePath="TRUE">
+	<Contents MajorVersion="0" MinorVersion="1" CreationDate="1232468580" Format="2" Content="4">
+		<FileDescription>NodeBuilder Device Template File</FileDescription>
+		<UpgradeStatus>1</UpgradeStatus>
+	</Contents>
+	<SourceFileName>Denver.nc</SourceFileName>
+	<Description></Description>
+	<ProgramID>434f4d4d</ProgramID>
+	<OutputFolder>.\</OutputFolder>
+	<LNSDeviceTemplateName>Denver</LNSDeviceTemplateName>
+	<IncludeSearchPath>$LonWorks$\NodeBuilder\CodeWizard\Include</IncludeSearchPath>
+	<MinModelNumber>0</MinModelNumber>
+	<MaxModelNumber>0x07</MaxModelNumber>
+	<TargetDevices>
+		<TargetDevice Name="Development" HostBased="FALSE">
+			<PreviousLNSTemplateName>Denver</PreviousLNSTemplateName>
+			<HardwareTemplate>$HARDWARETEMPLATES$\Woojin_Denver.NbHwt</HardwareTemplate>
+			<Compiler DisableOptimizer="TRUE" RelaxedCasting="FALSE">
+				<Defines>_DEBUG</Defines>
+				<DebugKernelOptions UseDebugKernel="TRUE" NodeRecoveryOnly="FALSE" NoNodeRecovery="FALSE" NoEventNotify="FALSE" NoResetEvent="FALSE" NoFunctionExecute="FALSE" ExpandStatements="TRUE">
+				</DebugKernelOptions>
+			</Compiler>
+			<Assembler>
+				<ListingOptions GenerateListing="FALSE">
+				</ListingOptions>
+			</Assembler>
+			<Linker Compatible="FALSE" OrderPreserving="FALSE" GenerateSymbolFile="FALSE">
+				<Libraries></Libraries>
+				<ListingOptions UseVerboseMessages="TRUE" GenerateLinkSummary="FALSE" GenerateMapFile="TRUE">
+				</ListingOptions>
+			</Linker>
+			<Exporter ChecksumAllCode="TRUE" AutomaticBootID="TRUE">
+				<BootID>0x3041</BootID>
+				<RebootConfiguration ChecksumError="FALSE" FatalApplicationError="FALSE" Always="FALSE">
+				</RebootConfiguration>
+				<RebootApplication ApplessIsFatal="FALSE" FatalApplicationError="FALSE" Always="FALSE" RebootEEVars="FALSE">
+				</RebootApplication>
+				<RebootCommParameters ChecksumError="FALSE" TypeRateMismatch="FALSE" Always="FALSE">
+				</RebootCommParameters>
+			</Exporter>
+			<TargetConfiguration ExportConfigured="FALSE" CloneDomain="FALSE" NoDomain="FALSE" DomainID="00" AuthenticationKey="000000000000" Location="" UseAuthentication="FALSE">
+				<SubnetID>0x1</SubnetID>
+				<NodeID>0x1</NodeID>
+				<NonGrpRcvTimer>0x6</NonGrpRcvTimer>
+			</TargetConfiguration>
+		</TargetDevice>
+		<TargetDevice Name="Release" HostBased="FALSE">
+			<PreviousLNSTemplateName>Denver</PreviousLNSTemplateName>
+			<HardwareTemplate>$HARDWARETEMPLATES$\Woojin_Denver.NbHwt</HardwareTemplate>
+			<Compiler DisableOptimizer="FALSE" RelaxedCasting="FALSE">
+				<Defines></Defines>
+				<DebugKernelOptions UseDebugKernel="FALSE" NodeRecoveryOnly="FALSE" NoNodeRecovery="FALSE" NoEventNotify="FALSE" NoResetEvent="FALSE" NoFunctionExecute="FALSE" ExpandStatements="FALSE">
+				</DebugKernelOptions>
+			</Compiler>
+			<Assembler>
+				<ListingOptions GenerateListing="FALSE">
+				</ListingOptions>
+			</Assembler>
+			<Linker Compatible="FALSE" OrderPreserving="FALSE" GenerateSymbolFile="FALSE">
+				<Libraries></Libraries>
+				<ListingOptions UseVerboseMessages="TRUE" GenerateLinkSummary="FALSE" GenerateMapFile="TRUE">
+				</ListingOptions>
+			</Linker>
+			<Exporter ChecksumAllCode="TRUE" AutomaticBootID="TRUE">
+				<BootID>0x287E</BootID>
+				<RebootConfiguration ChecksumError="FALSE" FatalApplicationError="FALSE" Always="FALSE">
+				</RebootConfiguration>
+				<RebootApplication ApplessIsFatal="FALSE" FatalApplicationError="FALSE" Always="FALSE" RebootEEVars="FALSE">
+				</RebootApplication>
+				<RebootCommParameters ChecksumError="FALSE" TypeRateMismatch="FALSE" Always="FALSE">
+				</RebootCommParameters>
+			</Exporter>
+			<TargetConfiguration ExportConfigured="FALSE" CloneDomain="FALSE" NoDomain="FALSE" DomainID="00" AuthenticationKey="000000000000" Location="" UseAuthentication="FALSE">
+				<SubnetID>0x1</SubnetID>
+				<NodeID>0x1</NodeID>
+				<NonGrpRcvTimer>0x6</NonGrpRcvTimer>
+			</TargetConfiguration>
+		</TargetDevice>
+	</TargetDevices>
+	<LibraryItems>
+	</LibraryItems>
+	<SourceFileList>
+		<SourceFileName Name="COMM.h">
+			<OptionFlags>0x4</OptionFlags>
+		</SourceFileName>
+		<SourceFileName Name="FILE.H">
+			<OptionFlags>0x4</OptionFlags>
+		</SourceFileName>
+		<SourceFileName Name="FSYS.H">
+			<OptionFlags>0x4</OptionFlags>
+		</SourceFileName>
+	</SourceFileList>
+	<Interface>
+		<Dependencies>
+			<BIF>0x0</BIF>
+			<BF2>0x0</BF2>
+			<XF2>0x0</XF2>
+			<XF3>0x0</XF3>
+			<DRF>0x176BCFB1</DRF>
+		</Dependencies>
+	</Interface>
+	<DeviceTemplatePackage NamedFblocks="TRUE" UseFTPCPMode="FALSE" UseExternalNames="TRUE">
+		<Contents MajorVersion="0" MinorVersion="0" CreationDate="1335174260" Format="3" Content="1">
+			<FileDescription>NodeBuilder Device Packaging File</FileDescription>
+			<UpgradeStatus>0</UpgradeStatus>
+		</Contents>
+		<Name></Name>
+		<Description></Description>
+		<ProgramID></ProgramID>
+		<TemplateVersion>2</TemplateVersion>
+		<FBlocks>
+		</FBlocks>
+		<DeviceNVs>
+		</DeviceNVs>
+		<DeviceCPs>
+		</DeviceCPs>
+	</DeviceTemplatePackage>
+</NBDeviceTemplate>

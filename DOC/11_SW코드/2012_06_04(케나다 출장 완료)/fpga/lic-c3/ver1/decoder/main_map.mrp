@@ -1,0 +1,251 @@
+Release 13.1 Map O.40d (nt)
+Xilinx Mapping Report File for Design 'main'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s200-vq100-5 -cm area -ir off -pr off
+-c 100 -o main_map.ncd main.ngd main.pcf 
+Target Device  : xc3s200
+Target Package : vq100
+Target Speed   : -5
+Mapper Version : spartan3 -- $Revision: 1.55 $
+Mapped Date    : Tue May 15 17:58:21 2012
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   12
+Logic Utilization:
+  Total Number Slice Registers:         122 out of   3,840    3%
+    Number used as Flip Flops:          108
+    Number used as Latches:              14
+  Number of 4 input LUTs:               187 out of   3,840    4%
+Logic Distribution:
+  Number of occupied Slices:            146 out of   1,920    7%
+    Number of Slices containing only related logic:     146 out of     146 100%
+    Number of Slices containing unrelated logic:          0 out of     146   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:         252 out of   3,840    6%
+    Number used as logic:               187
+    Number used as a route-thru:         65
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                 63 out of      63  100%
+    IOB Flip Flops:                       6
+    IOB Latches:                          4
+  Number of RAMB16s:                      1 out of      12    8%
+  Number of BUFGMUXs:                     2 out of       8   25%
+
+Average Fanout of Non-Clock Nets:                2.99
+
+Peak Memory Usage:  131 MB
+Total REAL time to MAP completion:  0 secs 
+Total CPU time to MAP completion:   0 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net NVSRAM_CS_BUF_not0002 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net NVSRAM_CS_BUF_not0003 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net BOOT_2_INT_CS_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net WDI_CS_not0001 is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net INT_READ_CS_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   SPI_DOUT.PAD is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp LON_INT is
+   set but the tri state is not configured. 
+
+Section 3 - Informational
+-------------------------
+INFO:Security:54 - 'xc3s200' is a WebPack part.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   1 block(s) removed
+   4 block(s) optimized away
+
+Section 5 - Removed Logic
+-------------------------
+Unused block "FPGA_RTS_INIT_PULLUP" (PULLUP) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		DPRAM_DSP_2_LON/XST_GND
+VCC 		DPRAM_DSP_2_LON/XST_VCC
+GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AH<20>                             | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AH<21>                             | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AH<22>                             | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AH<23>                             | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<0>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<1>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<2>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<3>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<4>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<5>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<6>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<7>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<8>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<9>                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| AL<10>                             | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| D<0>                               | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | INFF1        |          | IFD      |
+| D<1>                               | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW | INFF1        |          | IFD      |
+| D<2>                               | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| D<3>                               | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| D<4>                               | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| D<5>                               | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| D<6>                               | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| D<7>                               | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| DEBUG_OUT                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| DIMA                               | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| DIMB                               | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| DSP_RST                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | OFF1         |          |          |
+| EDGE_MODE                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| ERR_LED                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FPGA_RTS_INIT                      | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| FROM_CS                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | OLATCH1      |          |          |
+| H3                                 | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| INT1                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| INT2                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| INT3                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| IO2                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              | PULLUP   |          |
+| IO3                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              | PULLUP   |          |
+| IO4                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              | PULLUP   |          |
+| IO5                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              | PULLUP   |          |
+| IO6                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              | PULLUP   |          |
+| IO11                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              | PULLUP   |          |
+| LON_CS0                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              | PULLUP   |          |
+| LON_INT                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              | PULLUP   |          |
+| LON_IRQ                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLUP   |          |
+| LRST                               | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW | ENFF1        | PULLUP   |          |
+| N1SERVICE_IN                       | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLUP   |          |
+| N1SERVICE_OUT                      | IOB              | OUTPUT    | LVCMOS33             |       | 24       | SLOW |              | PULLUP   |          |
+| NVSRAM_CS                          | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | OLATCH1      |          |          |
+| RD                                 | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| ROM_SERIAL_SW                      | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| RUN_LED                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | OFF1         |          |          |
+| RW                                 | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| SPI_CLK                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLUP   |          |
+| SPI_DIN                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLUP   |          |
+| SPI_DOUT                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | OFF1         | PULLUP   |          |
+| SPI_SS                             | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLUP   |          |
+| STRB                               | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| W5100_CS                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | OLATCH1      |          |          |
+| W5100_INT                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| WDI                                | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| WR                                 | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| XL16L784_CS                        | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | OLATCH1      |          |          |
+| XL16L784_INT                       | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

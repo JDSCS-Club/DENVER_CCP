@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator P.28xd
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o "D:\JDS 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\FPGA\LIC-C3\Ver2\decoder//Untitled" -x xcf01s -u 00000000 D:/CPLD/DENVER/FPGA/LIC-C3/Ver1/decoder/main.bit 
+
+PROM D:\JDS 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\FPGA\LIC-C3\Ver2\decoder\Untitled.prm map: Wed Nov 07 09:31:35 2012
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          128K
+PROM start    0000:0000
+PROM end      0001:ffff
+PROM checksum 0005ae79
+
+        Addr1        Addr2                     Date File(s)
+    0000:0000    0001:ff87     Oct 22 10:56:04 2012 D:/CPLD/DENVER/FPGA/LIC-C3/Ver1/decoder/main.bit

@@ -1,0 +1,35 @@
+---- Cmd Matches (34 in 2 files) ----
+COMM.h (denver):   unsigned short Cmd;
+COMM.h (denver):   unsigned short Cmd;
+Denver.nc (denver):		OutBuffer.Cmd=0x06;
+Denver.nc (denver):		OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):		OutBuffer.Cmd=0x06;
+Denver.nc (denver):		OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):		switch(InBuffer.Cmd)
+Denver.nc (denver):			OutBuffer.Cmd=0x02;
+Denver.nc (denver):			OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):        OutBuffer.Cmd=0x08;
+Denver.nc (denver):        OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):		OutBuffer.Cmd=0x0A;
+Denver.nc (denver):		OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):	OutBuffer.Cmd=0x0A;
+Denver.nc (denver):	OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):		OutBuffer.Cmd=0x10;
+Denver.nc (denver):		OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):		OutBuffer.Cmd=0x12;
+Denver.nc (denver):		OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):		OutBuffer.Cmd=0x14;
+Denver.nc (denver):		OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):		OutBuffer.Cmd=0x16;
+Denver.nc (denver):		OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):		OutBuffer.Cmd=0x07;
+Denver.nc (denver):		OutBuffer.Data[2]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length^OutBuffer.Data[0]^OutBuffer.Data[1];
+Denver.nc (denver):	OutBuffer.Cmd=0x0E;
+Denver.nc (denver):	OutBuffer.Data[1]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length^OutBuffer.Data[0];
+Denver.nc (denver):		OutBuffer.Cmd=0x0C;
+Denver.nc (denver):		OutBuffer.Data[1]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length^OutBuffer.Data[0];
+Denver.nc (denver):		OutBuffer.Cmd=0x06;
+Denver.nc (denver):		OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):	OutBuffer.Cmd=0x08;
+Denver.nc (denver):	OutBuffer.Data[0]=OutBuffer.Cmd^OutBuffer.MagCode^OutBuffer.Length;
+Denver.nc (denver):            OutBuffer.Cmd=0x05;
