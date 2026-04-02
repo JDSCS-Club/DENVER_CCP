@@ -1,0 +1,1058 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:12
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\7xx_flash.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW4690.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\7xx_flash.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\7xx_flash.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\7xx_flash.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\7xx_flash.c
+      1          /******************** (C) COPYRIGHT 2006 STMicroelectronics ********************
+      2          * File Name          : 7xx_flash.c
+      3          * Author             : MCD Application Team
+      4          * Date First Issued  : 10/01/2006 : V1.0
+      5          * Description        : This file provides all the Flash software functions.
+      6          ********************************************************************************
+      7          * History:
+      8          * 10/01/2006 : V1.0
+      9          ********************************************************************************
+     10          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     11          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     12          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     13          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     14          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     15          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     16          *******************************************************************************/
+     17          
+     18          /* Includes ------------------------------------------------------------------*/
+     19          #include"7xx_flash.h"
+     20          
+     21          /* Private typedef -----------------------------------------------------------*/
+     22          /* Private define ------------------------------------------------------------*/
+     23          /* Flash operation enable bit mask */
+     24          #define FLASH_SPR_MASK     0x01000000
+     25          #define FLASH_SER_MASK     0x08000000
+     26          #define FLASH_DWPG_MASK    0x10000000
+     27          #define FLASH_WPG_MASK     0x20000000
+     28          #define FLASH_SUSP_MASK    0x40000000
+     29          #define FLASH_WMS_MASK     0x80000000
+     30          
+     31          /* Flash interrupt mask */
+     32          #define FLASH_INTM_MASK    0x00200000
+     33          #define FLASH_INTP_MASK    0x00100000
+     34          
+     35          #ifdef STR73x
+     36            /* STR73x Flash lock and busy bits */
+     37            #define FLASH_FLAG_LOCKBSY     0x12
+     38          #else
+     39            /* STR71x/STR75x Flash lock and busy bits */
+     40            #define FLASH_FLAG_LOCKBSY     0x16
+     41          #endif
+     42          
+     43          /* Flash protection mask */
+     44          #ifdef STR75x
+     45            /* STR75x Readout protection */
+     46            #define FLASH_PROTECTION_MASK  0x00000001
+     47          #else /* STR71x & STR73x */
+     48            /* STR71x & STR73x Debug protection */
+     49            #define FLASH_PROTECTION_MASK  0x00000002
+     50          #endif
+     51          
+     52          /* Private macro -------------------------------------------------------------*/
+     53          /* Private variables ---------------------------------------------------------*/
+     54          /* Private function prototypes -----------------------------------------------*/
+     55          /* Private functions ---------------------------------------------------------*/
+     56          
+     57          /*******************************************************************************
+     58          * Function Name  : FLASH_DeInit
+     59          * Description    : Deinitializes the Flash module registers to their default
+     60          *                  reset values.
+     61          * Input          : None
+     62          * Output         : None
+     63          * Return         : None
+     64          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     65          void FLASH_DeInit(void)
+     66          {
+     67            /* Reset the Flash control registers */
+     68            FLASH->CR0 = 0x00000000;
+   \                     FLASH_DeInit:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xE3A0'1440        MOV      R1,#+1073741824
+   \        0x8   0xE381'1940        ORR      R1,R1,#0x100000
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+     69            FLASH->CR1 = 0x00000000;
+   \       0x10   0xE3A0'1244        MOV      R1,#+1073741828
+   \       0x14   0xE381'1940        ORR      R1,R1,#0x100000
+   \       0x18   0xE581'0000        STR      R0,[R1, #+0]
+     70          
+     71            /* Reset the Flash data registers */
+     72            FLASH->DR0 = 0xFFFFFFFF;
+   \       0x1C   0xE3E0'1000        MVN      R1,#+0
+   \       0x20   0xE3A0'2284        MOV      R2,#+1073741832
+   \       0x24   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x28   0xE582'1000        STR      R1,[R2, #+0]
+     73            FLASH->DR1 = 0xFFFFFFFF;
+   \       0x2C   0xE3A0'22C4        MOV      R2,#+1073741836
+   \       0x30   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x34   0xE582'1000        STR      R1,[R2, #+0]
+     74          
+     75            /* Reset the Flash address register */
+     76            FLASH->AR = 0x00000000;
+   \       0x38   0xE3A0'1141        MOV      R1,#+1073741840
+   \       0x3C   0xE381'1940        ORR      R1,R1,#0x100000
+   \       0x40   0xE581'0000        STR      R0,[R1, #+0]
+     77          
+     78            /* Reset the Flash error register */
+     79            FLASH->ER  = 0x00000000;
+   \       0x44   0xE3A0'1151        MOV      R1,#+1073741844
+   \       0x48   0xE381'1940        ORR      R1,R1,#0x100000
+   \       0x4C   0xE581'0000        STR      R0,[R1, #+0]
+     80          }
+   \       0x50   0xE12F'FF1E        BX       LR               ;; return
+     81          
+     82          /*******************************************************************************
+     83          * Function Name  : FLASH_WriteWord
+     84          * Description    : Writes a Word to a Flash address destination.
+     85          * Input          : - FLASH_Address: the Address of the destination.
+     86          *                  - FLASH_Data: the data to be programmed.
+     87          * Output         : None
+     88          * Return         : None
+     89          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     90          void FLASH_WriteWord(u32 FLASH_Address, u32 FLASH_Data)
+     91          {
+     92            /* Set the word programming bit */
+     93            FLASH->CR0 |= FLASH_WPG_MASK;
+   \                     FLASH_WriteWord:
+   \        0x0   0xE3A0'2440        MOV      R2,#+1073741824
+   \        0x4   0xE382'2940        ORR      R2,R2,#0x100000
+   \        0x8   0xE592'3000        LDR      R3,[R2, #+0]
+   \        0xC   0xE393'3580        ORRS     R3,R3,#0x20000000
+   \       0x10   0xE582'3000        STR      R3,[R2, #+0]
+     94            /* Load the destination address */
+     95            FLASH->AR   = FLASH_Address;
+   \       0x14   0xE3A0'3141        MOV      R3,#+1073741840
+   \       0x18   0xE383'3940        ORR      R3,R3,#0x100000
+   \       0x1C   0xE583'0000        STR      R0,[R3, #+0]
+     96            /* Load DATA to be programmed */
+     97            FLASH->DR0  = FLASH_Data;
+   \       0x20   0xE3A0'0284        MOV      R0,#+1073741832
+   \       0x24   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0x28   0xE580'1000        STR      R1,[R0, #+0]
+     98            /* Start the operation */
+     99            FLASH->CR0 |= FLASH_WMS_MASK;
+   \       0x2C   0xE592'0000        LDR      R0,[R2, #+0]
+   \       0x30   0xE390'0480        ORRS     R0,R0,#0x80000000
+   \       0x34   0xE582'0000        STR      R0,[R2, #+0]
+    100          }
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    101          
+    102          /*******************************************************************************
+    103          * Function Name  : FLASH_WriteDoubleWord
+    104          * Description    : Writes Double Word to the Flash.
+    105          * Input          : - FLASH_Address: the destination address.
+    106          *                  - FLASH_Data_1: the first word to be programmed.
+    107          *                  - FLASH_Data_2: the second word to be programmed.
+    108          * Output         : None
+    109          * Return         : None
+    110          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    111          void FLASH_WriteDoubleWord(u32 FLASH_Address, u32 FLASH_Data_1, u32 FLASH_Data_2)
+    112          {
+    113            /* Set the double word programming bit */
+    114            FLASH->CR0 |= FLASH_DWPG_MASK;
+   \                     FLASH_WriteDoubleWord:
+   \        0x0   0xE3A0'3440        MOV      R3,#+1073741824
+   \        0x4   0xE383'3940        ORR      R3,R3,#0x100000
+   \        0x8   0xE593'C000        LDR      R12,[R3, #+0]
+   \        0xC   0xE39C'C540        ORRS     R12,R12,#0x10000000
+   \       0x10   0xE583'C000        STR      R12,[R3, #+0]
+    115            /* Load the destination address */
+    116            FLASH->AR   = FLASH_Address;
+   \       0x14   0xE3A0'C141        MOV      R12,#+1073741840
+   \       0x18   0xE38C'C940        ORR      R12,R12,#0x100000
+   \       0x1C   0xE58C'0000        STR      R0,[R12, #+0]
+    117            /* Load FLASH_Data_1 in the DR0 register */
+    118            FLASH->DR0  = FLASH_Data_1;
+   \       0x20   0xE3A0'0284        MOV      R0,#+1073741832
+   \       0x24   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0x28   0xE580'1000        STR      R1,[R0, #+0]
+    119            /* Load FLASH_Data_2 in the DR1 register */
+    120            FLASH->DR1  = FLASH_Data_2;
+   \       0x2C   0xE3A0'02C4        MOV      R0,#+1073741836
+   \       0x30   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0x34   0xE580'2000        STR      R2,[R0, #+0]
+    121            /* Start the operation */
+    122            FLASH->CR0 |= FLASH_WMS_MASK;
+   \       0x38   0xE593'0000        LDR      R0,[R3, #+0]
+   \       0x3C   0xE390'0480        ORRS     R0,R0,#0x80000000
+   \       0x40   0xE583'0000        STR      R0,[R3, #+0]
+    123          }
+   \       0x44   0xE12F'FF1E        BX       LR               ;; return
+    124          
+    125          /*******************************************************************************
+    126          * Function Name  : FLASH_EraseSector
+    127          * Description    : Erases one or multiple sectors on a flash bank.
+    128          * Input          : FLASH_Sectors: the sectors to be erased.
+    129          *                  This parameter can be one of the following values:
+    130          *                      - FLASH_BANK0_SECTOR0: Bank 0 sector 0.
+    131          *                      - FLASH_BANK0_SECTOR1: Bank 0 sector 1.
+    132          *                      - FLASH_BANK0_SECTOR2: Bank 0 sector 2.
+    133          *                      - FLASH_BANK0_SECTOR3: Bank 0 sector 3.
+    134          *                      - FLASH_BANK0_SECTOR4: Bank 0 sector 4.
+    135          *                      - FLASH_BANK0_SECTOR5: Bank 0 sector 5.
+    136          *                      - FLASH_BANK0_SECTOR6: Bank 0 sector 6.
+    137          *                      - FLASH_BANK0_SECTOR7: Bank 0 sector 7.
+    138          *                      - FLASH_BANK0_MODULE:  Bank 0 module.
+    139          *                      - FLASH_BANK1_SECTOR0: Bank 1 sector 0. (N.A for STR73x)
+    140          *                      - FLASH_BANK1_SECTOR1: Bank 1 sector 1. (N.A for STR73x)
+    141          *                      - FLASH_BANK1_MODULE:  Bank 1 module.   (N.A for STR73x)
+    142          * Output         : None
+    143          * Return         : None
+    144          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    145          void FLASH_EraseSector(u32 FLASH_Sectors)
+    146          {
+    147            /* Set the sector erase bit */
+    148            FLASH->CR0 |= FLASH_SER_MASK;
+   \                     FLASH_EraseSector:
+   \        0x0   0xE3A0'1440        MOV      R1,#+1073741824
+   \        0x4   0xE381'1940        ORR      R1,R1,#0x100000
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0xC   0xE392'2680        ORRS     R2,R2,#0x8000000
+   \       0x10   0xE581'2000        STR      R2,[R1, #+0]
+    149            /* Select the sectors to be erased */
+    150            FLASH->CR1 |= FLASH_Sectors;
+   \       0x14   0xE3A0'2244        MOV      R2,#+1073741828
+   \       0x18   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x1C   0xE592'3000        LDR      R3,[R2, #+0]
+   \       0x20   0xE190'0003        ORRS     R0,R0,R3
+   \       0x24   0xE582'0000        STR      R0,[R2, #+0]
+    151            /* Start the operation */
+    152            FLASH->CR0 |= FLASH_WMS_MASK;
+   \       0x28   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x2C   0xE390'0480        ORRS     R0,R0,#0x80000000
+   \       0x30   0xE581'0000        STR      R0,[R1, #+0]
+    153          }
+   \       0x34   0xE12F'FF1E        BX       LR               ;; return
+    154          
+    155          /*******************************************************************************
+    156          * Function Name  : FLASH_SuspendOperation
+    157          * Description    : Suspends the current operation.
+    158          * Input          : None
+    159          * Output         : None
+    160          * Return         : Flash Control register content.
+    161          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    162          u32 FLASH_SuspendOperation(void)
+    163          {
+   \                     FLASH_SuspendOperation:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    164            u32 FLASH_CONTROL_REGISTER = 0x0;
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+    165            /* Wait until register's unlock */
+    166            while(FLASH->CR0 & 0x10);
+   \                     ??FLASH_SuspendOperation_0:
+   \        0x8   0xE3A0'0440        MOV      R0,#+1073741824
+   \        0xC   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0x10   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x14   0xE311'0010        TST      R1,#0x10
+   \       0x18   0x1AFF'FFFA        BNE      ??FLASH_SuspendOperation_0
+    167            /* Save the control register content */
+    168            FLASH_CONTROL_REGISTER = FLASH->CR0;
+   \       0x1C   0xE590'4000        LDR      R4,[R0, #+0]
+    169            /* Set the suspend Bit */
+    170            FLASH->CR0 |= FLASH_SUSP_MASK;
+   \       0x20   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x24   0xE391'1440        ORRS     R1,R1,#0x40000000
+   \       0x28   0xE580'1000        STR      R1,[R0, #+0]
+    171            /* Wait until the flash controller acknowledges the suspend of the current
+    172               operation */
+    173            FLASH_WaitForLastOperation();
+   \       0x2C   0x....'....        BL       FLASH_WaitForLastOperation
+    174            /* Return the suspended operation */
+    175            return FLASH_CONTROL_REGISTER;
+   \       0x30   0xE1B0'0004        MOVS     R0,R4
+   \       0x34   0xE8BD'4010        POP      {R4,LR}
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    176          }
+    177          /*******************************************************************************
+    178          * Function Name  : FLASH_ResumeOperation
+    179          * Description    : Resumes the suspended operation.
+    180          * Input          : FLASH_LastOperation: the Flash control register content
+    181          *                  returned by the FLASH_SuspendOperation function.
+    182          * Output         : None
+    183          * Return         : None
+    184          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    185          void FLASH_ResumeOperation(u32 FLASH_LastOperation)
+    186          {
+    187            /* Clear the suspend Bit */
+    188            FLASH->CR0 &= ~FLASH_SUSP_MASK;
+   \                     FLASH_ResumeOperation:
+   \        0x0   0xE3A0'1440        MOV      R1,#+1073741824
+   \        0x4   0xE381'1940        ORR      R1,R1,#0x100000
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0xC   0xE3D2'2440        BICS     R2,R2,#0x40000000
+   \       0x10   0xE581'2000        STR      R2,[R1, #+0]
+    189            /* Resume the last operation */
+    190            FLASH->CR0  = FLASH_LastOperation & ~FLASH_WMS_MASK;
+   \       0x14   0xE3D0'0480        BICS     R0,R0,#0x80000000
+   \       0x18   0xE581'0000        STR      R0,[R1, #+0]
+    191            /* Start the operation */
+    192            FLASH->CR0 |= FLASH_WMS_MASK;
+   \       0x1C   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x20   0xE390'0480        ORRS     R0,R0,#0x80000000
+   \       0x24   0xE581'0000        STR      R0,[R1, #+0]
+    193          }
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+    194          
+    195          /*******************************************************************************
+    196          * Function Name  : FLASH_ITConfig
+    197          * Description    : Enables or disables the end of write interrupt.
+    198          * Input          : FLASH_NewState: the new state of end of write interrupt.
+    199          *                  This parameter can be one of the following values:
+    200          *                      - ENABLE:  Enable the end of write interrupt.
+    201          *                      - DISABLE: Disable the end of write interrupt.
+    202          * Output         : None
+    203          * Return         : None
+    204          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    205          void FLASH_ITConfig(FunctionalState FLASH_NewState)
+    206          {
+    207            if(FLASH_NewState == ENABLE)
+   \                     FLASH_ITConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0001        CMP      R0,#+1
+   \        0x8   0x1A00'0005        BNE      ??FLASH_ITConfig_0
+    208            {
+    209              /* Enable the end of write interrupt */
+    210              FLASH->CR0  |= FLASH_INTM_MASK;
+   \        0xC   0xE3A0'0440        MOV      R0,#+1073741824
+   \       0x10   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0x14   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x18   0xE391'1980        ORRS     R1,R1,#0x200000
+   \       0x1C   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x20   0xEA00'0004        B        ??FLASH_ITConfig_1
+    211            }
+    212            else
+    213            {
+    214              /* Disable the end of write interrupt */
+    215              FLASH->CR0  &= ~FLASH_INTM_MASK;
+   \                     ??FLASH_ITConfig_0:
+   \       0x24   0xE3A0'0440        MOV      R0,#+1073741824
+   \       0x28   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0x2C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x30   0xE3D1'1980        BICS     R1,R1,#0x200000
+   \       0x34   0xE580'1000        STR      R1,[R0, #+0]
+    216            }
+    217          }
+   \                     ??FLASH_ITConfig_1:
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    218          
+    219          /*******************************************************************************
+    220          * Function Name  : FLASH_GetITStatus
+    221          * Description    : Checks whether the specified Flash interrupt pending bit
+    222          *                  is set or not
+    223          * Input          : None
+    224          * Output         : None
+    225          * Return         : The new state of the interrupt (SET or RESET)
+    226          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    227          FlagStatus FLASH_GetITStatus(void)
+    228          {
+    229            if((FLASH->CR0 & FLASH_INTP_MASK)!= RESET)
+   \                     FLASH_GetITStatus:
+   \        0x0   0xE3A0'0440        MOV      R0,#+1073741824
+   \        0x4   0xE380'0940        ORR      R0,R0,#0x100000
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE310'0940        TST      R0,#0x100000
+   \       0x10   0x0A00'0001        BEQ      ??FLASH_GetITStatus_0
+    230            {
+    231              return SET;
+   \       0x14   0xE3A0'0001        MOV      R0,#+1
+   \       0x18   0xEA00'0000        B        ??FLASH_GetITStatus_1
+    232            }
+    233            else
+    234            {
+    235              return RESET;
+   \                     ??FLASH_GetITStatus_0:
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??FLASH_GetITStatus_1:
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    236            }
+    237          }
+    238          
+    239          /*******************************************************************************
+    240          * Function Name  : FLASH_ClearITPendingBit
+    241          * Description    : Clears the end of write interrupt pending flag.
+    242          * Input          : None
+    243          * Output         : None
+    244          * Return         : None
+    245          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    246          void FLASH_ClearITPendingBit(void)
+    247          {
+    248            FLASH->CR0 &= ~FLASH_INTP_MASK;
+   \                     FLASH_ClearITPendingBit:
+   \        0x0   0xE3A0'0440        MOV      R0,#+1073741824
+   \        0x4   0xE380'0940        ORR      R0,R0,#0x100000
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE3D1'1940        BICS     R1,R1,#0x100000
+   \       0x10   0xE580'1000        STR      R1,[R0, #+0]
+    249          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    250          
+    251          /*******************************************************************************
+    252          * Function Name  : FLASH_GetFlagStatus
+    253          * Description    : Checks the Flash flags.
+    254          * Input          : None
+    255          * Output         : None
+    256          * Return         : The Flash flag errors.
+    257          *                  The description of the Flash flag errors bits :
+    258          *                      - Bit 0: Write error flag.
+    259          *                      - Bit 1: Erase error flag.
+    260          *                      - Bit 2: Program error flag.
+    261          *                      - Bit 3: 1 over 0 error flag.
+    262          *                      - Bit 6: Sequence error flag.
+    263          *                      - Bit 7: Resume error flag.
+    264          *                      - Bit 8: Write protection error flag.
+    265          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    266          u16 FLASH_GetFlagStatus(void)
+    267          {
+    268            return FLASH->ER;
+   \                     FLASH_GetFlagStatus:
+   \        0x0   0xE3A0'0151        MOV      R0,#+1073741844
+   \        0x4   0xE380'0940        ORR      R0,R0,#0x100000
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x10   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    269          }
+    270          
+    271          /*******************************************************************************
+    272          * Function Name  : FLASH_ClearFlag
+    273          * Description    : Clears the Flash errors flags.
+    274          * Input          : None
+    275          * Output         : None
+    276          * Return         : None
+    277          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    278          void FLASH_ClearFlag(void)
+    279          {
+    280            /* Clear the correspondent flag */
+    281            FLASH->ER = 0x0;
+   \                     FLASH_ClearFlag:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xE3A0'1151        MOV      R1,#+1073741844
+   \        0x8   0xE381'1940        ORR      R1,R1,#0x100000
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    282          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    283          
+    284          /*******************************************************************************
+    285          * Function Name  : FLASH_WaitForLastOperation
+    286          * Description    : Waits for the end of the last operation
+    287          * Input          : None
+    288          * Output         : None
+    289          * Return         : None
+    290          ********************************************************************************
+    291          * Important Note :  THIS FUNCTION SHOULD BE EXECUTED FROM RAM
+    292          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    293          void FLASH_WaitForLastOperation(void)
+    294          {
+    295            /* Wait until the Flash controller acknowledges the end of the last
+    296              operation resetting the BSYAs and LOCK bits in the CR0 register */
+    297            while((FLASH->CR0 & FLASH_FLAG_LOCKBSY) != RESET);
+   \                     FLASH_WaitForLastOperation:
+   \                     ??FLASH_WaitForLastOperation_0:
+   \        0x0   0xE3A0'0440        MOV      R0,#+1073741824
+   \        0x4   0xE380'0940        ORR      R0,R0,#0x100000
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE310'0016        TST      R0,#0x16
+   \       0x10   0x1AFF'FFFA        BNE      ??FLASH_WaitForLastOperation_0
+    298          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    299          
+    300          /*==============================================================================
+    301                                     PROTECTION FUNCTIONS
+    302          ==============================================================================*/
+    303          
+    304          
+    305          /*******************************************************************************
+    306          * Function Name  : FLASH_WriteProtectionCmd
+    307          * Description    : Enables/disables the write protection for the needed sectors.
+    308          * Input          : - FLASH_Sectors: the sectors to be protected or unprotected.
+    309          *                  This parameter can be one of the following values:
+    310          *                      - FLASH_BANK0_SECTOR0: Bank 0 sector 0.
+    311          *                      - FLASH_BANK0_SECTOR1: Bank 0 sector 1.
+    312          *                      - FLASH_BANK0_SECTOR2: Bank 0 sector 2.
+    313          *                      - FLASH_BANK0_SECTOR3: Bank 0 sector 3.
+    314          *                      - FLASH_BANK0_SECTOR4: Bank 0 sector 4.
+    315          *                      - FLASH_BANK0_SECTOR5: Bank 0 sector 5.
+    316          *                      - FLASH_BANK0_SECTOR6: Bank 0 sector 6.
+    317          *                      - FLASH_BANK0_SECTOR7: Bank 0 sector 7.
+    318          *                      - FLASH_BANK0_MODULE:  Bank 0 module.
+    319          *                      - FLASH_BANK1_SECTOR0: Bank 1 sector 0. (N.A for STR73x)
+    320          *                      - FLASH_BANK1_SECTOR1: Bank 1 sector 1. (N.A for STR73x)
+    321          *                      - FLASH_BANK1_MODULE:  Bank 1 module.   (N.A for STR73x)
+    322          *                  - FLASH_NewState: Enable or disable the write protection.
+    323          *                  This parameter can be one of the following values:
+    324          *                      - ENABLE:  Enable the end of write interrupt.
+    325          *                      - DISABLE: Disable the end of write interrupt.
+    326          * Output         : None
+    327          * Return         : None
+    328          ********************************************************************************
+    329          * Important Note :
+    330          *   - The write protection can be disabled only on a temporary way.
+    331          *   - For the STR73x family this function can work only when the STR73x is on
+    332          *     SystemMemory boot mode.
+    333          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    334          void FLASH_WriteProtectionCmd(u32 FLASH_Sectors, FunctionalState FLASH_NewState)
+    335          {
+    336            if (FLASH_NewState == ENABLE)
+   \                     FLASH_WriteProtectionCmd:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'0012        BNE      ??FLASH_WriteProtectionCmd_0
+    337            {
+    338              /* Set the set protection bit */
+    339              FLASH->CR0 |= FLASH_SPR_MASK;
+   \        0xC   0xE3A0'1440        MOV      R1,#+1073741824
+   \       0x10   0xE381'1940        ORR      R1,R1,#0x100000
+   \       0x14   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x18   0xE392'2740        ORRS     R2,R2,#0x1000000
+   \       0x1C   0xE581'2000        STR      R2,[R1, #+0]
+    340              /* Set the write protection register address */
+    341              FLASH->AR  = FLASH_NVWPAR_ADDRESS;
+   \       0x20   0x....'....        LDR      R2,??DataTable6  ;; 0x4010dfb0
+   \       0x24   0xE3A0'3141        MOV      R3,#+1073741840
+   \       0x28   0xE383'3940        ORR      R3,R3,#0x100000
+   \       0x2C   0xE583'2000        STR      R2,[R3, #+0]
+    342              /* Data to be programmed to the protection register */
+    343              FLASH->DR0  = (*(u32*)FLASH_NVWPAR_ADDRESS) & (~FLASH_Sectors);
+   \       0x30   0x....'....        LDR      R2,??DataTable6  ;; 0x4010dfb0
+   \       0x34   0xE592'2000        LDR      R2,[R2, #+0]
+   \       0x38   0xE1D2'0000        BICS     R0,R2,R0
+   \       0x3C   0xE3A0'2284        MOV      R2,#+1073741832
+   \       0x40   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x44   0xE582'0000        STR      R0,[R2, #+0]
+    344              /* Start the sequence */
+    345              FLASH->CR0 |= FLASH_WMS_MASK;
+   \       0x48   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x4C   0xE390'0480        ORRS     R0,R0,#0x80000000
+   \       0x50   0xE581'0000        STR      R0,[R1, #+0]
+   \       0x54   0xEA00'0011        B        ??FLASH_WriteProtectionCmd_1
+    346            }
+    347            else  /* DISABLE */
+    348            {
+    349              /* Set the set protection bit */
+    350              FLASH->CR0 |= FLASH_SPR_MASK;
+   \                     ??FLASH_WriteProtectionCmd_0:
+   \       0x58   0xE3A0'1440        MOV      R1,#+1073741824
+   \       0x5C   0xE381'1940        ORR      R1,R1,#0x100000
+   \       0x60   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x64   0xE392'2740        ORRS     R2,R2,#0x1000000
+   \       0x68   0xE581'2000        STR      R2,[R1, #+0]
+    351              /* Set the write protection register address */
+    352              FLASH->AR  = FLASH_NVWPAR_ADDRESS;
+   \       0x6C   0x....'....        LDR      R2,??DataTable6  ;; 0x4010dfb0
+   \       0x70   0xE3A0'3141        MOV      R3,#+1073741840
+   \       0x74   0xE383'3940        ORR      R3,R3,#0x100000
+   \       0x78   0xE583'2000        STR      R2,[R3, #+0]
+    353              /* Data to be programmed to the protection register */
+    354              FLASH->DR0  = (*(u32*)FLASH_NVWPAR_ADDRESS) | FLASH_Sectors;
+   \       0x7C   0x....'....        LDR      R2,??DataTable6  ;; 0x4010dfb0
+   \       0x80   0xE592'2000        LDR      R2,[R2, #+0]
+   \       0x84   0xE190'0002        ORRS     R0,R0,R2
+   \       0x88   0xE3A0'2284        MOV      R2,#+1073741832
+   \       0x8C   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x90   0xE582'0000        STR      R0,[R2, #+0]
+    355              /* Start the sequence */
+    356              FLASH->CR0 |= FLASH_WMS_MASK;
+   \       0x94   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x98   0xE390'0480        ORRS     R0,R0,#0x80000000
+   \       0x9C   0xE581'0000        STR      R0,[R1, #+0]
+    357            }
+    358          }
+   \                     ??FLASH_WriteProtectionCmd_1:
+   \       0xA0   0xE12F'FF1E        BX       LR               ;; return
+    359          
+    360          /*******************************************************************************
+    361          * Function Name  : FLASH_GetWriteProtectionStatus
+    362          * Description    : Get the write protection status for the needed sectors. Only
+    363          *                  the non volatile part is returned.
+    364          * Input          : - FLASH_Sectors: the needed sectors.
+    365          *                  This parameter can be one of the following values:
+    366          *                      - FLASH_BANK0_SECTOR0: Bank 0 sector 0.
+    367          *                      - FLASH_BANK0_SECTOR1: Bank 0 sector 1.
+    368          *                      - FLASH_BANK0_SECTOR2: Bank 0 sector 2.
+    369          *                      - FLASH_BANK0_SECTOR3: Bank 0 sector 3.
+    370          *                      - FLASH_BANK0_SECTOR4: Bank 0 sector 4.
+    371          *                      - FLASH_BANK0_SECTOR5: Bank 0 sector 5.
+    372          *                      - FLASH_BANK0_SECTOR6: Bank 0 sector 6.
+    373          *                      - FLASH_BANK0_SECTOR7: Bank 0 sector 7.
+    374          *                      - FLASH_BANK0_MODULE:  Bank 0 module.
+    375          *                      - FLASH_BANK1_SECTOR0: Bank 1 sector 0. (N.A for STR73x)
+    376          *                      - FLASH_BANK1_SECTOR1: Bank 1 sector 1. (N.A for STR73x)
+    377          *                      - FLASH_BANK1_MODULE:  Bank 1 module.   (N.A for STR73x)
+    378          *                  - FLASH_NewState: Enable or disable the write protection.
+    379          *                  This parameter can be one of the following values:
+    380          *                      - ENABLE:  Enable the end of write interrupt.
+    381          *                      - DISABLE: Disable the end of write interrupt.
+    382          * Output         : None
+    383          * Return         : The status of the write protection (SET or RESET)
+    384          ********************************************************************************
+    385          * Important Note :
+    386          *   - For the STR73x family this function can work only when the STR73x is on
+    387          *     SystemMemory boot mode.
+    388          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    389          FlagStatus FLASH_GetWriteProtectionStatus(u32 FLASH_Sectors)
+    390          {
+    391            if ((*(u32*)FLASH_NVWPAR_ADDRESS) & FLASH_Sectors)
+   \                     FLASH_GetWriteProtectionStatus:
+   \        0x0   0x....'....        LDR      R1,??DataTable6  ;; 0x4010dfb0
+   \        0x4   0xE591'1000        LDR      R1,[R1, #+0]
+   \        0x8   0xE110'0001        TST      R0,R1
+   \        0xC   0x0A00'0001        BEQ      ??FLASH_GetWriteProtectionStatus_0
+    392            {
+    393              return RESET;
+   \       0x10   0xE3A0'0000        MOV      R0,#+0
+   \       0x14   0xEA00'0000        B        ??FLASH_GetWriteProtectionStatus_1
+    394            }
+    395            else
+    396            {
+    397              return SET;
+   \                     ??FLASH_GetWriteProtectionStatus_0:
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \                     ??FLASH_GetWriteProtectionStatus_1:
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    398            }
+    399          }
+    400          
+    401          /*******************************************************************************
+    402          * Function Name  : FLASH_GetPENProtectionLevel
+    403          * Description    : Gets the protection enable level.
+    404          * Input          : None
+    405          * Output         : None
+    406          * Return         : The number of time the debug protection was enabled.
+    407          *                  It's a value from 1 to 16.
+    408          ********************************************************************************
+    409          * Important Note :
+    410          *   - For the STR73x family this function can work only when the STR73x is on
+    411          *     SystemMemory boot mode.
+    412          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    413          u16 FLASH_GetPENProtectionLevel(void)
+    414          {
+    415            u16 TmpBitIndex = 0;
+   \                     FLASH_GetPENProtectionLevel:
+   \        0x0   0xE3A0'1000        MOV      R1,#+0
+   \        0x4   0xE1B0'0001        MOVS     R0,R1
+    416            u16 ProtectionRegs = 0;
+    417          
+    418            ProtectionRegs = ~((*(u32 *)FLASH_NVAPR1_ADDRESS)>>16);
+   \        0x8   0x....'....        LDR      R1,??DataTable6_1  ;; 0x4010dfbc
+   \        0xC   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x10   0xE1F0'1821        MVNS     R1,R1, LSR #+16
+   \       0x14   0xEA00'0003        B        ??FLASH_GetPENProtectionLevel_0
+    419          
+    420            while (((ProtectionRegs) != 0) && (TmpBitIndex < 16))
+    421            {
+    422              ProtectionRegs  = ProtectionRegs >>  1 ;
+   \                     ??FLASH_GetPENProtectionLevel_1:
+   \       0x18   0xE1A0'1801        LSL      R1,R1,#+16
+   \       0x1C   0xE1B0'1821        LSRS     R1,R1,#+16
+   \       0x20   0xE1B0'10A1        LSRS     R1,R1,#+1
+    423              TmpBitIndex++;
+   \       0x24   0xE290'0001        ADDS     R0,R0,#+1
+    424            }
+   \                     ??FLASH_GetPENProtectionLevel_0:
+   \       0x28   0xE1B0'2001        MOVS     R2,R1
+   \       0x2C   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x30   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x34   0xE352'0000        CMP      R2,#+0
+   \       0x38   0x0A00'0004        BEQ      ??FLASH_GetPENProtectionLevel_2
+   \       0x3C   0xE1B0'2000        MOVS     R2,R0
+   \       0x40   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x44   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x48   0xE352'0010        CMP      R2,#+16
+   \       0x4C   0xBAFF'FFF1        BLT      ??FLASH_GetPENProtectionLevel_1
+    425          
+    426            /* Return the number of times the FLASH is Debug protected */
+    427            return TmpBitIndex;
+   \                     ??FLASH_GetPENProtectionLevel_2:
+   \       0x50   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x54   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x58   0xE12F'FF1E        BX       LR               ;; return
+    428          }
+    429          
+    430          /*******************************************************************************
+    431          * Function Name  : FLASH_GetPDSProtectionLevel
+    432          * Description    : Gets the protection disable level.
+    433          * Input          : None
+    434          * Output         : None
+    435          * Return         : The number of time the debug protection was disabled.
+    436          *                  It's a value from 1 to 16.
+    437          ********************************************************************************
+    438          * Important Note :
+    439          *   - For the STR73x family this function can work only when the STR73x is on
+    440          *     SystemMemory boot mode.
+    441          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    442          u16 FLASH_GetPDSProtectionLevel(void)
+    443          {
+    444            u16 TmpBitIndex = 0;
+   \                     FLASH_GetPDSProtectionLevel:
+   \        0x0   0xE3A0'1000        MOV      R1,#+0
+   \        0x4   0xE1B0'0001        MOVS     R0,R1
+    445            u16 ProtectionRegs = 0;
+    446          
+    447            ProtectionRegs = ~(*(u32 *)FLASH_NVAPR1_ADDRESS);
+   \        0x8   0x....'....        LDR      R1,??DataTable6_1  ;; 0x4010dfbc
+   \        0xC   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x10   0xE1F0'1001        MVNS     R1,R1
+   \       0x14   0xEA00'0003        B        ??FLASH_GetPDSProtectionLevel_0
+    448          
+    449            while (((ProtectionRegs) != 0) && (TmpBitIndex < 16))
+    450            {
+    451              ProtectionRegs  = ProtectionRegs >>  1 ;
+   \                     ??FLASH_GetPDSProtectionLevel_1:
+   \       0x18   0xE1A0'1801        LSL      R1,R1,#+16
+   \       0x1C   0xE1B0'1821        LSRS     R1,R1,#+16
+   \       0x20   0xE1B0'10A1        LSRS     R1,R1,#+1
+    452              TmpBitIndex++;
+   \       0x24   0xE290'0001        ADDS     R0,R0,#+1
+    453            }
+   \                     ??FLASH_GetPDSProtectionLevel_0:
+   \       0x28   0xE1B0'2001        MOVS     R2,R1
+   \       0x2C   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x30   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x34   0xE352'0000        CMP      R2,#+0
+   \       0x38   0x0A00'0004        BEQ      ??FLASH_GetPDSProtectionLevel_2
+   \       0x3C   0xE1B0'2000        MOVS     R2,R0
+   \       0x40   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x44   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x48   0xE352'0010        CMP      R2,#+16
+   \       0x4C   0xBAFF'FFF1        BLT      ??FLASH_GetPDSProtectionLevel_1
+    454          
+    455            /* Return the number of times the FLASH is Debug protected */
+    456            return TmpBitIndex;
+   \                     ??FLASH_GetPDSProtectionLevel_2:
+   \       0x50   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x54   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x58   0xE12F'FF1E        BX       LR               ;; return
+    457          }
+    458          
+    459          /*******************************************************************************
+    460          * Function Name  : FLASH_PermanentProtectionCmd
+    461          * Description    : Enable or disable the Debug/Readout protection in a permanent
+    462          *                  way.
+    463          * Input          : - FLASH_NewState: Enable or disable the Debug/Readout
+    464          *                  protection.
+    465          *                  This parameter can be one of the following values:
+    466          *                      - ENABLE:  Enable the Debug/Readout protection.
+    467          *                      - DISABLE: Disable the Debug/Readout protection.
+    468          * Output         : None
+    469          * Return         : None
+    470          ********************************************************************************
+    471          * Important Note :
+    472          *   - For the STR73x family this function can work only when the STR73x is on
+    473          *     SystemMemory boot mode.
+    474          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    475          void FLASH_PermanentProtectionCmd(FunctionalState FLASH_NewState)
+    476          {
+   \                     FLASH_PermanentProtectionCmd:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'5000        MOVS     R5,R0
+    477            u16 PEN_ProtectionLevel = FLASH_GetPENProtectionLevel();
+   \        0x8   0x....'....        BL       FLASH_GetPENProtectionLevel
+   \        0xC   0xE1B0'4000        MOVS     R4,R0
+    478            u16 PDS_ProtectionLevel = FLASH_GetPDSProtectionLevel();
+   \       0x10   0x....'....        BL       FLASH_GetPDSProtectionLevel
+    479          
+    480            if (FLASH_NewState == ENABLE)
+   \       0x14   0xE215'50FF        ANDS     R5,R5,#0xFF      ;; Zero extend
+   \       0x18   0xE355'0001        CMP      R5,#+1
+   \       0x1C   0x1A00'002A        BNE      ??FLASH_PermanentProtectionCmd_0
+    481            {
+    482              /*  If it is the first protection, reset the DEBUG bit */
+    483              if(!PDS_ProtectionLevel)
+   \       0x20   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x24   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x1A00'0010        BNE      ??FLASH_PermanentProtectionCmd_1
+    484              {
+    485                /* Set the Set Protection bit */
+    486                FLASH->CR0 |= FLASH_SPR_MASK;
+   \       0x30   0xE3A0'0440        MOV      R0,#+1073741824
+   \       0x34   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0x38   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x3C   0xE391'1740        ORRS     R1,R1,#0x1000000
+   \       0x40   0xE580'1000        STR      R1,[R0, #+0]
+    487                /* Set the Debug Protection register address */
+    488                FLASH->AR  = FLASH_NVAPR0_ADDRESS;
+   \       0x44   0x....'....        LDR      R1,??DataTable6_2  ;; 0x4010dfb8
+   \       0x48   0xE3A0'2141        MOV      R2,#+1073741840
+   \       0x4C   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x50   0xE582'1000        STR      R1,[R2, #+0]
+    489                /* Data to be programmed to the protection register */
+    490                FLASH->DR0 = ~FLASH_PROTECTION_MASK;
+   \       0x54   0xE3E0'1002        MVN      R1,#+2
+   \       0x58   0xE3A0'2284        MOV      R2,#+1073741832
+   \       0x5C   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x60   0xE582'1000        STR      R1,[R2, #+0]
+    491                /* Start the operation */
+    492                FLASH->CR0 |= FLASH_WMS_MASK;
+   \       0x64   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x68   0xE391'1480        ORRS     R1,R1,#0x80000000
+   \       0x6C   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x70   0xEA00'0029        B        ??FLASH_PermanentProtectionCmd_2
+    493              }
+    494              else /* The protection now can be enabled using the PEN bits */
+    495              {
+    496                /* Set the Set Protection bit */
+    497                FLASH->CR0 |= FLASH_SPR_MASK;
+   \                     ??FLASH_PermanentProtectionCmd_1:
+   \       0x74   0xE3A0'0440        MOV      R0,#+1073741824
+   \       0x78   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0x7C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x80   0xE391'1740        ORRS     R1,R1,#0x1000000
+   \       0x84   0xE580'1000        STR      R1,[R0, #+0]
+    498                /* Set the Debug Protection register address */
+    499                FLASH->AR  = FLASH_NVAPR1_ADDRESS;
+   \       0x88   0x....'....        LDR      R1,??DataTable6_1  ;; 0x4010dfbc
+   \       0x8C   0xE3A0'2141        MOV      R2,#+1073741840
+   \       0x90   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x94   0xE582'1000        STR      R1,[R2, #+0]
+    500                /* Data to be programmed to the protection register */
+    501                FLASH->DR0 =((~(1 << (16 + PEN_ProtectionLevel))) & (*(u32*)FLASH_NVAPR1_ADDRESS));
+   \       0x98   0xE3A0'1001        MOV      R1,#+1
+   \       0x9C   0xE294'2010        ADDS     R2,R4,#+16
+   \       0xA0   0xE1F0'1211        MVNS     R1,R1, LSL R2
+   \       0xA4   0x....'....        LDR      R2,??DataTable6_1  ;; 0x4010dfbc
+   \       0xA8   0xE592'2000        LDR      R2,[R2, #+0]
+   \       0xAC   0xE012'1001        ANDS     R1,R2,R1
+   \       0xB0   0xE3A0'2284        MOV      R2,#+1073741832
+   \       0xB4   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0xB8   0xE582'1000        STR      R1,[R2, #+0]
+    502                /* Start the operation */
+    503                FLASH->CR0 |= FLASH_WMS_MASK;
+   \       0xBC   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xC0   0xE391'1480        ORRS     R1,R1,#0x80000000
+   \       0xC4   0xE580'1000        STR      R1,[R0, #+0]
+   \       0xC8   0xEA00'0013        B        ??FLASH_PermanentProtectionCmd_2
+    504              }
+    505            }
+    506            else /* Disable the Debug/ReadOut protection */
+    507            {
+    508              /* Set the Set Protection bit */
+    509              FLASH->CR0 |= FLASH_SPR_MASK;
+   \                     ??FLASH_PermanentProtectionCmd_0:
+   \       0xCC   0xE3A0'1440        MOV      R1,#+1073741824
+   \       0xD0   0xE381'1940        ORR      R1,R1,#0x100000
+   \       0xD4   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0xD8   0xE392'2740        ORRS     R2,R2,#0x1000000
+   \       0xDC   0xE581'2000        STR      R2,[R1, #+0]
+    510              /* Set the Debug Protection register address */
+    511              FLASH->AR  = FLASH_NVAPR1_ADDRESS;
+   \       0xE0   0x....'....        LDR      R2,??DataTable6_1  ;; 0x4010dfbc
+   \       0xE4   0xE3A0'3141        MOV      R3,#+1073741840
+   \       0xE8   0xE383'3940        ORR      R3,R3,#0x100000
+   \       0xEC   0xE583'2000        STR      R2,[R3, #+0]
+    512              /* Data to be programmed to the protection register */
+    513              FLASH->DR0 =(~(1<<(PDS_ProtectionLevel)) & (*(u32*)FLASH_NVAPR1_ADDRESS));
+   \       0xF0   0xE3A0'2001        MOV      R2,#+1
+   \       0xF4   0xE1F0'0012        MVNS     R0,R2, LSL R0
+   \       0xF8   0x....'....        LDR      R2,??DataTable6_1  ;; 0x4010dfbc
+   \       0xFC   0xE592'2000        LDR      R2,[R2, #+0]
+   \      0x100   0xE012'0000        ANDS     R0,R2,R0
+   \      0x104   0xE3A0'2284        MOV      R2,#+1073741832
+   \      0x108   0xE382'2940        ORR      R2,R2,#0x100000
+   \      0x10C   0xE582'0000        STR      R0,[R2, #+0]
+    514              /* Start the operation */
+    515              FLASH->CR0 |= FLASH_WMS_MASK;
+   \      0x110   0xE591'0000        LDR      R0,[R1, #+0]
+   \      0x114   0xE390'0480        ORRS     R0,R0,#0x80000000
+   \      0x118   0xE581'0000        STR      R0,[R1, #+0]
+    516            }
+    517          }
+   \                     ??FLASH_PermanentProtectionCmd_2:
+   \      0x11C   0xE8BD'4031        POP      {R0,R4,R5,LR}
+   \      0x120   0xE12F'FF1E        BX       LR               ;; return
+    518          
+    519          /*******************************************************************************
+    520          * Function Name  : FLASH_TemporaryProtectionDisable
+    521          * Description    : Disable the Debug/Readout protection in a temporary way.
+    522          * Input          : None
+    523          * Output         : None
+    524          * Return         : None
+    525          ********************************************************************************
+    526          * Important Note :
+    527          *   - For the STR73x family this function can work only when the STR73x is on
+    528          *     SystemMemory boot mode.
+    529          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    530          void FLASH_TemporaryProtectionDisable(void)
+    531          {
+    532            /* Set the Set Protection bit */
+    533            FLASH->CR0 |= FLASH_SPR_MASK;
+   \                     FLASH_TemporaryProtectionDisable:
+   \        0x0   0xE3A0'0440        MOV      R0,#+1073741824
+   \        0x4   0xE380'0940        ORR      R0,R0,#0x100000
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE391'1740        ORRS     R1,R1,#0x1000000
+   \       0x10   0xE580'1000        STR      R1,[R0, #+0]
+    534            /* Set the Protection register address */
+    535            FLASH->AR  = FLASH_NVAPR0_ADDRESS;
+   \       0x14   0x....'....        LDR      R1,??DataTable6_2  ;; 0x4010dfb8
+   \       0x18   0xE3A0'2141        MOV      R2,#+1073741840
+   \       0x1C   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x20   0xE582'1000        STR      R1,[R2, #+0]
+    536            /* Data to be programmed to the protection register */
+    537            FLASH->DR0 = (*(u32*)FLASH_NVAPR0_ADDRESS) | FLASH_PROTECTION_MASK;
+   \       0x24   0x....'....        LDR      R1,??DataTable6_2  ;; 0x4010dfb8
+   \       0x28   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x2C   0xE391'1002        ORRS     R1,R1,#0x2
+   \       0x30   0xE3A0'2284        MOV      R2,#+1073741832
+   \       0x34   0xE382'2940        ORR      R2,R2,#0x100000
+   \       0x38   0xE582'1000        STR      R1,[R2, #+0]
+    538            /* Start the operation */
+    539            FLASH->CR0 |= FLASH_WMS_MASK;
+   \       0x3C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x40   0xE391'1480        ORRS     R1,R1,#0x80000000
+   \       0x44   0xE580'1000        STR      R1,[R0, #+0]
+    540          }
+   \       0x48   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6:
+   \        0x0   0x4010'DFB0        DC32     0x4010dfb0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \        0x0   0x4010'DFBC        DC32     0x4010dfbc
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_2:
+   \        0x0   0x4010'DFB8        DC32     0x4010dfb8
+    541          /*******************(C)COPYRIGHT 2006 STMicroelectronics *****END OF FILE******/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   FLASH_ClearFlag
+       0   FLASH_ClearITPendingBit
+       0   FLASH_DeInit
+       0   FLASH_EraseSector
+       0   FLASH_GetFlagStatus
+       0   FLASH_GetITStatus
+       0   FLASH_GetPDSProtectionLevel
+       0   FLASH_GetPENProtectionLevel
+       0   FLASH_GetWriteProtectionStatus
+       0   FLASH_ITConfig
+      16   FLASH_PermanentProtectionCmd
+        16   -> FLASH_GetPDSProtectionLevel
+        16   -> FLASH_GetPENProtectionLevel
+       0   FLASH_ResumeOperation
+       8   FLASH_SuspendOperation
+         8   -> FLASH_WaitForLastOperation
+       0   FLASH_TemporaryProtectionDisable
+       0   FLASH_WaitForLastOperation
+       0   FLASH_WriteDoubleWord
+       0   FLASH_WriteProtectionCmd
+       0   FLASH_WriteWord
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+      20  FLASH_ClearFlag
+      24  FLASH_ClearITPendingBit
+      84  FLASH_DeInit
+      56  FLASH_EraseSector
+      24  FLASH_GetFlagStatus
+      36  FLASH_GetITStatus
+      92  FLASH_GetPDSProtectionLevel
+      92  FLASH_GetPENProtectionLevel
+      32  FLASH_GetWriteProtectionStatus
+      60  FLASH_ITConfig
+     292  FLASH_PermanentProtectionCmd
+      44  FLASH_ResumeOperation
+      60  FLASH_SuspendOperation
+      76  FLASH_TemporaryProtectionDisable
+      24  FLASH_WaitForLastOperation
+      72  FLASH_WriteDoubleWord
+     164  FLASH_WriteProtectionCmd
+      60  FLASH_WriteWord
+
+ 
+ 1 324 bytes in section .text
+ 
+ 1 324 bytes of CODE memory
+
+Errors: none
+Warnings: none

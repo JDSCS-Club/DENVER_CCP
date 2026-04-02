@@ -1,0 +1,17 @@
+; Echelon Dependency File - do not edit.
+; C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.nkdep
+; Created Tuesday, May 01, 2012, 08:50:07
+
+[Global]
+Provider=Echelon NodeBuilder Make Facility
+Version=1
+Inputs=0
+Outputs=0
+Switches=0
+Parameters=2
+
+[Switches]
+
+[Parameters]
+BuildtimeH=30222199
+BuildtimeL=1751796096

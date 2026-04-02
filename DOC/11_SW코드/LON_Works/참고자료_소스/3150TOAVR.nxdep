@@ -1,0 +1,139 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.nxdep
+; Created Monday, January 22, 2007, 11:25:13
+
+[Global]
+Provider=Echelon NEURON CHIP (r) Exporter
+Version=1
+Inputs=8
+Outputs=5
+Switches=19
+Parameters=0
+
+[Input_1]
+Basename=3150TOAVR.NLDEP
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.NLDEP
+Type=0
+Size=2656
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8bd3a6b8
+
+[Input_2]
+Basename=neuron.xml
+Fullname=C:\LonWorks\types\neuron.xml
+Type=0
+Size=24932
+TimestampHigh=0x1c533c1
+TimestampLow=0xa29f9800
+
+[Input_3]
+Basename=stdxcvr.xml
+Fullname=C:\LonWorks\types\stdxcvr.xml
+Type=0
+Size=39657
+TimestampHigh=0x1c533c1
+TimestampLow=0xa29f9800
+
+[Input_4]
+Basename=3150TOAVR.NXE
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.NXE
+Type=0
+Size=2795
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8bd3a6b8
+
+[Input_5]
+Basename=3150TOAVR.BF2
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.BF2
+Type=0
+Size=199
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8bcc7faa
+
+[Input_6]
+Basename=3150TOAVR.BIF
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.BIF
+Type=0
+Size=823
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8bcc7faa
+
+[Input_7]
+Basename=SYS3150A.sym
+Fullname=C:\LonWorks\Images\Ver14\SYS3150A.sym
+Type=0
+Size=9722
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Input_8]
+Basename=SYS3150A.NX
+Fullname=C:\LonWorks\Images\Ver14\SYS3150A.NX
+Type=0
+Size=39437
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Output_1]
+Basename=3150TOAVR.NXE
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\3150TOAVR.NXE
+Type=0
+Size=2795
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8beb7e3c
+
+[Output_2]
+Basename=3150TOAVR.XIF
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\3150TOAVR.XIF
+Type=0
+Size=1012
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8beb7e3c
+
+[Output_3]
+Basename=3150TOAVR.XFB
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\3150TOAVR.XFB
+Type=0
+Size=602
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8beb7e3c
+
+[Output_4]
+Basename=3150TOAVR.APB
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\3150TOAVR.APB
+Type=0
+Size=1369
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8bede096
+
+[Output_5]
+Basename=3150TOAVR.NEI
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\3150TOAVR.NEI
+Type=0
+Size=137997
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8bf042f0
+
+[Switches]
+29=1024
+30=17555
+31=1
+24=1
+23=0
+22=5
+21=9
+1=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM
+2=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output
+3=3150TOAVR
+33=1
+34=1
+39=1
+37=1
+35=1
+36=1
+38=0
+55=1
+17=9F:FF:FF:48:32:04:11:01
+
+[Parameters]
+

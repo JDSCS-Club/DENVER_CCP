@@ -1,0 +1,120 @@
+; Echelon Dependency File - do not edit.
+; C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.nldep
+; Created Tuesday, May 01, 2012, 08:50:07
+
+[Global]
+Provider=Neuron Linker
+Version=1
+Inputs=4
+Outputs=3
+Switches=15
+Parameters=34
+
+[Input_1]
+Basename=SYS3150.sym
+Fullname=C:\Program Files\LonWorks\Images\Ver16\SYS3150.sym
+Type=3
+Size=9909
+TimestampHigh=0x1ca566e
+TimestampLow=0xa817be00
+
+[Input_2]
+Basename=LIC.no
+Fullname=C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.no
+Type=0
+Size=122832
+TimestampHigh=0x1cd272b
+TimestampLow=0xf86ec584
+
+[Input_3]
+Basename=GEN.LIB
+Fullname=C:\PROGRAM FILES\LONWORKS\IMAGES\GEN.LIB
+Type=3
+Size=81371
+TimestampHigh=0x1cbd782
+TimestampLow=0x5c08ec00
+
+[Input_4]
+Basename=EXTARITH.LIB
+Fullname=C:\PROGRAM FILES\LONWORKS\IMAGES\EXTARITH.LIB
+Type=3
+Size=56903
+TimestampHigh=0x1ca566e
+TimestampLow=0xa817be00
+
+[Output_1]
+Basename=LIC.dbt
+Fullname=C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.dbt
+Type=0
+Size=78079
+TimestampHigh=0x1cd272b
+TimestampLow=0xf888f4a4
+
+[Output_2]
+Basename=LIC.nxr
+Fullname=C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.nxr
+Type=0
+Size=13
+TimestampHigh=0x1cd272b
+TimestampLow=0xf888f4a4
+
+[Output_3]
+Basename=LIC.nxe
+Fullname=C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.nxe
+Type=0
+Size=29983
+TimestampHigh=0x1cd272b
+TimestampLow=0xf888f4a4
+
+[Switches]
+32=FT 3150 512
+0=1
+11=1
+27=C:\Program Files\LonWorks\Images\CodeWizard.lib
+15=C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.dbg
+21=BF
+20=80
+19=7F
+18=00
+12=128
+30=C:\Program Files\LonWorks\Images\Ver16\SYS3150.sym
+27=C:\Program Files\LonWorks\Images\GEN.LIB
+27=C:\Program Files\LonWorks\Images\EXTARITH.LIB
+27=C:\Program Files\LonWorks\Images\PSG.LIB
+35=C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.no
+
+[Parameters]
+Domains=2
+AddressTable=15
+NeuronModel=0
+NeuronKey=10
+RamStart=232
+RamEnd=239
+EEpromStart=240
+EEpromEnd=241
+ImageVersion=16
+RcvTxSize=13
+TxCtlBlkSize=28
+OnchipRamSpace=1292
+OffchipRamSpace=15107
+DomainSize=15
+AddressSize=5
+NvCnfgSize=3
+OnchipEEpromCnfg=257
+AliasSize=4
+RomEnd=0
+OCEEPromStart=0
+OCEEPromEnd=127
+OCRamStart=128
+OCRamEnd=191
+EEWriteTime=10
+FlashEeprom=1
+SectorSize=128
+CapabilityProxy=0
+CapabilityPhaseDetect=0
+CustomMac=0
+PrtCount=0
+Isr=0
+uartClock=0
+dbgfeat=2
+djrnrst=0

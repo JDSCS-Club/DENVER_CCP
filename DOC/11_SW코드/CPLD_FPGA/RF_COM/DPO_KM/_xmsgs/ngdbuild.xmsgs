@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;reset&quot;  LOC = &quot;P143&quot;  ;&gt; [dpo.ucf(51)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="1012" delta="old" >The constraint <arg fmt="%s" index="1">&lt;NET &quot;reset&quot;  LOC = &quot;P143&quot;  ;&gt; [dpo.ucf(51)]</arg> is overridden on the design object <arg fmt="%s" index="2">cancel_sw_in</arg> by the constraint <arg fmt="%s" index="3">&lt;NET &quot;cancel_sw_in&quot;  LOC = &quot;P53&quot;  ;&gt; [dpo.ucf(26)]</arg>.
+</msg>
+
+</messages>
+

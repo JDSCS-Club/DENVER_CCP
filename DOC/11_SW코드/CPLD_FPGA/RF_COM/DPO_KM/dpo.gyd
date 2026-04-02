@@ -1,0 +1,95 @@
+Pin Freeze File:  version M.70d
+
+2C256144 XC2C256-7-TQ144
+both_sw_in S:PIN45
+cancel_sw_in S:PIN53
+clk S:PIN30
+ext_sw_in S:PIN49
+hs_sw S:PIN88
+ic_sw_in S:PIN51
+int_sw_in S:PIN50
+occ_sw_in S:PIN54
+pei_sw_in S:PIN52
+both_led S:PIN56
+cancel_led S:PIN61
+dtmf_cs S:PIN23
+dtmf_inout<0> S:PIN21
+dtmf_inout<1> S:PIN19
+dtmf_inout<2> S:PIN17
+dtmf_inout<3> S:PIN16
+dtmf_rs0 S:PIN22
+dtmf_rw S:PIN24
+dual_mute_sp S:PIN113
+ext_led S:PIN57
+ic_led S:PIN59
+ic_mute_sp S:PIN112
+int_led S:PIN58
+live_sw S:PIN95
+mic_sw S:PIN94
+mute_sw S:PIN97
+occ_led S:PIN64
+pa_sw1 S:PIN98
+pei_led S:PIN60
+pei_mute_sp S:PIN111
+rxs<0> S:PIN140
+rxs<1> S:PIN139
+rxs<2> S:PIN138
+rxs<3> S:PIN136
+txs_mic<0> S:PIN134
+txs_mic<1> S:PIN133
+txs_mic<2> S:PIN132
+txs_mic<3> S:PIN131
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 dtmf_inout_1__or0000/dtmf_inout_1__or0000_D.UIM dtmf_inout_0__or0000/dtmf_inout_0__or0000_D.UIM N_PZ_281 current_st<2>
+		 dtmf_inout_3__or0000/dtmf_inout_3__or0000_D.UIM rxs<0> dtmf_inout_2__or0000/dtmf_inout_2__or0000_D.UIM int_mode
+		 N_PZ_427 N_PZ_426 ext_mode rxs<1>
+		 rxs<2> current_st<0> both_mode rxs_0__and0000/rxs_0__and0000_D.UIM
+		
+PARTITION FB2_1 cnt<2> cnt<6> cnt<4> cnt<5>
+		 cnt<12> cnt<3> cnt<15> cnt<13>
+		 cnt<11> cnt<0> cnt1ms cnt<14>
+		 cnt<9> cnt<8> cnt<7> cnt<10>
+		
+PARTITION FB3_1 rxs<3> delay_mic1 txs_mic<0> rxs_2__or0000/rxs_2__or0000_D.UIM
+		 txs_mic<1> txs_mic_0__or0000/txs_mic_0__or0000_D.UIM pei_mode_or0001/pei_mode_or0001_D.UIM txs_mic_3__or0000/txs_mic_3__or0000_D.UIM
+		 current_st<1> dtmf_inout_sp<0> dtmf_inout_sp<2> dtmf_inout_sp<1>
+		 dtmf_inout_sp<3> txs_mic<2> txs_mic_1__or0001/txs_mic_1__or0001_D.UIM txs_mic<3>
+		
+PARTITION FB4_1 blink_sig blink_cnt<0> blink_cnt<9> blink_cnt<7>
+		 blink_cnt<6> dtmf_inout<3> blink_cnt<1> delay_mic4
+		 delay_mic2 cnt<1> ptt_mode2 dtmf_inout<2>
+		 ptt_mode1 blink_cnt<4> dual_mute_sp_or0000/dual_mute_sp_or0000_D.UIM tone_tx_or0001/tone_tx_or0001_D.UIM
+		
+PARTITION FB5_1 cnt_tone<2> blink_cnt<8> cnt_tone<4> blink_cnt<5>
+		 blink_cnt<3> blink_cnt<2> _mux0000/_mux0000_D.UIM cnt_tone<6>
+		 cnt_tone<5> cnt_tone<3> cnt_tone<0> tone_tx
+		 tone_tx_or0000/tone_tx_or0000_D.UIM cnt_tone<1> int_led_0_not0000/int_led_0_not0000_D.UIM N_PZ_455
+		
+PARTITION FB6_5 txs_mic<3>_BUFR pei_mode dtmf_in<3> dtmf_in<2>
+		 dtmf_in<1> dtmf_in<0> rxs<3>_BUFR
+
+PARTITION FB7_11 dtmf_rw dtmf_cs dtmf_rs0 dtmf_inout<0>
+		
+PARTITION FB7_16 dtmf_inout<1>
+
+PARTITION FB9_1 ic_mute_sp dual_mute_sp
+
+PARTITION FB10_1 pei_mute_sp
+
+
+PARTITION FB12_11 pa_sw1 mute_sw
+PARTITION FB12_14 live_sw mic_sw
+
+
+PARTITION FB14_14 occ_led
+PARTITION FB14_16 cancel_led
+PARTITION FB15_14 delay_mic3
+
+PARTITION FB16_5 pei_led ic_led
+PARTITION FB16_11 int_led ext_led both_led
+
+

@@ -1,0 +1,749 @@
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 1           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                       LIST OF MEMORY AREAS
+
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+
+SYSTEM IMAGE FLASH           0000 3FFF 4000        - RESERVED - 
+
+OffChip FLASH  (EECODE)      4000 44FF 0500       44C7 44FF 0039
+OffChip FLASH  (Pool)         - AVAILABLE -       4500 DFFF 9B00
+
+OnChip  RAM    (System)      E800 EA6D 026E          - NONE -   
+OnChip  RAMFAR               EA6E EAAD 0040       EA6E EAAD 0040
+OnChip  RAM    (System)      EAAE EDF4 0347          - NONE -   
+OnChip  RAMFAR               EDF5 EEE6 00F2          - NONE -   
+OnChip  RAM    (Pool)         - AVAILABLE -       EEE7 EF88 00A2
+OnChip  RAMNEAR              EF89 EFFF 0077          - NONE -   
+
+OnChip  EEPROM (Prolog)      F000 F028 0029          - NONE -   
+OnChip  EEPROM (Config)      F029 F0E7 00BF          - NONE -   
+OnChip  EECODE               F0E8 F10E 0027          - NONE -   
+OnChip  EEPROM (MemCtl)      F10F F121 0013          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F122 F1EF 00CE
+OnChip  EEPROM (Epilog)      F1F0 F1FF 0010          - NONE -   
+
+End of Memory Area List
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 2           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+
+Link Memory Usage Statistics:
+
+EEPROM Usage:  (not necessarily in order of physical layout)
+               (includes application use of external Flash memory)
+        Reserved for System Firmware     16128 bytes
+        System Data and Parameters         116 bytes
+        Domain and Address Tables          105 bytes
+        Network Variable Config Tables      49 bytes
+        Application EEPROM Variables         0 bytes
+        Library EEPROM Variables             0 bytes
+        Application Code and Const Data    935 bytes
+        Library Code and Const Data        311 bytes
+        Self-Identification Data            13 bytes
+                                         -----
+        Total EEPROM Requirement         17657 bytes
+        Remaining EEPROM                 39943 bytes
+
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         634 bytes
+        Transaction Control Blocks         160 bytes
+        Appl Timers and I/O Change Events    3 bytes
+        Network and Application Buffers    664 bytes
+        Flash Memory System RAM Buffer     128 bytes
+        ISR RAM Buffer                     105 bytes
+        Application RAM Variables          119 bytes
+        Library RAM Variables                9 bytes
+                                         -----
+        Total RAM Requirement             1822 bytes
+        Remaining RAM                      226 bytes
+
+
+Successfully linked for PL 3150.
+        Memory Map (14 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        System Upper EEPROM Area (16 bytes) varies by firmware version.
+        Priority outgoing message transaction control block uses 28 bytes of RAM.
+                Of this amount, 10 bytes varies by firmware version.
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 268 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        Flash support requires an additional 128 bytes of RAM.
+        Due to code in flash or EEPROM memory,
+                SCI or SPI I/O model ISR requires a buffer of 105 bytes of RAM.
+        Default buffer counts vary by Neuron model
+                (resulting in an additional 216 bytes of RAM).
+        FLASH Signature  = A3:2671 @ 4000 .. 4002
+
+
+End of Link Statistics
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 3           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                             LIST OF SEGMENTS
+
+ * FILE *                        * ROM *           * RAM *         * FLASH *
+ Type Name                   From  To   Len    From  To   Len    From  To   Len
+
+E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.no:
+  Rel xcvr_patch              --   --   --      --   --   --     4003 4014 0012
+  Rel * Unnamed *             --   --   --      --   --   --     F024 F028 0005
+  Rel %nvitrdata              --   --   --     EFE1 EFFF 001F     --   --   -- 
+  Rel %nvotrdata              --   --   --     EFC2 EFE0 001F     --   --   -- 
+  Rel %nvolampvalu            --   --   --     EFC0 EFC1 0002     --   --   -- 
+  Rel %szRxBufA               --   --   --     EFB3 EFBF 000D     --   --   -- 
+  Rel %szRxBufB               --   --   --     EFA6 EFB2 000D     --   --   -- 
+  Rel %obuffer                --   --   --     EF99 EFA5 000D     --   --   -- 
+  Rel %comm_data              --   --   --     EF8C EF98 000D     --   --   -- 
+  Rel %count                  --   --   --     EF8B EF8B 0001     --   --   -- 
+  Rel %temp                   --   --   --     EF8A EF8A 0001     --   --   -- 
+  Rel %GetButtons             --   --   --      --   --   --     4015 403B 0027
+  Rel %processRxData          --   --   --      --   --   --     403C 40BF 0084
+  Rel WHEN1                   --   --   --      --   --   --     40C0 40E0 0021
+  Rel WHEN2                   --   --   --      --   --   --     40E1 4104 0024
+  Rel %SetDomain              --   --   --      --   --   --     4105 4136 0032
+  Rel %SetAddress             --   --   --      --   --   --     4137 419A 0064
+  Rel %SetNvConfig            --   --   --      --   --   --     419B 41F3 0059
+  Rel %dete_domain            --   --   --      --   --   --     41F4 420D 001A
+  Rel WHEN3                   --   --   --      --   --   --     420E 423B 002E
+  Rel WHEN4                   --   --   --      --   --   --     423C 4346 010B
+  Rel APINIT                  --   --   --      --   --   --     4347 437A 0034
+  Rel SIDATA                  --   --   --      --   --   --     44BA 44C6 000D
+  Rel * Unnamed *             --   --   --      --   --   --     437B 4399 001F
+  Rel _%3150FINGER_SI%INIT    --   --   --      --   --   --     439A 43A9 0010
+  Rel %bufTog                 --   --   --     EF89 EF89 0001     --   --   -- 
+  Rel * Unnamed *             --   --   --      --   --   --     F029 F0DC 00B4
+  Rel * Unnamed *             --   --   --      --   --   --     0000 0004 0005
+  Abs * Unnamed *             --   --   --      --   --   --     F000 F023 0024
+
+C:\LONWORKS\IMAGES\VER14\GEN.LIB(L_SCITX):
+  Rel _io_sci_set_buffer_ou   --   --   --      --   --   --     43AA 43CA 0021
+
+C:\LONWORKS\IMAGES\VER14\GEN.LIB(L_SCI):
+  Rel _io_sci_initram         --   --   --      --   --   --     43CB 4483 00B9
+
+C:\LONWORKS\IMAGES\VER14\GEN.LIB(L_SCISPI):
+  Rel _io_scispi_output_rea   --   --   --      --   --   --     4484 44B9 0036
+
+C:\LONWORKS\IMAGES\VER14\GEN.LIB(L_FLASH):
+  Rel _flash_rendezvous       --   --   --      --   --   --     F0E8 F10E 0027
+
+C:\LONWORKS\IMAGES\VER14\GEN.LIB(L_SCIRAM):
+  Rel sxi_control             --   --   --     EE75 EE7D 0009     --   --   -- 
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 4           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                           SYMBOLS BY ADDRESS
+
+#   0001 _idem_dup                      #   03FF _timer_sset                    
+#   0002 _tx_by_addr                    #   0403 _timer_sset_repeat             
+#   0005 _larva_break                   #   0418 _timer_get                     
+#   0007 _larva_suspend                 #   041F timers_off                     
+#   000B _pushd1                        #   0429 _unpack_nibs                   
+#   000D _pushd                         #   0432 _memcpy                        
+#   0013 _popd1                         #   0435 _memcpy1                       
+#   0015 _popd                          #   043D _memset8                       
+#   001B _push1                         #   0444 _memset                        
+#   001D _push                          #   0445 _memset1                       
+#   0021 _pop1                          #   044E _save_ptrs                     
+#   0023 _pop                           #   0457 _restore_ptrs                  
+#   0027 _alloc                         #   045F _register_call                 
+#   002C _dealloc                       #   0465 _add_8_16                      
+#   002E _drop_n                        #   04B1 delay_1msec                    
+#   0032 _drop_n_return_1               #   04B7 msec_delay                     
+#   0034 _drop_n_preserve_1             #   04C8 delay                          
+#   0038 _drop_n_return_2               #   04CA scaled_delay                   
+#   003A _drop_n_preserve_2             #   04D3 _iteration16                   
+#   003F _nv_all                        #   0501 flush_cancel                   
+#   0040 _query_stats                   #   0503 _sys_flag_clear                
+#   004C _get_sp                        #   0506 _free_rcvtx_by_domain          
+#   0054 _bump_ptr                      #   0511 _sys_flag_set                  
+#   0054 _add_8_16f                     #   0530 _mip_L4                        
+#   0056 _inc16                         #   0531 _mip_L5                        
+#   0059 _xch_inc_xch                   #   0555 _mip_L1                        
+#   005C _sign_extend16                 #   0576 _mip_L2                        
+#   0062 _dec16                         #   0589 _set_typeout                   
+#   0069 _ldP0_fetchl                   #   05AE _mip_T1                        
+#   0080 _new_binding_constraints       #   05DB _get_address                   
+#   0093 watchdog_update                #   05F5 _get_domain                    
+#   0095 watchdog_update_old            #   0675 _memcmp1                       
+#   0099 _cpu_halt_check                #   0697 _index_to_addr                 
+#   009E _larva_L1                      #   069F _eeprom_write                  
+#   00AB _larva_L2                      #   06A1 _ee_write_int                  
+#   00BE _arb_presf                     #   06A1 _eeprom_far_write              
+#   00CC node_reset                     #   06A4 _eeprom_write_long             
+#   00CC _node_reset                    #   06A6 _ee_write_long                 
+#   00DC _r_shift8_7                    #   06A6 _eeprom_far_write_long         
+#   00DD _r_shift8_6                    #   06B7 _ee_memcpy_uncond              
+#   00DE _r_shift8_5                    #   06BB _memcpy8                       
+#   00DF _r_shift8_4                    #   06BB _ee_memcpy                     
+#   00E0 _r_shift8_3                    #   06BE _get_error_log                 
+#   01AE _mip_L6                        #   06D3 _sys_error_log                 
+#   03C4 _timer_events                  #   06D6 error_log                      
+#   03E4 _timer_expires                 #   06E7 _raw_error_log                 
+#   03F1 _timer_expires_any             #   0702 set_nascent_key                
+#   03F4 _timer_off                     #   075A _change_state                  
+#   03F8 _timer_mset                    #   079C _disable_callbacks             
+#   03FA _timer_mset_repeat             #   079F _enable_callbacks              
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 5           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                       Symbols By Address, cont'd.
+
+#   07B3 _check_configured              #   0BA4 _gequ16                        
+#   0850 _adjust_checksum1              #   0BA8 _gequ8                         
+#   0865 _get_appsum_location           #   0BAD _less8s                        
+#   091A post_events                    #   0BB0 _less16s                       
+#   0935 set_eeprom_lock                #   0BB3 _equal8                        
+#   0A1B abs8_twice                     #   0BB5 _equal16                       
+#   0A22 _lshift8by2_add16              #   0BB7 _lognot16                      
+#   0A25 _lshift8by1_add16              #   0BB8 _lognot8                       
+#   0A36 _lshift8_add16                 #   0BBA _log16                         
+#   0A38 _lshift16_add16                #   0BBB _log8                          
+#   0A3B _adds_8_16                     #   0BC0 _r_shift8                      
+#   0A3D _add16                         #   0BC8 _r_shift8s                     
+#   0A44 _mul8l                         #   0BD1 _l_shift8s                     
+#   0A61 _muls_8_16                     #   0BD1 _l_shift8                      
+#   0A64 _mul_8_16                      #   0BEA _l_shift16                     
+#   0A66 _mul16s                        #   0BEA _l_shift16s                    
+#   0A66 _mul16                         #   0BF6 _r_shift16                     
+#   0A77 _mul8                          #   0C05 _r_shift16s                    
+#   0A93 _div32_16_core                 #   0C14 _l_shift8_7                    
+#   0AC9 _div32_16                      #   0C15 _l_shift8_6                    
+#   0ACE _div8                          #   0C16 _l_shift8_5                    
+#   0AD6 _div16                         #   0C17 _l_shift8_4                    
+#   0AE8 _div8s                         #   0C18 _l_shift8_3                    
+#   0AF0 _mod8s                         #   0C1C random                         
+#   0AFA _abs8                          #   0C20 _msg_free                      
+#   0B01 _mod16                         #   0C2D _resp_free                     
+#   0B08 _div16s                        #   0C3A _clear_apps_flags              
+#   0B13 _mod16s                        #   0C3E _msg_alloc_priority            
+#   0B21 _max8                          #   0C40 _msg_alloc                     
+#   0B26 _min8                          #   0C4D _resp_alloc                    
+#   0B2B _max8s                         #   0C6C _resp_send                     
+#   0B30 _min8s                         #   0C6C _msg_send                      
+#   0B36 _mod8                          #   0C9D _msg_alloc_wait                
+#   0B3F _max16                         #   0CAA _msg_cancel                    
+#   0B44 _min16                         #   0CAA _resp_cancel                   
+#   0B49 _max16s                        #   0CCC _bound_mt                      
+#   0B4E _min16s                        #   0CF1 _wink                          
+#   0B56 _sub16                         #   0CF4 _msg_receive                   
+#   0B62 _mul8ls                        #   0CF6 _msg_arrives                   
+#   0B6B _abs16                         #   0CF8 _msg_code_arrives              
+#   0B6F _minus16s                      #   0D07 _set_apps_flags                
+#   0B75 _not16                         #   0D0B _msg_fails                     
+#   0B7A _and16                         #   0D0E _msg_completes                 
+#   0B7F _or16                          #   0D11 _msg_succeeds                  
+#   0B84 _xor16                         #   0D14 _resp_receive                  
+#   0B89 _gequ8s                        #   0D18 _resp_arrives                  
+#   0B8F _gequ16s                       #   0D52 _msg_data_blockset             
+#   0B96 _less16                        #   0D8F _msg_priority_set              
+#   0B9A _less8                         #   0D9A _resp_code_set                 
+#   0B9E _signs_differ16                #   0D9C _resp_data_set                 
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 6           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                       Symbols By Address, cont'd.
+
+#   0DA4 _msg_code_set                  #   1131 _online                        
+#   0DA6 _msg_data_set                  #   1136 online_confirm                 
+#   0DB7 _msg_auth_set                  #   1173 go_offline                     
+#   0DBB _msg_service_set               #   1178 flush                          
+#   0DBF _msg_tag_set                   #   1183 _flush_completes               
+#   0DBF _msg_tag_set1                  #   11B5 _sleep                         
+#   0DC4 _msg_byte_set                  #   1226 retrieve_xcvr_status           
+#   0DC4 _msg_addr_set                  #   16F6 _alias_count                   
+#   0DC8 _msg_out_set                   #   16FC _nv_count                      
+#   0DF6 _msg_code_get_ex               #   1702 _nv_get_cnfg_p_pri             
+#   0DF6 _msg_code_get                  #   170F _nv_get_cnfg_p                 
+#   0DF8 _msg_data_get                  #   171B _nv_get_cnfg_p1                
+#   0DFC _msg_auth_get                  #   1722 _nv_get_alias_p                
+#   0E00 _msg_service_get               #   1737 _nv_get_fixed_p                
+#   0E05 _msg_addr_get                  #   18EA _get_auth_std                  
+#   0E05 _msg_byte_get                  #   19BE _nm_set_nk                     
+#   0E0A _msg_in_get                    #   1A7A make_apdu_p                    
+#   0E39 _msg_len_get_ex                #   1A94 _service_pin_send              
+#   0E39 _msg_len_get                   #   1A95 _nm_service_send               
+#   0E3E _msg_data_blockget             #   1A9C _bitshift_input                
+#   0F78 _nv_update_int                 #   1ABD _init_baud                     
+#   0F79 _nv_update_int_offset          #   1AC1 _A_delay_pd                    
+#   0F7E _nv_update_long                #   1AC3 _A_delay                       
+#   0F7F _nv_update_long_offset         #   1AC4 _A_delay_b                     
+#   0F84 _nv_update                     #   1ACA _sio_load_delay                
+#   0F89 _nv_update_request1            #   1AD3 set_base_p                     
+#   0F89 _nv_update_request             #   1AD8 _bit_input                     
+#   0F89 _nv_poll                       #   1ADA _nibble_input                  
+#   0F95 _nv_poll_all                   #   1AEE _byte_input                    
+#   0F9B _nv_array_poll                 #   1AF2 _leveldetect_input             
+#   0FD5 _nv_update_occurs              #   1B08 _init_io_pins                  
+#   0FD6 _nv_array_update_occurs        #   1B34 _io_direction_hi               
+#   1020 _nv_update_fails               #   1B34 _io_direction_hi2              
+#   1021 _nv_array_update_fails         #   1B36 _io_direction_lo               
+#   1028 _nv_update_succeeds            #   1B38 _bit_output_ext                
+#   1029 _nv_array_update_succeeds      #   1B3C _bit_output_hi                 
+#   102D _nv_update_completes           #   1B3E _bit_output_lo2                
+#   102E _nv_array_update_completes     #   1B40 _bit_output_lo1                
+#   103E _bound_nv1                     #   1B48 _nibble_output                 
+#   103E _bound_nv                      #   1B50 _byte_output                   
+#   1055 _io_change_init                #   1B64 _set_tco_p                     
+#   1075 _io_changes_to                 #   1B77 _loader_prep                   
+#   1080 _io_changes_by                 #   1BA4 _pulsewidth_output             
+#   1094 _io_changes                    #   1BB0 _frequency_output              
+#   1099 _io_update_occurs              #   1BB0 _triggered_count_output        
+#   10AF _io_input_value                #   1BC8 _oneshot_output                
+#   10B6 application_restart            #   1BCD _triac_pulse_output            
+#   10E0 _preempt                       #   1BD5 _triac_level_output            
+#   1115 offline_confirm                #   1BD5 _triac_output                  
+#   1123 _offline                       #   1BD7 _loader_go                     
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 7           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                       Symbols By Address, cont'd.
+
+#   1BE2 _pulsecount_output             #   3CCC go_configured                  
+#   1C24 _totalize_input                #   3CD0 go_unconfigured                
+#   1C30 _pulsecount_input              #   3CDE flush_wait                     
+#   1C30 _ontime_input                  #   3CE4 reverse                        
+#   1C30 _period_input                  #   3CEF _bitf_sign_ext                 
+#   1C5E _quadrature_input              #   3CF6 _memcpy16                      
+#   1C89 _select_mux                    #   3D09 _memset16                      
+#   1C8D _alter_icntrl_g                #   3D1B retrieve_status                
+#   1C95 _select_input_fn               #   3D26 _resp_data_blockset            
+#   1CB4 _io_set_clock                  #   3D2F _msg_out_addr_ptr              
+#   1CC4 _init_timer_counter1           #   3D3E _resp_in_addr_ptr              
+#   1CC6 _init_timer_counter2           #   3D41 _msg_in_addr_ptr               
+#   1D0F _parallel_output_request       #   3D47 _msg_duplicate_get             
+#   1D11 clear_pio_request              #   3D4E _msg_rcvtx_get                 
+#   1D16 _parallel_input_ready          #   3D55 _bin2bcd                       
+#   1D42 _parallel_output_ready         #   3D84 _bcd2bin                       
+#   1D50 _parallel_input                #   3D9C muldivs                        
+#   1D63 _parallel_output               #   3DB6 muldiv                         
+#   1EC6 _mac_L1                        #   3DDB _io_abort_clear                
+#   2181 _scheduler_loop                #   3DE1 access_domain                  
+#   23F8 _larva_L3                      #   3DE5 _access_check                  
+#   274B _net_mgmt_processing           #   3DEF update_nv                      
+#   27DB _update_address                #   3DF7 update_config_data             
+#   283B _self_installation             #   3E01 _update_record                 
+#   283D _calculate_cnfg_checksum       #   3E13 update_clone_domain            
+#   2845 _leave_indexed_domain          #   3E26 update_domain                  
+#   28C1 chksum_recalc_mode             #   3E39 update_address                 
+#   2BD1 _build_status                  #   3E43 access_alias                   
+#   2C48 clear_status                   #   3E4C update_alias                   
+#   2D0D _get_prit_p                    #   3E54 access_key                     
+#   2D1C _get_prt_p                     #   3E67 access_address                 
+#   2FF4 _eefar_init                    #   3E6C access_nv                      
+#   2FF6 _extended_version_number       #   3E75 retrieve_stat                  
+#   2FFA _sys_comeup_offline            #   3E7E _neurowire_slave               
+#   2FFB power_up                       #   3EB9 _muxbus_read                   
+#   3000 _eeprom_image_copy             #   3ECB _muxbus_reread                 
+#   3031 _defCommParms                  #   3ED6 _muxbus_write                  
+#   31FE _boot_id                       #   3EE5 _muxbus_rewrite                
+#   32C5 _get_ext_ee                    #   3EF0 _dualslope_input               
+#   3570 _offchip_eelock_check          #   3F11 _dualslope_start               
+#   382A _set_ram_ptrs                  #   3F1D _edgelog_input                 
+#   393E _checksum_generate             #   3F58 _io_set_clock_x2               
+#   3A71 update_xcvr_id                 #   3F60 io_edgelog_preload             
+#   3A7C update_program_id              #   3FF7 _image_upgrade_test_area       
+#   3B8F _bitshift_output               #   3FFE _image_checksum                
+#   3BC8 _serial_input                  #   3FFF _image_end                     
+#   3C16 _serial_output                 #   3FFF _image_end_page                
+#   3C49 _serial_sub1                   .   4003 xcvr_patch                     
+#   3C63 _bitshift_setup                #   4015 %GetButtons                    
+#   3C92 _neurowire_master              #   403C %processRxData                 
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 8           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                       Symbols By Address, cont'd.
+
+.   40C0 WHEN1                          #   8001 _alternate_clocking            
+.   40E1 WHEN2                          #   8001 _system_image_extensions       
+#   4105 %SetDomain                     c   8001 _disable_dynamic_xcvr_config   
+#   4137 %SetAddress                    c   8001 _read_only_data_struct_version 
+#   419B %SetNvConfig                   #   8001 _nm_capabilities               
+#   41F4 %dete_domain                   #   8002 _nm_version                    
+.   420E WHEN3                          c   8003 _size_io_change_event          
+.   423C WHEN4                          c   8003 _size_nv_fix                   
+.   4347 APINIT                         c   8003 _size_nv_cnfg                  
+.   4357 RESET                          c   8004 _size_evn                      
+.   4384 TEVT                           c   8004 _size_timer                    
+.   439A SCISPIINITPARMS                c   8004 _size_nv_alias                 
+.   439A _%3150FINGER_SI%INIT           c   8005 _size_addr_tbl_entry           
+.   43A0 SCISPIINITCALL                 c   8008 _onchip_eeprom_sector_size     
+#   43AA _io_sci_set_buffer_out         c   800C _size_proxy_route_entry        
+#   43CB _io_sci_initram                c   800D _size_rcv_tx                   
+#   43D8 _io_sci_init                   c   800E _system_version                
+#   43EC _io_sci_baud                   c   800E _evn_byte_4                    
+#   4407 _io_sci_set_buffer_in          c   800F _size_domain_entry             
+.   441B _io_sci_isr                    #   8010 _eeJournal_size                
+#   4484 _io_scispi_output_ready        c   8010 _eevar_offset                  
+#   448D _io_scispi_input_ready         c   8010 _evn_byte_3                    
+.   4491 _io_sxi_regisr                 c   8010 _ee_reserved_offset            
+#   4497 io_iena                        c   801C _size_tx_ctl_blk               
+.   449A _io_sxibufsetup                c   8020 _image_file_alignment_boundary 
+#   449E io_idis                        #   803F _nv_count_mask                 
+#   44A7 _io_sci_get_error              c   8040 _size_custom_ram_area          
+#   44AA _io_spi_get_error              c   8040 _custom_ram_area_avail         
+#   44B5 _io_scispi_abort               c   8069 _size_sci_isr                  
+.   44BA SIDATA                         c   80BE _arbitrary_preempt_safe        
+c   8000 _evn_byte_2                    #   8100 _size_app_basepg               
+c   8000 _sio_near                      c   82BA _sysram_base_usage             
+c   8000 _size_sys_eevars               #   E800 activate_service_led           
+c   8000 _extended_onchip_eeprom        #   E801 _larva_flag                    
+c   8000 _sidata_last_eecode            #   E80C _xcvr_mode                     
+c   8000 _evn_byte_1                    #   E83C nv_in_index                    
+c   8000 _const_mask                    #   E83C msg_tag_index                  
+c   8001 _sysimgext_nv_length_override  #   E84C ramQElemSizeIn                 
+c   8001 _size_proxy_route_index_entry  #   E84D ramQElemSizeOut                
+c   8001 _set_nv_length_valid           #   E855 qfree_out                      
+c   8001 _sci_spi_supported             #   E85D qincoming                      
+c   8001 _sysimgext_phase               #   E861 qresponse                      
+c   8001 _ram_test_power_up_only        #   E877 _larva_L4                      
+#   8001 _oma                           #   E895 io_pin_event_data              
+c   8001 _sysimgext_proxy               #   E89C input_value                    
+c   8001 _field_debug                   #   E89C _dbg_input_value               
+c   8001 _feature_set_2                 #   E89E _nv_array_index                
+c   8001 _feature_set_1                 #   E89E nv_array_index                 
+c   8001 _extended_onchip_eedata        #   E89F io_pdata_imgs                  
+c   8001 _extended_io_count             #   E8A3 _io_gen_img                    
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 9           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                       Symbols By Address, cont'd.
+
+#   E916 _cpu_sync                      #   F008 eeNVFixedPtr                   
+#   E91A nv_in_addr                     .   F008 DIRECTORY                      
+#   E922 _sys_stat                      #   F00A eeNVCount                      
+#   E93A ee_lock                        .   F00A PROTECTBIT                     
+#   E93B nsa_relative                   #   F00B eeSNVTPtr                      
+#   E93B nsa_features                   #   F00D eeIDString                     
+#   E958 _last_retry_extra_time         .   F00D PROGID                         
+#   E96C _sys_callback_address          #   F015 eeModeFlags                    
+#   E96E BASEPG3                        .   F015 MODETABLE                      
+#   E96E _larva_L5                      .   F01A BUFCOUNTS                      
+#   E979 _dbg_input_is_new              .   F01D EENEARBYTES                    
+#   E979 input_is_new                   .   F023 TX_CTRL                        
+#   EA6E _loc_custom_ram_area           #   F024 read_only_data_2               
+.   EE75 sxi_control                    #   F024 eeCustomMac                    
+#   EF89 %bufTog                        #   F029 config_data                    
+#   EF8A %temp                          #   F031 eeCommStart                    
+#   EF8B %count                         #   F031 eeClock                        
+#   EF8C %comm_data                     #   F032 eeAltClock                     
+#   EF99 %obuffer                       .   F042 DOMAIN                         
+#   EFA6 %szRxBufB                      #   F042 eeDomain                       
+#   EFB3 %szRxBufA                      #   F04B eeDomain0Key                   
+#   EFC0 %nvolampvalu                   #   F05A eeDomain1Key                   
+#   EFC2 %nvotrdata                     #   F0E8 _flash_rendezvous              
+#   EFE1 %nvitrdata                     #   F1F0 eeErrorLog                     
+#   F000 eeNeuronID                     #   FBF0 eeJournal                      
+#   F000 read_only_data                
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 10           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                            SYMBOLS BY NAME
+
+#   EF89 %bufTog                        #   2BD1 _build_status                  
+#   EF8C %comm_data                     #   0054 _bump_ptr                      
+#   EF8B %count                         #   1AEE _byte_input                    
+#   41F4 %dete_domain                   #   1B50 _byte_output                   
+#   4015 %GetButtons                    #   283D _calculate_cnfg_checksum       
+#   EFE1 %nvitrdata                     #   075A _change_state                  
+#   EFC0 %nvolampvalu                   #   07B3 _check_configured              
+#   EFC2 %nvotrdata                     #   393E _checksum_generate             
+#   EF99 %obuffer                       #   0C3A _clear_apps_flags              
+#   403C %processRxData                 c   8000 _const_mask                    
+#   4137 %SetAddress                    #   0099 _cpu_halt_check                
+#   4105 %SetDomain                     #   E916 _cpu_sync                      
+#   419B %SetNvConfig                   c   8040 _custom_ram_area_avail         
+#   EFB3 %szRxBufA                      #   E979 _dbg_input_is_new              
+#   EFA6 %szRxBufB                      #   E89C _dbg_input_value               
+#   EF8A %temp                          #   002C _dealloc                       
+.   439A _%3150FINGER_SI%INIT           #   0062 _dec16                         
+#   1AC3 _A_delay                       #   3031 _defCommParms                  
+#   1AC4 _A_delay_b                     #   079C _disable_callbacks             
+#   1AC1 _A_delay_pd                    c   8001 _disable_dynamic_xcvr_config   
+#   0B6B _abs16                         #   0AD6 _div16                         
+#   0AFA _abs8                          #   0B08 _div16s                        
+#   3DE5 _access_check                  #   0AC9 _div32_16                      
+#   0A3D _add16                         #   0A93 _div32_16_core                 
+#   0465 _add_8_16                      #   0ACE _div8                          
+#   0054 _add_8_16f                     #   0AE8 _div8s                         
+#   0A3B _adds_8_16                     #   002E _drop_n                        
+#   0850 _adjust_checksum1              #   0034 _drop_n_preserve_1             
+#   16F6 _alias_count                   #   003A _drop_n_preserve_2             
+#   0027 _alloc                         #   0032 _drop_n_return_1               
+#   1C8D _alter_icntrl_g                #   0038 _drop_n_return_2               
+#   8001 _alternate_clocking            #   3EF0 _dualslope_input               
+#   0B7A _and16                         #   3F11 _dualslope_start               
+#   00BE _arb_presf                     #   3F1D _edgelog_input                 
+c   80BE _arbitrary_preempt_safe        #   06BB _ee_memcpy                     
+#   3D84 _bcd2bin                       #   06B7 _ee_memcpy_uncond              
+#   3D55 _bin2bcd                       c   8010 _ee_reserved_offset            
+#   1AD8 _bit_input                     #   06A1 _ee_write_int                  
+#   1B38 _bit_output_ext                #   06A6 _ee_write_long                 
+#   1B3C _bit_output_hi                 #   2FF4 _eefar_init                    
+#   1B40 _bit_output_lo1                #   8010 _eeJournal_size                
+#   1B3E _bit_output_lo2                #   06A1 _eeprom_far_write              
+#   3CEF _bitf_sign_ext                 #   06A6 _eeprom_far_write_long         
+#   1A9C _bitshift_input                #   3000 _eeprom_image_copy             
+#   3B8F _bitshift_output               #   069F _eeprom_write                  
+#   3C63 _bitshift_setup                #   06A4 _eeprom_write_long             
+#   31FE _boot_id                       c   8010 _eevar_offset                  
+#   0CCC _bound_mt                      #   079F _enable_callbacks              
+#   103E _bound_nv                      #   0BB5 _equal16                       
+#   103E _bound_nv1                     #   0BB3 _equal8                        
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 11           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                        Symbols By Name, cont'd.
+
+c   8000 _evn_byte_1                    #   43EC _io_sci_baud                   
+c   8000 _evn_byte_2                    #   44A7 _io_sci_get_error              
+c   8010 _evn_byte_3                    #   43D8 _io_sci_init                   
+c   800E _evn_byte_4                    #   43CB _io_sci_initram                
+c   8001 _extended_io_count             .   441B _io_sci_isr                    
+c   8001 _extended_onchip_eedata        #   4407 _io_sci_set_buffer_in          
+c   8000 _extended_onchip_eeprom        #   43AA _io_sci_set_buffer_out         
+#   2FF6 _extended_version_number       #   44B5 _io_scispi_abort               
+c   8001 _feature_set_1                 #   448D _io_scispi_input_ready         
+c   8001 _feature_set_2                 #   4484 _io_scispi_output_ready        
+c   8001 _field_debug                   #   1CB4 _io_set_clock                  
+#   F0E8 _flash_rendezvous              #   3F58 _io_set_clock_x2               
+#   1183 _flush_completes               #   44AA _io_spi_get_error              
+#   0506 _free_rcvtx_by_domain          .   4491 _io_sxi_regisr                 
+#   1BB0 _frequency_output              .   449A _io_sxibufsetup                
+#   0BA4 _gequ16                        #   1099 _io_update_occurs              
+#   0B8F _gequ16s                       #   04D3 _iteration16                   
+#   0BA8 _gequ8                         #   0BEA _l_shift16                     
+#   0B89 _gequ8s                        #   0BEA _l_shift16s                    
+#   05DB _get_address                   #   0BD1 _l_shift8                      
+#   0865 _get_appsum_location           #   0C18 _l_shift8_3                    
+#   18EA _get_auth_std                  #   0C17 _l_shift8_4                    
+#   05F5 _get_domain                    #   0C16 _l_shift8_5                    
+#   06BE _get_error_log                 #   0C15 _l_shift8_6                    
+#   32C5 _get_ext_ee                    #   0C14 _l_shift8_7                    
+#   2D0D _get_prit_p                    #   0BD1 _l_shift8s                     
+#   2D1C _get_prt_p                     #   0005 _larva_break                   
+#   004C _get_sp                        #   E801 _larva_flag                    
+#   0001 _idem_dup                      #   009E _larva_L1                      
+#   3FFE _image_checksum                #   00AB _larva_L2                      
+#   3FFF _image_end                     #   23F8 _larva_L3                      
+#   3FFF _image_end_page                #   E877 _larva_L4                      
+c   8020 _image_file_alignment_boundary #   E96E _larva_L5                      
+#   3FF7 _image_upgrade_test_area       #   0007 _larva_suspend                 
+#   0056 _inc16                         #   E958 _last_retry_extra_time         
+#   0697 _index_to_addr                 #   0069 _ldP0_fetchl                   
+#   1ABD _init_baud                     #   2845 _leave_indexed_domain          
+#   1B08 _init_io_pins                  #   0B96 _less16                        
+#   1CC4 _init_timer_counter1           #   0BB0 _less16s                       
+#   1CC6 _init_timer_counter2           #   0B9A _less8                         
+#   3DDB _io_abort_clear                #   0BAD _less8s                        
+#   1055 _io_change_init                #   1AF2 _leveldetect_input             
+#   1094 _io_changes                    #   1BD7 _loader_go                     
+#   1080 _io_changes_by                 #   1B77 _loader_prep                   
+#   1075 _io_changes_to                 #   EA6E _loc_custom_ram_area           
+#   1B34 _io_direction_hi               #   0BBA _log16                         
+#   1B34 _io_direction_hi2              #   0BBB _log8                          
+#   1B36 _io_direction_lo               #   0BB7 _lognot16                      
+#   E8A3 _io_gen_img                    #   0BB8 _lognot8                       
+#   10AF _io_input_value                #   0A38 _lshift16_add16                
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 12           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                        Symbols By Name, cont'd.
+
+#   0A36 _lshift8_add16                 #   0DF8 _msg_data_get                  
+#   0A25 _lshift8by1_add16              #   0DA6 _msg_data_set                  
+#   0A22 _lshift8by2_add16              #   3D47 _msg_duplicate_get             
+#   1EC6 _mac_L1                        #   0D0B _msg_fails                     
+#   0B3F _max16                         #   0C20 _msg_free                      
+#   0B49 _max16s                        #   3D41 _msg_in_addr_ptr               
+#   0B21 _max8                          #   0E0A _msg_in_get                    
+#   0B2B _max8s                         #   0E39 _msg_len_get                   
+#   0675 _memcmp1                       #   0E39 _msg_len_get_ex                
+#   0432 _memcpy                        #   3D2F _msg_out_addr_ptr              
+#   0435 _memcpy1                       #   0DC8 _msg_out_set                   
+#   3CF6 _memcpy16                      #   0D8F _msg_priority_set              
+#   06BB _memcpy8                       #   3D4E _msg_rcvtx_get                 
+#   0444 _memset                        #   0CF4 _msg_receive                   
+#   0445 _memset1                       #   0C6C _msg_send                      
+#   3D09 _memset16                      #   0E00 _msg_service_get               
+#   043D _memset8                       #   0DBB _msg_service_set               
+#   0B44 _min16                         #   0D11 _msg_succeeds                  
+#   0B4E _min16s                        #   0DBF _msg_tag_set                   
+#   0B26 _min8                          #   0DBF _msg_tag_set1                  
+#   0B30 _min8s                         #   0A66 _mul16                         
+#   0B6F _minus16s                      #   0A66 _mul16s                        
+#   0555 _mip_L1                        #   0A77 _mul8                          
+#   0576 _mip_L2                        #   0A44 _mul8l                         
+#   0530 _mip_L4                        #   0B62 _mul8ls                        
+#   0531 _mip_L5                        #   0A64 _mul_8_16                      
+#   01AE _mip_L6                        #   0A61 _muls_8_16                     
+#   05AE _mip_T1                        #   3EB9 _muxbus_read                   
+#   0B01 _mod16                         #   3ECB _muxbus_reread                 
+#   0B13 _mod16s                        #   3EE5 _muxbus_rewrite                
+#   0B36 _mod8                          #   3ED6 _muxbus_write                  
+#   0AF0 _mod8s                         #   274B _net_mgmt_processing           
+#   0E05 _msg_addr_get                  #   3C92 _neurowire_master              
+#   0DC4 _msg_addr_set                  #   3E7E _neurowire_slave               
+#   0C40 _msg_alloc                     #   0080 _new_binding_constraints       
+#   0C3E _msg_alloc_priority            #   1ADA _nibble_input                  
+#   0C9D _msg_alloc_wait                #   1B48 _nibble_output                 
+#   0CF6 _msg_arrives                   #   8001 _nm_capabilities               
+#   0DFC _msg_auth_get                  #   1A95 _nm_service_send               
+#   0DB7 _msg_auth_set                  #   19BE _nm_set_nk                     
+#   0E05 _msg_byte_get                  #   8002 _nm_version                    
+#   0DC4 _msg_byte_set                  #   00CC _node_reset                    
+#   0CAA _msg_cancel                    #   0B75 _not16                         
+#   0CF8 _msg_code_arrives              #   003F _nv_all                        
+#   0DF6 _msg_code_get                  #   E89E _nv_array_index                
+#   0DF6 _msg_code_get_ex               #   0F9B _nv_array_poll                 
+#   0DA4 _msg_code_set                  #   102E _nv_array_update_completes     
+#   0D0E _msg_completes                 #   1021 _nv_array_update_fails         
+#   0E3E _msg_data_blockget             #   0FD6 _nv_array_update_occurs        
+#   0D52 _msg_data_blockset             #   1029 _nv_array_update_succeeds      
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 13           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                        Symbols By Name, cont'd.
+
+#   16FC _nv_count                      #   0BC0 _r_shift8                      
+#   803F _nv_count_mask                 #   00E0 _r_shift8_3                    
+#   1722 _nv_get_alias_p                #   00DF _r_shift8_4                    
+#   170F _nv_get_cnfg_p                 #   00DE _r_shift8_5                    
+#   171B _nv_get_cnfg_p1                #   00DD _r_shift8_6                    
+#   1702 _nv_get_cnfg_p_pri             #   00DC _r_shift8_7                    
+#   1737 _nv_get_fixed_p                #   0BC8 _r_shift8s                     
+#   0F89 _nv_poll                       c   8001 _ram_test_power_up_only        
+#   0F95 _nv_poll_all                   #   06E7 _raw_error_log                 
+#   0F84 _nv_update                     c   8001 _read_only_data_struct_version 
+#   102D _nv_update_completes           #   045F _register_call                 
+#   1020 _nv_update_fails               #   0C4D _resp_alloc                    
+#   0F78 _nv_update_int                 #   0D18 _resp_arrives                  
+#   0F79 _nv_update_int_offset          #   0CAA _resp_cancel                   
+#   0F7E _nv_update_long                #   0D9A _resp_code_set                 
+#   0F7F _nv_update_long_offset         #   3D26 _resp_data_blockset            
+#   0FD5 _nv_update_occurs              #   0D9C _resp_data_set                 
+#   0F89 _nv_update_request             #   0C2D _resp_free                     
+#   0F89 _nv_update_request1            #   3D3E _resp_in_addr_ptr              
+#   1028 _nv_update_succeeds            #   0D14 _resp_receive                  
+#   3570 _offchip_eelock_check          #   0C6C _resp_send                     
+#   1123 _offline                       #   0457 _restore_ptrs                  
+#   8001 _oma                           #   044E _save_ptrs                     
+c   8008 _onchip_eeprom_sector_size     #   2181 _scheduler_loop                
+#   1BC8 _oneshot_output                c   8001 _sci_spi_supported             
+#   1131 _online                        #   1C95 _select_input_fn               
+#   1C30 _ontime_input                  #   1C89 _select_mux                    
+#   0B7F _or16                          #   283B _self_installation             
+#   1D50 _parallel_input                #   3BC8 _serial_input                  
+#   1D16 _parallel_input_ready          #   3C16 _serial_output                 
+#   1D63 _parallel_output               #   3C49 _serial_sub1                   
+#   1D42 _parallel_output_ready         #   1A94 _service_pin_send              
+#   1D0F _parallel_output_request       #   0D07 _set_apps_flags                
+#   1C30 _period_input                  c   8001 _set_nv_length_valid           
+#   0023 _pop                           #   382A _set_ram_ptrs                  
+#   0021 _pop1                          #   1B64 _set_tco_p                     
+#   0015 _popd                          #   0589 _set_typeout                   
+#   0013 _popd1                         c   8000 _sidata_last_eecode            
+#   10E0 _preempt                       #   005C _sign_extend16                 
+#   1C30 _pulsecount_input              #   0B9E _signs_differ16                
+#   1BE2 _pulsecount_output             #   1ACA _sio_load_delay                
+#   1BA4 _pulsewidth_output             c   8000 _sio_near                      
+#   001D _push                          c   8005 _size_addr_tbl_entry           
+#   001B _push1                         #   8100 _size_app_basepg               
+#   000D _pushd                         c   8040 _size_custom_ram_area          
+#   000B _pushd1                        c   800F _size_domain_entry             
+#   1C5E _quadrature_input              c   8004 _size_evn                      
+#   0040 _query_stats                   c   8003 _size_io_change_event          
+#   0BF6 _r_shift16                     c   8004 _size_nv_alias                 
+#   0C05 _r_shift16s                    c   8003 _size_nv_cnfg                  
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 14           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                        Symbols By Name, cont'd.
+
+c   8003 _size_nv_fix                   #   E800 activate_service_led           
+c   800C _size_proxy_route_entry        .   4347 APINIT                         
+c   8001 _size_proxy_route_index_entry  #   10B6 application_restart            
+c   800D _size_rcv_tx                   #   E96E BASEPG3                        
+c   8069 _size_sci_isr                  .   F01A BUFCOUNTS                      
+c   8000 _size_sys_eevars               #   28C1 chksum_recalc_mode             
+c   8004 _size_timer                    #   1D11 clear_pio_request              
+c   801C _size_tx_ctl_blk               #   2C48 clear_status                   
+#   11B5 _sleep                         #   F029 config_data                    
+#   0B56 _sub16                         #   04C8 delay                          
+#   E96C _sys_callback_address          #   04B1 delay_1msec                    
+#   2FFA _sys_comeup_offline            .   F008 DIRECTORY                      
+#   06D3 _sys_error_log                 .   F042 DOMAIN                         
+#   0503 _sys_flag_clear                #   E93A ee_lock                        
+#   0511 _sys_flag_set                  #   F032 eeAltClock                     
+#   E922 _sys_stat                      #   F031 eeClock                        
+c   8001 _sysimgext_nv_length_override  #   F031 eeCommStart                    
+c   8001 _sysimgext_phase               #   F024 eeCustomMac                    
+c   8001 _sysimgext_proxy               #   F042 eeDomain                       
+c   82BA _sysram_base_usage             #   F04B eeDomain0Key                   
+#   8001 _system_image_extensions       #   F05A eeDomain1Key                   
+c   800E _system_version                #   F1F0 eeErrorLog                     
+#   03C4 _timer_events                  #   F00D eeIDString                     
+#   03E4 _timer_expires                 #   FBF0 eeJournal                      
+#   03F1 _timer_expires_any             #   F015 eeModeFlags                    
+#   0418 _timer_get                     .   F01D EENEARBYTES                    
+#   03F8 _timer_mset                    #   F000 eeNeuronID                     
+#   03FA _timer_mset_repeat             #   F00A eeNVCount                      
+#   03F4 _timer_off                     #   F008 eeNVFixedPtr                   
+#   03FF _timer_sset                    #   F00B eeSNVTPtr                      
+#   0403 _timer_sset_repeat             #   06D6 error_log                      
+#   1C24 _totalize_input                #   1178 flush                          
+#   1BD5 _triac_level_output            #   0501 flush_cancel                   
+#   1BD5 _triac_output                  #   3CDE flush_wait                     
+#   1BCD _triac_pulse_output            #   3CCC go_configured                  
+#   1BB0 _triggered_count_output        #   1173 go_offline                     
+#   0002 _tx_by_addr                    #   3CD0 go_unconfigured                
+#   0429 _unpack_nibs                   #   E979 input_is_new                   
+#   27DB _update_address                #   E89C input_value                    
+#   3E01 _update_record                 #   3F60 io_edgelog_preload             
+#   0CF1 _wink                          #   449E io_idis                        
+#   0059 _xch_inc_xch                   #   4497 io_iena                        
+#   E80C _xcvr_mode                     #   E89F io_pdata_imgs                  
+#   0B84 _xor16                         #   E895 io_pin_event_data              
+#   0A1B abs8_twice                     #   1A7A make_apdu_p                    
+#   3E67 access_address                 .   F015 MODETABLE                      
+#   3E43 access_alias                   #   04B7 msec_delay                     
+#   3DE1 access_domain                  #   E83C msg_tag_index                  
+#   3E54 access_key                     #   3DB6 muldiv                         
+#   3E6C access_nv                      #   3D9C muldivs                        
+Neuron (R) Linker Version 4.01.17 Copyright (c) 1989-2003 Echelon Corp
+Page 15           Mon Jan 22 11:41:48 2007E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3150FINGER_SI\3150FINGER_SI Output\IM\3150FINGER_SI.nxr
+
+                        Symbols By Name, cont'd.
+
+#   00CC node_reset                     .   43A0 SCISPIINITCALL                 
+#   E93B nsa_features                   .   439A SCISPIINITPARMS                
+#   E93B nsa_relative                   #   1AD3 set_base_p                     
+#   E89E nv_array_index                 #   0935 set_eeprom_lock                
+#   E91A nv_in_addr                     #   0702 set_nascent_key                
+#   E83C nv_in_index                    .   44BA SIDATA                         
+#   1115 offline_confirm                .   EE75 sxi_control                    
+#   1136 online_confirm                 .   4384 TEVT                           
+#   091A post_events                    #   041F timers_off                     
+#   2FFB power_up                       .   F023 TX_CTRL                        
+.   F00D PROGID                         #   3E39 update_address                 
+.   F00A PROTECTBIT                     #   3E4C update_alias                   
+#   E855 qfree_out                      #   3E13 update_clone_domain            
+#   E85D qincoming                      #   3DF7 update_config_data             
+#   E861 qresponse                      #   3E26 update_domain                  
+#   E84C ramQElemSizeIn                 #   3DEF update_nv                      
+#   E84D ramQElemSizeOut                #   3A7C update_program_id              
+#   0C1C random                         #   3A71 update_xcvr_id                 
+#   F000 read_only_data                 #   0093 watchdog_update                
+#   F024 read_only_data_2               #   0095 watchdog_update_old            
+.   4357 RESET                          .   40C0 WHEN1                          
+#   3E75 retrieve_stat                  .   40E1 WHEN2                          
+#   3D1B retrieve_status                .   420E WHEN3                          
+#   1226 retrieve_xcvr_status           .   423C WHEN4                          
+#   3CE4 reverse                        .   4003 xcvr_patch                     
+#   04CA scaled_delay                  
+ 

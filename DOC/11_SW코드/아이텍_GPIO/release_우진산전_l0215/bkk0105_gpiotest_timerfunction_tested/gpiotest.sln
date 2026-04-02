@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gpiotest", "gpiotest\gpiotest.vcproj", "{4D731AC9-D559-4A8B-AA78-1B29259C93AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|MVC100 (ARMV4I) = Debug|MVC100 (ARMV4I)
+		Debug|Pocket PC 2003 (ARMV4) = Debug|Pocket PC 2003 (ARMV4)
+		Release|MVC100 (ARMV4I) = Release|MVC100 (ARMV4I)
+		Release|Pocket PC 2003 (ARMV4) = Release|Pocket PC 2003 (ARMV4)
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Debug|MVC100 (ARMV4I).ActiveCfg = Debug|MVC100 (ARMV4I)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Debug|MVC100 (ARMV4I).Build.0 = Debug|MVC100 (ARMV4I)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Debug|MVC100 (ARMV4I).Deploy.0 = Debug|MVC100 (ARMV4I)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|Pocket PC 2003 (ARMV4)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Debug|Pocket PC 2003 (ARMV4).Build.0 = Debug|Pocket PC 2003 (ARMV4)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Debug|Pocket PC 2003 (ARMV4).Deploy.0 = Debug|Pocket PC 2003 (ARMV4)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Release|MVC100 (ARMV4I).ActiveCfg = Release|MVC100 (ARMV4I)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Release|MVC100 (ARMV4I).Build.0 = Release|MVC100 (ARMV4I)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Release|MVC100 (ARMV4I).Deploy.0 = Release|MVC100 (ARMV4I)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Pocket PC 2003 (ARMV4)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Release|Pocket PC 2003 (ARMV4).Build.0 = Release|Pocket PC 2003 (ARMV4)
+		{4D731AC9-D559-4A8B-AA78-1B29259C93AD}.Release|Pocket PC 2003 (ARMV4).Deploy.0 = Release|Pocket PC 2003 (ARMV4)
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

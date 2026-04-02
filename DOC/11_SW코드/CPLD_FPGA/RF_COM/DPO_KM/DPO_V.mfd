@@ -1,0 +1,2208 @@
+MDF Database:  version 1.0
+MDF_INFO | DPO_V | XC2C256-7-TQ144
+MACROCELL | 15 | 12 | both_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 7 | int_sw_in  | ext_sw_in  | both_sw_in  | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>
+INPUTMC | 4 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9
+INPUTP | 3 | 75 | 74 | 69
+EQ | 3 | 
+   !both_led = int_sw_in & ext_sw_in & !both_sw_in
+	# int_sw_in & ext_sw_in & current_st<0> & 
+	current_st<1> & !current_st<3> & current_st<2>;	// (2 pt, 7 inp)
+
+MACROCELL | 8 | 15 | current_st<0>_MC
+ATTRIBUTES | 2306867968 | 0
+OUTPUTMC | 20 | 0 | 0 | 6 | 10 | 8 | 0 | 0 | 8 | 0 | 13 | 0 | 4 | 0 | 6 | 0 | 10 | 0 | 9 | 15 | 12 | 13 | 15 | 6 | 13 | 0 | 1 | 6 | 15 | 3 | 11 | 3 | 5 | 15 | 5 | 13 | 13 | 15 | 4 | 0 | 14
+INPUTS | 1 | next_st<0>
+INPUTMC | 1 | 0 | 9
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   current_st<0> := next_st<0>;	// (1 pt, 1 inp)
+    current_st<0>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    current_st<0>.AP = !cancel_sw_in;	// CTS	(1 pt, 1 inp)
+
+MACROCELL | 0 | 9 | next_st<0>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 1 | 8 | 15
+INPUTS | 18 | int_sw_in  | ext_sw_in  | current_st<3>  | N_PZ_799  | current_st<0>  | current_st<1>  | current_st<2>  | pei_wait  | cancel_mode  | N_PZ_578  | both_sw_in  | ic_sw_in  | dtmf_data<0>  | ic_mute_sp  | dtmf_rw  | dtmf_data<1>  | dtmf_data<2>  | dtmf_data<3>
+INPUTMC | 14 | 8 | 8 | 0 | 13 | 8 | 15 | 8 | 10 | 8 | 9 | 0 | 0 | 0 | 4 | 0 | 6 | 6 | 7 | 8 | 0 | 6 | 10 | 6 | 6 | 6 | 3 | 6 | 2
+INPUTP | 4 | 75 | 74 | 69 | 76
+LCT | 1 | 2 | Internal_Name
+EQ | 27 | 
+   next_st<0>.D = int_sw_in & !ext_sw_in & current_st<3> & 
+	!N_PZ_799
+	# current_st<0> & current_st<1> & !N_PZ_799 & 
+	current_st<2>
+	# current_st<0> & current_st<1> & !N_PZ_799 & 
+	!pei_wait
+	# current_st<0> & !N_PZ_799 & current_st<2> & 
+	cancel_mode
+	# !current_st<0> & !N_PZ_799 & current_st<2> & 
+	N_PZ_578
+	# current_st<1> & !N_PZ_799 & current_st<2> & 
+	cancel_mode
+	# int_sw_in & both_sw_in & current_st<0> & 
+	current_st<3> & !N_PZ_799
+	# !current_st<0> & !current_st<3> & !N_PZ_799 & 
+	!current_st<2> & !ic_sw_in
+	# !current_st<1> & !current_st<3> & !N_PZ_799 & 
+	!current_st<2> & dtmf_data<0> & ic_mute_sp
+	# !current_st<1> & !current_st<3> & !N_PZ_799 & 
+	!current_st<2> & !dtmf_rw & ic_mute_sp
+	# !current_st<1> & !current_st<3> & !N_PZ_799 & 
+	!current_st<2> & !dtmf_data<1> & ic_mute_sp
+	# !current_st<1> & !current_st<3> & !N_PZ_799 & 
+	!current_st<2> & !dtmf_data<2> & ic_mute_sp
+	# !current_st<1> & !current_st<3> & !N_PZ_799 & 
+	!current_st<2> & !dtmf_data<3> & ic_mute_sp;	// (13 pt, 18 inp)
+    next_st<0>.LH = !(N_PZ_799);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 10 | current_st<1>_MC
+ATTRIBUTES | 2323645184 | 0
+OUTPUTMC | 21 | 0 | 0 | 6 | 10 | 8 | 0 | 0 | 8 | 0 | 13 | 0 | 7 | 0 | 10 | 0 | 4 | 0 | 6 | 0 | 9 | 15 | 12 | 13 | 15 | 6 | 13 | 0 | 1 | 6 | 15 | 3 | 11 | 3 | 5 | 15 | 5 | 13 | 13 | 15 | 4 | 0 | 14
+INPUTS | 1 | next_st<1>
+INPUTMC | 1 | 0 | 10
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   current_st<1> := next_st<1>;	// (1 pt, 1 inp)
+    current_st<1>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    current_st<1>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 0 | 10 | next_st<1>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 1 | 8 | 10
+INPUTS | 15 | current_st<1>  | current_st<3>  | current_st<0>  | current_st<2>  | pei_wait  | ic_mute_sp  | cancel_mode  | N_PZ_578  | int_sw_in  | ext_sw_in  | both_sw_in  | dtmf_rw  | dtmf_data<1>  | dtmf_data<2>  | dtmf_data<3>
+INPUTMC | 12 | 8 | 10 | 8 | 8 | 8 | 15 | 8 | 9 | 0 | 0 | 8 | 0 | 0 | 4 | 0 | 6 | 6 | 10 | 6 | 6 | 6 | 3 | 6 | 2
+INPUTP | 3 | 75 | 74 | 69
+LCT | 1 | 2 | Internal_Name
+EQ | 15 | 
+   next_st<1>.D = current_st<1> & !current_st<3>
+	$ current_st<0> & !current_st<3> & current_st<2>
+	# current_st<0> & current_st<1> & !current_st<3> & 
+	pei_wait
+	# current_st<0> & !current_st<1> & !current_st<3> & 
+	!ic_mute_sp
+	# current_st<1> & !current_st<3> & current_st<2> & 
+	!cancel_mode & N_PZ_578
+	# int_sw_in & ext_sw_in & !both_sw_in & 
+	!current_st<1> & current_st<3> & !current_st<2>
+	# int_sw_in & ext_sw_in & !current_st<0> & 
+	current_st<1> & current_st<3> & !current_st<2>
+	# current_st<0> & !current_st<1> & !current_st<3> & 
+	dtmf_rw & dtmf_data<1> & !dtmf_data<2> & dtmf_data<3>;	// (8 pt, 15 inp)
+    next_st<1>.LH = !(N_PZ_799);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 8 | current_st<3>_MC
+ATTRIBUTES | 2323645184 | 0
+OUTPUTMC | 20 | 0 | 0 | 6 | 10 | 8 | 0 | 0 | 8 | 0 | 13 | 0 | 7 | 0 | 10 | 0 | 4 | 0 | 6 | 0 | 9 | 15 | 12 | 13 | 15 | 6 | 13 | 0 | 1 | 6 | 15 | 3 | 11 | 3 | 5 | 15 | 5 | 13 | 13 | 15 | 4
+INPUTS | 1 | next_st<3>
+INPUTMC | 1 | 0 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   current_st<3> := next_st<3>;	// (1 pt, 1 inp)
+    current_st<3>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    current_st<3>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 0 | 7 | next_st<3>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 1 | 8 | 8
+INPUTS | 10 | current_st<3>  | N_PZ_799  | current_st<1>  | current_st<2>  | dtmf_data<0>  | dtmf_rw  | dtmf_data<1>  | dtmf_data<2>  | dtmf_data<3>  | ic_mute_sp
+INPUTMC | 10 | 8 | 8 | 0 | 13 | 8 | 10 | 8 | 9 | 6 | 7 | 6 | 10 | 6 | 6 | 6 | 3 | 6 | 2 | 8 | 0
+LCT | 1 | 2 | Internal_Name
+EQ | 8 | 
+   next_st<3>.D = current_st<3> & !N_PZ_799
+	# !current_st<1> & !N_PZ_799 & !current_st<2> & 
+	dtmf_data<0> & dtmf_rw & dtmf_data<1> & !dtmf_data<2> & 
+	dtmf_data<3> & ic_mute_sp
+	# !current_st<1> & !N_PZ_799 & !current_st<2> & 
+	!dtmf_data<0> & dtmf_rw & dtmf_data<1> & dtmf_data<2> & 
+	dtmf_data<3> & ic_mute_sp;	// (3 pt, 10 inp)
+    next_st<3>.LH = !(N_PZ_799);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 13 | N_PZ_799_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 3 | 0 | 7 | 0 | 9 | 0 | 14
+INPUTS | 4 | current_st<3>  | current_st<2>  | current_st<0>  | current_st<1>
+INPUTMC | 4 | 8 | 8 | 8 | 9 | 8 | 15 | 8 | 10
+EQ | 4 | 
+   N_PZ_799 = current_st<3> & current_st<2>
+	# current_st<0> & current_st<1> & current_st<3>
+	# !current_st<0> & !current_st<1> & !current_st<3> & 
+	!current_st<2>;	// (3 pt, 4 inp)
+
+MACROCELL | 8 | 9 | current_st<2>_MC
+ATTRIBUTES | 2323645184 | 0
+OUTPUTMC | 21 | 0 | 0 | 6 | 10 | 8 | 0 | 0 | 8 | 0 | 13 | 0 | 7 | 0 | 4 | 0 | 6 | 0 | 10 | 0 | 9 | 15 | 12 | 13 | 15 | 6 | 13 | 0 | 1 | 6 | 15 | 3 | 11 | 3 | 5 | 15 | 5 | 13 | 13 | 15 | 4 | 0 | 14
+INPUTS | 1 | next_st<2>
+INPUTMC | 1 | 0 | 8
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   current_st<2> := next_st<2>;	// (1 pt, 1 inp)
+    current_st<2>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    current_st<2>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 0 | 8 | next_st<2>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 1 | 8 | 9
+INPUTS | 12 | current_st<0>  | current_st<3>  | current_st<2>  | current_st<1>  | pei_wait  | ic_sw_in  | dtmf_data<0>  | dtmf_rw  | dtmf_data<1>  | dtmf_data<2>  | dtmf_data<3>  | ic_mute_sp
+INPUTMC | 11 | 8 | 15 | 8 | 8 | 8 | 9 | 8 | 10 | 0 | 0 | 6 | 7 | 6 | 10 | 6 | 6 | 6 | 3 | 6 | 2 | 8 | 0
+INPUTP | 1 | 76
+LCT | 1 | 2 | Internal_Name
+EQ | 10 | 
+   next_st<2>.D = !current_st<0> & !current_st<3> & current_st<2>
+	# !current_st<1> & !current_st<3> & current_st<2>
+	# current_st<0> & current_st<1> & !current_st<3> & 
+	!current_st<2> & pei_wait
+	# !current_st<0> & current_st<1> & !current_st<3> & 
+	!current_st<2> & !ic_sw_in
+	# current_st<0> & !current_st<1> & !current_st<3> & 
+	!dtmf_data<0> & dtmf_rw & dtmf_data<1> & dtmf_data<2> & 
+	dtmf_data<3> & ic_mute_sp;	// (5 pt, 12 inp)
+    next_st<2>.LH = !(N_PZ_799);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 0 | pei_wait_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 7 | 0 | 0 | 6 | 10 | 0 | 8 | 0 | 10 | 0 | 9 | 0 | 1 | 3 | 5
+INPUTS | 5 | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>  | pei_wait
+INPUTMC | 5 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9 | 0 | 0
+EQ | 2 | 
+   pei_wait = current_st<0> & current_st<1> & !current_st<3> & 
+	!current_st<2> & !pei_wait;	// (1 pt, 5 inp)
+
+MACROCELL | 6 | 7 | dtmf_data<0>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 6 | 8 | 0 | 0 | 8 | 0 | 7 | 0 | 4 | 0 | 6 | 0 | 9
+INPUTS | 2 | dtmf_inout<0>.PIN  | dtmf_rw
+INPUTMC | 1 | 6 | 10
+INPUTP | 1 | 30
+EQ | 2 | 
+   dtmf_data<0>.D = dtmf_inout<0>.PIN;	// (1 pt, 1 inp)
+    dtmf_data<0>.LH = dtmf_rw;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 6 | 10 | dtmf_rw_MC
+ATTRIBUTES | 1610875648 | 0
+OUTPUTMC | 11 | 6 | 7 | 6 | 6 | 6 | 3 | 6 | 2 | 8 | 0 | 0 | 8 | 0 | 7 | 0 | 4 | 0 | 6 | 0 | 10 | 0 | 9
+INPUTS | 11 | int_sw_in  | ext_sw_in  | both_sw_in  | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>  | pei_wait  | hs_sw  | ic_sw_in  | pei_sw_in
+INPUTMC | 5 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9 | 0 | 0
+INPUTP | 6 | 75 | 74 | 69 | 134 | 76 | 77
+EQ | 12 | 
+   dtmf_rw = int_sw_in & ext_sw_in & both_sw_in & 
+	current_st<0> & current_st<1> & !current_st<3> & !current_st<2> & 
+	pei_wait & !hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	current_st<0> & !current_st<1> & !current_st<3> & !current_st<2> & 
+	ic_sw_in & !hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	!current_st<0> & current_st<1> & !current_st<3> & !current_st<2> & 
+	ic_sw_in & !hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	!current_st<0> & !current_st<1> & !current_st<3> & current_st<2> & 
+	!hs_sw & pei_sw_in;	// (4 pt, 11 inp)
+
+MACROCELL | 6 | 6 | dtmf_data<1>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 7 | 8 | 0 | 0 | 8 | 0 | 7 | 0 | 4 | 0 | 6 | 0 | 10 | 0 | 9
+INPUTS | 2 | dtmf_inout<1>.PIN  | dtmf_rw
+INPUTMC | 1 | 6 | 10
+INPUTP | 1 | 28
+EQ | 2 | 
+   dtmf_data<1>.D = dtmf_inout<1>.PIN;	// (1 pt, 1 inp)
+    dtmf_data<1>.LH = dtmf_rw;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 6 | 3 | dtmf_data<2>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 7 | 8 | 0 | 0 | 8 | 0 | 7 | 0 | 4 | 0 | 6 | 0 | 10 | 0 | 9
+INPUTS | 2 | dtmf_inout<2>.PIN  | dtmf_rw
+INPUTMC | 1 | 6 | 10
+INPUTP | 1 | 21
+EQ | 2 | 
+   dtmf_data<2>.D = dtmf_inout<2>.PIN;	// (1 pt, 1 inp)
+    dtmf_data<2>.LH = dtmf_rw;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 6 | 2 | dtmf_data<3>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 7 | 8 | 0 | 0 | 8 | 0 | 7 | 0 | 4 | 0 | 6 | 0 | 10 | 0 | 9
+INPUTS | 2 | dtmf_inout<3>.PIN  | dtmf_rw
+INPUTMC | 1 | 6 | 10
+INPUTP | 1 | 20
+EQ | 2 | 
+   dtmf_data<3>.D = dtmf_inout<3>.PIN;	// (1 pt, 1 inp)
+    dtmf_data<3>.LH = dtmf_rw;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 0 | ic_mute_sp_MC
+ATTRIBUTES | 1610875648 | 0
+OUTPUTMC | 13 | 0 | 8 | 0 | 7 | 0 | 10 | 0 | 9 | 0 | 5 | 0 | 11 | 0 | 12 | 2 | 2 | 0 | 14 | 2 | 4 | 0 | 3 | 2 | 13 | 0 | 15
+INPUTS | 10 | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>  | ic_sw_in  | dtmf_data<0>  | dtmf_rw  | dtmf_data<1>  | dtmf_data<2>  | dtmf_data<3>
+INPUTMC | 9 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9 | 6 | 7 | 6 | 10 | 6 | 6 | 6 | 3 | 6 | 2
+INPUTP | 1 | 76
+EQ | 5 | 
+   !ic_mute_sp = current_st<0> & !current_st<1> & !current_st<3> & 
+	!current_st<2> & !ic_sw_in
+	# current_st<0> & !current_st<1> & !current_st<3> & 
+	!current_st<2> & dtmf_data<0> & dtmf_rw & !dtmf_data<1> & 
+	dtmf_data<2> & !dtmf_data<3>;	// (2 pt, 10 inp)
+
+MACROCELL | 4 | 8 | clk_1ms_MC
+ATTRIBUTES | 2185265920 | 0
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 9 | 
+   clk_1ms.T := !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (1 pt, 32 inp)
+   clk_1ms.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    clk_1ms.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 7 | cnt<0>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 33 | 2 | 14 | 2 | 12 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 9 | 
+   !cnt<0>.T := !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (1 pt, 32 inp)
+   cnt<0>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<0>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 5 | cnt<3>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 31 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<2>  | cnt<1>  | cnt<3>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 2 | 12 | 2 | 14 | 4 | 5 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 10 | 
+   cnt<3>.T := cnt<0> & cnt<2> & cnt<1>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (2 pt, 32 inp)
+   cnt<3>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<3>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 12 | cnt<2>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 31 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 3 | cnt<0>  | cnt<1>  | cancel_sw_in
+INPUTMC | 2 | 4 | 7 | 2 | 14
+INPUTP | 1 | 81
+EQ | 3 | 
+   cnt<2>.T := cnt<0> & cnt<1>;	// (1 pt, 2 inp)
+   cnt<2>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<2>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 14 | cnt<1>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 32 | 2 | 12 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 2 | cnt<0>  | cancel_sw_in
+INPUTMC | 1 | 4 | 7
+INPUTP | 1 | 81
+EQ | 3 | 
+   cnt<1>.T := cnt<0>;	// (1 pt, 1 inp)
+   cnt<1>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<1>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 6 | cnt<10>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 29 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<10>  | cnt<11>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 6 | 4 | 2 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 11 | 
+   cnt<10>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<6> & 
+	cnt<5> & cnt<4> & cnt<7> & cnt<8> & cnt<9>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (2 pt, 32 inp)
+   cnt<10>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<10>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 4 | cnt<6>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 29 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<5>  | cnt<4>  | cnt<10>  | cnt<6>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 2 | 10 | 2 | 11 | 4 | 6 | 4 | 4 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 11 | 
+   cnt<6>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<5> & 
+	cnt<4>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (2 pt, 32 inp)
+   cnt<6>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<6>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 10 | cnt<5>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 29 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 6 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<4>  | cancel_sw_in
+INPUTMC | 5 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 2 | 11
+INPUTP | 1 | 81
+EQ | 3 | 
+   cnt<5>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<4>;	// (1 pt, 5 inp)
+   cnt<5>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<5>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 11 | cnt<4>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 30 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 5 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cancel_sw_in
+INPUTMC | 4 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14
+INPUTP | 1 | 81
+EQ | 3 | 
+   cnt<4>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1>;	// (1 pt, 4 inp)
+   cnt<4>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<4>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 2 | cnt<11>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 29 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<11>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 2 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 11 | 
+   cnt<11>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<7> & cnt<8> & cnt<9>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (2 pt, 32 inp)
+   cnt<11>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<11>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 3 | cnt<7>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 29 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<10>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 6 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 11 | 
+   cnt<7>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<6> & 
+	cnt<5> & cnt<4>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (2 pt, 32 inp)
+   cnt<7>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<7>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 1 | cnt<8>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 29 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<7>  | cnt<10>  | cnt<11>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 3 | 4 | 6 | 4 | 2 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 11 | 
+   cnt<8>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<6> & 
+	cnt<5> & cnt<4> & cnt<7>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (2 pt, 32 inp)
+   cnt<8>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<8>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 7 | 15 | cnt<9>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 29 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<7>  | cnt<8>  | cnt<10>  | cnt<11>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 3 | 4 | 1 | 4 | 6 | 4 | 2 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 11 | 
+   cnt<9>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<6> & 
+	cnt<5> & cnt<4> & cnt<7> & cnt<8>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (2 pt, 32 inp)
+   cnt<9>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<9>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 0 | cnt<13>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 28 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<12>  | cnt<13>  | cnt<15>  | cnt<14>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 2 | 9 | 4 | 0 | 4 | 13 | 2 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 12 | 
+   cnt<13>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<12>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (2 pt, 32 inp)
+   cnt<13>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<13>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 9 | cnt<12>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 28 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 13 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cancel_sw_in
+INPUTMC | 12 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15
+INPUTP | 1 | 81
+EQ | 5 | 
+   cnt<12>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9>;	// (1 pt, 12 inp)
+   cnt<12>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<12>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 13 | cnt<15>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 27 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 32 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<14>  | cnt<15>  | cnt<31>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 32 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 2 | 8 | 4 | 13 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 12 | 
+   cnt<15>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<14>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14> & 
+	!cnt<31> & !cnt<30> & !cnt<29> & !cnt<28> & !cnt<27> & 
+	!cnt<26> & !cnt<25> & !cnt<24> & !cnt<23> & !cnt<22> & 
+	!cnt<21> & !cnt<20> & !cnt<19> & !cnt<18> & !cnt<17> & 
+	!cnt<16>;	// (2 pt, 32 inp)
+   cnt<15>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<15>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 8 | cnt<14>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 27 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 15 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cancel_sw_in
+INPUTMC | 14 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9
+INPUTP | 1 | 81
+EQ | 5 | 
+   cnt<14>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12>;	// (1 pt, 14 inp)
+   cnt<14>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<14>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 9 | cnt<31>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 11 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 31 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<30>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 31 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 10 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 8 | 
+   cnt<31>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<30> & cnt<29> & cnt<28> & cnt<27> & cnt<26> & 
+	cnt<25> & cnt<24> & cnt<23> & cnt<22> & cnt<21> & 
+	cnt<20> & cnt<19> & cnt<18> & cnt<17> & cnt<16>;	// (1 pt, 31 inp)
+   cnt<31>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<31>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 10 | cnt<30>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 12 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 30 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<29>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 30 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 11 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 8 | 
+   cnt<30>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<29> & cnt<28> & cnt<27> & cnt<26> & cnt<25> & 
+	cnt<24> & cnt<23> & cnt<22> & cnt<21> & cnt<20> & 
+	cnt<19> & cnt<18> & cnt<17> & cnt<16>;	// (1 pt, 30 inp)
+   cnt<30>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<30>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 11 | cnt<29>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 13 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 29 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<28>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 29 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 8 | 
+   cnt<29>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<28> & cnt<27> & cnt<26> & cnt<25> & cnt<24> & 
+	cnt<23> & cnt<22> & cnt<21> & cnt<20> & cnt<19> & 
+	cnt<18> & cnt<17> & cnt<16>;	// (1 pt, 29 inp)
+   cnt<29>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<29>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 12 | cnt<28>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 14 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 28 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<27>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 28 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 14 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 8 | 
+   cnt<28>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<27> & cnt<26> & cnt<25> & cnt<24> & cnt<23> & 
+	cnt<22> & cnt<21> & cnt<20> & cnt<19> & cnt<18> & 
+	cnt<17> & cnt<16>;	// (1 pt, 28 inp)
+   cnt<28>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<28>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 14 | cnt<27>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 15 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 27 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<26>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 27 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 4 | 15 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 8 | 
+   cnt<27>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<26> & cnt<25> & cnt<24> & cnt<23> & cnt<22> & 
+	cnt<21> & cnt<20> & cnt<19> & cnt<18> & cnt<17> & 
+	cnt<16>;	// (1 pt, 27 inp)
+   cnt<27>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<27>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 4 | 15 | cnt<26>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 16 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 26 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<25>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 26 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 3 | 9 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<26>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<25> & cnt<24> & cnt<23> & cnt<22> & cnt<21> & 
+	cnt<20> & cnt<19> & cnt<18> & cnt<17> & cnt<16>;	// (1 pt, 26 inp)
+   cnt<26>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<26>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 3 | 9 | cnt<25>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 17 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 25 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<24>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 25 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 3 | 10 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<25>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<24> & cnt<23> & cnt<22> & cnt<21> & cnt<20> & 
+	cnt<19> & cnt<18> & cnt<17> & cnt<16>;	// (1 pt, 25 inp)
+   cnt<25>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<25>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 3 | 10 | cnt<24>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 18 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 24 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<23>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 24 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 3 | 12 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<24>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<23> & cnt<22> & cnt<21> & cnt<20> & cnt<19> & 
+	cnt<18> & cnt<17> & cnt<16>;	// (1 pt, 24 inp)
+   cnt<24>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<24>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 3 | 12 | cnt<23>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 19 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 23 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<22>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 23 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 3 | 14 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<23>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<22> & cnt<21> & cnt<20> & cnt<19> & cnt<18> & 
+	cnt<17> & cnt<16>;	// (1 pt, 23 inp)
+   cnt<23>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<23>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 3 | 14 | cnt<22>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 20 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 22 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<21>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 22 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 3 | 15 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<22>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<21> & cnt<20> & cnt<19> & cnt<18> & cnt<17> & 
+	cnt<16>;	// (1 pt, 22 inp)
+   cnt<22>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<22>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 3 | 15 | cnt<21>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 21 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 21 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<20>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>
+INPUTMC | 21 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 2 | 1 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+LCT | 1 | 4 | Internal_Name
+EQ | 6 | 
+   cnt<21>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<20> & cnt<19> & cnt<18> & cnt<17> & cnt<16>;	// (1 pt, 21 inp)
+   cnt<21>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<21>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 1 | cnt<20>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 22 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 21 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<19>  | cnt<18>  | cnt<17>  | cnt<16>  | cancel_sw_in
+INPUTMC | 20 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 2 | 3 | 2 | 5 | 2 | 6 | 2 | 7
+INPUTP | 1 | 81
+EQ | 6 | 
+   cnt<20>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<19> & cnt<18> & cnt<17> & cnt<16>;	// (1 pt, 20 inp)
+   cnt<20>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<20>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 3 | cnt<19>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 23 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 20 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<18>  | cnt<17>  | cnt<16>  | cancel_sw_in
+INPUTMC | 19 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 2 | 5 | 2 | 6 | 2 | 7
+INPUTP | 1 | 81
+EQ | 6 | 
+   cnt<19>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<18> & cnt<17> & cnt<16>;	// (1 pt, 19 inp)
+   cnt<19>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<19>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 5 | cnt<18>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 24 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 19 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<17>  | cnt<16>  | cancel_sw_in
+INPUTMC | 18 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 2 | 6 | 2 | 7
+INPUTP | 1 | 81
+EQ | 6 | 
+   cnt<18>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<17> & cnt<16>;	// (1 pt, 18 inp)
+   cnt<18>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<18>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 6 | cnt<17>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 25 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 18 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cnt<16>  | cancel_sw_in
+INPUTMC | 17 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8 | 2 | 7
+INPUTP | 1 | 81
+EQ | 6 | 
+   cnt<17>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14> & 
+	cnt<16>;	// (1 pt, 17 inp)
+   cnt<17>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<17>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 7 | cnt<16>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 26 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+INPUTS | 17 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>  | cancel_sw_in
+INPUTMC | 16 | 4 | 7 | 4 | 5 | 2 | 12 | 2 | 14 | 4 | 6 | 4 | 4 | 2 | 10 | 2 | 11 | 4 | 2 | 4 | 3 | 4 | 1 | 7 | 15 | 4 | 0 | 2 | 9 | 4 | 13 | 2 | 8
+INPUTP | 1 | 81
+EQ | 5 | 
+   cnt<16>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<15> & cnt<14>;	// (1 pt, 16 inp)
+   cnt<16>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<16>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 4 | cancel_mode_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 5 | 0 | 10 | 0 | 9 | 0 | 2 | 0 | 14 | 0 | 15
+INPUTS | 12 | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>  | hs_sw  | pei_sw_in  | cancel_sw_in  | dtmf_data<0>  | dtmf_rw  | dtmf_data<1>  | dtmf_data<2>  | dtmf_data<3>
+INPUTMC | 9 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9 | 6 | 7 | 6 | 10 | 6 | 6 | 6 | 3 | 6 | 2
+INPUTP | 3 | 134 | 77 | 81
+EQ | 5 | 
+   cancel_mode = !current_st<0> & current_st<1> & !current_st<3> & 
+	current_st<2> & hs_sw & pei_sw_in & !cancel_sw_in
+	# !current_st<0> & current_st<1> & !current_st<3> & 
+	current_st<2> & dtmf_data<0> & hs_sw & pei_sw_in & dtmf_rw & 
+	!dtmf_data<1> & !dtmf_data<2> & dtmf_data<3>;	// (2 pt, 12 inp)
+
+MACROCELL | 0 | 6 | N_PZ_578_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 11 | 0 | 10 | 0 | 9 | 9 | 0 | 0 | 2 | 0 | 12 | 2 | 2 | 0 | 14 | 2 | 4 | 0 | 3 | 2 | 13 | 0 | 15
+INPUTS | 11 | current_st<0>  | current_st<3>  | current_st<2>  | pei_sw_in  | current_st<1>  | hs_sw  | dtmf_data<0>  | dtmf_rw  | dtmf_data<1>  | dtmf_data<2>  | dtmf_data<3>
+INPUTMC | 9 | 8 | 15 | 8 | 8 | 8 | 9 | 8 | 10 | 6 | 7 | 6 | 10 | 6 | 6 | 6 | 3 | 6 | 2
+INPUTP | 2 | 77 | 134
+EQ | 7 | 
+   N_PZ_578 = !current_st<0> & !current_st<3> & current_st<2> & 
+	!pei_sw_in
+	# !current_st<0> & current_st<1> & !current_st<3> & 
+	current_st<2> & !hs_sw
+	# !current_st<0> & !current_st<3> & current_st<2> & 
+	dtmf_data<0> & dtmf_rw & dtmf_data<1> & dtmf_data<2> & 
+	!dtmf_data<3>;	// (3 pt, 11 inp)
+
+MACROCELL | 13 | 15 | cancel_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 4 | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>
+INPUTMC | 4 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9
+EQ | 4 | 
+   !cancel_led = current_st<0> & !current_st<1> & !current_st<3> & 
+	current_st<2>
+	# !current_st<0> & current_st<1> & !current_st<3> & 
+	current_st<2>;	// (2 pt, 4 inp)
+
+MACROCELL | 6 | 11 | dtmf_cs_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 0
+EQ | 1 | 
+   dtmf_cs = Gnd;	// (0 pt, 0 inp)
+
+MACROCELL | 6 | 13 | dtmf_inout<0>_MC
+ATTRIBUTES | 67896096 | 2
+INPUTS | 12 | int_sw_in  | hs_sw  | ext_sw_in  | both_sw_in  | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>  | dtmf_inout_tx_mux0000<0>  | pei_sw_in  | cancel_sw_in  | N_PZ_588
+INPUTMC | 6 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9 | 6 | 9 | 0 | 1
+INPUTP | 6 | 75 | 134 | 74 | 69 | 77 | 81
+LCT | 1 | 5 | Internal_Name
+EQ | 14 | 
+   dtmf_inout<0>.D = !int_sw_in & !hs_sw
+	# ext_sw_in & !both_sw_in & !hs_sw
+	# ext_sw_in & !current_st<0> & current_st<1> & 
+	!current_st<3> & current_st<2> & !hs_sw
+	# ext_sw_in & !current_st<0> & current_st<1> & 
+	!current_st<3> & !hs_sw & dtmf_inout_tx_mux0000<0>
+	# ext_sw_in & !current_st<0> & !current_st<3> & 
+	current_st<2> & !hs_sw & !pei_sw_in
+	# ext_sw_in & current_st<0> & !current_st<1> & 
+	!current_st<3> & current_st<2> & !hs_sw & !cancel_sw_in
+	# ext_sw_in & current_st<0> & !current_st<1> & 
+	!current_st<3> & !current_st<2> & !hs_sw & dtmf_inout_tx_mux0000<0>;	// (7 pt, 11 inp)
+    dtmf_inout<0>.OE = !dtmf_rw;	// CTE	(1 pt, 1 inp)
+    dtmf_inout<0>.LH = !(N_PZ_588);	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 6 | 9 | dtmf_inout_tx_mux0000<0>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 1 | 6 | 13
+INPUTS | 1 | ic_sw_in
+INPUTP | 1 | 76
+EQ | 2 | 
+   dtmf_inout_tx_mux0000<0>.D = !ic_sw_in;	// (1 pt, 1 inp)
+    dtmf_inout_tx_mux0000<0>.LH = !(ic_sw_in);	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 1 | N_PZ_588_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 3 | 6 | 13 | 6 | 15 | 3 | 11
+INPUTS | 10 | int_sw_in  | ext_sw_in  | both_sw_in  | current_st<3>  | hs_sw  | current_st<0>  | current_st<1>  | current_st<2>  | pei_wait  | pei_sw_in
+INPUTMC | 5 | 8 | 8 | 8 | 15 | 8 | 10 | 8 | 9 | 0 | 0
+INPUTP | 5 | 75 | 74 | 69 | 134 | 77
+EQ | 11 | 
+   N_PZ_588 = int_sw_in & ext_sw_in & both_sw_in & 
+	current_st<3> & !hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	current_st<0> & current_st<1> & current_st<2> & !hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	current_st<0> & current_st<1> & pei_wait & !hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	!current_st<0> & !current_st<1> & !current_st<2> & !hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	!current_st<0> & !current_st<1> & !current_st<3> & current_st<2> & 
+	!hs_sw & pei_sw_in;	// (5 pt, 10 inp)
+
+MACROCELL | 6 | 15 | dtmf_inout<1>_MC
+ATTRIBUTES | 67896096 | 2
+INPUTS | 11 | int_sw_in  | ext_sw_in  | hs_sw  | both_sw_in  | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>  | cancel_sw_in  | pei_sw_in  | N_PZ_588
+INPUTMC | 5 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9 | 0 | 1
+INPUTP | 6 | 75 | 74 | 134 | 69 | 81 | 77
+LCT | 1 | 5 | Internal_Name
+EQ | 8 | 
+   dtmf_inout<1>.D = int_sw_in & !ext_sw_in & !hs_sw
+	# int_sw_in & ext_sw_in & !both_sw_in & !hs_sw
+	# int_sw_in & !current_st<0> & current_st<1> & 
+	!current_st<3> & current_st<2> & !hs_sw & cancel_sw_in
+	# int_sw_in & !current_st<0> & !current_st<1> & 
+	!current_st<3> & current_st<2> & !hs_sw & !pei_sw_in;	// (4 pt, 10 inp)
+    dtmf_inout<1>.OE = !dtmf_rw;	// CTE	(1 pt, 1 inp)
+    dtmf_inout<1>.LH = !(N_PZ_588);	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 11 | dtmf_inout<2>_MC
+ATTRIBUTES | 202113792 | 2
+INPUTS | 11 | hs_sw  | int_sw_in  | ext_sw_in  | both_sw_in  | current_st<0>  | current_st<1>  | N_PZ_588  | current_st<2>  | dtmf_inout_tx_mux0000<2>  | current_st<3>  | cancel_sw_in
+INPUTMC | 6 | 8 | 15 | 8 | 10 | 0 | 1 | 8 | 9 | 6 | 8 | 8 | 8
+INPUTP | 5 | 134 | 75 | 74 | 69 | 81
+LCT | 2 | 2 | Internal_Name | 5 | Internal_Name
+EQ | 13 | 
+   dtmf_inout<2>.D = hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	current_st<0> & current_st<1> & !N_PZ_588
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	!current_st<2> & !N_PZ_588 & dtmf_inout_tx_mux0000<2>
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	!current_st<0> & current_st<1> & !current_st<3> & current_st<2> & 
+	cancel_sw_in
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	!current_st<0> & !current_st<1> & !current_st<3> & current_st<2> & 
+	!N_PZ_588;	// (5 pt, 11 inp)
+    dtmf_inout<2>.OE = !dtmf_rw;	// CTE	(1 pt, 1 inp)
+    dtmf_inout<2>.LH = !(N_PZ_588);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 6 | 8 | dtmf_inout_tx_mux0000<2>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 1 | 3 | 11
+INPUTS | 1 | ic_sw_in
+INPUTP | 1 | 76
+EQ | 2 | 
+   dtmf_inout_tx_mux0000<2>.D = !ic_sw_in;	// (1 pt, 1 inp)
+    dtmf_inout_tx_mux0000<2>.LH = !(ic_sw_in);	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 5 | dtmf_inout<3>_MC
+ATTRIBUTES | 202113792 | 2
+INPUTS | 10 | int_sw_in  | ext_sw_in  | both_sw_in  | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>  | hs_sw  | pei_wait  | cancel_sw_in
+INPUTMC | 5 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9 | 0 | 0
+INPUTP | 5 | 75 | 74 | 69 | 134 | 81
+LCT | 2 | 2 | Internal_Name | 5 | Internal_Name
+EQ | 11 | 
+   dtmf_inout<3>.D = int_sw_in & ext_sw_in & both_sw_in & 
+	current_st<0> & !current_st<1> & !current_st<3> & current_st<2> & 
+	!hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	current_st<0> & current_st<1> & !current_st<3> & !current_st<2> & 
+	!pei_wait & !hs_sw
+	# int_sw_in & ext_sw_in & both_sw_in & 
+	!current_st<0> & current_st<1> & !current_st<3> & current_st<2> & 
+	!hs_sw & !cancel_sw_in;	// (3 pt, 10 inp)
+    dtmf_inout<3>.OE = !dtmf_rw;	// CTE	(1 pt, 1 inp)
+    dtmf_inout<3>.LH = !(N_PZ_588);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 6 | 12 | dtmf_rs0_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 0
+EQ | 1 | 
+   dtmf_rs0 = Gnd;	// (0 pt, 0 inp)
+
+MACROCELL | 8 | 1 | dual_mute_sp_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 0
+EQ | 1 | 
+   !dual_mute_sp = Gnd;	// (0 pt, 0 inp)
+
+MACROCELL | 15 | 11 | ext_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 2 | int_sw_in  | ext_sw_in
+INPUTP | 2 | 75 | 74
+EQ | 1 | 
+   !ext_led = int_sw_in & !ext_sw_in;	// (1 pt, 2 inp)
+
+MACROCELL | 15 | 5 | ic_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 4 | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>
+INPUTMC | 4 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9
+EQ | 2 | 
+   !ic_led = !current_st<0> & current_st<1> & !current_st<3> & 
+	!current_st<2>;	// (1 pt, 4 inp)
+
+MACROCELL | 15 | 10 | int_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 1 | int_sw_in
+INPUTP | 1 | 75
+EQ | 1 | 
+   int_led = int_sw_in;	// (1 pt, 1 inp)
+
+MACROCELL | 11 | 13 | live_sw_MC
+ATTRIBUTES | 135004928 | 0
+INPUTS | 31 | cntms<31>  | cntms<6>  | cntms<30>  | cntms<29>  | cntms<28>  | cntms<27>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<2>  | cntms<1>
+INPUTMC | 31 | 5 | 6 | 5 | 7 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 15 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7 | 5 | 8 | 7 | 9 | 7 | 13 | 5 | 10 | 7 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 26 | 
+   live_sw.D = cntms<31>
+	# !cntms<6> & !cntms<30> & !cntms<29> & !cntms<28> & 
+	!cntms<27> & !cntms<26> & !cntms<25> & !cntms<24> & !cntms<23> & 
+	!cntms<22> & !cntms<21> & !cntms<20> & !cntms<19> & !cntms<18> & 
+	!cntms<17> & !cntms<16> & !cntms<15> & !cntms<14> & !cntms<13> & 
+	!cntms<12> & !cntms<11> & !cntms<10> & !cntms<9> & !cntms<8> & 
+	!cntms<7>
+	# !cntms<5> & !cntms<4> & !cntms<30> & !cntms<29> & 
+	!cntms<28> & !cntms<27> & !cntms<26> & !cntms<25> & !cntms<24> & 
+	!cntms<23> & !cntms<22> & !cntms<21> & !cntms<20> & !cntms<19> & 
+	!cntms<18> & !cntms<17> & !cntms<16> & !cntms<15> & !cntms<14> & 
+	!cntms<13> & !cntms<12> & !cntms<11> & !cntms<10> & !cntms<9> & 
+	!cntms<8> & !cntms<7>
+	# !cntms<5> & !cntms<3> & !cntms<30> & !cntms<29> & 
+	!cntms<28> & !cntms<27> & !cntms<26> & !cntms<25> & !cntms<24> & 
+	!cntms<23> & !cntms<22> & !cntms<21> & !cntms<20> & !cntms<19> & 
+	!cntms<18> & !cntms<17> & !cntms<16> & !cntms<15> & !cntms<14> & 
+	!cntms<13> & !cntms<12> & !cntms<11> & !cntms<10> & !cntms<9> & 
+	!cntms<8> & !cntms<7>
+	# !cntms<2> & !cntms<5> & !cntms<1> & !cntms<30> & 
+	!cntms<29> & !cntms<28> & !cntms<27> & !cntms<26> & !cntms<25> & 
+	!cntms<24> & !cntms<23> & !cntms<22> & !cntms<21> & !cntms<20> & 
+	!cntms<19> & !cntms<18> & !cntms<17> & !cntms<16> & !cntms<15> & 
+	!cntms<14> & !cntms<13> & !cntms<12> & !cntms<11> & !cntms<10> & 
+	!cntms<9> & !cntms<8> & !cntms<7>;	// (5 pt, 31 inp)
+    live_sw.LH = !(hs_sw);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 5 | 6 | cntms<31>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 11 | 13
+INPUTS | 31 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<30>  | cntms<29>  | cntms<28>  | cntms<27>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 31 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 15 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 9 | 
+   cntms<31>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<30> & cntms<29> & 
+	cntms<28> & cntms<27> & cntms<26> & cntms<25> & cntms<24> & 
+	cntms<23> & cntms<22> & cntms<21> & cntms<20> & cntms<19> & 
+	cntms<18> & cntms<17> & cntms<16> & cntms<15> & cntms<14> & 
+	cntms<13> & cntms<12> & cntms<11> & cntms<10> & cntms<9> & 
+	cntms<8> & cntms<7>;	// (1 pt, 31 inp)
+    cntms<31>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<31>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 10 | cntms<2>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 32 | 7 | 13 | 7 | 9 | 8 | 7 | 8 | 6 | 8 | 4 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 32 | cntms<0>  | cntms<1>  | cntms<31>  | cntms<2>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<6>  | cntms<30>  | cntms<29>  | cntms<28>  | cntms<27>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 32 | 5 | 9 | 7 | 14 | 5 | 6 | 5 | 10 | 5 | 8 | 7 | 9 | 7 | 13 | 5 | 7 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 15 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 10 | 
+   cntms<2>.T := cntms<0> & cntms<1>
+	# !cntms<31> & cntms<2> & !cntms<0> & cntms<5> & 
+	!cntms<4> & !cntms<3> & !cntms<1> & cntms<6> & !cntms<30> & 
+	!cntms<29> & !cntms<28> & !cntms<27> & !cntms<26> & !cntms<25> & 
+	!cntms<24> & !cntms<23> & !cntms<22> & !cntms<21> & !cntms<20> & 
+	!cntms<19> & !cntms<18> & !cntms<17> & !cntms<16> & !cntms<15> & 
+	!cntms<14> & !cntms<13> & !cntms<12> & !cntms<11> & !cntms<10> & 
+	!cntms<9> & !cntms<8> & !cntms<7>;	// (2 pt, 32 inp)
+    cntms<2>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<2>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 9 | cntms<0>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 32 | 7 | 14 | 7 | 13 | 7 | 9 | 8 | 7 | 8 | 6 | 8 | 4 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6
+INPUTS | 32 | cntms<31>  | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<30>  | cntms<29>  | cntms<28>  | cntms<27>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 32 | 5 | 6 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 15 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 9 | 
+   !cntms<0>.T := !cntms<31> & cntms<2> & !cntms<0> & cntms<5> & 
+	!cntms<4> & !cntms<3> & !cntms<1> & cntms<6> & !cntms<30> & 
+	!cntms<29> & !cntms<28> & !cntms<27> & !cntms<26> & !cntms<25> & 
+	!cntms<24> & !cntms<23> & !cntms<22> & !cntms<21> & !cntms<20> & 
+	!cntms<19> & !cntms<18> & !cntms<17> & !cntms<16> & !cntms<15> & 
+	!cntms<14> & !cntms<13> & !cntms<12> & !cntms<11> & !cntms<10> & 
+	!cntms<9> & !cntms<8> & !cntms<7>;	// (1 pt, 32 inp)
+    cntms<0>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<0>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 8 | cntms<5>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 30 | 8 | 7 | 8 | 6 | 8 | 4 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 32 | cntms<2>  | cntms<0>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<31>  | cntms<5>  | cntms<6>  | cntms<30>  | cntms<29>  | cntms<28>  | cntms<27>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 32 | 5 | 10 | 5 | 9 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 6 | 5 | 8 | 5 | 7 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 15 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 11 | 
+   cntms<5>.T := cntms<2> & cntms<0> & cntms<4> & cntms<3> & 
+	cntms<1>
+	# !cntms<31> & cntms<2> & !cntms<0> & cntms<5> & 
+	!cntms<4> & !cntms<3> & !cntms<1> & cntms<6> & !cntms<30> & 
+	!cntms<29> & !cntms<28> & !cntms<27> & !cntms<26> & !cntms<25> & 
+	!cntms<24> & !cntms<23> & !cntms<22> & !cntms<21> & !cntms<20> & 
+	!cntms<19> & !cntms<18> & !cntms<17> & !cntms<16> & !cntms<15> & 
+	!cntms<14> & !cntms<13> & !cntms<12> & !cntms<11> & !cntms<10> & 
+	!cntms<9> & !cntms<8> & !cntms<7>;	// (2 pt, 32 inp)
+    cntms<5>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<5>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 7 | 9 | cntms<4>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 30 | 8 | 7 | 8 | 6 | 8 | 4 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 4 | cntms<2>  | cntms<0>  | cntms<3>  | cntms<1>
+INPUTMC | 4 | 5 | 10 | 5 | 9 | 7 | 13 | 7 | 14
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   cntms<4>.T := cntms<2> & cntms<0> & cntms<3> & cntms<1>;	// (1 pt, 4 inp)
+    cntms<4>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<4>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 7 | 13 | cntms<3>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 31 | 7 | 9 | 8 | 7 | 8 | 6 | 8 | 4 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 3 | cntms<2>  | cntms<0>  | cntms<1>
+INPUTMC | 3 | 5 | 10 | 5 | 9 | 7 | 14
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   cntms<3>.T := cntms<2> & cntms<0> & cntms<1>;	// (1 pt, 3 inp)
+    cntms<3>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<3>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 7 | 14 | cntms<1>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 32 | 7 | 13 | 7 | 9 | 8 | 7 | 8 | 6 | 8 | 4 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 1 | cntms<0>
+INPUTMC | 1 | 5 | 9
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   cntms<1>.T := cntms<0>;	// (1 pt, 1 inp)
+    cntms<1>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<1>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 7 | cntms<6>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 30 | 8 | 7 | 8 | 6 | 8 | 4 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 32 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<31>  | cntms<6>  | cntms<30>  | cntms<29>  | cntms<28>  | cntms<27>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 32 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 6 | 5 | 7 | 5 | 5 | 5 | 4 | 5 | 2 | 5 | 15 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 11 | 
+   cntms<6>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1>
+	# !cntms<31> & cntms<2> & !cntms<0> & cntms<5> & 
+	!cntms<4> & !cntms<3> & !cntms<1> & cntms<6> & !cntms<30> & 
+	!cntms<29> & !cntms<28> & !cntms<27> & !cntms<26> & !cntms<25> & 
+	!cntms<24> & !cntms<23> & !cntms<22> & !cntms<21> & !cntms<20> & 
+	!cntms<19> & !cntms<18> & !cntms<17> & !cntms<16> & !cntms<15> & 
+	!cntms<14> & !cntms<13> & !cntms<12> & !cntms<11> & !cntms<10> & 
+	!cntms<9> & !cntms<8> & !cntms<7>;	// (2 pt, 32 inp)
+    cntms<6>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<6>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 5 | cntms<30>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 6 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 30 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<29>  | cntms<28>  | cntms<27>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 30 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 4 | 5 | 2 | 5 | 15 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 9 | 
+   cntms<30>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<29> & cntms<28> & 
+	cntms<27> & cntms<26> & cntms<25> & cntms<24> & cntms<23> & 
+	cntms<22> & cntms<21> & cntms<20> & cntms<19> & cntms<18> & 
+	cntms<17> & cntms<16> & cntms<15> & cntms<14> & cntms<13> & 
+	cntms<12> & cntms<11> & cntms<10> & cntms<9> & cntms<8> & 
+	cntms<7>;	// (1 pt, 30 inp)
+    cntms<30>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<30>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 4 | cntms<29>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 7 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 29 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<28>  | cntms<27>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 29 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 2 | 5 | 15 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   cntms<29>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<28> & cntms<27> & 
+	cntms<26> & cntms<25> & cntms<24> & cntms<23> & cntms<22> & 
+	cntms<21> & cntms<20> & cntms<19> & cntms<18> & cntms<17> & 
+	cntms<16> & cntms<15> & cntms<14> & cntms<13> & cntms<12> & 
+	cntms<11> & cntms<10> & cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 29 inp)
+    cntms<29>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<29>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 2 | cntms<28>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 8 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 28 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<27>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 28 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 15 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   cntms<28>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<27> & cntms<26> & 
+	cntms<25> & cntms<24> & cntms<23> & cntms<22> & cntms<21> & 
+	cntms<20> & cntms<19> & cntms<18> & cntms<17> & cntms<16> & 
+	cntms<15> & cntms<14> & cntms<13> & cntms<12> & cntms<11> & 
+	cntms<10> & cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 28 inp)
+    cntms<28>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<28>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 15 | cntms<27>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 9 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 27 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<26>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 27 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 14 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   cntms<27>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<26> & cntms<25> & 
+	cntms<24> & cntms<23> & cntms<22> & cntms<21> & cntms<20> & 
+	cntms<19> & cntms<18> & cntms<17> & cntms<16> & cntms<15> & 
+	cntms<14> & cntms<13> & cntms<12> & cntms<11> & cntms<10> & 
+	cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 27 inp)
+    cntms<27>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<27>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 14 | cntms<26>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 10 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 26 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<25>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 26 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 13 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   cntms<26>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<25> & cntms<24> & 
+	cntms<23> & cntms<22> & cntms<21> & cntms<20> & cntms<19> & 
+	cntms<18> & cntms<17> & cntms<16> & cntms<15> & cntms<14> & 
+	cntms<13> & cntms<12> & cntms<11> & cntms<10> & cntms<9> & 
+	cntms<8> & cntms<7>;	// (1 pt, 26 inp)
+    cntms<26>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<26>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 13 | cntms<25>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 11 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 25 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<24>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 25 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 12 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   cntms<25>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<24> & cntms<23> & 
+	cntms<22> & cntms<21> & cntms<20> & cntms<19> & cntms<18> & 
+	cntms<17> & cntms<16> & cntms<15> & cntms<14> & cntms<13> & 
+	cntms<12> & cntms<11> & cntms<10> & cntms<9> & cntms<8> & 
+	cntms<7>;	// (1 pt, 25 inp)
+    cntms<25>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<25>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 12 | cntms<24>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 24 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<23>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 24 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 11 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   cntms<24>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<23> & cntms<22> & 
+	cntms<21> & cntms<20> & cntms<19> & cntms<18> & cntms<17> & 
+	cntms<16> & cntms<15> & cntms<14> & cntms<13> & cntms<12> & 
+	cntms<11> & cntms<10> & cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 24 inp)
+    cntms<24>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<24>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 11 | cntms<23>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 13 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 23 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<22>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 23 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 3 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   cntms<23>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<22> & cntms<21> & 
+	cntms<20> & cntms<19> & cntms<18> & cntms<17> & cntms<16> & 
+	cntms<15> & cntms<14> & cntms<13> & cntms<12> & cntms<11> & 
+	cntms<10> & cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 23 inp)
+    cntms<23>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<23>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 3 | cntms<22>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 14 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 22 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<21>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 22 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 1 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   cntms<22>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<21> & cntms<20> & 
+	cntms<19> & cntms<18> & cntms<17> & cntms<16> & cntms<15> & 
+	cntms<14> & cntms<13> & cntms<12> & cntms<11> & cntms<10> & 
+	cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 22 inp)
+    cntms<22>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<22>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 1 | cntms<21>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 15 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 21 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<20>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 21 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 5 | 0 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   cntms<21>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<20> & cntms<19> & 
+	cntms<18> & cntms<17> & cntms<16> & cntms<15> & cntms<14> & 
+	cntms<13> & cntms<12> & cntms<11> & cntms<10> & cntms<9> & 
+	cntms<8> & cntms<7>;	// (1 pt, 21 inp)
+    cntms<21>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<21>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 0 | cntms<20>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 16 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 20 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<19>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 20 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 10 | 9 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   cntms<20>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<19> & cntms<18> & 
+	cntms<17> & cntms<16> & cntms<15> & cntms<14> & cntms<13> & 
+	cntms<12> & cntms<11> & cntms<10> & cntms<9> & cntms<8> & 
+	cntms<7>;	// (1 pt, 20 inp)
+    cntms<20>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<20>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 10 | 9 | cntms<19>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 17 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 19 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<18>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 19 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 10 | 8 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cntms<19>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<18> & cntms<17> & 
+	cntms<16> & cntms<15> & cntms<14> & cntms<13> & cntms<12> & 
+	cntms<11> & cntms<10> & cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 19 inp)
+    cntms<19>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<19>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 10 | 8 | cntms<18>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 18 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 18 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<17>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 18 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 10 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cntms<18>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<17> & cntms<16> & 
+	cntms<15> & cntms<14> & cntms<13> & cntms<12> & cntms<11> & 
+	cntms<10> & cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 18 inp)
+    cntms<18>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<18>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 10 | 7 | cntms<17>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 19 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 17 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<16>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 17 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 3 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cntms<17>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<16> & cntms<15> & 
+	cntms<14> & cntms<13> & cntms<12> & cntms<11> & cntms<10> & 
+	cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 17 inp)
+    cntms<17>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<17>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 3 | cntms<16>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 20 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 16 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<15>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 16 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 5 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cntms<16>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<15> & cntms<14> & 
+	cntms<13> & cntms<12> & cntms<11> & cntms<10> & cntms<9> & 
+	cntms<8> & cntms<7>;	// (1 pt, 16 inp)
+    cntms<16>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<16>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 5 | cntms<15>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 21 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 15 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<14>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 15 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 11 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cntms<15>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<14> & cntms<13> & 
+	cntms<12> & cntms<11> & cntms<10> & cntms<9> & cntms<8> & 
+	cntms<7>;	// (1 pt, 15 inp)
+    cntms<15>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<15>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 11 | cntms<14>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 22 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 14 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<13>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 14 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 12 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   cntms<14>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<13> & cntms<12> & 
+	cntms<11> & cntms<10> & cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 14 inp)
+    cntms<14>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<14>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 12 | cntms<13>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 23 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 13 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<12>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 13 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 13 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   cntms<13>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<12> & cntms<11> & 
+	cntms<10> & cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 13 inp)
+    cntms<13>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<13>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 13 | cntms<12>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 24 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 12 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<11>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 12 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 14 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   cntms<12>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<11> & cntms<10> & 
+	cntms<9> & cntms<8> & cntms<7>;	// (1 pt, 12 inp)
+    cntms<12>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<12>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 14 | cntms<11>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 25 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 11 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<10>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 11 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 2 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   cntms<11>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<10> & cntms<9> & 
+	cntms<8> & cntms<7>;	// (1 pt, 11 inp)
+    cntms<11>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<11>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 2 | cntms<10>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 26 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 10 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<9>  | cntms<8>  | cntms<7>
+INPUTMC | 10 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 4 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   cntms<10>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<9> & cntms<8> & 
+	cntms<7>;	// (1 pt, 10 inp)
+    cntms<10>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<10>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 4 | cntms<9>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 27 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 9 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<8>  | cntms<7>
+INPUTMC | 9 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 6 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   cntms<9>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<8> & cntms<7>;	// (1 pt, 9 inp)
+    cntms<9>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<9>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 6 | cntms<8>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 28 | 8 | 4 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 8 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>  | cntms<7>
+INPUTMC | 8 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7 | 8 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   cntms<8>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6> & cntms<7>;	// (1 pt, 8 inp)
+    cntms<8>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<8>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 8 | 7 | cntms<7>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 29 | 8 | 6 | 8 | 4 | 8 | 2 | 8 | 14 | 8 | 13 | 8 | 12 | 8 | 11 | 8 | 5 | 8 | 3 | 10 | 7 | 10 | 8 | 10 | 9 | 5 | 0 | 5 | 1 | 5 | 3 | 5 | 11 | 5 | 12 | 5 | 13 | 5 | 14 | 5 | 15 | 5 | 2 | 5 | 4 | 5 | 5 | 5 | 7 | 5 | 8 | 5 | 9 | 5 | 10 | 5 | 6 | 11 | 13
+INPUTS | 7 | cntms<2>  | cntms<0>  | cntms<5>  | cntms<4>  | cntms<3>  | cntms<1>  | cntms<6>
+INPUTMC | 7 | 5 | 10 | 5 | 9 | 5 | 8 | 7 | 9 | 7 | 13 | 7 | 14 | 5 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   cntms<7>.T := cntms<2> & cntms<0> & cntms<5> & cntms<4> & 
+	cntms<3> & cntms<1> & cntms<6>;	// (1 pt, 7 inp)
+    cntms<7>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cntms<7>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 11 | 14 | mic_sw_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 0
+EQ | 1 | 
+   mic_sw = Gnd;	// (0 pt, 0 inp)
+
+MACROCELL | 11 | 11 | mute_sw_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 1 | hs_sw
+INPUTP | 1 | 134
+EQ | 1 | 
+   mute_sw = hs_sw;	// (1 pt, 1 inp)
+
+MACROCELL | 13 | 13 | occ_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 5 | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>  | blink_sig
+INPUTMC | 5 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9 | 1 | 6
+EQ | 4 | 
+   !occ_led = current_st<0> & current_st<1> & current_st<3> & 
+	!current_st<2> & !blink_sig
+	# !current_st<0> & !current_st<1> & current_st<3> & 
+	current_st<2> & !blink_sig;	// (2 pt, 5 inp)
+
+MACROCELL | 1 | 6 | blink_sig_MC
+ATTRIBUTES | 2302673664 | 0
+OUTPUTMC | 2 | 13 | 13 | 15 | 4
+INPUTS | 32 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<31>  | cnt_blink<30>  | cnt_blink<29>  | cnt_blink<28>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 32 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 5 | 1 | 1 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 11 | 
+   blink_sig.T := !cnt_blink<0> & cnt_blink<2> & !cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & !cnt_blink<4> & cnt_blink<8> & 
+	!cnt_blink<7> & !cnt_blink<6> & !cnt_blink<31> & !cnt_blink<30> & 
+	!cnt_blink<29> & !cnt_blink<28> & !cnt_blink<27> & !cnt_blink<26> & 
+	!cnt_blink<25> & !cnt_blink<24> & !cnt_blink<23> & !cnt_blink<22> & 
+	!cnt_blink<21> & !cnt_blink<20> & !cnt_blink<19> & !cnt_blink<18> & 
+	!cnt_blink<17> & !cnt_blink<16> & !cnt_blink<15> & !cnt_blink<14> & 
+	!cnt_blink<13> & !cnt_blink<12> & !cnt_blink<11> & !cnt_blink<10> & 
+	!cnt_blink<9>;	// (1 pt, 32 inp)
+    blink_sig.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    blink_sig.AP = !cancel_sw_in;	// CTS	(1 pt, 1 inp)
+
+MACROCELL | 1 | 10 | cnt_blink<0>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 33 | 6 | 1 | 6 | 0 | 6 | 14 | 6 | 5 | 6 | 4 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 32 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<31>  | cnt_blink<30>  | cnt_blink<29>  | cnt_blink<28>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 32 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 5 | 1 | 1 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 11 | 
+   !cnt_blink<0>.T := !cnt_blink<0> & cnt_blink<2> & !cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & !cnt_blink<4> & cnt_blink<8> & 
+	!cnt_blink<7> & !cnt_blink<6> & !cnt_blink<31> & !cnt_blink<30> & 
+	!cnt_blink<29> & !cnt_blink<28> & !cnt_blink<27> & !cnt_blink<26> & 
+	!cnt_blink<25> & !cnt_blink<24> & !cnt_blink<23> & !cnt_blink<22> & 
+	!cnt_blink<21> & !cnt_blink<20> & !cnt_blink<19> & !cnt_blink<18> & 
+	!cnt_blink<17> & !cnt_blink<16> & !cnt_blink<15> & !cnt_blink<14> & 
+	!cnt_blink<13> & !cnt_blink<12> & !cnt_blink<11> & !cnt_blink<10> & 
+	!cnt_blink<9>;	// (1 pt, 32 inp)
+    cnt_blink<0>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<0>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 15 | cnt_blink<2>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 32 | 6 | 0 | 6 | 14 | 6 | 5 | 6 | 4 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 32 | cnt_blink<0>  | cnt_blink<1>  | cnt_blink<2>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<31>  | cnt_blink<30>  | cnt_blink<29>  | cnt_blink<28>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 32 | 1 | 10 | 6 | 1 | 1 | 15 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 5 | 1 | 1 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 12 | 
+   cnt_blink<2>.T := cnt_blink<0> & cnt_blink<1>
+	# !cnt_blink<0> & cnt_blink<2> & !cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & !cnt_blink<4> & cnt_blink<8> & 
+	!cnt_blink<7> & !cnt_blink<6> & !cnt_blink<31> & !cnt_blink<30> & 
+	!cnt_blink<29> & !cnt_blink<28> & !cnt_blink<27> & !cnt_blink<26> & 
+	!cnt_blink<25> & !cnt_blink<24> & !cnt_blink<23> & !cnt_blink<22> & 
+	!cnt_blink<21> & !cnt_blink<20> & !cnt_blink<19> & !cnt_blink<18> & 
+	!cnt_blink<17> & !cnt_blink<16> & !cnt_blink<15> & !cnt_blink<14> & 
+	!cnt_blink<13> & !cnt_blink<12> & !cnt_blink<11> & !cnt_blink<10> & 
+	!cnt_blink<9>;	// (2 pt, 32 inp)
+    cnt_blink<2>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<2>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 6 | 1 | cnt_blink<1>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 32 | 6 | 0 | 6 | 14 | 6 | 5 | 6 | 4 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 1 | cnt_blink<0>
+INPUTMC | 1 | 1 | 10
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   cnt_blink<1>.T := cnt_blink<0>;	// (1 pt, 1 inp)
+    cnt_blink<1>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<1>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 9 | cnt_blink<3>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 32 | 6 | 0 | 6 | 14 | 6 | 5 | 6 | 4 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 32 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<31>  | cnt_blink<30>  | cnt_blink<29>  | cnt_blink<28>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 32 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 5 | 1 | 1 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 12 | 
+   cnt_blink<3>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1>
+	# !cnt_blink<0> & cnt_blink<2> & !cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & !cnt_blink<4> & cnt_blink<8> & 
+	!cnt_blink<7> & !cnt_blink<6> & !cnt_blink<31> & !cnt_blink<30> & 
+	!cnt_blink<29> & !cnt_blink<28> & !cnt_blink<27> & !cnt_blink<26> & 
+	!cnt_blink<25> & !cnt_blink<24> & !cnt_blink<23> & !cnt_blink<22> & 
+	!cnt_blink<21> & !cnt_blink<20> & !cnt_blink<19> & !cnt_blink<18> & 
+	!cnt_blink<17> & !cnt_blink<16> & !cnt_blink<15> & !cnt_blink<14> & 
+	!cnt_blink<13> & !cnt_blink<12> & !cnt_blink<11> & !cnt_blink<10> & 
+	!cnt_blink<9>;	// (2 pt, 32 inp)
+    cnt_blink<3>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<3>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 8 | cnt_blink<5>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 31 | 6 | 14 | 6 | 5 | 6 | 4 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 32 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<4>  | cnt_blink<5>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<31>  | cnt_blink<30>  | cnt_blink<29>  | cnt_blink<28>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 32 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 6 | 0 | 1 | 8 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 5 | 1 | 1 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 13 | 
+   cnt_blink<5>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<4>
+	# !cnt_blink<0> & cnt_blink<2> & !cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & !cnt_blink<4> & cnt_blink<8> & 
+	!cnt_blink<7> & !cnt_blink<6> & !cnt_blink<31> & !cnt_blink<30> & 
+	!cnt_blink<29> & !cnt_blink<28> & !cnt_blink<27> & !cnt_blink<26> & 
+	!cnt_blink<25> & !cnt_blink<24> & !cnt_blink<23> & !cnt_blink<22> & 
+	!cnt_blink<21> & !cnt_blink<20> & !cnt_blink<19> & !cnt_blink<18> & 
+	!cnt_blink<17> & !cnt_blink<16> & !cnt_blink<15> & !cnt_blink<14> & 
+	!cnt_blink<13> & !cnt_blink<12> & !cnt_blink<11> & !cnt_blink<10> & 
+	!cnt_blink<9>;	// (2 pt, 32 inp)
+    cnt_blink<5>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<5>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 6 | 0 | cnt_blink<4>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 31 | 6 | 14 | 6 | 5 | 6 | 4 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 4 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>
+INPUTMC | 4 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   cnt_blink<4>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3>;	// (1 pt, 4 inp)
+    cnt_blink<4>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<4>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 7 | cnt_blink<8>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 29 | 6 | 4 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 32 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<8>  | cnt_blink<31>  | cnt_blink<30>  | cnt_blink<29>  | cnt_blink<28>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 32 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 6 | 5 | 6 | 14 | 1 | 7 | 1 | 5 | 1 | 1 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 14 | 
+   cnt_blink<8>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<7> & 
+	cnt_blink<6>
+	# !cnt_blink<0> & cnt_blink<2> & !cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & !cnt_blink<4> & cnt_blink<8> & 
+	!cnt_blink<7> & !cnt_blink<6> & !cnt_blink<31> & !cnt_blink<30> & 
+	!cnt_blink<29> & !cnt_blink<28> & !cnt_blink<27> & !cnt_blink<26> & 
+	!cnt_blink<25> & !cnt_blink<24> & !cnt_blink<23> & !cnt_blink<22> & 
+	!cnt_blink<21> & !cnt_blink<20> & !cnt_blink<19> & !cnt_blink<18> & 
+	!cnt_blink<17> & !cnt_blink<16> & !cnt_blink<15> & !cnt_blink<14> & 
+	!cnt_blink<13> & !cnt_blink<12> & !cnt_blink<11> & !cnt_blink<10> & 
+	!cnt_blink<9>;	// (2 pt, 32 inp)
+    cnt_blink<8>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<8>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 6 | 5 | cnt_blink<7>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 29 | 6 | 4 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 7 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<6>
+INPUTMC | 7 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 6 | 14
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   cnt_blink<7>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<6>;	// (1 pt, 7 inp)
+    cnt_blink<7>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<7>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 6 | 14 | cnt_blink<6>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 30 | 6 | 5 | 6 | 4 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 6 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>
+INPUTMC | 6 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   cnt_blink<6>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4>;	// (1 pt, 6 inp)
+    cnt_blink<6>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<6>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 5 | cnt_blink<31>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 6 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 31 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<30>  | cnt_blink<29>  | cnt_blink<28>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 31 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 1 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 10 | 
+   cnt_blink<31>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<30> & cnt_blink<29> & 
+	cnt_blink<28> & cnt_blink<27> & cnt_blink<26> & cnt_blink<25> & 
+	cnt_blink<24> & cnt_blink<23> & cnt_blink<22> & cnt_blink<21> & 
+	cnt_blink<20> & cnt_blink<19> & cnt_blink<18> & cnt_blink<17> & 
+	cnt_blink<16> & cnt_blink<15> & cnt_blink<14> & cnt_blink<13> & 
+	cnt_blink<12> & cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 31 inp)
+    cnt_blink<31>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<31>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 1 | cnt_blink<30>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 7 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 30 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<29>  | cnt_blink<28>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 30 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 10 | 
+   cnt_blink<30>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<29> & cnt_blink<28> & 
+	cnt_blink<27> & cnt_blink<26> & cnt_blink<25> & cnt_blink<24> & 
+	cnt_blink<23> & cnt_blink<22> & cnt_blink<21> & cnt_blink<20> & 
+	cnt_blink<19> & cnt_blink<18> & cnt_blink<17> & cnt_blink<16> & 
+	cnt_blink<15> & cnt_blink<14> & cnt_blink<13> & cnt_blink<12> & 
+	cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 30 inp)
+    cnt_blink<30>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<30>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 14 | cnt_blink<29>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 8 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 29 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<28>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 29 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 13 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 10 | 
+   cnt_blink<29>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<28> & cnt_blink<27> & 
+	cnt_blink<26> & cnt_blink<25> & cnt_blink<24> & cnt_blink<23> & 
+	cnt_blink<22> & cnt_blink<21> & cnt_blink<20> & cnt_blink<19> & 
+	cnt_blink<18> & cnt_blink<17> & cnt_blink<16> & cnt_blink<15> & 
+	cnt_blink<14> & cnt_blink<13> & cnt_blink<12> & cnt_blink<11> & 
+	cnt_blink<10> & cnt_blink<9>;	// (1 pt, 29 inp)
+    cnt_blink<29>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<29>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 13 | cnt_blink<28>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 9 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 28 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<27>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 28 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 12 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 10 | 
+   cnt_blink<28>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<27> & cnt_blink<26> & 
+	cnt_blink<25> & cnt_blink<24> & cnt_blink<23> & cnt_blink<22> & 
+	cnt_blink<21> & cnt_blink<20> & cnt_blink<19> & cnt_blink<18> & 
+	cnt_blink<17> & cnt_blink<16> & cnt_blink<15> & cnt_blink<14> & 
+	cnt_blink<13> & cnt_blink<12> & cnt_blink<11> & cnt_blink<10> & 
+	cnt_blink<9>;	// (1 pt, 28 inp)
+    cnt_blink<28>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<28>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 12 | cnt_blink<27>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 10 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 27 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<26>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 27 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 9 | 
+   cnt_blink<27>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<26> & cnt_blink<25> & 
+	cnt_blink<24> & cnt_blink<23> & cnt_blink<22> & cnt_blink<21> & 
+	cnt_blink<20> & cnt_blink<19> & cnt_blink<18> & cnt_blink<17> & 
+	cnt_blink<16> & cnt_blink<15> & cnt_blink<14> & cnt_blink<13> & 
+	cnt_blink<12> & cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 27 inp)
+    cnt_blink<27>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<27>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 11 | cnt_blink<26>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 26 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<25>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 26 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 4 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 9 | 
+   cnt_blink<26>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<25> & cnt_blink<24> & 
+	cnt_blink<23> & cnt_blink<22> & cnt_blink<21> & cnt_blink<20> & 
+	cnt_blink<19> & cnt_blink<18> & cnt_blink<17> & cnt_blink<16> & 
+	cnt_blink<15> & cnt_blink<14> & cnt_blink<13> & cnt_blink<12> & 
+	cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 26 inp)
+    cnt_blink<26>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<26>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 4 | cnt_blink<25>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 12 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 25 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<24>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 25 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 3 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 9 | 
+   cnt_blink<25>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<24> & cnt_blink<23> & 
+	cnt_blink<22> & cnt_blink<21> & cnt_blink<20> & cnt_blink<19> & 
+	cnt_blink<18> & cnt_blink<17> & cnt_blink<16> & cnt_blink<15> & 
+	cnt_blink<14> & cnt_blink<13> & cnt_blink<12> & cnt_blink<11> & 
+	cnt_blink<10> & cnt_blink<9>;	// (1 pt, 25 inp)
+    cnt_blink<25>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<25>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 3 | cnt_blink<24>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 13 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 24 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<23>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 24 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 2 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 9 | 
+   cnt_blink<24>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<23> & cnt_blink<22> & 
+	cnt_blink<21> & cnt_blink<20> & cnt_blink<19> & cnt_blink<18> & 
+	cnt_blink<17> & cnt_blink<16> & cnt_blink<15> & cnt_blink<14> & 
+	cnt_blink<13> & cnt_blink<12> & cnt_blink<11> & cnt_blink<10> & 
+	cnt_blink<9>;	// (1 pt, 24 inp)
+    cnt_blink<24>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<24>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 2 | cnt_blink<23>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 14 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 23 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<22>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 23 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 1 | 0 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   cnt_blink<23>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<22> & cnt_blink<21> & 
+	cnt_blink<20> & cnt_blink<19> & cnt_blink<18> & cnt_blink<17> & 
+	cnt_blink<16> & cnt_blink<15> & cnt_blink<14> & cnt_blink<13> & 
+	cnt_blink<12> & cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 23 inp)
+    cnt_blink<23>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<23>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 1 | 0 | cnt_blink<22>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 15 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 22 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<21>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 22 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 4 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   cnt_blink<22>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<21> & cnt_blink<20> & 
+	cnt_blink<19> & cnt_blink<18> & cnt_blink<17> & cnt_blink<16> & 
+	cnt_blink<15> & cnt_blink<14> & cnt_blink<13> & cnt_blink<12> & 
+	cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 22 inp)
+    cnt_blink<22>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<22>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 4 | cnt_blink<21>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 16 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 21 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<20>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 21 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 5 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   cnt_blink<21>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<20> & cnt_blink<19> & 
+	cnt_blink<18> & cnt_blink<17> & cnt_blink<16> & cnt_blink<15> & 
+	cnt_blink<14> & cnt_blink<13> & cnt_blink<12> & cnt_blink<11> & 
+	cnt_blink<10> & cnt_blink<9>;	// (1 pt, 21 inp)
+    cnt_blink<21>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<21>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 5 | cnt_blink<20>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 17 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 20 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<19>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 20 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 11 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   cnt_blink<20>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<19> & cnt_blink<18> & 
+	cnt_blink<17> & cnt_blink<16> & cnt_blink<15> & cnt_blink<14> & 
+	cnt_blink<13> & cnt_blink<12> & cnt_blink<11> & cnt_blink<10> & 
+	cnt_blink<9>;	// (1 pt, 20 inp)
+    cnt_blink<20>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<20>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 11 | cnt_blink<19>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 18 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 19 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<18>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 19 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 13 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   cnt_blink<19>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<18> & cnt_blink<17> & 
+	cnt_blink<16> & cnt_blink<15> & cnt_blink<14> & cnt_blink<13> & 
+	cnt_blink<12> & cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 19 inp)
+    cnt_blink<19>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<19>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 13 | cnt_blink<18>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 19 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 18 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<17>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 18 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 15 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   cnt_blink<18>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<17> & cnt_blink<16> & 
+	cnt_blink<15> & cnt_blink<14> & cnt_blink<13> & cnt_blink<12> & 
+	cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 18 inp)
+    cnt_blink<18>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<18>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 15 | cnt_blink<17>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 20 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 17 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<16>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 17 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 6 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   cnt_blink<17>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<16> & cnt_blink<15> & 
+	cnt_blink<14> & cnt_blink<13> & cnt_blink<12> & cnt_blink<11> & 
+	cnt_blink<10> & cnt_blink<9>;	// (1 pt, 17 inp)
+    cnt_blink<17>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<17>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 6 | cnt_blink<16>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 21 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 16 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<15>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 16 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 7 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   cnt_blink<16>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<15> & cnt_blink<14> & 
+	cnt_blink<13> & cnt_blink<12> & cnt_blink<11> & cnt_blink<10> & 
+	cnt_blink<9>;	// (1 pt, 16 inp)
+    cnt_blink<16>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<16>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 7 | cnt_blink<15>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 22 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 15 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<14>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 15 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 8 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cnt_blink<15>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<14> & cnt_blink<13> & 
+	cnt_blink<12> & cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 15 inp)
+    cnt_blink<15>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<15>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 8 | cnt_blink<14>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 23 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 14 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<13>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 14 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 9 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cnt_blink<14>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<13> & cnt_blink<12> & 
+	cnt_blink<11> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 14 inp)
+    cnt_blink<14>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<14>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 9 | cnt_blink<13>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 24 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 13 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<12>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 13 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 10 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cnt_blink<13>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<12> & cnt_blink<11> & 
+	cnt_blink<10> & cnt_blink<9>;	// (1 pt, 13 inp)
+    cnt_blink<13>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<13>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 10 | cnt_blink<12>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 25 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 12 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<11>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 12 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 12 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cnt_blink<12>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<11> & cnt_blink<10> & 
+	cnt_blink<9>;	// (1 pt, 12 inp)
+    cnt_blink<12>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<12>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 12 | cnt_blink<11>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 26 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 11 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<10>  | cnt_blink<9>
+INPUTMC | 11 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 9 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   cnt_blink<11>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<10> & cnt_blink<9>;	// (1 pt, 11 inp)
+    cnt_blink<11>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<11>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 9 | 14 | cnt_blink<10>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 27 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 10 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>  | cnt_blink<9>
+INPUTMC | 10 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14 | 6 | 4
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   cnt_blink<10>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6> & cnt_blink<9>;	// (1 pt, 10 inp)
+    cnt_blink<10>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<10>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 6 | 4 | cnt_blink<9>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 28 | 9 | 14 | 9 | 12 | 9 | 10 | 9 | 9 | 9 | 8 | 9 | 7 | 9 | 6 | 9 | 15 | 9 | 13 | 9 | 11 | 9 | 5 | 9 | 4 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 15 | 1 | 10 | 1 | 6
+INPUTS | 9 | cnt_blink<0>  | cnt_blink<2>  | cnt_blink<1>  | cnt_blink<3>  | cnt_blink<5>  | cnt_blink<4>  | cnt_blink<8>  | cnt_blink<7>  | cnt_blink<6>
+INPUTMC | 9 | 1 | 10 | 1 | 15 | 6 | 1 | 1 | 9 | 1 | 8 | 6 | 0 | 1 | 7 | 6 | 5 | 6 | 14
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   cnt_blink<9>.T := cnt_blink<0> & cnt_blink<2> & cnt_blink<1> & 
+	cnt_blink<3> & cnt_blink<5> & cnt_blink<4> & cnt_blink<8> & 
+	cnt_blink<7> & cnt_blink<6>;	// (1 pt, 9 inp)
+    cnt_blink<9>.CLK = clk_1ms;	// CTC	(1 pt, 1 inp)
+    cnt_blink<9>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 11 | 10 | pa_sw1_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 1 | hs_sw
+INPUTP | 1 | 134
+EQ | 1 | 
+   pa_sw1 = !hs_sw;	// (1 pt, 1 inp)
+
+MACROCELL | 15 | 4 | pei_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 5 | current_st<0>  | current_st<1>  | current_st<3>  | current_st<2>  | blink_sig
+INPUTMC | 5 | 8 | 15 | 8 | 10 | 8 | 8 | 8 | 9 | 1 | 6
+EQ | 6 | 
+   !pei_led = current_st<0> & !current_st<1> & !current_st<3> & 
+	current_st<2>
+	# !current_st<0> & !current_st<3> & current_st<2> & 
+	!blink_sig
+	# current_st<0> & current_st<1> & !current_st<3> & 
+	!current_st<2> & !blink_sig;	// (3 pt, 5 inp)
+
+MACROCELL | 9 | 0 | pei_mute_sp_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 1 | N_PZ_578
+INPUTMC | 1 | 0 | 6
+EQ | 1 | 
+   !pei_mute_sp = N_PZ_578;	// (1 pt, 1 inp)
+
+MACROCELL | 0 | 5 | rxs<0>_MC
+ATTRIBUTES | 787360 | 0
+INPUTS | 2 | ic_mute_sp  | N_PZ_844
+INPUTMC | 2 | 8 | 0 | 0 | 2
+EQ | 3 | 
+   !rxs<0>.D = Gnd;	// (0 pt, 0 inp)
+    rxs<0>.LH = !(ic_mute_sp);	// PTC	(1 pt, 1 inp)
+    rxs<0>.AP = !N_PZ_844;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 0 | 2 | N_PZ_844_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 0 | 5
+INPUTS | 2 | cancel_mode  | N_PZ_578
+INPUTMC | 2 | 0 | 4 | 0 | 6
+EQ | 1 | 
+   N_PZ_844 = !cancel_mode & !N_PZ_578;	// (1 pt, 2 inp)
+
+MACROCELL | 0 | 11 | rxs<1>_MC
+ATTRIBUTES | 51118880 | 0
+INPUTS | 1 | ic_mute_sp
+INPUTMC | 1 | 8 | 0
+LCT | 2 | 1 | Internal_Name | 4 | Internal_Name
+EQ | 4 | 
+   !rxs<1>.D = Gnd;	// (0 pt, 0 inp)
+    rxs<1>.LH = !(ic_mute_sp);	// PTC	(1 pt, 1 inp)
+    rxs<1>.AP = N_PZ_578;	// CTS	(1 pt, 1 inp)
+    rxs<1>.AR = cancel_mode;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 0 | 12 | rxs<2>_MC
+ATTRIBUTES | 51118880 | 0
+INPUTS | 2 | N_PZ_578  | ic_mute_sp
+INPUTMC | 2 | 0 | 6 | 8 | 0
+LCT | 2 | 1 | Internal_Name | 4 | Internal_Name
+EQ | 4 | 
+   rxs<2>.D = N_PZ_578;	// (1 pt, 1 inp)
+    rxs<2>.LH = !(ic_mute_sp);	// PTC	(1 pt, 1 inp)
+    rxs<2>.AP = N_PZ_578;	// CTS	(1 pt, 1 inp)
+    rxs<2>.AR = cancel_mode;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 2 | 0 | rxs<3>_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 0
+EQ | 1 | 
+   rxs<3> = Gnd;	// (0 pt, 0 inp)
+
+MACROCELL | 2 | 2 | txs_mic<0>_MC
+ATTRIBUTES | 135005056 | 0
+INPUTS | 3 | ic_mute_sp  | N_PZ_578  | txs_mic_0__or0000/txs_mic_0__or0000_D.UIM
+INPUTMC | 3 | 8 | 0 | 0 | 6 | 0 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   !txs_mic<0>.D = ic_mute_sp & !N_PZ_578;	// (1 pt, 2 inp)
+    txs_mic<0>.LH = !(int_sw_in & ext_sw_in & both_sw_in);	// CTC	(1 pt, 3 inp)
+    txs_mic<0>.AP = txs_mic_0__or0000/txs_mic_0__or0000_D.UIM;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 0 | 14 | txs_mic_0__or0000/txs_mic_0__or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 2 | 2
+INPUTS | 7 | ic_mute_sp  | current_st<0>  | N_PZ_799  | current_st<2>  | N_PZ_578  | current_st<1>  | cancel_mode
+INPUTMC | 7 | 8 | 0 | 8 | 15 | 0 | 13 | 8 | 9 | 0 | 6 | 8 | 10 | 0 | 4
+EQ | 5 | 
+   txs_mic_0__or0000/txs_mic_0__or0000_D.UIM = !ic_mute_sp
+	# !current_st<0> & !N_PZ_799 & current_st<2> & 
+	N_PZ_578
+	# !current_st<0> & current_st<1> & !N_PZ_799 & 
+	current_st<2> & cancel_mode;	// (3 pt, 7 inp)
+
+MACROCELL | 2 | 4 | txs_mic<1>_MC
+ATTRIBUTES | 168559488 | 0
+INPUTS | 3 | ic_mute_sp  | N_PZ_578  | N_PZ_843
+INPUTMC | 3 | 8 | 0 | 0 | 6 | 0 | 3
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   !txs_mic<1>.D = ic_mute_sp & !N_PZ_578;	// (1 pt, 2 inp)
+    txs_mic<1>.LH = !(int_sw_in & ext_sw_in & both_sw_in);	// CTC	(1 pt, 3 inp)
+    txs_mic<1>.AP = !N_PZ_843;	// PTA	(1 pt, 1 inp)
+    txs_mic<1>.AR = cancel_mode;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 0 | 3 | N_PZ_843_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 2 | 4
+INPUTS | 2 | ic_mute_sp  | N_PZ_578
+INPUTMC | 2 | 8 | 0 | 0 | 6
+EQ | 1 | 
+   N_PZ_843 = ic_mute_sp & !N_PZ_578;	// (1 pt, 2 inp)
+
+MACROCELL | 2 | 13 | txs_mic<2>_MC
+ATTRIBUTES | 151782160 | 0
+INPUTS | 3 | ic_mute_sp  | N_PZ_578  | txs_mic_2__or0000/txs_mic_2__or0000_D.UIM
+INPUTMC | 3 | 8 | 0 | 0 | 6 | 0 | 15
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   !txs_mic<2>.D = !ic_mute_sp & !N_PZ_578;	// (1 pt, 2 inp)
+    txs_mic<2>.LH = !(int_sw_in & ext_sw_in & both_sw_in);	// CTC	(1 pt, 3 inp)
+    txs_mic<2>.AP = N_PZ_578;	// CTS	(1 pt, 1 inp)
+    txs_mic<2>.AR = !txs_mic_2__or0000/txs_mic_2__or0000_D.UIM;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 0 | 15 | txs_mic_2__or0000/txs_mic_2__or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 2 | 13
+INPUTS | 3 | ic_mute_sp  | cancel_mode  | N_PZ_578
+INPUTMC | 3 | 8 | 0 | 0 | 4 | 0 | 6
+EQ | 2 | 
+   txs_mic_2__or0000/txs_mic_2__or0000_D.UIM = ic_mute_sp & !cancel_mode
+	# !cancel_mode & N_PZ_578;	// (2 pt, 3 inp)
+
+MACROCELL | 2 | 15 | txs_mic<3>_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 0
+EQ | 1 | 
+   txs_mic<3> = Gnd;	// (0 pt, 0 inp)
+
+PIN | int_sw_in | 64 | 0 | LVTTL | 75 | 11 | 6 | 10 | 0 | 10 | 0 | 9 | 15 | 12 | 6 | 13 | 0 | 1 | 6 | 15 | 3 | 11 | 3 | 5 | 15 | 11 | 15 | 10
+PIN | ext_sw_in | 64 | 0 | LVTTL | 74 | 10 | 6 | 10 | 0 | 10 | 0 | 9 | 15 | 12 | 6 | 13 | 0 | 1 | 6 | 15 | 3 | 11 | 3 | 5 | 15 | 11
+PIN | both_sw_in | 64 | 0 | LVTTL | 69 | 9 | 6 | 10 | 0 | 10 | 0 | 9 | 15 | 12 | 6 | 13 | 0 | 1 | 6 | 15 | 3 | 11 | 3 | 5
+PIN | ic_sw_in | 64 | 0 | LVTTL | 76 | 6 | 6 | 10 | 8 | 0 | 0 | 8 | 0 | 9 | 6 | 9 | 6 | 8
+PIN | hs_sw | 64 | 0 | LVTTL | 134 | 10 | 6 | 10 | 0 | 4 | 0 | 6 | 6 | 13 | 0 | 1 | 6 | 15 | 3 | 11 | 3 | 5 | 11 | 11 | 11 | 10
+PIN | pei_sw_in | 64 | 0 | LVTTL | 77 | 6 | 6 | 10 | 0 | 4 | 0 | 6 | 6 | 13 | 0 | 1 | 6 | 15
+PIN | clk | 4096 | 0 | LVTTL | 48 | 33 | 2 | 14 | 2 | 12 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 3 | 15 | 3 | 14 | 3 | 12 | 3 | 10 | 3 | 9 | 4 | 15 | 4 | 14 | 4 | 12 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 13 | 4 | 0 | 7 | 15 | 4 | 1 | 4 | 3 | 4 | 2 | 4 | 4 | 4 | 6 | 4 | 5 | 4 | 7 | 4 | 8
+PIN | cancel_sw_in | 64 | 0 | LVTTL | 81 | 16 | 2 | 14 | 2 | 12 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 1 | 0 | 4 | 6 | 13 | 6 | 15 | 3 | 11 | 3 | 5
+PIN | occ_sw_in | 64 | 0 | LVTTL | 82 | 0
+PIN | both_led | 128 | 0 | LVTTL | 86
+PIN | cancel_led | 128 | 0 | LVTTL | 95
+PIN | dtmf_cs | 128 | 0 | LVTTL | 32
+PIN | dtmf_rs0 | 128 | 0 | LVTTL | 31
+PIN | dtmf_rw | 128 | 0 | LVTTL | 33
+PIN | dual_mute_sp | 128 | 0 | LVTTL | 169
+PIN | ext_led | 128 | 0 | LVTTL | 87
+PIN | ic_led | 128 | 0 | LVTTL | 89
+PIN | ic_mute_sp | 128 | 0 | LVTTL | 168
+PIN | int_led | 128 | 0 | LVTTL | 88
+PIN | live_sw | 128 | 0 | LVTTL | 143
+PIN | mic_sw | 128 | 0 | LVTTL | 142
+PIN | mute_sw | 128 | 0 | LVTTL | 145
+PIN | occ_led | 128 | 0 | LVTTL | 100
+PIN | pa_sw1 | 128 | 0 | LVTTL | 146
+PIN | pei_led | 128 | 0 | LVTTL | 90
+PIN | pei_mute_sp | 128 | 0 | LVTTL | 167
+PIN | rxs<0> | 128 | 0 | LVTTL | 214
+PIN | rxs<1> | 128 | 0 | LVTTL | 213
+PIN | rxs<2> | 128 | 0 | LVTTL | 212
+PIN | rxs<3> | 128 | 0 | LVTTL | 208
+PIN | txs_mic<0> | 128 | 0 | LVTTL | 206
+PIN | txs_mic<1> | 128 | 0 | LVTTL | 204
+PIN | txs_mic<2> | 128 | 0 | LVTTL | 199
+PIN | txs_mic<3> | 128 | 0 | LVTTL | 197
+PIN | dtmf_inout<0> | 64 | 0 | LVTTL | 30 | 1 | 6 | 7
+PIN | dtmf_inout<1> | 64 | 0 | LVTTL | 28 | 1 | 6 | 6
+PIN | dtmf_inout<2> | 64 | 0 | LVTTL | 21 | 1 | 6 | 3
+PIN | dtmf_inout<3> | 64 | 0 | LVTTL | 20 | 1 | 6 | 2

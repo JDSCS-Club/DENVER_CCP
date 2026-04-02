@@ -1,0 +1,86 @@
+Build log E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\FINGER_3150.log
+Created Monday, January 22, 2007, at 11:28:19
+
+Compiling...
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\FINGER_3150\FINGER_3150.NC  167(  5):
+        Return value of function was ignored [NCC#174]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\FINGER_3150\FINGER_3150.NC  218(  5):
+        Return value of function was ignored [NCC#174]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\FINGER_3150\FINGER_3150.NC  281(  1):
+        The symbol 'count' was declared but never used [NCC#310]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\FINGER_3150\FINGER_3150.NC  281(  1):
+        The symbol 'temp' was declared but never used [NCC#310]
+Assembling...
+Linking...
+                       LIST OF MEMORY AREAS
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+SYSTEM IMAGE FLASH           0000 3FFF 4000        - RESERVED - 
+OffChip FLASH  (EECODE)      4000 43FF 0400       4375 43FF 008B
+OffChip FLASH  (Pool)         - AVAILABLE -       4400 DFFF 9C00
+OnChip  RAM    (System)      E800 EA6D 026E          - NONE -   
+OnChip  RAMFAR               EA6E EAAD 0040       EA6E EAAD 0040
+OnChip  RAM    (System)      EAAE EDA3 02F6          - NONE -   
+OnChip  RAMFAR               EDA4 EE95 00F2          - NONE -   
+OnChip  RAM    (Pool)         - AVAILABLE -       EE96 EF88 00F3
+OnChip  RAMNEAR              EF89 EFFF 0077          - NONE -   
+OnChip  EEPROM (Prolog)      F000 F028 0029          - NONE -   
+OnChip  EEPROM (Config)      F029 F0C7 009F          - NONE -   
+OnChip  EECODE               F0C8 F0EE 0027          - NONE -   
+OnChip  EEPROM (MemCtl)      F0EF F101 0013          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F102 F1EF 00EE
+OnChip  EEPROM (Epilog)      F1F0 F1FF 0010          - NONE -   
+End of Memory Area List
+Link Memory Usage Statistics:
+EEPROM Usage:  (not necessarily in order of physical layout)
+               (includes application use of external Flash memory)
+        Reserved for System Firmware     16128 bytes
+        System Data and Parameters         116 bytes
+        Domain and Address Tables          105 bytes
+        Network Variable Config Tables      17 bytes
+        Application EEPROM Variables         0 bytes
+        Library EEPROM Variables             0 bytes
+        Application Code and Const Data    597 bytes
+        Library Code and Const Data        311 bytes
+        Self-Identification Data            13 bytes
+                                         -----
+        Total EEPROM Requirement         17287 bytes
+        Remaining EEPROM                 40313 bytes
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         634 bytes
+        Transaction Control Blocks          95 bytes
+        Appl Timers and I/O Change Events    3 bytes
+        Network and Application Buffers    648 bytes
+        Flash Memory System RAM Buffer     128 bytes
+        ISR RAM Buffer                     105 bytes
+        Application RAM Variables          119 bytes
+        Library RAM Variables                9 bytes
+                                         -----
+        Total RAM Requirement             1741 bytes
+        Remaining RAM                      307 bytes
+Successfully linked for PL 3150.
+        Memory Map (14 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        System Upper EEPROM Area (16 bytes) varies by firmware version.
+        Priority outgoing message transaction control block uses 28 bytes of RAM.
+                Of this amount, 10 bytes varies by firmware version.
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 203 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        Flash support requires an additional 128 bytes of RAM.
+        Due to code in flash or EEPROM memory,
+                SCI or SPI I/O model ISR requires a buffer of 105 bytes of RAM.
+        Default buffer counts vary by Neuron model
+                (resulting in an additional 216 bytes of RAM).
+        FLASH Signature  = 2B:E822 @ 4000 .. 4002
+End of Link Statistics
+Exporting...
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\FINGER_3150.NXE'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\FINGER_3150.XIF'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\FINGER_3150.XFB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\FINGER_3150.APB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\FINGER_3150.NEI'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\FINGER_3150.NDL'... Done.
+

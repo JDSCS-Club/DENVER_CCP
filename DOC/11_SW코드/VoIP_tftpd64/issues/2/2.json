@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "\r\nHi \r\n\r\nI have noticed a bug in TFTPD64 Version 4.60\r\n\r\nIf you bind DHCP to an interface with a fixed ip address (but with additional IPs assigned) the DHCP server will only work if bound to the lowest ip on the physical interface.\r\n\r\nThe symptom is no response to the DHCP broadcast from the client, TFTPD64 also logs that the \"Message received on an unbound interface\" for the lowest IP on the interface, even though this is the same physical adapter.\r\n\r\nE.g. \r\n1) Network card with multiple IPs 192.168.0.1 & 192.168.1.1\r\n2) Bind TFTPD32 DHCP to IP 192.168.1.1 \r\n3) Client broadcasts a DHCP discover\r\n4) TFTPD32 log states that \"Message received on an unbound interface (192.168.0.1)\" \r\n5) No DHCP offer is served.\r\n\r\nIf you repeat this bind to the lowest IP 192.168.0.1 then it all works.\r\nAlso if you do not bind this also works.",
+    "LastUpdatedDate": "2017-07-11T15:21:51.253-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "tftpd64",
+    "ReportedDate": "2017-07-11T15:21:51.253-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DHCP Multiple IPs",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 2
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

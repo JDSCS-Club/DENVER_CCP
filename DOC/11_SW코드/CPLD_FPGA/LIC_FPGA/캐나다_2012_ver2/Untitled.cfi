@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator P.28xd
+# Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION P.28xd
+DATE            11/07/2012 - 09:31
+SOURCE          D:\JDS 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\FPGA\LIC-C3\Ver2\decoder\Untitled.mcs
+DEVICE          XCF01S
+DATA_WIDTH      8
+FILL_DATA       0xFF
+SIGNATURE       0x0005AE79
+START_ADDRESS   0x00000000 END_ADDRESS 0x0001FF87 DIRECTION_UP   "D:/CPLD/DENVER/FPGA/LIC-C3/Ver1/decoder/main.bit" 3s200vq100

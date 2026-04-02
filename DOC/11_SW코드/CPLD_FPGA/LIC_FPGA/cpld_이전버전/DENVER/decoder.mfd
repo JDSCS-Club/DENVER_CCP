@@ -1,0 +1,421 @@
+MDF Database:  version 1.0
+MDF_INFO | decoder | XC95288XL-10-TQ144
+MACROCELL | 0 | 9 | NVSRAM_CS_BUF
+ATTRIBUTES | 396034 | 0
+OUTPUTMC | 2 | 0 | 9 | 0 | 8
+INPUTS | 7 | RST  | STRB  | NVSRAM_CS  | A<23>  | A<22>  | EXP18_.EXP  | EXP19_.EXP
+INPUTMC | 3 | 0 | 9 | 0 | 8 | 0 | 10
+INPUTP | 4 | 263 | 209 | 106 | 101
+IMPORTS | 2 | 0 | 8 | 0 | 10
+EQ | 16 | 
+   NVSRAM_CS = !RST
+	# STRB
+	# NVSRAM_CS & !A<23>
+	# A<23> & !A<22>
+	# !A<23> & A<22>
+;Imported pterms FB1_9
+	# NVSRAM_CS & !A<22>
+	# A<21> & !A<23> & A<20>
+	# A<19> & !A<23> & A<20>
+	# A<18> & !A<23> & A<20>
+	# A<18> & !A<22> & A<20>
+;Imported pterms FB1_11
+	# A<21> & !A<22> & A<20>
+	# A<19> & !A<22> & A<20>
+	# A<21> & A<19> & A<18> & !A<23> & !A<20>
+	# A<21> & A<19> & A<18> & !A<22> & !A<20>;
+
+MACROCELL | 10 | 16 | ERR_LED_BUF
+ATTRIBUTES | 8782706 | 0
+OUTPUTMC | 1 | 4 | 9
+INPUTS | 4 | D<1>.PIN  | WR_BUFS<1>  | RST  | LED_CS
+INPUTMC | 2 | 11 | 16 | 8 | 14
+INPUTP | 2 | 71 | 263
+EQ | 4 | 
+   ERR_LED.D = D<1>.PIN;
+   ERR_LED.CLK = !WR_BUFS<1>;
+   ERR_LED.AR = !RST;
+   ERR_LED.CE = !LED_CS;
+
+MACROCELL | 10 | 13 | RUN_LED_BUF
+ATTRIBUTES | 8782706 | 0
+OUTPUTMC | 1 | 4 | 4
+INPUTS | 4 | D<0>.PIN  | WR_BUFS<1>  | RST  | LED_CS
+INPUTMC | 2 | 11 | 16 | 8 | 14
+INPUTP | 2 | 65 | 263
+EQ | 4 | 
+   RUN_LED.D = D<0>.PIN;
+   RUN_LED.CLK = !WR_BUFS<1>;
+   RUN_LED.AR = !RST;
+   RUN_LED.CE = !LED_CS;
+
+MACROCELL | 4 | 4 | D_0_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | RUN_LED  | INT_READ_CS  | BOOT_2_INT_SEL  | XL16L784_INT  | D_0_IOBUFE/D_0_IOBUFE_TRST
+INPUTMC | 4 | 10 | 13 | 8 | 15 | 4 | 17 | 10 | 17
+INPUTP | 1 | 38
+EQ | 3 | 
+   !D<0> = !RUN_LED & INT_READ_CS
+	# BOOT_2_INT_SEL & !XL16L784_INT & !INT_READ_CS;
+   D<0>.OE = D_0_IOBUFE/D_0_IOBUFE_TRST;
+
+MACROCELL | 4 | 9 | D_1_IOBUFE
+ATTRIBUTES | 265986 | 0
+INPUTS | 5 | ERR_LED  | INT_READ_CS  | BOOT_2_INT_SEL  | ROM_SERIAL_SW  | D_0_IOBUFE/D_0_IOBUFE_TRST
+INPUTMC | 4 | 10 | 16 | 8 | 15 | 4 | 17 | 10 | 17
+INPUTP | 1 | 216
+EQ | 3 | 
+   !D<1> = !ERR_LED & INT_READ_CS
+	# !BOOT_2_INT_SEL & ROM_SERIAL_SW & !INT_READ_CS;
+   D<1>.OE = D_0_IOBUFE/D_0_IOBUFE_TRST;
+
+MACROCELL | 4 | 17 | BOOT_2_INT_SEL
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 7 | 4 | 4 | 4 | 9 | 4 | 17 | 13 | 7 | 13 | 9 | 13 | 10 | 13 | 13
+INPUTS | 3 | RST  | BOOT_2_INT_SEL  | BOOT_2_INT_CS
+INPUTMC | 2 | 4 | 17 | 8 | 16
+INPUTP | 1 | 263
+EQ | 2 | 
+   BOOT_2_INT_SEL = RST & BOOT_2_INT_SEL
+	# RST & !BOOT_2_INT_CS;
+
+MACROCELL | 11 | 17 | WDI_SEL_FLAG
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 2 | 11 | 17 | 11 | 9
+INPUTS | 3 | RST  | WDI_SEL_FLAG  | WDI_CS
+INPUTMC | 2 | 11 | 17 | 8 | 13
+INPUTP | 1 | 263
+EQ | 2 | 
+   WDI_SEL_FLAG = RST & WDI_SEL_FLAG
+	# RST & !WDI_CS;
+
+MACROCELL | 11 | 16 | WR_BUFS<1>
+ATTRIBUTES | 8553344 | 0
+OUTPUTMC | 2 | 10 | 16 | 10 | 13
+INPUTS | 2 | WR_BUFS<0>  | RST
+INPUTMC | 1 | 10 | 15
+INPUTP | 1 | 263
+EQ | 3 | 
+   WR_BUFS<1>.D = WR_BUFS<0>;
+   WR_BUFS<1>.CLK = H3;	// GCK
+   WR_BUFS<1>.AP = !RST;
+GLOBALS | 1 | 2 | H3
+
+MACROCELL | 10 | 15 | WR_BUFS<0>
+ATTRIBUTES | 8553344 | 0
+OUTPUTMC | 1 | 11 | 16
+INPUTS | 3 | STRB  | RWB  | RST
+INPUTP | 3 | 209 | 217 | 263
+EQ | 3 | 
+   !WR_BUFS<0>.D = !STRB & !RWB;
+   WR_BUFS<0>.CLK = H3;	// GCK
+   WR_BUFS<0>.AP = !RST;
+GLOBALS | 1 | 2 | H3
+
+MACROCELL | 11 | 9 | WDI_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 5 | H3  | ROM_SERIAL_SW  | WDI_SEL_FLAG  | WDI_CS  | FROM_CS
+INPUTMC | 3 | 11 | 17 | 8 | 13 | 8 | 11
+INPUTP | 2 | 57 | 216
+EQ | 3 | 
+   WDI = H3 & !ROM_SERIAL_SW
+	# WDI_SEL_FLAG & ROM_SERIAL_SW & WDI_CS
+	# !WDI_SEL_FLAG & ROM_SERIAL_SW & FROM_CS;
+
+MACROCELL | 8 | 11 | FROM_CS_BUF
+ATTRIBUTES | 8782770 | 0
+OUTPUTMC | 1 | 11 | 9
+INPUTS | 9 | WDI_CS/WDI_CS_SETF__$INT  | RST  | STRB  | A<21>  | A<19>  | A<18>  | A<23>  | A<22>  | A<20>
+INPUTMC | 1 | 8 | 17
+INPUTP | 8 | 263 | 209 | 100 | 98 | 97 | 106 | 101 | 99
+EQ | 5 | 
+   FROM_CS.D = Gnd;
+   FROM_CS.CLK = Gnd;
+   FROM_CS.AP = !WDI_CS/WDI_CS_SETF__$INT;
+   FROM_CS.AR = RST & !STRB & !A<21> & !A<19> & !A<18> & !A<23> & 
+	!A<22> & A<20>;
+
+MACROCELL | 13 | 7 | INT0_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 2 | BOOT_2_INT_SEL  | XL16L784_INT
+INPUTMC | 1 | 4 | 17
+INPUTP | 1 | 38
+EQ | 1 | 
+   !INT0 = BOOT_2_INT_SEL & !XL16L784_INT;
+
+MACROCELL | 13 | 9 | INT1_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 2 | BOOT_2_INT_SEL  | ROM_SERIAL_SW
+INPUTMC | 1 | 4 | 17
+INPUTP | 1 | 216
+EQ | 1 | 
+   !INT1 = !BOOT_2_INT_SEL & ROM_SERIAL_SW;
+
+MACROCELL | 1 | 13 | WR_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 2 | STRB  | RWB
+INPUTP | 2 | 209 | 217
+EQ | 1 | 
+   !WR = !STRB & !RWB;
+
+MACROCELL | 8 | 15 | INT_READ_CS
+ATTRIBUTES | 8520624 | 0
+OUTPUTMC | 3 | 4 | 4 | 4 | 9 | 10 | 17
+INPUTS | 9 | WDI_CS/WDI_CS_SETF__$INT  | RST  | STRB  | A<21>  | A<19>  | A<18>  | A<23>  | A<22>  | A<20>
+INPUTMC | 1 | 8 | 17
+INPUTP | 8 | 263 | 209 | 100 | 98 | 97 | 106 | 101 | 99
+EQ | 5 | 
+   INT_READ_CS.D = Gnd;
+   INT_READ_CS.CLK = Gnd;
+   INT_READ_CS.AP = !WDI_CS/WDI_CS_SETF__$INT;
+   INT_READ_CS.AR = RST & !STRB & A<21> & !A<19> & !A<18> & !A<23> & 
+	!A<22> & !A<20>;
+
+MACROCELL | 8 | 14 | LED_CS
+ATTRIBUTES | 8520624 | 0
+OUTPUTMC | 3 | 10 | 16 | 10 | 13 | 10 | 17
+INPUTS | 9 | WDI_CS/WDI_CS_SETF__$INT  | RST  | STRB  | A<21>  | A<19>  | A<18>  | A<23>  | A<22>  | A<20>
+INPUTMC | 1 | 8 | 17
+INPUTP | 8 | 263 | 209 | 100 | 98 | 97 | 106 | 101 | 99
+EQ | 5 | 
+   LED_CS.D = Gnd;
+   LED_CS.CLK = Gnd;
+   LED_CS.AP = !WDI_CS/WDI_CS_SETF__$INT;
+   LED_CS.AR = RST & !STRB & !A<21> & A<19> & !A<18> & !A<23> & 
+	!A<22> & !A<20>;
+
+MACROCELL | 8 | 13 | WDI_CS
+ATTRIBUTES | 8520624 | 0
+OUTPUTMC | 2 | 11 | 17 | 11 | 9
+INPUTS | 9 | WDI_CS/WDI_CS_SETF__$INT  | RST  | STRB  | A<21>  | A<19>  | A<18>  | A<23>  | A<22>  | A<20>
+INPUTMC | 1 | 8 | 17
+INPUTP | 8 | 263 | 209 | 100 | 98 | 97 | 106 | 101 | 99
+EQ | 5 | 
+   WDI_CS.D = Gnd;
+   WDI_CS.CLK = Gnd;
+   WDI_CS.AP = !WDI_CS/WDI_CS_SETF__$INT;
+   WDI_CS.AR = RST & !STRB & !A<21> & !A<19> & !A<18> & !A<23> & 
+	!A<22> & !A<20>;
+
+MACROCELL | 8 | 16 | BOOT_2_INT_CS
+ATTRIBUTES | 8520624 | 0
+OUTPUTMC | 1 | 4 | 17
+INPUTS | 9 | WDI_CS/WDI_CS_SETF__$INT  | RST  | STRB  | A<21>  | A<19>  | A<18>  | A<23>  | A<22>  | A<20>
+INPUTMC | 1 | 8 | 17
+INPUTP | 8 | 263 | 209 | 100 | 98 | 97 | 106 | 101 | 99
+EQ | 5 | 
+   BOOT_2_INT_CS.D = Gnd;
+   BOOT_2_INT_CS.CLK = Gnd;
+   BOOT_2_INT_CS.AP = !WDI_CS/WDI_CS_SETF__$INT;
+   BOOT_2_INT_CS.AR = RST & !STRB & !A<21> & !A<19> & A<18> & !A<23> & 
+	!A<22> & !A<20>;
+
+MACROCELL | 1 | 16 | W5100_CS_BUF
+ATTRIBUTES | 8651698 | 0
+INPUTS | 9 | WDI_CS/WDI_CS_SETF__$INT  | RST  | STRB  | A<21>  | A<19>  | A<18>  | A<23>  | A<22>  | A<20>
+INPUTMC | 1 | 8 | 17
+INPUTP | 8 | 263 | 209 | 100 | 98 | 97 | 106 | 101 | 99
+EQ | 5 | 
+   W5100_CS.D = Gnd;
+   W5100_CS.CLK = Gnd;
+   W5100_CS.AP = !WDI_CS/WDI_CS_SETF__$INT;
+   W5100_CS.AR = RST & !STRB & !A<21> & A<19> & A<18> & !A<23> & 
+	!A<22> & !A<20>;
+
+MACROCELL | 0 | 4 | XL16L784_CS_BUF
+ATTRIBUTES | 8651698 | 0
+INPUTS | 9 | WDI_CS/WDI_CS_SETF__$INT  | RST  | STRB  | A<21>  | A<19>  | A<18>  | A<23>  | A<22>  | A<20>
+INPUTMC | 1 | 8 | 17
+INPUTP | 8 | 263 | 209 | 100 | 98 | 97 | 106 | 101 | 99
+EQ | 5 | 
+   XL16L784_CS.D = Gnd;
+   XL16L784_CS.CLK = Gnd;
+   XL16L784_CS.AP = !WDI_CS/WDI_CS_SETF__$INT;
+   XL16L784_CS.AR = RST & !STRB & A<21> & !A<19> & A<18> & !A<23> & 
+	!A<22> & !A<20>;
+
+MACROCELL | 13 | 10 | INT2_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 2 | BOOT_2_INT_SEL  | W5100_INT
+INPUTMC | 1 | 4 | 17
+INPUTP | 1 | 30
+EQ | 1 | 
+   !INT2 = BOOT_2_INT_SEL & !W5100_INT;
+
+MACROCELL | 13 | 13 | INT3_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 2 | BOOT_2_INT_SEL  | ROM_SERIAL_SW
+INPUTMC | 1 | 4 | 17
+INPUTP | 1 | 216
+EQ | 1 | 
+   !INT3 = !BOOT_2_INT_SEL & !ROM_SERIAL_SW;
+
+MACROCELL | 1 | 11 | RD_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 2 | STRB  | RWB
+INPUTP | 2 | 209 | 217
+EQ | 1 | 
+   !RD = !STRB & RWB;
+
+MACROCELL | 6 | 4 | RDY_OBUF$BUF1
+ATTRIBUTES | 265986 | 0
+INPUTS | 1 | D_0_IOBUFE/D_0_IOBUFE_TRST
+INPUTMC | 1 | 10 | 17
+EQ | 2 | 
+   D<7> = Gnd;
+   D<7>.OE = D_0_IOBUFE/D_0_IOBUFE_TRST;
+
+MACROCELL | 6 | 2 | RDY_OBUF$BUF2
+ATTRIBUTES | 265986 | 0
+INPUTS | 1 | D_0_IOBUFE/D_0_IOBUFE_TRST
+INPUTMC | 1 | 10 | 17
+EQ | 2 | 
+   D<6> = Gnd;
+   D<6>.OE = D_0_IOBUFE/D_0_IOBUFE_TRST;
+
+MACROCELL | 4 | 16 | RDY_OBUF$BUF3
+ATTRIBUTES | 265986 | 0
+INPUTS | 1 | D_0_IOBUFE/D_0_IOBUFE_TRST
+INPUTMC | 1 | 10 | 17
+EQ | 2 | 
+   D<5> = Gnd;
+   D<5>.OE = D_0_IOBUFE/D_0_IOBUFE_TRST;
+
+MACROCELL | 4 | 14 | RDY_OBUF$BUF4
+ATTRIBUTES | 265986 | 0
+INPUTS | 1 | D_0_IOBUFE/D_0_IOBUFE_TRST
+INPUTMC | 1 | 10 | 17
+EQ | 2 | 
+   D<4> = Gnd;
+   D<4>.OE = D_0_IOBUFE/D_0_IOBUFE_TRST;
+
+MACROCELL | 4 | 13 | RDY_OBUF$BUF5
+ATTRIBUTES | 265986 | 0
+INPUTS | 1 | D_0_IOBUFE/D_0_IOBUFE_TRST
+INPUTMC | 1 | 10 | 17
+EQ | 2 | 
+   D<3> = Gnd;
+   D<3>.OE = D_0_IOBUFE/D_0_IOBUFE_TRST;
+
+MACROCELL | 4 | 11 | RDY_OBUF$BUF6
+ATTRIBUTES | 265986 | 0
+INPUTS | 1 | D_0_IOBUFE/D_0_IOBUFE_TRST
+INPUTMC | 1 | 10 | 17
+EQ | 2 | 
+   D<2> = Gnd;
+   D<2>.OE = D_0_IOBUFE/D_0_IOBUFE_TRST;
+
+MACROCELL | 15 | 4 | SERVICE_LON_OBUF$BUF0
+ATTRIBUTES | 264962 | 0
+INPUTS | 1 | SERVICE_SWITCH
+INPUTP | 1 | 171
+EQ | 1 | 
+   SERVICE_LON = SERVICE_SWITCH;
+
+MACROCELL | 15 | 10 | RDY_OBUF$BUF0
+ATTRIBUTES | 265986 | 0
+INPUTS | 0
+EQ | 2 | 
+   LRST = Gnd;
+   LRST.OE = Gnd;
+
+MACROCELL | 13 | 5 | EDGE_MODE_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   EDGE_MODE = Vcc;
+
+MACROCELL | 9 | 4 | RDY_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 0
+EQ | 1 | 
+   RDY = Gnd;
+
+MACROCELL | 10 | 17 | D_0_IOBUFE/D_0_IOBUFE_TRST
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 8 | 4 | 4 | 4 | 9 | 6 | 4 | 6 | 2 | 4 | 16 | 4 | 14 | 4 | 13 | 4 | 11
+INPUTS | 4 | RST  | INT_READ_CS  | RWB  | LED_CS
+INPUTMC | 2 | 8 | 15 | 8 | 14
+INPUTP | 2 | 263 | 217
+EQ | 2 | 
+   D_0_IOBUFE/D_0_IOBUFE_TRST = RST & !INT_READ_CS
+	# RST & RWB & !LED_CS;
+
+MACROCELL | 8 | 17 | WDI_CS/WDI_CS_SETF__$INT
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 7 | 8 | 11 | 8 | 15 | 8 | 14 | 8 | 13 | 8 | 16 | 1 | 16 | 0 | 4
+INPUTS | 8 | RST  | STRB  | A<23>  | A<22>  | A<21>  | A<20>  | A<18>  | A<19>
+INPUTP | 8 | 263 | 209 | 106 | 101 | 100 | 99 | 97 | 98
+EQ | 6 | 
+   WDI_CS/WDI_CS_SETF__$INT = RST & !STRB & A<23> & A<22>
+	# RST & !STRB & !A<21> & !A<23> & !A<22> & !A<20>
+	# RST & !STRB & !A<19> & !A<23> & !A<22> & !A<20>
+	# RST & !STRB & !A<18> & !A<23> & !A<22> & !A<20>
+	# RST & !STRB & !A<21> & !A<19> & !A<18> & !A<23> & 
+	!A<22>;
+
+MACROCELL | 0 | 8 | EXP18_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 9
+INPUTS | 7 | NVSRAM_CS  | A<22>  | A<21>  | A<23>  | A<20>  | A<19>  | A<18>
+INPUTMC | 1 | 0 | 9
+INPUTP | 6 | 101 | 100 | 106 | 99 | 98 | 97
+EXPORTS | 1 | 0 | 9
+EQ | 5 | 
+       EXP18_.EXP  =  NVSRAM_CS & !A<22>
+	# A<21> & !A<23> & A<20>
+	# A<19> & !A<23> & A<20>
+	# A<18> & !A<23> & A<20>
+	# A<18> & !A<22> & A<20>
+
+MACROCELL | 0 | 10 | EXP19_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 9
+INPUTS | 6 | A<21>  | A<22>  | A<20>  | A<19>  | A<18>  | A<23>
+INPUTP | 6 | 100 | 101 | 99 | 98 | 97 | 106
+EXPORTS | 1 | 0 | 9
+EQ | 4 | 
+       EXP19_.EXP  =  A<21> & !A<22> & A<20>
+	# A<19> & !A<22> & A<20>
+	# A<21> & A<19> & A<18> & !A<23> & !A<20>
+	# A<21> & A<19> & A<18> & !A<22> & !A<20>
+
+PIN | RST | 64 | 0 | N/A | 263 | 16 | 0 | 9 | 10 | 16 | 10 | 13 | 4 | 17 | 11 | 17 | 11 | 16 | 10 | 15 | 8 | 11 | 8 | 15 | 8 | 14 | 8 | 13 | 8 | 16 | 1 | 16 | 0 | 4 | 10 | 17 | 8 | 17
+PIN | STRB | 64 | 0 | N/A | 209 | 12 | 0 | 9 | 10 | 15 | 8 | 11 | 1 | 13 | 8 | 15 | 8 | 14 | 8 | 13 | 8 | 16 | 1 | 16 | 0 | 4 | 1 | 11 | 8 | 17
+PIN | A<23> | 64 | 0 | N/A | 106 | 11 | 0 | 9 | 8 | 11 | 8 | 15 | 8 | 14 | 8 | 13 | 8 | 16 | 1 | 16 | 0 | 4 | 8 | 17 | 0 | 8 | 0 | 10
+PIN | A<22> | 64 | 0 | N/A | 101 | 11 | 0 | 9 | 8 | 11 | 8 | 15 | 8 | 14 | 8 | 13 | 8 | 16 | 1 | 16 | 0 | 4 | 8 | 17 | 0 | 8 | 0 | 10
+PIN | A<20> | 64 | 0 | N/A | 99 | 10 | 0 | 8 | 8 | 11 | 8 | 15 | 8 | 14 | 8 | 13 | 8 | 16 | 1 | 16 | 0 | 4 | 8 | 17 | 0 | 10
+PIN | A<18> | 64 | 0 | N/A | 97 | 10 | 0 | 8 | 8 | 11 | 8 | 15 | 8 | 14 | 8 | 13 | 8 | 16 | 1 | 16 | 0 | 4 | 8 | 17 | 0 | 10
+PIN | A<19> | 64 | 0 | N/A | 98 | 10 | 0 | 8 | 8 | 11 | 8 | 15 | 8 | 14 | 8 | 13 | 8 | 16 | 1 | 16 | 0 | 4 | 8 | 17 | 0 | 10
+PIN | A<21> | 64 | 0 | N/A | 100 | 10 | 0 | 8 | 8 | 11 | 8 | 15 | 8 | 14 | 8 | 13 | 8 | 16 | 1 | 16 | 0 | 4 | 8 | 17 | 0 | 10
+PIN | XL16L784_INT | 64 | 0 | N/A | 38 | 2 | 4 | 4 | 13 | 7
+PIN | ROM_SERIAL_SW | 64 | 0 | N/A | 216 | 4 | 4 | 9 | 11 | 9 | 13 | 9 | 13 | 13
+PIN | H3 | 4160 | 0 | N/A | 57 | 3 | 11 | 9 | 11 | 16 | 10 | 15
+PIN | RWB | 64 | 0 | N/A | 217 | 4 | 10 | 15 | 1 | 13 | 1 | 11 | 10 | 17
+PIN | W5100_INT | 64 | 0 | N/A | 30 | 1 | 13 | 10
+PIN | SERVICE_SWITCH | 64 | 0 | N/A | 171 | 1 | 15 | 4
+PIN | NVSRAM_CS | 536871040 | 0 | N/A | 41
+PIN | ERR_LED | 536871040 | 0 | N/A | 131
+PIN | RUN_LED | 536871040 | 0 | N/A | 129
+PIN | WDI | 536871040 | 0 | N/A | 207
+PIN | FROM_CS | 536871040 | 0 | N/A | 107
+PIN | INT0 | 536871040 | 0 | N/A | 188
+PIN | INT1 | 536871040 | 0 | N/A | 190
+PIN | WR | 536871040 | 0 | N/A | 29
+PIN | W5100_CS | 536871040 | 0 | N/A | 32
+PIN | XL16L784_CS | 536871040 | 0 | N/A | 37
+PIN | INT2 | 536871040 | 0 | N/A | 191
+PIN | INT3 | 536871040 | 0 | N/A | 193
+PIN | RD | 536871040 | 0 | N/A | 28
+PIN | D<7> | 536871040 | 0 | N/A | 81
+PIN | D<6> | 536871040 | 0 | N/A | 80
+PIN | D<5> | 536871040 | 0 | N/A | 78
+PIN | D<4> | 536871040 | 0 | N/A | 77
+PIN | D<3> | 536871040 | 0 | N/A | 74
+PIN | D<2> | 536871040 | 0 | N/A | 73
+PIN | SERVICE_LON | 536871040 | 0 | N/A | 170
+PIN | LRST | 536871040 | 0 | N/A | 175
+PIN | EDGE_MODE | 536871040 | 0 | N/A | 187
+PIN | RDY | 536871040 | 0 | N/A | 219
+PIN | D<0> | 536870976 | 0 | N/A | 65 | 1 | 10 | 13
+PIN | D<1> | 536870976 | 0 | N/A | 71 | 1 | 10 | 16

@@ -1,0 +1,160 @@
+Release 12.3 - xst M.70d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> Reading design: DPRAMxA6xD8.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "DPRAMxA6xD8.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "DPRAMxA6xD8"
+Output Format                      : NGC
+Target Device                      : xc3s200-5-vq100
+
+---- Source Options
+Top Module Name                    : DPRAMxA6xD8
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" in Library work.
+ERROR:HDLParsers:3011 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 16. End Identifier DPRAMxA6xD8 does not match declaration, DPRAMxA12xD8.
+ERROR:HDLParsers:3010 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 18. Entity DPRAMxA6xD8 does not exist.
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 20. Undefined symbol 'std_logic'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 20. std_logic: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 25. Undefined symbol 'std_logic_vector'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 25. std_logic_vector: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 49. Undefined symbol 'SEL0'.
+ERROR:HDLParsers:3313 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 49. Undefined symbol 'DWE'.  Should it be: DlE?
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 49. DWE: Undefined symbol (last report in this block)
+ERROR:HDLParsers:808 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 49. not can not have such operands in this context.
+ERROR:HDLParsers:808 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 49. not can not have such operands in this context.
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 50. Undefined symbol 'SEL1'.
+ERROR:HDLParsers:808 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 50. not can not have such operands in this context.
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 51. Undefined symbol 'SEL2'.
+ERROR:HDLParsers:808 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 51. not can not have such operands in this context.
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 52. Undefined symbol 'SEL3'.
+ERROR:HDLParsers:808 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 52. and can not have such operands in this context.
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. Undefined symbol 'SD'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. SD: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. Undefined symbol 'SA'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. SA: Undefined symbol (last report in this block)
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. SEL0: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. Undefined symbol 'CLK'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. CLK: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. Undefined symbol 'D0'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. D0: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. Undefined symbol 'DA'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 55. DA: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. Undefined symbol 'DA'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. DA: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. Undefined symbol 'D0'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. D0: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. Undefined symbol 'D1'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. D1: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. Undefined symbol 'D2'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. D2: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. Undefined symbol 'D3'.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. D3: Undefined symbol (last report in this block)
+ERROR:HDLParsers:808 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 67. = can not have such operands in this context.
+ERROR:HDLParsers:3312 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 68. Undefined symbol 'DD'.
+ERROR:HDLParsers:808 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 69. = can not have such operands in this context.
+ERROR:HDLParsers:1209 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 70. DD: Undefined symbol (last report in this block)
+ERROR:HDLParsers:808 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 71. = can not have such operands in this context.
+ERROR:HDLParsers:808 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 73. = can not have such operands in this context.
+WARNING:HDLParsers:1406 - "D:/_CPLD/LIC-C3/decoder/DPRAM.vhd" Line 65. No sensitivity list and no wait in the process
+--> 
+
+Total memory usage is 128860 kilobytes
+
+Number of errors   :   44 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

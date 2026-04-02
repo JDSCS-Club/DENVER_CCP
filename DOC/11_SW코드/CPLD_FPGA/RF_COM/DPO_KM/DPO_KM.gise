@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="DPO_KM.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="DPO_FSM.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="DPO_FSM.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DPO_FSM.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="DPO_FSM.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="DPO_FSM.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="DPO_FSM_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="DPO_FSM_xst.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="DPO_V.bld"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CHK" xil_pn:name="DPO_V.chk"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="DPO_V.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CXT" xil_pn:name="DPO_V.cxt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="DPO_V.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="DPO_V.jed"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="DPO_V.log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="DPO_V.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="DPO_V.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="DPO_V.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="DPO_V.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="DPO_V.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="DPO_V.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="DPO_V.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="DPO_V.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DPO_V.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="DPO_V.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="DPO_V.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="DPO_V.syr"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="DPO_V.tim"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="DPO_V.tspec"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="DPO_V.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="DPO_V.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="DPO_V.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="DPO_V_build.xml"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="DPO_V_envsettings.html"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="DPO_V_html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="DPO_V_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="DPO_V_pad.csv"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="DPO_V_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="DPO_V_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="dpo.bld"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CHK" xil_pn:name="dpo.chk"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="dpo.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CXT" xil_pn:name="dpo.cxt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="dpo.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="dpo.jed"/>
+    <file xil_pn:fileType="FILE_LFP" xil_pn:name="dpo.lfp"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="dpo.log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="dpo.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="dpo.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="dpo.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="dpo.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="dpo.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="dpo.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="dpo.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="dpo.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="dpo.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="dpo.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="dpo.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="dpo.syr"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="dpo.tim"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="dpo.tspec"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="dpo.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="dpo.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="dpo.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="dpo_beh.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="dpo_build.xml"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="dpo_envsettings.html"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="dpo_html"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="dpo_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="dpo_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="dpo_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="dpo_pad.csv"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="dpo_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="dpo_summary.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="dpo_vhdl.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="dpo_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1330191112" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1330191112">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1330191112" xil_pn:in_ck="133663383283" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1330191112">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1330191112" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3842319759002406113" xil_pn:start_ts="1330191112">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1330191112" xil_pn:in_ck="133663383283" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1330191112">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1330191117" xil_pn:in_ck="133663383283" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-2875292859934845092" xil_pn:start_ts="1330191112">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1330191338" xil_pn:in_ck="-6023373402705763022" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5967130161864205239" xil_pn:start_ts="1330191338">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1330106558" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1330106558">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1330282351" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-1555435745222517631" xil_pn:start_ts="1330282351">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1330284047" xil_pn:in_ck="133663383283" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="-8766673088549765200" xil_pn:start_ts="1330284041">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="DPO_FSM.prj"/>
+      <outfile xil_pn:name="DPO_V.prj"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="dpo.lso"/>
+      <outfile xil_pn:name="dpo.ngc"/>
+      <outfile xil_pn:name="dpo.ngr"/>
+      <outfile xil_pn:name="dpo.prj"/>
+      <outfile xil_pn:name="dpo.stx"/>
+      <outfile xil_pn:name="dpo.syr"/>
+      <outfile xil_pn:name="dpo.xst"/>
+      <outfile xil_pn:name="dpo_beh.prj"/>
+      <outfile xil_pn:name="dpo_stx_beh.prj"/>
+      <outfile xil_pn:name="dpo_vhdl.prj"/>
+      <outfile xil_pn:name="dpo_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1330282353" xil_pn:in_ck="133663382031" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-5337509147231814373" xil_pn:start_ts="1330282353">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1330284050" xil_pn:in_ck="-3519012824059790664" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="2821561388823001824" xil_pn:start_ts="1330284047">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="dpo.bld"/>
+      <outfile xil_pn:name="dpo.ngd"/>
+      <outfile xil_pn:name="dpo_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1330284067" xil_pn:in_ck="133663374538" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="5004741366874224602" xil_pn:start_ts="1330284050">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="DPO_V.xml"/>
+      <outfile xil_pn:name="DPO_V_build.xml"/>
+      <outfile xil_pn:name="DPO_V_pad.csv"/>
+      <outfile xil_pn:name="dpo.chk"/>
+      <outfile xil_pn:name="dpo.cxt"/>
+      <outfile xil_pn:name="dpo.gyd"/>
+      <outfile xil_pn:name="dpo.log"/>
+      <outfile xil_pn:name="dpo.mfd"/>
+      <outfile xil_pn:name="dpo.nga"/>
+      <outfile xil_pn:name="dpo.pad"/>
+      <outfile xil_pn:name="dpo.pnx"/>
+      <outfile xil_pn:name="dpo.rpt"/>
+      <outfile xil_pn:name="dpo.tim"/>
+      <outfile xil_pn:name="dpo.tspec"/>
+      <outfile xil_pn:name="dpo.vm6"/>
+      <outfile xil_pn:name="dpo.xml"/>
+      <outfile xil_pn:name="dpo_build.xml"/>
+      <outfile xil_pn:name="dpo_html"/>
+      <outfile xil_pn:name="dpo_pad.csv"/>
+    </transform>
+    <transform xil_pn:end_ts="1330284068" xil_pn:in_ck="133663383402" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="5245363024343" xil_pn:start_ts="1330284067">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="dpo.jed"/>
+    </transform>
+    <transform xil_pn:end_ts="1330275699" xil_pn:in_ck="99151109071609" xil_pn:name="TRAN_configureTargetDevice_CPLD" xil_pn:prop_ck="-3223234765801749484" xil_pn:start_ts="1330275697">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1330282424" xil_pn:in_ck="133663383402" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1330282422">
+      <status xil_pn:value="AbortedRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+    </transform>
+    <transform xil_pn:end_ts="1330185480" xil_pn:in_ck="-3519012781441347687" xil_pn:name="TRAN_createTimingConstraints" xil_pn:start_ts="1330185480">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+    </transform>
+  </transforms>
+
+</generated_project>

@@ -1,0 +1,17 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.nkdep
+; Created Monday, January 22, 2007, 11:28:19
+
+[Global]
+Provider=Echelon NodeBuilder Make Facility
+Version=1
+Inputs=0
+Outputs=0
+Switches=0
+Parameters=2
+
+[Switches]
+
+[Parameters]
+BuildtimeH=29834776
+BuildtimeL=1786514304

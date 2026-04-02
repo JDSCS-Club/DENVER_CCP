@@ -1,0 +1,70 @@
+NET "RST" LOC = "P143";
+NET "RDY" LOC = "P119";
+NET "ROM_SERIAL_SW" LOC = "P117";
+NET "H3" LOC = "P30";
+NET "WDI" LOC = "P115";
+NET "STRB" LOC = "P116";
+NET "RWB" LOC = "P118";
+NET "EDGE_MODE" LOC = "P102";
+
+NET "A<23>" LOC = "P56";
+NET "A<22>" LOC = "P54";
+NET "A<21>" LOC = "P53";
+NET "A<20>" LOC = "P52";
+NET "A<19>" LOC = "P51";
+NET "A<18>" LOC = "P50";
+
+NET "D<7>" LOC = "P46";
+NET "D<6>" LOC = "P45";
+NET "D<5>" LOC = "P44";
+NET "D<4>" LOC = "P43";
+NET "D<3>" LOC = "P41";
+NET "D<2>" LOC = "P40";
+NET "D<1>" LOC = "P39";
+NET "D<0>" LOC = "P35";
+
+
+NET "IO<11>" LOC = "P75";
+NET "IO<10>" LOC = "P76";
+NET "IO<9>" LOC = "P77";
+NET "IO<8>" LOC = "P78";
+NET "IO<7>" LOC = "P79";
+NET "IO<6>" LOC = "P80";
+NET "IO<5>" LOC = "P81";
+NET "IO<4>" LOC = "P82";
+NET "IO<3>" LOC = "P83";
+NET "IO<2>" LOC = "P85";
+NET "IO<1>" LOC = "P86";
+NET "IO<0>" LOC = "P87";
+
+NET "SERVICE_LON" LOC = "P93";
+NET "SERVICE_SWITCH" LOC = "P94";
+NET "CSO_LON" LOC = "P95";
+NET "LRST" LOC = "P97";
+
+
+NET "XL16L784_CS" LOC = "P20";
+NET "FROM_CS" LOC = "P57";
+NET "NVSRAM_CS" LOC = "P23";
+
+# NET "DPRAM_CS" LOC = "P";
+
+NET "W5100_CS" LOC = "P19";
+NET "WR" LOC = "P16";
+NET "RD" LOC = "P15";
+
+
+
+# NET "VL5V_OE" LOC = "P";
+# NET "VL5V_DIR" LOC = "P36";
+NET "XL16L784_INT" LOC = "P21";
+NET "W5100_INT" LOC = "P17";
+NET "INT0" LOC = "P103";
+NET "INT1" LOC = "P104";
+NET "INT2" LOC = "P105";
+NET "INT3" LOC = "P106";
+# NET "NIO3" LOC = "P27";
+# NET "NIO4" LOC = "P44";
+
+NET "RUN_LED" LOC = "P69";
+NET "ERR_LED" LOC = "P70";

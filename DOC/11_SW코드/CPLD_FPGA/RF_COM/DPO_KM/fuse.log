@@ -1,0 +1,18 @@
+Running: C:\Tools\Xilinx\12.3\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Docs/RF-COMM/DPO/DPO_KM/dpo_isim_beh.exe -prj C:/Docs/RF-COMM/DPO/DPO_KM/dpo_beh.prj work.dpo 
+ISim M.70d (signature 0x16fbe694)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Compiling architecture behavioral of entity dpo
+Time Resolution for simulation is 1ps.
+Compiled 5 VHDL Units
+Built simulation executable C:/Docs/RF-COMM/DPO/DPO_KM/dpo_isim_beh.exe
+Fuse Memory Usage: 19192 KB
+Fuse CPU Usage: 312 ms

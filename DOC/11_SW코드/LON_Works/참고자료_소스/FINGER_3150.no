@@ -1,0 +1,880 @@
+!nas 3.11.07
+R0 f
+R1 2
+R2 1
+R3 3
+R5 2
+R8 2
+Rb 2a
+Rc 2a
+Rd 42
+Re 42
+Rf 3
+R10 1
+R15 1
+R22 1
+R24 2
+R30 1
+
+.F008DIRECTORY
+.F00APROTECTBIT
+.F00DPROGID
+.F015MODETABLE
+.F01ABUFCOUNTS
+.F01DEENEARBYTES
+.F023TX_CTRL
+
+o0000 0005
+
+^E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.ns
+@50
+02j
+@51
+00j
+@52
+7Fj
+00j
+00j
+
+x0000 001F
+#0000%nvitrdata
+
+@200
+*1F
+
+x0000 001F
+#0000%nvotrdata
+
+@205
+*1F
+
+x0000 0002
+#0000%nvolampvalu
+
+@210
+*2
+
+x0000 000D
+#0000%szRxBufA
+
+@215
+*D
+
+x0000 000D
+#0000%szRxBufB
+
+@220
+*D
+
+x0000 000D
+#0000%obuffer
+
+@225
+*D
+
+x0000 000D
+#0000%comm_data
+
+@230
+*D
+
+x0000 0001
+#0000%count
+
+@235
+*1
+
+x0000 0001
+#0000%temp
+
+@240
+*1
+
+s0000 0027
+#0000%GetButtons
+
+@250
+C1
+@251
+B4FF
+@252
+FF
+@253
+5900
+@254
+A4
+@255
+58FD
+@256
+E4
+@257
+3317
+@258
+B50040
+@259
+0000g_bit_output_lo1 
+@260
+B50140
+@261
+0000g_bit_output_lo1 
+@262
+B50804
+@263
+770000i_bitshift_input 
+@264
+E5
+@265
+BF
+@266
+51
+@267
+FF
+@268
+3E
+@269
+71E3
+@270
+A5
+@271
+3D
+@272
+E5
+@273
+F5
+
+s0000 0084
+#0000%processRxData
+
+@278
+C0
+@279
+5900
+@280
+B40D
+@281
+A5
+@282
+0000g_gequ8s 
+@283
+7221
+@284
+BF
+@285
+BF
+@286
+BF
+@287
+0000g_adds_8_16 
+@288
+F0
+@289
+9800
+@290
+A4
+@291
+B50000i%nvotrdata 
+@292
+BD
+@293
+0000g_adds_8_16 
+@294
+F3
+@295
+DB00
+@296
+81
+@297
+0000g_nv_update_request 
+@298
+B50000i%comm_data 
+@299
+BE
+@300
+0000g_adds_8_16 
+@301
+F0
+@302
+D800
+@303
+3E
+@304
+71D8
+@305
+9900k%comm_data @2
+@306
+5B40
+@307
+723D
+@308
+9900k%comm_data @20C +
+@309
+5B0A
+@310
+7237
+@311
+9900k%comm_data @20A +
+@312
+766101
+@313
+2D
+@314
+766902
+@315
+7118
+@316
+766202
+@317
+7121
+@318
+E4
+@319
+7139
+@320
+80
+@321
+82
+@322
+0000g_bit_output_lo1 
+@323
+81
+@324
+82
+@325
+81
+@326
+0000g_nv_update_int_offset 
+@327
+B5C802
+@328
+0000g_nv_update_int 
+@329
+7129
+@330
+80
+@331
+84
+@332
+0000g_bit_output_lo1 
+@333
+80
+@334
+82
+@335
+81
+@336
+0000g_nv_update_int_offset 
+@337
+80
+@338
+82
+@339
+0000g_nv_update_int 
+@340
+24
+@341
+80
+@342
+81
+@343
+0000g_bit_output_lo1 
+@344
+7115
+@345
+80
+@346
+81
+@347
+0000g_bit_output_lo1 
+@348
+81
+@349
+84
+@350
+0000g_bit_output_lo1 
+@351
+81
+@352
+82
+@353
+0000g_bit_output_lo1 
+@354
+80
+@355
+82
+@356
+81
+@357
+0000g_nv_update_int_offset 
+@358
+80
+@359
+82
+@360
+0000g_nv_update_int 
+@361
+7D
+
+s0000 0013
+.0000WHEN1
+
+@366
+B40D
+@367
+B50000i%nvitrdata 
+@368
+B50000i%obuffer 
+@369
+0000g_memcpy 
+@370
+B40D
+@371
+B50000i%obuffer 
+@372
+770000i_io_sci_set_buffer_out 
+@373
+31
+
+s0000 0024
+.0000WHEN2
+
+@378
+B40D
+@379
+9900k%bufTog @2
+@380
+44
+@381
+B50000i%szRxBufA 
+@382
+23
+@383
+B50000i%szRxBufB 
+@384
+770000i_io_sci_set_buffer_in 
+@385
+E4
+@386
+9900k%bufTog @2
+@387
+5B01
+@388
+D900k%bufTog @2
+@389
+9900k%bufTog @2
+@390
+44
+@391
+B50000i%szRxBufA 
+@392
+23
+@393
+B50000i%szRxBufB 
+@394
+770000i%processRxData 
+@395
+31
+
+s0000 010B
+.0000WHEN3
+
+@400
+C0
+@401
+81
+@402
+84
+@403
+0000g_bit_output_lo1 
+@404
+81
+@405
+A4
+@406
+0000g_bit_output_lo1 
+@407
+81
+@408
+82
+@409
+0000g_bit_output_lo1 
+@410
+80
+@411
+82
+@412
+81
+@413
+0000g_nv_update_int_offset 
+@414
+80
+@415
+82
+@416
+0000g_nv_update_int 
+@417
+770000i%GetButtons 
+@418
+E5
+@419
+B440
+@420
+D900k%obuffer @2
+@421
+80
+@422
+D900k%obuffer @203 +
+@423
+80
+@424
+D900k%obuffer @204 +
+@425
+80
+@426
+D900k%obuffer @205 +
+@427
+80
+@428
+D900k%obuffer @206 +
+@429
+80
+@430
+D900k%obuffer @207 +
+@431
+80
+@432
+D900k%obuffer @208 +
+@433
+80
+@434
+D900k%obuffer @209 +
+@435
+80
+@436
+D900k%obuffer @20A +
+@437
+B40A
+@438
+D900k%obuffer @20C +
+@439
+A4
+@440
+760102
+@441
+7129
+@442
+760202
+@443
+713A
+@444
+760402
+@445
+7149
+@446
+760802
+@447
+7158
+@448
+761002
+@449
+7167
+@450
+762002
+@451
+7176
+@452
+764003
+@453
+750000iWHEN3 0E3 +
+@454
+768003
+@455
+750000iWHEN3 0F7 +
+@456
+E4
+@457
+750000iWHEN3 010A +
+@458
+B411
+@459
+D900k%obuffer @201 +
+@460
+80
+@461
+D900k%obuffer @202 +
+@462
+B451
+@463
+D900k%obuffer @20B +
+@464
+B40D
+@465
+B50000i%obuffer 
+@466
+770000i_io_sci_set_buffer_out 
+@467
+750000iWHEN3 010A +
+@468
+85
+@469
+D900k%obuffer @201 +
+@470
+81
+@471
+D900k%obuffer @202 +
+@472
+B446
+@473
+D900k%obuffer @20B +
+@474
+B40D
+@475
+B50000i%obuffer 
+@476
+770000i_io_sci_set_buffer_out 
+@477
+7177
+@478
+85
+@479
+D900k%obuffer @201 +
+@480
+82
+@481
+D900k%obuffer @202 +
+@482
+B447
+@483
+D900k%obuffer @20B +
+@484
+B40D
+@485
+B50000i%obuffer 
+@486
+770000i_io_sci_set_buffer_out 
+@487
+7163
+@488
+85
+@489
+D900k%obuffer @201 +
+@490
+83
+@491
+D900k%obuffer @202 +
+@492
+B448
+@493
+D900k%obuffer @20B +
+@494
+B40D
+@495
+B50000i%obuffer 
+@496
+770000i_io_sci_set_buffer_out 
+@497
+714F
+@498
+85
+@499
+D900k%obuffer @201 +
+@500
+84
+@501
+D900k%obuffer @202 +
+@502
+B449
+@503
+D900k%obuffer @20B +
+@504
+B40D
+@505
+B50000i%obuffer 
+@506
+770000i_io_sci_set_buffer_out 
+@507
+713B
+@508
+85
+@509
+D900k%obuffer @201 +
+@510
+85
+@511
+D900k%obuffer @202 +
+@512
+B44A
+@513
+D900k%obuffer @20B +
+@514
+B40D
+@515
+B50000i%obuffer 
+@516
+770000i_io_sci_set_buffer_out 
+@517
+7127
+@518
+85
+@519
+D900k%obuffer @201 +
+@520
+86
+@521
+D900k%obuffer @202 +
+@522
+B44B
+@523
+D900k%obuffer @20B +
+@524
+B40D
+@525
+B50000i%obuffer 
+@526
+770000i_io_sci_set_buffer_out 
+@527
+7113
+@528
+B417
+@529
+D900k%obuffer @201 +
+@530
+80
+@531
+D900k%obuffer @202 +
+@532
+B457
+@533
+D900k%obuffer @20B +
+@534
+B40D
+@535
+B50000i%obuffer 
+@536
+770000i_io_sci_set_buffer_out 
+@537
+7F
+
+s0000 002A
+.0000APINIT
+.0010RESET
+
+@556
+75FD00
+@558
+B40D
+@559
+770000i_io_scispi_input_ready 
+@560
+0000g_equal8 
+@561
+31
+@563
+80
+@564
+83
+@565
+0000g_bit_input 
+@566
+31
+@568
+80
+@569
+D900k%bufTog @2
+@570
+B40D
+@571
+B50000i%szRxBufA 
+@572
+770000i_io_sci_set_buffer_in 
+@573
+E4
+@574
+81
+@575
+A4
+@576
+0000g_bit_output_lo1 
+@577
+80
+@578
+82
+@579
+81
+@580
+0000g_nv_update_int_offset 
+@581
+80
+@582
+82
+@583
+0000g_nv_update_int 
+@584
+31
+
+r0000 000D
+.0000SIDATA
+
+@605
+00j
+0Dj
+03j
+00j
+00j
+@606
+0Ej
+24j
+@607
+0Ej
+24j
+@608
+0Ej
+5Fj
+@609
+00j
+@610
+00j_new_binding_constraints _query_stats |02 |
+
+s0000 001C
+.0009TEVT
+
+@589
+3Fj
+00j%nvitrdata @1
+00j%nvitrdata @0
+@590
+1Fj
+00j%nvotrdata @1
+00j%nvotrdata @0
+@591
+02j
+00j%nvolampvalu @1
+00j%nvolampvalu @0
+@594
+00jAPINIT 02 -@1
+00jAPINIT 02 -@0
+@595
+00j
+11j
+@596
+00j
+00j
+@597
+00j
+03j
+@598
+C0j
+00jWHEN1 01 -@1
+00jWHEN1 01 -@0
+@599
+01j
+04j
+00jWHEN2 01 -@1
+00jWHEN2 01 -@0
+@600
+10j
+0Cj
+00jWHEN3 01 -@1
+00jWHEN3 01 -@0
+
+q0000 0010
+.0000_%FINGER_3150%INIT
+.0000SCISPIINITPARMS
+.0006SCISPIINITCALL
+
+@543
+20
+@544
+20
+@545
+20
+@546
+B5004C
+@548
+770000i_io_sci_init 
+@549
+B455
+@550
+D900k%temp @2
+@551
+75FD00
+
+x0000 0001
+#0000%bufTog
+
+@245
+*1
+
+p0000 0094
+.0019DOMAIN
+
+@62
+*8
+@64
+*10
+@66
+*1
+@68
+*1E
+@70
+*4B
+@72
+*9
+@74
+*8
+@76
+*1
+
+o0000 0005
+
+@57
+03j
+02j
+00jSIDATA @1
+00jSIDATA @0
+00j
+
+NF000 0024
+@25
+*8
+@27
+00jTEVT 09 -@1
+00jTEVT 09 -@0
+@29
+03j
+@30
+00jSIDATA @1
+00jSIDATA @0
+@32
+9Fj
+FFj
+FFj
+32j
+00j
+04j
+11j
+01j
+@34
+53j
+@35
+F1j
+02j
+@36
+99j
+BBj
+@38
+33j
+33j
+33j
+@40
+00j
+@41
+00j
+00j
+@42
+57j
+20j
+47j
+@43
+00j04 _tx_by_addr |
+!
+

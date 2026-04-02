@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NBProjectOptions LoadAfterBuild="TRUE" LoadOnlyNBDevices="TRUE" StopOnWarning="FALSE" StopOnError="TRUE">
+	<Contents MajorVersion="0" MinorVersion="0" CreationDate="1335174248" Format="1" Content="1">
+		<FileDescription>NodeBuilder Project Options File</FileDescription>
+		<UpgradeStatus>0</UpgradeStatus>
+	</Contents>
+	<BuildType>0x1</BuildType>
+	<NBNetworks>
+		<NBNetwork Name="Denver">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="23">
+					<AppDeviceName>Subsystem 1.Device 2</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+				<DeviceItem AppDeviceHandle="29">
+					<AppDeviceName>Subsystem 1.D_R</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+				<DeviceItem AppDeviceHandle="34">
+					<AppDeviceName>D_D</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+				<DeviceItem AppDeviceHandle="63">
+					<AppDeviceName>Subsystem 1.Device 1</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+				<DeviceTemplateFlag Name="Denver.Development">
+					<Number>0x1</Number>
+				</DeviceTemplateFlag>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="Network 2">
+			<DeviceItems>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="Network 3">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="2">
+					<AppDeviceName>Subsystem 1.Device 1</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="Network 1">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="149">
+					<AppDeviceName>Subsystem 1.Device 2</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="DENVER">
+			<DeviceItems>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="DTS_LON">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="65">
+					<AppDeviceName>Subsystem 1.Device 1</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="DTS_LON 1">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="31">
+					<AppDeviceName>Subsystem 1.Device 1</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="DTS_LON 4">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="5">
+					<AppDeviceName>Subsystem 1.Device 2</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="DTS_LON 5">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="7">
+					<AppDeviceName>Subsystem 1.Device 2</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+				<DeviceItem AppDeviceHandle="11">
+					<AppDeviceName>Subsystem 1.Device 3</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+	</NBNetworks>
+</NBProjectOptions>

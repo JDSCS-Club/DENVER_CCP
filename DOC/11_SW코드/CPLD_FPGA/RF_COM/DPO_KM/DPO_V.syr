@@ -1,0 +1,451 @@
+Release 12.3 - xst M.70d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: DPO_V.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "DPO_V.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "DPO_V"
+Output Format                      : NGC
+Target Device                      : CoolRunner2 CPLDs
+
+---- Source Options
+Top Module Name                    : DPO_V
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : One-Hot
+Safe Implementation                : Yes
+CASE Implementation Style          : Full
+Mux Extraction                     : Yes
+Resource Sharing                   : NO
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : NO
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : YES
+
+=========================================================================
+
+Setting FSM Encoding Algorithm to : ONE
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "DPO_FSM.v" in library work
+Module <DPO_V> compiled
+No errors in compilation
+Analysis of file <"DPO_V.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <DPO_V> in library <work> with parameters.
+	both_st = "1010"
+	cancel_st = "0111"
+	ext_st = "1001"
+	ic_call_st = "0010"
+	idle_st = "0001"
+	int_st = "1000"
+	occ_call_st = "1011"
+	occ_pei_call_st = "1100"
+	pei_call_st = "0011"
+	pei_listen_st = "0101"
+	pei_talk_st = "0110"
+	pei_wait_st = "0100"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <clock> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <dtmf_rx_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <reset> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <dtmf_data> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <occ_pei_call> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <tone_tx> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <current_st> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <ext_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <pei_call_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <occ_call_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <pei_talk_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <both_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <pei_wait> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <dtmf_inout_tx> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <cancel_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <clk_1ms> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <next_st> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <intercom_off_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <pei_listen_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <pei_busy> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <int_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <clear_cntms> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <pa_off> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <blink_sig> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <intercom_mode> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <cnt> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <cntms> in unit <DPO_V>.
+    Set user-defined property "source_node =  yes" for signal <cnt_blink> in unit <DPO_V>.
+	both_st = 4'b1010
+	cancel_st = 4'b0111
+	ext_st = 4'b1001
+	ic_call_st = 4'b0010
+	idle_st = 4'b0001
+	int_st = 4'b1000
+	occ_call_st = 4'b1011
+	occ_pei_call_st = 4'b1100
+	pei_call_st = 4'b0011
+	pei_listen_st = 4'b0101
+	pei_talk_st = 4'b0110
+	pei_wait_st = 4'b0100
+"DPO_FSM.v" line 99: Found Full Case directive in module <DPO_V>.
+"DPO_FSM.v" line 198: Found Full Case directive in module <DPO_V>.
+Module <DPO_V> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <clear_cntms> in unit <DPO_V> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <dual_mute_sp> in unit <DPO_V> has a constant value of 1 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <DPO_V>.
+    Related source file is "DPO_FSM.v".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <occ_sw_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <pei_busy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 1-bit latch for signal <live_sw>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <txs_mic>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <rxs>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <dtmf_data>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <next_st>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 4-bit latch for signal <dtmf_inout_tx>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 4-bit latch for signal <dtmf_inout_tx$mux0000>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 4-bit tristate buffer for signal <dtmf_inout>.
+    Found 1-bit register for signal <blink_sig>.
+    Found 1-bit register for signal <clk_1ms>.
+    Found 32-bit up counter for signal <cnt>.
+    Found 32-bit up counter for signal <cnt_blink>.
+    Found 32-bit up counter for signal <cntms>.
+    Found 4-bit register for signal <current_st>.
+    Found 33-bit comparator greatequal for signal <live_sw$cmp_ge0000> created at line 383.
+    Found 1-bit register for signal <tone_tx>.
+    Summary:
+	inferred   3 Counter(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   4 Tristate(s).
+Unit <DPO_V> synthesized.
+
+WARNING:Xst:638 - in unit DPO_V Conflict on KEEP property on signal clk_1ms and clock clock signal will be lost.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 4
+ 1-bit register                                        : 3
+ 4-bit register                                        : 1
+# Latches                                              : 7
+ 1-bit latch                                           : 1
+ 4-bit latch                                           : 6
+# Comparators                                          : 1
+ 33-bit comparator greatequal                          : 1
+# Tristates                                            : 1
+ 4-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block 0.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 3
+ Flip-Flops                                            : 3
+# Latches                                              : 7
+ 1-bit latch                                           : 1
+ 4-bit latch                                           : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch rxs_0 hinder the constant cleaning in the block DPO_V.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <txs_mic_3> (without init value) has a constant value of 0 in block <DPO_V>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rxs_3> (without init value) has a constant value of 0 in block <DPO_V>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dtmf_inout_tx_mux0000_1> (without init value) has a constant value of 0 in block <DPO_V>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dtmf_inout_tx_mux0000_3> (without init value) has a constant value of 0 in block <DPO_V>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2170 - Unit DPO_V : the following signal(s) form a combinatorial loop: pei_wait.
+
+Optimizing unit <DPO_V> ...
+  implementation constraint: source_node  : clk_1ms
+  implementation constraint: source_node  : cancel_mode
+  implementation constraint: source_node  : occ_pei_call
+  implementation constraint: source_node  : int_mode
+  implementation constraint: source_node  : reset
+  implementation constraint: source_node  : pei_listen_mode
+  implementation constraint: source_node  : dtmf_rx_mode
+  implementation constraint: source_node  : blink_sig
+  implementation constraint: source_node  : pei_talk_mode
+  implementation constraint: source_node  : pei_call_mode
+  implementation constraint: source_node  : tone_tx
+  implementation constraint: source_node  : intercom_mode
+  implementation constraint: source_node  : both_mode
+  implementation constraint: source_node  : ext_mode
+  implementation constraint: source_node  : occ_call_mode
+  implementation constraint: source_node  : intercom_off_mode
+  implementation constraint: source_node  : pei_wait
+  implementation constraint: source_node  : pa_off
+  implementation constraint: source_node  : cntms<31>
+  implementation constraint: source_node  : cntms<30>
+  implementation constraint: source_node  : cntms<29>
+  implementation constraint: source_node  : cntms<28>
+  implementation constraint: source_node  : cntms<27>
+  implementation constraint: source_node  : cntms<26>
+  implementation constraint: source_node  : cntms<25>
+  implementation constraint: source_node  : cntms<24>
+  implementation constraint: source_node  : cntms<23>
+  implementation constraint: source_node  : cntms<22>
+  implementation constraint: source_node  : cntms<21>
+  implementation constraint: source_node  : cntms<20>
+  implementation constraint: source_node  : cntms<19>
+  implementation constraint: source_node  : cntms<18>
+  implementation constraint: source_node  : cntms<17>
+  implementation constraint: source_node  : cntms<16>
+  implementation constraint: source_node  : cntms<15>
+  implementation constraint: source_node  : cntms<14>
+  implementation constraint: source_node  : cntms<13>
+  implementation constraint: source_node  : cntms<12>
+  implementation constraint: source_node  : cntms<11>
+  implementation constraint: source_node  : cntms<10>
+  implementation constraint: source_node  : cntms<9>
+  implementation constraint: source_node  : cntms<8>
+  implementation constraint: source_node  : cntms<7>
+  implementation constraint: source_node  : cntms<6>
+  implementation constraint: source_node  : cntms<5>
+  implementation constraint: source_node  : cntms<4>
+  implementation constraint: source_node  : cntms<3>
+  implementation constraint: source_node  : cntms<2>
+  implementation constraint: source_node  : cntms<1>
+  implementation constraint: source_node  : cntms<0>
+  implementation constraint: source_node  : current_st<3>
+  implementation constraint: source_node  : current_st<2>
+  implementation constraint: source_node  : current_st<1>
+  implementation constraint: source_node  : current_st<0>
+  implementation constraint: source_node  : cnt<31>
+  implementation constraint: source_node  : cnt<30>
+  implementation constraint: source_node  : cnt<29>
+  implementation constraint: source_node  : cnt<28>
+  implementation constraint: source_node  : cnt<27>
+  implementation constraint: source_node  : cnt<26>
+  implementation constraint: source_node  : cnt<25>
+  implementation constraint: source_node  : cnt<24>
+  implementation constraint: source_node  : cnt<23>
+  implementation constraint: source_node  : cnt<22>
+  implementation constraint: source_node  : cnt<21>
+  implementation constraint: source_node  : cnt<20>
+  implementation constraint: source_node  : cnt<19>
+  implementation constraint: source_node  : cnt<18>
+  implementation constraint: source_node  : cnt<17>
+  implementation constraint: source_node  : cnt<16>
+  implementation constraint: source_node  : cnt<15>
+  implementation constraint: source_node  : cnt<14>
+  implementation constraint: source_node  : cnt<13>
+  implementation constraint: source_node  : cnt<12>
+  implementation constraint: source_node  : cnt<11>
+  implementation constraint: source_node  : cnt<10>
+  implementation constraint: source_node  : cnt<9>
+  implementation constraint: source_node  : cnt<8>
+  implementation constraint: source_node  : cnt<7>
+  implementation constraint: source_node  : cnt<6>
+  implementation constraint: source_node  : cnt<5>
+  implementation constraint: source_node  : cnt<4>
+  implementation constraint: source_node  : cnt<3>
+  implementation constraint: source_node  : cnt<2>
+  implementation constraint: source_node  : cnt<1>
+  implementation constraint: source_node  : cnt<0>
+  implementation constraint: source_node  : cnt_blink<31>
+  implementation constraint: source_node  : cnt_blink<30>
+  implementation constraint: source_node  : cnt_blink<29>
+  implementation constraint: source_node  : cnt_blink<28>
+  implementation constraint: source_node  : cnt_blink<27>
+  implementation constraint: source_node  : cnt_blink<26>
+  implementation constraint: source_node  : cnt_blink<25>
+  implementation constraint: source_node  : cnt_blink<24>
+  implementation constraint: source_node  : cnt_blink<23>
+  implementation constraint: source_node  : cnt_blink<22>
+  implementation constraint: source_node  : cnt_blink<21>
+  implementation constraint: source_node  : cnt_blink<20>
+  implementation constraint: source_node  : cnt_blink<19>
+  implementation constraint: source_node  : cnt_blink<18>
+  implementation constraint: source_node  : cnt_blink<17>
+  implementation constraint: source_node  : cnt_blink<16>
+  implementation constraint: source_node  : cnt_blink<15>
+  implementation constraint: source_node  : cnt_blink<14>
+  implementation constraint: source_node  : cnt_blink<13>
+  implementation constraint: source_node  : cnt_blink<12>
+  implementation constraint: source_node  : cnt_blink<11>
+  implementation constraint: source_node  : cnt_blink<10>
+  implementation constraint: source_node  : cnt_blink<9>
+  implementation constraint: source_node  : cnt_blink<8>
+  implementation constraint: source_node  : cnt_blink<7>
+  implementation constraint: source_node  : cnt_blink<6>
+  implementation constraint: source_node  : cnt_blink<5>
+  implementation constraint: source_node  : cnt_blink<4>
+  implementation constraint: source_node  : cnt_blink<3>
+  implementation constraint: source_node  : cnt_blink<2>
+  implementation constraint: source_node  : cnt_blink<1>
+  implementation constraint: source_node  : cnt_blink<0>
+  implementation constraint: source_node  : dtmf_data<3>
+  implementation constraint: source_node  : dtmf_data<2>
+  implementation constraint: source_node  : dtmf_data<1>
+  implementation constraint: source_node  : dtmf_data<0>
+  implementation constraint: source_node  : next_st<3>
+  implementation constraint: source_node  : next_st<2>
+  implementation constraint: source_node  : next_st<1>
+  implementation constraint: source_node  : next_st<0>
+  implementation constraint: source_node  : dtmf_inout_tx<3>
+  implementation constraint: source_node  : dtmf_inout_tx<2>
+  implementation constraint: source_node  : dtmf_inout_tx<1>
+  implementation constraint: source_node  : dtmf_inout_tx<0>
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : DPO_V.ngr
+Top Level Output File Name         : DPO_V
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+Target Technology                  : CoolRunner2 CPLDs
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+Clock Enable                       : YES
+wysiwyg                            : YES
+
+Design Statistics
+# IOs                              : 39
+
+Cell Usage :
+# BELS                             : 945
+#      AND2                        : 342
+#      AND3                        : 26
+#      AND4                        : 11
+#      AND5                        : 3
+#      AND8                        : 13
+#      GND                         : 1
+#      INV                         : 374
+#      OR2                         : 64
+#      OR3                         : 8
+#      OR4                         : 3
+#      OR6                         : 2
+#      OR8                         : 4
+#      VCC                         : 1
+#      XOR2                        : 93
+# FlipFlops/Latches                : 124
+#      FDC                         : 99
+#      FDCE                        : 2
+#      FDP                         : 1
+#      FDPE                        : 1
+#      LD                          : 15
+#      LDCP                        : 6
+# IO Buffers                       : 37
+#      IBUF                        : 8
+#      IOBUFE                      : 4
+#      OBUF                        : 25
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.86 secs
+ 
+--> 
+
+Total memory usage is 243700 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   22 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

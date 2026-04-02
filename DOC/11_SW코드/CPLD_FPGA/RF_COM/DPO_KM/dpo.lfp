@@ -1,0 +1,5 @@
+# begin LFP file C:\Docs\RF-COMM\DPO\DPO_KM\dpo.lfp
+designfile dpo_20120226.vhd
+parttype xc2c256-tq144-7
+bus_delimiter 0;
+set_busdelim_onsave 1;

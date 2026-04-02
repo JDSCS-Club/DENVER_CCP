@@ -1,0 +1,32 @@
+; Echelon Dependency File - do not edit.
+; C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.nadep
+; Created Tuesday, May 01, 2012, 08:50:06
+
+[Global]
+Provider=NEURON Assembler
+Version=1
+Inputs=1
+Outputs=1
+Switches=1
+Parameters=0
+
+[Input_1]
+Basename=LIC.ns
+Fullname=C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.ns
+Type=0
+Size=116632
+TimestampHigh=0x1cd272b
+TimestampLow=0xf862dea4
+
+[Output_1]
+Basename=LIC.no
+Fullname=C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.no
+Type=0
+Size=122832
+TimestampHigh=0x1cd272b
+TimestampLow=0xf86ec584
+
+[Switches]
+8=C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC
+
+[Parameters]

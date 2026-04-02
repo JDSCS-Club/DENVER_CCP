@@ -1,0 +1,102 @@
+Release 12.3 - xst M.70d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: DPO_FSM.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "DPO_FSM.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "DPO_FSM"
+Output Format                      : NGC
+Target Device                      : CoolRunner2 CPLDs
+
+---- Source Options
+Top Module Name                    : DPO_FSM
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : One-Hot
+Safe Implementation                : Yes
+CASE Implementation Style          : Full
+Mux Extraction                     : Yes
+Resource Sharing                   : NO
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : NO
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : YES
+
+=========================================================================
+
+Setting FSM Encoding Algorithm to : ONE
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../DPO_FSM.v" in library work
+ERROR:HDLCompilers:28 - "../DPO_FSM.v" line 4 'clock' has not been declared
+ERROR:HDLCompilers:28 - "../DPO_FSM.v" line 4 'reset' has not been declared
+ERROR:HDLCompilers:28 - "../DPO_FSM.v" line 5 'reset' has not been declared
+ERROR:HDLCompilers:28 - "../DPO_FSM.v" line 6 'current_st' has not been declared
+ERROR:HDLCompilers:28 - "../DPO_FSM.v" line 6 'idle' has not been declared
+ERROR:HDLCompilers:28 - "../DPO_FSM.v" line 8 'current_st' has not been declared
+ERROR:HDLCompilers:28 - "../DPO_FSM.v" line 8 'next_st' has not been declared
+ERROR:HDLCompilers:28 - "../DPO_FSM.v" line 11 'current_st' has not been declared
+ERROR:HDLCompilers:26 - "../DPO_FSM.v" line 13 unexpected token: 'endcase'
+ERROR:HDLCompilers:26 - "../DPO_FSM.v" line 15 expecting 'endcase', found 'EOF'
+Module <DPO_FSM> compiled
+ERROR:HDLCompilers:26 - "../DPO_FSM.v" line 15 expecting 'endmodule', found 'EOF'
+Analysis of file <"DPO_FSM.prj"> failed.
+--> 
+
+Total memory usage is 227328 kilobytes
+
+Number of errors   :   11 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

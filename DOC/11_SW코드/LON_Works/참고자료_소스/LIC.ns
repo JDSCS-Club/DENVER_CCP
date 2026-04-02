@@ -1,0 +1,6908 @@
+; LONNCC32 - Echelon Echelon Neuron C Compiler for NodeBuilder FX
+; Copyright (c) Echelon Corporation 1989-2010
+; All Rights Reserved.
+; Assembly code from LONNCC32 Version 5.01.07
+; Code generated from LIC.NC on Tue May 01 08:50:06 2012
+
+	SUBHEAD	Generated from the input file: C:\Lm\Source\WJ_LIC\LIC\LIC.nc
+
+	RADIX	HEX
+
+	SEG	EECODE_SPCL_1
+	ORG	0F000	; read_only_struct
+
+NBMTS	EQU	000		; number of bindable message tags
+NFBS	EQU	000		; number of functional blocks
+NNVS	EQU	018		; number of network variables
+NALIAS	EQU	011		; number of aliases
+PROTECT	EQU	000
+RUNUNCNFGED	EQU	040
+EDMF	EQU	000		; DMF feature support required
+RODSV3	EQU	000		; read_only_data_3 required
+PROTBTE	EQU	PROTECT+000		; upper two bits of read_only_struct_2
+
+NEURONID
+	RES	8
+DIRECTORY	EXPORT
+	DATA.B	PTR TEVT-3*NNVS
+PROTECTBIT	EXPORT
+	DATA.B	PROTECT+RUNUNCNFGED+NNVS
+	DATA.B	PTR SIDATA
+PROGID	EXPORT
+	DATA.B	04C,049,043,000,000,000,000,000
+MODETABLE	EXPORT
+	DATA.B	07B
+	DATA.B	0F1,05E
+	DATA.B	0EE,0EE
+BUFCOUNTS	EXPORT
+	DATA.B	033,066,066
+EENEARBYTES	EXPORT
+	DATA.B	000
+	DATA.B	000,080
+	DATA.B	02E,000,000
+	DATA.B	004 | _tx_by_addr            
+TX_CTRL	EQU	*-1
+	EXPORT	TX_CTRL
+
+	SEG	EECODE_SPCL_2
+	ORG		; read_only_struct_2
+RODS2
+	DATA.B	PROTBTE+NALIAS 
+	DATA.B	000
+	BRF	_larva_entry        
+
+	SEG	EECODE_SPCL_2
+	ORG		; read_only_struct_3
+RODS3
+	DATA.B	NNVS,NALIAS,PTR SIDATA,EDMF
+
+	SEG	EECODE_SPCL_3
+	ORG
+LOCATION
+	RES	8
+COMM
+	RES	10
+MSG
+	RES	1
+DOMAIN	EXPORT
+	RES	01E
+ADDR
+	RES	04B
+TNVCNFG
+	RES	3*NNVS
+TNVALIASES
+	RES	4*NALIAS
+CONFIGCHECKSUM
+	RES	1
+        PAGE
+; Boilerplate file for compiler-generated assembly output
+; Copyright (c) 1990 - 2008 Echelon Corporation.
+; All Rights Reserved.
+; Date last modified: 
+;       29-Dec-2009  BG  Added _io_spi_get_error
+;       14-Apr-2009  BG  Added io_iaccess_wait
+;       09-Mar-2009  BG  Added io_iaccess, io_irelease
+;       18-Dec-2008  BG  Added fast/slow mode support to I2C
+
+; List of imported symbols - Library functions
+        IMPORT  delay,msec_delay,random,reverse,scaled_delay
+; List of imported symbols - Misc builtin function support
+        IMPORT  _bcd2bin,_bin2bcd,_fblock_director,_sleep
+; List of imported symbols - Compiler helper functions
+        IMPORT  _abs8,_abs16,_add16,_add_8_16f,_adds_8_16,_and16,_alloc
+        IMPORT  _bitf_sign_ext,_dealloc,_dec16,_div8,_div8s,_div16,_div16s
+        IMPORT  _drop_n,_drop_n_preserve_1,_drop_n_preserve_2,_drop_n_return_1
+        IMPORT  _drop_n_return_2,_eeprom_write,_eeprom_write_long
+        IMPORT  _eeprom_far_write,_eeprom_far_write_long,_equal8,_equal16
+        IMPORT  _gequ8,_gequ8s,_gequ16,_gequ16s,_get_sp,_inc16,_ldP0_fetchl
+        IMPORT  _less8,_less8s,_less16,_less16s,_log8,_log16,_lognot8,_lognot16
+        IMPORT  _l_shift8,_l_shift8s,_l_shift16,_l_shift16s,_l_shift8_3
+        IMPORT  _l_shift8_4,_l_shift8_5,_l_shift8_6,_l_shift8_7,_lshift8_add16
+        IMPORT  _lshift16_add16,_lshift8by1_add16,_lshift8by2_add16
+        IMPORT  _max8,_max8s,_max16,_max16s,_min8,_min8s,_min16,_min16s
+        IMPORT  _memcpy,_memcpy8,_memcpy16,_memset,_memset8,_memset16
+        IMPORT  _minus16s,_mod8,_mod8s,_mod16,_mod16s,_mul8,_mul16,_mul_8_16
+        IMPORT  _muls_8_16,_mul8l,_mul8ls,_not16,_or16
+        IMPORT  _pop,_pop1,_popd,_popd1,_push,_push1,_pushd,_pushd1
+        IMPORT  _r_shift8,_r_shift8s,_r_shift16,_r_shift16s
+        IMPORT  _r_shift8_3,_r_shift8_4,_r_shift8_5,_r_shift8_6,_r_shift8_7
+        IMPORT  _register_call,_sign_extend16,_sub16,_xor16
+        PAGE
+; List of imported symbols - I/O functions
+        IMPORT  _bit_input,_bit_output_lo1,_bit_output_lo2,_bit_output_hi
+        IMPORT  _bit_input_ext,_bit_output_ext,_bitshift_input
+        IMPORT  _bitshift_output,burst_sequence_output,_byte_input,_byte_output
+        IMPORT  _dualslope_input,_dualslope_start
+        IMPORT  _edgelog_input,edgelog_input_single,edgelog_setup_single
+        IMPORT  _frequency_output,_ir_input,_i2c_read,_i2c_write
+        IMPORT  _i2c_read0,_i2c_write0,_i2c_read_opt0,_i2c_write_opt0
+        IMPORT  _i2c_read8,_i2c_write8,_i2c_read_opt8,_i2c_write_opt8
+        IMPORT  _i2cs_read0,_i2cs_write0,_i2cs_read_opt0,_i2cs_write_opt0
+        IMPORT  _i2cs_read8,_i2cs_write8,_i2cs_read_opt8,_i2cs_write_opt8
+        IMPORT  _leveldetect_input
+        IMPORT  _magcard_input,_magt1_input,_magt2_input,magx_input
+        IMPORT  _muxbus_read,_muxbus_reread,_muxbus_write,_muxbus_rewrite
+        IMPORT  _neurowire_master,_neurowire_slave,_neurowire_inv_master
+        IMPORT  _neurowire_inv_slave,_nibble_input,_nibble_output
+        IMPORT  _oneshot_output,_parallel_input,_parallel_input_ready
+        IMPORT  _parallel_output,_parallel_output_ready,_parallel_output_request
+        IMPORT  _period_input,_pulsecount_output,_pulsewidth_output
+        IMPORT  _quadrature_input,_io_sci_baud,_io_sci_init,_io_sci_init2, _io_sci_parity
+        IMPORT  _io_sci_get_error,_io_sci_set_buffer_in,_io_sci_set_buffer_out
+        IMPORT  _io_scispi_abort,_io_scispi_input_ready,_io_scispi_output_ready
+        IMPORT  _io_spi_clock,_io_spi_init,_io_spi_init2,_io_spi_set_buffer
+        IMPORT  _io_spi_get_error
+        IMPORT  _serial_input,_serial_output,_totalize_input
+        IMPORT  _touch_bit,_touch_byte,_touch_first,_touch_next,_touch_read
+        IMPORT  _touch_reset,_touch_write,ext_touch_bit,ext_touch_byte
+        IMPORT  ext_touch_first,ext_touch_next,ext_touch_read,ext_touch_reset
+        IMPORT  ext_touch_write,_triac_level_output,_triac_pulse_output
+        IMPORT  _wiegand_input
+; List of imported symbols - I/O control functions
+        IMPORT  io_edgelog_preload
+        IMPORT  _init_baud,_init_timer_counter1,_init_timer_counter2
+        IMPORT  _io_abort_clear,_io_change_init,_io_direction_lo
+        IMPORT  _io_direction_hi,io_idis,io_iena,_io_input_value
+        IMPORT  _io_set_clock,_io_set_clock_x2,_select_input_fn
+; List of imported symbols - Messaging support
+        IMPORT  _bound_mt,_msg_alloc,_msg_alloc_priority,_msg_cancel,_msg_free
+        IMPORT  _msg_receive,_msg_send,_msg_auth_get,_msg_code_get
+        IMPORT  _msg_duplicate_get,_msg_rcvtx_get
+        IMPORT  _msg_data_blockget,_msg_data_get,_msg_len_get,_msg_service_get
+        IMPORT  _msg_auth_set,_msg_code_set,_msg_data_blockset,_msg_data_set
+        IMPORT  _msg_priority_set,_msg_service_set,_msg_tag_set,msg_tag_index
+        IMPORT  _resp_alloc,_resp_cancel,_resp_free,_resp_receive,_resp_send
+        IMPORT  _resp_code_set,_resp_data_blockset,_resp_data_set
+; List of imported symbols - Network Variable support
+        IMPORT  _bound_nv,_nv_array_poll,_nv_array_index
+        IMPORT  _nv_array_update_request,nv_in_addr,nv_in_index,_nv_poll
+        IMPORT  _nv_poll_all,_nv_update,_nv_update_int,_nv_update_int_offset
+        IMPORT  _nv_update_long,_nv_update_long_offset
+        IMPORT  _nv_update_request,_nv_update_request_all
+        PAGE
+; List of imported symbols - Timer support
+        IMPORT  _timer_get,_timer_off
+        IMPORT  _timer_mset,_timer_mset_repeat,_timer_sset,_timer_sset_repeat
+; List of imported symbols - Event support
+        IMPORT  _io_changes,_io_changes_to,_io_changes_by,_io_update_occurs
+        IMPORT  _flush_completes,_msg_arrives,_msg_code_arrives,_msg_completes
+        IMPORT  _msg_fails,_msg_succeeds,_nv_array_update_completes
+        IMPORT  _nv_array_update_fails,_nv_array_update_occurs
+        IMPORT  _nv_array_update_succeeds,_nv_update_completes,_nv_update_fails
+        IMPORT  _nv_update_succeeds,_nv_update_occurs,_offline,_online
+        IMPORT  _resp_arrives,_timer_expires,_timer_expires_any,_wink
+; List of imported symbols - Special symbols support
+        IMPORT  _arb_presf,_idem_dup,_new_binding_constraints,_query_stats
+        IMPORT  _tx_by_addr,get_current_nv_length,init_phase_detection
+        IMPORT  _nv_all
+; List of imported symbols - Debug kernel entries
+        IMPORT  _larva_entry,_larva_entry_exec,_larva_entry_notify
+        IMPORT  _larva_entry_min,_larva_reset
+; List of imported symbols - stretched triac support
+        IMPORT  _triacStrInit, _triacStrOut, _triacStrMax
+; List of imported symbols - hardware semaphore support
+        IMPORT  io_iaccess, io_irelease, io_iaccess_wait
+; End of boilerplate file
+        PAGE
+
+	IMPORT	touch_reset_spu
+	IMPORT	touch_byte_spu
+	IMPORT	touch_read_spu
+	IMPORT	touch_write_spu
+
+	IMPORT	%cp_template_file
+
+	IMPORT	%cp_modifiable_value_file
+
+	IMPORT	%cp_readonly_value_file
+
+	IMPORT	%cp_template_file_len_fake
+
+	IMPORT	%cp_modifiable_value_file_len_fake
+
+	IMPORT	%cp_readonly_value_file_len_fake
+
+	IMPORT	%fblock_index_map
+	IMPORT	%interrupt_control
+	IMPORT	crc16_ccitt
+	IMPORT	sci_in_request_ex
+	IMPORT	set_nv_length
+	IMPORT	get_nv_length
+	IMPORT	get_nv_type
+	IMPORT	%get_nv_length_override
+
+	IMPORT	config_data
+
+	IMPORT	read_only_data
+
+	IMPORT	read_only_data_2
+
+	IMPORT	read_only_data_3
+	IMPORT	access_address
+	IMPORT	access_domain
+	IMPORT	access_nv
+	IMPORT	access_alias
+	IMPORT	update_address
+	IMPORT	update_domain
+	IMPORT	update_clone_domain
+	IMPORT	update_nv
+	IMPORT	update_alias
+	IMPORT	update_config_data
+	IMPORT	update_program_id
+	IMPORT	_msg_out_addr_ptr
+	IMPORT	_msg_in_addr_ptr
+	IMPORT	_resp_in_addr_ptr
+
+	IMPORT	%s32_zero
+
+	IMPORT	%s32_one
+
+	IMPORT	%s32_minus_one
+	IMPORT	%s32_to_ascii
+	IMPORT	%s32_from_ascii
+	IMPORT	%s32_to_slong
+	IMPORT	%s32_to_ulong
+	IMPORT	%s32_from_slong
+	IMPORT	%s32_from_ulong
+	IMPORT	%s32_add
+	IMPORT	%s32_sub
+	IMPORT	%s32_mul
+	IMPORT	%s32_div
+	IMPORT	%s32_max
+	IMPORT	%s32_min
+	IMPORT	%s32_rem
+	IMPORT	%s32_abs
+	IMPORT	%s32_neg
+	IMPORT	%s32_sign
+	IMPORT	%s32_inc
+	IMPORT	%s32_dec
+	IMPORT	%s32_mul2
+	IMPORT	%s32_div2
+	IMPORT	%s32_rand
+	IMPORT	%s32_eq
+	IMPORT	%s32_ne
+	IMPORT	%s32_gt
+	IMPORT	%s32_lt
+	IMPORT	%s32_ge
+	IMPORT	%s32_le
+	IMPORT	%s32_is_zero
+	IMPORT	%s32_cmp
+	IMPORT	muldiv
+	IMPORT	muldivs
+	IMPORT	muldiv24
+	IMPORT	muldiv24s
+	IMPORT	crc8
+	IMPORT	crc16
+
+	IMPORT	activate_service_led
+	IMPORT	application_restart
+	IMPORT	cvdd_lvi_enable
+	IMPORT	error_log
+	IMPORT	flush
+	IMPORT	flush_cancel
+	IMPORT	flush_wait
+	IMPORT	go_offline
+	IMPORT	go_unconfigured
+	IMPORT	go_configured
+	IMPORT	node_reset
+	IMPORT	offline_confirm
+	IMPORT	post_events
+	IMPORT	refresh_memory
+	IMPORT	reset_stretch_disable
+	IMPORT	service_pin_msg_send
+	IMPORT	service_pin_state
+	IMPORT	set_eeprom_lock
+	IMPORT	set_lvi
+	IMPORT	timers_off
+	IMPORT	watchdog_update
+	IMPORT	watchdog_update_old
+	IMPORT	retrieve_stat
+	IMPORT	power_up
+	IMPORT	preemption_mode
+	IMPORT	retrieve_status
+	IMPORT	clear_status
+	IMPORT	retrieve_xcvr_status
+	IMPORT	%strcmp
+	IMPORT	%strcpy
+	IMPORT	%strlen
+	IMPORT	%strchr
+	IMPORT	%strcat
+	IMPORT	%strncmp
+	IMPORT	%strrchr
+	IMPORT	%strncpy
+	IMPORT	%strncat
+	IMPORT	%rotate_short_left
+	IMPORT	%rotate_short_right
+	IMPORT	%rotate_long_left
+	IMPORT	%rotate_long_right
+	IMPORT	%set_bit
+	IMPORT	%clr_bit
+	IMPORT	%tst_bit
+	IMPORT	%memccpy
+	IMPORT	%memchr
+	IMPORT	%memcmp
+	IMPORT	%ansi_memset
+	IMPORT	%ansi_memcpy
+
+	SEG	RAMFAR
+	ORG
+%current_offset	APEXP
+	RES	2
+
+	SEG	RAMFAR
+	ORG
+%current_file_size	APEXP
+	RES	2
+
+	SEG	RAMFAR
+	ORG
+%bytes_left	APEXP
+	RES	2
+
+	SEG	RAMFAR
+	ORG
+%FileDirectory	APEXP
+	RES	4A
+
+	SEG	CODE
+	ORG
+%lookup	APEXP ; Function body
+	PUSHD	#%FileDirectory+2
+	PUSH	[DSP][-2]
+	PUSH	[DSP][-2]
+	PUSH	#18
+	CALL	_mul_8_16
+	CALL	_add16
+	BRF	%lookup+0E
+	POP	[DSP][-1]
+	POP	[DSP][-1]
+	RET
+
+	SEG	CODE
+	ORG
+%open	APEXP ; Function body
+	PUSHS	#0
+	PUSHS	#0
+	POP	%current_offset+1
+	POP	%current_offset
+	PUSHD	#%FileDirectory+12
+	PUSH	[DSP][-2]
+	PUSH	[DSP][-2]
+	PUSH	#18
+	CALL	_mul_8_16
+	CALL	_add16
+	CALLF	%s32_to_ulong
+	POP	%current_file_size+1
+	POP	%current_file_size
+	PUSH	%current_file_size
+	PUSH	%current_file_size+1
+	POP	%bytes_left+1
+	POP	%bytes_left
+	PUSH	[DSP][-1]
+	SBRNZ	*+4
+	BRF	%open+34
+	PUSH	[DSP][-1]
+	XOR	#5
+	SBRZ	*+4
+	BRF	%open+3C
+	PUSH	NEXT
+	PUSH	NEXT
+	BRF	%open+5D
+	BRF	%open+57
+	PUSH	[DSP][-1]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%open+4B
+	PUSH	NEXT
+	PUSH	NEXT
+	BRF	%open+5D
+	BRF	%open+57
+	PUSH	[DSP][-1]
+	XOR	#6
+	SBRZ	*+4
+	BRF	%open+57
+	PUSH	NEXT
+	PUSH	NEXT
+	BRF	%open+5D
+	PUSHD	#0FFFF
+	BRF	%open+5D
+	POP	[DSP][-2]
+	POP	[DSP][-2]
+	DEALLOC	#1
+
+	SEG	CODE
+	ORG
+%close	APEXP ; Function body
+	PUSHS	#0
+	PUSHS	#0
+	POP	%bytes_left+1
+	POP	%bytes_left
+	DEALLOC	#3
+	NOP
+
+	SEG	CODE
+	ORG
+%pData	APEXP
+	DATA.B	PTR 0A000
+
+	SEG	EENEAR
+	ORG
+%nci00NetConfig	APEXP
+	DATA.B	0
+
+	SEG	RAMFAR
+	ORG
+%nvi00ObjRequest	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvo00ObjStatus	APEXP
+	RES	6
+
+	SEG	RAMFAR
+	ORG
+%nvi00CDTCommand	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvo00TimeStamp	APEXP
+	RES	7
+
+	SEG	RAMFAR
+	ORG
+%nvi00FileReqA	APEXP
+	RES	0C
+
+	SEG	RAMFAR
+	ORG
+%nvo00FileStatA	APEXP
+	RES	1B
+
+	SEG	RAMFAR
+	ORG
+%nvi00FileReqB	APEXP
+	RES	0C
+
+	SEG	RAMFAR
+	ORG
+%nvo00FileStatB	APEXP
+	RES	1B
+
+	SEG	RAMFAR
+	ORG
+%nvi01Subscribe	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvo01StatusBits	APEXP
+	RES	8
+
+	SEG	RAMFAR
+	ORG
+%nvo01StatusBits2	APEXP
+	RES	8
+
+	SEG	RAMFAR
+	ORG
+%nvi01TransfState	APEXP
+	RES	2
+
+	SEG	RAMFAR
+	ORG
+%nvo01Parameter	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvi01CDTStBitsA	APEXP
+	RES	8
+
+	SEG	RAMFAR
+	ORG
+%nvi01CDTStBitsB	APEXP
+	RES	8
+
+	SEG	RAMFAR
+	ORG
+%nvi01CDTParamA	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvi01CDTParamB	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvi03SCIVersReq	APEXP
+	RES	1
+
+	SEG	RAMFAR
+	ORG
+%nvo03SCIVersion	APEXP
+	RES	1F
+
+	SEG	RAMFAR
+	ORG
+%nvi04WaysidRespA	APEXP
+	RES	1
+
+	SEG	RAMFAR
+	ORG
+%nvo04WaysideReqA	APEXP
+	RES	5
+
+	SEG	RAMFAR
+	ORG
+%nvi04WaysidRespB	APEXP
+	RES	1
+
+	SEG	RAMFAR
+	ORG
+%nvo04WaysideReqB	APEXP
+	RES	5
+
+	SEG	EENEAR
+	ORG
+%ee_config_setup	APEXP
+	DATA.B	PTR 0
+
+	SEG	RAMNEAR
+	ORG
+%FtpRunning	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%MultiFTP	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%SelectAB	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%CarType	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%CNCS_ACK	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%_Checksum	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%TempTime	APEXP
+	RES	4
+
+	SEG	RAMNEAR
+	ORG
+%WaysideType	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%InBuffer	APEXP
+	RES	14
+
+	SEG	RAMNEAR
+	ORG
+%OutBuffer	APEXP
+	RES	86
+
+	SEG	RAMNEAR
+	ORG
+%ErrorBuffer	APEXP
+	RES	14
+
+	SEG	RAMFAR
+	ORG
+%SCI	APEXP
+	RES	190
+
+	SEG	RAMNEAR
+	ORG
+%BuildVersion	APEXP
+	RES	6
+
+	SEG	RAMNEAR
+	ORG
+%InChars	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%OutChars	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%SciCount	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%FtpLength	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%FtpReq_Number	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%bytes_received	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%StatusCopy	APEXP
+	RES	8
+
+	SEG	RAMNEAR
+	ORG
+%StatErrCount	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%CDTCount	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%CDT_A	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%CDT_B	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%SCI_INDEX	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%DefaultTime	APEXP
+	RES	4
+
+	SEG	RAMNEAR
+	ORG
+%ReceivedTime	APEXP
+	RES	4
+
+	SEG	RAMNEAR
+	ORG
+%LowByte	APEXP
+	RES	2
+
+	SEG	RAMNEAR
+	ORG
+%HiByte	APEXP
+	RES	2
+
+	SEG	RAMNEAR
+	ORG
+%s32Var	APEXP
+	RES	4
+
+	SEG	RAMNEAR
+	ORG
+%s32Low	APEXP
+	RES	4
+
+	SEG	RAMNEAR
+	ORG
+%s32Hi	APEXP
+	RES	4
+	IMPORT	_change_state
+
+	SEG	CODE
+	ORG
+%TxSend	APEXP ; Function body
+	PUSH	#40
+	PUSHS	#0
+	PUSHS	#0
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSHD	#338
+	CALL	_add16
+	CALL	_memcpy
+	PUSHS	#1
+	PUSHS	#7
+	PUSH	%pData
+	PUSH	%pData+1
+	CALL	_memset
+	PUSH	TOS
+	PUSHD	#%OutBuffer
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSHD	#338
+	CALL	_add16
+	CALL	_memcpy8
+	PUSHS	#0
+	PUSHS	#1
+	CALL	_bit_output_lo2
+	PUSHS	#1
+	PUSHS	#1
+	CALL	_bit_output_lo2
+	DEALLOC	#1
+	NOP
+
+	SEG	CODE
+	ORG
+%TransferEnd	APEXP ; Function body
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSHS	#6
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#6
+	CALLF	%TxSend
+	PUSHS	#0
+	POP	[1][@NEAR(%FtpRunning)]
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN1	EXPORT ; When task
+	PUSH	%nvi00CDTCommand
+	BRNEQ	#1,WHEN1+9
+	BRF	WHEN1+0D
+	DROP	TOS
+	BRF	WHEN1+34
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSH	#8
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#6
+	CALLF	%TxSend
+	PUSHD	#0E10
+	PUSHS	#2
+	CALL	_timer_sset_repeat
+	BRF	WHEN1+34
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN2	EXPORT ; When task
+	PUSH	%nvi01Subscribe
+	SBRZ	*+4
+	BRF	WHEN2+31
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSH	#0A
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#6
+	CALLF	%TxSend
+	CALLF	%ErrorStatus
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	PUSHS	#0
+	CALL	_timer_mset_repeat
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN3	EXPORT ; When task
+	PUSH	%nvi01TransfState
+	CALL	_r_shift8_7
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN3+17
+	PUSHS	#1
+	POP	[1][@NEAR(%FtpRunning)]
+	PUSHD	#3C
+	PUSHS	#1
+	CALL	_timer_sset_repeat
+	BRF	WHEN3+1F
+	PUSHS	#0
+	POP	[1][@NEAR(%FtpRunning)]
+	PUSHS	#0
+	PUSHS	#0
+	PUSHS	#1
+	CALL	_timer_sset_repeat
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN4	EXPORT ; When task
+	PUSH	%nvi01CDTParamA
+	XOR	#5
+	SBRZ	*+4
+	BRF	WHEN4+3F
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSHS	#7
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	%nvi01CDTParamA+1
+	PUSH	%nvi01CDTParamA+2
+	DROP	TOS
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	%nvi01CDTParamA+1
+	PUSH	%nvi01CDTParamA+2
+	DROP	NEXT
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	#8
+	CALLF	%TxSend
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN5	EXPORT ; When task
+	PUSH	%nvi01CDTParamB
+	XOR	#5
+	SBRZ	*+4
+	BRF	WHEN5+3F
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSHS	#7
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	%nvi01CDTParamB+1
+	PUSH	%nvi01CDTParamB+2
+	DROP	TOS
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	%nvi01CDTParamB+1
+	PUSH	%nvi01CDTParamB+2
+	DROP	NEXT
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	#8
+	CALLF	%TxSend
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN6	EXPORT ; When task
+	PUSHS	#0
+	POP	[1][@NEAR(%StatErrCount)]
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN7	EXPORT ; When task
+	PUSH	[1][@NEAR(%StatErrCount)]
+	AND	#0FC
+	SBRZ	*+4
+	BRF	WHEN7+26
+	PUSH	[1][@NEAR(%StatErrCount)]
+	INC
+	POP	[1][@NEAR(%StatErrCount)]
+	PUSH	[1][@NEAR(%StatErrCount)]
+	XOR	#4
+	SBRZ	*+4
+	BRF	WHEN7+26
+	PUSHD	#2328
+	PUSHS	#0
+	CALL	_timer_mset_repeat
+	PUSH	[1][@NEAR(%FtpRunning)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN7+26
+	CALLF	%Self_Install
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN8	EXPORT ; When task
+	PUSHS	#1
+	POP	[1][@NEAR(%CDT_A)]
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSH	#0E
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	%nvi01CDTStBitsA
+	CALL	_r_shift8_7
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	%nvi01CDTStBitsA
+	CALL	_r_shift8_6
+	AND	#1
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	SHL
+	ADD
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	%nvi01CDTStBitsA
+	CALL	_r_shift8_5
+	AND	#1
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	SHL
+	ADD
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	%nvi01CDTStBitsA
+	CALL	_r_shift8_4
+	AND	#1
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	SHL
+	ADD
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#7
+	CALLF	%TxSend
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN8+61
+	PUSHS	#0
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	BRF	WHEN8+65
+	PUSHS	#1
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN9	EXPORT ; When task
+	PUSHS	#0
+	POP	[1][@NEAR(%CDT_A)]
+	RET
+
+	SEG	CODE
+	ORG
+WHEN10	EXPORT ; When task
+	PUSHS	#1
+	POP	[1][@NEAR(%CDT_B)]
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSH	#0F
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	%nvi01CDTStBitsB
+	CALL	_r_shift8_7
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	%nvi01CDTStBitsB
+	CALL	_r_shift8_6
+	AND	#1
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	SHL
+	ADD
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	%nvi01CDTStBitsB
+	CALL	_r_shift8_5
+	AND	#1
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	SHL
+	ADD
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	%nvi01CDTStBitsB
+	CALL	_r_shift8_4
+	AND	#1
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	SHL
+	ADD
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#7
+	CALLF	%TxSend
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN11	EXPORT ; When task
+	PUSHS	#0
+	POP	[1][@NEAR(%CDT_B)]
+	RET
+
+	SEG	CODE
+	ORG
+WHEN12	EXPORT ; When task
+	PUSH	[1][@NEAR(%FtpRunning)]
+	SBRZ	*+4
+	BRF	WHEN12+0E33
+	PUSH	%nvi03SCIVersReq
+	BRNEQ	#1,WHEN12+0F
+	BRF	WHEN12+115
+	BRNEQ	#2,WHEN12+15
+	BRF	WHEN12+152
+	BRNEQ	#3,WHEN12+1B
+	BRF	WHEN12+18F
+	BRNEQ	#4,WHEN12+21
+	BRF	WHEN12+1CB
+	BRNEQ	#5,WHEN12+27
+	BRF	WHEN12+207
+	BRNEQ	#6,WHEN12+2D
+	BRF	WHEN12+2DD
+	BRNEQ	#7,WHEN12+33
+	BRF	WHEN12+31C
+	BRNEQ	#8,WHEN12+39
+	BRF	WHEN12+357
+	BRNEQ	#9,WHEN12+3F
+	BRF	WHEN12+392
+	BRNEQ	#0A,WHEN12+45
+	BRF	WHEN12+3CE
+	BRNEQ	#0B,WHEN12+4B
+	BRF	WHEN12+40B
+	BRNEQ	#0C,WHEN12+51
+	BRF	WHEN12+448
+	BRNEQ	#0D,WHEN12+57
+	BRF	WHEN12+485
+	BRNEQ	#0E,WHEN12+5D
+	BRF	WHEN12+4C2
+	BRNEQ	#0F,WHEN12+63
+	BRF	WHEN12+4FF
+	BRNEQ	#10,WHEN12+69
+	BRF	WHEN12+53C
+	BRNEQ	#11,WHEN12+6F
+	BRF	WHEN12+579
+	BRNEQ	#12,WHEN12+75
+	BRF	WHEN12+5B6
+	BRNEQ	#13,WHEN12+7B
+	BRF	WHEN12+5F3
+	BRNEQ	#14,WHEN12+81
+	BRF	WHEN12+630
+	BRNEQ	#15,WHEN12+87
+	BRF	WHEN12+66D
+	BRNEQ	#16,WHEN12+8D
+	BRF	WHEN12+6AA
+	BRNEQ	#17,WHEN12+93
+	BRF	WHEN12+6E7
+	BRNEQ	#18,WHEN12+99
+	BRF	WHEN12+724
+	BRNEQ	#19,WHEN12+9F
+	BRF	WHEN12+761
+	BRNEQ	#1A,WHEN12+0A5
+	BRF	WHEN12+79E
+	BRNEQ	#1B,WHEN12+0AB
+	BRF	WHEN12+7DB
+	BRNEQ	#1C,WHEN12+0B1
+	BRF	WHEN12+818
+	BRNEQ	#1D,WHEN12+0B7
+	BRF	WHEN12+855
+	BRNEQ	#1E,WHEN12+0BD
+	BRF	WHEN12+892
+	BRNEQ	#1F,WHEN12+0C3
+	BRF	WHEN12+8CF
+	BRNEQ	#20,WHEN12+0C9
+	BRF	WHEN12+90C
+	BRNEQ	#21,WHEN12+0CF
+	BRF	WHEN12+949
+	BRNEQ	#22,WHEN12+0D5
+	BRF	WHEN12+986
+	BRNEQ	#23,WHEN12+0DB
+	BRF	WHEN12+9C4
+	BRNEQ	#24,WHEN12+0E1
+	BRF	WHEN12+0A02
+	BRNEQ	#25,WHEN12+0E7
+	BRF	WHEN12+0A40
+	BRNEQ	#26,WHEN12+0ED
+	BRF	WHEN12+0A80
+	BRNEQ	#27,WHEN12+0F3
+	BRF	WHEN12+0AC0
+	BRNEQ	#28,WHEN12+0F9
+	BRF	WHEN12+0AFE
+	BRNEQ	#29,WHEN12+0FF
+	BRF	WHEN12+0B3F
+	BRNEQ	#2A,WHEN12+105
+	BRF	WHEN12+0B80
+	BRNEQ	#2B,WHEN12+10B
+	BRF	WHEN12+0BBF
+	BRNEQ	#2C,WHEN12+111
+	BRF	WHEN12+0BFE
+	DROP	TOS
+	BRF	WHEN12+0C37
+	PUSHS	#0
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#54
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSHS	#1
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#54
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSHS	#2
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSHS	#3
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSHS	#5
+	PUSH	#13
+	CALL	_nv_update_int
+	PUSHS	#3
+	PUSH	#13
+	PUSHS	#1
+	CALL	_nv_update_int_offset
+	PUSH	#4C
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#4C
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSH	#4F
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSH	#0B
+	CALL	_nv_update_int_offset
+	PUSH	#2E
+	PUSH	#13
+	PUSH	#0C
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSH	#0D
+	CALL	_nv_update_int_offset
+	PUSH	#2E
+	PUSH	#13
+	PUSH	#0E
+	CALL	_nv_update_int_offset
+	PUSH	#30
+	PUSH	#13
+	PUSH	#0F
+	CALL	_nv_update_int_offset
+	PUSH	#34
+	PUSH	#13
+	PUSH	#10
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#11
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#12
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSH	#14
+	CALL	_nv_update_int_offset
+	PUSH	#30
+	PUSH	#13
+	PUSH	#15
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSH	#16
+	CALL	_nv_update_int_offset
+	PUSH	#30
+	PUSH	#13
+	PUSH	#17
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSH	#18
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSH	#19
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSH	#1A
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSH	#1B
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSH	#1C
+	CALL	_nv_update_int_offset
+	PUSH	#30
+	PUSH	#13
+	PUSH	#1D
+	CALL	_nv_update_int_offset
+	PUSH	#13
+	CALL	_nv_update_request
+	PUSH	#33
+	POP	[1][@NEAR(%SCI_INDEX)]
+	BRF	WHEN12+0C37
+	PUSHS	#4
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#4C
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#4D
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSH	#55
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSHS	#5
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#47
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#41
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSHS	#6
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#54
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSHS	#7
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#41
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#8
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#41
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#9
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#46
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#0A
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#46
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#0B
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#53
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#0C
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#53
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#0D
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#53
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#33
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#0E
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#53
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#34
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#0F
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#53
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#35
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#10
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#53
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#36
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#11
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#53
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#37
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#12
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#53
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#38
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#13
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#14
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#15
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#33
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#16
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#34
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#17
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#18
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#19
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#33
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#1A
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#34
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#1B
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#35
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#1C
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#36
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#1D
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#37
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#1E
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#38
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#1F
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#39
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#20
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#30
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#21
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#22
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#56
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#52
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#58
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#31
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#32
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#23
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#4D
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#41
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSH	#49
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#24
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#4C
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#41
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSH	#55
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#25
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#55
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#26
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSH	#4C
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSH	#41
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSH	#59
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#27
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#53
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSH	#4C
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSH	#41
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSH	#59
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#28
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#46
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#54
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSH	#50
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#29
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	#4E
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	#43
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	#44
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSH	#54
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#2A
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSHS	#7
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#8
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#9
+	CALL	_nv_update_int_offset
+	BRF	WHEN12+0C37
+	PUSH	#32
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_less8
+	SBRNZ	*+4
+	BRF	WHEN12+0E33
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][0]
+	PUSH	#13
+	CALL	_nv_update_int
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][1]
+	PUSH	#13
+	PUSHS	#1
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][1]
+	SBRNZ	*+4
+	BRF	WHEN12+0DBF
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][2]
+	CALL	_r_shift8_4
+	ADD	#30
+	PUSH	#13
+	PUSH	#0B
+	CALL	_nv_update_int_offset
+	PUSH	#2E
+	PUSH	#13
+	PUSH	#0C
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][2]
+	AND	#0F
+	ADD	#30
+	PUSH	#13
+	PUSH	#0D
+	CALL	_nv_update_int_offset
+	PUSH	#2E
+	PUSH	#13
+	PUSH	#0E
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][3]
+	CALL	_r_shift8_4
+	ADD	#30
+	PUSH	#13
+	PUSH	#0F
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][3]
+	AND	#0F
+	ADD	#30
+	PUSH	#13
+	PUSH	#10
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][4]
+	CALL	_r_shift8_4
+	ADD	#30
+	PUSH	#13
+	PUSH	#14
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][4]
+	AND	#0F
+	ADD	#30
+	PUSH	#13
+	PUSH	#15
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][5]
+	CALL	_r_shift8_4
+	ADD	#30
+	PUSH	#13
+	PUSH	#16
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][5]
+	AND	#0F
+	ADD	#30
+	PUSH	#13
+	PUSH	#17
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSH	#18
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][6]
+	CALL	_r_shift8_4
+	ADD	#30
+	PUSH	#13
+	PUSH	#19
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][6]
+	AND	#0F
+	ADD	#30
+	PUSH	#13
+	PUSH	#1A
+	CALL	_nv_update_int_offset
+	PUSH	#2D
+	PUSH	#13
+	PUSH	#1B
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][7]
+	CALL	_r_shift8_4
+	ADD	#30
+	PUSH	#13
+	PUSH	#1C
+	CALL	_nv_update_int_offset
+	PUSHD	#%SCI
+	PUSHS	#3
+	PUSHS	#0
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	CALL	_l_shift16
+	CALL	_add16
+	POPD	[0]
+	PUSH	[0][7]
+	AND	#0F
+	ADD	#30
+	PUSH	#13
+	PUSH	#1D
+	CALL	_nv_update_int_offset
+	PUSH	#13
+	CALL	_nv_update_request
+	BRF	WHEN12+0E33
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#0B
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#0C
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#0D
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#0E
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#0F
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#10
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#14
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#15
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#16
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#17
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#18
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#19
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#1A
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#1B
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#1C
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSH	#13
+	PUSH	#1D
+	CALL	_nv_update_int_offset
+	PUSH	#13
+	CALL	_nv_update_request
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN13	EXPORT ; When task
+	PUSH	%nvi04WaysidRespA
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN13+11
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN13+11
+	PUSH	%nvi04WaysidRespA
+	XOR	#2
+	SBRZ	*+4
+	BRF	WHEN13+1D
+	CALLF	%TransferEnd
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN14	EXPORT ; When task
+	PUSH	%nvi04WaysidRespB
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN14+11
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN14+11
+	PUSH	%nvi04WaysidRespB
+	XOR	#2
+	SBRZ	*+4
+	BRF	WHEN14+1D
+	CALLF	%TransferEnd
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN15	EXPORT ; When task
+	PUSH	#14
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSHD	#378
+	CALL	_add16
+	PUSHD	#%InBuffer
+	CALL	_memcpy
+	PUSH	[1][@NEAR(%InBuffer)+3]
+	ADD	#6
+	POP	[1][@NEAR(%InChars)]
+	PUSHS	#1
+	CALLF	%CheckSum
+	POP	[1][@NEAR(%_Checksum)]
+	PUSH	[1][@NEAR(%InBuffer)]
+	XOR	#2
+	SBRZ	*+4
+	BRF	WHEN15+4A2
+	PUSH	[1][@NEAR(%InChars)]
+	DEC
+	PUSHD	#%InBuffer
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	XOR	#3
+	SBRZ	*+4
+	BRF	WHEN15+4A2
+	PUSH	[1][@NEAR(%InChars)]
+	ADD	#0FE
+	PUSHD	#%InBuffer
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	PUSH	[1][@NEAR(%_Checksum)]
+	XOR
+	SBRZ	*+4
+	BRF	WHEN15+4A2
+	PUSH	[1][@NEAR(%InBuffer)+1]
+	BRNEQ	#1,WHEN15+4E
+	BRF	WHEN15+6A
+	BRNEQ	#3,WHEN15+54
+	BRF	WHEN15+105
+	BRNEQ	#9,WHEN15+5A
+	BRF	WHEN15+10B
+	BRNEQ	#0B,WHEN15+60
+	BRF	WHEN15+13F
+	BRNEQ	#0D,WHEN15+66
+	BRF	WHEN15+159
+	DROP	TOS
+	BRF	WHEN15+4A2
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	XOR	#41
+	SBRZ	*+4
+	BRF	WHEN15+7C
+	PUSHS	#0
+	POP	[1][@NEAR(%SelectAB)]
+	PUSHS	#0
+	PUSHS	#4
+	CALL	_bit_output_lo1
+	BRF	WHEN15+8B
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	XOR	#42
+	SBRZ	*+4
+	BRF	WHEN15+8B
+	PUSHS	#1
+	POP	[1][@NEAR(%SelectAB)]
+	PUSHS	#1
+	PUSHS	#4
+	CALL	_bit_output_lo1
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#6
+	CALLF	%TxSend
+	PUSH	[1][@NEAR(%InBuffer)+6]
+	PUSH	[1][@NEAR(%InBuffer)+7]
+	POP	[1][@NEAR(%HiByte)+1]
+	POP	[1][@NEAR(%HiByte)]
+	PUSH	[1][@NEAR(%InBuffer)+8]
+	PUSH	[1][@NEAR(%InBuffer)+9]
+	POP	[1][@NEAR(%LowByte)+1]
+	POP	[1][@NEAR(%LowByte)]
+	PUSHD	#%s32Var
+	PUSHD	#0FFFF
+	CALLF	%s32_from_ulong
+	PUSHD	#%s32Hi
+	PUSH	[1][@NEAR(%HiByte)]
+	PUSH	[1][@NEAR(%HiByte)+1]
+	CALLF	%s32_from_ulong
+	PUSHD	#%s32Low
+	PUSH	[1][@NEAR(%LowByte)]
+	PUSH	[1][@NEAR(%LowByte)+1]
+	CALLF	%s32_from_ulong
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Var
+	PUSHD	#%s32Hi
+	CALLF	%s32_mul
+	PUSHD	#%ReceivedTime
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Hi
+	CALLF	%s32_add
+	PUSHD	#%ReceivedTime
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Low
+	CALLF	%s32_add
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	POP	[1][@NEAR(%WaysideType)]
+	PUSH	[1][@NEAR(%WaysideType)]
+	CALLF	%WaySideOn
+	BRF	WHEN15+4A2
+	PUSHS	#1
+	POP	[1][@NEAR(%CNCS_ACK)]
+	BRF	WHEN15+4A2
+	PUSH	[1][@NEAR(%FtpRunning)]
+	SBRZ	*+4
+	BRF	WHEN15+13C
+	PUSHD	#7D0
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	CALL	_add_8_16f
+	PUSHS	#4
+	CALL	_nv_update_long
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	PUSHS	#4
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%InBuffer)+6]
+	PUSHS	#4
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%InBuffer)+7]
+	PUSHS	#4
+	PUSHS	#4
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%InBuffer)+8]
+	PUSHS	#4
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%InBuffer)+9]
+	PUSHS	#4
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#4
+	CALL	_nv_update_request
+	BRF	WHEN15+4A2
+	PUSH	[1][@NEAR(%FtpRunning)]
+	SBRZ	*+4
+	BRF	WHEN15+156
+	PUSH	%nvi01Subscribe
+	SBRZ	*+4
+	BRF	WHEN15+156
+	PUSH	[1][@NEAR(%InChars)]
+	PUSHD	#%InBuffer
+	PUSHD	#%ErrorBuffer
+	CALL	_memcpy8
+	BRF	WHEN15+4A2
+	PUSH	[1][@NEAR(%FtpRunning)]
+	SBRZ	*+4
+	BRF	WHEN15+49F
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	BRNEQ	#1,WHEN15+167
+	BRF	WHEN15+26D
+	BRNEQ	#2,WHEN15+16D
+	BRF	WHEN15+27A
+	BRNEQ	#3,WHEN15+173
+	BRF	WHEN15+287
+	BRNEQ	#4,WHEN15+179
+	BRF	WHEN15+294
+	BRNEQ	#5,WHEN15+17F
+	BRF	WHEN15+2A1
+	BRNEQ	#6,WHEN15+185
+	BRF	WHEN15+2A4
+	BRNEQ	#7,WHEN15+18B
+	BRF	WHEN15+2B1
+	BRNEQ	#8,WHEN15+191
+	BRF	WHEN15+2BE
+	BRNEQ	#9,WHEN15+197
+	BRF	WHEN15+2CB
+	BRNEQ	#0A,WHEN15+19D
+	BRF	WHEN15+2D8
+	BRNEQ	#0B,WHEN15+1A3
+	BRF	WHEN15+2E5
+	BRNEQ	#0C,WHEN15+1A9
+	BRF	WHEN15+2F2
+	BRNEQ	#0D,WHEN15+1AF
+	BRF	WHEN15+2FF
+	BRNEQ	#0E,WHEN15+1B5
+	BRF	WHEN15+30C
+	BRNEQ	#0F,WHEN15+1BB
+	BRF	WHEN15+319
+	BRNEQ	#10,WHEN15+1C1
+	BRF	WHEN15+326
+	BRNEQ	#11,WHEN15+1C7
+	BRF	WHEN15+333
+	BRNEQ	#12,WHEN15+1CD
+	BRF	WHEN15+340
+	BRNEQ	#13,WHEN15+1D3
+	BRF	WHEN15+34D
+	BRNEQ	#14,WHEN15+1D9
+	BRF	WHEN15+35A
+	BRNEQ	#15,WHEN15+1DF
+	BRF	WHEN15+367
+	BRNEQ	#16,WHEN15+1E5
+	BRF	WHEN15+374
+	BRNEQ	#17,WHEN15+1EB
+	BRF	WHEN15+381
+	BRNEQ	#18,WHEN15+1F1
+	BRF	WHEN15+38E
+	BRNEQ	#19,WHEN15+1F7
+	BRF	WHEN15+39B
+	BRNEQ	#1A,WHEN15+1FD
+	BRF	WHEN15+3A8
+	BRNEQ	#1B,WHEN15+203
+	BRF	WHEN15+3B5
+	BRNEQ	#1C,WHEN15+209
+	BRF	WHEN15+3C2
+	BRNEQ	#1D,WHEN15+20F
+	BRF	WHEN15+3CF
+	BRNEQ	#1E,WHEN15+215
+	BRF	WHEN15+3DC
+	BRNEQ	#1F,WHEN15+21B
+	BRF	WHEN15+3E9
+	BRNEQ	#20,WHEN15+221
+	BRF	WHEN15+3F6
+	BRNEQ	#21,WHEN15+227
+	BRF	WHEN15+403
+	BRNEQ	#22,WHEN15+22D
+	BRF	WHEN15+410
+	BRNEQ	#23,WHEN15+233
+	BRF	WHEN15+41D
+	BRNEQ	#24,WHEN15+239
+	BRF	WHEN15+42A
+	BRNEQ	#25,WHEN15+23F
+	BRF	WHEN15+437
+	BRNEQ	#26,WHEN15+245
+	BRF	WHEN15+444
+	BRNEQ	#27,WHEN15+24B
+	BRF	WHEN15+451
+	BRNEQ	#28,WHEN15+251
+	BRF	WHEN15+45E
+	BRNEQ	#29,WHEN15+257
+	BRF	WHEN15+46B
+	BRNEQ	#2A,WHEN15+25D
+	BRF	WHEN15+478
+	BRNEQ	#2B,WHEN15+263
+	BRF	WHEN15+485
+	BRNEQ	#2C,WHEN15+269
+	BRF	WHEN15+492
+	DROP	TOS
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+8
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+10
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+18
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+20
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+28
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+30
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+38
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+40
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+48
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+50
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+58
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+60
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+68
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+70
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+78
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+80
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+88
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+90
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+98
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0A0
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0A8
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0B0
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0B8
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0C0
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0C8
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0D0
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0D8
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0E0
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0E8
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0F0
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+0F8
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+100
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+108
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+110
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+118
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+120
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+128
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+130
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+138
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+140
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+148
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	PUSH	#8
+	PUSHD	#%InBuffer+4
+	PUSHD	#%SCI+150
+	CALL	_memcpy
+	BRF	WHEN15+49F
+	BRF	WHEN15+4A2
+	PUSH	[1][@NEAR(%InChars)]
+	PUSHS	#0
+	PUSHD	#%InBuffer
+	CALL	_memset8
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN16	EXPORT ; When task
+	PUSH	[1][@NEAR(%CDT_B)]
+	PUSH	[1][@NEAR(%CDT_A)]
+	ADD
+	POP	[1][@NEAR(%CDTCount)]
+	PUSH	[1][@NEAR(%CDTCount)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN16+15
+	PUSHS	#0
+	POP	[1][@NEAR(%CarType)]
+	BRF	WHEN16+20
+	PUSH	[1][@NEAR(%CDTCount)]
+	XOR	#2
+	SBRZ	*+4
+	BRF	WHEN16+20
+	PUSHS	#1
+	POP	[1][@NEAR(%CarType)]
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSH	#0A
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%CDTCount)]
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#7
+	CALLF	%TxSend
+	CALLF	%ErrorStatus
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN17	EXPORT ; When task
+	PUSHS	#0
+	POP	[1][@NEAR(%FtpRunning)]
+	PUSHS	#0
+	PUSHS	#0
+	PUSHS	#1
+	CALL	_timer_sset_repeat
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN18	EXPORT ; When task
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSH	#8
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#6
+	CALLF	%TxSend
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN19	EXPORT ; When task
+	PUSH	[1][@NEAR(%SciCount)]
+	INC
+	POP	[1][@NEAR(%SciCount)]
+	PUSH	#2D
+	PUSH	[1][@NEAR(%SciCount)]
+	CALL	_less8
+	SBRNZ	*+4
+	BRF	WHEN19+37
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSH	#0C
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%SciCount)]
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+4]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#7
+	CALLF	%TxSend
+	BRF	WHEN19+3F
+	PUSHS	#0
+	PUSHS	#0
+	PUSHS	#3
+	CALL	_timer_mset_repeat
+	PUSHS	#0
+	POP	[1][@NEAR(%SciCount)]
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+%WaySideOn	APEXP ; Function body
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%WaySideOn+49
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%WaySideOn+49
+	PUSH	TOS
+	BRNEQ	#1,%WaySideOn+13
+	BRF	%WaySideOn+1D
+	BRNEQ	#2,%WaySideOn+19
+	BRF	%WaySideOn+31
+	DROP	TOS
+	BRF	%WaySideOn+46
+	PUSHS	#2
+	POP	[1][@NEAR(%FtpReq_Number)]
+	PUSH	TOS
+	PUSH	#15
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%DefaultTime
+	PUSH	#15
+	PUSHS	#1
+	CALL	_nv_update
+	BRF	%WaySideOn+46
+	PUSHS	#3
+	POP	[1][@NEAR(%FtpReq_Number)]
+	PUSH	TOS
+	INC
+	PUSH	#15
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSH	#15
+	PUSHS	#1
+	CALL	_nv_update
+	BRF	%WaySideOn+46
+	BRF	%WaySideOn+0DE
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%WaySideOn+94
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%WaySideOn+94
+	PUSH	TOS
+	BRNEQ	#1,%WaySideOn+5E
+	BRF	%WaySideOn+68
+	BRNEQ	#2,%WaySideOn+64
+	BRF	%WaySideOn+7C
+	DROP	TOS
+	BRF	%WaySideOn+91
+	PUSHS	#2
+	POP	[1][@NEAR(%FtpReq_Number)]
+	PUSH	TOS
+	PUSH	#15
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%DefaultTime
+	PUSH	#15
+	PUSHS	#1
+	CALL	_nv_update
+	BRF	%WaySideOn+91
+	PUSHS	#3
+	POP	[1][@NEAR(%FtpReq_Number)]
+	PUSH	TOS
+	INC
+	PUSH	#15
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSH	#15
+	PUSHS	#1
+	CALL	_nv_update
+	BRF	%WaySideOn+91
+	BRF	%WaySideOn+0DE
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%WaySideOn+0DE
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%WaySideOn+0DE
+	PUSH	TOS
+	BRNEQ	#1,%WaySideOn+0AB
+	BRF	%WaySideOn+0B5
+	BRNEQ	#2,%WaySideOn+0B1
+	BRF	%WaySideOn+0C9
+	DROP	TOS
+	BRF	%WaySideOn+0DE
+	PUSHS	#2
+	POP	[1][@NEAR(%FtpReq_Number)]
+	PUSH	TOS
+	PUSH	#17
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%DefaultTime
+	PUSH	#17
+	PUSHS	#1
+	CALL	_nv_update
+	BRF	%WaySideOn+0DE
+	PUSHS	#3
+	POP	[1][@NEAR(%FtpReq_Number)]
+	PUSH	TOS
+	INC
+	PUSH	#17
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSH	#17
+	PUSHS	#1
+	CALL	_nv_update
+	BRF	%WaySideOn+0DE
+	DEALLOC	#1
+	NOP
+
+	SEG	CODE
+	ORG
+%SendTime	APEXP ; Function body
+	PUSH	[1][@NEAR(%FtpLength)]
+	ADD	#0F8
+	PUSHD	#%OutBuffer
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	POP	[1][@NEAR(%TempTime)]
+	PUSH	[1][@NEAR(%FtpLength)]
+	ADD	#0F7
+	PUSHD	#%OutBuffer
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	POP	[1][@NEAR(%TempTime)+1]
+	PUSH	[1][@NEAR(%FtpLength)]
+	ADD	#0F6
+	PUSHD	#%OutBuffer
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	POP	[1][@NEAR(%TempTime)+2]
+	PUSH	[1][@NEAR(%FtpLength)]
+	ADD	#0F5
+	PUSHD	#%OutBuffer
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	POP	[1][@NEAR(%TempTime)+3]
+	PUSH	[1][@NEAR(%TempTime)+1]
+	PUSH	[1][@NEAR(%TempTime)]
+	POP	[1][@NEAR(%LowByte)+1]
+	POP	[1][@NEAR(%LowByte)]
+	PUSH	[1][@NEAR(%TempTime)+3]
+	PUSH	[1][@NEAR(%TempTime)+2]
+	POP	[1][@NEAR(%HiByte)+1]
+	POP	[1][@NEAR(%HiByte)]
+	PUSHD	#%s32Var
+	PUSHD	#0FFFF
+	CALLF	%s32_from_ulong
+	PUSHD	#%s32Hi
+	PUSH	[1][@NEAR(%HiByte)]
+	PUSH	[1][@NEAR(%HiByte)+1]
+	CALLF	%s32_from_ulong
+	PUSHD	#%s32Low
+	PUSH	[1][@NEAR(%LowByte)]
+	PUSH	[1][@NEAR(%LowByte)+1]
+	CALLF	%s32_from_ulong
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Var
+	PUSHD	#%s32Hi
+	CALLF	%s32_mul
+	PUSHD	#%ReceivedTime
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Hi
+	CALLF	%s32_add
+	PUSHD	#%ReceivedTime
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Low
+	CALLF	%s32_add
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%SendTime+0C5
+	PUSH	[1][@NEAR(%WaysideType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%SendTime+0C5
+	PUSH	[1][@NEAR(%FtpReq_Number)]
+	PUSH	#15
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSH	#15
+	PUSHS	#1
+	CALL	_nv_update
+	PUSH	#15
+	CALL	_nv_update_request
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSHS	#6
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#6
+	CALLF	%TxSend
+	PUSHS	#0
+	POP	[1][@NEAR(%FtpRunning)]
+	BRF	%SendTime+1A4
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%SendTime+12F
+	PUSH	[1][@NEAR(%WaysideType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%SendTime+12F
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%SendTime+0F1
+	PUSH	[1][@NEAR(%FtpReq_Number)]
+	PUSH	#15
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSH	#15
+	PUSHS	#1
+	CALL	_nv_update
+	PUSH	#15
+	CALL	_nv_update_request
+	BRF	%SendTime+10C
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%SendTime+10C
+	PUSH	[1][@NEAR(%FtpReq_Number)]
+	PUSH	#17
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSH	#17
+	PUSHS	#1
+	CALL	_nv_update
+	PUSH	#17
+	CALL	_nv_update_request
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSHS	#6
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+2]
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#6
+	CALLF	%TxSend
+	PUSHS	#0
+	POP	[1][@NEAR(%FtpRunning)]
+	BRF	%SendTime+1A4
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%SendTime+158
+	PUSH	[1][@NEAR(%WaysideType)]
+	XOR	#2
+	SBRZ	*+4
+	BRF	%SendTime+158
+	PUSH	[1][@NEAR(%FtpReq_Number)]
+	PUSH	#15
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSH	#15
+	PUSHS	#1
+	CALL	_nv_update
+	PUSH	#15
+	CALL	_nv_update_request
+	PUSH	[1][@NEAR(%WaysideType)]
+	CALLF	%WaySideOn
+	BRF	%SendTime+1A4
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%SendTime+1A4
+	PUSH	[1][@NEAR(%WaysideType)]
+	XOR	#2
+	SBRZ	*+4
+	BRF	%SendTime+1A4
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%SendTime+184
+	PUSH	[1][@NEAR(%FtpReq_Number)]
+	PUSH	#15
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSH	#15
+	PUSHS	#1
+	CALL	_nv_update
+	PUSH	#15
+	CALL	_nv_update_request
+	BRF	%SendTime+19F
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%SendTime+19F
+	PUSH	[1][@NEAR(%FtpReq_Number)]
+	PUSH	#17
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSH	#17
+	PUSHS	#1
+	CALL	_nv_update
+	PUSH	#17
+	CALL	_nv_update_request
+	PUSH	[1][@NEAR(%WaysideType)]
+	CALLF	%WaySideOn
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+%Interrupt	APEXP ; Function body
+	PUSHS	#0
+	PUSHS	#1
+	CALL	_bit_output_lo2
+	PUSHS	#1
+	PUSHS	#1
+	CALL	_bit_output_lo2
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+%CheckSum	APEXP ; Function body
+	ALLOC	#2
+	NOP
+	PUSH	[DSP][-1]
+	BRNEQ	#1,%CheckSum+9
+	BRF	%CheckSum+13
+	BRNEQ	#2,%CheckSum+0F
+	BRF	%CheckSum+38
+	DROP	TOS
+	BRF	%CheckSum+5D
+	PUSH	[1][@NEAR(%InBuffer)+1]
+	POP	[DSP][-1]
+	PUSHS	#2
+	DROP	NEXT
+	PUSH	[1][@NEAR(%InChars)]
+	ADD	#0FE
+	PUSH	NEXT
+	CALL	_less8
+	SBRNZ	*+4
+	BRF	%CheckSum+35
+	PUSH	NEXT
+	PUSHD	#%InBuffer
+	PUSH	[DSP][-2]
+	CALL	_adds_8_16
+	POPD	[0]
+	PUSH	[0][0]
+	XOR
+	POP	[DSP][-1]
+	PUSH	TOS
+	INC
+	DROP	NEXT
+	BRF	%CheckSum+18
+	BRF	%CheckSum+5D
+	PUSH	[1][@NEAR(%OutBuffer)+1]
+	POP	[DSP][-1]
+	PUSHS	#2
+	DROP	NEXT
+	PUSH	[1][@NEAR(%OutChars)]
+	ADD	#0FE
+	PUSH	NEXT
+	CALL	_less8
+	SBRNZ	*+4
+	BRF	%CheckSum+5A
+	PUSH	NEXT
+	PUSHD	#%OutBuffer
+	PUSH	[DSP][-2]
+	CALL	_adds_8_16
+	POPD	[0]
+	PUSH	[0][0]
+	XOR
+	POP	[DSP][-1]
+	PUSH	TOS
+	INC
+	DROP	NEXT
+	BRF	%CheckSum+3D
+	BRF	%CheckSum+5D
+	PUSH	NEXT
+	BRF	%CheckSum+61
+	POP	[DSP][-2]
+	DEALLOC	#2
+
+	SEG	CODE
+	ORG
+%ErrorStatus	APEXP ; Function body
+	PUSH	%nvi01Subscribe
+	SBRZ	*+4
+	BRF	%ErrorStatus+3AF
+	PUSH	[1][@NEAR(%ErrorBuffer)+4]
+	AND	#1
+	CALL	_log8
+	CALL	_l_shift8_7
+	PUSH	[1][@NEAR(%StatusCopy)]
+	AND	#7F
+	OR
+	POP	[1][@NEAR(%StatusCopy)]
+	PUSH	[1][@NEAR(%ErrorBuffer)+4]
+	AND	#2
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_6
+	PUSH	[1][@NEAR(%StatusCopy)]
+	AND	#0BF
+	OR
+	POP	[1][@NEAR(%StatusCopy)]
+	PUSH	[1][@NEAR(%ErrorBuffer)+4]
+	AND	#4
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_5
+	PUSH	[1][@NEAR(%StatusCopy)]
+	AND	#0DF
+	OR
+	POP	[1][@NEAR(%StatusCopy)]
+	PUSH	[1][@NEAR(%ErrorBuffer)+4]
+	AND	#8
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_4
+	PUSH	[1][@NEAR(%StatusCopy)]
+	AND	#0EF
+	OR
+	POP	[1][@NEAR(%StatusCopy)]
+	PUSH	[1][@NEAR(%ErrorBuffer)+4]
+	AND	#10
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_3
+	PUSH	[1][@NEAR(%StatusCopy)]
+	AND	#0F7
+	OR
+	POP	[1][@NEAR(%StatusCopy)]
+	PUSH	[1][@NEAR(%ErrorBuffer)+4]
+	AND	#20
+	CALL	_log8
+	AND	#1
+	SHL
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)]
+	AND	#0FB
+	OR
+	POP	[1][@NEAR(%StatusCopy)]
+	PUSH	[1][@NEAR(%ErrorBuffer)+4]
+	AND	#40
+	CALL	_log8
+	AND	#1
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)]
+	AND	#0FD
+	OR
+	POP	[1][@NEAR(%StatusCopy)]
+	PUSH	[1][@NEAR(%ErrorBuffer)+4]
+	AND	#80
+	CALL	_log8
+	AND	#1
+	PUSH	[1][@NEAR(%StatusCopy)]
+	AND	#0FE
+	OR
+	POP	[1][@NEAR(%StatusCopy)]
+	PUSH	[1][@NEAR(%ErrorBuffer)+5]
+	AND	#1
+	CALL	_log8
+	CALL	_l_shift8_7
+	PUSH	[1][@NEAR(%StatusCopy)+1]
+	AND	#7F
+	OR
+	POP	[1][@NEAR(%StatusCopy)+1]
+	PUSH	[1][@NEAR(%ErrorBuffer)+5]
+	AND	#2
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_6
+	PUSH	[1][@NEAR(%StatusCopy)+1]
+	AND	#0BF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+1]
+	PUSH	[1][@NEAR(%ErrorBuffer)+5]
+	AND	#4
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_5
+	PUSH	[1][@NEAR(%StatusCopy)+1]
+	AND	#0DF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+1]
+	PUSH	[1][@NEAR(%ErrorBuffer)+5]
+	AND	#8
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_4
+	PUSH	[1][@NEAR(%StatusCopy)+1]
+	AND	#0EF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+1]
+	PUSH	[1][@NEAR(%ErrorBuffer)+5]
+	AND	#10
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_3
+	PUSH	[1][@NEAR(%StatusCopy)+1]
+	AND	#0F7
+	OR
+	POP	[1][@NEAR(%StatusCopy)+1]
+	PUSH	[1][@NEAR(%ErrorBuffer)+5]
+	AND	#20
+	CALL	_log8
+	AND	#1
+	SHL
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+1]
+	AND	#0FB
+	OR
+	POP	[1][@NEAR(%StatusCopy)+1]
+	PUSH	[1][@NEAR(%ErrorBuffer)+5]
+	AND	#40
+	CALL	_log8
+	AND	#1
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+1]
+	AND	#0FD
+	OR
+	POP	[1][@NEAR(%StatusCopy)+1]
+	PUSH	[1][@NEAR(%ErrorBuffer)+5]
+	AND	#80
+	CALL	_log8
+	AND	#1
+	PUSH	[1][@NEAR(%StatusCopy)+1]
+	AND	#0FE
+	OR
+	POP	[1][@NEAR(%StatusCopy)+1]
+	PUSH	[1][@NEAR(%ErrorBuffer)+6]
+	AND	#1
+	CALL	_log8
+	CALL	_l_shift8_7
+	PUSH	[1][@NEAR(%StatusCopy)+2]
+	AND	#7F
+	OR
+	POP	[1][@NEAR(%StatusCopy)+2]
+	PUSH	[1][@NEAR(%ErrorBuffer)+6]
+	AND	#2
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_6
+	PUSH	[1][@NEAR(%StatusCopy)+2]
+	AND	#0BF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+2]
+	PUSH	[1][@NEAR(%ErrorBuffer)+6]
+	AND	#4
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_5
+	PUSH	[1][@NEAR(%StatusCopy)+2]
+	AND	#0DF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+2]
+	PUSH	[1][@NEAR(%ErrorBuffer)+6]
+	AND	#8
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_4
+	PUSH	[1][@NEAR(%StatusCopy)+2]
+	AND	#0EF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+2]
+	PUSH	[1][@NEAR(%ErrorBuffer)+6]
+	AND	#10
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_3
+	PUSH	[1][@NEAR(%StatusCopy)+2]
+	AND	#0F7
+	OR
+	POP	[1][@NEAR(%StatusCopy)+2]
+	PUSH	[1][@NEAR(%ErrorBuffer)+6]
+	AND	#20
+	CALL	_log8
+	AND	#1
+	SHL
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+2]
+	AND	#0FB
+	OR
+	POP	[1][@NEAR(%StatusCopy)+2]
+	PUSH	[1][@NEAR(%ErrorBuffer)+6]
+	AND	#40
+	CALL	_log8
+	AND	#1
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+2]
+	AND	#0FD
+	OR
+	POP	[1][@NEAR(%StatusCopy)+2]
+	PUSH	[1][@NEAR(%ErrorBuffer)+6]
+	AND	#80
+	CALL	_log8
+	AND	#1
+	PUSH	[1][@NEAR(%StatusCopy)+2]
+	AND	#0FE
+	OR
+	POP	[1][@NEAR(%StatusCopy)+2]
+	PUSH	[1][@NEAR(%ErrorBuffer)+7]
+	AND	#1
+	CALL	_log8
+	CALL	_l_shift8_7
+	PUSH	[1][@NEAR(%StatusCopy)+3]
+	AND	#7F
+	OR
+	POP	[1][@NEAR(%StatusCopy)+3]
+	PUSH	[1][@NEAR(%ErrorBuffer)+7]
+	AND	#2
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_6
+	PUSH	[1][@NEAR(%StatusCopy)+3]
+	AND	#0BF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+3]
+	PUSH	[1][@NEAR(%ErrorBuffer)+7]
+	AND	#4
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_5
+	PUSH	[1][@NEAR(%StatusCopy)+3]
+	AND	#0DF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+3]
+	PUSH	[1][@NEAR(%ErrorBuffer)+7]
+	AND	#8
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_4
+	PUSH	[1][@NEAR(%StatusCopy)+3]
+	AND	#0EF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+3]
+	PUSH	[1][@NEAR(%ErrorBuffer)+7]
+	AND	#10
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_3
+	PUSH	[1][@NEAR(%StatusCopy)+3]
+	AND	#0F7
+	OR
+	POP	[1][@NEAR(%StatusCopy)+3]
+	PUSH	[1][@NEAR(%ErrorBuffer)+7]
+	AND	#20
+	CALL	_log8
+	AND	#1
+	SHL
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+3]
+	AND	#0FB
+	OR
+	POP	[1][@NEAR(%StatusCopy)+3]
+	PUSH	[1][@NEAR(%ErrorBuffer)+7]
+	AND	#40
+	CALL	_log8
+	AND	#1
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+3]
+	AND	#0FD
+	OR
+	POP	[1][@NEAR(%StatusCopy)+3]
+	PUSH	[1][@NEAR(%ErrorBuffer)+7]
+	AND	#80
+	CALL	_log8
+	AND	#1
+	PUSH	[1][@NEAR(%StatusCopy)+3]
+	AND	#0FE
+	OR
+	POP	[1][@NEAR(%StatusCopy)+3]
+	PUSH	[1][@NEAR(%ErrorBuffer)+8]
+	AND	#1
+	CALL	_log8
+	CALL	_l_shift8_7
+	PUSH	[1][@NEAR(%StatusCopy)+4]
+	AND	#7F
+	OR
+	POP	[1][@NEAR(%StatusCopy)+4]
+	PUSH	[1][@NEAR(%ErrorBuffer)+8]
+	AND	#2
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_6
+	PUSH	[1][@NEAR(%StatusCopy)+4]
+	AND	#0BF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+4]
+	PUSH	[1][@NEAR(%ErrorBuffer)+8]
+	AND	#4
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_5
+	PUSH	[1][@NEAR(%StatusCopy)+4]
+	AND	#0DF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+4]
+	PUSH	[1][@NEAR(%ErrorBuffer)+8]
+	AND	#8
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_4
+	PUSH	[1][@NEAR(%StatusCopy)+4]
+	AND	#0EF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+4]
+	PUSH	[1][@NEAR(%ErrorBuffer)+8]
+	AND	#10
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_3
+	PUSH	[1][@NEAR(%StatusCopy)+4]
+	AND	#0F7
+	OR
+	POP	[1][@NEAR(%StatusCopy)+4]
+	PUSH	[1][@NEAR(%ErrorBuffer)+8]
+	AND	#20
+	CALL	_log8
+	AND	#1
+	SHL
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+4]
+	AND	#0FB
+	OR
+	POP	[1][@NEAR(%StatusCopy)+4]
+	PUSH	[1][@NEAR(%ErrorBuffer)+8]
+	AND	#40
+	CALL	_log8
+	AND	#1
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+4]
+	AND	#0FD
+	OR
+	POP	[1][@NEAR(%StatusCopy)+4]
+	PUSH	[1][@NEAR(%ErrorBuffer)+8]
+	AND	#80
+	CALL	_log8
+	AND	#1
+	PUSH	[1][@NEAR(%StatusCopy)+4]
+	AND	#0FE
+	OR
+	POP	[1][@NEAR(%StatusCopy)+4]
+	PUSH	[1][@NEAR(%ErrorBuffer)+9]
+	AND	#1
+	CALL	_log8
+	CALL	_l_shift8_7
+	PUSH	[1][@NEAR(%StatusCopy)+5]
+	AND	#7F
+	OR
+	POP	[1][@NEAR(%StatusCopy)+5]
+	PUSH	[1][@NEAR(%ErrorBuffer)+9]
+	AND	#2
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_6
+	PUSH	[1][@NEAR(%StatusCopy)+5]
+	AND	#0BF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+5]
+	PUSH	[1][@NEAR(%ErrorBuffer)+9]
+	AND	#4
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_5
+	PUSH	[1][@NEAR(%StatusCopy)+5]
+	AND	#0DF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+5]
+	PUSH	[1][@NEAR(%ErrorBuffer)+9]
+	AND	#8
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_4
+	PUSH	[1][@NEAR(%StatusCopy)+5]
+	AND	#0EF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+5]
+	PUSH	[1][@NEAR(%ErrorBuffer)+9]
+	AND	#10
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_3
+	PUSH	[1][@NEAR(%StatusCopy)+5]
+	AND	#0F7
+	OR
+	POP	[1][@NEAR(%StatusCopy)+5]
+	PUSH	[1][@NEAR(%ErrorBuffer)+9]
+	AND	#20
+	CALL	_log8
+	AND	#1
+	SHL
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+5]
+	AND	#0FB
+	OR
+	POP	[1][@NEAR(%StatusCopy)+5]
+	PUSH	[1][@NEAR(%ErrorBuffer)+9]
+	AND	#40
+	CALL	_log8
+	AND	#1
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+5]
+	AND	#0FD
+	OR
+	POP	[1][@NEAR(%StatusCopy)+5]
+	PUSH	[1][@NEAR(%ErrorBuffer)+9]
+	AND	#80
+	CALL	_log8
+	AND	#1
+	PUSH	[1][@NEAR(%StatusCopy)+5]
+	AND	#0FE
+	OR
+	POP	[1][@NEAR(%StatusCopy)+5]
+	PUSH	[1][@NEAR(%ErrorBuffer)+0A]
+	AND	#1
+	CALL	_log8
+	CALL	_l_shift8_7
+	PUSH	[1][@NEAR(%StatusCopy)+6]
+	AND	#7F
+	OR
+	POP	[1][@NEAR(%StatusCopy)+6]
+	PUSH	[1][@NEAR(%ErrorBuffer)+0A]
+	AND	#2
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_6
+	PUSH	[1][@NEAR(%StatusCopy)+6]
+	AND	#0BF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+6]
+	PUSH	[1][@NEAR(%ErrorBuffer)+0A]
+	AND	#4
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_5
+	PUSH	[1][@NEAR(%StatusCopy)+6]
+	AND	#0DF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+6]
+	PUSH	[1][@NEAR(%ErrorBuffer)+0A]
+	AND	#8
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_4
+	PUSH	[1][@NEAR(%StatusCopy)+6]
+	AND	#0EF
+	OR
+	POP	[1][@NEAR(%StatusCopy)+6]
+	PUSH	[1][@NEAR(%ErrorBuffer)+0A]
+	AND	#10
+	CALL	_log8
+	AND	#1
+	CALL	_l_shift8_3
+	PUSH	[1][@NEAR(%StatusCopy)+6]
+	AND	#0F7
+	OR
+	POP	[1][@NEAR(%StatusCopy)+6]
+	PUSH	[1][@NEAR(%ErrorBuffer)+0A]
+	AND	#20
+	CALL	_log8
+	AND	#1
+	SHL
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+6]
+	AND	#0FB
+	OR
+	POP	[1][@NEAR(%StatusCopy)+6]
+	PUSH	[1][@NEAR(%ErrorBuffer)+0A]
+	AND	#40
+	CALL	_log8
+	AND	#1
+	SHL
+	PUSH	[1][@NEAR(%StatusCopy)+6]
+	AND	#0FD
+	OR
+	POP	[1][@NEAR(%StatusCopy)+6]
+	PUSH	[1][@NEAR(%ErrorBuffer)+0A]
+	AND	#80
+	CALL	_log8
+	AND	#1
+	PUSH	[1][@NEAR(%StatusCopy)+6]
+	AND	#0FE
+	OR
+	POP	[1][@NEAR(%StatusCopy)+6]
+	PUSH	#8
+	PUSHD	#%StatusCopy
+	PUSH	#0A
+	PUSHS	#0
+	CALL	_nv_update
+	PUSH	[1][@NEAR(%StatusCopy)+7]
+	INC
+	POP	[1][@NEAR(%StatusCopy)+7]
+	PUSH	#0A
+	CALL	_nv_update_request
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+%Self_Install	APEXP ; Function body
+	CALLF	%NvConfig
+	CALLF	%Location
+	CALLF	%AddressTable
+	CALLF	%DomainTable
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+%DomainTable	APEXP ; Function body
+	ALLOC	#8
+	ALLOC	#7
+	PUSH	#0F
+	PUSHS	#0
+	CALLF	access_domain
+	PUSH	#0EE
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHS	#1
+	POP	[DSP][-8]
+	PUSHS	#0
+	POP	[DSP][-6]
+	PUSH	[DSP][-6]
+	AND	#80
+	OR	#8
+	POP	[DSP][-7]
+	PUSHS	#0
+	PUSH	#0F0
+	CALL	_get_sp
+	CALLF	update_domain
+	PUSH	#0F
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+%Location	APEXP ; Function body
+	ALLOC	#8
+	ALLOC	#8
+	ALLOC	#8
+	ALLOC	#1
+	PUSH	#19
+	PUSHD	#config_data
+	PUSH	#0E4
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHD	#5AC3
+	PUSH	%ee_config_setup
+	PUSH	%ee_config_setup+1
+	CALL	_equal16
+	SBRNZ	*+4
+	BRF	%Location+21
+	BRF	%Location+69
+	PUSH	#43
+	PUSH	#0E8
+	CALL	_pop
+	PUSH	#4F
+	PUSH	#0E9
+	CALL	_pop
+	PUSH	#4D
+	PUSH	#0EA
+	CALL	_pop
+	PUSH	#4D
+	PUSH	#0EB
+	CALL	_pop
+	PUSH	#20
+	PUSH	#0EC
+	CALL	_pop
+	PUSH	#20
+	PUSH	#0ED
+	CALL	_pop
+	PUSHS	#0
+	PUSHS	#7
+	CALL	_pop1
+	PUSH	TOS
+	AND	#0F
+	OR	#40
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F7
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F8
+	OR	#1
+	DROP	NEXT
+	PUSH	#0E7
+	CALL	_get_sp
+	CALLF	update_config_data
+	CALL	watchdog_update
+	PUSHD	#5AC3
+	PUSH	#@NEAR(%ee_config_setup)
+	CALL	_eeprom_write_long
+	PUSH	#19
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+%AddressTable	APEXP ; Function body
+	ALLOC	#5
+	NOP
+	PUSHS	#5
+	PUSHS	#0
+	CALLF	access_address
+	PUSH	#0F8
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHS	#1
+	POP	[DSP][-4]
+	PUSH	[DSP][-2]
+	AND	#7F
+	POP	[DSP][-3]
+	PUSH	[DSP][-2]
+	AND	#80
+	OR	#1
+	POP	[DSP][-3]
+	PUSH	[DSP][-1]
+	AND	#0F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0F0
+	OR	#3
+	POP	[DSP][-2]
+	PUSH	NEXT
+	AND	#0F0
+	OR	#4
+	POP	[DSP][-1]
+	PUSHS	#1
+	DROP	NEXT
+	PUSHS	#0
+	PUSH	#0FA
+	CALL	_get_sp
+	CALLF	update_address
+	CALL	watchdog_update
+	PUSHS	#5
+	PUSHS	#1
+	CALLF	access_address
+	PUSH	#0F8
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHS	#1
+	POP	[DSP][-4]
+	PUSH	[DSP][-2]
+	AND	#7F
+	POP	[DSP][-3]
+	PUSH	[DSP][-2]
+	AND	#80
+	OR	#1
+	POP	[DSP][-3]
+	PUSH	[DSP][-1]
+	AND	#0F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0F0
+	OR	#3
+	POP	[DSP][-2]
+	PUSH	NEXT
+	AND	#0F0
+	OR	#4
+	POP	[DSP][-1]
+	PUSHS	#2
+	DROP	NEXT
+	PUSHS	#1
+	PUSH	#0FA
+	CALL	_get_sp
+	CALLF	update_address
+	CALL	watchdog_update
+	PUSHS	#5
+	PUSHS	#2
+	CALLF	access_address
+	PUSH	#0F8
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHS	#3
+	POP	[DSP][-4]
+	PUSH	[DSP][-2]
+	AND	#7F
+	POP	[DSP][-3]
+	PUSH	[DSP][-1]
+	AND	#0F
+	OR	#30
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0F0
+	OR	#2
+	POP	[DSP][-2]
+	PUSH	NEXT
+	AND	#0F0
+	POP	[DSP][-1]
+	PUSHS	#0
+	DROP	NEXT
+	PUSHS	#2
+	PUSH	#0FA
+	CALL	_get_sp
+	CALLF	update_address
+	CALL	watchdog_update
+	DEALLOC	#5
+	NOP
+
+	SEG	CODE
+	ORG
+%NvConfig	APEXP ; Function body
+	ALLOC	#3
+	NOP
+	PUSHS	#3
+	PUSHS	#0
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#16
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSHS	#0
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#1
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#1
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSHS	#1
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#2
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#2
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	DROP	NEXT
+	PUSHS	#2
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#4
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#3
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	OR	#20
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#2
+	DROP	NEXT
+	PUSHS	#4
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#5
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#4
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSHS	#5
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#6
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#5
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	DROP	NEXT
+	PUSHS	#6
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#7
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#84
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSHS	#7
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#8
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#85
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#1
+	DROP	NEXT
+	PUSH	#8
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#3
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#11
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSHS	#3
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#9
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#6
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSH	#9
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#0C
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#9
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSH	#0C
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#0A
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#0A
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	DROP	NEXT
+	PUSH	#0A
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#0B
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#0B
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	DROP	NEXT
+	PUSH	#0B
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#0D
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#0C
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	DROP	NEXT
+	PUSH	#0D
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#0E
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#8
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSH	#0E
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#0F
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#88
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSH	#0F
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#10
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSHS	#7
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSH	#10
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#11
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#87
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSH	#11
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#12
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#0F
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSH	#12
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#13
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#10
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	DROP	NEXT
+	PUSH	#13
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#15
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#14
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	DROP	NEXT
+	PUSH	#15
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#14
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#15
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSH	#14
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#17
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#94
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#1
+	DROP	NEXT
+	PUSH	#17
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	#16
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#95
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#7F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#9F
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0EF
+	DROP	NEXT
+	PUSH	TOS
+	AND	#0F0
+	OR	#0F
+	DROP	NEXT
+	PUSH	#16
+	PUSH	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	DEALLOC	#3
+	NOP
+
+	SEG	RAMNEAR
+	ORG
+%fx	APEXP
+	RES	8
+
+	SEG	CODE
+	ORG
+_%LIC%DATA1	EXPORT
+	DATA.B	0FF,0FF,0,0,0,0,0,0
+
+	SEG	CODE
+	ORG
+%start_transfer	APEXP ; Function body
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%start_transfer+0C
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRNZ	*+4
+	BRF	%start_transfer+1A
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%start_transfer+2F
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%start_transfer+2F
+	PUSH	%nvi00FileReqA+0A
+	POP	[1][@NEAR(%fx)+7]
+	PUSH	%nvi00FileReqA+3
+	PUSH	%nvi00FileReqA+4
+	PUSHS	#4
+	CALL	_timer_mset
+	PUSHS	#4
+	PUSHS	#6
+	CALL	_nv_update_int
+	BRF	%start_transfer+60
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%start_transfer+3D
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRNZ	*+4
+	BRF	%start_transfer+4D
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%start_transfer+60
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%start_transfer+60
+	PUSH	%nvi00FileReqB+0A
+	POP	[1][@NEAR(%fx)+7]
+	PUSH	%nvi00FileReqB+3
+	PUSH	%nvi00FileReqB+4
+	PUSHS	#4
+	CALL	_timer_mset
+	PUSHS	#4
+	PUSH	#8
+	CALL	_nv_update_int
+	DEALLOC	#1
+	NOP
+
+	SEG	CODE
+	ORG
+%stop_transfer	APEXP ; Function body
+	PUSHS	#0
+	PUSHS	#4
+	CALL	_bit_output_lo2
+	PUSH	TOS
+	AND	#0C0
+	SBRZ	*+4
+	BRF	%stop_transfer+14
+	PUSH	[1][@NEAR(%fx)+2]
+	SBRNZ	*+4
+	BRF	%stop_transfer+14
+	PUSH	[1][@NEAR(%fx)+2]
+	DROP	NEXT
+	PUSHS	#0
+	POP	[1][@NEAR(%fx)+2]
+	PUSH	TOS
+	AND	#0C0
+	SBRNZ	*+4
+	BRF	%stop_transfer+3F
+	PUSHS	#0
+	PUSH	NEXT
+	XOR	#40
+	SBRNZ	*+4
+	BRF	%stop_transfer+29
+	PUSH	NEXT
+	SBRZ	%stop_transfer+29
+	INC
+	PUSH	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)+1]
+	CALLF	%close
+	PUSHS	#0
+	PUSHS	#0
+	PUSHS	#4
+	CALL	_timer_mset
+	PUSHD	#0FFFF
+	POP	[1][@NEAR(%fx)+1]
+	POP	[1][@NEAR(%fx)]
+	BRF	%stop_transfer+49
+	PUSHD	#1388
+	PUSHS	#4
+	CALL	_timer_mset
+	PUSH	#40
+	POP	[1][@NEAR(%fx)+2]
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%stop_transfer+55
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRNZ	*+4
+	BRF	%stop_transfer+63
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%stop_transfer+6C
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%stop_transfer+6C
+	PUSH	TOS
+	AND	#3F
+	PUSHS	#6
+	CALL	_nv_update_int
+	BRF	%stop_transfer+91
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%stop_transfer+7A
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRNZ	*+4
+	BRF	%stop_transfer+8A
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%stop_transfer+91
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%stop_transfer+91
+	PUSH	TOS
+	AND	#3F
+	PUSH	#8
+	CALL	_nv_update_int
+	DEALLOC	#1
+	NOP
+
+	SEG	CODE
+	ORG
+%process_packet	APEXP ; Function body
+	PUSH	[1][@NEAR(%fx)+5]
+	PUSHS	#0
+	CALL	_msg_data_get
+	AND	#0F
+	XOR
+	SBRZ	*+4
+	BRF	%process_packet+16C
+	PUSHS	#0
+	CALL	_msg_len_get
+	DEC
+	PUSHD	#80
+	CALL	_min16s
+	DROP	NEXT
+	POP	[1][@NEAR(%bytes_received)]
+	PUSH	[1][@NEAR(%bytes_received)]
+	ADD	#8
+	POP	[1][@NEAR(%FtpLength)]
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSHS	#5
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSH	[1][@NEAR(%bytes_received)]
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%process_packet+35
+	PUSH	#41
+	POP	[1][@NEAR(%OutBuffer)+4]
+	BRF	%process_packet+41
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%process_packet+41
+	PUSH	#42
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#1
+	PUSHD	#%OutBuffer+5
+	PUSH	[1][@NEAR(%bytes_received)]
+	CALLF	_msg_data_blockget
+	PUSH	#0FF
+	PUSH	[1][@NEAR(%bytes_received)]
+	ADD	#5
+	PUSHD	#%OutBuffer
+	POPD	[0]
+	POP	[0][TOS]
+	DROP	TOS
+	PUSHS	#3
+	PUSH	[1][@NEAR(%bytes_received)]
+	ADD	#6
+	PUSHD	#%OutBuffer
+	POPD	[0]
+	POP	[0][TOS]
+	DROP	TOS
+	PUSH	[1][@NEAR(%fx)+5]
+	BRNEQ	#0,%process_packet+69
+	BRF	%process_packet+8B
+	BRNEQ	#1,%process_packet+6F
+	BRF	%process_packet+0AF
+	BRNEQ	#2,%process_packet+75
+	BRF	%process_packet+0D3
+	BRNEQ	#3,%process_packet+7B
+	BRF	%process_packet+0F8
+	BRNEQ	#4,%process_packet+81
+	BRF	%process_packet+11D
+	BRNEQ	#5,%process_packet+87
+	BRF	%process_packet+142
+	DROP	TOS
+	BRF	%process_packet+167
+	PUSHS	#1
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	PUSHS	#1
+	PUSH	%pData
+	PUSH	%pData+1
+	CALL	_memset
+	PUSH	[1][@NEAR(%FtpLength)]
+	PUSHD	#%OutBuffer
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSH	#8
+	CALL	_add_8_16f
+	CALL	_memcpy8
+	CALLF	%Interrupt
+	BRF	%process_packet+167
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	PUSHS	#2
+	PUSH	%pData
+	PUSH	%pData+1
+	CALL	_memset
+	PUSH	[1][@NEAR(%FtpLength)]
+	PUSHD	#%OutBuffer
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSH	#90
+	CALL	_add_8_16f
+	CALL	_memcpy8
+	CALLF	%Interrupt
+	BRF	%process_packet+167
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	PUSHS	#3
+	PUSH	%pData
+	PUSH	%pData+1
+	CALL	_memset
+	PUSH	[1][@NEAR(%FtpLength)]
+	PUSHD	#%OutBuffer
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSHD	#118
+	CALL	_add16
+	CALL	_memcpy8
+	CALLF	%Interrupt
+	BRF	%process_packet+167
+	PUSHS	#4
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	PUSHS	#4
+	PUSH	%pData
+	PUSH	%pData+1
+	CALL	_memset
+	PUSH	[1][@NEAR(%FtpLength)]
+	PUSHD	#%OutBuffer
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSHD	#1A0
+	CALL	_add16
+	CALL	_memcpy8
+	CALLF	%Interrupt
+	BRF	%process_packet+167
+	PUSHS	#5
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	PUSHS	#5
+	PUSH	%pData
+	PUSH	%pData+1
+	CALL	_memset
+	PUSH	[1][@NEAR(%FtpLength)]
+	PUSHD	#%OutBuffer
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSHD	#228
+	CALL	_add16
+	CALL	_memcpy8
+	CALLF	%Interrupt
+	BRF	%process_packet+167
+	PUSHS	#6
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#1
+	PUSHS	#6
+	PUSH	%pData
+	PUSH	%pData+1
+	CALL	_memset
+	PUSH	[1][@NEAR(%FtpLength)]
+	PUSHD	#%OutBuffer
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSHD	#2B0
+	CALL	_add16
+	CALL	_memcpy8
+	CALLF	%Interrupt
+	BRF	%process_packet+167
+	PUSH	[1][@NEAR(%fx)+5]
+	INC
+	POP	[1][@NEAR(%fx)+5]
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+%setup_status_address	APEXP ; Function body
+	ALLOC	#8
+	ALLOC	#8
+	PUSHS	#1
+	DROP	NEXT
+	PUSHS	#1
+	POP	[1][@NEAR(%FtpRunning)]
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%setup_status_address+13
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRNZ	*+4
+	BRF	%setup_status_address+21
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%setup_status_address+49
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%setup_status_address+49
+	PUSH	nv_in_addr+1
+	PUSHS	#6
+	PUSH	#0C
+	CALL	_nv_update_int_offset
+	PUSH	nv_in_addr+2
+	AND	#7F
+	PUSHS	#6
+	PUSH	#0D
+	CALL	_nv_update_int_offset
+	PUSH	#0F
+	PUSH	nv_in_addr
+	CALL	_r_shift8_7
+	CALLF	access_domain
+	PUSH	#0ED
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-6]
+	PUSHS	#6
+	PUSH	#0B
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%setup_status_address+57
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRNZ	*+4
+	BRF	%setup_status_address+67
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%setup_status_address+92
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%setup_status_address+92
+	PUSH	nv_in_addr+1
+	PUSH	#8
+	PUSH	#0C
+	CALL	_nv_update_int_offset
+	PUSH	nv_in_addr+2
+	AND	#7F
+	PUSH	#8
+	PUSH	#0D
+	CALL	_nv_update_int_offset
+	PUSH	#0F
+	PUSH	nv_in_addr
+	CALL	_r_shift8_7
+	CALLF	access_domain
+	PUSH	#0ED
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-6]
+	PUSH	#8
+	PUSH	#0B
+	CALL	_nv_update_int_offset
+	PUSH	nv_in_addr
+	CALL	_r_shift8_6
+	AND	#1
+	SBRNZ	*+4
+	BRF	%setup_status_address+0EC
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%setup_status_address+0A9
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRNZ	*+4
+	BRF	%setup_status_address+0B7
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%setup_status_address+0C1
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%setup_status_address+0C1
+	PUSH	#0FF
+	PUSHS	#6
+	PUSH	#0B
+	CALL	_nv_update_int_offset
+	BRF	%setup_status_address+0E7
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%setup_status_address+0CF
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRNZ	*+4
+	BRF	%setup_status_address+0DF
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%setup_status_address+0E7
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%setup_status_address+0E7
+	PUSH	#0FF
+	PUSH	#8
+	PUSH	#0B
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	DROP	NEXT
+	BRF	%setup_status_address+13F
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%setup_status_address+0F8
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRNZ	*+4
+	BRF	%setup_status_address+106
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%setup_status_address+115
+	PUSH	[1][@NEAR(%SelectAB)]
+	SBRZ	*+4
+	BRF	%setup_status_address+115
+	PUSH	[DSP][-6]
+	AND	#7
+	PUSH	#0EF
+	CALL	_get_sp
+	PUSHD	#%nvo00FileStatA+5
+	CALL	_memcpy8
+	BRF	%setup_status_address+13F
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	%setup_status_address+123
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRNZ	*+4
+	BRF	%setup_status_address+133
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%setup_status_address+13F
+	PUSH	[1][@NEAR(%SelectAB)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	%setup_status_address+13F
+	PUSH	[DSP][-6]
+	AND	#7
+	PUSH	#0EF
+	CALL	_get_sp
+	PUSHD	#%nvo00FileStatB+5
+	CALL	_memcpy8
+	PUSH	TOS
+	BRF	%setup_status_address+143
+	PUSH	#10
+	CALL	_drop_n_return_1
+
+	SEG	CODE
+	ORG
+WHEN20	EXPORT ; When task
+	PUSHS	#6
+	CALLF	%stop_transfer
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+WHEN21	EXPORT ; When task
+	ALLOC	#8
+	ALLOC	#8
+	ALLOC	#6
+	PUSH	%nvi00FileReqA
+	XOR	#2
+	SBRNZ	*+4
+	BRF	WHEN21+15
+	PUSH	%nvi00FileReqA
+	XOR	#3
+	SBRZ	*+4
+	BRF	WHEN21+28
+	PUSH	%nvo00FileStatA+3
+	PUSH	%nvo00FileStatA+4
+	PUSH	%nvi00FileReqA+1
+	PUSH	%nvi00FileReqA+2
+	CALL	_equal16
+	CALL	_lognot8
+	BRF	WHEN21+30
+	PUSH	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)+1]
+	CALL	_inc16
+	CALL	_log16
+	SBRNZ	*+4
+	BRF	WHEN21+37
+	BRF	WHEN21+12C
+	PUSHS	#0
+	PUSHS	#3
+	PUSHS	#6
+	PUSHS	#1
+	CALL	_nv_update_long_offset
+	PUSH	%nvi00FileReqA+1
+	PUSH	%nvi00FileReqA+2
+	PUSHS	#6
+	PUSHS	#3
+	CALL	_nv_update_long_offset
+	PUSH	%nvi00FileReqA
+	XOR	#6
+	SBRNZ	*+4
+	BRF	WHEN21+59
+	PUSH	%nvi00FileReqA
+	XOR	#5
+	SBRZ	*+4
+	BRF	WHEN21+68
+	CALLF	%setup_status_address
+	DROP	TOS
+	PUSH	#9
+	PUSHS	#6
+	CALL	_nv_update_int
+	BRF	WHEN21+12C
+	BRF	WHEN21+12C
+	PUSH	%nvi00FileReqA
+	XOR	#1
+	SBRNZ	*+4
+	BRF	WHEN21+78
+	PUSH	%nvi00FileReqA
+	SBRZ	*+4
+	BRF	WHEN21+0B8
+	CALLF	%setup_status_address
+	SBRZ	*+4
+	BRF	WHEN21+82
+	BRF	WHEN21+12C
+	PUSH	#8
+	PUSHS	#0
+	PUSHD	#%fx
+	CALL	_memset
+	PUSH	%nvi00FileReqA
+	POP	[1][@NEAR(%fx)+3]
+	PUSH	[1][@NEAR(%fx)+3]
+	PUSH	%nvi00FileReqA+1
+	PUSH	%nvi00FileReqA+2
+	CALLF	%open
+	POP	[1][@NEAR(%fx)+1]
+	POP	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)+1]
+	DROP	TOS
+	AND	#80
+	SBRNZ	*+4
+	BRF	WHEN21+0B0
+	PUSHS	#2
+	PUSHS	#6
+	CALL	_nv_update_int
+	BRF	WHEN21+12C
+	PUSH	[1][@NEAR(%fx)+3]
+	CALLF	%start_transfer
+	BRF	WHEN21+12C
+	PUSH	%nvi00FileReqA
+	XOR	#2
+	SBRZ	*+4
+	BRF	WHEN21+0CC
+	PUSH	#40
+	CALLF	%stop_transfer
+	CALLF	%SendTime
+	BRF	WHEN21+12C
+	PUSH	%nvi00FileReqA
+	XOR	#3
+	SBRZ	*+4
+	BRF	WHEN21+0DD
+	PUSH	#80
+	CALLF	%stop_transfer
+	BRF	WHEN21+12C
+	PUSH	%nvi00FileReqA
+	XOR	#4
+	SBRZ	*+4
+	BRF	WHEN21+12C
+	PUSHS	#0
+	PUSHS	#3
+	PUSH	%nvi00FileReqA+1
+	PUSH	%nvi00FileReqA+2
+	CALL	_gequ16
+	SBRNZ	*+4
+	BRF	WHEN21+0FB
+	PUSHS	#3
+	PUSHS	#6
+	CALL	_nv_update_int
+	BRF	WHEN21+12C
+	PUSH	#16
+	PUSH	%nvi00FileReqA+1
+	PUSH	%nvi00FileReqA+2
+	CALLF	%lookup
+	PUSH	#0E7
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	#10
+	PUSH	#0E9
+	CALL	_get_sp
+	PUSHD	#%nvo00FileStatA+5
+	CALL	_memcpy
+	PUSHS	#4
+	PUSH	#0F9
+	CALL	_get_sp
+	PUSHS	#6
+	PUSH	#15
+	CALL	_nv_update
+	PUSH	NEXT
+	PUSH	NEXT
+	PUSHS	#6
+	PUSH	#19
+	CALL	_nv_update_long_offset
+	PUSHS	#1
+	PUSHS	#6
+	CALL	_nv_update_int
+	PUSH	#16
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+WHEN22	EXPORT ; When task
+	ALLOC	#8
+	ALLOC	#8
+	ALLOC	#6
+	PUSH	%nvi00FileReqB
+	XOR	#2
+	SBRNZ	*+4
+	BRF	WHEN22+15
+	PUSH	%nvi00FileReqB
+	XOR	#3
+	SBRZ	*+4
+	BRF	WHEN22+28
+	PUSH	%nvo00FileStatB+3
+	PUSH	%nvo00FileStatB+4
+	PUSH	%nvi00FileReqB+1
+	PUSH	%nvi00FileReqB+2
+	CALL	_equal16
+	CALL	_lognot8
+	BRF	WHEN22+30
+	PUSH	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)+1]
+	CALL	_inc16
+	CALL	_log16
+	SBRNZ	*+4
+	BRF	WHEN22+37
+	BRF	WHEN22+134
+	PUSHS	#0
+	PUSHS	#3
+	PUSH	#8
+	PUSHS	#1
+	CALL	_nv_update_long_offset
+	PUSH	%nvi00FileReqB+1
+	PUSH	%nvi00FileReqB+2
+	PUSH	#8
+	PUSHS	#3
+	CALL	_nv_update_long_offset
+	PUSH	%nvi00FileReqB
+	XOR	#6
+	SBRNZ	*+4
+	BRF	WHEN22+5B
+	PUSH	%nvi00FileReqA
+	XOR	#5
+	SBRZ	*+4
+	BRF	WHEN22+6B
+	CALLF	%setup_status_address
+	DROP	TOS
+	PUSH	#9
+	PUSH	#8
+	CALL	_nv_update_int
+	BRF	WHEN22+134
+	BRF	WHEN22+134
+	PUSH	%nvi00FileReqB
+	XOR	#1
+	SBRNZ	*+4
+	BRF	WHEN22+7B
+	PUSH	%nvi00FileReqB
+	SBRZ	*+4
+	BRF	WHEN22+0BC
+	CALLF	%setup_status_address
+	SBRZ	*+4
+	BRF	WHEN22+85
+	BRF	WHEN22+134
+	PUSH	#8
+	PUSHS	#0
+	PUSHD	#%fx
+	CALL	_memset
+	PUSH	%nvi00FileReqB
+	POP	[1][@NEAR(%fx)+3]
+	PUSH	[1][@NEAR(%fx)+3]
+	PUSH	%nvi00FileReqB+1
+	PUSH	%nvi00FileReqB+2
+	CALLF	%open
+	POP	[1][@NEAR(%fx)+1]
+	POP	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)+1]
+	DROP	TOS
+	AND	#80
+	SBRNZ	*+4
+	BRF	WHEN22+0B4
+	PUSHS	#2
+	PUSH	#8
+	CALL	_nv_update_int
+	BRF	WHEN22+134
+	PUSH	[1][@NEAR(%fx)+3]
+	CALLF	%start_transfer
+	BRF	WHEN22+134
+	PUSH	%nvi00FileReqB
+	XOR	#2
+	SBRZ	*+4
+	BRF	WHEN22+0D0
+	PUSH	#40
+	CALLF	%stop_transfer
+	CALLF	%SendTime
+	BRF	WHEN22+134
+	PUSH	%nvi00FileReqB
+	XOR	#3
+	SBRZ	*+4
+	BRF	WHEN22+0E1
+	PUSH	#80
+	CALLF	%stop_transfer
+	BRF	WHEN22+134
+	PUSH	%nvi00FileReqB
+	XOR	#4
+	SBRZ	*+4
+	BRF	WHEN22+134
+	PUSHS	#0
+	PUSHS	#3
+	PUSH	%nvi00FileReqB+1
+	PUSH	%nvi00FileReqB+2
+	CALL	_gequ16
+	SBRNZ	*+4
+	BRF	WHEN22+100
+	PUSHS	#3
+	PUSH	#8
+	CALL	_nv_update_int
+	BRF	WHEN22+134
+	PUSH	#16
+	PUSH	%nvi00FileReqB+1
+	PUSH	%nvi00FileReqB+2
+	CALLF	%lookup
+	PUSH	#0E7
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	#10
+	PUSH	#0E9
+	CALL	_get_sp
+	PUSHD	#%nvo00FileStatB+5
+	CALL	_memcpy
+	PUSHS	#4
+	PUSH	#0F9
+	CALL	_get_sp
+	PUSH	#8
+	PUSH	#15
+	CALL	_nv_update
+	PUSH	NEXT
+	PUSH	NEXT
+	PUSH	#8
+	PUSH	#19
+	CALL	_nv_update_long_offset
+	PUSHS	#1
+	PUSH	#8
+	CALL	_nv_update_int
+	PUSH	#16
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+WHEN23	EXPORT ; When task
+	ALLOC	#1
+	NOP
+	CALL	_msg_code_get
+	BRNEQ	#3E,WHEN23+0A
+	BRF	WHEN23+0E
+	DROP	TOS
+	BRF	WHEN23+0DC
+	PUSH	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)+1]
+	CALL	_inc16
+	OR
+	SBRZ	*+4
+	BRF	WHEN23+1C
+	BRF	WHEN23+0DF
+	PUSH	[1][@NEAR(%CarType)]
+	SBRZ	*+4
+	BRF	WHEN23+2E
+	PUSH	%nvi00FileReqA+3
+	PUSH	%nvi00FileReqA+4
+	PUSHS	#4
+	CALL	_timer_mset
+	BRF	WHEN23+3F
+	PUSH	[1][@NEAR(%CarType)]
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN23+3F
+	PUSH	%nvi00FileReqB+3
+	PUSH	%nvi00FileReqB+4
+	PUSHS	#4
+	CALL	_timer_mset
+	PUSHS	#0
+	CALL	_msg_data_get
+	AND	#0F0
+	DROP	NEXT
+	PUSH	TOS
+	PUSH	[1][@NEAR(%fx)+4]
+	XOR
+	SBRZ	*+4
+	BRF	WHEN23+90
+	CALL	_msg_service_get
+	XOR	#3
+	SBRZ	*+4
+	BRF	WHEN23+90
+	CALL	_msg_len_get
+	DEC
+	XOR	#1
+	SBRZ	*+4
+	BRF	WHEN23+6F
+	PUSH	[1][@NEAR(%fx)+5]
+	CALL	_resp_code_set
+	CALL	_resp_send
+	PUSH	#40
+	CALLF	%stop_transfer
+	BRF	WHEN23+0DF
+	BRF	WHEN23+90
+	CALLF	%process_packet
+	PUSH	#14
+	CALL	msec_delay
+	PUSH	[1][@NEAR(%fx)+5]
+	CALL	_resp_code_set
+	CALL	_resp_send
+	PUSHD	#80
+	PUSHS	#0
+	PUSH	[1][@NEAR(%bytes_received)]
+	CALL	_less16s
+	SBRNZ	*+4
+	BRF	WHEN23+8D
+	PUSH	#40
+	CALLF	%stop_transfer
+	BRF	WHEN23+0DF
+	PUSH	TOS
+	PUSH	[1][@NEAR(%fx)+4]
+	XOR
+	SBRZ	*+4
+	BRF	WHEN23+9E
+	CALLF	%process_packet
+	BRF	WHEN23+0DF
+	PUSH	TOS
+	PUSH	[1][@NEAR(%fx)+4]
+	ADD	#10
+	XOR
+	SBRZ	*+4
+	BRF	WHEN23+0D2
+	PUSH	[1][@NEAR(%fx)+5]
+	XOR	#6
+	SBRNZ	*+4
+	BRF	WHEN23+0B6
+	PUSH	[1][@NEAR(%fx)+6]
+	SBRNZ	*+4
+	BRF	WHEN23+0C8
+	PUSH	TOS
+	POP	[1][@NEAR(%fx)+4]
+	PUSHS	#0
+	POP	[1][@NEAR(%fx)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%fx)+6]
+	CALLF	%process_packet
+	BRF	WHEN23+0DF
+	BRF	WHEN23+0CF
+	PUSHS	#7
+	CALLF	%stop_transfer
+	BRF	WHEN23+0DF
+	BRF	WHEN23+0D9
+	PUSHS	#7
+	CALLF	%stop_transfer
+	BRF	WHEN23+0DF
+	BRF	WHEN23+0DF
+	BRF	WHEN23+0DF
+	DEALLOC	#1
+	NOP
+
+	SEG	INITCODE
+	ORG
+_%LIC%INIT	EXPORT ; Initialization segment
+	PUSHD	#0E10
+	PUSHS	#2
+	CALL	_timer_sset_repeat
+	PUSH	#8
+	PUSHD	#_%LIC%DATA1
+	PUSHD	#%fx
+	CALL	_memcpy
+	BRF	0FD00
+
+	SEG	CODE
+	ORG
+APINIT	EXPORT ; Init start & special event code
+	PUSHD	#26BE
+	CALL	delay
+APINITV	EXPORT
+	BRF	0FD00
+; When-unit I/O event function
+	PUSHS	#0
+	PUSHS	#4
+	CALL	_bit_input
+	RET
+RESET0	EXPORT ; Network debugger reset event
+	CALLF	_larva_reset
+RESET	EXPORT ; When-unit body
+	CALL	watchdog_update
+	CALLF	%Self_Install
+	PUSHD	#2328
+	PUSHS	#0
+	CALL	_timer_mset_repeat
+	PUSHS	#0
+	POP	[1][@NEAR(%CarType)]
+	PUSHS	#0
+	POP	[1][@NEAR(%MultiFTP)]
+	PUSH	#11
+	POP	[1][@NEAR(%BuildVersion)]
+	PUSHS	#4
+	POP	[1][@NEAR(%BuildVersion)+1]
+	PUSH	#20
+	POP	[1][@NEAR(%BuildVersion)+2]
+	PUSH	#10
+	POP	[1][@NEAR(%BuildVersion)+3]
+	PUSH	#12
+	POP	[1][@NEAR(%BuildVersion)+4]
+	PUSH	#10
+	POP	[1][@NEAR(%BuildVersion)+5]
+	PUSHS	#6
+	PUSHD	#%BuildVersion
+	PUSH	%pData
+	PUSH	%pData+1
+	PUSHS	#1
+	CALL	_add_8_16f
+	CALL	_memcpy
+	PUSHS	#1
+	PUSHS	#1
+	CALL	_bit_output_lo2
+	PUSHS	#0
+	POP	[1][@NEAR(%CDTCount)]
+	PUSHD	#64
+	PUSHS	#3
+	CALL	_timer_mset_repeat
+	PUSHS	#1
+	PUSHS	#4
+	CALL	_bit_output_lo1
+	PUSHS	#1
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	PUSHS	#1
+	PUSHS	#4
+	CALL	_bit_output_lo2
+	PUSHS	#4
+	CALL	_change_state
+	RET
+	NOP
+
+	SEG	CODE
+	ORG
+DBGSIG	EXPORT
+	DATA.B	0,0
+TNVFIX ; NV Fixed table
+	DATA.B	1,PTR %nci00NetConfig
+	DATA.B	3,PTR %nvi00ObjRequest
+	DATA.B	6,PTR %nvo00ObjStatus
+	DATA.B	23,PTR %nvi00CDTCommand
+	DATA.B	7,PTR %nvo00TimeStamp
+	DATA.B	2C,PTR %nvi00FileReqA
+	DATA.B	1B,PTR %nvo00FileStatA
+	DATA.B	2C,PTR %nvi00FileReqB
+	DATA.B	1B,PTR %nvo00FileStatB
+	DATA.B	23,PTR %nvi01Subscribe
+	DATA.B	0C8,PTR %nvo01StatusBits
+	DATA.B	8,PTR %nvo01StatusBits2
+	DATA.B	22,PTR %nvi01TransfState
+	DATA.B	3,PTR %nvo01Parameter
+	DATA.B	0E8,PTR %nvi01CDTStBitsA
+	DATA.B	0E8,PTR %nvi01CDTStBitsB
+	DATA.B	23,PTR %nvi01CDTParamA
+	DATA.B	23,PTR %nvi01CDTParamB
+	DATA.B	21,PTR %nvi03SCIVersReq
+	DATA.B	1F,PTR %nvo03SCIVersion
+	DATA.B	21,PTR %nvi04WaysidRespA
+	DATA.B	5,PTR %nvo04WaysideReqA
+	DATA.B	21,PTR %nvi04WaysidRespB
+	DATA.B	5,PTR %nvo04WaysideReqB
+
+TEVT	EXPORT ; Event table
+	DATA.B	PTR APINIT-2
+	DATA.B	0,RESET0-APINIT+1
+	DATA.B	0,0
+	DATA.B	0,17
+	DATA.B	0C3,PTR WHEN1-1
+	DATA.B	0C9,PTR WHEN2-1
+	DATA.B	0CC,PTR WHEN3-1
+	DATA.B	0D0,PTR WHEN4-1
+	DATA.B	0D1,PTR WHEN5-1
+	DATA.B	6,8A,PTR WHEN6-1
+	DATA.B	8A,PTR WHEN7-1
+	DATA.B	0CE,PTR WHEN8-1
+	DATA.B	8E,PTR WHEN9-1
+	DATA.B	0CF,PTR WHEN10-1
+	DATA.B	8F,PTR WHEN11-1
+	DATA.B	0D2,PTR WHEN12-1
+	DATA.B	0D4,PTR WHEN13-1
+	DATA.B	0D6,PTR WHEN14-1
+	DATA.B	10,9,PTR WHEN15-1
+	DATA.B	8,PTR WHEN16-1
+	DATA.B	9,PTR WHEN17-1
+	DATA.B	0A,PTR WHEN18-1
+	DATA.B	0B,PTR WHEN19-1
+	DATA.B	0C,PTR WHEN20-1
+	DATA.B	0C5,PTR WHEN21-1
+	DATA.B	0C7,PTR WHEN22-1
+	DATA.B	2,PTR WHEN23-1
+
+	SEG	SIDATA
+	ORG
+SIDATA	EXPORT ; SI Data
+	DATA.B	000,0EA,18,0,0
+	DATA.B	8F,0
+	DATA.B	8E,5C
+	DATA.B	8E,5D
+	DATA.B	8E,0
+	DATA.B	8E,54
+	DATA.B	8E,49
+	DATA.B	8E,4A
+	DATA.B	8E,49
+	DATA.B	8E,4A
+	DATA.B	8E,0
+	DATA.B	0CE,0A5
+	DATA.B	8E,0A5
+	DATA.B	8E,53
+	DATA.B	8E,0
+	DATA.B	0CE,0A5
+	DATA.B	0CE,0A5
+	DATA.B	8E,0
+	DATA.B	8E,0
+	DATA.B	8E,0
+	DATA.B	8E,0
+	DATA.B	8E,0
+	DATA.B	8E,0
+	DATA.B	8E,0
+	DATA.B	8E,0
+	DATA.B	43,4F,4D,4D,2C,20,57,4F
+	DATA.B	4F,4A,49,4E,2C,20,4C,49
+	DATA.B	43,2C,20,32,30,31,30,2D
+	DATA.B	31,32,2D,31,30,0
+	DATA.B	10
+	DATA.B	26,30,2C,2C,30,90,2C,32
+	DATA.B	35,3B,0
+	DATA.B	10
+	DATA.B	40,30,7C,31,0
+	DATA.B	10
+	DATA.B	40,30,7C,32,0
+	DATA.B	10
+	DATA.B	40,30,7C,33,0
+	DATA.B	10
+	DATA.B	40,30,7C,34,0
+	DATA.B	10
+	DATA.B	40,30,7C,35,0
+	DATA.B	10
+	DATA.B	40,30,7C,36,0
+	DATA.B	10
+	DATA.B	40,30,7C,37,0
+	DATA.B	10
+	DATA.B	40,30,7C,38,0
+	DATA.B	10
+	DATA.B	40,31,7C,31,0
+	DATA.B	10
+	DATA.B	40,31,7C,32,0
+	DATA.B	10
+	DATA.B	40,31,7C,33,0
+	DATA.B	10
+	DATA.B	40,31,7C,34,0
+	DATA.B	10
+	DATA.B	40,31,7C,35,0
+	DATA.B	10
+	DATA.B	40,31,7C,36,0
+	DATA.B	10
+	DATA.B	40,31,7C,37,0
+	DATA.B	10
+	DATA.B	40,31,7C,38,0
+	DATA.B	10
+	DATA.B	40,31,7C,39,0
+	DATA.B	10
+	DATA.B	40,33,7C,31,0
+	DATA.B	10
+	DATA.B	40,33,7C,32,0
+	DATA.B	10
+	DATA.B	40,34,7C,31,0
+	DATA.B	10
+	DATA.B	40,34,7C,32,0
+	DATA.B	10
+	DATA.B	40,34,7C,33,0
+	DATA.B	10
+	DATA.B	40,34,7C,34,0
+	DATA.B	_new_binding_constraints|_query_stats|NALIAS
+
+; Resource usage information
+	RESOURCE	NADDR	0F
+	RESOURCE	NDOM	2
+	RESOURCE	NIOCES	1
+	RESOURCE	NRCVTX	0F
+	RESOURCE	NTMR	5
+	RESOURCE	NNIB	7
+	RESOURCE	NAIB	7
+	RESOURCE	NNOB	7
+	RESOURCE	NAOB	7
+	RESOURCE	SNIB	92
+	RESOURCE	SNOB	92
+	RESOURCE	SAIB	92
+	RESOURCE	SAOB	92
+	RESOURCE	NNVS	18
+	RESOURCE	ALIAS	11
+	RESOURCE	RAMT	1
+	RESOURCE	NVADR	1
+	RESOURCE	MINIT	1
+	RESOURCE	LARVA	1
+	RESOURCE	XADDR	1
+	RESOURCE	OPT	0
+	RESOURCE	PULLUP	1
+	RESOURCE	DBGFEAT	2
+
+; End of generated code

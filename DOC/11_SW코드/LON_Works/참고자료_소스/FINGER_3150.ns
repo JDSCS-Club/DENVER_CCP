@@ -1,0 +1,631 @@
+; LONNCC32 - Echelon (R) Neuron (R) C Compiler
+; Copyright (c) 1989 - 2005  Echelon Corp
+; All Rights Reserved.
+; Assembly code from LONNCC32 Version 4.03.02
+; Code generated from 'FINGER_3150.NC' on Mon Jan 22 11:28:19 2007
+
+	SUBHEAD	Generated from the input file: E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150.nc
+
+	RADIX	HEX
+
+	SEG	EECODE_SPCL_1
+	ORG	0F000	; read_only_struct
+
+NBMTS	EQU	000		; number of bindable message tags
+NFBS	EQU	000		; number of functional blocks
+NNVS	EQU	003		; number of network variables
+NALIAS	EQU	002		; number of aliases
+PROTECT	EQU	000
+RUNUNCNFGED	EQU	000
+EDMF	EQU	000		; DMF feature support required
+RODSV3	EQU	000		; read_only_data_3 required
+PROTBTE	EQU	PROTECT+000		; upper two bits of read_only_struct_2
+
+NEURONID
+	RES	8
+DIRECTORY	EXPORT
+	DATA.B	PTR TEVT-3*NNVS
+PROTECTBIT	EXPORT
+	DATA.B	PROTECT+RUNUNCNFGED+NNVS
+	DATA.B	PTR SIDATA
+PROGID	EXPORT
+	DATA.B	09F,0FF,0FF,032,000,004,011,001
+MODETABLE	EXPORT
+	DATA.B	053
+	DATA.B	0F1,002
+	DATA.B	099,0BB
+BUFCOUNTS	EXPORT
+	DATA.B	033,033,033
+EENEARBYTES	EXPORT
+	DATA.B	000
+	DATA.B	000,000
+	DATA.B	057,020,047
+	DATA.B	004 | _tx_by_addr            
+TX_CTRL	EQU	*-1
+	EXPORT	TX_CTRL
+
+	SEG	EECODE_SPCL_2
+	ORG		; read_only_struct_2
+RODS2
+	DATA.B	PROTBTE+NALIAS 
+	DATA.B	000
+	DATA.B	7F,000,000       
+
+	SEG	EECODE_SPCL_2
+	ORG		; read_only_struct_3
+RODS3
+	DATA.B	NNVS,NALIAS,PTR SIDATA,EDMF
+
+	SEG	EECODE_SPCL_3
+	ORG
+LOCATION
+	RES	8
+COMM
+	RES	10
+MSG
+	RES	1
+DOMAIN	EXPORT
+	RES	01E
+ADDR
+	RES	04B
+TNVCNFG
+	RES	3*NNVS
+TNVALIASES
+	RES	4*NALIAS
+CONFIGCHECKSUM
+	RES	1
+	PAGE
+; Boilerplate file for compiler-generated assembly output
+; Copyright (c) 1990 - 2003 Echelon Corporation.
+; All Rights Reserved.
+; Date last modified: 26-Aug-2003
+
+; List of imported symbols - Library functions
+	IMPORT	delay,msec_delay,random,reverse,scaled_delay
+; List of imported symbols - Misc builtin function support
+	IMPORT	_bcd2bin,_bin2bcd,_fblock_director,_sleep
+; List of imported symbols - Compiler helper functions
+	IMPORT	_abs8,_abs16,_add16,_add_8_16f,_adds_8_16,_and16,_alloc
+	IMPORT	_bitf_sign_ext,_dealloc,_dec16,_div8,_div8s,_div16,_div16s
+	IMPORT	_drop_n,_drop_n_preserve_1,_drop_n_preserve_2,_drop_n_return_1
+	IMPORT	_drop_n_return_2,_eeprom_write,_eeprom_write_long
+	IMPORT	_eeprom_far_write,_eeprom_far_write_long,_equal8,_equal16
+	IMPORT	_gequ8,_gequ8s,_gequ16,_gequ16s,_get_sp,_inc16,_ldP0_fetchl
+	IMPORT	_less8,_less8s,_less16,_less16s,_log8,_log16,_lognot8,_lognot16
+	IMPORT	_l_shift8,_l_shift8s,_l_shift16,_l_shift16s,_l_shift8_3
+	IMPORT	_l_shift8_4,_l_shift8_5,_l_shift8_6,_l_shift8_7,_lshift8_add16
+	IMPORT	_lshift16_add16,_lshift8by1_add16,_lshift8by2_add16
+	IMPORT	_max8,_max8s,_max16,_max16s,_min8,_min8s,_min16,_min16s
+	IMPORT	_memcpy,_memcpy8,_memcpy16,_memset,_memset8,_memset16
+	IMPORT	_minus16s,_mod8,_mod8s,_mod16,_mod16s,_mul8,_mul16,_mul_8_16
+	IMPORT	_muls_8_16,_mul8l,_mul8ls,_not16,_or16
+	IMPORT	_pop,_pop1,_popd,_popd1,_push,_push1,_pushd,_pushd1
+	IMPORT	_r_shift8,_r_shift8s,_r_shift16,_r_shift16s
+	IMPORT	_r_shift8_3,_r_shift8_4,_r_shift8_5,_r_shift8_6,_r_shift8_7
+	IMPORT	_register_call,_sign_extend16,_sub16,_xor16
+	PAGE
+; List of imported symbols - I/O functions
+	IMPORT	_bit_input,_bit_output_lo1,_bit_output_lo2,_bit_output_hi
+	IMPORT	_bit_input_ext,_bit_output_ext,_bitshift_input
+	IMPORT	_bitshift_output,burst_sequence_output,_byte_input,_byte_output
+	IMPORT	_dualslope_input,_dualslope_start
+	IMPORT	_edgelog_input,edgelog_input_single,edgelog_setup_single
+	IMPORT	_frequency_output,_ir_input,_i2c_read,_i2c_write
+	IMPORT	_i2c_read0,_i2c_write0,_i2c_read_opt0,_i2c_write_opt0
+	IMPORT	_i2c_read8,_i2c_write8,_i2c_read_opt8,_i2c_write_opt8
+	IMPORT	_leveldetect_input
+	IMPORT	_magcard_input,_magt1_input,_magt2_input,magx_input
+	IMPORT	_muxbus_read,_muxbus_reread,_muxbus_write,_muxbus_rewrite
+	IMPORT	_neurowire_master,_neurowire_slave,_neurowire_inv_master
+	IMPORT	_neurowire_inv_slave,_nibble_input,_nibble_output
+	IMPORT	_oneshot_output,_parallel_input,_parallel_input_ready
+	IMPORT	_parallel_output,_parallel_output_ready,_parallel_output_request
+	IMPORT	_period_input,_pulsecount_output,_pulsewidth_output
+	IMPORT	_quadrature_input,_io_sci_baud,_io_sci_init,_io_sci_init2
+	IMPORT	_io_sci_get_error,_io_sci_set_buffer_in,_io_sci_set_buffer_out
+	IMPORT	_io_scispi_abort,_io_scispi_input_ready,_io_scispi_output_ready
+	IMPORT	_io_spi_clock,_io_spi_init,_io_spi_init2,_io_spi_set_buffer
+	IMPORT	_serial_input,_serial_output,_totalize_input
+	IMPORT	_touch_bit,_touch_byte,_touch_first,_touch_next,_touch_read
+	IMPORT	_touch_reset,_touch_write,ext_touch_bit,ext_touch_byte
+	IMPORT	ext_touch_first,ext_touch_next,ext_touch_read,ext_touch_reset
+	IMPORT	ext_touch_write,_triac_level_output,_triac_pulse_output
+	IMPORT	_wiegand_input
+; List of imported symbols - I/O control functions
+	IMPORT	io_edgelog_preload
+	IMPORT	_init_baud,_init_timer_counter1,_init_timer_counter2
+	IMPORT	_io_abort_clear,_io_change_init,_io_direction_lo
+	IMPORT	_io_direction_hi,io_idis,io_iena,_io_input_value
+	IMPORT	_io_set_clock,_io_set_clock_x2,_select_input_fn
+; List of imported symbols - Messaging support
+	IMPORT	_bound_mt,_msg_alloc,_msg_alloc_priority,_msg_cancel,_msg_free
+	IMPORT	_msg_receive,_msg_send,_msg_auth_get,_msg_code_get
+	IMPORT	_msg_duplicate_get,_msg_rcvtx_get
+	IMPORT	_msg_data_blockget,_msg_data_get,_msg_len_get,_msg_service_get
+	IMPORT	_msg_auth_set,_msg_code_set,_msg_data_blockset,_msg_data_set
+	IMPORT	_msg_priority_set,_msg_service_set,_msg_tag_set,msg_tag_index
+	IMPORT	_resp_alloc,_resp_cancel,_resp_free,_resp_receive,_resp_send
+	IMPORT	_resp_code_set,_resp_data_blockset,_resp_data_set
+; List of imported symbols - Network Variable support
+	IMPORT	_bound_nv,_nv_array_poll,_nv_array_index
+	IMPORT	_nv_array_update_request,nv_in_addr,nv_in_index,_nv_poll
+	IMPORT	_nv_poll_all,_nv_update,_nv_update_int,_nv_update_int_offset
+	IMPORT	_nv_update_long,_nv_update_long_offset
+	IMPORT	_nv_update_request,_nv_update_request_all
+	PAGE
+; List of imported symbols - Timer support
+	IMPORT	_timer_get,_timer_off
+	IMPORT	_timer_mset,_timer_mset_repeat,_timer_sset,_timer_sset_repeat
+; List of imported symbols - Event support
+	IMPORT	_io_changes,_io_changes_to,_io_changes_by,_io_update_occurs
+	IMPORT	_flush_completes,_msg_arrives,_msg_code_arrives,_msg_completes
+	IMPORT	_msg_fails,_msg_succeeds,_nv_array_update_completes
+	IMPORT	_nv_array_update_fails,_nv_array_update_occurs
+	IMPORT	_nv_array_update_succeeds,_nv_update_completes,_nv_update_fails
+	IMPORT	_nv_update_succeeds,_nv_update_occurs,_offline,_online
+	IMPORT	_resp_arrives,_timer_expires,_timer_expires_any,_wink
+; List of imported symbols - Special symbols support
+	IMPORT	_arb_presf,_idem_dup,_new_binding_constraints,_query_stats
+	IMPORT	_tx_by_addr,get_current_nv_length,init_phase_detection
+	IMPORT	_nv_all
+; List of imported symbols - Debug kernel entries
+	IMPORT	_larva_entry,_larva_entry_exec,_larva_entry_notify
+	IMPORT	_larva_entry_min,_larva_reset
+
+; End of boilerplate file
+	PAGE
+
+
+	IMPORT	%cp_template_file
+
+	IMPORT	%cp_modifiable_value_file
+
+	IMPORT	%cp_readonly_value_file
+
+	IMPORT	%cp_template_file_len_fake
+
+	IMPORT	%cp_modifiable_value_file_len_fake
+
+	IMPORT	%cp_readonly_value_file_len_fake
+
+	IMPORT	%fblock_index_map
+	IMPORT	set_nv_length
+	IMPORT	get_nv_length
+	IMPORT	get_nv_type
+	IMPORT	%get_nv_length_override
+
+	SEG	RAMNEAR
+	ORG
+%nvitrdata	APEXP
+	RES	1F
+
+	SEG	RAMNEAR
+	ORG
+%nvotrdata	APEXP
+	RES	1F
+
+	SEG	RAMNEAR
+	ORG
+%nvolampvalu	APEXP
+	RES	2
+
+	SEG	RAMNEAR
+	ORG
+%szRxBufA	APEXP
+	RES	0D
+
+	SEG	RAMNEAR
+	ORG
+%szRxBufB	APEXP
+	RES	0D
+
+	SEG	RAMNEAR
+	ORG
+%obuffer	APEXP
+	RES	0D
+
+	SEG	RAMNEAR
+	ORG
+%comm_data	APEXP
+	RES	0D
+
+	SEG	RAMNEAR
+	ORG
+%count	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%temp	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%bufTog	APEXP
+	RES	1
+
+	SEG	CODE
+	ORG
+%GetButtons	APEXP ; Function body
+	ALLOC	#2
+	PUSH	#0FF
+	POP	[DSP][-1]
+	AND	#0
+	PUSH	TOS
+	ADD	#0FD
+	DROP	TOS
+	BRC	%GetButtons+23
+	PUSHD	#40
+	CALL	_bit_output_lo1
+	PUSHD	#140
+	CALL	_bit_output_lo1
+	PUSHD	#804
+	CALLF	_bitshift_input
+	DROP	NEXT
+	PUSH	[DSP][-1]
+	AND
+	POP	[DSP][-1]
+	INC
+	BR	%GetButtons+6
+	PUSH	NEXT
+	NOT
+	DROP	NEXT
+	DROP_R	NEXT
+
+	SEG	CODE
+	ORG
+%processRxData	APEXP ; Function body
+	ALLOC	#1
+	AND	#0
+	PUSH	#0D
+	PUSH	NEXT
+	CALL	_gequ8s
+	BRNZ	%processRxData+2B
+	PUSH	[DSP][-1]
+	PUSH	[DSP][-1]
+	PUSH	[DSP][-1]
+	CALL	_adds_8_16
+	POPD	[0]
+	PUSH	[0][0]
+	PUSH	TOS
+	PUSHD	#%nvotrdata
+	PUSH	[DSP][-3]
+	CALL	_adds_8_16
+	POPD	[3]
+	POP	[3][0]
+	PUSHS	#1
+	CALL	_nv_update_request
+	PUSHD	#%comm_data
+	PUSH	[DSP][-2]
+	CALL	_adds_8_16
+	POPD	[0]
+	POP	[0][0]
+	INC
+	BR	%processRxData+3
+	PUSH	[1][@NEAR(%comm_data)]
+	XOR	#40
+	BRNZ	%processRxData+6E
+	PUSH	[1][@NEAR(%comm_data)+0C]
+	XOR	#0A
+	BRNZ	%processRxData+6E
+	PUSH	[1][@NEAR(%comm_data)+0A]
+	BRNEQ	#61,%processRxData+3D
+	SBR	%processRxData+4A
+	BRNEQ	#69,%processRxData+42
+	BR	%processRxData+5A
+	BRNEQ	#62,%processRxData+47
+	BR	%processRxData+68
+	DROP	TOS
+	BR	%processRxData+83
+	PUSHS	#0
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	PUSHS	#1
+	PUSHS	#2
+	PUSHS	#1
+	CALL	_nv_update_int_offset
+	PUSHD	#0C802
+	CALL	_nv_update_int
+	BR	%processRxData+83
+	PUSHS	#0
+	PUSHS	#4
+	CALL	_bit_output_lo1
+	PUSHS	#0
+	PUSHS	#2
+	PUSHS	#1
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSHS	#2
+	CALL	_nv_update_int
+	SBR	%processRxData+6C
+	PUSHS	#0
+	PUSHS	#1
+	CALL	_bit_output_lo1
+	BR	%processRxData+83
+	PUSHS	#0
+	PUSHS	#1
+	CALL	_bit_output_lo1
+	PUSHS	#1
+	PUSHS	#4
+	CALL	_bit_output_lo1
+	PUSHS	#1
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	PUSHS	#0
+	PUSHS	#2
+	PUSHS	#1
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSHS	#2
+	CALL	_nv_update_int
+	DEALLOC	#3
+
+	SEG	CODE
+	ORG
+WHEN1	EXPORT ; When task
+	PUSH	#0D
+	PUSHD	#%nvitrdata
+	PUSHD	#%obuffer
+	CALL	_memcpy
+	PUSH	#0D
+	PUSHD	#%obuffer
+	CALLF	_io_sci_set_buffer_out
+	RET
+
+	SEG	CODE
+	ORG
+WHEN2	EXPORT ; When task
+	PUSH	#0D
+	PUSH	[1][@NEAR(%bufTog)]
+	SBRZ	WHEN2+9
+	PUSHD	#%szRxBufA
+	SBR	WHEN2+0C
+	PUSHD	#%szRxBufB
+	CALLF	_io_sci_set_buffer_in
+	DROP	TOS
+	PUSH	[1][@NEAR(%bufTog)]
+	XOR	#1
+	POP	[1][@NEAR(%bufTog)]
+	PUSH	[1][@NEAR(%bufTog)]
+	SBRZ	WHEN2+1D
+	PUSHD	#%szRxBufA
+	SBR	WHEN2+20
+	PUSHD	#%szRxBufB
+	CALLF	%processRxData
+	RET
+
+	SEG	CODE
+	ORG
+WHEN3	EXPORT ; When task
+	ALLOC	#1
+	PUSHS	#1
+	PUSHS	#4
+	CALL	_bit_output_lo1
+	PUSHS	#1
+	PUSH	TOS
+	CALL	_bit_output_lo1
+	PUSHS	#1
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	PUSHS	#0
+	PUSHS	#2
+	PUSHS	#1
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSHS	#2
+	CALL	_nv_update_int
+	CALLF	%GetButtons
+	DROP	NEXT
+	PUSH	#40
+	POP	[1][@NEAR(%obuffer)]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+3]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+4]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+7]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+8]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+9]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+0A]
+	PUSH	#0A
+	POP	[1][@NEAR(%obuffer)+0C]
+	PUSH	TOS
+	BRNEQ	#1,WHEN3+40
+	BR	WHEN3+69
+	BRNEQ	#2,WHEN3+45
+	BR	WHEN3+7F
+	BRNEQ	#4,WHEN3+4A
+	BR	WHEN3+93
+	BRNEQ	#8,WHEN3+4F
+	BR	WHEN3+0A7
+	BRNEQ	#10,WHEN3+54
+	BR	WHEN3+0BB
+	BRNEQ	#20,WHEN3+59
+	BR	WHEN3+0CF
+	BRNEQ	#40,WHEN3+5F
+	BRF	WHEN3+0E3
+	BRNEQ	#80,WHEN3+65
+	BRF	WHEN3+0F7
+	DROP	TOS
+	BRF	WHEN3+10A
+	PUSH	#11
+	POP	[1][@NEAR(%obuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+2]
+	PUSH	#51
+	POP	[1][@NEAR(%obuffer)+0B]
+	PUSH	#0D
+	PUSHD	#%obuffer
+	CALLF	_io_sci_set_buffer_out
+	BRF	WHEN3+10A
+	PUSHS	#5
+	POP	[1][@NEAR(%obuffer)+1]
+	PUSHS	#1
+	POP	[1][@NEAR(%obuffer)+2]
+	PUSH	#46
+	POP	[1][@NEAR(%obuffer)+0B]
+	PUSH	#0D
+	PUSHD	#%obuffer
+	CALLF	_io_sci_set_buffer_out
+	BR	WHEN3+10A
+	PUSHS	#5
+	POP	[1][@NEAR(%obuffer)+1]
+	PUSHS	#2
+	POP	[1][@NEAR(%obuffer)+2]
+	PUSH	#47
+	POP	[1][@NEAR(%obuffer)+0B]
+	PUSH	#0D
+	PUSHD	#%obuffer
+	CALLF	_io_sci_set_buffer_out
+	BR	WHEN3+10A
+	PUSHS	#5
+	POP	[1][@NEAR(%obuffer)+1]
+	PUSHS	#3
+	POP	[1][@NEAR(%obuffer)+2]
+	PUSH	#48
+	POP	[1][@NEAR(%obuffer)+0B]
+	PUSH	#0D
+	PUSHD	#%obuffer
+	CALLF	_io_sci_set_buffer_out
+	BR	WHEN3+10A
+	PUSHS	#5
+	POP	[1][@NEAR(%obuffer)+1]
+	PUSHS	#4
+	POP	[1][@NEAR(%obuffer)+2]
+	PUSH	#49
+	POP	[1][@NEAR(%obuffer)+0B]
+	PUSH	#0D
+	PUSHD	#%obuffer
+	CALLF	_io_sci_set_buffer_out
+	BR	WHEN3+10A
+	PUSHS	#5
+	POP	[1][@NEAR(%obuffer)+1]
+	PUSHS	#5
+	POP	[1][@NEAR(%obuffer)+2]
+	PUSH	#4A
+	POP	[1][@NEAR(%obuffer)+0B]
+	PUSH	#0D
+	PUSHD	#%obuffer
+	CALLF	_io_sci_set_buffer_out
+	BR	WHEN3+10A
+	PUSHS	#5
+	POP	[1][@NEAR(%obuffer)+1]
+	PUSHS	#6
+	POP	[1][@NEAR(%obuffer)+2]
+	PUSH	#4B
+	POP	[1][@NEAR(%obuffer)+0B]
+	PUSH	#0D
+	PUSHD	#%obuffer
+	CALLF	_io_sci_set_buffer_out
+	BR	WHEN3+10A
+	PUSH	#17
+	POP	[1][@NEAR(%obuffer)+1]
+	PUSHS	#0
+	POP	[1][@NEAR(%obuffer)+2]
+	PUSH	#57
+	POP	[1][@NEAR(%obuffer)+0B]
+	PUSH	#0D
+	PUSHD	#%obuffer
+	CALLF	_io_sci_set_buffer_out
+	DEALLOC	#1
+
+	SEG	INITCODE
+	ORG
+_%FINGER_3150%INIT	EXPORT ; Initialization segment
+SCISPIINITPARMS	EXPORT
+	NOP
+	NOP
+	NOP
+	PUSHD	#4C
+SCISPIINITCALL	EXPORT
+	CALLF	_io_sci_init
+	PUSH	#55
+	POP	[1][@NEAR(%temp)]
+	BRF	0FD00
+
+	SEG	CODE
+	ORG
+APINIT	EXPORT ; Init start & special event code
+	BRF	0FD00
+; When-unit event arb cond
+	PUSH	#0D
+	CALLF	_io_scispi_input_ready
+	CALL	_equal8
+	RET
+; When-unit I/O event function
+	PUSHS	#0
+	PUSHS	#3
+	CALL	_bit_input
+	RET
+RESET	EXPORT ; When-unit body
+	PUSHS	#0
+	POP	[1][@NEAR(%bufTog)]
+	PUSH	#0D
+	PUSHD	#%szRxBufA
+	CALLF	_io_sci_set_buffer_in
+	DROP	TOS
+	PUSHS	#1
+	PUSH	TOS
+	CALL	_bit_output_lo1
+	PUSHS	#0
+	PUSHS	#2
+	PUSHS	#1
+	CALL	_nv_update_int_offset
+	PUSHS	#0
+	PUSHS	#2
+	CALL	_nv_update_int
+	RET
+
+	SEG	CODE
+	ORG
+TNVFIX ; NV Fixed table
+	DATA.B	3F,PTR %nvitrdata
+	DATA.B	1F,PTR %nvotrdata
+	DATA.B	2,PTR %nvolampvalu
+
+TEVT	EXPORT ; Event table
+	DATA.B	PTR APINIT-2
+	DATA.B	0,RESET-APINIT+1
+	DATA.B	0,0
+	DATA.B	0,3
+	DATA.B	0C0,PTR WHEN1-1
+	DATA.B	1,4,PTR WHEN2-1
+	DATA.B	10,0C,PTR WHEN3-1
+
+	SEG	SIDATA
+	ORG
+SIDATA	EXPORT ; SI Data
+	DATA.B	000,00D,3,0,0
+	DATA.B	0E,24
+	DATA.B	0E,24
+	DATA.B	0E,5F
+	DATA.B	0
+	DATA.B	_new_binding_constraints|_query_stats|NALIAS
+
+; Resource usage information
+	RESOURCE	NADDR	0F
+	RESOURCE	NDOM	2
+	RESOURCE	NIOCES	1
+	RESOURCE	NRCVTX	3
+	RESOURCE	NNIB	2
+	RESOURCE	NAIB	2
+	RESOURCE	SNIB	42
+	RESOURCE	SNOB	42
+	RESOURCE	SAIB	2A
+	RESOURCE	SAOB	2A
+	RESOURCE	NNVS	3
+	RESOURCE	ALIAS	2
+	RESOURCE	RAMT	1
+	RESOURCE	MINIT	1
+	RESOURCE	SIOCF	1
+	RESOURCE	IOSCI	1
+
+; End of generated code
+

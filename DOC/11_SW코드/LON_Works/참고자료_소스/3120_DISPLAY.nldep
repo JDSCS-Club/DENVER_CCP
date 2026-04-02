@@ -1,0 +1,104 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.nldep
+; Created Monday, January 22, 2007, 11:25:53
+
+[Global]
+Provider=Neuron Linker
+Version=1
+Inputs=2
+Outputs=4
+Switches=10
+Parameters=30
+
+[Input_1]
+Basename=B3120E4X.sym
+Fullname=C:\LonWorks\Images\Ver14\B3120E4X.sym
+Type=3
+Size=12585
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Input_2]
+Basename=3120_DISPLAY.no
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.no
+Type=0
+Size=8215
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3ab2ab8
+
+[Output_1]
+Basename=3120_DISPLAY.dbt
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.dbt
+Type=0
+Size=16034
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3afef6c
+
+[Output_2]
+Basename=3120_DISPLAY.nxr
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.nxr
+Type=0
+Size=13
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3afef6c
+
+[Output_3]
+Basename=3120_DISPLAY.nxe
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.nxe
+Type=0
+Size=2020
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3afef6c
+
+[Output_4]
+Basename=3120_DISPLAY.map
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.map
+Type=0
+Size=66407
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3b251c6
+
+[Switches]
+32=PL 3120-E4
+0=1
+11=1
+9=1
+15=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.dbg
+30=C:\LonWorks\Images\Ver14\B3120E4X.sym
+27=C:\LonWorks\Images\Ver14\GEN.LIB
+27=C:\LonWorks\Images\EXTARITH.LIB
+27=C:\LonWorks\Images\PSG.LIB
+35=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.no
+
+[Parameters]
+Domains=2
+AddressTable=15
+NeuronModel=15
+NeuronKey=22
+RamStart=232
+RamEnd=239
+EEpromStart=240
+EEpromEnd=251
+ImageVersion=14
+RcvTxSize=13
+TxCtlBlkSize=28
+OnchipRamSpace=1343
+OffchipRamSpace=0
+DomainSize=15
+AddressSize=5
+NvCnfgSize=3
+OnchipEEpromCnfg=150
+AliasSize=4
+RomEnd=95
+OCEEPromStart=0
+OCEEPromEnd=0
+OCRamStart=0
+OCRamEnd=0
+EEWriteTime=10
+FlashEeprom=0
+SectorSize=0
+CapabilityProxy=0
+CapabilityPhaseDetect=0
+CustomMac=0
+PrtCount=0
+

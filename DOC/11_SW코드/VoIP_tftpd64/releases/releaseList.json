@@ -1,0 +1,71 @@
+[
+  {
+    "Id": "0",
+    "Name": "Tftpd64 4.61",
+    "DevelopmentStatus": "Alpha",
+    "Description": "* Tftpd64 is now compiled with Visual Studio 15\n* LogViewer window now scrolls to bottom",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2017-02-02T12:43:16.123-08:00",
+    "Files": [
+      {
+        "Id": "38098c7b-e8c5-4c90-aaf0-1f760b3ba7a1",
+        "FileName": "tftpd64.461.zip",
+        "Url": "./0/38098c7b-e8c5-4c90-aaf0-1f760b3ba7a1",
+        "Type": "Application",
+        "UploadDate": "2017-02-02T12:43:12.903-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "Tftpd64 v4.60",
+    "DevelopmentStatus": "Stable",
+    "Description": "RELEASE NOTES\n\n* Some changes for avoiding false positive antivirus detection\n* nak messages are padded with null characters to be greater than 4 bytes (thanks to Clement)\n* improved DDoS/fuzzing resilience: better handling of malformed packet\n* improved DDoS resilience: pacing new threads \n* fixed: stats are correctly displayed when a tranfer ends",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2017-02-08T12:48:14.09-08:00",
+    "Files": [
+      {
+        "Id": "30caa139-51f0-43ac-9f5d-9cd9ed5bfe20",
+        "FileName": "Tftpd64-4.60-setup.exe",
+        "Url": "./1/30caa139-51f0-43ac-9f5d-9cd9ed5bfe20",
+        "Type": "Application",
+        "UploadDate": "2017-01-28T10:33:57.477-08:00"
+      },
+      {
+        "Id": "7ebfc89f-ace6-45f3-8210-e46bcfb49165",
+        "FileName": "tftpd64.460.zip",
+        "Url": "./1/7ebfc89f-ace6-45f3-8210-e46bcfb49165",
+        "Type": "Application",
+        "UploadDate": "2017-01-28T10:33:57.553-08:00"
+      },
+      {
+        "Id": "6e2fe027-ecd6-4d92-9b59-07c75778f3dc",
+        "FileName": "Tftpd64_SE-4.60-setup.exe",
+        "Url": "./1/6e2fe027-ecd6-4d92-9b59-07c75778f3dc",
+        "Type": "Application",
+        "UploadDate": "2017-02-08T12:48:11.05-08:00"
+      },
+      {
+        "Id": "fd9fd47a-03eb-4689-9e40-944df06f1789",
+        "FileName": "Tftpd32-4.60-setup.exe",
+        "Url": "./1/fd9fd47a-03eb-4689-9e40-944df06f1789",
+        "Type": "Application",
+        "UploadDate": "2017-01-28T11:29:39.947-08:00"
+      },
+      {
+        "Id": "26a669db-0979-4dab-bd0a-524f1bc6e1fd",
+        "FileName": "tftpd32.460.zip",
+        "Url": "./1/26a669db-0979-4dab-bd0a-524f1bc6e1fd",
+        "Type": "Application",
+        "UploadDate": "2017-01-28T11:31:01.8-08:00"
+      },
+      {
+        "Id": "7be77faa-22e2-42ec-9138-78ce34d76e51",
+        "FileName": "Tftpd32_SE-4.60-setup.exe",
+        "Url": "./1/7be77faa-22e2-42ec-9138-78ce34d76e51",
+        "Type": "Application",
+        "UploadDate": "2017-01-28T11:31:01.847-08:00"
+      }
+    ]
+  }
+]

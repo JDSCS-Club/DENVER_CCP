@@ -1,0 +1,177 @@
+Build log C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.log
+Created Wednesday, January 16, 2013, at 13:10:10
+
+Build due for component Neuron (R) C Compiler, reason: File C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC is present but modified
+Requesting build from Neuron (R) C Compiler
+Compiling...
+Neuron (R) C Compiler: C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Denver.nc
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC   32(  9):
+        The '#pragma set_std_prog_id' conflicts with ID set via compile option [NCC#343]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H   35(  3):
+        Typename 'UNVT_subscribe' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H   41(  3):
+        Typename 'UNVT_parameter' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H   47(  3):
+        Typename 'UNVT_CDT_command' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H   56(  3):
+        Typename 'UNVT_sci_version' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H   61(  3):
+        Typename 'UNVT_sci_version_request' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H   63(  6):
+        Typename 'UNVT_wayside_req_enum' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H   74(  3):
+        Typename 'UNVT_wayside_request' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H   79(  3):
+        Typename 'UNVT_wayside_response' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC  645(  5):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC  649(  5):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC  655(  5):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC  692(  5):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC  701(  5):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC  892(  5):
+        Array index is out of range of bounds declaration [NCC#345]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC  893(  5):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC  897(  5):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1401(  9):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1404(  9):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1417(  9):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1491(  1):
+        The symbol 'request' was declared but never used [NCC#310]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1520( 45):
+        Possible data loss converting long to short [NCC#212]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1522( 13):
+        Comparison is ineffective - result of comparison is a constant [NCC#248]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1522( 13):
+        Loop, branch, or 'when' condition is always TRUE [NCC#249]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1639(  9):
+        Return value of function was ignored [NCC#174]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC    1(  1):
+        Not enough address table entries for optimum efficiency [NCC#24]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1764(  2):
+        The symbol 'CheckSum' was declared but never used [NCC#310]
+Warning: C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC 1764(  2):
+        The symbol 'DpramMon' was declared but never used [NCC#310]
+Compiling C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Denver.nc succeeded with result code 0.
+Requesting build from Neuron (R) Assembler
+Assembling...
+Neuron (R) Assembler: C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.ns
+Assembling C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.ns succeeded with result code 0.
+Requesting build from Neuron (R) Linker
+Linking...
+Neuron (R) Linker: Denver
+Warning: Statement expansion is not required for this target [NLD#516]
+Linking Denver::Development succeeded with result code 0.
+                       LIST OF MEMORY AREAS
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+SYSTEM IMAGE ROM             0000 3FFF 4000        - RESERVED - 
+OffChip NVRAM  (EECODE)      4000 5AFF 1B00       5A9D 5AFF 0063
+OffChip NVRAM  (Pool)         - AVAILABLE -       5B00 DFFF 8500
+OffChip RAM    (System)      E000 E54A 054B          - NONE -   
+OffChip RAMFAR               E54B E72D 01E3       E54B E554 000A
+OffChip RAMNEAR              E72E E7FF 00D2          - NONE -   
+OnChip  RAM    (System)      E800 EFC7 07C8          - NONE -   
+OnChip  RAM    (System)         - WASTE -         EFC8 EFFF 0038
+OnChip  EEPROM (Prolog)      F000 F02D 002E          - NONE -   
+OnChip  EEPROM (Config)      F02E F0F5 00C8          - NONE -   
+OnChip  EECODE               F0F6 F0F8 0003       F0F6 F0F8 0003
+OnChip  EEPROM (MemCtl)      F0F9 F106 000E          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F107 F7E6 06E0
+OnChip  EENEAR               F7E7 F7FE 0018       F7E7 F7E7 0001
+OnChip  EEPROM (Epilog)      F7FF F7FF 0001          - NONE -   
+End of Memory Area List
+Link Memory Usage Statistics:
+EEPROM Usage:  (not necessarily in order of physical layout)
+               (includes application use of external NVRAM)
+        System Data and Parameters          89 bytes
+        Domain and Address Tables           80 bytes
+        Network Variable Config Tables      94 bytes
+        System EENEAR Variables              2 bytes
+        Onchip Data Area Fragmentation       1 byte
+        Application EEPROM Variables         3 bytes
+        Library EEPROM Variables            18 bytes
+        Application Code and Const Data   5721 bytes
+        Library Code and Const Data        626 bytes
+        Self-Identification Data           464 bytes
+                                         -----
+        Total EEPROM Requirement          7098 bytes
+        Remaining EEPROM                 35910 bytes
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         701 bytes
+        Transaction Control Blocks         171 bytes
+        Appl Timers and I/O Change Events   35 bytes
+        Network and Application Buffers   2440 bytes
+        Network Debugger Memory Buffer     240 bytes(*)
+        System RAM Fragmentation            56 bytes
+        Application RAM Variables          443 bytes
+        Library RAM Variables                0 bytes
+                                         -----
+        Total RAM Requirement             4086 bytes(*)
+        Remaining RAM                       10 bytes(*)
+Successfully linked for FT 5000.
+        System RAM Fragmentation (56 bytes) is specific to
+                system use of external RAM.
+        Memory Map (9 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        Onchip EEPROM Data Fragmentation (1 byte) varies by Neuron model.
+        System EENEAR Variables (2 bytes) varies by firmware version.
+        System Upper EEPROM Area (1 byte) varies by firmware version.
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 374 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        (*) The network debugger is currently using 240 bytes of RAM.
+                The linker can automatically decrease this size to a minimum of 13 bytes,
+                as necessary, with a decrease in network debugger messaging performance.
+        NVRAM Signature  = 0000 @ 4000 .. 4001
+End of Link Statistics
+Requesting build from Neuron (R) Exporter
+Exporting...
+Neuron (R) Exporter: Denver
+Creating 'C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.NXE'... Done.
+Creating 'C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.XIF'... Done.
+Creating 'C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.XFB'... Done.
+Creating 'C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.APB'... Done.
+Creating 'C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.NDL'... Done.
+Creating 'C:\Users\JDS\Desktop\JDS_PRO\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.NME'... Done.
+Exporting Denver succeeded with result code 0.
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\BPLATE.NS
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\ECHELON.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\MODNVLEN.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\STRING.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\ADDRDEFS.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\ACCESS.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\MSG_ADDR.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\S32.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_STE.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\CONTROL.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\IO_TYPES.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NETMGMT.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_CKM.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_ERR.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_FM.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_INST.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_MOD.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_NMO.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_RQR.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_SEL.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_SUB.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_WCH.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_MODEL.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\STATUS.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\SNVT_FR.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\SNVT_FS.H
+C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H
+C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\FILE.H
+C:\USERS\JDS\DESKTOP\JDS_PRO\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\FSYS.H

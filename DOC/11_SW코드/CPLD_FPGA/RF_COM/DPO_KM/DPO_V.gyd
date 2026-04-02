@@ -1,0 +1,105 @@
+Pin Freeze File:  version M.70d
+
+2C256144 XC2C256-7-TQ144
+both_sw_in S:PIN45
+cancel_sw_in S:PIN53
+clk S:PIN30
+ext_sw_in S:PIN49
+hs_sw S:PIN88
+ic_sw_in S:PIN51
+int_sw_in S:PIN50
+occ_sw_in S:PIN54
+pei_sw_in S:PIN52
+both_led S:PIN56
+cancel_led S:PIN61
+dtmf_cs S:PIN23
+dtmf_inout<0> S:PIN21
+dtmf_inout<1> S:PIN19
+dtmf_inout<2> S:PIN17
+dtmf_inout<3> S:PIN16
+dtmf_rs0 S:PIN22
+dtmf_rw S:PIN24
+dual_mute_sp S:PIN113
+ext_led S:PIN57
+ic_led S:PIN59
+ic_mute_sp S:PIN112
+int_led S:PIN58
+live_sw S:PIN95
+mic_sw S:PIN94
+mute_sw S:PIN97
+occ_led S:PIN64
+pa_sw1 S:PIN98
+pei_led S:PIN60
+pei_mute_sp S:PIN111
+rxs<0> S:PIN140
+rxs<1> S:PIN139
+rxs<2> S:PIN138
+rxs<3> S:PIN136
+txs_mic<0> S:PIN134
+txs_mic<1> S:PIN133
+txs_mic<2> S:PIN132
+txs_mic<3> S:PIN131
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 pei_wait N_PZ_588 N_PZ_844 N_PZ_843
+		 cancel_mode rxs<0> N_PZ_578 next_st<3>
+		 next_st<2> next_st<0> next_st<1> rxs<1>
+		 rxs<2> N_PZ_799 txs_mic_0__or0000/txs_mic_0__or0000_D.UIM txs_mic_2__or0000/txs_mic_2__or0000_D.UIM
+		
+PARTITION FB2_1 cnt_blink<22> cnt_blink<30> cnt_blink<23> cnt_blink<24>
+		 cnt_blink<25> cnt_blink<31> blink_sig cnt_blink<8>
+		 cnt_blink<5> cnt_blink<3> cnt_blink<0> cnt_blink<26>
+		 cnt_blink<27> cnt_blink<28> cnt_blink<29> cnt_blink<2>
+		
+PARTITION FB3_1 rxs<3> cnt<20> txs_mic<0> cnt<19>
+		 txs_mic<1> cnt<18> cnt<17> cnt<16>
+		 cnt<14> cnt<12> cnt<5> cnt<4>
+		 cnt<2> txs_mic<2> cnt<1> txs_mic<3>
+		
+PARTITION FB4_6 dtmf_inout<3>
+PARTITION FB4_10 cnt<25> cnt<24> dtmf_inout<2> cnt<23>
+		
+PARTITION FB4_15 cnt<22> cnt<21>
+PARTITION FB5_1 cnt<13> cnt<8> cnt<11> cnt<7>
+		 cnt<6> cnt<3> cnt<10> cnt<0>
+		 clk_1ms cnt<31> cnt<30> cnt<29>
+		 cnt<28> cnt<15> cnt<27> cnt<26>
+		
+PARTITION FB6_1 cntms<20> cntms<21> cntms<28> cntms<22>
+		 cntms<29> cntms<30> cntms<31> cntms<6>
+		 cntms<5> cntms<0> cntms<2> cntms<23>
+		 cntms<24> cntms<25> cntms<26> cntms<27>
+		
+PARTITION FB7_1 cnt_blink<4> cnt_blink<1> dtmf_data<3> dtmf_data<2>
+		 cnt_blink<9> cnt_blink<7> dtmf_data<1> dtmf_data<0>
+		 dtmf_inout_tx_mux0000<2> dtmf_inout_tx_mux0000<0> dtmf_rw dtmf_cs
+		 dtmf_rs0 dtmf_inout<0> cnt_blink<6> dtmf_inout<1>
+		
+PARTITION FB8_10 cntms<4>
+PARTITION FB8_14 cntms<3> cntms<1> cnt<9>
+PARTITION FB9_1 ic_mute_sp dual_mute_sp cntms<10> cntms<16>
+		 cntms<9> cntms<15> cntms<8> cntms<7>
+		 current_st<3> current_st<2> current_st<1> cntms<14>
+		 cntms<13> cntms<12> cntms<11> current_st<0>
+		
+PARTITION FB10_1 pei_mute_sp
+PARTITION FB10_5 cnt_blink<21> cnt_blink<20> cnt_blink<16> cnt_blink<15>
+		 cnt_blink<14> cnt_blink<13> cnt_blink<12> cnt_blink<19>
+		 cnt_blink<11> cnt_blink<18> cnt_blink<10> cnt_blink<17>
+		
+PARTITION FB11_8 cntms<17> cntms<18> cntms<19>
+
+PARTITION FB12_11 pa_sw1 mute_sw
+PARTITION FB12_14 live_sw mic_sw
+
+
+PARTITION FB14_14 occ_led
+PARTITION FB14_16 cancel_led
+
+PARTITION FB16_5 pei_led ic_led
+PARTITION FB16_11 int_led ext_led both_led
+
+

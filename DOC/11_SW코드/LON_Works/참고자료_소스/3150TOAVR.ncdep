@@ -1,0 +1,67 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.ncdep
+; Created Monday, January 22, 2007, 11:25:13
+
+[Global]
+Provider=NEURON C Compiler
+Version=1
+Inputs=5
+Outputs=0
+Switches=11
+Parameters=1
+
+[Input_1]
+Basename=BPLATE.NS
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\BPLATE.NS
+Type=1
+Size=5512
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Input_2]
+Basename=3150TOAVR.NC
+Fullname=E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\3150TOAVR\3150TOAVR.NC
+Type=0
+Size=5337
+TimestampHigh=0x1c7385c
+TimestampLow=0xb404f45e
+
+[Input_3]
+Basename=ECHELON.H
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\ECHELON.H
+Type=1
+Size=18794
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Input_4]
+Basename=MODNVLEN.H
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\MODNVLEN.H
+Type=1
+Size=6600
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Input_5]
+Basename=IO_TYPES.H
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\IO_TYPES.H
+Type=1
+Size=2250
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Switches]
+2=1
+0=0
+10=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR
+10=C:\LonWorks\NeuronC\Include
+11=_MINIKIT
+11=_NEURONC
+14=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR
+17=0
+24=1
+15=4
+26=9F:FF:FF:48:32:04:11:01
+
+[Parameters]
+MainSourceFile=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR.nc

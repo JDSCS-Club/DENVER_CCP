@@ -1,0 +1,59 @@
+; Echelon Dependency File - do not edit.
+; E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.ncdep
+; Created Friday, January 19, 2007, 09:39:18
+
+[Global]
+Provider=NEURON C Compiler
+Version=1
+Inputs=4
+Outputs=0
+Switches=11
+Parameters=1
+
+[Input_1]
+Basename=BPLATE.NS
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\BPLATE.NS
+Type=1
+Size=5512
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Input_2]
+Basename=TEST1.NC
+Fullname=E:\ECHELON_LONWORKS\NEURON_C_EXAMPLE\TEST\MY TEST DEVICE\TEST1.NC
+Type=0
+Size=46
+TimestampHigh=0x1c73b61
+TimestampLow=0xe1027690
+
+[Input_3]
+Basename=ECHELON.H
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\ECHELON.H
+Type=1
+Size=18794
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Input_4]
+Basename=MODNVLEN.H
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\MODNVLEN.H
+Type=1
+Size=6600
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Switches]
+2=1
+0=0
+10=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device
+10=C:\LonWorks\NeuronC\Include
+11=_MINIKIT
+11=_NEURONC
+14=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1
+17=0
+24=1
+15=4
+26=9F:FF:FF:28:00:03:11:00
+
+[Parameters]
+MainSourceFile=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1.nc

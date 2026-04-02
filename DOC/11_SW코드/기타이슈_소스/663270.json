@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1497111",
+    "ThreadId": "663270",
+    "Html": "Hi \r<br />\n<br />\nI have noticed a bug in TFTPD64 Version 4.6\r<br />\n<br />\nDHCP fails to responds to a DHCP discover when it is bound to an IP address on an interface with secondary IPs defined, removing the secondary ip which TFTPD64 is not bound resolves the issue and a DHCP lease is offered...<br />\n",
+    "PostedDate": "2017-06-19T08:19:22.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

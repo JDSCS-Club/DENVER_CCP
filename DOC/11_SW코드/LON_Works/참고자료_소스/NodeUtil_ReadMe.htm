@@ -1,0 +1,976 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>NodeUtil ReadMe</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:2.0in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:2.5in;
+	text-indent:-.25in;
+	font-size:13.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:3.0in;
+	text-indent:-9.0pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:3.5in;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:4.0in;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:4.5in;
+	text-indent:-9.0pt;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:27.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-27.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	background:navy;
+	font-size:12.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.code, li.code, div.code
+	{mso-style-name:code;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.centertextbold, li.centertextbold, div.centertextbold
+	{mso-style-name:centertextbold;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.def2heading1, li.def2heading1, div.def2heading1
+	{mso-style-name:def2heading1;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-indent:.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.def2heading2, li.def2heading2, div.def2heading2
+	{mso-style-name:def2heading2;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-indent:1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.def2heading3, li.def2heading3, div.def2heading3
+	{mso-style-name:def2heading3;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-indent:1.75in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.def2heading4, li.def2heading4, div.def2heading4
+	{mso-style-name:def2heading4;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-indent:2.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.def2heading5, li.def2heading5, div.def2heading5
+	{mso-style-name:def2heading5;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-indent:2.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.numbered, li.numbered, div.numbered
+	{mso-style-name:numbered;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.heading2noentry, li.heading2noentry, div.heading2noentry
+	{mso-style-name:heading2noentry;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+p.bodysectiontitle, li.bodysectiontitle, div.bodysectiontitle
+	{mso-style-name:bodysectiontitle;
+	margin-right:6.8pt;
+	margin-left:6.8pt;
+	font-size:8.0pt;
+	font-family:"Arial","sans-serif";
+	color:#003366;
+	font-weight:bold;}
+p.bodytitle, li.bodytitle, div.bodytitle
+	{mso-style-name:bodytitle;
+	margin-right:6.8pt;
+	margin-left:6.8pt;
+	font-size:9.5pt;
+	font-family:"Arial","sans-serif";
+	color:#003366;
+	font-weight:bold;}
+p.Heading2NoEntry0, li.Heading2NoEntry0, div.Heading2NoEntry0
+	{mso-style-name:"Heading 2 No Entry";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;
+	font-style:italic;}
+p.Numbered0, li.Numbered0, div.Numbered0
+	{mso-style-name:Numbered;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.Code0, li.Code0, div.Code0
+	{mso-style-name:Code;
+	mso-style-link:"Code Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+span.CodeChar
+	{mso-style-name:"Code Char";
+	mso-style-link:Code;
+	font-family:"Courier New";}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:0in;text-align:center'><a name="_Toc40667017"></a><a
+name="_Toc84919571"></a><a name="_Toc41905519"></a><a name="_Toc40667019"></a><a
+name="_Toc81067296"></a><a name="_Toc81067609"></a><a name="_Toc81067895"></a><a
+name="_Toc2317458"></a><a name="_Toc2142608"></a><b><span style='font-size:
+16.0pt;font-family:"Arial","sans-serif"'>NodeUtil </span></b><b><span
+style='font-size:16.0pt;font-family:"Arial","sans-serif"'>Node Utility ReadMe
+File<br>
+</span></b><span style='font-size:14.0pt;font-family:"Arial","sans-serif"'>Release
+2.21, September 2010</span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:0in;text-align:center'><a name="_Toc40667018"><b><span
+style='font-family:"Arial","sans-serif"'>Copyright </span></b></a><b><sup><span
+style='font-family:"Helvetica","sans-serif"'>©</span></sup></b><b><span
+style='font-family:"Arial","sans-serif"'> 1994 – 2010 Echelon Corporation<br>
+All Rights Reserved</span></b></p>
+
+<h1><a name="_Toc291859054"></a><a name="_Toc66614057">1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview</a></h1>
+
+<p class=MsoNormal><a name="_Toc84919572"></a><a name="_Toc81067298"></a><a
+name="_Toc81067611"></a><a name="_Toc81067897"></a>This document describes how
+to use the NodeUtil Node Utility.  NodeUtil is a Windows console application
+that can be used with Echelon’s family of network interfaces (including the
+PCLTA-20, PCLTA-21, PCC-10, i.LON® 10, i.LON 100, i.LON 600, SmartServer, SLTA-10,
+U10, and U20 network interfaces) to diagnose and configure LonWorks® network
+interfaces, routers, and devices.</p>
+
+<p class=MsoNormal>NodeUtil is a test and diagnostic tool—it is not a network
+management tool.  It will not assign destination addresses or bind network
+variables.  Nor will it format LonMark® interoperable device information.&nbsp;
+A large number of LNS® based network management, diagnostic, monitoring and
+control tools are available; a directory of LNS based tools is available at <u><span
+style='color:blue'><a href="http://www.echelon.com/lns">www.echelon.com/lns</a></span></u>.&nbsp;
+A popular LNS based network engineering tool is the LonMaker® Integration Tool;
+see <u><span style='color:blue'><a href="http://www.echelon.com/lonmaker">www.echelon.com/lonmaker</a></span></u>
+for more information.&nbsp; NodeUtil runs on top of OpenLDV™ 3.3C or higher.&nbsp;
+The OpenLDV driver is included with the LNS Turbo Edition and the LonMaker
+Integration Tool Turbo Edition, and is available for royalty-free download from
+<u><span style='color:blue'><a href="http://www.echelon.com/OpenLDV">www.echelon.com/OpenLDV</a></span></u>.</p>
+
+<p class=MsoNormal>Additional information and updates, including critical
+updates, may be available in Echelon’s Downloads web page at <u><span
+style='color:blue'><a href="http://www.echelon.com/downloads">www.echelon.com/downloads</a></span></u>.
+</p>
+
+<p class=MsoNormal>NodeUtil is provided as an unsupported software tool intended
+for advanced LonWorks device developers and integrators. </p>
+
+<h1><a name="_Toc291859055">2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Contents</a></h1>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc291859054">1<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>        </span>Overview<span style='color:windowtext;
+display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc291859055">2<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>        </span>Contents<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc291859056">3<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>        </span>Requirements<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859057">3.1<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>PC Hardware Requirements<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859058">3.2<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>PC Software Requirements<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc291859059">4<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>        </span>Changes in this Release<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859060">4.1<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>Release 2.21<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859061">4.2<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>Release 2.17<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859062">4.3<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>Release 2.10<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859063">4.4<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>Release 2.08<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859064">4.5<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>Release 2.07<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859065">4.6<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>Release 2.06<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859066">4.7<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>Release 2.05<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859067">4.8<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>Release 2.04<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859068">4.9<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>       </span>Release 2.03<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859069">4.10<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 2.02<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859070">4.11<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 2.01<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859071">4.12<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 2.00<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859072">4.13<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 1.97<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859073">4.14<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 1.96<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859074">4.15<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 1.94<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859075">4.16<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 1.93<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859076">4.17<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 1.92<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859077">4.18<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 1.89<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859078">4.19<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 1.88<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859079">4.20<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 1.87<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc291859080">4.21<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>         </span>Release 1.84<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc291859081">5<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext;
+text-decoration:none'>        </span>Getting Started<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc291859056"></a><a name="_Toc66614060">3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Requirements</a></h1>
+
+<h2><a name="_Toc291859057"></a><a name="_Toc66614061">3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>PC
+Hardware Requirements</a></h2>
+
+<p class=MsoNormal>The following are minimum requirements:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Intel® Pentium® III 366MHz processor </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>128MB RAM </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>10MB of available hard-disk space </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>800x600 screen resolution </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Echelon LonWorks network interface—including the PCLTA-20,
+     PCLTA-21, PCC-10, i.LON 10, i.LON 100, i.LON 600, SmartServer, SLTA-10, U10,
+     and U20 network interfaces </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Internet Protocol (TCP/IP) compatible network interface (if you
+     are using an i.LON 10, i.LON 100, i.LON 600, or SmartServer network
+     interface) </li>
+</ul>
+
+<h2><a name="_Toc291859058"></a><a name="_Toc66614062">3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>PC
+Software Requirements</a></h2>
+
+<p class=MsoNormal>The following are minimum requirements:</p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>32-bit version of Microsoft® Windows® Windows 7, Windows Vista, Windows
+     XP, or Windows Server 2008 </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>OpenLDV 3.3C or later </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Appropriate Echelon Network Interface Driver (if you are using an
+     SLTA-10 or LTS-20) </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Windows TCP/IP software (if you are using an i.LON 10, i.LON 100,
+     i.LON 600, or SmartServer network interface) </li>
+</ul>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<h1><a name="_Toc291859059"></a><a name="_Toc40667022"></a><a
+name="_Toc66614064"></a><a name="_Toc32640996"></a><a name="_Toc32641147"></a><a
+name="_Toc32641002"></a><a name="_Toc32641153"></a><a name="_Toc32641005"></a><a
+name="_Toc32641156"></a><a name="_Toc32641006"></a><a name="_Toc32641157"></a><a
+name="_Toc32641007"></a><a name="_Toc32641158"></a><a name="_Toc32641008"></a><a
+name="_Toc32641159"></a><a name="_Toc32641012"></a><a name="_Toc32641163"></a><a
+name="_Toc32641015"></a><a name="_Toc32641166"></a><a name="_Toc32641022"></a><a
+name="_Toc32641173"></a><a name="_Toc32641024"></a><a name="_Toc32641175"></a><a
+name="_Toc32641030"></a><a name="_Toc32641181"></a><a name="_Toc32641031"></a><a
+name="_Toc32641182"></a><a name="_Toc32641041"></a><a name="_Toc32641192"></a><a
+name="_Toc32641047"></a><a name="_Toc32641198"></a><a name="_Toc32641054"></a><a
+name="_Toc32641205"></a><a name="_Toc32641055"></a><a name="_Toc32641206"></a>4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Changes
+in this Release</h1>
+
+<p class=MsoNormal>This section lists the major changes implemented since
+NodeUtil 1.84.  </p>
+
+<h2><a name="_Toc291859060">4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Release 2.21</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Added the <b>–H</b> and <b>–M</b> command line parameters.</li>
+ <li class=MsoNormal>Added the <b>(&lt;) Redirect input from a file</b> command
+     and changed the command key for the <b>Redirect (O)utput to a file</b>
+     command from <b>O</b> to <b>&gt;</b>.</li>
+ <li class=MsoNormal>Added the <b>(Q)uickly add device to list</b> command.</li>
+ <li class=MsoNormal>Added the <b>(&lt;) Redirect input from a file</b> device command
+     and changed the command key for the <b>Redirect (O)utput to a file</b> device
+     command from <b>O</b> to <b>&gt;</b>.</li>
+ <li class=MsoNormal>Added the <b>([) Performance test</b> device command and
+     the <b>(=) Signal strength</b> device command.</li>
+ <li class=MsoNormal>The following device commands can now be used to update as
+     well as display:  <b>Device (A)ddress table</b>, <b>Network variable
+     al(I)as table</b>, and <b>(N)etwork Variable configuration table</b>.</li>
+ <li class=MsoNormal>Domains can be set as clone domains, and the key for a
+     domain can be set even if the domain is not used.</li>
+ <li class=MsoNormal>Published the <i>NodeUtil Node Utility User’s Guide</i> (078-0438-01A).</li>
+</ul>
+
+<h2><a name="_Toc291859061">4.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Release 2.17</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Added support for Echelon Series 5000 chips. Allow clock
+     setting changes for Series 5000 chips.</li>
+ <li class=MsoNormal>Added the <b>(*) Refresh Memory</b> command.</li>
+</ul>
+
+<h2><a name="_Toc291859062">4.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Release 2.10</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Added the <b>–B</b> and <b>–J</b> command line parameters.</li>
+</ul>
+
+<h2><a name="_Toc291859063">4.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Release 2.08</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Added support for version 2 of the SNVT data structure. 
+     This version is used by host based devices that support dynamic network
+     variables.</li>
+ <li class=MsoNormal>Add support for devices that use the Extended Command Set
+     (ECS) network management messages.</li>
+</ul>
+
+<h2><a name="_Toc291859064">4.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Release 2.07</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Maximum NV size increased from 31 to 227 bytes.</li>
+</ul>
+
+<h2 style='margin-left:.5in;text-indent:-.5in'><a name="_Toc291859065">4.6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Release 2.06</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Program ID model number is now interpreted just as a
+     number (was shown as Neuron model).</li>
+</ul>
+
+<h2><a name="_Toc291859066">4.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Release 2.05</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Don't show NV fixed table for host nodes.</li>
+ <li class=MsoNormal>Added support for alias indices beyond 255.</li>
+</ul>
+
+<h2><a name="_Toc291859067">4.8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Release 2.04</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Added missing lines to generated device interface (XIF)
+     files.</li>
+ <li class=MsoNormal>Read the LonWorks directory location from the Windows
+     registry.  This location is used to locate the <b>stdxcvr.xml</b> file.</li>
+</ul>
+
+<h2><a name="_Toc291859068">4.9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Release 2.03</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Prompt for an authentication key after adding a device if
+     authentication fails.  Use the supplied key whenever switching to the same
+     device with the <b>(G)o to Device Menu</b> command.  Display the supplied
+     key in the device list.</li>
+</ul>
+
+<h2><a name="_Toc291859069">4.10<span style='font:7.0pt "Times New Roman"'> </span>Release
+2.02</a>         </h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Use <b>stdxcvr.xml</b> to map transceiver IDs to names.</li>
+</ul>
+
+<h2><a name="_Toc291859070">4.11<span style='font:7.0pt "Times New Roman"'> </span>Release
+2.01</a> </h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>You can include spaces in file names entered at console
+     prompts, with or without quotes.  This does not apply to file names
+     specified on the command line.</li>
+</ul>
+
+<h2><a name="_Toc291859071">4.12<span style='font:7.0pt "Times New Roman"'> </span>Release
+2.00</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Display an error message when a download fails due to
+     version or model mismatch. </li>
+ <li class=MsoNormal>When invoking the device <b>Application (C)onfiguration
+     Structures</b> command, refresh the cached data from the device first.</li>
+ <li class=MsoNormal>When stopped in paged output mode, allow an escape key to
+     abort the output.</li>
+ <li class=MsoNormal>Properly handle the new Version 16 firmware read only data
+     structure.</li>
+</ul>
+
+<h2><a name="_Toc291859072">4.13<span style='font:7.0pt "Times New Roman"'> </span>Release
+1.97</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Show <b>F1</b> in the Help menu. </li>
+ <li class=MsoNormal>Take the device offline before starting a download. </li>
+ <li class=MsoNormal>Disallow reboot of 3120 devices.  This will prevent the Echelon
+     U10 or U20 USB network interface to be rebooted and become unusable
+     because of default communication parameters being restored and becoming TP/XF1250.
+     </li>
+</ul>
+
+<h2><a name="_Toc291859073">4.14<span style='font:7.0pt "Times New Roman"'> </span>Release
+1.96</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Don't resize the window when starting up. </li>
+ <li class=MsoNormal>Don't set the priority buffer counts to 0 when
+     automatically resizing buffers.</li>
+</ul>
+
+<h2><a name="_Toc291859074">4.15<span style='font:7.0pt "Times New Roman"'> </span>Release
+1.94</a> </h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Don't attempt to read extended read-only data from devices
+     with a base version less than 16. </li>
+</ul>
+
+<h2><a name="_Toc291859075">4.16<span style='font:7.0pt "Times New Roman"'> </span>Release
+1.93</a></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Allow the device <b>(Q)uickly Send a Message</b> command
+     to send authenticated messages.</li>
+</ul>
+
+<h2><a name="_Toc291859076">4.17<span style='font:7.0pt "Times New Roman"'> </span>Release
+1.92</a> </h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Support Version 16 firmware including the new read-only
+     data structure format and new event table format. </li>
+ <li class=MsoNormal>Allow escape out of the device <b>Application
+     (C)onfiguration Structures</b> command.</li>
+</ul>
+
+<h2><a name="_Toc291859077">4.18<span style='font:7.0pt "Times New Roman"'> </span>Release
+1.89</a> </h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Fixed crash when doing a <b>(N)etwork Variable
+     Configuration Table</b> command with an NV count that doesn't match the device’s
+     actual count.  This could occur with a misconfigured ShortStack® host, for
+     example. </li>
+ <li class=MsoNormal>Reject hex numbers with more than 4 characters.</li>
+</ul>
+
+<h2><a name="_Toc291859078">4.19<span style='font:7.0pt "Times New Roman"'> </span>Release
+1.88</a> </h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Fixed crash when directing output to a file via the <b>Redirect
+     (O)utput to a File</b> command when the file already exists.</li>
+</ul>
+
+<h2><a name="_Toc291859079">4.20<span style='font:7.0pt "Times New Roman"'> </span>Release
+1.87</a> </h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Fixed problem with reading the escaped alias count in the
+     SI data.</li>
+</ul>
+
+<h2><a name="_Toc291859080">4.21<span style='font:7.0pt "Times New Roman"'> </span>Release
+1.84</a> </h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Increase re-transmit timer for power line transactions to
+     1.5 seconds. </li>
+</ul>
+
+<h1><a name="_Toc291859081">5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Getting Started</a></h1>
+
+<p class=MsoNormal>To install NodeUtil, follow these steps:</p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal>Install OpenLDV 3.3C or newer if you do not already have
+     it.  You can download OpenLDV from <a href="http://www.echelon.com/openldv">www.echelon.com/openldv</a>.</li>
+ <li class=MsoNormal>If you are using an Echelon network interface that needs a
+     driver in addition to the OpenLDV driver, verify that you have installed
+     that driver.  The OpenLDV ReadMe lists the network interfaces that require
+     separate drivers.</li>
+ <li class=MsoNormal>Configure your network interface driver if required.  See
+     the documentation for your selected network interface for details.&nbsp; </li>
+ <li class=MsoNormal>Install <b>StdXcvr.xml</b> if you do no already have it. 
+     This file is automatically installed by many applications including the
+     LonMaker Integration Tool, NodeBuilder® Development Tool, NodeBuilder
+     Resource Editor, and ShortStack Developer’s Kit.  If you have it
+     installed, it will be in your LonWorks Types directory.  This directory is
+     <b>C:\LonWorks\Types</b> by default, but you may have changed the location
+     of your LonWorks directory when you installed your first LonWorks tool. 
+     If you do not have a <b>StdXcvr.xml</b> file in your LonWorks Types
+     directory, download the file from the Design Guidelines page that you can
+     reach from <a href="http://www.lonmark.org/">www.lonmark.org</a>. </li>
+</ol>
+
+<p class=MsoNormal style='page-break-after:avoid'>To start NodeUtil, follow
+these steps:</p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal>Open a Windows command prompt by clicking <b>Start</b>,
+     pointing to <b>All Programs</b>, pointing to <b>Accessories</b>, and then
+     clicking <b>Command Prompt</b>.&nbsp; Set the path to the folder containing
+     NodeUtil and then start NodeUtil as described in the next section. 
+     Alternatively, you can create a shortcut for NodeUtil that sets the
+     starting directory to the directory containing NodeUtil.  Your shortcut
+     can also specify the command line options as described in the next
+     section.</li>
+ <li class=MsoNormal>NodeUtil starts, displays a sign-on message, and displays
+     a menu of commands.&nbsp; If there is any problem in opening the network
+     driver, NodeUtil displays error messages and exits back to the command
+     prompt.&nbsp; If this happens, check that the network driver is loaded
+     correctly, that you have OpenLDV 3.3C or higher installed, and that your
+     network interface hardware is correctly configured.  If NodeUtil succeeds
+     in opening the network driver, it displays a message similar to the following:</li>
+</ol>
+
+<p class=code style='margin-left:.5in'><span class=CodeChar>Echelon Node
+Utility Release 2.21<br>
+Received uplink local reset<br>
+Successfully installed TP/FT-10 network interface.<br>
+Welcome to the Echelon Node Utility application.<br>
+Activate the service pin on remote device to access it.<br>
+Enter one of the following commands by typing the indicated letter</span>:</p>
+
+<p class=MsoNormal style='margin-left:.5in'>This is followed by the NodeUtil
+Main menu.  See the <i>NodeUtil Node Utility User’s Guide</i> (078-0438-01A)
+for a description of the main menu and device menu commands.</p>
+
+</div>
+
+</body>
+
+</html>

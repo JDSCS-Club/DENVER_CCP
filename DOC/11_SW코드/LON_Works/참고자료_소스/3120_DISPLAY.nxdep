@@ -1,0 +1,148 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.nxdep
+; Created Monday, January 22, 2007, 11:25:53
+
+[Global]
+Provider=Echelon NEURON CHIP (r) Exporter
+Version=1
+Inputs=8
+Outputs=6
+Switches=20
+Parameters=0
+
+[Input_1]
+Basename=3120_DISPLAY.NLDEP
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.NLDEP
+Type=0
+Size=2580
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3b251c6
+
+[Input_2]
+Basename=neuron.xml
+Fullname=C:\LonWorks\types\neuron.xml
+Type=0
+Size=24932
+TimestampHigh=0x1c533c1
+TimestampLow=0xa29f9800
+
+[Input_3]
+Basename=stdxcvr.xml
+Fullname=C:\LonWorks\types\stdxcvr.xml
+Type=0
+Size=39657
+TimestampHigh=0x1c533c1
+TimestampLow=0xa29f9800
+
+[Input_4]
+Basename=3120_DISPLAY.NXE
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.NXE
+Type=0
+Size=2020
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3afef6c
+
+[Input_5]
+Basename=3120_DISPLAY.BF2
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.BF2
+Type=0
+Size=202
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3ab2ab8
+
+[Input_6]
+Basename=3120_DISPLAY.BIF
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.BIF
+Type=0
+Size=862
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3ab2ab8
+
+[Input_7]
+Basename=B3120E4X.sym
+Fullname=C:\LonWorks\Images\Ver14\B3120E4X.sym
+Type=0
+Size=12585
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Input_8]
+Basename=3120_DISPLAY.NEI
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.NEI
+Type=0
+Size=2484
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3ca294a
+
+[Output_1]
+Basename=3120_DISPLAY.NXE
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.NXE
+Type=0
+Size=2020
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3c56496
+
+[Output_2]
+Basename=3120_DISPLAY.XIF
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.XIF
+Type=0
+Size=1052
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3c7c6f0
+
+[Output_3]
+Basename=3120_DISPLAY.XFB
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.XFB
+Type=0
+Size=620
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3c7c6f0
+
+[Output_4]
+Basename=3120_DISPLAY.APB
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.APB
+Type=0
+Size=995
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3c7c6f0
+
+[Output_5]
+Basename=3120_DISPLAY.NEI
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.NEI
+Type=0
+Size=2484
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3ca294a
+
+[Output_6]
+Basename=3120_DISPLAY.NFI
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.NFI
+Type=0
+Size=7431
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3d15058
+
+[Switches]
+29=1024
+30=28945
+31=1
+24=1
+23=0
+22=5
+21=9
+1=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM
+2=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output
+3=3120_DISPLAY
+33=1
+34=1
+39=1
+37=1
+35=1
+36=1
+38=0
+41=1
+55=1
+17=9F:FF:FF:07:00:04:11:01
+
+[Parameters]
+

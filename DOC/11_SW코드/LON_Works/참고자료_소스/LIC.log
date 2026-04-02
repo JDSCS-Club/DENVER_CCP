@@ -1,0 +1,86 @@
+Build log C:\Lm\Source\WJ_LIC\LIC\Development\LIC.log
+Created Tuesday, May 01, 2012, at 08:50:06
+
+Build due for component Neuron (R) C Compiler, reason: File C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC is present but modified
+Requesting build from Neuron (R) C Compiler
+Compiling...
+Neuron (R) C Compiler: C:\Lm\Source\WJ_LIC\LIC\LIC.nc
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\COMM.H   26(  3):
+        Typename 'UNVT_subscribe' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\COMM.H   32(  3):
+        Typename 'UNVT_parameter' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\COMM.H   38(  3):
+        Typename 'UNVT_CDT_Command' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\COMM.H   47(  3):
+        Typename 'UNVT_sci_version' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\COMM.H   52(  3):
+        Typename 'UNVT_sci_version_request' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\COMM.H   54(  6):
+        Typename 'UNVT_wayside_req_enum' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\COMM.H   65(  3):
+        Typename 'UNVT_wayside_request' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\COMM.H   70(  3):
+        Typename 'UNVT_wayside_response' not found in Device Resource Files; 'SNVT*', 'SCPT*', 'UNVT*', 'UCPT*' are reserved [NCC#389]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC 1566(  1):
+        The symbol 'request' was declared but never used [NCC#310]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC 1602( 41):
+        Possible data loss converting long to short [NCC#212]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC 1604(  9):
+        Comparison is ineffective - result of comparison is a constant [NCC#248]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC 1604(  9):
+        Loop, branch, or 'when' condition is always TRUE [NCC#249]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC 1737(  9):
+        Return value of function was ignored [NCC#174]
+Warning: C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC 1816(  9):
+        Return value of function was ignored [NCC#174]
+Compiling C:\Lm\Source\WJ_LIC\LIC\LIC.nc succeeded with result code 0.
+Requesting build from Neuron (R) Assembler
+Assembling...
+Neuron (R) Assembler: C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.ns
+Assembling C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.ns succeeded with result code 0.
+Requesting build from Neuron (R) Linker
+Linking...
+Neuron (R) Linker: LIC
+Linking LIC::Development succeeded with result code 0.
+Requesting build from Neuron (R) Exporter
+Exporting...
+Neuron (R) Exporter: LIC
+Creating 'C:\Lm\Source\WJ_LIC\LIC\Development\LIC.NXE'... Done.
+Creating 'C:\Lm\Source\WJ_LIC\LIC\Development\LIC.XIF'... Done.
+Creating 'C:\Lm\Source\WJ_LIC\LIC\Development\LIC.XFB'... Done.
+Creating 'C:\Lm\Source\WJ_LIC\LIC\Development\LIC.APB'... Done.
+Creating 'C:\Lm\Source\WJ_LIC\LIC\Development\LIC.NEI'... Done.
+Creating 'C:\Lm\Source\WJ_LIC\LIC\Development\LIC.NDL'... Done.
+Exporting LIC succeeded with result code 0.
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\BPLATE.NS
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\ECHELON.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\MODNVLEN.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\ADDRDEFS.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\ACCESS.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\MSG_ADDR.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\S32.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\STDLIB.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\CONTROL.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\IO_TYPES.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NETMGMT.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_CKM.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_ERR.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_FM.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_INST.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_MOD.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_NMO.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_RQR.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_SEL.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_STE.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_SUB.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_WCH.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_MODEL.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\STATUS.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\STRING.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\BYTE.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\SNVT_FR.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\SNVT_FS.H
+C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\MEM.H
+C:\LM\SOURCE\WJ_LIC\LIC\COMM.H
+C:\LM\SOURCE\WJ_LIC\LIC\FILE.H
+C:\LM\SOURCE\WJ_LIC\LIC\FSYS.H

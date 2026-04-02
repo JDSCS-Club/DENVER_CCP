@@ -1,0 +1,1119 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:12
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_tim.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW4563.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_tim.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_tim.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_tim.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_tim.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_tim.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : This file provides all the TIM firmware functions.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "71x_tim.h"
+     18          
+     19          /* Private typedef -----------------------------------------------------------*/
+     20          /* Private define ------------------------------------------------------------*/
+     21          /* Private macro -------------------------------------------------------------*/
+     22          /* Private variables ---------------------------------------------------------*/
+     23          /* Private function prototypes -----------------------------------------------*/
+     24          /* Private functions ---------------------------------------------------------*/
+     25          
+     26          /*******************************************************************************
+     27          * Function Name  : TIM_Init
+     28          * Description    : This routine is used to Initialize the TIM peripheral
+     29          *                  registers to their default values.
+     30          * Input          : - TIMx: the Timer to be Initialized.
+     31          * Output         : None.
+     32          * Return         : None.
+     33          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     34          void TIM_Init(TIM_TypeDef *TIMx)
+     35          {
+     36            TIMx->CR1 = 0x0000;
+   \                     TIM_Init:
+   \        0x0   0xE3A0'1000        MOV      R1,#+0
+   \        0x4   0xE1C0'11B4        STRH     R1,[R0, #+20]
+     37            TIMx->CR2 = 0x0000;
+   \        0x8   0xE1C0'11B8        STRH     R1,[R0, #+24]
+     38            TIMx->SR  = 0x0000;
+   \        0xC   0xE1C0'11BC        STRH     R1,[R0, #+28]
+     39          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+     40          
+     41          /*******************************************************************************
+     42          * Function Name  : TIM_ClockSourceConfig
+     43          * Description    : This routine is used to configure the TIM clock source
+     44          * Input          : - TIMx: specifies the TIM to be configured.
+     45          *                  - Xclock: specifies the TIM source clock. It can be:
+     46          *                     TIM_INTERNAL : the TIM is clocked by the APB2 frequency
+     47          *                                    divided by the prescaler value.
+     48          *                     TIM_EXTERNAL : the TIM is clocked by an external Clock.
+     49          * Output         : None.
+     50          * Return         : None.
+     51          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     52          void TIM_ClockSourceConfig (TIM_TypeDef *TIMx, TIM_Clocks Xclock)
+     53          {
+     54            if (Xclock == TIM_EXTERNAL)
+   \                     TIM_ClockSourceConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x1A00'0003        BNE      ??TIM_ClockSourceConfig_0
+     55            {
+     56              TIMx->CR1 |= TIM_ECKEN_Mask;
+   \        0xC   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x10   0xE391'1001        ORRS     R1,R1,#0x1
+   \       0x14   0xE1C0'11B4        STRH     R1,[R0, #+20]
+   \       0x18   0xEA00'0004        B        ??TIM_ClockSourceConfig_1
+     57            }
+     58            else
+     59            {
+     60              TIMx->CR1 &= ~TIM_ECKEN_Mask;
+   \                     ??TIM_ClockSourceConfig_0:
+   \       0x1C   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x20   0xE3A0'20FE        MOV      R2,#+254
+   \       0x24   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x28   0xE012'1001        ANDS     R1,R2,R1
+   \       0x2C   0xE1C0'11B4        STRH     R1,[R0, #+20]
+     61            }
+     62          }
+   \                     ??TIM_ClockSourceConfig_1:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+     63          
+     64          /*******************************************************************************
+     65          * Function Name  : TIM_ClockSourceValue
+     66          * Description    : This routine is used to get the TIM clock source
+     67          * Input          : - TIMx: specifies the TIM to check its source clock.
+     68          * Output         : None.
+     69          * Return         : The TIM source clock. It can be:
+     70          *                   TIM_INTERNAL: The TIM is clocked by the APB2 frequency
+     71          *                                 divided by the prescaler value.
+     72          *                   TIM_EXTERNAL: The TIM is clocked by an external Clock.
+     73          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     74          TIM_Clocks TIM_ClockSourceValue (TIM_TypeDef *TIMx)
+     75          {
+     76            if ((TIMx->CR1 & TIM_ECKEN_Mask) == 0)
+   \                     TIM_ClockSourceValue:
+   \        0x0   0xE1D0'01B4        LDRH     R0,[R0, #+20]
+   \        0x4   0xE310'0001        TST      R0,#0x1
+   \        0x8   0x1A00'0001        BNE      ??TIM_ClockSourceValue_0
+     77            {
+     78              return TIM_INTERNAL;	
+   \        0xC   0xE3A0'0001        MOV      R0,#+1
+   \       0x10   0xEA00'0000        B        ??TIM_ClockSourceValue_1
+     79            }
+     80            else
+     81            {
+     82              return TIM_EXTERNAL;
+   \                     ??TIM_ClockSourceValue_0:
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \                     ??TIM_ClockSourceValue_1:
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+     83            }	
+     84          }
+     85          
+     86          /*******************************************************************************
+     87          * Function Name  : TIM_PrescalerConfig
+     88          * Description    : This routine is used to configure the TIM prescaler value
+     89          *                  to divide the internal clock.
+     90          * Input          : - TIMx: specifies the TIM to be configured.
+     91          *                  - Xprescaler: specifies the TIM prescaler value (8bit).
+     92          * Output         : None.
+     93          * Return         : None.
+     94          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     95          void TIM_PrescalerConfig (TIM_TypeDef *TIMx, u8 Xprescaler)
+     96          {
+     97            TIMx->CR2 = (TIMx->CR2 & 0xFF00) | Xprescaler;
+   \                     TIM_PrescalerConfig:
+   \        0x0   0xE1D0'21B8        LDRH     R2,[R0, #+24]
+   \        0x4   0xE212'2CFF        ANDS     R2,R2,#0xFF00
+   \        0x8   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0xC   0xE191'1002        ORRS     R1,R1,R2
+   \       0x10   0xE1C0'11B8        STRH     R1,[R0, #+24]
+     98          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+     99          
+    100          /*******************************************************************************
+    101          * Function Name  : TIM_PrescalerValue
+    102          * Description    : This routine is used to get the TIM prescaler value 
+    103          *                  when the internal clock is used.
+    104          * Input          : - TIMx: specifies the timer to get its prescaler value.
+    105          * Output         : None.
+    106          * Return         : The Current TIM prescaler Value (8bit).
+    107          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    108          u8 TIM_PrescalerValue (TIM_TypeDef *TIMx)
+    109          {
+    110            return TIMx->CR2 & 0x00FF;
+   \                     TIM_PrescalerValue:
+   \        0x0   0xE1D0'01B8        LDRH     R0,[R0, #+24]
+   \        0x4   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    111          }
+    112          
+    113          /*******************************************************************************
+    114          * Function Name  : TIM_ClockLevelConfig
+    115          * Description    : This routine is used to configure the TIM clock level
+    116          *                  when an external clock source is used.
+    117          * Input          : - TIMx: specifies the TIM to be configured.
+    118          *                  - Xedge: specifies the active edge of the external clock.
+    119          *                    It can be:
+    120          *                     TIM_RISING : The rising  edge.
+    121          *                     TIM_FALLING: The falling edge.
+    122          * Output         : None.
+    123          * Return         : None.
+    124          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    125          void TIM_ClockLevelConfig (TIM_TypeDef *TIMx, TIM_Clock_Edges Xedge)
+    126          {
+    127            if (Xedge == TIM_RISING)
+   \                     TIM_ClockLevelConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x1A00'0003        BNE      ??TIM_ClockLevelConfig_0
+    128            {
+    129              TIMx->CR1 |= TIM_EXEDG_Mask;
+   \        0xC   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x10   0xE391'1002        ORRS     R1,R1,#0x2
+   \       0x14   0xE1C0'11B4        STRH     R1,[R0, #+20]
+   \       0x18   0xEA00'0004        B        ??TIM_ClockLevelConfig_1
+    130            }
+    131            else
+    132            {
+    133              TIMx->CR1 &= ~TIM_EXEDG_Mask;
+   \                     ??TIM_ClockLevelConfig_0:
+   \       0x1C   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x20   0xE3A0'20FD        MOV      R2,#+253
+   \       0x24   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x28   0xE012'1001        ANDS     R1,R2,R1
+   \       0x2C   0xE1C0'11B4        STRH     R1,[R0, #+20]
+    134            }
+    135          }
+   \                     ??TIM_ClockLevelConfig_1:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    136          
+    137          /*******************************************************************************
+    138          * Function Name  : TIM_ClockLevelValue
+    139          * Description    : This routine is used to get and return the clock active level
+    140          *                  when using an external clock source
+    141          * Input          : - TIMx: specifies the TIM to be configured.
+    142          * Output         : None.
+    143          * Return         : The external clock level of the specified timer.
+    144          *                  It can be:            
+    145          *                    TIM_RISING  : The rising  edge.
+    146          *                    TIM_FALLING : The falling edge.
+    147          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    148          TIM_Clock_Edges TIM_ClockLevelValue (TIM_TypeDef *TIMx)
+    149          {
+    150            if ((TIMx->CR1 & TIM_EXEDG_Mask) == 0)
+   \                     TIM_ClockLevelValue:
+   \        0x0   0xE1D0'01B4        LDRH     R0,[R0, #+20]
+   \        0x4   0xE310'0002        TST      R0,#0x2
+   \        0x8   0x1A00'0001        BNE      ??TIM_ClockLevelValue_0
+    151            {
+    152              return TIM_FALLING;	
+   \        0xC   0xE3A0'0001        MOV      R0,#+1
+   \       0x10   0xEA00'0000        B        ??TIM_ClockLevelValue_1
+    153            }	
+    154            else
+    155            {
+    156              return TIM_RISING;	
+   \                     ??TIM_ClockLevelValue_0:
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \                     ??TIM_ClockLevelValue_1:
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+    157            }
+    158          }
+    159          
+    160          /*******************************************************************************
+    161          * Function Name  : TIM_ICAPModeConfig
+    162          * Description    : This routine is used to configure the input capture feature
+    163          * Input          : - TIMx: specifies the TIM to be configured.
+    164          *                  - Xchannel: specifies the input Capture Channel, it can be:
+    165          *                     TIM_CHANNEL_A, TIM_CHANNEL_B
+    166          *                  - Xedge: specifies the Active Edge, it can be:
+    167          *                     TIM_RISING, TIM_FALLING
+    168          * Output         : None.
+    169          * Return         : None.
+    170          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    171          void TIM_ICAPModeConfig (TIM_TypeDef  *TIMx, TIM_Channels Xchannel,
+    172                                   TIM_Clock_Edges  Xedge)
+    173          {
+    174            switch (Xchannel)
+   \                     TIM_ICAPModeConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x0A00'0002        BEQ      ??TIM_ICAPModeConfig_0
+   \        0xC   0xE351'0001        CMP      R1,#+1
+   \       0x10   0x0A00'000D        BEQ      ??TIM_ICAPModeConfig_1
+   \       0x14   0xEA00'0018        B        ??TIM_ICAPModeConfig_2
+    175            {
+    176              case TIM_CHANNEL_A :
+    177                if (Xedge == TIM_RISING)
+   \                     ??TIM_ICAPModeConfig_0:
+   \       0x18   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x1C   0xE352'0000        CMP      R2,#+0
+   \       0x20   0x1A00'0003        BNE      ??TIM_ICAPModeConfig_3
+    178                {
+    179                  TIMx->CR1 |= TIM_IEDGA_Mask;
+   \       0x24   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x28   0xE391'1004        ORRS     R1,R1,#0x4
+   \       0x2C   0xE1C0'11B4        STRH     R1,[R0, #+20]
+   \       0x30   0xEA00'0004        B        ??TIM_ICAPModeConfig_4
+    180                }
+    181                else
+    182                {
+    183                  TIMx->CR1 &= ~TIM_IEDGA_Mask;
+   \                     ??TIM_ICAPModeConfig_3:
+   \       0x34   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x38   0xE3A0'20FB        MOV      R2,#+251
+   \       0x3C   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x40   0xE012'1001        ANDS     R1,R2,R1
+   \       0x44   0xE1C0'11B4        STRH     R1,[R0, #+20]
+    184                }
+    185                break;
+   \                     ??TIM_ICAPModeConfig_4:
+   \       0x48   0xEA00'000B        B        ??TIM_ICAPModeConfig_2
+    186              case TIM_CHANNEL_B :
+    187                if (Xedge == TIM_RISING)
+   \                     ??TIM_ICAPModeConfig_1:
+   \       0x4C   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x50   0xE352'0000        CMP      R2,#+0
+   \       0x54   0x1A00'0003        BNE      ??TIM_ICAPModeConfig_5
+    188                {
+    189                  TIMx->CR1 |= TIM_IEDGB_Mask;
+   \       0x58   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x5C   0xE391'1008        ORRS     R1,R1,#0x8
+   \       0x60   0xE1C0'11B4        STRH     R1,[R0, #+20]
+   \       0x64   0xEA00'0004        B        ??TIM_ICAPModeConfig_6
+    190                }
+    191                else
+    192                {
+    193                  TIMx->CR1 &= ~TIM_IEDGB_Mask;
+   \                     ??TIM_ICAPModeConfig_5:
+   \       0x68   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x6C   0xE3A0'20F7        MOV      R2,#+247
+   \       0x70   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x74   0xE012'1001        ANDS     R1,R2,R1
+   \       0x78   0xE1C0'11B4        STRH     R1,[R0, #+20]
+    194                }
+    195                break;
+    196            }
+    197          }
+   \                     ??TIM_ICAPModeConfig_6:
+   \                     ??TIM_ICAPModeConfig_2:
+   \       0x7C   0xE12F'FF1E        BX       LR               ;; return
+    198          
+    199          /*******************************************************************************
+    200          * Function Name  : TIM_ICAPValue
+    201          * Description    : This routine is used to get and return the Input Capture 
+    202          *                  value.
+    203          * Input          : - TIMx: specifies the TIM to check its Input Capture value.
+    204          *                  - Xchannel: specifies the Input Capture channel, it can be:
+    205          *                     TIM_Channel_A, TIM_Channel_B 
+    206          * Output         : None.
+    207          * Return         : The input capture value of the specified timer and channel.
+    208          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    209          u16 TIM_ICAPValue (TIM_TypeDef *TIMx, TIM_Channels Xchannel)
+    210          {
+    211            if (Xchannel == TIM_CHANNEL_A)
+   \                     TIM_ICAPValue:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x1A00'0001        BNE      ??TIM_ICAPValue_0
+    212            {
+    213              return TIMx->ICAR;	
+   \        0xC   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \       0x10   0xEA00'0000        B        ??TIM_ICAPValue_1
+    214            } 	
+    215            else
+    216            {
+    217              return TIMx->ICBR;	
+   \                     ??TIM_ICAPValue_0:
+   \       0x14   0xE1D0'00B4        LDRH     R0,[R0, #+4]
+   \                     ??TIM_ICAPValue_1:
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+    218            }
+    219          }
+    220          
+    221          /*******************************************************************************
+    222          * Function Name  : TIM_OCMPModeConfig
+    223          * Description    : This routine is used to configure the output compare mode.
+    224          * Input          : - TIMx: specifies the TIM to be configured.
+    225          *                  - Xchannel: specifies the output compare channel, it can be:
+    226          *                     TIM_CHANNEL_A, TIM_CHANNEL_B
+    227          *                  - XpulseLength: specifies the pulse length.
+    228          *                  - Xmode: specifies the output compare mode, it can be:
+    229          *                      TIM_TIMING, TIM_WAVE 
+    230          *                  - Xlevel: specifies the level of the external signal after
+    231          *                    the match occurs, it can be:
+    232          *                      TIM_HIGH, TIM_LOW 
+    233          * Output         : None.
+    234          * Return         : None.
+    235          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    236          void TIM_OCMPModeConfig (TIM_TypeDef  *TIMx, TIM_Channels Xchannel,
+    237                                   u16 XpulseLength, TIM_OC_Modes Xmode,
+    238                                   TIM_Logic_Levels Xlevel)
+    239          {
+   \                     TIM_OCMPModeConfig:
+   \        0x0   0xE92D'4030        PUSH     {R4,R5,LR}
+    240            u16 Tmp1 = 0x0000;
+   \        0x4   0xE3A0'E000        MOV      LR,#+0
+    241            u16 Tmp2 = TIMx->CR2;
+   \        0x8   0xE1D0'41B8        LDRH     R4,[R0, #+24]
+    242          
+    243            TIMx->CR2 = 0x0000;
+   \        0xC   0xE3A0'C000        MOV      R12,#+0
+   \       0x10   0xE1C0'C1B8        STRH     R12,[R0, #+24]
+    244            /* Start The TIM Counter */
+    245            TIMx->CR1  = TIM_EN_Mask;
+   \       0x14   0xE3A0'5C80        MOV      R5,#+32768
+   \       0x18   0xE1C0'51B4        STRH     R5,[R0, #+20]
+    246            /* Update the CR2 Register */
+    247            TIMx->CR2  = Tmp2;
+   \       0x1C   0xE1C0'41B8        STRH     R4,[R0, #+24]
+    248            switch (Xmode)
+   \       0x20   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x24   0xE353'0000        CMP      R3,#+0
+   \       0x28   0x0A00'0002        BEQ      ??TIM_OCMPModeConfig_0
+   \       0x2C   0xE353'0001        CMP      R3,#+1
+   \       0x30   0x0A00'000C        BEQ      ??TIM_OCMPModeConfig_1
+   \       0x34   0xEA00'002A        B        ??TIM_OCMPModeConfig_2
+    249            {
+    250              case TIM_TIMING:
+    251                /* Output Compare Used only for Internal Timing Operation */
+    252                 if (Xchannel == TIM_CHANNEL_A)
+   \                     ??TIM_OCMPModeConfig_0:
+   \       0x38   0xE1B0'3001        MOVS     R3,R1
+   \       0x3C   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x40   0xE353'0000        CMP      R3,#+0
+   \       0x44   0x1A00'0003        BNE      ??TIM_OCMPModeConfig_3
+    253                 {
+    254                   Tmp1 &= ~TIM_OCAE_Mask;
+   \       0x48   0xE3A0'30BF        MOV      R3,#+191
+   \       0x4C   0xE383'3CFF        ORR      R3,R3,#0xFF00
+   \       0x50   0xE013'E00E        ANDS     LR,R3,LR
+   \       0x54   0xEA00'0002        B        ??TIM_OCMPModeConfig_4
+    255                 }
+    256                 else
+    257                 {
+    258                 	 Tmp1 &= ~TIM_OCBE_Mask;
+   \                     ??TIM_OCMPModeConfig_3:
+   \       0x58   0xE3A0'307F        MOV      R3,#+127
+   \       0x5C   0xE383'3CFF        ORR      R3,R3,#0xFF00
+   \       0x60   0xE013'E00E        ANDS     LR,R3,LR
+    259                 }
+    260                break;
+   \                     ??TIM_OCMPModeConfig_4:
+   \       0x64   0xEA00'001E        B        ??TIM_OCMPModeConfig_5
+    261                
+    262              case TIM_WAVE:
+    263                /* Output Compare Used for external wave generation */
+    264                 if (Xchannel == TIM_CHANNEL_A)
+   \                     ??TIM_OCMPModeConfig_1:
+   \       0x68   0xE1B0'3001        MOVS     R3,R1
+   \       0x6C   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x70   0xE353'0000        CMP      R3,#+0
+   \       0x74   0x1A00'0001        BNE      ??TIM_OCMPModeConfig_6
+    265                 {
+    266                   Tmp1 = TIM_OCAE_Mask;
+   \       0x78   0xE3A0'E040        MOV      LR,#+64
+   \       0x7C   0xEA00'0000        B        ??TIM_OCMPModeConfig_7
+    267                 }
+    268                 else
+    269                 {
+    270                 	 Tmp1 = TIM_OCBE_Mask;
+   \                     ??TIM_OCMPModeConfig_6:
+   \       0x80   0xE3A0'E080        MOV      LR,#+128
+   \                     ??TIM_OCMPModeConfig_7:
+   \       0x84   0xE5DD'300C        LDRB     R3,[SP, #+12]
+    271                 } 
+    272                      
+    273                if (Xlevel == TIM_HIGH)
+   \       0x88   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x8C   0xE353'0000        CMP      R3,#+0
+   \       0x90   0x1A00'0007        BNE      ??TIM_OCMPModeConfig_8
+    274                {
+    275                	if (Xchannel == TIM_CHANNEL_A)
+   \       0x94   0xE1B0'3001        MOVS     R3,R1
+   \       0x98   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x9C   0xE353'0000        CMP      R3,#+0
+   \       0xA0   0x1A00'0001        BNE      ??TIM_OCMPModeConfig_9
+    276                	{
+    277                	  Tmp1 |= TIM_OLVLA_Mask;
+   \       0xA4   0xE39E'EF40        ORRS     LR,LR,#0x100
+   \       0xA8   0xEA00'000C        B        ??TIM_OCMPModeConfig_10
+    278                  }
+    279                  else
+    280                  {
+    281                    Tmp1 |= TIM_OLVLB_Mask;	
+   \                     ??TIM_OCMPModeConfig_9:
+   \       0xAC   0xE39E'EF80        ORRS     LR,LR,#0x200
+   \       0xB0   0xEA00'000A        B        ??TIM_OCMPModeConfig_10
+    282                  }
+    283                }
+    284                else
+    285                {
+    286                	if (Xchannel == TIM_CHANNEL_A)
+   \                     ??TIM_OCMPModeConfig_8:
+   \       0xB4   0xE1B0'3001        MOVS     R3,R1
+   \       0xB8   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0xBC   0xE353'0000        CMP      R3,#+0
+   \       0xC0   0x1A00'0003        BNE      ??TIM_OCMPModeConfig_11
+    287                	{
+    288                	  Tmp1 &= ~TIM_OLVLA_Mask;	
+   \       0xC4   0xE3A0'30FF        MOV      R3,#+255
+   \       0xC8   0xE383'3CFE        ORR      R3,R3,#0xFE00
+   \       0xCC   0xE013'E00E        ANDS     LR,R3,LR
+   \       0xD0   0xEA00'0002        B        ??TIM_OCMPModeConfig_10
+    289                	}
+    290                	else
+    291                	{
+    292                	  Tmp1 &= ~TIM_OLVLB_Mask;	
+   \                     ??TIM_OCMPModeConfig_11:
+   \       0xD4   0xE3A0'30FF        MOV      R3,#+255
+   \       0xD8   0xE383'3CFD        ORR      R3,R3,#0xFD00
+   \       0xDC   0xE013'E00E        ANDS     LR,R3,LR
+    293                	}
+    294                }
+    295                break;
+   \                     ??TIM_OCMPModeConfig_10:
+   \       0xE0   0xEAFF'FFFF        B        ??TIM_OCMPModeConfig_5
+    296                
+    297              default:
+    298                break;
+    299            }
+    300            
+    301            if (Xchannel == TIM_CHANNEL_A)
+   \                     ??TIM_OCMPModeConfig_2:
+   \                     ??TIM_OCMPModeConfig_5:
+   \       0xE4   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xE8   0xE351'0000        CMP      R1,#+0
+   \       0xEC   0x1A00'0001        BNE      ??TIM_OCMPModeConfig_12
+    302            {
+    303              TIMx->OCAR = (XpulseLength);
+   \       0xF0   0xE1C0'20B8        STRH     R2,[R0, #+8]
+   \       0xF4   0xEA00'0000        B        ??TIM_OCMPModeConfig_13
+    304            }
+    305            else
+    306            {
+    307              TIMx->OCBR = (XpulseLength);
+   \                     ??TIM_OCMPModeConfig_12:
+   \       0xF8   0xE1C0'20BC        STRH     R2,[R0, #+12]
+    308            }
+    309            TIMx->CNTR = 0x0000;
+   \                     ??TIM_OCMPModeConfig_13:
+   \       0xFC   0xE1C0'C1B0        STRH     R12,[R0, #+16]
+    310            TIMx->CR1 |= Tmp1;
+   \      0x100   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \      0x104   0xE19E'1001        ORRS     R1,LR,R1
+   \      0x108   0xE1C0'11B4        STRH     R1,[R0, #+20]
+    311          }
+   \      0x10C   0xE8BD'4030        POP      {R4,R5,LR}
+   \      0x110   0xE12F'FF1E        BX       LR               ;; return
+    312          
+    313          /*******************************************************************************
+    314          * Function Name  : TIM_OPModeConfig
+    315          * Description    : This routine is used to configure the one pulse mode.
+    316          * Input          : - TIMx: specifies the TIM to be configured.
+    317          *                  - XpulseLength: specifies the pulse length.
+    318          *                  - XLevel1: specifies the output level on the OCMPA pin during
+    319          *                    the pulse it can be:
+    320          *                     TIM_HIGH, TIM_LOW
+    321          *                  - XLevel2: specifies the output level on the OCMPB pin after
+    322          *                    the pulse it can be:
+    323          *                     TIM_HIGH, TIM_LOW
+    324          *                  - Xedge:  specifies the edge to be detected by the input 
+    325          *                    capture A pin it can be:
+    326          *                     TIM_RISING, TIM_FALLING
+    327          * Output         : None.
+    328          * Return         : None.
+    329          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    330          void TIM_OPModeConfig (TIM_TypeDef *TIMx, u16 XpulseLength,
+    331                                 TIM_Logic_Levels XLevel1, TIM_Logic_Levels XLevel2,
+    332                                 TIM_Clock_Edges Xedge)
+    333          {
+    334            u16 Tmp = 0;
+   \                     TIM_OPModeConfig:
+   \        0x0   0xE3A0'C000        MOV      R12,#+0
+    335          
+    336            /* Set the Level During the pulse */
+    337            if (XLevel1 == TIM_HIGH)
+   \        0x4   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \        0x8   0xE352'0000        CMP      R2,#+0
+   \        0xC   0x1A00'0000        BNE      ??TIM_OPModeConfig_0
+    338            {
+    339              Tmp |= TIM_OLVLB_Mask;
+   \       0x10   0xE39C'CF80        ORRS     R12,R12,#0x200
+    340            }
+    341            
+    342            /* Set the Level after After the pulse */
+    343            if (XLevel2 == TIM_HIGH)
+   \                     ??TIM_OPModeConfig_0:
+   \       0x14   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x18   0xE353'0000        CMP      R3,#+0
+   \       0x1C   0x1A00'0000        BNE      ??TIM_OPModeConfig_1
+    344            {
+    345              Tmp |= TIM_OLVLA_Mask;
+   \       0x20   0xE39C'CF40        ORRS     R12,R12,#0x100
+   \                     ??TIM_OPModeConfig_1:
+   \       0x24   0xE5DD'2000        LDRB     R2,[SP, #+0]
+    346            }
+    347            
+    348            /* Set the Activation Edge on the INCAP 1 */  /* to be verified*/
+    349            if (Xedge == TIM_RISING)
+   \       0x28   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x2C   0xE352'0000        CMP      R2,#+0
+   \       0x30   0x1A00'0000        BNE      ??TIM_OPModeConfig_2
+    350            {
+    351              Tmp |= TIM_IEDGA_Mask;
+   \       0x34   0xE39C'C004        ORRS     R12,R12,#0x4
+    352            }
+    353            
+    354            /* Set the Output Compare Function */
+    355            Tmp |= TIM_OCAE_Mask;
+   \                     ??TIM_OPModeConfig_2:
+   \       0x38   0xE39C'2040        ORRS     R2,R12,#0x40
+    356            
+    357            /* Set the One pulse mode */
+    358            Tmp |= TIM_OPM_Mask;
+   \       0x3C   0xE392'2020        ORRS     R2,R2,#0x20
+    359            
+    360            /* Update the CR1 register Value */
+    361            TIMx->CR1 = Tmp;
+   \       0x40   0xE1C0'21B4        STRH     R2,[R0, #+20]
+    362            
+    363            /* Set the Pulse length */
+    364            TIMx->OCAR = XpulseLength;
+   \       0x44   0xE1C0'10B8        STRH     R1,[R0, #+8]
+    365          }
+   \       0x48   0xE12F'FF1E        BX       LR               ;; return
+    366          
+    367          /*******************************************************************************
+    368          * Function Name  : TIM_PWMOModeConfig
+    369          * Description    : This routine is used to configure the PWM output mode.
+    370          * Input          : - TIMx: specifies the TIM to be configured.
+    371          *                  - XDutyCycle: specifies the PWM signal duty cycle.
+    372          *                  - XLevel1: specifies the PWM signal level during the duty
+    373          *                    cycle, it can be:
+    374          *                     TIM_HIGH, TIM_LOW
+    375          *                  - XFullperiod: specifies the PWM signal full period.
+    376          *                  - XLevel2: specifies the PWM signal level out of the duty
+    377          *                    cycle, it can be:
+    378          *                     TIM_HIGH, TIM_LOW
+    379          * Output         : None.
+    380          * Return         : None.
+    381          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    382          void TIM_PWMOModeConfig (TIM_TypeDef *TIMx, u16 XDutyCycle,
+    383                                   TIM_Logic_Levels XLevel1, u16 XFullperiod,
+    384                                   TIM_Logic_Levels XLevel2)
+    385          {
+   \                     TIM_PWMOModeConfig:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    386            vu16 Tmp = TIMx->CR1;
+   \        0x4   0xE1D0'C1B4        LDRH     R12,[R0, #+20]
+   \        0x8   0xE1CD'C0B0        STRH     R12,[SP, #+0]
+    387            
+    388            /* Set the level during the pulse */
+    389            if (XLevel1 == TIM_HIGH)
+   \        0xC   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x10   0xE352'0000        CMP      R2,#+0
+   \       0x14   0x1A00'0003        BNE      ??TIM_PWMOModeConfig_0
+    390            {
+    391              Tmp |= TIM_OLVLB_Mask;	
+   \       0x18   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \       0x1C   0xE392'2F80        ORRS     R2,R2,#0x200
+   \       0x20   0xE1CD'20B0        STRH     R2,[SP, #+0]
+   \       0x24   0xEA00'0004        B        ??TIM_PWMOModeConfig_1
+    392            }
+    393            else
+    394            {
+    395              Tmp &= ~TIM_OLVLB_Mask;	
+   \                     ??TIM_PWMOModeConfig_0:
+   \       0x28   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \       0x2C   0xE3A0'C0FF        MOV      R12,#+255
+   \       0x30   0xE38C'CCFD        ORR      R12,R12,#0xFD00
+   \       0x34   0xE01C'2002        ANDS     R2,R12,R2
+   \       0x38   0xE1CD'20B0        STRH     R2,[SP, #+0]
+   \                     ??TIM_PWMOModeConfig_1:
+   \       0x3C   0xE5DD'2008        LDRB     R2,[SP, #+8]
+    396            }
+    397            
+    398            /* Set the level after the pulse */
+    399            if (XLevel2 == TIM_HIGH)
+   \       0x40   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x44   0xE352'0000        CMP      R2,#+0
+   \       0x48   0x1A00'0003        BNE      ??TIM_PWMOModeConfig_2
+    400            {
+    401              Tmp |= TIM_OLVLA_Mask;
+   \       0x4C   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \       0x50   0xE392'2F40        ORRS     R2,R2,#0x100
+   \       0x54   0xE1CD'20B0        STRH     R2,[SP, #+0]
+   \       0x58   0xEA00'0004        B        ??TIM_PWMOModeConfig_3
+    402            }
+    403            else
+    404            {
+    405              Tmp &= ~TIM_OLVLA_Mask;	
+   \                     ??TIM_PWMOModeConfig_2:
+   \       0x5C   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \       0x60   0xE3A0'C0FF        MOV      R12,#+255
+   \       0x64   0xE38C'CCFE        ORR      R12,R12,#0xFE00
+   \       0x68   0xE01C'2002        ANDS     R2,R12,R2
+   \       0x6C   0xE1CD'20B0        STRH     R2,[SP, #+0]
+    406            }
+    407          
+    408            /* Set the OCAE */
+    409            Tmp |= TIM_OCAE_Mask;
+   \                     ??TIM_PWMOModeConfig_3:
+   \       0x70   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \       0x74   0xE392'2040        ORRS     R2,R2,#0x40
+   \       0x78   0xE1CD'20B0        STRH     R2,[SP, #+0]
+    410            
+    411            /* Set the PWM Bit */
+    412            Tmp |= TIM_PWM_Mask;
+   \       0x7C   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \       0x80   0xE392'2010        ORRS     R2,R2,#0x10
+   \       0x84   0xE1CD'20B0        STRH     R2,[SP, #+0]
+    413            
+    414            /* Update the CR1 */
+    415            TIMx->CR1 = Tmp;
+   \       0x88   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \       0x8C   0xE1C0'21B4        STRH     R2,[R0, #+20]
+    416            
+    417            /* Set the Duty Cycle value */
+    418            if (XDutyCycle < 5)
+   \       0x90   0xE1B0'2001        MOVS     R2,R1
+   \       0x94   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x98   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x9C   0xE352'0005        CMP      R2,#+5
+   \       0xA0   0xAA00'0000        BGE      ??TIM_PWMOModeConfig_4
+    419            {
+    420              XDutyCycle = 4;
+   \       0xA4   0xE3A0'1004        MOV      R1,#+4
+    421            }
+    422            
+    423            TIMx->OCAR = XDutyCycle - 4;
+   \                     ??TIM_PWMOModeConfig_4:
+   \       0xA8   0xE3A0'20FC        MOV      R2,#+252
+   \       0xAC   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0xB0   0xE092'1001        ADDS     R1,R2,R1
+   \       0xB4   0xE1C0'10B8        STRH     R1,[R0, #+8]
+    424            
+    425            /* Set the Full Period */
+    426            TIMx->OCBR = XFullperiod - 4;
+   \       0xB8   0xE092'1003        ADDS     R1,R2,R3
+   \       0xBC   0xE1C0'10BC        STRH     R1,[R0, #+12]
+    427          }
+   \       0xC0   0xE8BD'4001        POP      {R0,LR}
+   \       0xC4   0xE12F'FF1E        BX       LR               ;; return
+    428          
+    429          /*******************************************************************************
+    430          * Function Name  : TIM_PWMIModeConfig
+    431          * Description    : This routine is used to configure the PWM input mode.
+    432          * Input          : - TIMx: specifies the TIM to be configured.
+    433          *                : - Xedge: specifies the first edge of the external PWM signal.
+    434          *                    It can be:
+    435          *                     TIM_RISING, TIM_FALLING
+    436          * Output         : None.
+    437          * Output         : None.
+    438          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    439          void TIM_PWMIModeConfig (TIM_TypeDef  *TIMx,  TIM_Clock_Edges  Xedge)
+    440          {
+   \                     TIM_PWMIModeConfig:
+   \        0x0   0xE24D'D004        SUB      SP,SP,#+4
+    441            vu16 Tmp = TIMx->CR1;
+   \        0x4   0xE1D0'21B4        LDRH     R2,[R0, #+20]
+   \        0x8   0xE1CD'20B0        STRH     R2,[SP, #+0]
+    442            
+    443            if (Xedge == TIM_RISING)
+   \        0xC   0xE1B0'2001        MOVS     R2,R1
+   \       0x10   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x14   0xE352'0000        CMP      R2,#+0
+   \       0x18   0x1A00'0003        BNE      ??TIM_PWMIModeConfig_0
+    444            {
+    445              Tmp |= TIM_IEDGA_Mask;	
+   \       0x1C   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \       0x20   0xE392'2004        ORRS     R2,R2,#0x4
+   \       0x24   0xE1CD'20B0        STRH     R2,[SP, #+0]
+   \       0x28   0xEA00'0004        B        ??TIM_PWMIModeConfig_1
+    446            }
+    447            else
+    448            {
+    449              Tmp &= ~TIM_IEDGA_Mask;
+   \                     ??TIM_PWMIModeConfig_0:
+   \       0x2C   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \       0x30   0xE3A0'30FB        MOV      R3,#+251
+   \       0x34   0xE383'3CFF        ORR      R3,R3,#0xFF00
+   \       0x38   0xE013'2002        ANDS     R2,R3,R2
+   \       0x3C   0xE1CD'20B0        STRH     R2,[SP, #+0]
+    450            }
+    451            
+    452            /* Set the first edge Level */
+    453            /* Set the Second edge Level (Opposit of the first level)*/
+    454            if (Xedge == TIM_FALLING)
+   \                     ??TIM_PWMIModeConfig_1:
+   \       0x40   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x44   0xE351'0001        CMP      R1,#+1
+   \       0x48   0x1A00'0003        BNE      ??TIM_PWMIModeConfig_2
+    455            {
+    456              Tmp |= TIM_IEDGB_Mask;
+   \       0x4C   0xE1DD'10B0        LDRH     R1,[SP, #+0]
+   \       0x50   0xE391'1008        ORRS     R1,R1,#0x8
+   \       0x54   0xE1CD'10B0        STRH     R1,[SP, #+0]
+   \       0x58   0xEA00'0004        B        ??TIM_PWMIModeConfig_3
+    457            }
+    458            else
+    459            {
+    460              Tmp &= ~TIM_IEDGB_Mask;	
+   \                     ??TIM_PWMIModeConfig_2:
+   \       0x5C   0xE1DD'10B0        LDRH     R1,[SP, #+0]
+   \       0x60   0xE3A0'20F7        MOV      R2,#+247
+   \       0x64   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x68   0xE012'1001        ANDS     R1,R2,R1
+   \       0x6C   0xE1CD'10B0        STRH     R1,[SP, #+0]
+    461            }
+    462          
+    463            /* Set the PWM I Bit */
+    464            Tmp |= TIM_PWMI_Mask;
+   \                     ??TIM_PWMIModeConfig_3:
+   \       0x70   0xE1DD'10B0        LDRH     R1,[SP, #+0]
+   \       0x74   0xE391'1C40        ORRS     R1,R1,#0x4000
+   \       0x78   0xE1CD'10B0        STRH     R1,[SP, #+0]
+    465          
+    466            /* Update the CR1 */
+    467            TIMx->CR1 = Tmp;
+   \       0x7C   0xE1DD'10B0        LDRH     R1,[SP, #+0]
+   \       0x80   0xE1C0'11B4        STRH     R1,[R0, #+20]
+    468          }
+   \       0x84   0xE28D'D004        ADD      SP,SP,#+4
+   \       0x88   0xE12F'FF1E        BX       LR               ;; return
+    469          
+    470          /*******************************************************************************
+    471          * Function Name  : TIM_PWMIValue
+    472          * Description    : This routine is used to get the PWMI values.
+    473          * Input          : - TIMx: specifies the TIM to get its PWM parameters values.
+    474          * Output         : None.
+    475          * Return         : The PWM input parameters: pulse and period.
+    476          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    477          PWMI_parameters TIM_PWMIValue (TIM_TypeDef  *TIMx)
+    478          {
+   \                     TIM_PWMIValue:
+   \        0x0   0xE24D'D004        SUB      SP,SP,#+4
+    479            PWMI_parameters Tmp;
+    480            
+    481            Tmp.Pulse  = TIMx->ICBR;
+   \        0x4   0xE1D0'20B4        LDRH     R2,[R0, #+4]
+   \        0x8   0xE1CD'20B0        STRH     R2,[SP, #+0]
+    482            Tmp.Period = TIMx->ICAR;
+   \        0xC   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \       0x10   0xE1CD'00B2        STRH     R0,[SP, #+2]
+    483            return Tmp;
+   \       0x14   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x18   0xE28D'D004        ADD      SP,SP,#+4
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    484          }
+    485          
+    486          /*******************************************************************************
+    487          * Function Name  : TIM_CounterConfig
+    488          * Description    : This routine is used to start/stop and clear the selected 
+    489          *                  timer counter.
+    490          * Input          : - TIMx: specifies the TIM to be configured.
+    491          *                  - Xoperation: specifies the operation of the counter.
+    492          *                    It can be:
+    493          *                     TIM_START, TIM_STOP, TIM_CLEAR
+    494          * Output         : None.
+    495          * Return         : None.
+    496          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    497          void TIM_CounterConfig (TIM_TypeDef  *TIMx, TIM_CounterOperations Xoperation)
+    498          {
+    499            switch (Xoperation)
+   \                     TIM_CounterConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x0A00'0003        BEQ      ??TIM_CounterConfig_0
+   \        0xC   0xE351'0002        CMP      R1,#+2
+   \       0x10   0x0A00'000A        BEQ      ??TIM_CounterConfig_1
+   \       0x14   0x3A00'0004        BCC      ??TIM_CounterConfig_2
+   \       0x18   0xEA00'000C        B        ??TIM_CounterConfig_3
+    500            {
+    501              case TIM_START :
+    502                TIMx->CR1 |= TIM_EN_Mask;
+   \                     ??TIM_CounterConfig_0:
+   \       0x1C   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x20   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x24   0xE1C0'11B4        STRH     R1,[R0, #+20]
+    503                break;
+   \       0x28   0xEA00'0008        B        ??TIM_CounterConfig_4
+    504                
+    505              case TIM_STOP :
+    506                TIMx->CR1 &= ~TIM_EN_Mask;
+   \                     ??TIM_CounterConfig_2:
+   \       0x2C   0xE1D0'11B4        LDRH     R1,[R0, #+20]
+   \       0x30   0xE1B0'1881        LSLS     R1,R1,#+17
+   \       0x34   0xE1B0'18A1        LSRS     R1,R1,#+17
+   \       0x38   0xE1C0'11B4        STRH     R1,[R0, #+20]
+    507                break;
+   \       0x3C   0xEA00'0003        B        ??TIM_CounterConfig_4
+    508                
+    509              case TIM_CLEAR :
+    510                TIMx->CNTR = 0x1234;
+   \                     ??TIM_CounterConfig_1:
+   \       0x40   0xE3A0'1034        MOV      R1,#+52
+   \       0x44   0xE381'1D48        ORR      R1,R1,#0x1200
+   \       0x48   0xE1C0'11B0        STRH     R1,[R0, #+16]
+    511                break;
+   \       0x4C   0xEAFF'FFFF        B        ??TIM_CounterConfig_4
+    512                
+    513              default:
+    514                break;  
+    515            }
+    516          }
+   \                     ??TIM_CounterConfig_3:
+   \                     ??TIM_CounterConfig_4:
+   \       0x50   0xE12F'FF1E        BX       LR               ;; return
+    517          
+    518          /*******************************************************************************
+    519          * Function Name  : TIM_ITConfig
+    520          * Description    : This routine is used to configure the TIM interrupt.
+    521          * Input          : - TIMx: specifies the TIM to be configured.
+    522          *                  - New_IT: specifies the TIM interrupt to be configured.
+    523          *                    You can specify one or more TIM interrupts to be configured
+    524          *                    using the logical operator ‘OR’. It can be:
+    525          *                     TIM_OCBIE, TIM_ICBIE, TIM_TOE, TIM_OCAIE, TIM_ICAIE
+    526          *                  - NewState: specifies the TIM interrupt state whether it
+    527          *                    would be enabled or disabled, it can be:
+    528          *                     ENABLE: the corresponding TIM interrupt(s) will be enabled.
+    529          *                     DISABLE: the corresponding TIM interrupt(s) will be
+    530          *                     disabled.
+    531          * Output         : None.
+    532          * Return         : None.
+    533          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    534          void TIM_ITConfig (TIM_TypeDef *TIMx, u16 New_IT, FunctionalState NewState)
+    535          {
+    536             if (NewState == ENABLE)
+   \                     TIM_ITConfig:
+   \        0x0   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \        0x4   0xE352'0001        CMP      R2,#+1
+   \        0x8   0x1A00'0003        BNE      ??TIM_ITConfig_0
+    537             {
+    538              TIMx->CR2 |= New_IT;
+   \        0xC   0xE1D0'21B8        LDRH     R2,[R0, #+24]
+   \       0x10   0xE191'1002        ORRS     R1,R1,R2
+   \       0x14   0xE1C0'11B8        STRH     R1,[R0, #+24]
+   \       0x18   0xEA00'0002        B        ??TIM_ITConfig_1
+    539             }
+    540             else
+    541             {
+    542              TIMx->CR2 &= ~New_IT;
+   \                     ??TIM_ITConfig_0:
+   \       0x1C   0xE1D0'21B8        LDRH     R2,[R0, #+24]
+   \       0x20   0xE1D2'1001        BICS     R1,R2,R1
+   \       0x24   0xE1C0'11B8        STRH     R1,[R0, #+24]
+    543             }
+    544          }
+   \                     ??TIM_ITConfig_1:
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+    545          
+    546          /*******************************************************************************
+    547          * Function Name  : TIM_FlagStatus
+    548          * Description    : Specifies the TIM to check a flag.
+    549          * Input          : - TIMx: specifies the TIM to check a flag.
+    550          *                  - Xflag: specifies the TIM flag to be tested. It can be:
+    551          *                     TIM_ICFA, TIM_OCFA, TIM_TOF,TIM_ICFB, TIM_OCFB
+    552          * Output         : None.
+    553          * Return         : The flag status passed in parameter.
+    554          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    555          FlagStatus TIM_FlagStatus (TIM_TypeDef *TIMx, TIM_Flags Xflag)
+    556          {
+    557            if ((TIMx->SR & Xflag) == 0)
+   \                     TIM_FlagStatus:
+   \        0x0   0xE1D0'01BC        LDRH     R0,[R0, #+28]
+   \        0x4   0xE111'0000        TST      R1,R0
+   \        0x8   0x1A00'0001        BNE      ??TIM_FlagStatus_0
+    558            {
+    559              return RESET;	 
+   \        0xC   0xE3A0'0000        MOV      R0,#+0
+   \       0x10   0xEA00'0000        B        ??TIM_FlagStatus_1
+    560            }
+    561            else
+    562            {
+    563              return SET;	
+   \                     ??TIM_FlagStatus_0:
+   \       0x14   0xE3A0'0001        MOV      R0,#+1
+   \                     ??TIM_FlagStatus_1:
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+    564            }
+    565          }
+    566          
+    567          /*******************************************************************************
+    568          * Function Name  : TIM_FlagClear
+    569          * Description    : This routine is used to clear the TIM flags.
+    570          * Input          : - TIMx: specifies the TIM to clear a flag.
+    571          * Output         : None.
+    572          * Return         : None.
+    573          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    574          void TIM_FlagClear (TIM_TypeDef *TIMx, TIM_Flags Xflag)
+    575          {
+    576            TIMx->SR &= ~Xflag;
+   \                     TIM_FlagClear:
+   \        0x0   0xE1D0'21BC        LDRH     R2,[R0, #+28]
+   \        0x4   0xE1D2'1001        BICS     R1,R2,R1
+   \        0x8   0xE1C0'11BC        STRH     R1,[R0, #+28]
+    577          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    578          
+    579          /*******************************************************************************
+    580          * Function Name  : TIM_CounterValue
+    581          * Description    : This routine returns the timer counter value.
+    582          * Input          : - TIMx: specifies the TIM to get its counter value.
+    583          * Output         : None.
+    584          * Return         : The selected timer counter value.
+    585          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    586          u16 TIM_CounterValue(TIM_TypeDef *TIMx)
+    587          {
+    588            return TIMx->CNTR;
+   \                     TIM_CounterValue:
+   \        0x0   0xE1D0'01B0        LDRH     R0,[R0, #+16]
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    589          }
+    590          
+    591          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   TIM_ClockLevelConfig
+       0   TIM_ClockLevelValue
+       0   TIM_ClockSourceConfig
+       0   TIM_ClockSourceValue
+       0   TIM_CounterConfig
+       0   TIM_CounterValue
+       0   TIM_FlagClear
+       0   TIM_FlagStatus
+       0   TIM_ICAPModeConfig
+       0   TIM_ICAPValue
+       0   TIM_ITConfig
+       0   TIM_Init
+      12   TIM_OCMPModeConfig
+       0   TIM_OPModeConfig
+       4   TIM_PWMIModeConfig
+       4   TIM_PWMIValue
+       8   TIM_PWMOModeConfig
+       0   TIM_PrescalerConfig
+       0   TIM_PrescalerValue
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      52  TIM_ClockLevelConfig
+      28  TIM_ClockLevelValue
+      52  TIM_ClockSourceConfig
+      28  TIM_ClockSourceValue
+      84  TIM_CounterConfig
+       8  TIM_CounterValue
+      16  TIM_FlagClear
+      28  TIM_FlagStatus
+     128  TIM_ICAPModeConfig
+      28  TIM_ICAPValue
+      44  TIM_ITConfig
+      20  TIM_Init
+     276  TIM_OCMPModeConfig
+      76  TIM_OPModeConfig
+     140  TIM_PWMIModeConfig
+      32  TIM_PWMIValue
+     200  TIM_PWMOModeConfig
+      24  TIM_PrescalerConfig
+      12  TIM_PrescalerValue
+
+ 
+ 1 276 bytes in section .text
+ 
+ 1 276 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1496576",
+    "ThreadId": "663011",
+    "Html": "we are using the latest release tftpd64 v4.60 under win2008 R2 and find we can't obtain ip address through tftpd64 server (dhcp) . Through wireshark , we find that it only have discovery phase ,no offer and the rest of phase ,anyone can run this successfully on win2008R2?<br />\n",
+    "PostedDate": "2017-05-18T08:14:09.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

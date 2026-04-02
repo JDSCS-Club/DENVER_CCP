@@ -1,0 +1,91 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 7,
+    "Custom": null,
+    "Description": "sir how Please tell can I handles the client system architecture (BIOS, UEFI x32, UEFI x64, etc …) wia TFTPD32 4.60 dhcp server\r\nOr how configure it for multiple boot type like boot UEFI and Legacy bios pc with different boot file. Thanks\r\n\r\n",
+    "LastUpdatedDate": "2017-03-30T01:25:51.68-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "tftpd64",
+    "ReportedDate": "2017-02-04T05:45:36.083-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "how now handles the client system architecture (BIOS, UEFI x32, UEFI x64, etc …).",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1634758,
+      "FileName": "Serva_30.png",
+      "DownloadUrl": ".\\1634758"
+    },
+    {
+      "FileId": 1634759,
+      "FileName": "s.png",
+      "DownloadUrl": ".\\1634759"
+    },
+    {
+      "FileId": 1651778,
+      "FileName": "s.png",
+      "DownloadUrl": ".\\1651778"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "and like this",
+      "PostedDate": "2017-02-04T05:49:08.167-08:00",
+      "Id": 206412
+    },
+    {
+      "Message": "You can configure DHCP to send a boot file name like \"boot.$IP$.pxe\".\nTftpd64 will substitute the \"$IP$\" string with the given IP address.\nThe $MAC$ keywork is also translated with the MAC address of the requesting device.",
+      "PostedDate": "2017-02-05T12:26:20.91-08:00",
+      "Id": 206430
+    },
+    {
+      "Message": "thanks for reply but sir I want to this type of code in TFTPD32\n\nFor example, in the dhcp configuration file, something similar to the following conditions could be used:\n\n; This one line must be outside any bracketed scope\noption architecture-type code 93 = unsigned integer 16;\n\nclass \"pxeclients\" {\n     match if substring (option vendor-class-identifier, 0, 9) = \"PXEClient\";\n\n     if option architecture-type = 0 {\n         filename \"path/to/BIOS/pxelinux.0\";\n     } elsif option architecture-type = 9 {\n         filename \"path/to/EFIx64/bootx64.efi\";\n     } elsif option architecture-type = 7 {\n         filename \"path/to/EFIx64/bootx64.efi\";\n     } elsif option architecture-type = 6 {\n         filename \"path/to/EFIia32/bootia32.efi\";\n     }\n}\n\n",
+      "PostedDate": "2017-02-05T20:19:44.927-08:00",
+      "Id": 206433
+    },
+    {
+      "Message": "Hello!\n\nI'm interested in this field too, and I made some progress on it doing some little \"hacking\" in bootpd*.c and bootpd*.h. I'm no good at C, but it seems to be working.\n\nWhat I do is:\n1. Read the DHCP packet's options, looking for 93,2,0 and 9/7/6\n2. Depending on the architecture, I replace a variable in the boot file name with efi-x86, efi-x64 or bios-x86\n\nI'll release those changes as soon as I'm sure they work, but I must say they're pretty dirty as C is not may native tongue :)",
+      "PostedDate": "2017-03-24T10:15:54.647-07:00",
+      "Id": 207901
+    },
+    {
+      "Message": "Hi again!\n\nI've tried to do it, and got some results, but didn't get to make it work in the end:\n\nin _services\\bootpd_functions.h, added this global variable in the end:\nchar last_architecture[10];\n\nin _services\\bootpd.c, added this little code just below of case DHCPREQUEST:\n```\n[...]\n        case DHCPREQUEST :\n\t\t\n_\t\t\tint i;\n\t\t\tstrcpy(last_architecture,\"bios-x86\");\n\t\t\tfor(i=0;i<DHCP_OPTION_LEN;i++){\n\t\t\t\tif(pDhcpPkt->options[i]==93 && pDhcpPkt->options[i+1]==2 && pDhcpPkt->options[i+2]==0) {\n\t\t\t\t\tif(pDhcpPkt->options[i+3]==7 || pDhcpPkt->options[i+3]==9) {\n\t\t\t\t\t\tstrcpy(last_architecture, \"efi-x64\");\n\t\t\t\t\t\tLOG (5, \"EFI ARCHITECTURE!!!!: %s \", last_architecture);\n\t\t\t\t\t}\n\t\t\t\t\tif(pDhcpPkt->options[i+3]==6) {\n\t\t\t\t\t\tstrcpy(last_architecture, \"efi-x86\");\n\t\t\t\t\t\tLOG (0, \"EFI ARCHITECTURE!!!!: %s \", last_architecture);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n_\t\t\n{BOOL bSERVER = FALSE;  // TRUE if Tftpd32 has assigned this address\n[...]\n```\n\nWith this we get the architecture of the last computer that did a \"DHCPREQUEST\".\n\nAnd in function TranslateExp, in bootpd_util.c, I added this:\n```\n    else if ( (q=strstr (exp, \"$MAC$\")) != NULL )\n    {\n       lstrcpyn (sz, exp, 1 + q - exp);\n       lstrcat (sz, haddrtoa (tMac, 6, '.') );\n       lstrcat (sz, q + sizeof \"$MAC$\" - 1);\n       lstrcpyn (to, sz, DHCP_FILE_LEN - 1);\n    }\n __   else if ( (q=strstr (exp, \"$ARCH$\")) != NULL )\n    {\n       lstrcpyn (sz, exp, 1 + q - exp);\n       lstrcat (sz, last_architecture );\n       lstrcat (sz, q + sizeof \"$ARCH$\" - 1);\n       lstrcpyn (to, sz, DHCP_FILE_LEN - 1);\n    }__\n    else if ( (q=strstr (exp, \"$BootFileName$\")) != NULL )\n    {\n```\n\nThose changes make the boot filename to change depending the architecture. The problem is that it works fine if you're using syslinux and don't care about UEFI Secure Boot. If you try to use Windows BOOTMGR, it won't work along with BIOS boot as it looks for the BCD in the same place (\\Boot\\BCD).\n\nOne solution would be changing the way the TFTP works so it will serve from different folders depending on the architecture, but that was too complicated for me. I tried, but got \"peer errors\" and aborted connections for some reason...\n\nAlso, the \"last architecture\" is not the one of the _current_ computer that asked for a file. If two computers of different boot architectures try to boot at the same time, the TFTP will serve the files randomly. \nThere should also be a MAC-Architecture relation table in order to serve the files correctly.\n\nPS: Please excuse my bad english, as it's also not my native tongue ;)",
+      "PostedDate": "2017-03-29T17:02:59.98-07:00",
+      "Id": 207989
+    },
+    {
+      "Message": "we can use option 252 (boot file name) if we got (arch) command in working mode\r\n@arch\\bcd (see pic in attachments).\r\n\r\n",
+      "PostedDate": "2017-03-29T20:50:50.207-07:00",
+      "Id": 207990
+    },
+    {
+      "Message": "Oh! I see... \nI'll try that then and come back later with results. Thanks! :)",
+      "PostedDate": "2017-03-30T01:25:51.68-07:00",
+      "Id": 207995
+    }
+  ]
+}

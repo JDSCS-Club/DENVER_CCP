@@ -1,0 +1,527 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:11
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_adc12.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW43D5.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_adc12.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_adc12.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_adc12.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_adc12.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_adc12.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : This file provides all the ADC12 firmware functions.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "71x_adc12.h"
+     18          
+     19          /* Private define ------------------------------------------------------------*/
+     20          /* Private macro -------------------------------------------------------------*/
+     21          /* Private variables ---------------------------------------------------------*/
+     22          /* Private function prototypes -----------------------------------------------*/
+     23          /* Private functions ---------------------------------------------------------*/
+     24          
+     25          /*******************************************************************************
+     26          * Function Name      : ADC12_Init
+     27          * Description        : This routine is used to initialize the ADC12 registers to
+     28          *                      their reset values.
+     29          * Input              : None.
+     30          * Output             : None.
+     31          * Return             : None.
+     32          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     33          void ADC12_Init(void)
+     34          {
+     35            /* Initiate ADC12 registers to their reset values */
+     36            ADC12->CSR  = 0x0000;
+   \                     ADC12_Init:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0x....'....        LDR      R1,??DataTable6  ;; 0xe0007020
+   \        0x8   0xE1C1'00B0        STRH     R0,[R1, #+0]
+     37            ADC12->CPR  = 0x0005;
+   \        0xC   0xE3A0'0005        MOV      R0,#+5
+   \       0x10   0x....'....        LDR      R1,??DataTable6_1  ;; 0xe0007030
+   \       0x14   0xE1C1'00B0        STRH     R0,[R1, #+0]
+     38          }
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+     39          
+     40          /*******************************************************************************
+     41          * Function Name      : ADC12_ConversionStart
+     42          * Description        : This routine is used to launch the conversion.
+     43          * Input              : None.
+     44          * Output             : None.
+     45          * Return             : None.
+     46          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     47          void ADC12_ConversionStart (void)
+     48          {
+     49            /* Set the ADCen bit of the BOOTCR register */
+     50            PCU->BOOTCR |= ADC12_Start_Mask;
+   \                     ADC12_ConversionStart:
+   \        0x0   0xE3A0'0050        MOV      R0,#+80
+   \        0x4   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \        0x8   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \        0xC   0xE391'1020        ORRS     R1,R1,#0x20
+   \       0x10   0xE1C0'10B0        STRH     R1,[R0, #+0]
+     51          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+     52          
+     53          /*******************************************************************************
+     54          * Function Name      : ADC12_ConversionStop
+     55          * Description        : This routine is used to disable the ADC12 cell.
+     56          * Input              : None.
+     57          * Output             : None.
+     58          * Return             : None.
+     59          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     60          void ADC12_ConversionStop(void)
+     61          {
+     62            /* Clear the ADCen bit of the BOOTCR register */
+     63            PCU->BOOTCR &= ~ADC12_Start_Mask;
+   \                     ADC12_ConversionStop:
+   \        0x0   0xE3A0'0050        MOV      R0,#+80
+   \        0x4   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \        0x8   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \        0xC   0xE3A0'20DF        MOV      R2,#+223
+   \       0x10   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x14   0xE012'1001        ANDS     R1,R2,R1
+   \       0x18   0xE1C0'10B0        STRH     R1,[R0, #+0]
+     64          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+     65          
+     66          
+     67          /*******************************************************************************
+     68          * Function Name  : ADC12_ModeConfig
+     69          * Description    : This routine is used to select the mode of conversion.
+     70          * Input          : - Mode: the mode of conversion. I can be:
+     71          *                     ADC12_SINGLE: Single channel mode.
+     72          *                     ADC12_ROUND : Round robin mode.
+     73          * Output         : None.
+     74          * Return         : None.
+     75          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     76          void ADC12_ModeConfig (ADC12_Modes Mode)
+     77          {
+     78            /* Select the mode of conversion and update the CSR */
+     79            if(Mode == ADC12_SINGLE)
+   \                     ADC12_ModeConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0000        CMP      R0,#+0
+   \        0x8   0x1A00'0004        BNE      ??ADC12_ModeConfig_0
+     80            {
+     81              /* Select Single mode */	
+     82              ADC12->CSR |= ADC12_Mode_Mask;
+   \        0xC   0x....'....        LDR      R0,??DataTable6  ;; 0xe0007020
+   \       0x10   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x14   0xE391'1040        ORRS     R1,R1,#0x40
+   \       0x18   0xE1C0'10B0        STRH     R1,[R0, #+0]
+   \       0x1C   0xEA00'0005        B        ??ADC12_ModeConfig_1
+     83            }
+     84            else
+     85            {
+     86             /* Select Round Robin mode */	
+     87             ADC12->CSR &= ~ADC12_Mode_Mask;
+   \                     ??ADC12_ModeConfig_0:
+   \       0x20   0x....'....        LDR      R0,??DataTable6  ;; 0xe0007020
+   \       0x24   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x28   0xE3A0'20BF        MOV      R2,#+191
+   \       0x2C   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x30   0xE012'1001        ANDS     R1,R2,R1
+   \       0x34   0xE1C0'10B0        STRH     R1,[R0, #+0]
+     88            }
+     89          }
+   \                     ??ADC12_ModeConfig_1:
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+     90          
+     91          /*******************************************************************************
+     92          * Function Name      : ADC12_PrescalerConfig
+     93          * Description        : This function is used to configure the ADC sampling 
+     94          *                      frequency by setting the prescaler register.
+     95          * Input              : - Adc12_clk: specifies the sampling frequency in Hz.
+     96          * Output             : None.
+     97          * Return             : None.
+     98          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     99          void ADC12_PrescalerConfig(u32 Adc12_clk)
+    100          {
+   \                     ADC12_PrescalerConfig:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    101            u32 temp = 0;
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+    102          
+    103            temp = (vu16)((RCCU_FrequencyValue(RCCU_PCLK2)*10) / (Adc12_clk * 512 * 8));
+   \        0xC   0xE3A0'0003        MOV      R0,#+3
+   \       0x10   0x....'....        BL       RCCU_FrequencyValue
+   \       0x14   0xE080'1100        ADD      R1,R0,R0, LSL #+2
+   \       0x18   0xE1B0'0081        LSLS     R0,R1,#+1
+   \       0x1C   0xE1B0'1604        LSLS     R1,R4,#+12
+   \       0x20   0x....'....        BL       __aeabi_uidiv
+   \       0x24   0xE1B0'4000        MOVS     R4,R0
+   \       0x28   0xE1A0'4804        LSL      R4,R4,#+16
+   \       0x2C   0xE1B0'4824        LSRS     R4,R4,#+16
+    104            
+    105            /* Configure the ADC12_CPR register with the nearest prescaler value */
+    106            if(temp - ((temp/10)*10) < 5)
+   \       0x30   0xE3A0'500A        MOV      R5,#+10
+   \       0x34   0xE1B0'0004        MOVS     R0,R4
+   \       0x38   0xE1B0'1005        MOVS     R1,R5
+   \       0x3C   0x....'....        BL       __aeabi_uidiv
+   \       0x40   0xE080'1100        ADD      R1,R0,R0, LSL #+2
+   \       0x44   0xE054'0081        SUBS     R0,R4,R1, LSL #+1
+   \       0x48   0xE350'0005        CMP      R0,#+5
+   \       0x4C   0x2A00'0005        BCS      ??ADC12_PrescalerConfig_0
+    107            {
+    108              ADC12->CPR = (u16)(temp/10);
+   \       0x50   0xE1B0'0004        MOVS     R0,R4
+   \       0x54   0xE1B0'1005        MOVS     R1,R5
+   \       0x58   0x....'....        BL       __aeabi_uidiv
+   \       0x5C   0x....'....        LDR      R1,??DataTable6_1  ;; 0xe0007030
+   \       0x60   0xE1C1'00B0        STRH     R0,[R1, #+0]
+   \       0x64   0xEA00'0005        B        ??ADC12_PrescalerConfig_1
+    109            }
+    110            else
+    111            {
+    112              ADC12->CPR = (u16)((temp/10)+1);
+   \                     ??ADC12_PrescalerConfig_0:
+   \       0x68   0xE1B0'0004        MOVS     R0,R4
+   \       0x6C   0xE1B0'1005        MOVS     R1,R5
+   \       0x70   0x....'....        BL       __aeabi_uidiv
+   \       0x74   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x78   0x....'....        LDR      R1,??DataTable6_1  ;; 0xe0007030
+   \       0x7C   0xE1C1'00B0        STRH     R0,[R1, #+0]
+    113            }
+    114          }
+   \                     ??ADC12_PrescalerConfig_1:
+   \       0x80   0xE8BD'4031        POP      {R0,R4,R5,LR}
+   \       0x84   0xE12F'FF1E        BX       LR               ;; return
+    115          
+    116          /*******************************************************************************
+    117          * Function Name      : ADC12_ChannelSelect
+    118          * Description        : This function selects the channel to be converted 
+    119          *                      in single channel mode of conversion.
+    120          * Input              : - ADC12_Channel: specifies the channel to be converted.
+    121          *                        It may be:
+    122          *                         ADC12_CHANNEL0 : select channel 0
+    123          *                         ADC12_CHANNEL1 : select channel 1
+    124          *                         ADC12_CHANNEL2 : select channel 2
+    125          *                         ADC12_CHANNEL3 : select channel 3
+    126          * Output             : None.
+    127          * Return             : None.
+    128          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    129          void ADC12_ChannelSelect(ADC12_Channels ADC12_Channel)
+    130          {
+    131            /* Clear present selected channel */
+    132            ADC12->CSR &= 0xFFCF;
+   \                     ADC12_ChannelSelect:
+   \        0x0   0x....'....        LDR      R1,??DataTable6  ;; 0xe0007020
+   \        0x4   0xE1D1'20B0        LDRH     R2,[R1, #+0]
+   \        0x8   0xE3A0'30CF        MOV      R3,#+207
+   \        0xC   0xE383'3CFF        ORR      R3,R3,#0xFF00
+   \       0x10   0xE013'2002        ANDS     R2,R3,R2
+   \       0x14   0xE1C1'20B0        STRH     R2,[R1, #+0]
+    133          
+    134            /* Update the CSR by the value of the selected channel */
+    135            ADC12->CSR |= ADC12_Channel;
+   \       0x18   0xE1D1'20B0        LDRH     R2,[R1, #+0]
+   \       0x1C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x20   0xE190'0002        ORRS     R0,R0,R2
+   \       0x24   0xE1C1'00B0        STRH     R0,[R1, #+0]
+    136          }
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+    137          
+    138          /*******************************************************************************
+    139          * Function Name      : ADC12_FlagStatus
+    140          * Description        : This function is used to test the status of the
+    141          *                      specified flag.
+    142          * Input              : - flag: specifies the flag to get the status. It can be:
+    143          *                         ADC12_DA0: Data Available on Channel 0
+    144          *                         ADC12_DA1: Data Available on Channel 1
+    145          *                         ADC12_DA2: Data Available on Channel 2
+    146          *                         ADC12_DA3: Data Available on Channel 3
+    147          *                         ADC12_OR : Overrun
+    148          * Output             : None.
+    149          * Return             : The status of the specified flag. Its value can be:
+    150          *                      SET: if the flag is set.
+    151          *                      RESET: if the flag is cleared.
+    152          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    153          FlagStatus ADC12_FlagStatus (ADC12_Flags flag)
+    154          {
+    155            /* Test on the flag status and return set or RESET */
+    156           if(ADC12->CSR & flag)
+   \                     ADC12_FlagStatus:
+   \        0x0   0x....'....        LDR      R1,??DataTable6  ;; 0xe0007020
+   \        0x4   0xE1D1'10B0        LDRH     R1,[R1, #+0]
+   \        0x8   0xE1A0'0800        LSL      R0,R0,#+16
+   \        0xC   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x10   0xE110'0001        TST      R0,R1
+   \       0x14   0x0A00'0001        BEQ      ??ADC12_FlagStatus_0
+    157            {
+    158              return(SET);
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \       0x1C   0xEA00'0000        B        ??ADC12_FlagStatus_1
+    159            }
+    160            else
+    161            {
+    162              return(RESET); 	
+   \                     ??ADC12_FlagStatus_0:
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \                     ??ADC12_FlagStatus_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    163            }  
+    164          }
+    165          
+    166          /*******************************************************************************
+    167          * Function Name      : ADC12_ConversionValue
+    168          * Description        : This functions gets the conversion result from the 
+    169          *                      data register of the specified channel. It returns the
+    170          *                      value of the corresponding data register.
+    171          * Input              : - ADC12_Channel: specifies the channel to get its result
+    172                                   of conversion. It can be:
+    173          *                         ADC12_CHANNEL0 : read the DATA0 register.
+    174          *                         ADC12_CHANNEL1 : read the DATA1 register.
+    175          *                         ADC12_CHANNEL2 : read the DATA2 register.
+    176          *                         ADC12_CHANNEL3 : read the DATA3 register.
+    177          * Output             : None.
+    178          * Return             : The result of conversion of the specified channel.
+    179          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    180          u16 ADC12_ConversionValue(ADC12_Channels ADC12_Channel)
+    181          {
+    182            /* Clear the correspondent DA bit */
+    183            ADC12->CSR &= ~(1 << (ADC12_Channel >> 4));
+   \                     ADC12_ConversionValue:
+   \        0x0   0x....'....        LDR      R2,??DataTable6  ;; 0xe0007020
+   \        0x4   0xE1D2'30B0        LDRH     R3,[R2, #+0]
+   \        0x8   0xE3A0'C001        MOV      R12,#+1
+   \        0xC   0xE1B0'1000        MOVS     R1,R0
+   \       0x10   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x14   0xE1B0'1221        LSRS     R1,R1,#+4
+   \       0x18   0xE1F0'111C        MVNS     R1,R12, LSL R1
+   \       0x1C   0xE011'1003        ANDS     R1,R1,R3
+   \       0x20   0xE1C2'10B0        STRH     R1,[R2, #+0]
+    184          
+    185            /* Only the 12 MSB of the DATAn Register are taken */
+    186            return *(u16 *)(ADC12_BASE + (ADC12_Channel >> 1)) >> 4;
+   \       0x24   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x28   0xE3A0'14E0        MOV      R1,#-536870912
+   \       0x2C   0xE381'1C70        ORR      R1,R1,#0x7000
+   \       0x30   0xE091'00C0        ADDS     R0,R1,R0, ASR #+1
+   \       0x34   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \       0x38   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x3C   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x40   0xE1B0'0220        LSRS     R0,R0,#+4
+   \       0x44   0xE12F'FF1E        BX       LR               ;; return
+    187          }
+    188          
+    189          
+    190          /*******************************************************************************
+    191          * Function Name      : ADC12_ITConfig
+    192          * Description        : This routine is used to enable or disable the interrupt
+    193          *                      routine.
+    194          * Input              : - NewState: specifies whether the interrupt will 
+    195          *                        be enabled or disabled.
+    196          *                         ENABLE: enable the interrupt routine.
+    197          *                         DISABLE: disable the interrupt routine.
+    198          * Output             : None.
+    199          * Return             : None.
+    200          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    201          void ADC12_ITConfig(FunctionalState NewState)
+    202          {
+    203            if (NewState == ENABLE)
+   \                     ADC12_ITConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0001        CMP      R0,#+1
+   \        0x8   0x1A00'0023        BNE      ??ADC12_ITConfig_0
+    204            {
+    205              /* If the single mode is selected */
+    206              if (ADC12->CSR & 0x0040)
+   \        0xC   0x....'....        LDR      R0,??DataTable6  ;; 0xe0007020
+   \       0x10   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x14   0xE311'0040        TST      R1,#0x40
+   \       0x18   0x0A00'001B        BEQ      ??ADC12_ITConfig_1
+    207              {
+    208                /* Set the corresponding interrupt bit according to the selected channel*/
+    209                switch (ADC12->CSR & 0x30)
+   \       0x1C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x20   0xE211'1030        ANDS     R1,R1,#0x30
+   \       0x24   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x28   0xE351'0000        CMP      R1,#+0
+   \       0x2C   0x0A00'0006        BEQ      ??ADC12_ITConfig_2
+   \       0x30   0xE351'0010        CMP      R1,#+16
+   \       0x34   0x0A00'0008        BEQ      ??ADC12_ITConfig_3
+   \       0x38   0xE351'0020        CMP      R1,#+32
+   \       0x3C   0x0A00'000A        BEQ      ??ADC12_ITConfig_4
+   \       0x40   0xE351'0030        CMP      R1,#+48
+   \       0x44   0x0A00'000C        BEQ      ??ADC12_ITConfig_5
+   \       0x48   0xEA00'0019        B        ??ADC12_ITConfig_6
+    210                {
+    211                  case 0x00 :
+    212                    ADC12->CSR |= ADC12_IT0_Mask;
+   \                     ??ADC12_ITConfig_2:
+   \       0x4C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x50   0xE391'1F40        ORRS     R1,R1,#0x100
+   \       0x54   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    213                    break;
+   \       0x58   0xEA00'0015        B        ??ADC12_ITConfig_6
+    214                  case 0x10 :
+    215                    ADC12->CSR |= ADC12_IT1_Mask;
+   \                     ??ADC12_ITConfig_3:
+   \       0x5C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x60   0xE391'1F80        ORRS     R1,R1,#0x200
+   \       0x64   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    216                    break;
+   \       0x68   0xEA00'0011        B        ??ADC12_ITConfig_6
+    217                  case 0x20 :
+    218                    ADC12->CSR |= ADC12_IT2_Mask;
+   \                     ??ADC12_ITConfig_4:
+   \       0x6C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x70   0xE391'1E40        ORRS     R1,R1,#0x400
+   \       0x74   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    219                    break;
+   \       0x78   0xEA00'000D        B        ??ADC12_ITConfig_6
+    220                  case 0x30 :
+    221                    ADC12->CSR |= ADC12_IT3_Mask;
+   \                     ??ADC12_ITConfig_5:
+   \       0x7C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x80   0xE391'1E80        ORRS     R1,R1,#0x800
+   \       0x84   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    222                    break;
+   \       0x88   0xEA00'0009        B        ??ADC12_ITConfig_6
+    223                }
+    224              }
+    225          
+    226              else
+    227              {
+    228                /* Set all interrupt bits in case of round robin mode is selected */
+    229                ADC12->CSR |= ADC12_IT_Mask;
+   \                     ??ADC12_ITConfig_1:
+   \       0x8C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x90   0xE391'1EF0        ORRS     R1,R1,#0xF00
+   \       0x94   0xE1C0'10B0        STRH     R1,[R0, #+0]
+   \       0x98   0xEA00'0005        B        ??ADC12_ITConfig_6
+    230              }
+    231            }
+    232            else
+    233            {
+    234              /* Clear all interrupt bits */
+    235              ADC12->CSR &= ~ADC12_IT_Mask;
+   \                     ??ADC12_ITConfig_0:
+   \       0x9C   0x....'....        LDR      R0,??DataTable6  ;; 0xe0007020
+   \       0xA0   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0xA4   0xE3A0'20FF        MOV      R2,#+255
+   \       0xA8   0xE382'2CF0        ORR      R2,R2,#0xF000
+   \       0xAC   0xE012'1001        ANDS     R1,R2,R1
+   \       0xB0   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    236            }
+    237          }
+   \                     ??ADC12_ITConfig_6:
+   \       0xB4   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6:
+   \        0x0   0xE000'7020        DC32     0xe0007020
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \        0x0   0xE000'7030        DC32     0xe0007030
+    238          
+    239          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+    240          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   ADC12_ChannelSelect
+       0   ADC12_ConversionStart
+       0   ADC12_ConversionStop
+       0   ADC12_ConversionValue
+       0   ADC12_FlagStatus
+       0   ADC12_ITConfig
+       0   ADC12_Init
+       0   ADC12_ModeConfig
+      16   ADC12_PrescalerConfig
+        16   -> RCCU_FrequencyValue
+        16 __aeabi_uidiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+      44  ADC12_ChannelSelect
+      24  ADC12_ConversionStart
+      32  ADC12_ConversionStop
+      72  ADC12_ConversionValue
+      40  ADC12_FlagStatus
+     184  ADC12_ITConfig
+      28  ADC12_Init
+      60  ADC12_ModeConfig
+     136  ADC12_PrescalerConfig
+
+ 
+ 628 bytes in section .text
+ 
+ 628 bytes of CODE memory
+
+Errors: none
+Warnings: none

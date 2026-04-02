@@ -1,0 +1,71 @@
+#include "FILE.h"
+#include "FSYS.h"
+
+void ErrorStatus(void); 
+char CheckSum(int NumSel);
+void WaySideOn(int Request); 
+void Self_Install(void);
+void NvConfig(void); //Network Variable Config
+void Location(void); //Location Configuration
+void AddressTable(void); //Address Table Configuration
+void DomainTable(void);
+
+// *** configuration bit patterns ***
+//
+#define LOCAL_CONFIG_DONE	0x5ac3
+#define NOT_LOCAL_CONFIG	0UL
+
+
+//**************************************************************************************************//
+//                                       Type Declarations                                          //
+//**************************************************************************************************//
+typedef struct
+{
+    unsigned short	param_id;
+    unsigned long	update_rate;
+} UNVT_subscribe;
+
+typedef struct
+{
+    unsigned short	param_id;
+    signed long		param_value;
+} UNVT_parameter;
+
+typedef struct
+{
+    unsigned short	command_id;
+    unsigned long	command_arg;
+} UNVT_CDT_Command;
+
+typedef struct
+{
+    unsigned short	sci_index;
+    unsigned short	sci_type;
+    unsigned char	sci_name[9];
+    unsigned char	sci_version[9];
+    unsigned char	build_date[11];
+} UNVT_sci_version;
+
+typedef struct
+{
+    unsigned short	sci_index;
+} UNVT_sci_version_request;
+
+enum UNVT_wayside_req_enum
+{
+    WAYSIDE_recent_start = 1,
+    WAYSIDE_recent_ack,
+    WAYSIDE_hist_start,
+    WAYSIDE_hist_ack
+};
+typedef struct 
+{
+     unsigned short request;
+     s32_type time_stamp;
+} UNVT_wayside_request;
+
+typedef struct
+{
+    unsigned short	response;
+} UNVT_wayside_response;
+

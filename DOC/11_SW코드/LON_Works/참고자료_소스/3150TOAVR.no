@@ -1,0 +1,823 @@
+!nas 3.11.07
+R0 f
+R1 2
+R3 5
+R5 2
+R8 2
+Rb 16
+Rc 14
+Rd 42
+Re 2a
+Rf 7
+R10 1
+R15 1
+R24 2
+R30 1
+
+.F008DIRECTORY
+.F00APROTECTBIT
+.F00DPROGID
+.F015MODETABLE
+.F01ABUFCOUNTS
+.F01DEENEARBYTES
+.F023TX_CTRL
+
+o0000 0005
+
+^E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.ns
+@50
+02j
+@51
+00j
+@52
+7Fj
+00j
+00j
+
+x0000 0002
+#0000%nviGaslcd
+
+@200
+*2
+
+x0000 0002
+#0000%nviCdslcd
+
+@205
+*2
+
+x0000 0002
+#0000%nvitemplcd
+
+@210
+*2
+
+x0000 0002
+#0000%nvoRfid
+
+@215
+*2
+
+x0000 0002
+#0000%nvoIrd
+
+@220
+*2
+
+x0000 0002
+#0000%nvosw1
+
+@225
+*2
+
+x0000 0002
+#0000%nvosw2
+
+@230
+*2
+
+x0000 0004
+#0000%szRxBufA
+
+@235
+*4
+
+x0000 0004
+#0000%szRxBufB
+
+@240
+*4
+
+x0000 0004
+#0000%obuffer
+
+@245
+*4
+
+x0000 0004
+#0000%com_data
+
+@250
+*4
+
+s0000 00D2
+#0000%processRxData
+
+@260
+C0
+@261
+5900
+@262
+84
+@263
+A5
+@264
+0000g_gequ8s 
+@265
+7214
+@266
+BF
+@267
+BF
+@268
+BF
+@269
+0000g_adds_8_16 
+@270
+F0
+@271
+9800
+@272
+B50000i%com_data 
+@273
+BE
+@274
+0000g_adds_8_16 
+@275
+F3
+@276
+DB00
+@277
+3E
+@278
+71E6
+@279
+9900k%com_data @2
+@280
+5B02
+@281
+43
+@282
+750000i%processRxData 0D1 +
+@283
+9900k%com_data @203 +
+@284
+5B03
+@285
+43
+@286
+750000i%processRxData 0D1 +
+@287
+9900k%com_data @201 +
+@288
+76A102
+@289
+7113
+@290
+76A202
+@291
+7131
+@292
+76A302
+@293
+714F
+@294
+76A402
+@295
+716D
+@296
+E4
+@297
+750000i%processRxData 0D1 +
+@298
+9900k%com_data @202 +
+@299
+5B33
+@300
+6F
+@301
+81
+@302
+83
+@303
+81
+@304
+0000g_nv_update_int_offset 
+@305
+B5C803
+@306
+0000g_nv_update_int 
+@307
+80
+@308
+82
+@309
+0000g_bit_output_lo1 
+@310
+2D
+@311
+80
+@312
+83
+@313
+81
+@314
+0000g_nv_update_int_offset 
+@315
+80
+@316
+83
+@317
+0000g_nv_update_int 
+@318
+81
+@319
+82
+@320
+0000g_bit_output_lo1 
+@321
+7167
+@322
+9900k%com_data @202 +
+@323
+5B55
+@324
+6F
+@325
+81
+@326
+84
+@327
+81
+@328
+0000g_nv_update_int_offset 
+@329
+B5C804
+@330
+0000g_nv_update_int 
+@331
+80
+@332
+84
+@333
+0000g_bit_output_lo1 
+@334
+2D
+@335
+80
+@336
+84
+@337
+81
+@338
+0000g_nv_update_int_offset 
+@339
+80
+@340
+84
+@341
+0000g_nv_update_int 
+@342
+81
+@343
+84
+@344
+0000g_bit_output_lo1 
+@345
+7144
+@346
+9900k%com_data @202 +
+@347
+5BD0
+@348
+6F
+@349
+81
+@350
+85
+@351
+81
+@352
+0000g_nv_update_int_offset 
+@353
+B5C805
+@354
+0000g_nv_update_int 
+@355
+80
+@356
+81
+@357
+0000g_bit_output_lo1 
+@358
+2D
+@359
+80
+@360
+85
+@361
+81
+@362
+0000g_nv_update_int_offset 
+@363
+80
+@364
+85
+@365
+0000g_nv_update_int 
+@366
+81
+@367
+A4
+@368
+0000g_bit_output_lo1 
+@369
+7121
+@370
+9900k%com_data @202 +
+@371
+5BD0
+@372
+6F
+@373
+81
+@374
+86
+@375
+81
+@376
+0000g_nv_update_int_offset 
+@377
+B5C806
+@378
+0000g_nv_update_int 
+@379
+80
+@380
+81
+@381
+0000g_bit_output_lo1 
+@382
+2D
+@383
+80
+@384
+86
+@385
+81
+@386
+0000g_nv_update_int_offset 
+@387
+80
+@388
+86
+@389
+0000g_nv_update_int 
+@390
+81
+@391
+A4
+@392
+0000g_bit_output_lo1 
+@393
+7D
+
+s0000 001A
+.0000WHEN1
+
+@398
+82
+@399
+D900k%obuffer @2
+@400
+B4E0
+@401
+D900k%obuffer @201 +
+@402
+9900k%nviGaslcd @2
+@403
+D900k%obuffer @202 +
+@404
+B4FF
+@405
+D900k%obuffer @203 +
+@406
+83
+@407
+D900k%obuffer @204 +
+@408
+85
+@409
+B50000i%obuffer 
+@410
+770000i_io_sci_set_buffer_out 
+@411
+31
+
+s0000 001A
+.0000WHEN2
+
+@416
+82
+@417
+D900k%obuffer @2
+@418
+B4E1
+@419
+D900k%obuffer @201 +
+@420
+9900k%nviCdslcd @201 +
+@421
+D900k%obuffer @202 +
+@422
+B4FF
+@423
+D900k%obuffer @203 +
+@424
+83
+@425
+D900k%obuffer @204 +
+@426
+85
+@427
+B50000i%obuffer 
+@428
+770000i_io_sci_set_buffer_out 
+@429
+31
+
+s0000 0035
+.0000WHEN3
+
+@434
+C1
+@435
+B5FF00
+@436
+9900k%nvitemplcd @2
+@437
+9900k%nvitemplcd @201 +
+@438
+0000g_and16 
+@439
+FF
+@440
+FF
+@441
+B408
+@442
+BF
+@443
+BF
+@444
+0000g_r_shift16 
+@445
+E5
+@446
+D900k%obuffer @202 +
+@447
+B500FF
+@448
+9900k%nvitemplcd @2
+@449
+9900k%nvitemplcd @201 +
+@450
+0000g_and16 
+@451
+FF
+@452
+FF
+@453
+A4
+@454
+D900k%obuffer @203 +
+@455
+82
+@456
+D900k%obuffer @2
+@457
+B4E2
+@458
+D900k%obuffer @201 +
+@459
+83
+@460
+D900k%obuffer @204 +
+@461
+85
+@462
+B50000i%obuffer 
+@463
+770000i_io_sci_set_buffer_out 
+@464
+7E
+
+s0000 0023
+.0000WHEN4
+
+@469
+84
+@470
+9900k%bufTog @2
+@471
+44
+@472
+B50000i%szRxBufA 
+@473
+23
+@474
+B50000i%szRxBufB 
+@475
+770000i_io_sci_set_buffer_in 
+@476
+E4
+@477
+9900k%bufTog @2
+@478
+5B01
+@479
+D900k%bufTog @2
+@480
+9900k%bufTog @2
+@481
+44
+@482
+B50000i%szRxBufA 
+@483
+23
+@484
+B50000i%szRxBufB 
+@485
+770000i%processRxData 
+@486
+31
+
+s0000 003A
+.0000APINIT
+.000ARESET
+
+@503
+75FD00
+@505
+84
+@506
+770000i_io_scispi_input_ready 
+@507
+0000g_equal8 
+@508
+31
+@510
+80
+@511
+D900k%bufTog @2
+@512
+84
+@513
+B50000i%szRxBufA 
+@514
+770000i_io_sci_set_buffer_in 
+@515
+E4
+@516
+80
+@517
+86
+@518
+81
+@519
+0000g_nv_update_int_offset 
+@520
+80
+@521
+86
+@522
+0000g_nv_update_int 
+@523
+80
+@524
+85
+@525
+81
+@526
+0000g_nv_update_int_offset 
+@527
+80
+@528
+85
+@529
+0000g_nv_update_int 
+@530
+80
+@531
+84
+@532
+81
+@533
+0000g_nv_update_int_offset 
+@534
+80
+@535
+84
+@536
+0000g_nv_update_int 
+@537
+80
+@538
+83
+@539
+81
+@540
+0000g_nv_update_int_offset 
+@541
+80
+@542
+83
+@543
+0000g_nv_update_int 
+@544
+31
+
+r0000 0015
+.0000SIDATA
+
+@570
+00j
+15j
+07j
+00j
+00j
+@571
+0Ej
+5Fj
+@572
+0Ej
+4Fj
+@573
+0Ej
+69j
+@574
+0Ej
+5Fj
+@575
+0Ej
+5Fj
+@576
+0Ej
+5Fj
+@577
+0Ej
+5Fj
+@578
+00j
+@579
+00j_new_binding_constraints _query_stats |02 |
+
+s0000 002A
+.0015TEVT
+
+@549
+22j
+00j%nviGaslcd @1
+00j%nviGaslcd @0
+@550
+22j
+00j%nviCdslcd @1
+00j%nviCdslcd @0
+@551
+22j
+00j%nvitemplcd @1
+00j%nvitemplcd @0
+@552
+02j
+00j%nvoRfid @1
+00j%nvoRfid @0
+@553
+02j
+00j%nvoIrd @1
+00j%nvoIrd @0
+@554
+02j
+00j%nvosw1 @1
+00j%nvosw1 @0
+@555
+02j
+00j%nvosw2 @1
+00j%nvosw2 @0
+@558
+00jAPINIT 02 -@1
+00jAPINIT 02 -@0
+@559
+00j
+0Bj
+@560
+00j
+00j
+@561
+00j
+04j
+@562
+C0j
+00jWHEN1 01 -@1
+00jWHEN1 01 -@0
+@563
+C1j
+00jWHEN2 01 -@1
+00jWHEN2 01 -@0
+@564
+C2j
+00jWHEN3 01 -@1
+00jWHEN3 01 -@0
+@565
+01j
+04j
+00jWHEN4 01 -@1
+00jWHEN4 01 -@0
+
+q0000 000C
+.0000_%3150TOAVR%INIT
+.0000SCISPIINITPARMS
+.0006SCISPIINITCALL
+
+@492
+20
+@493
+20
+@494
+20
+@495
+B5009C
+@497
+770000i_io_sci_init 
+@498
+75FD00
+
+x0000 0001
+#0000%bufTog
+
+@255
+*1
+
+p0000 00A0
+.0019DOMAIN
+
+@62
+*8
+@64
+*10
+@66
+*1
+@68
+*1E
+@70
+*4B
+@72
+*15
+@74
+*8
+@76
+*1
+
+o0000 0005
+
+@57
+07j
+02j
+00jSIDATA @1
+00jSIDATA @0
+00j
+
+NF000 0024
+@25
+*8
+@27
+00jTEVT 015 -@1
+00jTEVT 015 -@0
+@29
+07j
+@30
+00jSIDATA @1
+00jSIDATA @0
+@32
+9Fj
+FFj
+FFj
+48j
+32j
+04j
+11j
+01j
+@34
+53j
+@35
+F0j
+04j
+@36
+24j
+9Bj
+@38
+33j
+33j
+33j
+@40
+00j
+@41
+00j
+00j
+@42
+07j
+20j
+07j
+@43
+00j04 _tx_by_addr |
+!
+

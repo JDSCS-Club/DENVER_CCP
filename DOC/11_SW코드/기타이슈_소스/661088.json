@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1492070",
+    "ThreadId": "661088",
+    "Html": "Can you provide me with an ECCN number of your softwares Tftpd32 and Tftpd64, which I can document in our OTS software description within SW design specification?<br />\n",
+    "PostedDate": "2017-02-01T12:39:34.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1492071",
+    "ThreadId": "661088",
+    "Html": "Since Tftpd32 have no encryption functionality, there is no export restriction regarding the US classification.\r<br />\nThe corresponding EECN code is EAR99/NLR and CCATS code is not applicable (N/A).…<br />\n",
+    "PostedDate": "2017-02-01T12:40:45.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

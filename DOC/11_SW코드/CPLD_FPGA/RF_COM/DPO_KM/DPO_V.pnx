@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE ibis [
+<!ELEMENT ibis (part, pin+)>
+<!ELEMENT part EMPTY>
+<!ELEMENT pin EMPTY>
+<!ATTLIST part
+  arch   CDATA #REQUIRED
+  device CDATA #REQUIRED
+  spg    CDATA #REQUIRED
+  pkg    CDATA #REQUIRED>
+<!ATTLIST pin
+  nm     CDATA #REQUIRED
+  no     CDATA #REQUIRED
+  iostd  (LVTTL|SSTL3_I|LVCMOS33|LVCMOS25|SSTL2_I|LVCMOS18|LVCMOS15|HSTL_I|NA) "NA"
+  sr     (SLOW|FAST|slow|fast) "SLOW"
+  dir    (BIDIR|bidir|INPUT|input|OUTPUT|output) "BIDIR">
+]>
+<ibis><part arch="xbr" device="XC2C256" pkg="TQ144" spg="-7"/><pin dir="input" iostd="LVTTL" nm="int_sw_in" no="50"/><pin dir="input" iostd="LVTTL" nm="ext_sw_in" no="49"/><pin dir="input" iostd="LVTTL" nm="both_sw_in" no="45"/><pin dir="input" iostd="LVTTL" nm="ic_sw_in" no="51"/><pin dir="input" iostd="LVTTL" nm="hs_sw" no="88"/><pin dir="input" iostd="LVTTL" nm="pei_sw_in" no="52"/><pin dir="input" iostd="LVTTL" nm="clk" no="30"/><pin dir="input" iostd="LVTTL" nm="cancel_sw_in" no="53"/><pin dir="input" iostd="LVTTL" nm="occ_sw_in" no="54"/><pin dir="output" iostd="LVTTL" nm="both_led" no="56" sr="slow"/><pin dir="output" iostd="LVTTL" nm="cancel_led" no="61" sr="slow"/><pin dir="output" iostd="LVTTL" nm="dtmf_cs" no="23" sr="slow"/><pin dir="output" iostd="LVTTL" nm="dtmf_rs0" no="22" sr="slow"/><pin dir="output" iostd="LVTTL" nm="dtmf_rw" no="24" sr="slow"/><pin dir="output" iostd="LVTTL" nm="dual_mute_sp" no="113" sr="slow"/><pin dir="output" iostd="LVTTL" nm="ext_led" no="57" sr="slow"/><pin dir="output" iostd="LVTTL" nm="ic_led" no="59" sr="slow"/><pin dir="output" iostd="LVTTL" nm="ic_mute_sp" no="112" sr="slow"/><pin dir="output" iostd="LVTTL" nm="int_led" no="58" sr="slow"/><pin dir="output" iostd="LVTTL" nm="live_sw" no="95" sr="slow"/><pin dir="output" iostd="LVTTL" nm="mic_sw" no="94" sr="slow"/><pin dir="output" iostd="LVTTL" nm="mute_sw" no="97" sr="slow"/><pin dir="output" iostd="LVTTL" nm="occ_led" no="64" sr="slow"/><pin dir="output" iostd="LVTTL" nm="pa_sw1" no="98" sr="slow"/><pin dir="output" iostd="LVTTL" nm="pei_led" no="60" sr="slow"/><pin dir="output" iostd="LVTTL" nm="pei_mute_sp" no="111" sr="slow"/><pin dir="output" iostd="LVTTL" nm="rxs&lt;0&gt;" no="140" sr="slow"/><pin dir="output" iostd="LVTTL" nm="rxs&lt;1&gt;" no="139" sr="slow"/><pin dir="output" iostd="LVTTL" nm="rxs&lt;2&gt;" no="138" sr="slow"/><pin dir="output" iostd="LVTTL" nm="rxs&lt;3&gt;" no="136" sr="slow"/><pin dir="output" iostd="LVTTL" nm="txs_mic&lt;0&gt;" no="134" sr="slow"/><pin dir="output" iostd="LVTTL" nm="txs_mic&lt;1&gt;" no="133" sr="slow"/><pin dir="output" iostd="LVTTL" nm="txs_mic&lt;2&gt;" no="132" sr="slow"/><pin dir="output" iostd="LVTTL" nm="txs_mic&lt;3&gt;" no="131" sr="slow"/><pin dir="bidir" iostd="LVTTL" nm="dtmf_inout&lt;0&gt;" no="21" sr="slow"/><pin dir="bidir" iostd="LVTTL" nm="dtmf_inout&lt;1&gt;" no="19" sr="slow"/><pin dir="bidir" iostd="LVTTL" nm="dtmf_inout&lt;2&gt;" no="17" sr="slow"/><pin dir="bidir" iostd="LVTTL" nm="dtmf_inout&lt;3&gt;" no="16" sr="slow"/></ibis>

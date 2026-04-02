@@ -1,0 +1,17 @@
+; Echelon Dependency File - do not edit.
+; C:\Lm\Source\Denver\Denver\Release\IM\Denver.nkdep
+; Created Thursday, May 17, 2012, 18:50:04
+
+[Global]
+Provider=Echelon NodeBuilder Make Facility
+Version=1
+Inputs=0
+Outputs=0
+Switches=0
+Parameters=2
+
+[Switches]
+
+[Parameters]
+BuildtimeH=30225501
+BuildtimeL=-555182592

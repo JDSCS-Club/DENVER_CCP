@@ -1,0 +1,32 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.nadep
+; Created Monday, January 22, 2007, 11:28:19
+
+[Global]
+Provider=NEURON Assembler
+Version=1
+Inputs=1
+Outputs=1
+Switches=1
+Parameters=0
+
+[Input_1]
+Basename=FINGER_3150.ns
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.ns
+Type=0
+Size=14651
+TimestampHigh=0x1c73dcc
+TimestampLow=0xfab5c46c
+
+[Output_1]
+Basename=FINGER_3150.no
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.no
+Type=0
+Size=7419
+TimestampHigh=0x1c73dcc
+TimestampLow=0xfab5c46c
+
+[Switches]
+8=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150
+
+[Parameters]

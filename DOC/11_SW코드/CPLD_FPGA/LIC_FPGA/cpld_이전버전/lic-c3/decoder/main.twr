@@ -1,0 +1,912 @@
+--------------------------------------------------------------------------------
+Release 13.4 Trace  (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\13.4\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 5 -n
+3 -fastpaths -xml main.twx main.ncd -o main.twr main.pcf -ucf main.ucf
+
+Design file:              main.ncd
+Physical constraint file: main.pcf
+Device,package,speed:     xc3s200,vq100,-5 (PRODUCTION 1.39 2012-01-07)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock RW
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+AL<8>       |   -0.573(R)|    2.617(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+AL<9>       |   -0.295(R)|    2.394(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+AL<10>      |    1.196(R)|    1.202(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<0>        |    1.082(R)|    1.386(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<1>        |    0.188(R)|    2.101(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<2>        |    0.251(R)|    2.051(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<3>        |    0.651(R)|    1.731(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<4>        |    0.226(R)|    2.072(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<5>        |   -0.341(R)|    2.525(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<6>        |   -0.422(R)|    2.589(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<7>        |    0.109(R)|    2.165(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock SPI_CLK
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+SPI_DIN     |    1.667(F)|    0.176(F)|SPI_CLK_BUFGP     |   0.000|
+SPI_SS      |    3.021(R)|   -0.166(R)|SPI_CLK_BUFGP     |   0.000|
+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock STRB
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+AL<8>       |   -0.899(R)|    3.012(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+AL<9>       |   -0.621(R)|    2.789(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+AL<10>      |    0.870(R)|    1.597(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<0>        |    0.756(R)|    1.781(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<1>        |   -0.138(R)|    2.496(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<2>        |   -0.075(R)|    2.446(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<3>        |    0.325(R)|    2.126(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<4>        |   -0.100(R)|    2.467(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<5>        |   -0.667(R)|    2.920(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<6>        |   -0.748(R)|    2.984(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<7>        |   -0.217(R)|    2.560(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock AH<20> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   16.855(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.051(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   16.888(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<1>        |   16.116(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.796(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   16.890(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<2>        |   16.106(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.302(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   16.139(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<3>        |   17.162(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.358(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.195(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<4>        |   17.010(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.206(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.043(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<5>        |   17.098(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.294(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.131(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<6>        |   17.719(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.915(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.752(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<7>        |   17.298(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.494(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.331(F)|NVSRAM_CS_BUF_not0003|   0.000|
+FROM_CS     |   11.504(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   11.805(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   11.600(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   14.770(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   16.950(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   11.908(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AH<21> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   18.065(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.370(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.096(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<1>        |   17.326(F)|INT_READ_CS_not0001  |   0.000|
+            |   18.115(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.098(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<2>        |   17.316(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.621(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   16.347(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<3>        |   18.372(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.677(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.403(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<4>        |   18.220(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.525(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.251(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<5>        |   18.308(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.613(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.339(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<6>        |   18.929(F)|INT_READ_CS_not0001  |   0.000|
+            |   18.234(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.960(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<7>        |   18.508(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.813(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.539(F)|NVSRAM_CS_BUF_not0003|   0.000|
+FROM_CS     |   12.823(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   13.124(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   12.919(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   16.089(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.160(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   13.227(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AH<22> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   19.472(F)|INT_READ_CS_not0001  |   0.000|
+            |   18.777(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.582(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<1>        |   18.733(F)|INT_READ_CS_not0001  |   0.000|
+            |   19.522(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.584(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<2>        |   18.723(F)|INT_READ_CS_not0001  |   0.000|
+            |   18.028(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   16.833(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<3>        |   19.779(F)|INT_READ_CS_not0001  |   0.000|
+            |   19.084(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.889(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<4>        |   19.627(F)|INT_READ_CS_not0001  |   0.000|
+            |   18.932(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.737(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<5>        |   19.715(F)|INT_READ_CS_not0001  |   0.000|
+            |   19.020(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.825(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<6>        |   20.336(F)|INT_READ_CS_not0001  |   0.000|
+            |   19.641(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.446(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<7>        |   19.915(F)|INT_READ_CS_not0001  |   0.000|
+            |   19.220(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.025(F)|NVSRAM_CS_BUF_not0003|   0.000|
+FROM_CS     |   14.230(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   14.531(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   14.326(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   17.496(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   19.567(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   14.634(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AH<23> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   17.519(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.993(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.858(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<1>        |   16.780(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.738(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.860(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<2>        |   16.770(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.244(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.109(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<3>        |   17.826(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.300(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.165(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<4>        |   17.674(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.148(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.013(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<5>        |   17.762(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.236(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.101(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<6>        |   18.383(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.857(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.722(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<7>        |   17.962(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.436(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.301(F)|NVSRAM_CS_BUF_not0003|   0.000|
+FROM_CS     |   12.446(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   12.747(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   12.542(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   15.712(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.614(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   12.850(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AL<0> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   16.461(F)|INT_READ_CS_not0001  |   0.000|
+            |   14.591(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<1>        |   15.722(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.336(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<2>        |   15.712(F)|INT_READ_CS_not0001  |   0.000|
+            |   13.842(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<3>        |   16.768(F)|INT_READ_CS_not0001  |   0.000|
+            |   14.898(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<4>        |   16.616(F)|INT_READ_CS_not0001  |   0.000|
+            |   14.746(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<5>        |   16.704(F)|INT_READ_CS_not0001  |   0.000|
+            |   14.834(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<6>        |   17.325(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.455(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<7>        |   16.904(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.034(F)|NVSRAM_CS_BUF_not0002|   0.000|
+FROM_CS     |   10.044(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   10.345(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   10.140(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   13.310(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   16.556(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   10.448(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AL<1> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   16.192(F)|INT_READ_CS_not0001  |   0.000|
+            |   14.696(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<1>        |   15.453(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.441(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<2>        |   15.443(F)|INT_READ_CS_not0001  |   0.000|
+            |   13.947(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<3>        |   16.499(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.003(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<4>        |   16.347(F)|INT_READ_CS_not0001  |   0.000|
+            |   14.851(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<5>        |   16.435(F)|INT_READ_CS_not0001  |   0.000|
+            |   14.939(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<6>        |   17.056(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.560(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<7>        |   16.635(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.139(F)|NVSRAM_CS_BUF_not0002|   0.000|
+FROM_CS     |   10.149(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   10.450(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   10.245(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   13.415(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   16.287(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   10.553(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AL<2> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   17.687(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.992(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<1>        |   16.948(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.737(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<2>        |   16.938(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.243(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<3>        |   17.994(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.299(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<4>        |   17.842(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.147(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<5>        |   17.930(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.235(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<6>        |   18.551(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.856(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<7>        |   18.130(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.435(F)|NVSRAM_CS_BUF_not0002|   0.000|
+FROM_CS     |   12.445(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   12.746(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   12.541(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   15.711(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.782(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   12.849(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AL<3> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   18.239(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.544(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<1>        |   17.500(F)|INT_READ_CS_not0001  |   0.000|
+            |   18.289(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<2>        |   17.490(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.795(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<3>        |   18.546(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.851(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<4>        |   18.394(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.699(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<5>        |   18.482(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.787(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<6>        |   19.103(F)|INT_READ_CS_not0001  |   0.000|
+            |   18.408(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<7>        |   18.682(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.987(F)|NVSRAM_CS_BUF_not0002|   0.000|
+FROM_CS     |   12.997(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   13.298(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   13.093(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   16.263(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.334(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   13.401(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AL<4> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   16.985(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.290(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<1>        |   16.246(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.035(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<2>        |   16.236(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.541(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<3>        |   17.292(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.597(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<4>        |   17.140(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.445(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<5>        |   17.228(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.533(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<6>        |   17.849(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.154(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<7>        |   17.428(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.733(F)|NVSRAM_CS_BUF_not0002|   0.000|
+FROM_CS     |   11.743(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   12.044(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   11.839(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   15.009(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.080(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   12.147(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AL<5> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   17.060(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.365(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<1>        |   16.321(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.110(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<2>        |   16.311(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.616(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<3>        |   17.367(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.672(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<4>        |   17.215(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.520(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<5>        |   17.303(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.608(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<6>        |   17.924(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.229(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<7>        |   17.503(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.808(F)|NVSRAM_CS_BUF_not0002|   0.000|
+FROM_CS     |   11.818(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   12.119(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   11.914(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   15.084(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.155(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   12.222(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AL<6> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   17.654(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.959(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<1>        |   16.915(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.704(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<2>        |   16.905(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.210(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<3>        |   17.961(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.266(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<4>        |   17.809(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.114(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<5>        |   17.897(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.202(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<6>        |   18.518(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.823(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<7>        |   18.097(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.402(F)|NVSRAM_CS_BUF_not0002|   0.000|
+FROM_CS     |   12.412(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   12.713(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   12.508(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   15.678(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.749(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   12.816(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock AL<7> to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   17.672(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.977(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<1>        |   16.933(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.722(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<2>        |   16.923(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.228(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<3>        |   17.979(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.284(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<4>        |   17.827(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.132(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<5>        |   17.915(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.220(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<6>        |   18.536(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.841(F)|NVSRAM_CS_BUF_not0002|   0.000|
+D<7>        |   18.115(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.420(F)|NVSRAM_CS_BUF_not0002|   0.000|
+FROM_CS     |   12.430(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   12.731(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   12.526(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   15.696(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.767(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   12.834(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock H3 to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+DSP_RST     |    6.737(R)|H3_IBUF           |   0.000|
+LRST        |    6.453(R)|H3_IBUF           |   0.000|
+------------+------------+------------------+--------+
+
+Clock RW to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+D<0>        |   14.862(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<1>        |   15.317(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<2>        |   15.217(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<3>        |   14.655(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<4>        |   13.981(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<5>        |   14.667(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<6>        |   14.159(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+D<7>        |   14.218(R)|DPRAM_OUT_RDWR_MSK|   0.000|
+------------+------------+------------------+--------+
+
+Clock SPI_CLK to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+DEBUG_OUT   |    9.849(R)|SPI_CLK_BUFGP     |   0.000|
+            |   10.830(F)|SPI_CLK_BUFGP     |   0.000|
+SPI_DOUT    |    6.737(R)|SPI_CLK_BUFGP     |   0.000|
+------------+------------+------------------+--------+
+
+Clock STRB to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+D<0>        |   15.257(R)|DPRAM_OUT_RDWR_MSK   |   0.000|
+            |   15.973(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.331(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.168(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<1>        |   15.712(R)|DPRAM_OUT_RDWR_MSK   |   0.000|
+            |   15.234(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.076(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.170(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<2>        |   15.612(R)|DPRAM_OUT_RDWR_MSK   |   0.000|
+            |   15.224(F)|INT_READ_CS_not0001  |   0.000|
+            |   15.582(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   16.419(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<3>        |   15.050(R)|DPRAM_OUT_RDWR_MSK   |   0.000|
+            |   16.280(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.638(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.475(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<4>        |   14.376(R)|DPRAM_OUT_RDWR_MSK   |   0.000|
+            |   16.128(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.486(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.323(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<5>        |   15.062(R)|DPRAM_OUT_RDWR_MSK   |   0.000|
+            |   16.216(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.574(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.411(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<6>        |   14.554(R)|DPRAM_OUT_RDWR_MSK   |   0.000|
+            |   16.837(F)|INT_READ_CS_not0001  |   0.000|
+            |   17.195(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   18.032(F)|NVSRAM_CS_BUF_not0003|   0.000|
+D<7>        |   14.613(R)|DPRAM_OUT_RDWR_MSK   |   0.000|
+            |   16.416(F)|INT_READ_CS_not0001  |   0.000|
+            |   16.774(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   17.611(F)|NVSRAM_CS_BUF_not0003|   0.000|
+FROM_CS     |   11.784(F)|NVSRAM_CS_BUF_not0002|   0.000|
+NVSRAM_CS   |   12.085(F)|NVSRAM_CS_BUF_not0002|   0.000|
+W5100_CS    |   11.880(F)|NVSRAM_CS_BUF_not0002|   0.000|
+WDI         |   15.050(F)|NVSRAM_CS_BUF_not0002|   0.000|
+            |   15.092(F)|WDI_CS_not0001       |   0.000|
+XL16L784_CS |   12.188(F)|NVSRAM_CS_BUF_not0002|   0.000|
+------------+------------+---------------------+--------+
+
+Clock to Setup on destination clock AH<20>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    6.120|    6.120|
+AH<21>         |         |         |    5.040|    5.040|
+AH<22>         |         |         |    6.079|    6.079|
+AH<23>         |         |         |    5.550|    5.550|
+AL<0>          |         |         |    2.106|    3.702|
+AL<1>          |         |         |    2.184|    3.702|
+AL<2>          |         |         |    4.494|    4.494|
+AL<3>          |         |         |    5.046|    5.046|
+AL<4>          |         |         |    3.792|    3.792|
+AL<5>          |         |         |    3.867|    3.867|
+AL<6>          |         |         |    4.261|    4.261|
+AL<7>          |         |         |    4.279|    4.279|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    4.888|    4.888|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AH<21>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    6.241|    6.241|
+AH<21>         |         |         |    5.161|    5.161|
+AH<22>         |         |         |    6.200|    6.200|
+AH<23>         |         |         |    5.671|    5.671|
+AL<0>          |         |         |    2.227|    3.702|
+AL<1>          |         |         |    2.305|    3.702|
+AL<2>          |         |         |    4.615|    4.615|
+AL<3>          |         |         |    5.167|    5.167|
+AL<4>          |         |         |    3.913|    3.913|
+AL<5>          |         |         |    3.988|    3.988|
+AL<6>          |         |         |    4.382|    4.382|
+AL<7>          |         |         |    4.400|    4.400|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    5.009|    5.009|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AH<22>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    5.783|    5.783|
+AH<21>         |         |         |    4.703|    4.703|
+AH<22>         |         |         |    5.742|    5.742|
+AH<23>         |         |         |    5.213|    5.213|
+AL<0>          |         |         |    1.769|    3.702|
+AL<1>          |         |         |    1.847|    3.702|
+AL<2>          |         |         |    4.157|    4.157|
+AL<3>          |         |         |    4.709|    4.709|
+AL<4>          |         |         |    3.455|    3.702|
+AL<5>          |         |         |    3.530|    3.702|
+AL<6>          |         |         |    3.924|    3.924|
+AL<7>          |         |         |    3.942|    3.942|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    4.551|    4.551|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AH<23>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    5.492|    5.492|
+AH<21>         |         |         |    4.412|    4.412|
+AH<22>         |         |         |    5.451|    5.451|
+AH<23>         |         |         |    4.922|    4.922|
+AL<0>          |         |         |    1.478|    3.702|
+AL<1>          |         |         |    1.556|    3.702|
+AL<2>          |         |         |    3.866|    3.866|
+AL<3>          |         |         |    4.418|    4.418|
+AL<4>          |         |         |    3.164|    3.702|
+AL<5>          |         |         |    3.239|    3.702|
+AL<6>          |         |         |    3.633|    3.702|
+AL<7>          |         |         |    3.651|    3.702|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    4.260|    4.260|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AL<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    5.682|    5.682|
+AH<21>         |         |         |    5.890|    5.890|
+AH<22>         |         |         |    6.376|    6.376|
+AH<23>         |         |         |    6.652|    6.652|
+AL<0>          |         |         |    1.470|    3.702|
+AL<1>          |         |         |    1.548|    3.702|
+AL<2>          |         |         |    3.858|    3.858|
+AL<3>          |         |         |    4.410|    4.410|
+AL<4>          |         |         |    3.156|    3.702|
+AL<5>          |         |         |    3.231|    3.702|
+AL<6>          |         |         |    3.625|    3.702|
+AL<7>          |         |         |    3.643|    3.702|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    5.962|    5.962|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AL<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    5.699|    5.699|
+AH<21>         |         |         |    5.806|    5.806|
+AH<22>         |         |         |    6.292|    6.292|
+AH<23>         |         |         |    6.568|    6.568|
+AL<0>          |         |         |    1.685|    3.702|
+AL<1>          |         |         |    1.763|    3.702|
+AL<2>          |         |         |    4.073|    4.073|
+AL<3>          |         |         |    4.625|    4.625|
+AL<4>          |         |         |    3.371|    3.702|
+AL<5>          |         |         |    3.446|    3.702|
+AL<6>          |         |         |    3.840|    3.840|
+AL<7>          |         |         |    3.858|    3.858|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    5.878|    5.878|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AL<2>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    4.503|    4.503|
+AH<21>         |         |         |    3.970|    3.970|
+AH<22>         |         |         |    4.462|    4.462|
+AH<23>         |         |         |    4.732|    4.732|
+AL<0>          |         |         |    0.489|    3.702|
+AL<1>          |         |         |    0.567|    3.702|
+AL<2>          |         |         |    2.877|    3.702|
+AL<3>          |         |         |    3.429|    3.702|
+AL<4>          |         |         |    2.175|    3.702|
+AL<5>          |         |         |    2.250|    3.702|
+AL<6>          |         |         |    2.644|    3.702|
+AL<7>          |         |         |    2.662|    3.702|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    4.042|    4.042|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AL<3>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    4.062|    4.062|
+AH<21>         |         |         |    3.529|    3.702|
+AH<22>         |         |         |    4.021|    4.021|
+AH<23>         |         |         |    4.291|    4.291|
+AL<0>          |         |         |    0.048|    3.702|
+AL<1>          |         |         |    0.126|    3.702|
+AL<2>          |         |         |    2.436|    3.702|
+AL<3>          |         |         |    2.988|    3.702|
+AL<4>          |         |         |    1.734|    3.702|
+AL<5>          |         |         |    1.809|    3.702|
+AL<6>          |         |         |    2.203|    3.702|
+AL<7>          |         |         |    2.221|    3.702|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    3.601|    3.702|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AL<4>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    5.065|    5.065|
+AH<21>         |         |         |    4.532|    4.532|
+AH<22>         |         |         |    5.024|    5.024|
+AH<23>         |         |         |    5.294|    5.294|
+AL<0>          |         |         |    1.051|    3.702|
+AL<1>          |         |         |    1.129|    3.702|
+AL<2>          |         |         |    3.439|    3.702|
+AL<3>          |         |         |    3.991|    3.991|
+AL<4>          |         |         |    2.737|    3.702|
+AL<5>          |         |         |    2.812|    3.702|
+AL<6>          |         |         |    3.206|    3.702|
+AL<7>          |         |         |    3.224|    3.702|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    4.604|    4.604|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AL<5>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    5.005|    5.005|
+AH<21>         |         |         |    4.472|    4.472|
+AH<22>         |         |         |    4.964|    4.964|
+AH<23>         |         |         |    5.234|    5.234|
+AL<0>          |         |         |    0.991|    3.702|
+AL<1>          |         |         |    1.069|    3.702|
+AL<2>          |         |         |    3.379|    3.702|
+AL<3>          |         |         |    3.931|    3.931|
+AL<4>          |         |         |    2.677|    3.702|
+AL<5>          |         |         |    2.752|    3.702|
+AL<6>          |         |         |    3.146|    3.702|
+AL<7>          |         |         |    3.164|    3.702|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    4.544|    4.544|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AL<6>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    4.529|    4.529|
+AH<21>         |         |         |    3.996|    3.996|
+AH<22>         |         |         |    4.488|    4.488|
+AH<23>         |         |         |    4.758|    4.758|
+AL<0>          |         |         |    0.515|    3.702|
+AL<1>          |         |         |    0.593|    3.702|
+AL<2>          |         |         |    2.903|    3.702|
+AL<3>          |         |         |    3.455|    3.702|
+AL<4>          |         |         |    2.201|    3.702|
+AL<5>          |         |         |    2.276|    3.702|
+AL<6>          |         |         |    2.670|    3.702|
+AL<7>          |         |         |    2.688|    3.702|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    4.068|    4.068|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock AL<7>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    4.515|    4.515|
+AH<21>         |         |         |    3.982|    3.982|
+AH<22>         |         |         |    4.474|    4.474|
+AH<23>         |         |         |    4.744|    4.744|
+AL<0>          |         |         |    0.501|    3.702|
+AL<1>          |         |         |    0.579|    3.702|
+AL<2>          |         |         |    2.889|    3.702|
+AL<3>          |         |         |    3.441|    3.702|
+AL<4>          |         |         |    2.187|    3.702|
+AL<5>          |         |         |    2.262|    3.702|
+AL<6>          |         |         |    2.656|    3.702|
+AL<7>          |         |         |    2.674|    3.702|
+H3             |         |         |    3.294|         |
+STRB           |         |         |    4.054|    4.054|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock H3
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+H3             |    5.172|         |         |         |
+RW             |    2.426|    2.426|         |         |
+STRB           |    2.256|    2.256|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock RW
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AL<0>          |    0.994|    0.994|         |         |
+AL<1>          |    0.121|    0.121|         |         |
+AL<2>          |   -0.161|   -0.161|         |         |
+AL<3>          |    0.848|    0.848|         |         |
+AL<4>          |   -0.062|   -0.062|         |         |
+AL<5>          |   -0.371|   -0.371|         |         |
+AL<6>          |   -0.588|   -0.588|         |         |
+AL<7>          |   -0.608|   -0.608|         |         |
+RW             |    1.625|    1.625|         |         |
+STRB           |    2.101|    2.101|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock SPI_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+SPI_CLK        |    7.070|    3.292|         |    6.629|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock STRB
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AH<20>         |         |         |    7.096|    7.096|
+AH<21>         |         |         |    6.016|    6.016|
+AH<22>         |         |         |    7.055|    7.055|
+AH<23>         |         |         |    6.526|    6.526|
+AL<0>          |    0.668|    0.668|    3.082|    3.702|
+AL<1>          |   -0.205|   -0.205|    3.160|    3.702|
+AL<2>          |   -0.487|   -0.487|    5.470|    5.470|
+AL<3>          |    0.522|    0.522|    6.022|    6.022|
+AL<4>          |   -0.388|   -0.388|    4.768|    4.768|
+AL<5>          |   -0.697|   -0.697|    4.843|    4.843|
+AL<6>          |   -0.914|   -0.914|    5.237|    5.237|
+AL<7>          |   -0.934|   -0.934|    5.255|    5.255|
+H3             |         |         |    3.294|         |
+RW             |    1.299|    1.299|         |         |
+STRB           |    1.775|    1.775|    5.864|    5.864|
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+AH<20>         |NVSRAM_CS      |   13.073|
+AH<21>         |NVSRAM_CS      |   13.281|
+AH<22>         |NVSRAM_CS      |   13.767|
+AH<23>         |NVSRAM_CS      |   14.043|
+DIMA           |D<1>           |   11.905|
+DIMB           |D<0>           |   10.806|
+H3             |WDI            |    9.854|
+LON_IRQ        |D<1>           |   10.677|
+LON_IRQ        |INT2           |    8.579|
+N1SERVICE_IN   |N1SERVICE_OUT  |    6.168|
+ROM_SERIAL_SW  |D<0>           |    8.991|
+ROM_SERIAL_SW  |D<2>           |   10.286|
+ROM_SERIAL_SW  |INT1           |    9.557|
+ROM_SERIAL_SW  |INT3           |    6.886|
+ROM_SERIAL_SW  |WDI            |    9.539|
+RW             |D<0>           |   11.339|
+RW             |D<1>           |   10.600|
+RW             |D<2>           |   10.590|
+RW             |D<3>           |   11.646|
+RW             |D<4>           |   11.494|
+RW             |D<5>           |   11.582|
+RW             |D<6>           |   12.203|
+RW             |D<7>           |   11.782|
+RW             |RD             |   10.880|
+RW             |WR             |   10.210|
+STRB           |D<0>           |   10.924|
+STRB           |D<1>           |   10.185|
+STRB           |D<2>           |   10.175|
+STRB           |D<3>           |   11.231|
+STRB           |D<4>           |   11.079|
+STRB           |D<5>           |   11.167|
+STRB           |D<6>           |   11.788|
+STRB           |D<7>           |   11.367|
+STRB           |NVSRAM_CS      |   13.353|
+STRB           |RD             |   10.465|
+STRB           |WR             |   10.686|
+W5100_INT      |D<0>           |   10.232|
+W5100_INT      |INT3           |    7.275|
+XL16L784_INT   |D<2>           |   10.571|
+XL16L784_INT   |INT1           |    9.842|
+---------------+---------------+---------+
+
+
+Analysis completed Thu May 17 14:38:48 2012 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 105 MB
+
+
+

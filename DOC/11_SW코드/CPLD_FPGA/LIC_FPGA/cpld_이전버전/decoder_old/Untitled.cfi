@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator L.70
+# Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION L.70
+DATE            05/08/2012 - 11:57
+SOURCE          C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\Program\LIC\CPLD\decoder\Untitled.mcs
+DEVICE          XCF01S
+DATA_WIDTH      8
+FILL_DATA       0xFF
+SIGNATURE       0x0000A276
+START_ADDRESS   0x00000000 END_ADDRESS 0x0001FF87 DIRECTION_UP   "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/decoder/main.bit" 3s200vq100

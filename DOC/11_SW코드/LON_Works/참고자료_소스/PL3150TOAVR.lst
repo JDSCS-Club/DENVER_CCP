@@ -1,0 +1,2593 @@
+__text_start:
+__start:
+    023B EFCF      LDI	R28,0xFF
+    023C E1D0      LDI	R29,0x10
+    023D BFCD      OUT	P3D,R28
+    023E BFDE      OUT	P3E,R29
+    023F 51C0      SUBI	R28,0x10
+    0240 40D0      SBCI	R29,0
+    0241 EA0A      LDI	R16,0xAA
+    0242 8308      STD	R16,0+Y
+    0243 2400      CLR	R0
+    0244 EBE4      LDI	R30,0xB4
+    0245 E0F2      LDI	R31,2
+    0246 E013      LDI	R17,3
+    0247 39E7      CPI	R30,0x97
+    0248 07F1      CPC	R31,R17
+    0249 F011      BEQ	0x024C
+    024A 9201      ST	R0,Z+
+    024B CFFB      RJMP	0x0247
+    024C 8300      STD	R16,0+Z
+    024D ECE1      LDI	R30,0xC1
+    024E E0F2      LDI	R31,2
+    024F E0A0      LDI	R26,0
+    0250 E0B1      LDI	R27,1
+    0251 E014      LDI	R17,4
+    0252 37E5      CPI	R30,0x75
+    0253 07F1      CPC	R31,R17
+    0254 F021      BEQ	0x0259
+    0255 95C8      LPM
+    0256 9631      ADIW	R30,1
+    0257 920D      ST	R0,X+
+    0258 CFF9      RJMP	0x0252
+    0259 940E07A8  CALL	_main
+_exit:
+    025B CFFF      RJMP	_exit
+FILE: E:\FW\HN_Device\PLAVR128\lcd128.h
+(0001) 
+(0002) 
+(0003) //#include "avr128.h"
+(0004) 
+(0005) #define		BUSY_IN 	DDRA = DDRA & ~BIT7
+(0006) #define		BUSY_OUT	DDRA = DDRA | BIT7
+(0007) #define		BUSY		(PINA & BIT7)
+(0008) 
+(0009) #define 	startL 		0xc0
+(0010) #define 	startX 		0xb8
+(0011) #define 	startY 		0x40
+(0012) 
+(0013) #define 	CS1	 	0x01
+(0014) #define 	CS2		0x02
+(0015) #define 	D		0x01
+(0016) #define 	I		0x00
+(0017) #define		R		0x01
+(0018) #define		W		0x00
+(0019) 
+(0020) 
+(0021) const char font[95][5] = {
+(0022) 			     {0x00, 0x00, 0x00, 0x00, 0x00},	/* 20 SPACE */
+(0023) 			     {0x00, 0x00, 0x4f, 0x00, 0x00},	/*21 !	*/
+(0024) 			     {0x00, 0x07, 0x00, 0x07, 0x00},	/*22 "	*/
+(0025) 			     {0x14, 0x7f, 0x14, 0x7f, 0x14},	/*23 #	*/
+(0026) 			     {0x24, 0x2a, 0x7f, 0x2a, 0x12},	/*24 $	*/
+(0027) 			     {0x23, 0x13, 0x08, 0x64, 0x62},	/*25 %	*/
+(0028) 			     {0x36, 0x49, 0x55, 0x22, 0x50},	/*26 &	*/
+(0029) 			     {0x00, 0x05, 0x03, 0x00, 0x00},	/*27 '	*/
+(0030) 			     {0x00, 0x1c, 0x22, 0x41, 0x00},	/*28 (	*/
+(0031) 			     {0x00, 0x41, 0x22, 0x1c, 0x00},	/*29 )	*/
+(0032) 			     {0x14, 0x08, 0x3e, 0x08, 0x14},	/*2a *	*/
+(0033) 			     {0x08, 0x08, 0x3e, 0x08, 0x08},	/*2b +	*/
+(0034) 			     {0x00, 0x50, 0x30, 0x00, 0x00},	/*2c ,	*/
+(0035) 			     {0x08, 0x08, 0x08, 0x08, 0x08},	/*2d -	*/
+(0036) 			     {0x00, 0x60, 0x60, 0x00, 0x00},	/*2e .	*/
+(0037) 			     {0x20, 0x10, 0x08, 0x04, 0x02},	/*2f /	*/
+(0038) 			     {0x3e, 0x51, 0x49, 0x45, 0x3e},	/*30 0	*/
+(0039) 			     {0x00, 0x42, 0x7f, 0x40, 0x00},	/*31 1	*/
+(0040) 			     {0x42, 0x61, 0x51, 0x49, 0x46},	/*32 2	*/
+(0041) 			     {0x21, 0x41, 0x45, 0x4b, 0x31},	/*33 3	*/
+(0042) 			     {0x18, 0x14, 0x12, 0x7f, 0x10},	/*34 4	*/
+(0043) 			     {0x27, 0x45, 0x45, 0x45, 0x39},	/*35 5	*/
+(0044) 			     {0x3c, 0x4a, 0x49, 0x49, 0x30},	/*36 6	*/
+(0045) 			     {0x01, 0x71, 0x09, 0x05, 0x03},	/*37 7	*/
+(0046) 			     {0x36, 0x49, 0x49, 0x49, 0x36},	/*38 8	*/
+(0047) 			     {0x06, 0x49, 0x49, 0x29, 0x1e},	/*39 9	*/
+(0048) 			     {0x00, 0x36, 0x36, 0x00, 0x00},	/*3a :	*/
+(0049) 			     {0x00, 0x56, 0x36, 0x00, 0x00},	/*3b ;	*/
+(0050) 			     {0x08, 0x14, 0x22, 0x41, 0x00},    /*3c <	*/
+(0051) 			     {0x14, 0x14, 0x14, 0x14, 0x14},	/*3d =	*/
+(0052) 			     {0x00, 0x41, 0x22, 0x14, 0x08},	/*3e >	*/
+(0053) 			     {0x02, 0x01, 0x51, 0x09, 0x06},	/*3f ?	*/
+(0054) 			     {0x32, 0x49, 0x79, 0x41, 0x3e},	/*40 @	*/
+(0055) 			     {0x7e, 0x11, 0x11, 0x11, 0x7e},	/*41 A	*/
+(0056) 			     {0x7f, 0x49, 0x49, 0x49, 0x36},	/*42 B	*/
+(0057) 			     {0x3e, 0x41, 0x41, 0x41, 0x22},	/*43 C	*/
+(0058) 			     {0x7f, 0x41, 0x41, 0x22, 0x1c},	/*44 D	*/
+(0059) 			     {0x7f, 0x49, 0x49, 0x49, 0x41},	/*45 E	*/
+(0060) 			     {0x7f, 0x09, 0x09, 0x09, 0x01},	/*46 F	*/
+(0061) 			     {0x3e, 0x41, 0x49, 0x49, 0x7a},	/*47 G	*/
+(0062) 			     {0x7f, 0x08, 0x08, 0x08, 0x7f},	/*48 H	*/
+(0063) 			     {0x00, 0x41, 0x7f, 0x41, 0x00},	/*49 I	*/
+(0064) 			     {0x20, 0x40, 0x41, 0x3f, 0x01},	/*4a J	*/
+(0065) 			     {0x7f, 0x08, 0x14, 0x22, 0x41},	/*4b K	*/
+(0066) 			     {0x7f, 0x40, 0x40, 0x40, 0x40},	/*4c L	*/
+(0067) 			     {0x7f, 0x02, 0x0c, 0x02, 0x7f},	/*4d M	*/
+(0068) 			     {0x7f, 0x04, 0x08, 0x10, 0x7f},	/*4e N	*/
+(0069) 			     {0x3e, 0x41, 0x41, 0x41, 0x3e},	/*4f O	*/
+(0070) 			     {0x7f, 0x09, 0x09, 0x09, 0x06},	/*50 P	*/
+(0071) 			     {0x3e, 0x41, 0x51, 0x21, 0x5e},	/*51 Q	*/
+(0072) 			     {0x7f, 0x09, 0x19, 0x29, 0x46},	/*52 R	*/
+(0073) 			     {0x46, 0x49, 0x49, 0x49, 0x31},	/*53 S	*/
+(0074) 			     {0x01, 0x01, 0x7f, 0x01, 0x01},	/*54 T	*/
+(0075) 			     {0x3f, 0x40, 0x40, 0x40, 0x3f},	/*55 U	*/
+(0076) 			     {0x1f, 0x20, 0x40, 0x20, 0x1f},	/*56 V	*/
+(0077) 			     {0x3f, 0x40, 0x3c, 0x40, 0x3f},	/*57 W	*/
+(0078) 			     {0x63, 0x14, 0x08, 0x14, 0x63},	/*58 X	*/
+(0079) 			     {0x07, 0x08, 0x70, 0x08, 0x07},	/*59 Y	*/
+(0080) 			     {0x61, 0x51, 0x49, 0x45, 0x43},	/*5a Z	*/
+(0081) 			     {0x00, 0x7f, 0x41, 0x41, 0x00},	/*5b [	*/
+(0082) 			     {0x02, 0x04, 0x08, 0x10, 0x20},	/*5c \	*/
+(0083) 			     {0x00, 0x41, 0x41, 0x7f, 0x00},	/*5d ]	*/
+(0084) 			     {0x04, 0x02, 0x01, 0x02, 0x04},	/*5e ^	*/
+(0085) 			     {0x40, 0x40, 0x40, 0x40, 0x40},	/*5f _	*/
+(0086) 			     {0x00, 0x01, 0x02, 0x04, 0x00},	/*60 `	*/
+(0087) 			     {0x20, 0x54, 0x54, 0x54, 0x78},	/*61 a	*/
+(0088) 			     {0x7f, 0x48, 0x44, 0x44, 0x38},	/*62 b	*/
+(0089) 			     {0x38, 0x44, 0x44, 0x44, 0x20},	/*63 c	*/
+(0090) 			     {0x38, 0x44, 0x44, 0x48, 0x7f},	/*64 d	*/
+(0091) 			     {0x38, 0x54, 0x54, 0x54, 0x18},	/*65 e	*/
+(0092) 			     {0x08, 0x7e, 0x09, 0x01, 0x02},	/*66 f	*/
+(0093) 			     {0x0c, 0x52, 0x52, 0x52, 0x3e},	/*67 g	*/
+(0094) 			     {0x7f, 0x08, 0x04, 0x04, 0x78},	/*68 h	*/
+(0095) 			     {0x00, 0x08, 0x7a, 0x00, 0x00},	/*69 i	*/
+(0096) 			     {0x20, 0x40, 0x44, 0x3d, 0x00},	/*6a j	*/
+(0097) 			     {0x7f, 0x10, 0x28, 0x44, 0x00},	/*6b k	*/
+(0098) 			     {0x00, 0x40, 0x7f, 0x40, 0x00},	/*6c l	*/
+(0099) 			     {0x7c, 0x04, 0x18, 0x04, 0x7c},	/*6d m	*/
+(0100) 			     {0x7c, 0x08, 0x04, 0x04, 0x78},	/*6e n	*/
+(0101) 			     {0x38, 0x44, 0x44, 0x44, 0x38},	/*6f o	*/
+(0102) 			     {0x7c, 0x14, 0x14, 0x14, 0x08},	/*70 p	*/
+(0103) 			     {0x08, 0x14, 0x14, 0x18, 0x7c},	/*71 q	*/
+(0104) 			     {0x7c, 0x08, 0x04, 0x04, 0x08},	/*72 r	*/
+(0105) 			     {0x48, 0x54, 0x54, 0x54, 0x20},	/*73 s	*/
+(0106) 			     {0x04, 0x3f, 0x44, 0x40, 0x20},	/*74 t	*/
+(0107) 			     {0x3c, 0x40, 0x40, 0x20, 0x7c},	/*75 u	*/
+(0108) 			     {0x1c, 0x20, 0x40, 0x20, 0x1c},	/*76 v	*/
+(0109) 			     {0x3c, 0x40, 0x20, 0x40, 0x3c},	/*77 w	*/
+(0110) 			     {0x44, 0x28, 0x10, 0x28, 0x44},	/*78 x	*/
+(0111) 			     {0x0c, 0x50, 0x50, 0x50, 0x3c},	/*79 y	*/
+(0112) 			     {0x44, 0x64, 0x54, 0x4c, 0x44},	/*7a z	*/
+(0113) 			     {0x00, 0x08, 0x36, 0x41, 0x00},	/*7b {	*/
+(0114) 			     {0x00, 0x00, 0x77, 0x00, 0x00},	/*7c |	*/
+(0115) 			     {0x00, 0x41, 0x36, 0x08, 0x00},	/*7d }	*/
+(0116) 			     {0x08, 0x04, 0x08, 0x10, 0x08}};	/*7e ~	*/
+(0117) 
+(0118) 
+(0119) 			
+(0120) const char hex[16][5] = {
+(0121) 	  	   			  {0x3e, 0x51, 0x49, 0x45, 0x3e},	/*0 0	*/
+(0122) 					  {0x00, 0x42, 0x7f, 0x40, 0x00},	/*1 1	*/
+(0123)   					  {0x42, 0x61, 0x51, 0x49, 0x46},	/*2 2	*/
+(0124) 			          {0x21, 0x41, 0x45, 0x4b, 0x31},	/*3 3	*/
+(0125) 			          {0x18, 0x14, 0x12, 0x7f, 0x10},	/*4 4	*/
+(0126) 			          {0x27, 0x45, 0x45, 0x45, 0x39},	/*5 5	*/
+(0127) 			          {0x3c, 0x4a, 0x49, 0x49, 0x30},	/*6 6	*/
+(0128) 			          {0x01, 0x71, 0x09, 0x05, 0x03},	/*7 7	*/
+(0129) 			          {0x36, 0x49, 0x49, 0x49, 0x36},	/*8 8	*/
+(0130) 			          {0x06, 0x49, 0x49, 0x29, 0x1e},	/*9 9	*/
+(0131) 					  {0x7e, 0x11, 0x11, 0x11, 0x7e},	/*A A	*/
+(0132) 			          {0x7f, 0x49, 0x49, 0x49, 0x36},	/*B B	*/
+(0133) 			          {0x3e, 0x41, 0x41, 0x41, 0x22},	/*C C	*/
+(0134) 			          {0x7f, 0x41, 0x41, 0x22, 0x1c},	/*D D	*/
+(0135) 			          {0x7f, 0x49, 0x49, 0x49, 0x41},	/*E E	*/
+(0136)      			      {0x7f, 0x09, 0x09, 0x09, 0x01}	/*F F	*/
+(0137) 					  };
+(0138) 
+(0139) void busy(void)
+(0140) {
+(0141) 	PORTA = 0x80;
+_busy:
+    025C E880      LDI	R24,0x80
+    025D BB8B      OUT	P1B,R24
+(0142) 	BUSY_IN; asm("NOP");asm("NOP");asm("NOP");
+    025E 98D7      CBI	P1A,7
+    025F 0000      NOP
+    0260 0000      NOP
+    0261 0000      NOP
+(0143) 	LCD_CS1_ON; asm("NOP");asm("NOP");asm("NOP");
+    0262 91800062  LDS	R24,0x62
+    0264 6081      ORI	R24,1
+    0265 93800062  STS	0x62,R24
+    0267 0000      NOP
+    0268 0000      NOP
+    0269 0000      NOP
+(0144) 	LCD_CS2_ON; asm("NOP");asm("NOP");asm("NOP");
+    026A 91800062  LDS	R24,0x62
+    026C 6082      ORI	R24,2
+    026D 93800062  STS	0x62,R24
+    026F 0000      NOP
+    0270 0000      NOP
+    0271 0000      NOP
+(0145) 	LCD_READ; asm("NOP");asm("NOP");asm("NOP");
+    0272 9AC2      SBI	P18,2
+    0273 0000      NOP
+    0274 0000      NOP
+    0275 0000      NOP
+(0146) 	LCD_CMD; asm("NOP"); asm("NOP");asm("NOP");
+    0276 98C1      CBI	P18,1
+    0277 0000      NOP
+    0278 0000      NOP
+    0279 0000      NOP
+(0147) 	do
+(0148) 	{
+(0149) 	 LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    027A 9AC3      SBI	P18,3
+    027B 0000      NOP
+    027C 0000      NOP
+    027D 0000      NOP
+    027E 0000      NOP
+    027F 0000      NOP
+(0150) 	 LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    0280 98C3      CBI	P18,3
+    0281 0000      NOP
+    0282 0000      NOP
+    0283 0000      NOP
+    0284 0000      NOP
+    0285 0000      NOP
+(0151) 	 asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    0286 0000      NOP
+    0287 0000      NOP
+    0288 0000      NOP
+    0289 0000      NOP
+    028A 0000      NOP
+(0152) 	 asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    028B 0000      NOP
+    028C 0000      NOP
+    028D 0000      NOP
+    028E 0000      NOP
+    028F 0000      NOP
+(0153) 	}while(0);//while((BUSY)); 	  
+(0154) 	BUSY_OUT;asm("NOP");asm("NOP");asm("NOP");
+    0290 9AD7      SBI	P1A,7
+    0291 0000      NOP
+    0292 0000      NOP
+    0293 0000      NOP
+(0155) 	LCD_CS1_OFF; LCD_CS2_OFF;
+    0294 91800062  LDS	R24,0x62
+    0296 7F8E      ANDI	R24,0xFE
+    0297 93800062  STS	0x62,R24
+    0299 91800062  LDS	R24,0x62
+    029B 7F8D      ANDI	R24,0xFD
+    029C 93800062  STS	0x62,R24
+(0156) }
+    029E 9508      RET
+_control:
+  chip                 --> Y+4
+  RW                   --> R20
+  DI                   --> R22
+    029F 940E090B  CALL	push_gset2
+    02A1 01A9      MOVW	R20,R18
+    02A2 01B8      MOVW	R22,R16
+(0157) 
+(0158) void control(int DI, int RW, int chip)    /* 제어 신호 쓰기 */
+(0159) {
+(0160) 	busy();
+    02A3 DFB8      RCALL	_busy
+(0161) 	if(DI){ PORTB = PORTB | BIT1; asm("NOP");asm("NOP");asm("NOP");	}
+    02A4 3060      CPI	R22,0
+    02A5 0767      CPC	R22,R23
+    02A6 F029      BEQ	0x02AC
+    02A7 9AC1      SBI	P18,1
+    02A8 0000      NOP
+    02A9 0000      NOP
+    02AA 0000      NOP
+    02AB C004      RJMP	0x02B0
+(0162) 	else { PORTB = PORTB & ~BIT1; asm("NOP");asm("NOP");asm("NOP"); }
+    02AC 98C1      CBI	P18,1
+    02AD 0000      NOP
+    02AE 0000      NOP
+    02AF 0000      NOP
+(0163) 	if(RW) { PORTB = PORTB | BIT2; asm("NOP");asm("NOP");asm("NOP"); }
+    02B0 3040      CPI	R20,0
+    02B1 0745      CPC	R20,R21
+    02B2 F029      BEQ	0x02B8
+    02B3 9AC2      SBI	P18,2
+    02B4 0000      NOP
+    02B5 0000      NOP
+    02B6 0000      NOP
+    02B7 C004      RJMP	0x02BC
+(0164) 	else { PORTB = PORTB & ~BIT2; asm("NOP");asm("NOP");asm("NOP"); }
+    02B8 98C2      CBI	P18,2
+    02B9 0000      NOP
+    02BA 0000      NOP
+    02BB 0000      NOP
+(0165) 	PORTF = PORTF | chip; asm("NOP");asm("NOP");asm("NOP");	
+    02BC 90200062  LDS	R2,0x62
+    02BE 2433      CLR	R3
+    02BF 800C      LDD	R0,4+Y
+    02C0 801D      LDD	R1,5+Y
+    02C1 2820      OR	R2,R0
+    02C2 2831      OR	R3,R1
+    02C3 92200062  STS	0x62,R2
+    02C5 0000      NOP
+    02C6 0000      NOP
+    02C7 0000      NOP
+(0166) }
+    02C8 940E08EB  CALL	pop_gset2
+    02CA 9508      RET
+_goline:
+  x                    --> R20
+    02CB 940E08F4  CALL	push_gset1
+    02CD 01A8      MOVW	R20,R16
+    02CE 9722      SBIW	R28,2
+(0167) 
+(0168) void goline(int x)			/* 줄 바꾸기 */
+(0169) {
+(0170) 	busy();
+    02CF DF8C      RCALL	_busy
+(0171) 	
+(0172) 	control(I, W, CS1+CS2);
+    02D0 E083      LDI	R24,3
+    02D1 E090      LDI	R25,0
+    02D2 8388      STD	R24,0+Y
+    02D3 8399      STD	R25,1+Y
+    02D4 2722      CLR	R18
+    02D5 2733      CLR	R19
+    02D6 2700      CLR	R16
+    02D7 2711      CLR	R17
+    02D8 DFC6      RCALL	_control
+(0173) 	PORTA = startX+x;asm("NOP");asm("NOP");asm("NOP");
+    02D9 01CA      MOVW	R24,R20
+    02DA 5488      SUBI	R24,0x48
+    02DB 4F9F      SBCI	R25,0xFF
+    02DC BB8B      OUT	P1B,R24
+    02DD 0000      NOP
+    02DE 0000      NOP
+    02DF 0000      NOP
+(0174) 	LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP"); 
+    02E0 9AC3      SBI	P18,3
+    02E1 0000      NOP
+    02E2 0000      NOP
+    02E3 0000      NOP
+    02E4 0000      NOP
+    02E5 0000      NOP
+(0175) 	LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    02E6 98C3      CBI	P18,3
+    02E7 0000      NOP
+    02E8 0000      NOP
+    02E9 0000      NOP
+    02EA 0000      NOP
+    02EB 0000      NOP
+(0176) 	control(I, W, CS1);
+    02EC E081      LDI	R24,1
+    02ED E090      LDI	R25,0
+    02EE 8388      STD	R24,0+Y
+    02EF 8399      STD	R25,1+Y
+    02F0 2722      CLR	R18
+    02F1 2733      CLR	R19
+    02F2 2700      CLR	R16
+    02F3 2711      CLR	R17
+    02F4 DFAA      RCALL	_control
+(0177) 	PORTA = startY+4;asm("NOP");asm("NOP");asm("NOP");
+    02F5 E484      LDI	R24,0x44
+    02F6 BB8B      OUT	P1B,R24
+    02F7 0000      NOP
+    02F8 0000      NOP
+    02F9 0000      NOP
+(0178) 	LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    02FA 9AC3      SBI	P18,3
+    02FB 0000      NOP
+    02FC 0000      NOP
+    02FD 0000      NOP
+    02FE 0000      NOP
+    02FF 0000      NOP
+(0179) 	LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    0300 98C3      CBI	P18,3
+    0301 0000      NOP
+    0302 0000      NOP
+    0303 0000      NOP
+    0304 0000      NOP
+    0305 0000      NOP
+(0180) 	control(I, W, CS2);
+    0306 E082      LDI	R24,2
+    0307 E090      LDI	R25,0
+    0308 8388      STD	R24,0+Y
+    0309 8399      STD	R25,1+Y
+    030A 2722      CLR	R18
+    030B 2733      CLR	R19
+    030C 2700      CLR	R16
+    030D 2711      CLR	R17
+    030E DF90      RCALL	_control
+(0181) 	PORTA = startY;	asm("NOP");asm("NOP");asm("NOP");
+    030F E480      LDI	R24,0x40
+    0310 BB8B      OUT	P1B,R24
+    0311 0000      NOP
+    0312 0000      NOP
+    0313 0000      NOP
+(0182) 	LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    0314 9AC3      SBI	P18,3
+    0315 0000      NOP
+    0316 0000      NOP
+    0317 0000      NOP
+    0318 0000      NOP
+    0319 0000      NOP
+(0183) 	LCD_DISENABLE;	asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    031A 98C3      CBI	P18,3
+    031B 0000      NOP
+    031C 0000      NOP
+    031D 0000      NOP
+    031E 0000      NOP
+    031F 0000      NOP
+(0184) }
+    0320 9622      ADIW	R28,2
+    0321 940E08F7  CALL	pop_gset1
+    0323 9508      RET
+_position:
+  tap                  --> R20
+  chip                 --> Y+8
+  y                    --> R22
+  x                    --> R10
+    0324 940E090F  CALL	push_gset3
+    0326 01B9      MOVW	R22,R18
+    0327 0158      MOVW	R10,R16
+    0328 9722      SBIW	R28,2
+(0185) 
+(0186) 
+(0187) void position(int x, int y, int chip)		/* 좌표 설정 */
+(0188) {
+(0189) 	int tap=4;
+    0329 E044      LDI	R20,4
+    032A E050      LDI	R21,0
+(0190) 	
+(0191) 	if(chip == CS2) tap=0;
+    032B 8588      LDD	R24,8+Y
+    032C 8599      LDD	R25,9+Y
+    032D 3082      CPI	R24,2
+    032E E0E0      LDI	R30,0
+    032F 079E      CPC	R25,R30
+    0330 F409      BNE	0x0332
+    0331 2744      CLR	R20
+(0192) 	control(I, W, chip);
+    0332 8408      LDD	R0,8+Y
+    0333 8419      LDD	R1,9+Y
+    0334 8208      STD	R0,0+Y
+    0335 8219      STD	R1,1+Y
+    0336 2722      CLR	R18
+    0337 2733      CLR	R19
+    0338 2700      CLR	R16
+    0339 2711      CLR	R17
+    033A DF64      RCALL	_control
+(0193) 	PORTA = startX+x;asm("NOP");asm("NOP");asm("NOP");
+    033B 01C5      MOVW	R24,R10
+    033C 5488      SUBI	R24,0x48
+    033D 4F9F      SBCI	R25,0xFF
+    033E BB8B      OUT	P1B,R24
+    033F 0000      NOP
+    0340 0000      NOP
+    0341 0000      NOP
+(0194) 	LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    0342 9AC3      SBI	P18,3
+    0343 0000      NOP
+    0344 0000      NOP
+    0345 0000      NOP
+    0346 0000      NOP
+    0347 0000      NOP
+(0195) 	LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    0348 98C3      CBI	P18,3
+    0349 0000      NOP
+    034A 0000      NOP
+    034B 0000      NOP
+    034C 0000      NOP
+    034D 0000      NOP
+(0196) 	control(I, W, chip);
+    034E 8408      LDD	R0,8+Y
+    034F 8419      LDD	R1,9+Y
+    0350 8208      STD	R0,0+Y
+    0351 8219      STD	R1,1+Y
+    0352 2722      CLR	R18
+    0353 2733      CLR	R19
+    0354 2700      CLR	R16
+    0355 2711      CLR	R17
+    0356 DF48      RCALL	_control
+(0197) 	PORTA = startY+tap+(y*6);asm("NOP");asm("NOP");asm("NOP");
+    0357 E006      LDI	R16,6
+    0358 E010      LDI	R17,0
+    0359 019B      MOVW	R18,R22
+    035A 940E08DB  CALL	empy16s
+    035C 01CA      MOVW	R24,R20
+    035D 5C80      SUBI	R24,0xC0
+    035E 4F9F      SBCI	R25,0xFF
+    035F 0F80      ADD	R24,R16
+    0360 1F91      ADC	R25,R17
+    0361 BB8B      OUT	P1B,R24
+    0362 0000      NOP
+    0363 0000      NOP
+    0364 0000      NOP
+(0198) 	LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP"); 
+    0365 9AC3      SBI	P18,3
+    0366 0000      NOP
+    0367 0000      NOP
+    0368 0000      NOP
+    0369 0000      NOP
+    036A 0000      NOP
+(0199) 	LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    036B 98C3      CBI	P18,3
+    036C 0000      NOP
+    036D 0000      NOP
+    036E 0000      NOP
+    036F 0000      NOP
+    0370 0000      NOP
+(0200) }
+    0371 9622      ADIW	R28,2
+    0372 940E08EE  CALL	pop_gset3
+    0374 9508      RET
+_clear:
+  x                    --> R20
+  y                    --> R10
+  chip                 --> R22
+    0375 940E090F  CALL	push_gset3
+    0377 01B8      MOVW	R22,R16
+    0378 9722      SBIW	R28,2
+(0201) 
+(0202) 
+(0203) void clear(int chip)						/* 화면 클리어 */
+(0204) {
+(0205) 	int x, y;
+(0206) 
+(0207) 	for(x=0; x<8; x++)
+    0379 2744      CLR	R20
+    037A 2755      CLR	R21
+(0208) 	{
+(0209) 		control(I, W, chip);
+    037B 8368      STD	R22,0+Y
+    037C 8379      STD	R23,1+Y
+    037D 2722      CLR	R18
+    037E 2733      CLR	R19
+    037F 2700      CLR	R16
+    0380 2711      CLR	R17
+    0381 DF1D      RCALL	_control
+(0210) 		PORTA = startX+x;asm("NOP");asm("NOP");asm("NOP");
+    0382 01CA      MOVW	R24,R20
+    0383 5488      SUBI	R24,0x48
+    0384 4F9F      SBCI	R25,0xFF
+    0385 BB8B      OUT	P1B,R24
+    0386 0000      NOP
+    0387 0000      NOP
+    0388 0000      NOP
+(0211) 		LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    0389 9AC3      SBI	P18,3
+    038A 0000      NOP
+    038B 0000      NOP
+    038C 0000      NOP
+    038D 0000      NOP
+    038E 0000      NOP
+(0212) 		LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    038F 98C3      CBI	P18,3
+    0390 0000      NOP
+    0391 0000      NOP
+    0392 0000      NOP
+    0393 0000      NOP
+    0394 0000      NOP
+(0213) 		control(I, W, chip);
+    0395 8368      STD	R22,0+Y
+    0396 8379      STD	R23,1+Y
+    0397 2722      CLR	R18
+    0398 2733      CLR	R19
+    0399 2700      CLR	R16
+    039A 2711      CLR	R17
+    039B DF03      RCALL	_control
+(0214) 		PORTA = startY;asm("NOP");asm("NOP");asm("NOP");
+    039C E480      LDI	R24,0x40
+    039D BB8B      OUT	P1B,R24
+    039E 0000      NOP
+    039F 0000      NOP
+    03A0 0000      NOP
+(0215) 		LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    03A1 9AC3      SBI	P18,3
+    03A2 0000      NOP
+    03A3 0000      NOP
+    03A4 0000      NOP
+    03A5 0000      NOP
+    03A6 0000      NOP
+(0216) 		LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    03A7 98C3      CBI	P18,3
+    03A8 0000      NOP
+    03A9 0000      NOP
+    03AA 0000      NOP
+    03AB 0000      NOP
+    03AC 0000      NOP
+(0217) 		for(y=0; y<64; y++)
+    03AD 24AA      CLR	R10
+    03AE 24BB      CLR	R11
+(0218) 		{
+(0219) 			control(D, W, chip);
+    03AF 8368      STD	R22,0+Y
+    03B0 8379      STD	R23,1+Y
+    03B1 2722      CLR	R18
+    03B2 2733      CLR	R19
+    03B3 E001      LDI	R16,1
+    03B4 E010      LDI	R17,0
+    03B5 DEE9      RCALL	_control
+(0220) 			PORTA = 0x00;asm("NOP");asm("NOP");asm("NOP");
+    03B6 2422      CLR	R2
+    03B7 BA2B      OUT	P1B,R2
+    03B8 0000      NOP
+    03B9 0000      NOP
+    03BA 0000      NOP
+(0221) 			LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    03BB 9AC3      SBI	P18,3
+    03BC 0000      NOP
+    03BD 0000      NOP
+    03BE 0000      NOP
+    03BF 0000      NOP
+    03C0 0000      NOP
+(0222) 			LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    03C1 98C3      CBI	P18,3
+    03C2 0000      NOP
+    03C3 0000      NOP
+    03C4 0000      NOP
+    03C5 0000      NOP
+    03C6 0000      NOP
+(0223) 			busy();
+    03C7 DE94      RCALL	_busy
+    03C8 01C5      MOVW	R24,R10
+    03C9 9601      ADIW	R24,1
+    03CA 015C      MOVW	R10,R24
+    03CB 3480      CPI	R24,0x40
+    03CC E0E0      LDI	R30,0
+    03CD 079E      CPC	R25,R30
+    03CE F304      BLT	0x03AF
+    03CF 5F4F      SUBI	R20,0xFF
+    03D0 4F5F      SBCI	R21,0xFF
+    03D1 3048      CPI	R20,0x8
+    03D2 E0E0      LDI	R30,0
+    03D3 075E      CPC	R21,R30
+    03D4 F40C      BGE	0x03D6
+    03D5 CFA5      RJMP	0x037B
+(0224) 		}
+(0225) 	}
+(0226) }
+    03D6 9622      ADIW	R28,2
+    03D7 940E08EE  CALL	pop_gset3
+    03D9 9508      RET
+_Cput:
+  y                    --> R20
+  chip                 --> R22
+  c                    --> R10
+    03DA 940E090F  CALL	push_gset3
+    03DC 01B9      MOVW	R22,R18
+    03DD 2EA0      MOV	R10,R16
+    03DE 9722      SBIW	R28,2
+(0227) 
+(0228) 
+(0229) void Cput(unsigned char c, int chip)		/* 한문자 출력 */
+(0230) {
+(0231) 	int y;
+(0232) 
+(0233) 	for(y=0; y<6; y++)
+    03DF 2744      CLR	R20
+    03E0 2755      CLR	R21
+(0234) 	{
+(0235) 		control(D, W, chip);
+    03E1 8368      STD	R22,0+Y
+    03E2 8379      STD	R23,1+Y
+    03E3 2722      CLR	R18
+    03E4 2733      CLR	R19
+    03E5 E001      LDI	R16,1
+    03E6 E010      LDI	R17,0
+    03E7 DEB7      RCALL	_control
+(0236) 		if(y>4) 
+    03E8 E084      LDI	R24,4
+    03E9 E090      LDI	R25,0
+    03EA 1784      CP	R24,R20
+    03EB 0795      CPC	R25,R21
+    03EC F494      BGE	0x03FF
+(0237) 		{
+(0238) 			PORTA = 0x00;asm("NOP");asm("NOP");asm("NOP");
+    03ED 2422      CLR	R2
+    03EE BA2B      OUT	P1B,R2
+    03EF 0000      NOP
+    03F0 0000      NOP
+    03F1 0000      NOP
+(0239) 			LCD_ENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    03F2 9AC3      SBI	P18,3
+    03F3 0000      NOP
+    03F4 0000      NOP
+    03F5 0000      NOP
+    03F6 0000      NOP
+    03F7 0000      NOP
+(0240) 			LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    03F8 98C3      CBI	P18,3
+    03F9 0000      NOP
+    03FA 0000      NOP
+    03FB 0000      NOP
+    03FC 0000      NOP
+    03FD 0000      NOP
+(0241) 		}
+    03FE C01B      RJMP	0x041A
+(0242) 		else 
+(0243) 		{
+(0244) 			PORTA = font[c-0x20][y]; asm("NOP");asm("NOP");asm("NOP");
+    03FF E085      LDI	R24,5
+    0400 9D8A      MUL	R24,R10
+    0401 0110      MOVW	R2,R0
+    0402 EF86      LDI	R24,0xF6
+    0403 EF9F      LDI	R25,0xFF
+    0404 0E28      ADD	R2,R24
+    0405 1E39      ADC	R3,R25
+    0406 01FA      MOVW	R30,R20
+    0407 0DE2      ADD	R30,R2
+    0408 1DF3      ADC	R31,R3
+    0409 91E4      LPM	R30,0(Z)
+    040A BBEB      OUT	P1B,R30
+    040B 0000      NOP
+    040C 0000      NOP
+    040D 0000      NOP
+(0245) 			LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    040E 9AC3      SBI	P18,3
+    040F 0000      NOP
+    0410 0000      NOP
+    0411 0000      NOP
+    0412 0000      NOP
+    0413 0000      NOP
+(0246) 			LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    0414 98C3      CBI	P18,3
+    0415 0000      NOP
+    0416 0000      NOP
+    0417 0000      NOP
+    0418 0000      NOP
+    0419 0000      NOP
+(0247) 		}
+(0248) 		busy();
+    041A DE41      RCALL	_busy
+    041B 5F4F      SUBI	R20,0xFF
+    041C 4F5F      SBCI	R21,0xFF
+    041D 3046      CPI	R20,6
+    041E E0E0      LDI	R30,0
+    041F 075E      CPC	R21,R30
+    0420 F40C      BGE	0x0422
+    0421 CFBF      RJMP	0x03E1
+(0249) 	}
+(0250) }
+    0422 9622      ADIW	R28,2
+    0423 940E08EE  CALL	pop_gset3
+    0425 9508      RET
+_Sput:
+  length               --> R20
+  chip                 --> R22
+  i                    --> R10
+  text                 --> R12
+    0426 940E0913  CALL	push_gset4
+    0428 0168      MOVW	R12,R16
+(0251) 
+(0252) 
+(0253) void Sput(char *text)						/* 문장 출력 */
+(0254) {
+(0255) 	int length=0, i, chip;
+    0429 2744      CLR	R20
+    042A 2755      CLR	R21
+(0256) 
+(0257) 	length = strlen(text);
+    042B 0186      MOVW	R16,R12
+    042C 940E08BB  CALL	_strlen
+    042E 01A8      MOVW	R20,R16
+(0258) 	chip=CS1;
+    042F E061      LDI	R22,1
+    0430 E070      LDI	R23,0
+(0259) 	for(i=0; i<length; i++)
+    0431 24AA      CLR	R10
+    0432 24BB      CLR	R11
+    0433 C010      RJMP	0x0444
+(0260) 	{
+(0261) 		if(i>=10) chip=CS2;
+    0434 01C5      MOVW	R24,R10
+    0435 308A      CPI	R24,0xA
+    0436 E0E0      LDI	R30,0
+    0437 079E      CPC	R25,R30
+    0438 F014      BLT	0x043B
+    0439 E062      LDI	R22,2
+    043A E070      LDI	R23,0
+(0262) 		Cput(*(text+i), chip);
+    043B 019B      MOVW	R18,R22
+    043C 01F5      MOVW	R30,R10
+    043D 0DEC      ADD	R30,R12
+    043E 1DFD      ADC	R31,R13
+    043F 8100      LDD	R16,0+Z
+    0440 DF99      RCALL	_Cput
+    0441 01C5      MOVW	R24,R10
+    0442 9601      ADIW	R24,1
+    0443 015C      MOVW	R10,R24
+    0444 16A4      CP	R10,R20
+    0445 06B5      CPC	R11,R21
+    0446 F36C      BLT	0x0434
+(0263) 	}
+(0264) }
+    0447 940E08F1  CALL	pop_gset4
+    0449 9508      RET
+_Nput:
+  n3                   --> R20
+  n2                   --> R10
+  n1                   --> R12
+  chip                 --> R22
+  n                    --> R20
+    044A 940E0913  CALL	push_gset4
+    044C 01B9      MOVW	R22,R18
+    044D 2F40      MOV	R20,R16
+(0265) 
+(0266) 
+(0267) void Nput(unsigned char n, int chip)		/* 세자리 숫자 출력 */
+(0268) {
+(0269) 	unsigned char n1, n2, n3;
+(0270) 
+(0271) 	n1 = n/100 + 0x30;
+    044E E614      LDI	R17,0x64
+    044F 2F04      MOV	R16,R20
+    0450 940E08C9  CALL	div8u
+    0452 2F80      MOV	R24,R16
+    0453 5D80      SUBI	R24,0xD0
+    0454 2EC8      MOV	R12,R24
+(0272) 	n2 = (n-(n/100)*100)/10 + 0x30;
+    0455 E614      LDI	R17,0x64
+    0456 2F04      MOV	R16,R20
+    0457 940E08C9  CALL	div8u
+    0459 E684      LDI	R24,0x64
+    045A 9F80      MUL	R24,R16
+    045B 2F04      MOV	R16,R20
+    045C 1900      SUB	R16,R0
+    045D E01A      LDI	R17,0xA
+    045E 940E08C9  CALL	div8u
+    0460 2F80      MOV	R24,R16
+    0461 5D80      SUBI	R24,0xD0
+    0462 2EA8      MOV	R10,R24
+(0273) 	n3 = (n-(n/100)*100)%10 + 0x30;
+    0463 E614      LDI	R17,0x64
+    0464 2F04      MOV	R16,R20
+    0465 940E08C9  CALL	div8u
+    0467 E684      LDI	R24,0x64
+    0468 9F80      MUL	R24,R16
+    0469 2F04      MOV	R16,R20
+    046A 1900      SUB	R16,R0
+    046B E01A      LDI	R17,0xA
+    046C 940E08C7  CALL	mod8u
+    046E 2F40      MOV	R20,R16
+    046F 5D40      SUBI	R20,0xD0
+(0274) 	Cput(n1, chip);
+    0470 019B      MOVW	R18,R22
+    0471 2D0C      MOV	R16,R12
+    0472 DF67      RCALL	_Cput
+(0275) 	Cput(n2, chip);
+    0473 019B      MOVW	R18,R22
+    0474 2D0A      MOV	R16,R10
+    0475 DF64      RCALL	_Cput
+(0276) 	Cput(n3, chip);
+    0476 019B      MOVW	R18,R22
+    0477 2F04      MOV	R16,R20
+    0478 DF61      RCALL	_Cput
+(0277) }
+    0479 940E08F1  CALL	pop_gset4
+    047B 9508      RET
+_LCD_en:
+  i                    --> Y+3
+  y                    --> Y+3
+    047C 9722      SBIW	R28,2
+(0278) 
+(0279) 
+(0280) void LCD_en(void)							/* LCD ON */
+(0281) {
+(0282) 	int y, i;
+(0283) 
+(0284) 	busy();
+    047D DDDE      RCALL	_busy
+(0285) 	control(I, W, CS1+CS2);
+    047E E083      LDI	R24,3
+    047F E090      LDI	R25,0
+    0480 8388      STD	R24,0+Y
+    0481 8399      STD	R25,1+Y
+    0482 2722      CLR	R18
+    0483 2733      CLR	R19
+    0484 2700      CLR	R16
+    0485 2711      CLR	R17
+    0486 DE18      RCALL	_control
+(0286) 	PORTA = 0x3f;asm("NOP");asm("NOP");asm("NOP");	
+    0487 E38F      LDI	R24,0x3F
+    0488 BB8B      OUT	P1B,R24
+    0489 0000      NOP
+    048A 0000      NOP
+    048B 0000      NOP
+(0287) 	LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP"); 
+    048C 9AC3      SBI	P18,3
+    048D 0000      NOP
+    048E 0000      NOP
+    048F 0000      NOP
+    0490 0000      NOP
+    0491 0000      NOP
+(0288) 	LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    0492 98C3      CBI	P18,3
+    0493 0000      NOP
+    0494 0000      NOP
+    0495 0000      NOP
+    0496 0000      NOP
+    0497 0000      NOP
+(0289) 
+(0290) 	clear(CS1+CS2);
+    0498 E003      LDI	R16,3
+    0499 E010      LDI	R17,0
+    049A DEDA      RCALL	_clear
+(0291) 
+(0292) 	control(I, W, CS1+CS2);
+    049B E083      LDI	R24,3
+    049C E090      LDI	R25,0
+    049D 8388      STD	R24,0+Y
+    049E 8399      STD	R25,1+Y
+    049F 2722      CLR	R18
+    04A0 2733      CLR	R19
+    04A1 2700      CLR	R16
+    04A2 2711      CLR	R17
+    04A3 DDFB      RCALL	_control
+(0293) 	PORTA = startL;asm("NOP");asm("NOP");asm("NOP");
+    04A4 EC80      LDI	R24,0xC0
+    04A5 BB8B      OUT	P1B,R24
+    04A6 0000      NOP
+    04A7 0000      NOP
+    04A8 0000      NOP
+(0294) 	LCD_ENABLE; asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP"); 
+    04A9 9AC3      SBI	P18,3
+    04AA 0000      NOP
+    04AB 0000      NOP
+    04AC 0000      NOP
+    04AD 0000      NOP
+    04AE 0000      NOP
+(0295) 	LCD_DISENABLE;asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
+    04AF 98C3      CBI	P18,3
+    04B0 0000      NOP
+    04B1 0000      NOP
+    04B2 0000      NOP
+    04B3 0000      NOP
+    04B4 0000      NOP
+(0296) 
+(0297) }
+    04B5 9622      ADIW	R28,2
+    04B6 9508      RET
+FILE: E:\FW\HN_Device\PLAVR128\3150TO_AVR.c
+(0001) 
+(0002) #include <iom128v.h>
+(0003) #include <macros.h>
+(0004) #include <string.h>
+(0005) #include "AVR128.h"
+(0006) #include "lcd128.h"
+(0007) 
+(0008) 
+(0009) void port_init(void)
+(0010) {
+(0011)  PORTA_Init;
+_port_init:
+    04B7 2422      CLR	R2
+    04B8 BA2B      OUT	P1B,R2
+(0012)  DDRA_Init;
+    04B9 EF8F      LDI	R24,0xFF
+    04BA BB8A      OUT	P1A,R24
+(0013)  PORTB_Init;
+    04BB BB88      OUT	P18,R24
+(0014)  DDRB_Init; 
+    04BC BB87      OUT	P17,R24
+(0015)  PORTC_Init;
+    04BD BB85      OUT	P15,R24
+(0016)  DDRC_Init;
+    04BE BB84      OUT	P14,R24
+(0017)  PORTD_Init;
+    04BF BB82      OUT	P12,R24
+(0018)  DDRD_Init;
+    04C0 E88B      LDI	R24,0x8B
+    04C1 BB81      OUT	P11,R24
+(0019)  PORTE_Init;
+    04C2 EF8F      LDI	R24,0xFF
+    04C3 B983      OUT	P03,R24
+(0020)  DDRE_Init;
+    04C4 EF8E      LDI	R24,0xFE
+    04C5 B982      OUT	P02,R24
+(0021)  PORTF_Init;
+    04C6 EF80      LDI	R24,0xF0
+    04C7 93800062  STS	0x62,R24
+(0022)  DDRF_Init;
+    04C9 E083      LDI	R24,3
+    04CA 93800061  STS	0x61,R24
+(0023)  
+(0024)  
+(0025) }
+    04CC 9508      RET
+(0026) 
+(0027) 
+(0028) 
+(0029) 
+(0030) void Uart0_init(void)
+(0031) {
+(0032) UCSR0B = 0x00; //disable while setting baud rate
+_Uart0_init:
+    04CD 2422      CLR	R2
+    04CE B82A      OUT	P0A,R2
+(0033) UCSR0A = 0x00;
+    04CF B82B      OUT	P0B,R2
+(0034) UCSR0C = 0x06;
+    04D0 E086      LDI	R24,6
+    04D1 93800095  STS	0x95,R24
+(0035) UBRR0L = 0x2F; //set baud rate lo 9600
+    04D3 E28F      LDI	R24,0x2F
+    04D4 B989      OUT	P09,R24
+(0036) UBRR0H = 0x00; //set baud rate hi
+    04D5 92200090  STS	0x90,R2
+(0037) UCSR0B = 0x98;
+    04D7 E988      LDI	R24,0x98
+    04D8 B98A      OUT	P0A,R24
+(0038) }
+    04D9 9508      RET
+(0039) 
+(0040) 
+(0041) 
+(0042) void Uart1_init(void)
+(0043) {
+(0044)  UCSR1B = 0x00; //disable while setting baud rate
+_Uart1_init:
+    04DA 2422      CLR	R2
+    04DB 9220009A  STS	0x9A,R2
+(0045)  UCSR1A = 0x00;
+    04DD 9220009B  STS	0x9B,R2
+(0046)  UCSR1C = 0x06;
+    04DF E086      LDI	R24,6
+    04E0 9380009D  STS	0x9D,R24
+(0047)  UBRR1L = 0x2F; //set baud rate lo 9600
+    04E2 E28F      LDI	R24,0x2F
+    04E3 93800099  STS	0x99,R24
+(0048)  UBRR1H = 0x00; //set baud rate hi
+    04E5 92200098  STS	0x98,R2
+(0049)  UCSR1B = 0x98;
+    04E7 E988      LDI	R24,0x98
+    04E8 9380009A  STS	0x9A,R24
+(0050) }
+    04EA 9508      RET
+_Uart0_rx_Interrupt:
+    04EB 922A      ST	R2,-Y
+    04EC 930A      ST	R16,-Y
+    04ED 931A      ST	R17,-Y
+    04EE 938A      ST	R24,-Y
+    04EF 939A      ST	R25,-Y
+    04F0 93EA      ST	R30,-Y
+    04F1 93FA      ST	R31,-Y
+    04F2 B62F      IN	R2,P3F
+    04F3 922A      ST	R2,-Y
+(0051) 
+(0052) #pragma interrupt_handler Uart0_rx_Interrupt:19
+(0053) void Uart0_rx_Interrupt(void)
+(0054) {
+(0055)  //uart has received a character in UDR
+(0056) UART0_RX_DATA[UART0_RX_Count] = UDR0;
+    04F4 E081      LDI	R24,1
+    04F5 E093      LDI	R25,3
+    04F6 91E002CE  LDS	R30,_UART0_RX_Count
+    04F8 27FF      CLR	R31
+    04F9 0FE8      ADD	R30,R24
+    04FA 1FF9      ADC	R31,R25
+    04FB B02C      IN	R2,P0C
+    04FC 8220      STD	R2,0+Z
+(0057)    if(UART0_RX_DATA[0] == STX)
+    04FD 91800301  LDS	R24,_UART0_RX_DATA
+    04FF 3082      CPI	R24,2
+    0500 F4F1      BNE	0x051F
+(0058)    {
+(0059) 	UART0_RX_Count++;
+    0501 918002CE  LDS	R24,_UART0_RX_Count
+    0503 5F8F      SUBI	R24,0xFF
+    0504 938002CE  STS	_UART0_RX_Count,R24
+(0060) 	switch(UART0_RX_Count)
+    0506 2F08      MOV	R16,R24
+    0507 2711      CLR	R17
+    0508 3001      CPI	R16,1
+    0509 E0E0      LDI	R30,0
+    050A 071E      CPC	R17,R30
+    050B F049      BEQ	0x0515
+    050C 3001      CPI	R16,1
+    050D E0E0      LDI	R30,0
+    050E 071E      CPC	R17,R30
+    050F F094      BLT	0x0522
+    0510 3005      CPI	R16,5
+    0511 E0E0      LDI	R30,0
+    0512 071E      CPC	R17,R30
+    0513 F019      BEQ	0x0517
+    0514 C00D      RJMP	0x0522
+(0061) 	{
+(0062) 		case 1: LED_50TOAVR_ON;//LED232_ON; 
+    0515 98AC      CBI	P15,4
+(0063) 			break;
+    0516 C00B      RJMP	0x0522
+(0064) 		case 5: LED_50TOAVR_OFF;UART0_RX_Flag = ON; UART0_RX_Count = 0;
+    0517 9AAC      SBI	P15,4
+    0518 E081      LDI	R24,1
+    0519 938002CC  STS	_UART0_RX_Flag,R24
+    051B 2422      CLR	R2
+    051C 922002CE  STS	_UART0_RX_Count,R2
+(0065) 			break;
+(0066) 	}
+(0067)    }
+    051E C003      RJMP	0x0522
+(0068)    else UART0_RX_Count = 0;
+    051F 2422      CLR	R2
+    0520 922002CE  STS	_UART0_RX_Count,R2
+(0069) 	
+(0070) }
+    0522 9029      LD	R2,Y+
+    0523 BE2F      OUT	P3F,R2
+    0524 91F9      LD	R31,Y+
+    0525 91E9      LD	R30,Y+
+    0526 9199      LD	R25,Y+
+    0527 9189      LD	R24,Y+
+    0528 9119      LD	R17,Y+
+    0529 9109      LD	R16,Y+
+    052A 9029      LD	R2,Y+
+    052B 9518      RETI
+_adc_isr:
+    052C 922A      ST	R2,-Y
+    052D 923A      ST	R3,-Y
+    052E 938A      ST	R24,-Y
+    052F B62F      IN	R2,P3F
+    0530 922A      ST	R2,-Y
+(0071) 
+(0072) 
+(0073) #pragma interrupt_handler adc_isr:22
+(0074) void adc_isr(void)
+(0075) {
+(0076)  //conversion complete, read value (int) using...
+(0077)   ADC_DATAS = ADC;
+    0531 B024      IN	R2,P04
+    0532 B035      IN	R3,P05
+    0533 923002BE  STS	_ADC_DATAS+1,R3
+    0535 922002BD  STS	_ADC_DATAS,R2
+(0078)   adc_flagg = ON;
+    0537 E081      LDI	R24,1
+    0538 938002BC  STS	_adc_flagg,R24
+(0079) } 
+    053A 9029      LD	R2,Y+
+    053B BE2F      OUT	P3F,R2
+    053C 9189      LD	R24,Y+
+    053D 9039      LD	R3,Y+
+    053E 9029      LD	R2,Y+
+    053F 9518      RETI
+_timer1_ovf_isr:
+    0540 922A      ST	R2,-Y
+    0541 938A      ST	R24,-Y
+    0542 B62F      IN	R2,P3F
+    0543 922A      ST	R2,-Y
+(0080) 
+(0081) #pragma interrupt_handler timer1_ovf_isr:15
+(0082) void timer1_ovf_isr(void)
+(0083) {
+(0084)  //TIMER1 has overflowed
+(0085)  TCNT1H = 0x00; //reload counter high value
+    0544 2422      CLR	R2
+    0545 BC2D      OUT	P2D,R2
+(0086)  TCNT1L = 0x01; //reload counter low value
+    0546 E081      LDI	R24,1
+    0547 BD8C      OUT	P2C,R24
+(0087)  TIME_flag = ON;
+    0548 938002BB  STS	_TIME_flag,R24
+(0088)  
+(0089) }
+    054A 9029      LD	R2,Y+
+    054B BE2F      OUT	P3F,R2
+    054C 9189      LD	R24,Y+
+    054D 9029      LD	R2,Y+
+    054E 9518      RETI
+_timer3_ovf_isr:
+    054F 938A      ST	R24,-Y
+    0550 B78F      IN	R24,P3F
+    0551 938A      ST	R24,-Y
+(0090) 
+(0091) #pragma interrupt_handler timer3_ovf_isr:30
+(0092) void timer3_ovf_isr(void)
+(0093) {
+(0094)  //TIMER3 has overflowed
+(0095)  TCNT3H = 0x1F; //reload counter high value
+    0552 E18F      LDI	R24,0x1F
+    0553 93800089  STS	0x89,R24
+(0096)  TCNT3L = 0x01; //reload counter low value
+    0555 E081      LDI	R24,1
+    0556 93800088  STS	0x88,R24
+(0097)  TIME3_flag =ON;
+    0558 938002BA  STS	_TIME3_flag,R24
+(0098) }
+    055A 9189      LD	R24,Y+
+    055B BF8F      OUT	P3F,R24
+    055C 9189      LD	R24,Y+
+    055D 9518      RETI
+_Uart1_rx_Interrupt:
+    055E 922A      ST	R2,-Y
+    055F 930A      ST	R16,-Y
+    0560 931A      ST	R17,-Y
+    0561 938A      ST	R24,-Y
+    0562 939A      ST	R25,-Y
+    0563 93EA      ST	R30,-Y
+    0564 93FA      ST	R31,-Y
+    0565 B62F      IN	R2,P3F
+    0566 922A      ST	R2,-Y
+(0099) 
+(0100) 
+(0101) #pragma interrupt_handler Uart1_rx_Interrupt:31
+(0102) void Uart1_rx_Interrupt(void)
+(0103) {
+(0104)  //uart has received a character in UDR
+(0105)  UART1_RX_DATA[UART1_RX_Count] = UDR1;
+    0567 EC8F      LDI	R24,0xCF
+    0568 E092      LDI	R25,2
+    0569 91E002CD  LDS	R30,_UART1_RX_Count
+    056B 27FF      CLR	R31
+    056C 0FE8      ADD	R30,R24
+    056D 1FF9      ADC	R31,R25
+    056E 9020009C  LDS	R2,0x9C
+    0570 8220      STD	R2,0+Z
+(0106)  
+(0107)  if (UART1_RX_DATA[0] == STX)
+    0571 918002CF  LDS	R24,_UART1_RX_DATA
+    0573 3082      CPI	R24,2
+    0574 F531      BNE	0x059B
+(0108)  {
+(0109)  	UART1_RX_Count++;
+    0575 918002CD  LDS	R24,_UART1_RX_Count
+    0577 5F8F      SUBI	R24,0xFF
+    0578 938002CD  STS	_UART1_RX_Count,R24
+(0110)  	switch(UART1_RX_Count)
+    057A 2F08      MOV	R16,R24
+    057B 2711      CLR	R17
+    057C 3001      CPI	R16,1
+    057D E0E0      LDI	R30,0
+    057E 071E      CPC	R17,R30
+    057F F069      BEQ	0x058D
+    0580 3001      CPI	R16,1
+    0581 E0E0      LDI	R30,0
+    0582 071E      CPC	R17,R30
+    0583 F0D4      BLT	0x059E
+    0584 3008      CPI	R16,0x8
+    0585 E0E0      LDI	R30,0
+    0586 071E      CPC	R17,R30
+    0587 F039      BEQ	0x058F
+    0588 300A      CPI	R16,0xA
+    0589 E0E0      LDI	R30,0
+    058A 071E      CPC	R17,R30
+    058B F039      BEQ	0x0593
+    058C C011      RJMP	0x059E
+(0111)  	{
+(0112)  		case 1: LED_Zig_ON;
+    058D 98A8      CBI	P15,0
+(0113)  			    break;
+    058E C00F      RJMP	0x059E
+(0114) 		case 8: UART_RX_FL = ON;//if(UART1_RX_DATA[3] == 0xF0)
+    058F E081      LDI	R24,1
+    0590 938002CA  STS	_UART_RX_FL,R24
+(0115) 		            // UART1_RX_Count = 0;	
+(0116) 			    break;	
+    0592 C00B      RJMP	0x059E
+(0117)  		case 10:LED_Zig_OFF; UART1_RX_Flag = ON; UART1_RX_Count = 0;
+    0593 9AA8      SBI	P15,0
+    0594 E081      LDI	R24,1
+    0595 938002CB  STS	_UART1_RX_Flag,R24
+    0597 2422      CLR	R2
+    0598 922002CD  STS	_UART1_RX_Count,R2
+(0118)  			    break;
+(0119)  	}
+(0120)  }
+    059A C003      RJMP	0x059E
+(0121)  else UART1_RX_Count = 0; 
+    059B 2422      CLR	R2
+    059C 922002CD  STS	_UART1_RX_Count,R2
+(0122) }
+    059E 9029      LD	R2,Y+
+    059F BE2F      OUT	P3F,R2
+    05A0 91F9      LD	R31,Y+
+    05A1 91E9      LD	R30,Y+
+    05A2 9199      LD	R25,Y+
+    05A3 9189      LD	R24,Y+
+    05A4 9119      LD	R17,Y+
+    05A5 9109      LD	R16,Y+
+    05A6 9029      LD	R2,Y+
+    05A7 9518      RETI
+(0123) 
+(0124) void Uart0_TX_byte(unsigned char c)
+(0125) {
+(0126)  UDR0 = c;
+_Uart0_TX_byte:
+  c                    --> R16
+    05A8 B90C      OUT	P0C,R16
+(0127)  while(!(UCSR0A & (1<<UDRE0)));
+    05A9 9B5D      SBIS	P0B,5
+    05AA CFFE      RJMP	0x05A9
+(0128)  UCSR0A |= (1<<UDRE0);
+    05AB 9A5D      SBI	P0B,5
+(0129) }
+    05AC 9508      RET
+_Uart0_TX_bytes:
+  C                    --> R20
+  Num                  --> R22
+    05AD 940E090B  CALL	push_gset2
+    05AF 2F60      MOV	R22,R16
+(0130) 
+(0131) void Uart0_TX_bytes(unsigned char Num)
+(0132)  {
+(0133)  BYTE C;
+(0134)  LED_3150_ON;
+    05B0 98A9      CBI	P15,1
+(0135)  for(C=0; C<Num; C++) Uart0_TX_byte(UART0_TX_DATA[C]);
+    05B1 2744      CLR	R20
+    05B2 C009      RJMP	0x05BC
+    05B3 E685      LDI	R24,0x65
+    05B4 E093      LDI	R25,3
+    05B5 2FE4      MOV	R30,R20
+    05B6 27FF      CLR	R31
+    05B7 0FE8      ADD	R30,R24
+    05B8 1FF9      ADC	R31,R25
+    05B9 8100      LDD	R16,0+Z
+    05BA DFED      RCALL	_Uart0_TX_byte
+    05BB 9543      INC	R20
+    05BC 1746      CP	R20,R22
+    05BD F3A8      BCS	0x05B3
+(0136)  LED_3150_OFF; 
+    05BE 9AA9      SBI	P15,1
+(0137)  }
+    05BF 940E08EB  CALL	pop_gset2
+    05C1 9508      RET
+(0138) 
+(0139) void Uart1_TX_byte(unsigned char c)
+(0140)  {
+(0141)  UDR1 = c;
+_Uart1_TX_byte:
+  c                    --> R16
+    05C2 9300009C  STS	0x9C,R16
+(0142)  while(!(UCSR1A & (1<<UDRE1)));
+    05C4 9020009B  LDS	R2,0x9B
+    05C6 FE25      SBRS	R2,5
+    05C7 CFFC      RJMP	0x05C4
+(0143)  UCSR1A |= (1<<UDRE1);
+    05C8 9180009B  LDS	R24,0x9B
+    05CA 6280      ORI	R24,0x20
+    05CB 9380009B  STS	0x9B,R24
+(0144)  }
+    05CD 9508      RET
+_Uart1_TX_bytes:
+  C                    --> R20
+  Num                  --> R22
+    05CE 940E090B  CALL	push_gset2
+    05D0 2F60      MOV	R22,R16
+(0145) 
+(0146) void Uart1_TX_bytes(unsigned char Num)
+(0147)  {
+(0148)  BYTE C;
+(0149)  //LED422_ON;
+(0150)  for(C=0; C<Num; C++) Uart1_TX_bytes(UART1_TX_DATA[C]);
+    05D1 2744      CLR	R20
+    05D2 C009      RJMP	0x05DC
+    05D3 E383      LDI	R24,0x33
+    05D4 E093      LDI	R25,3
+    05D5 2FE4      MOV	R30,R20
+    05D6 27FF      CLR	R31
+    05D7 0FE8      ADD	R30,R24
+    05D8 1FF9      ADC	R31,R25
+    05D9 8100      LDD	R16,0+Z
+    05DA DFF3      RCALL	_Uart1_TX_bytes
+    05DB 9543      INC	R20
+    05DC 1746      CP	R20,R22
+    05DD F3A8      BCS	0x05D3
+(0151)  //LED422_OFF;
+(0152)  }
+    05DE 940E08EB  CALL	pop_gset2
+    05E0 9508      RET
+(0153) 
+(0154) 
+(0155) void adc_init(void)
+(0156) {
+(0157)  ADCSRA = 0x00; //disable adc
+_adc_init:
+    05E1 2422      CLR	R2
+    05E2 B826      OUT	P06,R2
+(0158)  ADMUX = 0x00; //select adc input 0 
+    05E3 B827      OUT	P07,R2
+(0159)  ADCSRA = 0x00;
+    05E4 B826      OUT	P06,R2
+(0160) }
+    05E5 9508      RET
+(0161)  
+(0162) ADC_PROCESS(void)
+(0163) {
+(0164)     WORD TEMP_DATA = 0x0000;
+_ADC_PROCESS:
+  IRD                  --> R16
+  TEMP_DATA            --> R18
+    05E6 2722      CLR	R18
+    05E7 2733      CLR	R19
+(0165) 	BYTE IRD;
+(0166) 	//LED_3150_ON;
+(0167)     ADCSRA = 0x9E;     
+    05E8 E98E      LDI	R24,0x9E
+    05E9 B986      OUT	P06,R24
+(0168)     ADMUX = 0x42;
+    05EA E482      LDI	R24,0x42
+    05EB B987      OUT	P07,R24
+(0169)     SEI();     
+    05EC 9478      BSET	7
+(0170)     adc_flagg = OFF;
+    05ED 2422      CLR	R2
+    05EE 922002BC  STS	_adc_flagg,R2
+(0171)     ADCSRA|=0x40;     
+    05F0 9A36      SBI	P06,6
+(0172)     while(!(adc_flagg));
+    05F1 902002BC  LDS	R2,_adc_flagg
+    05F3 2022      TST	R2
+    05F4 F3E1      BEQ	0x05F1
+(0173)     ADCSRA&=0xBF;  
+    05F5 B186      IN	R24,P06
+    05F6 7B8F      ANDI	R24,0xBF
+    05F7 B986      OUT	P06,R24
+(0174)     CLI();
+    05F8 94F8      BCLR	7
+(0175) 	TEMP_DATA = ADC_DATAS & 0x03FF;
+    05F9 912002BD  LDS	R18,_ADC_DATAS
+    05FB 913002BE  LDS	R19,_ADC_DATAS+1
+    05FD 7033      ANDI	R19,3
+(0176)     IRD = TEMP_DATA >> 2; 
+    05FE 0189      MOVW	R16,R18
+    05FF 9516      LSR	R17
+    0600 9507      ROR	R16
+    0601 9516      LSR	R17
+    0602 9507      ROR	R16
+(0177) 	ADCSRA = 0x00;	
+    0603 2422      CLR	R2
+    0604 B826      OUT	P06,R2
+(0178) 	//LED_IRSEN_ON;
+(0179) 	SEI();
+    0605 9478      BSET	7
+(0180) 	return IRD;
+    0606 2711      CLR	R17
+    0607 9508      RET
+(0181)     
+(0182) }
+(0183) 
+(0184) void KEY_Scan(void)
+(0185) {
+(0186)  	int delay;
+(0187) 	
+(0188) 	
+(0189) 	if(!(KEY1))
+_KEY_Scan:
+  delay                --> R16
+    0608 99B4      SBIC	P16,4
+    0609 C013      RJMP	0x061D
+(0190) 	{ 
+(0191) 	    
+(0192) 		for( delay = 0; delay <10000; delay++) asm("NOP");
+    060A 2700      CLR	R16
+    060B 2711      CLR	R17
+    060C 0000      NOP
+    060D 5F0F      SUBI	R16,0xFF
+    060E 4F1F      SBCI	R17,0xFF
+    060F 3100      CPI	R16,0x10
+    0610 E2E7      LDI	R30,0x27
+    0611 071E      CPC	R17,R30
+    0612 F3CC      BLT	0x060C
+(0193) 		if(!(KEY1)) KEY_Flag = 1;
+    0613 99B4      SBIC	P16,4
+    0614 C005      RJMP	0x061A
+    0615 E081      LDI	R24,1
+    0616 938002C9  STS	_KEY_Flag,R24
+    0618 C001      RJMP	0x061A
+(0194) 		while(!(KEY1)) asm("NOP");
+    0619 0000      NOP
+    061A 9BB4      SBIS	P16,4
+    061B CFFD      RJMP	0x0619
+(0195) 		
+(0196) 	}
+    061C C018      RJMP	0x0635
+(0197) 	else if(!(KEY2))
+    061D 99B5      SBIC	P16,5
+    061E C013      RJMP	0x0632
+(0198) 	{
+(0199) 	   
+(0200) 		for(delay=0; delay<10000; delay++) asm("NOP");
+    061F 2700      CLR	R16
+    0620 2711      CLR	R17
+    0621 0000      NOP
+    0622 5F0F      SUBI	R16,0xFF
+    0623 4F1F      SBCI	R17,0xFF
+    0624 3100      CPI	R16,0x10
+    0625 E2E7      LDI	R30,0x27
+    0626 071E      CPC	R17,R30
+    0627 F3CC      BLT	0x0621
+(0201) 		if(!(KEY2)) KEY_Flag = 2;
+    0628 99B5      SBIC	P16,5
+    0629 C005      RJMP	0x062F
+    062A E082      LDI	R24,2
+    062B 938002C9  STS	_KEY_Flag,R24
+    062D C001      RJMP	0x062F
+(0202) 		while(!(KEY2)) asm("NOP");
+    062E 0000      NOP
+    062F 9BB5      SBIS	P16,5
+    0630 CFFD      RJMP	0x062E
+(0203) 		
+(0204) 	}	
+    0631 C003      RJMP	0x0635
+(0205) 	/**
+(0206) 	else if(!(KEY3)) 
+(0207) 	{
+(0208) 	    
+(0209) 		for(delay=0; delay<10000; delay++) asm("NOP");
+(0210) 		if(!(KEY3)) KEY_Flag = 3;
+(0211) 		while(!(KEY3)) asm("NOP");
+(0212) 		
+(0213) 	}
+(0214) 	else if(!(KEY4))
+(0215) 	{
+(0216) 		
+(0217) 		for(delay=0; delay<10000; delay++) asm("NOP");
+(0218) 		if(!(KEY4)) KEY_Flag = 4;
+(0219) 		while(!(KEY4)) asm("NOP");
+(0220) 		
+(0221) 	}
+(0222) 	else if(!(KEY5))
+(0223) 	{
+(0224) 		
+(0225) 		for(delay=0; delay<10000; delay++) asm("NOP");
+(0226) 		if(!(KEY5)) KEY_Flag = 5;
+(0227) 		while(!(KEY5)) asm("NOP");
+(0228) 		
+(0229) 	}
+(0230) 	***/
+(0231) 	else KEY_Flag = 0;
+    0632 2422      CLR	R2
+    0633 922002C9  STS	_KEY_Flag,R2
+(0232) }
+    0635 9508      RET
+(0233) 
+(0234) void KEY1_Function()
+(0235) {
+(0236)     //clear(CS1+CS2);
+(0237)  	goline(7);
+_KEY1_Function:
+    0636 E007      LDI	R16,7
+    0637 E010      LDI	R17,0
+    0638 DC92      RCALL	_goline
+(0238) 	Sput("KEY 1 PUSH");
+    0639 EA09      LDI	R16,0xA9
+    063A E012      LDI	R17,2
+    063B DDEA      RCALL	_Sput
+(0239) 	if(SW_STATE1 == OFF)
+    063C 902002B7  LDS	R2,_SW_STATE1
+    063E 2022      TST	R2
+    063F F439      BNE	0x0647
+(0240) 	   {
+(0241) 	   UART0_TX_DATA[2] = S_ON;
+    0640 ED80      LDI	R24,0xD0
+    0641 93800367  STS	_UART0_TX_DATA+2,R24
+(0242) 	   SW_STATE1 = ON;
+    0643 E081      LDI	R24,1
+    0644 938002B7  STS	_SW_STATE1,R24
+(0243) 	   }
+    0646 C006      RJMP	0x064D
+(0244) 	else
+(0245) 	   {
+(0246) 	   UART0_TX_DATA[2] = S_OFF; 
+    0647 ED8D      LDI	R24,0xDD
+    0648 93800367  STS	_UART0_TX_DATA+2,R24
+(0247) 	   SW_STATE1 = OFF;
+    064A 2422      CLR	R2
+    064B 922002B7  STS	_SW_STATE1,R2
+(0248) 	   }
+(0249) 	UART0_TX_DATA[1] = SW1;	
+    064D EA83      LDI	R24,0xA3
+    064E 93800366  STS	_UART0_TX_DATA+1,R24
+(0250) 	//UART0_TX_DATA[2] = S_ON;	
+(0251) 	Uart0_TX_bytes(4);
+    0650 E004      LDI	R16,4
+(0252) 	
+(0253) 	
+(0254) }
+    0651 CF5B      RJMP	_Uart0_TX_bytes
+(0255) 
+(0256) void KEY2_Function()
+(0257) {
+(0258)     //clear(CS1+CS2);
+(0259)  	goline(7);
+_KEY2_Function:
+    0652 E007      LDI	R16,7
+    0653 E010      LDI	R17,0
+    0654 DC76      RCALL	_goline
+(0260) 	Sput("KEY 2 PUSH");
+    0655 E90E      LDI	R16,0x9E
+    0656 E012      LDI	R17,2
+    0657 DDCE      RCALL	_Sput
+(0261) 	if(SW_STATE2 == OFF)
+    0658 902002B6  LDS	R2,_SW_STATE2
+    065A 2022      TST	R2
+    065B F439      BNE	0x0663
+(0262) 	   {
+(0263) 	   UART0_TX_DATA[2] = S_ON;
+    065C ED80      LDI	R24,0xD0
+    065D 93800367  STS	_UART0_TX_DATA+2,R24
+(0264) 	   SW_STATE2 = ON;
+    065F E081      LDI	R24,1
+    0660 938002B6  STS	_SW_STATE2,R24
+(0265) 	   }
+    0662 C006      RJMP	0x0669
+(0266) 	else
+(0267) 	   {
+(0268) 	   UART0_TX_DATA[2] = S_OFF; 
+    0663 ED8D      LDI	R24,0xDD
+    0664 93800367  STS	_UART0_TX_DATA+2,R24
+(0269) 	   SW_STATE2 = OFF;
+    0666 2422      CLR	R2
+    0667 922002B6  STS	_SW_STATE2,R2
+(0270) 	   }
+(0271) 	UART0_TX_DATA[1] = SW2;	
+    0669 EA84      LDI	R24,0xA4
+    066A 93800366  STS	_UART0_TX_DATA+1,R24
+(0272) 	//UART0_TX_DATA[2] = S_ON;	
+(0273) 	Uart0_TX_bytes(4);
+    066C E004      LDI	R16,4
+(0274) 	
+(0275) }
+    066D CF3F      RJMP	_Uart0_TX_bytes
+_KEY_Function:
+    066E 940E08F4  CALL	push_gset1
+(0276) /***
+(0277) void KEY3_Function()
+(0278) {
+(0279)  	goline(0);
+(0280) 	Sput("KEY 3 PUSH");	
+(0281) }
+(0282) 
+(0283) void KEY4_Function()
+(0284) {
+(0285)  	goline(0);
+(0286) 	Sput("KEY 4 PUSH");
+(0287) }
+(0288) 
+(0289) void KEY5_Function()
+(0290) {
+(0291)  	goline(0);
+(0292) 	Sput("KEY 5 PUSH");
+(0293) }
+(0294) ***/
+(0295) void KEY_Function(void)
+(0296) {
+(0297) 	switch(KEY_Flag)
+    0670 914002C9  LDS	R20,_KEY_Flag
+    0672 2755      CLR	R21
+    0673 3040      CPI	R20,0
+    0674 0745      CPC	R20,R21
+    0675 F099      BEQ	0x0689
+    0676 3041      CPI	R20,1
+    0677 E0E0      LDI	R30,0
+    0678 075E      CPC	R21,R30
+    0679 F029      BEQ	0x067F
+    067A 3042      CPI	R20,2
+    067B E0E0      LDI	R30,0
+    067C 075E      CPC	R21,R30
+    067D F031      BEQ	0x0684
+    067E C00D      RJMP	0x068C
+(0298) 	{
+(0299) 	case 1:  KEY1_Function(); KEY_Flag = 0;
+    067F DFB6      RCALL	_KEY1_Function
+    0680 2422      CLR	R2
+    0681 922002C9  STS	_KEY_Flag,R2
+(0300) 		break;
+    0683 C008      RJMP	0x068C
+(0301) 	case 2:  KEY2_Function(); KEY_Flag = 0;
+    0684 DFCD      RCALL	_KEY2_Function
+    0685 2422      CLR	R2
+    0686 922002C9  STS	_KEY_Flag,R2
+(0302) 		break;
+    0688 C003      RJMP	0x068C
+(0303) 	/***
+(0304) 	case 3: clear(CS1+CS2); KEY3_Function(); KEY_Flag = 0;
+(0305) 		break;
+(0306) 	case 4: clear(CS1+CS2); KEY4_Function(); KEY_Flag = 0;
+(0307) 		break;
+(0308) 	case 5: clear(CS1+CS2); KEY5_Function(); KEY_Flag = 0;
+(0309) 		break;
+(0310) 	**/	
+(0311) 	case 0: KEY_Flag = 0;
+    0689 2422      CLR	R2
+    068A 922002C9  STS	_KEY_Flag,R2
+(0312) 		break;			
+(0313) 	}
+(0314) } 
+    068C 940E08F7  CALL	pop_gset1
+    068E 9508      RET
+_LEVEL_CONVERT:
+  LEVEL                --> Y+1
+  LEVEL_V              --> R20
+    068F 940E08F4  CALL	push_gset1
+    0691 2F40      MOV	R20,R16
+(0315) 
+(0316) void LEVEL_CONVERT(BYTE LEVEL_V)
+(0317) {
+(0318)  BYTE LEVEL;
+(0319)  goline(6);
+    0692 E006      LDI	R16,6
+    0693 E010      LDI	R17,0
+    0694 DC36      RCALL	_goline
+(0320) if(LEVEL_V>= 200)
+    0695 3C48      CPI	R20,0xC8
+    0696 F020      BCS	0x069B
+(0321)       Sput("LIGHT LEVEL 15");
+    0697 E80F      LDI	R16,0x8F
+    0698 E012      LDI	R17,2
+    0699 DD8C      RCALL	_Sput
+    069A C077      RJMP	0x0712
+(0322)     else if(LEVEL_V >=190 && LEVEL_V < 200)
+    069B 3B4E      CPI	R20,0xBE
+    069C F030      BCS	0x06A3
+    069D 3C48      CPI	R20,0xC8
+    069E F420      BCC	0x06A3
+(0323) 	        Sput("LIGHT LEVEL 14");           
+    069F E800      LDI	R16,0x80
+    06A0 E012      LDI	R17,2
+    06A1 DD84      RCALL	_Sput
+    06A2 C06F      RJMP	0x0712
+(0324)     else if(LEVEL_V >=180 && LEVEL_V < 190)
+    06A3 3B44      CPI	R20,0xB4
+    06A4 F030      BCS	0x06AB
+    06A5 3B4E      CPI	R20,0xBE
+    06A6 F420      BCC	0x06AB
+(0325)             Sput("LIGHT LEVEL 13");  
+    06A7 E701      LDI	R16,0x71
+    06A8 E012      LDI	R17,2
+    06A9 DD7C      RCALL	_Sput
+    06AA C067      RJMP	0x0712
+(0326)     else if(LEVEL_V >=170 && LEVEL_V < 180)
+    06AB 3A4A      CPI	R20,0xAA
+    06AC F030      BCS	0x06B3
+    06AD 3B44      CPI	R20,0xB4
+    06AE F420      BCC	0x06B3
+(0327)             Sput("LIGHT LEVEL 12");  
+    06AF E602      LDI	R16,0x62
+    06B0 E012      LDI	R17,2
+    06B1 DD74      RCALL	_Sput
+    06B2 C05F      RJMP	0x0712
+(0328)     else if(LEVEL_V >=160 && LEVEL_V < 170)
+    06B3 3A40      CPI	R20,0xA0
+    06B4 F030      BCS	0x06BB
+    06B5 3A4A      CPI	R20,0xAA
+    06B6 F420      BCC	0x06BB
+(0329)             Sput("LIGHT LEVEL 11"); 
+    06B7 E503      LDI	R16,0x53
+    06B8 E012      LDI	R17,2
+    06B9 DD6C      RCALL	_Sput
+    06BA C057      RJMP	0x0712
+(0330)     else if(LEVEL_V >=150 && LEVEL_V < 160)
+    06BB 3946      CPI	R20,0x96
+    06BC F030      BCS	0x06C3
+    06BD 3A40      CPI	R20,0xA0
+    06BE F420      BCC	0x06C3
+(0331)             Sput("LIGHT LEVEL 10"); 
+    06BF E404      LDI	R16,0x44
+    06C0 E012      LDI	R17,2
+    06C1 DD64      RCALL	_Sput
+    06C2 C04F      RJMP	0x0712
+(0332)     else if(LEVEL_V >=140 && LEVEL_V < 150)
+    06C3 384C      CPI	R20,0x8C
+    06C4 F030      BCS	0x06CB
+    06C5 3946      CPI	R20,0x96
+    06C6 F420      BCC	0x06CB
+(0333)             Sput("LIGHT LEVEL  9");        
+    06C7 E305      LDI	R16,0x35
+    06C8 E012      LDI	R17,2
+    06C9 DD5C      RCALL	_Sput
+    06CA C047      RJMP	0x0712
+(0334)     else if(LEVEL_V >=130 && LEVEL_V < 140)
+    06CB 3842      CPI	R20,0x82
+    06CC F030      BCS	0x06D3
+    06CD 384C      CPI	R20,0x8C
+    06CE F420      BCC	0x06D3
+(0335)             Sput("LIGHT LEVEL  8"); 
+    06CF E206      LDI	R16,0x26
+    06D0 E012      LDI	R17,2
+    06D1 DD54      RCALL	_Sput
+    06D2 C03F      RJMP	0x0712
+(0336)     else if(LEVEL_V >=120 && LEVEL_V < 130)
+    06D3 3748      CPI	R20,0x78
+    06D4 F030      BCS	0x06DB
+    06D5 3842      CPI	R20,0x82
+    06D6 F420      BCC	0x06DB
+(0337)             Sput("LIGHT LEVEL  7"); 
+    06D7 E107      LDI	R16,0x17
+    06D8 E012      LDI	R17,2
+    06D9 DD4C      RCALL	_Sput
+    06DA C037      RJMP	0x0712
+(0338)     else if(LEVEL_V >=110 && LEVEL_V < 120)
+    06DB 364E      CPI	R20,0x6E
+    06DC F030      BCS	0x06E3
+    06DD 3748      CPI	R20,0x78
+    06DE F420      BCC	0x06E3
+(0339)             Sput("LIGHT LEVEL  6");  
+    06DF E008      LDI	R16,0x8
+    06E0 E012      LDI	R17,2
+    06E1 DD44      RCALL	_Sput
+    06E2 C02F      RJMP	0x0712
+(0340)     else if(LEVEL_V >=100 && LEVEL_V < 110)
+    06E3 3644      CPI	R20,0x64
+    06E4 F030      BCS	0x06EB
+    06E5 364E      CPI	R20,0x6E
+    06E6 F420      BCC	0x06EB
+(0341)             Sput("LIGHT LEVEL  5");     
+    06E7 EF09      LDI	R16,0xF9
+    06E8 E011      LDI	R17,1
+    06E9 DD3C      RCALL	_Sput
+    06EA C027      RJMP	0x0712
+(0342)     else if(LEVEL_V >=90 && LEVEL_V < 100)
+    06EB 354A      CPI	R20,0x5A
+    06EC F030      BCS	0x06F3
+    06ED 3644      CPI	R20,0x64
+    06EE F420      BCC	0x06F3
+(0343)             Sput("LIGHT LEVEL  4");     
+    06EF EE0A      LDI	R16,0xEA
+    06F0 E011      LDI	R17,1
+    06F1 DD34      RCALL	_Sput
+    06F2 C01F      RJMP	0x0712
+(0344)     else if(LEVEL_V >=80 && LEVEL_V  < 90)
+    06F3 3540      CPI	R20,0x50
+    06F4 F030      BCS	0x06FB
+    06F5 354A      CPI	R20,0x5A
+    06F6 F420      BCC	0x06FB
+(0345)             Sput("LIGHT LEVEL  3");                 
+    06F7 ED0B      LDI	R16,0xDB
+    06F8 E011      LDI	R17,1
+    06F9 DD2C      RCALL	_Sput
+    06FA C017      RJMP	0x0712
+(0346)     else if(LEVEL_V >=70 && LEVEL_V < 80)
+    06FB 3446      CPI	R20,0x46
+    06FC F030      BCS	0x0703
+    06FD 3540      CPI	R20,0x50
+    06FE F420      BCC	0x0703
+(0347)             Sput("LIGHT LEVEL  2");        
+    06FF EC0C      LDI	R16,0xCC
+    0700 E011      LDI	R17,1
+    0701 DD24      RCALL	_Sput
+    0702 C00F      RJMP	0x0712
+(0348)     else if(LEVEL_V >=60 && LEVEL_V < 70)
+    0703 334C      CPI	R20,0x3C
+    0704 F030      BCS	0x070B
+    0705 3446      CPI	R20,0x46
+    0706 F420      BCC	0x070B
+(0349)             Sput("LIGHT LEVEL  1");   
+    0707 EB0D      LDI	R16,0xBD
+    0708 E011      LDI	R17,1
+    0709 DD1C      RCALL	_Sput
+    070A C007      RJMP	0x0712
+(0350)     else if(LEVEL_V >=50 && LEVEL_V < 60)
+    070B 3342      CPI	R20,0x32
+    070C F028      BCS	0x0712
+    070D 334C      CPI	R20,0x3C
+    070E F418      BCC	0x0712
+(0351)             Sput("LIGHT LEVEL  0");   
+    070F EA0E      LDI	R16,0xAE
+    0710 E011      LDI	R17,1
+    0711 DD14      RCALL	_Sput
+(0352)     
+(0353) }
+    0712 940E08F7  CALL	pop_gset1
+    0714 9508      RET
+_DATA_IDENTIFY:
+  i                    --> R22
+  TEMP2                --> R10
+  TEMP1                --> R20
+    0715 940E090F  CALL	push_gset3
+(0354)  
+(0355) DATA_IDENTIFY(void)
+(0356) {
+(0357) BYTE TEMP1 = ID_OK;
+    0717 E343      LDI	R20,0x33
+(0358) BYTE TEMP2 = ID_OK;
+    0718 E383      LDI	R24,0x33
+    0719 2EA8      MOV	R10,R24
+(0359) 
+(0360) if(UART1_RX_DATA[3] == 0x0F)
+    071A 918002D2  LDS	R24,_UART1_RX_DATA+3
+    071C 308F      CPI	R24,0xF
+    071D F009      BEQ	0x071F
+    071E C04F      RJMP	0x076E
+(0361) 	    {
+(0362) 		BYTE i;		
+(0363) 		
+(0364) 	    for(i=0;i<5;i++)
+    071F 2766      CLR	R22
+    0720 C013      RJMP	0x0734
+(0365) 	       {		   
+(0366) 		   if(ID_VALUE1[i] != UART1_RX_DATA[i+4])		      
+    0721 ED83      LDI	R24,0xD3
+    0722 E092      LDI	R25,2
+    0723 2FE6      MOV	R30,R22
+    0724 27FF      CLR	R31
+    0725 0FE8      ADD	R30,R24
+    0726 1FF9      ADC	R31,R25
+    0727 8020      LDD	R2,0+Z
+    0728 E88C      LDI	R24,0x8C
+    0729 E090      LDI	R25,0
+    072A 2FE6      MOV	R30,R22
+    072B 27FF      CLR	R31
+    072C 0FE8      ADD	R30,R24
+    072D 1FF9      ADC	R31,R25
+    072E 91E4      LPM	R30,0(Z)
+    072F 15E2      CP	R30,R2
+    0730 F011      BEQ	0x0733
+(0367) 		      {TEMP1 = ID_FAIL;LED_Zig_OFF;} 		      	     
+    0731 E646      LDI	R20,0x66
+    0732 9AA8      SBI	P15,0
+    0733 9563      INC	R22
+    0734 3065      CPI	R22,5
+    0735 F358      BCS	0x0721
+(0368) 		   }		
+(0369) 		
+(0370) 	    for(i=0;i<5;i++)
+    0736 2766      CLR	R22
+    0737 C013      RJMP	0x074B
+(0371) 	       {
+(0372) 		   if(ID_VALUE2[i] != UART1_RX_DATA[i+4])		      
+    0738 ED83      LDI	R24,0xD3
+    0739 E092      LDI	R25,2
+    073A 2FE6      MOV	R30,R22
+    073B 27FF      CLR	R31
+    073C 0FE8      ADD	R30,R24
+    073D 1FF9      ADC	R31,R25
+    073E 8020      LDD	R2,0+Z
+    073F E981      LDI	R24,0x91
+    0740 E090      LDI	R25,0
+    0741 2FE6      MOV	R30,R22
+    0742 27FF      CLR	R31
+    0743 0FE8      ADD	R30,R24
+    0744 1FF9      ADC	R31,R25
+    0745 91E4      LPM	R30,0(Z)
+    0746 15E2      CP	R30,R2
+    0747 F011      BEQ	0x074A
+(0373) 		      TEMP2 = ID_FAIL;   
+    0748 E686      LDI	R24,0x66
+    0749 2EA8      MOV	R10,R24
+    074A 9563      INC	R22
+    074B 3065      CPI	R22,5
+    074C F358      BCS	0x0738
+(0374) 		   }	
+(0375) 		
+(0376) 	    if(TEMP1 == ID_FAIL )
+    074D 3646      CPI	R20,0x66
+    074E F4A9      BNE	0x0764
+(0377) 	       {  
+(0378) 		   if(TEMP2 == ID_FAIL )
+    074F 2D8A      MOV	R24,R10
+    0750 3686      CPI	R24,0x66
+    0751 F449      BNE	0x075B
+(0379) 		       {
+(0380) 	           goline(3);
+    0752 E003      LDI	R16,3
+    0753 E010      LDI	R17,0
+    0754 DB76      RCALL	_goline
+(0381)                Sput("DATA FAIL");
+    0755 EA04      LDI	R16,0xA4
+    0756 E011      LDI	R17,1
+    0757 DCCE      RCALL	_Sput
+(0382) 			   return ID_FAIL;
+    0758 E606      LDI	R16,0x66
+    0759 E010      LDI	R17,0
+    075A C013      RJMP	0x076E
+(0383) 	           }
+(0384) 		   else
+(0385) 		       { 
+(0386) 		       goline(3);
+    075B E003      LDI	R16,3
+    075C E010      LDI	R17,0
+    075D DB6D      RCALL	_goline
+(0387)                Sput("DATA OK  ");
+    075E E90A      LDI	R16,0x9A
+    075F E011      LDI	R17,1
+    0760 DCC5      RCALL	_Sput
+(0388) 			   return ID_OK;			 
+    0761 E303      LDI	R16,0x33
+    0762 E010      LDI	R17,0
+    0763 C00A      RJMP	0x076E
+(0389) 		       }	
+(0390) 		   }   	   
+(0391) 	    else if(TEMP1 == ID_OK)	    
+    0764 3343      CPI	R20,0x33
+    0765 F441      BNE	0x076E
+(0392) 		   {	
+(0393) 		     goline(3);
+    0766 E003      LDI	R16,3
+    0767 E010      LDI	R17,0
+    0768 DB62      RCALL	_goline
+(0394)              Sput("DATA OK  ");
+    0769 E90A      LDI	R16,0x9A
+    076A E011      LDI	R17,1
+    076B DCBA      RCALL	_Sput
+(0395) 			 return ID_OK;
+    076C E303      LDI	R16,0x33
+    076D E010      LDI	R17,0
+(0396) 		   }
+(0397) 		
+(0398) 	    }	
+(0399) 
+(0400) }
+    076E 940E08EE  CALL	pop_gset3
+    0770 9508      RET
+(0401) 
+(0402) 
+(0403) 
+(0404) void init_devices(void)
+(0405) {
+(0406)  //stop errant interrupts until set up
+(0407)  CLI(); //disable all interrupts
+_init_devices:
+    0771 94F8      BCLR	7
+(0408)  XDIV  = 0x00; //xtal divider
+    0772 2422      CLR	R2
+    0773 BE2C      OUT	P3C,R2
+(0409)  XMCRA = 0x00; //external memory
+    0774 9220006D  STS	0x6D,R2
+(0410)  port_init();
+    0776 DD40      RCALL	_port_init
+(0411)  Uart0_init();  //38400
+    0777 DD55      RCALL	_Uart0_init
+(0412)  Uart1_init();  //38400
+    0778 DD61      RCALL	_Uart1_init
+(0413)  adc_init();
+    0779 DE67      RCALL	_adc_init
+(0414)  UART0_RX_Flag = UART1_RX_Flag = OFF;
+    077A 2422      CLR	R2
+    077B 922002CB  STS	_UART1_RX_Flag,R2
+    077D 922002CC  STS	_UART0_RX_Flag,R2
+(0415)  UART1_RX_Count = UART1_RX_Count = 0; 
+    077F 922002CD  STS	_UART1_RX_Count,R2
+    0781 922002CD  STS	_UART1_RX_Count,R2
+(0416)  UART_RX_FL = OFF;
+    0783 922002CA  STS	_UART_RX_FL,R2
+(0417)  UART0_TX_DATA[0]= STX;
+    0785 E082      LDI	R24,2
+    0786 93800365  STS	_UART0_TX_DATA,R24
+(0418)  UART0_TX_DATA[3]= ETX;
+    0788 E083      LDI	R24,3
+    0789 93800368  STS	_UART0_TX_DATA+3,R24
+(0419)  adc_flagg = OFF;
+    078B 2422      CLR	R2
+    078C 922002BC  STS	_adc_flagg,R2
+(0420)  TIME_flag = OFF;
+    078E 922002BB  STS	_TIME_flag,R2
+(0421)  TIME3_flag = OFF;
+    0790 922002BA  STS	_TIME3_flag,R2
+(0422)  T_COUNT = 0;
+    0792 2433      CLR	R3
+    0793 923002B5  STS	_T_COUNT+1,R3
+    0795 922002B4  STS	_T_COUNT,R2
+(0423)  RFID_COUNT =0;
+    0797 922002B9  STS	_RFID_COUNT,R2
+(0424)  SW_STATE1 = OFF;
+    0799 922002B7  STS	_SW_STATE1,R2
+(0425)  SW_STATE2 = OFF;
+    079B 922002B6  STS	_SW_STATE2,R2
+(0426) 
+(0427)  MCUCR = 0x00;
+    079D BE25      OUT	P35,R2
+(0428)  EICRA = 0x00; //extended ext ints
+    079E 9220006A  STS	0x6A,R2
+(0429)  EICRB = 0x00; //extended ext ints
+    07A0 2422      CLR	R2
+    07A1 BE2A      OUT	P3A,R2
+(0430)  EIMSK = 0x00;
+    07A2 BE29      OUT	P39,R2
+(0431)  TIMSK = 0x00; //timer interrupt sources
+    07A3 BE27      OUT	P37,R2
+(0432)  ETIMSK = 0x00; //extended timer interrupt sources 
+    07A4 9220007D  STS	0x7D,R2
+(0433)  SEI(); //re-enable interrupts
+    07A6 9478      BSET	7
+(0434)  //all peripherals are now initialized
+(0435)  
+(0436)  
+(0437) }
+    07A7 9508      RET
+(0438) 
+(0439) 
+(0440) 
+(0441) 
+(0442) 
+(0443) 
+(0444) 
+(0445) 
+(0446) 
+(0447) void main(void)
+(0448) {
+(0449) int count;
+(0450) 
+(0451) 
+(0452) init_devices();
+_main:
+  TEMP_VALUE           --> R10
+  count                --> R20
+    07A8 DFC8      RCALL	_init_devices
+(0453) //LCD_en();
+(0454) 
+(0455) 
+(0456) 
+(0457) LED_Zig_ON;
+    07A9 98A8      CBI	P15,0
+(0458) LED_3150_ON;
+    07AA 98A9      CBI	P15,1
+(0459) for(count=0; count <10000; count++) asm("NOP");
+    07AB 2744      CLR	R20
+    07AC 2755      CLR	R21
+    07AD 0000      NOP
+    07AE 5F4F      SUBI	R20,0xFF
+    07AF 4F5F      SBCI	R21,0xFF
+    07B0 3140      CPI	R20,0x10
+    07B1 E2E7      LDI	R30,0x27
+    07B2 075E      CPC	R21,R30
+    07B3 F3CC      BLT	0x07AD
+(0460) 
+(0461) LCD_en();
+    07B4 DCC7      RCALL	_LCD_en
+(0462) 
+(0463) goline(0);
+    07B5 2700      CLR	R16
+    07B6 2711      CLR	R17
+    07B7 DB13      RCALL	_goline
+(0464) Sput("PL3150 TO AVR");
+    07B8 E80C      LDI	R16,0x8C
+    07B9 E011      LDI	R17,1
+    07BA DC6B      RCALL	_Sput
+(0465) 
+(0466) LED_Zig_OFF;
+    07BB 9AA8      SBI	P15,0
+(0467) LED_3150_OFF;
+    07BC 9AA9      SBI	P15,1
+(0468) 
+(0469) TCCR1B = 0x00; //stop
+    07BD 2422      CLR	R2
+    07BE BC2E      OUT	P2E,R2
+(0470) TCNT1H = 0x00; //reload counter high value
+    07BF BC2D      OUT	P2D,R2
+(0471) TCNT1L = 0x01; //reload counter low value
+    07C0 E081      LDI	R24,1
+    07C1 BD8C      OUT	P2C,R24
+(0472) TCCR1B = 0x04; //start Timer
+    07C2 E084      LDI	R24,4
+    07C3 BD8E      OUT	P2E,R24
+(0473) TIMSK  = 0x04; // Timer 1 인터럽트시작. 
+    07C4 BF87      OUT	P37,R24
+    07C5 C0F3      RJMP	0x08B9
+(0474) 
+(0475) while(1)
+(0476) {
+(0477)  KEY_Scan();
+    07C6 DE41      RCALL	_KEY_Scan
+(0478)  KEY_Function();
+    07C7 DEA6      RCALL	_KEY_Function
+(0479) 
+(0480) if(UART1_RX_Flag)
+    07C8 902002CB  LDS	R2,_UART1_RX_Flag
+    07CA 2022      TST	R2
+    07CB F139      BEQ	0x07F3
+(0481)  	{	
+(0482) 	//CLI(); //disable all interrupts
+(0483) 	UART1_RX_Flag = OFF;
+    07CC 2422      CLR	R2
+    07CD 922002CB  STS	_UART1_RX_Flag,R2
+(0484) 	
+(0485) 	//clear(CS1+CS2);
+(0486) 	goline(2);
+    07CF E002      LDI	R16,2
+    07D0 E010      LDI	R17,0
+    07D1 DAF9      RCALL	_goline
+(0487)     Sput("RFID RECEVE    ");
+    07D2 E70C      LDI	R16,0x7C
+    07D3 E011      LDI	R17,1
+    07D4 DC51      RCALL	_Sput
+(0488) 	
+(0489) 	UART0_TX_DATA[2] = DATA_IDENTIFY();	
+    07D5 DF3F      RCALL	_DATA_IDENTIFY
+    07D6 93000367  STS	_UART0_TX_DATA+2,R16
+(0490) 	
+(0491) 	if(UART0_TX_DATA[2]==ID_OK)
+    07D8 3303      CPI	R16,0x33
+    07D9 F411      BNE	0x07DC
+(0492) 	   LED_DATAMATCH_ON;
+    07DA 98AA      CBI	P15,2
+    07DB C001      RJMP	0x07DD
+(0493) 	else
+(0494) 	   LED_DATAMATCH_OFF; 
+    07DC 9AAA      SBI	P15,2
+(0495) 	UART0_TX_DATA[1]= RFID;  
+    07DD EA81      LDI	R24,0xA1
+    07DE 93800366  STS	_UART0_TX_DATA+1,R24
+(0496) 	Uart0_TX_bytes(4);
+    07E0 E004      LDI	R16,4
+    07E1 DDCB      RCALL	_Uart0_TX_bytes
+(0497)     TCCR3B = 0x00; //stop
+    07E2 2422      CLR	R2
+    07E3 9220008A  STS	0x8A,R2
+(0498)     TCNT3H = 0x1F; //setup
+    07E5 E18F      LDI	R24,0x1F
+    07E6 93800089  STS	0x89,R24
+(0499)     TCNT3L = 0x01;
+    07E8 E081      LDI	R24,1
+    07E9 93800088  STS	0x88,R24
+(0500)     TCCR3A = 0x00;
+    07EB 9220008B  STS	0x8B,R2
+(0501)     TCCR3B = 0x04; //start Timer
+    07ED E084      LDI	R24,4
+    07EE 9380008A  STS	0x8A,R24
+(0502) 	ETIMSK = 0x04;
+    07F0 9380007D  STS	0x7D,R24
+(0503) 	SEI(); //re-enable interrupts 
+    07F2 9478      BSET	7
+(0504) 	     
+(0505)  	}
+(0506) 	
+(0507) if(UART_RX_FL)
+    07F3 902002CA  LDS	R2,_UART_RX_FL
+    07F5 2022      TST	R2
+    07F6 F079      BEQ	0x0806
+(0508)   {
+(0509)   UART_RX_FL = OFF;
+    07F7 2422      CLR	R2
+    07F8 922002CA  STS	_UART_RX_FL,R2
+(0510)   if(UART1_RX_DATA[3] == 0xF0)
+    07FA 918002D2  LDS	R24,_UART1_RX_DATA+3
+    07FC 3F80      CPI	R24,0xF0
+    07FD F441      BNE	0x0806
+(0511)     {	
+(0512) 	UART1_RX_Count = 0;
+    07FE 922002CD  STS	_UART1_RX_Count,R2
+(0513) 	goline(2);
+    0800 E002      LDI	R16,2
+    0801 E010      LDI	R17,0
+    0802 DAC8      RCALL	_goline
+(0514)     Sput("RFID ID RECEVE");
+    0803 E60D      LDI	R16,0x6D
+    0804 E011      LDI	R17,1
+    0805 DC20      RCALL	_Sput
+(0515) 	}
+(0516)   }  
+(0517)   	
+(0518) if(UART0_RX_Flag)
+    0806 902002CC  LDS	R2,_UART0_RX_Flag
+    0808 2022      TST	R2
+    0809 F409      BNE	0x080B
+    080A C046      RJMP	0x0851
+(0519)   {
+(0520)   WORD TEMP_VALUE; 
+(0521)     
+(0522)   UART0_RX_Flag = OFF;
+    080B 2422      CLR	R2
+    080C 922002CC  STS	_UART0_RX_Flag,R2
+(0523)   
+(0524)   switch(UART0_RX_DATA[1])
+    080E 91600302  LDS	R22,_UART0_RX_DATA+1
+    0810 2777      CLR	R23
+    0811 3E60      CPI	R22,0xE0
+    0812 E0E0      LDI	R30,0
+    0813 077E      CPC	R23,R30
+    0814 F051      BEQ	0x081F
+    0815 3E61      CPI	R22,0xE1
+    0816 E0E0      LDI	R30,0
+    0817 077E      CPC	R23,R30
+    0818 F409      BNE	0x081A
+    0819 C034      RJMP	0x084E
+    081A 3E62      CPI	R22,0xE2
+    081B E0E0      LDI	R30,0
+    081C 077E      CPC	R23,R30
+    081D F099      BEQ	0x0831
+    081E C032      RJMP	0x0851
+(0525)      {	 
+(0526) 	 case GAS : if(UART0_RX_DATA[2] >= 25)
+    081F 91800303  LDS	R24,_UART0_RX_DATA+2
+    0821 3189      CPI	R24,0x19
+    0822 F038      BCS	0x082A
+(0527) 	                {
+(0528) 	                goline(4);
+    0823 E004      LDI	R16,4
+    0824 E010      LDI	R17,0
+    0825 DAA5      RCALL	_goline
+(0529)                     Sput("GAS SENSING");
+    0826 E601      LDI	R16,0x61
+    0827 E011      LDI	R17,1
+    0828 DBFD      RCALL	_Sput
+(0530) 					}
+    0829 C027      RJMP	0x0851
+(0531) 				 else
+(0532) 				   	{
+(0533) 	                goline(4);
+    082A E004      LDI	R16,4
+    082B E010      LDI	R17,0
+    082C DA9E      RCALL	_goline
+(0534)                     Sput("GAS NO SENSING");
+    082D E502      LDI	R16,0x52
+    082E E011      LDI	R17,1
+    082F DBF6      RCALL	_Sput
+(0535) 					}
+(0536) 				 break;				 
+    0830 C020      RJMP	0x0851
+(0537) 	 case TEMP : TEMP_VALUE = UART0_RX_DATA[3];
+    0831 90A00304  LDS	R10,_UART0_RX_DATA+3
+    0833 24BB      CLR	R11
+(0538) 	             TEMP_VALUE |= (unsigned int)UART0_RX_DATA[2] <<8;					 
+    0834 90200303  LDS	R2,_UART0_RX_DATA+2
+    0836 2433      CLR	R3
+    0837 2C32      MOV	R3,R2
+    0838 2422      CLR	R2
+    0839 28A2      OR	R10,R2
+    083A 28B3      OR	R11,R3
+(0539) 				 if(TEMP_VALUE >= 130)
+    083B 01C5      MOVW	R24,R10
+    083C 3882      CPI	R24,0x82
+    083D E0E0      LDI	R30,0
+    083E 079E      CPC	R25,R30
+    083F F038      BCS	0x0847
+(0540) 				    {	 	
+(0541) 					goline(5);
+    0840 E005      LDI	R16,5
+    0841 E010      LDI	R17,0
+    0842 DA88      RCALL	_goline
+(0542)                     Sput("TEMP UP AIRCON ON ");
+    0843 E30F      LDI	R16,0x3F
+    0844 E011      LDI	R17,1
+    0845 DBE0      RCALL	_Sput
+(0543) 					}
+    0846 C00A      RJMP	0x0851
+(0544) 			     else
+(0545) 				    {	 	
+(0546) 					goline(5);
+    0847 E005      LDI	R16,5
+    0848 E010      LDI	R17,0
+    0849 DA81      RCALL	_goline
+(0547)                     Sput("TEMP DW AIRCON OFF");
+    084A E20C      LDI	R16,0x2C
+    084B E011      LDI	R17,1
+    084C DBD9      RCALL	_Sput
+(0548) 					}	
+(0549) 		         break;			
+    084D C003      RJMP	0x0851
+(0550) 	 case CDS : LEVEL_CONVERT(UART0_RX_DATA[2]);
+    084E 91000303  LDS	R16,_UART0_RX_DATA+2
+    0850 DE3E      RCALL	_LEVEL_CONVERT
+(0551) 	             break;
+(0552) 	 
+(0553) 	 }					
+(0554)   
+(0555)   }
+(0556) if(TIME3_flag)
+    0851 902002BA  LDS	R2,_TIME3_flag
+    0853 2022      TST	R2
+    0854 F0C9      BEQ	0x086E
+(0557)   {
+(0558)   TIME3_flag = OFF;
+    0855 2422      CLR	R2
+    0856 922002BA  STS	_TIME3_flag,R2
+(0559)   RFID_COUNT++; 
+    0858 918002B9  LDS	R24,_RFID_COUNT
+    085A 5F8F      SUBI	R24,0xFF
+    085B 938002B9  STS	_RFID_COUNT,R24
+(0560)   if(RFID_COUNT >= 2)
+    085D 3082      CPI	R24,2
+    085E F078      BCS	0x086E
+(0561)       {
+(0562) 	  TCCR3B = 0x00;
+    085F 9220008A  STS	0x8A,R2
+(0563) 	  ETIMSK = 0x00;
+    0861 9220007D  STS	0x7D,R2
+(0564) 	  RFID_COUNT = 0;
+    0863 922002B9  STS	_RFID_COUNT,R2
+(0565) 	  UART0_TX_DATA[1]= RFID; 
+    0865 EA81      LDI	R24,0xA1
+    0866 93800366  STS	_UART0_TX_DATA+1,R24
+(0566) 	  UART0_TX_DATA[2]= ID_FAIL;  
+    0868 E686      LDI	R24,0x66
+    0869 93800367  STS	_UART0_TX_DATA+2,R24
+(0567) 	  Uart0_TX_bytes(4);
+    086B E004      LDI	R16,4
+    086C DD40      RCALL	_Uart0_TX_bytes
+(0568)       LED_DATAMATCH_OFF;	  
+    086D 9AAA      SBI	P15,2
+(0569) 	  }
+(0570)    }  
+(0571) 	
+(0572) if(TIME_flag == ON)
+    086E 918002BB  LDS	R24,_TIME_flag
+    0870 3081      CPI	R24,1
+    0871 F009      BEQ	0x0873
+    0872 C046      RJMP	0x08B9
+(0573)   { 
+(0574)   T_COUNT++;
+    0873 918002B4  LDS	R24,_T_COUNT
+    0875 919002B5  LDS	R25,_T_COUNT+1
+    0877 9601      ADIW	R24,1
+    0878 939002B5  STS	_T_COUNT+1,R25
+    087A 938002B4  STS	_T_COUNT,R24
+(0575)   TIME_flag = 0;
+    087C 2422      CLR	R2
+    087D 922002BB  STS	_TIME_flag,R2
+(0576)   //if(T_COUNT >= 1)
+(0577)   //   {
+(0578) 	 
+(0579) 	 TCCR1B = 0x00; //stop
+    087F BC2E      OUT	P2E,R2
+(0580) 	 //LED_Zig_ON;
+(0581) 	 T_COUNT = 0; TIME_flag = OFF; 
+    0880 2433      CLR	R3
+    0881 923002B5  STS	_T_COUNT+1,R3
+    0883 922002B4  STS	_T_COUNT,R2
+    0885 922002BB  STS	_TIME_flag,R2
+(0582)      IRSEND = ADC_PROCESS();	 
+    0887 DD5E      RCALL	_ADC_PROCESS
+    0888 930002B8  STS	_IRSEND,R16
+(0583) 	 if(IRSEND >= 30)
+    088A 310E      CPI	R16,0x1E
+    088B F0B0      BCS	0x08A2
+(0584) 	    {		
+(0585) 		//clear(CS1+CS2);	    
+(0586) 	    LED_IRSEN_ON;
+    088C 98AB      CBI	P15,3
+(0587) 		goline(1);
+    088D E001      LDI	R16,1
+    088E E010      LDI	R17,0
+    088F DA3B      RCALL	_goline
+(0588)         Sput("IR SENSING");
+    0890 E201      LDI	R16,0x21
+    0891 E011      LDI	R17,1
+    0892 DB93      RCALL	_Sput
+(0589) 		UART0_TX_DATA[0] = STX;
+    0893 E082      LDI	R24,2
+    0894 93800365  STS	_UART0_TX_DATA,R24
+(0590) 		UART0_TX_DATA[1] = IRSEN;        
+    0896 EA82      LDI	R24,0xA2
+    0897 93800366  STS	_UART0_TX_DATA+1,R24
+(0591) 		UART0_TX_DATA[2] = IR_OK;
+    0899 E585      LDI	R24,0x55
+    089A 93800367  STS	_UART0_TX_DATA+2,R24
+(0592) 		UART0_TX_DATA[3] = ETX;		
+    089C E083      LDI	R24,3
+    089D 93800368  STS	_UART0_TX_DATA+3,R24
+(0593) 	    Uart0_TX_bytes(4);	
+    089F E004      LDI	R16,4
+    08A0 DD0C      RCALL	_Uart0_TX_bytes
+(0594) 		}
+    08A1 C015      RJMP	0x08B7
+(0595)      else
+(0596) 	    {
+(0597) 		goline(1);
+    08A2 E001      LDI	R16,1
+    08A3 E010      LDI	R17,0
+    08A4 DA26      RCALL	_goline
+(0598)         Sput("           ");
+    08A5 E105      LDI	R16,0x15
+    08A6 E011      LDI	R17,1
+    08A7 DB7E      RCALL	_Sput
+(0599) 	    LED_IRSEN_OFF;	
+    08A8 9AAB      SBI	P15,3
+(0600) 		UART0_TX_DATA[0] = STX;
+    08A9 E082      LDI	R24,2
+    08AA 93800365  STS	_UART0_TX_DATA,R24
+(0601) 		UART0_TX_DATA[1] = IRSEN;        
+    08AC EA82      LDI	R24,0xA2
+    08AD 93800366  STS	_UART0_TX_DATA+1,R24
+(0602) 		UART0_TX_DATA[2] = IR_NO;
+    08AF E787      LDI	R24,0x77
+    08B0 93800367  STS	_UART0_TX_DATA+2,R24
+(0603) 		UART0_TX_DATA[3] = ETX;		
+    08B2 E083      LDI	R24,3
+    08B3 93800368  STS	_UART0_TX_DATA+3,R24
+(0604) 	    Uart0_TX_bytes(4);	
+    08B5 E004      LDI	R16,4
+    08B6 DCF6      RCALL	_Uart0_TX_bytes
+(0605) 		}	
+(0606) 	 //TCNT1H = 0x02; //reload counter high value
+(0607)      //TCNT1L = 0x01;		 
+(0608) 	 TCCR1B = 0x04; 
+    08B7 E084      LDI	R24,4
+    08B8 BD8E      OUT	P2E,R24
+    08B9 CF0C      RJMP	0x07C6
+(0609) 	 //LED_Zig_OFF; 
+(0610) 	 //LED_3150_OFF;
+(0611)    //  }
+(0612)   }	 
+(0613)     
+(0614) 
+(0615) 
+(0616) 
+(0617) }
+(0618) 
+(0619) 
+(0620) 
+(0621) 
+(0622) }
+FILE: <library>
+    08BA 9508      RET
+_strlen:
+    08BB 2FE0      MOV	R30,R16
+    08BC 2FF1      MOV	R31,R17
+    08BD 27AA      CLR	R26
+    08BE 27BB      CLR	R27
+    08BF 9001      LD	R0,Z+
+    08C0 2000      TST	R0
+    08C1 F011      BEQ	0x08C4
+    08C2 9611      ADIW	R26,1
+    08C3 CFFB      RJMP	0x08BF
+    08C4 2F0A      MOV	R16,R26
+    08C5 2F1B      MOV	R17,R27
+    08C6 9508      RET
+mod8u:
+    08C7 9468      BSET	6
+    08C8 C001      RJMP	xdiv8u
+div8u:
+    08C9 94E8      BCLR	6
+xdiv8u:
+    08CA 932A      ST	R18,-Y
+    08CB 92FA      ST	R15,-Y
+    08CC 24FF      CLR	R15
+    08CD E028      LDI	R18,0x8
+    08CE 0F00      LSL	R16
+    08CF 1CFF      ROL	R15
+    08D0 16F1      CP	R15,R17
+    08D1 F010      BCS	0x08D4
+    08D2 1AF1      SUB	R15,R17
+    08D3 9503      INC	R16
+    08D4 952A      DEC	R18
+    08D5 F7C1      BNE	0x08CE
+    08D6 F40E      BRTC	0x08D8
+    08D7 2D0F      MOV	R16,R15
+    08D8 90F9      LD	R15,Y+
+    08D9 9129      LD	R18,Y+
+    08DA 9508      RET
+empy16s:
+    08DB 920A      ST	R0,-Y
+    08DC 921A      ST	R1,-Y
+    08DD 938A      ST	R24,-Y
+    08DE 939A      ST	R25,-Y
+    08DF 9F02      MUL	R16,R18
+    08E0 01C0      MOVW	R24,R0
+    08E1 9F12      MUL	R17,R18
+    08E2 0D90      ADD	R25,R0
+    08E3 9F03      MUL	R16,R19
+    08E4 0D90      ADD	R25,R0
+    08E5 018C      MOVW	R16,R24
+    08E6 9199      LD	R25,Y+
+    08E7 9189      LD	R24,Y+
+    08E8 9019      LD	R1,Y+
+    08E9 9009      LD	R0,Y+
+    08EA 9508      RET
+pop_gset2:
+    08EB E0E2      LDI	R30,2
+    08EC 940C08F8  JMP	pop
+pop_gset3:
+    08EE E0E4      LDI	R30,4
+    08EF 940C08F8  JMP	pop
+pop_gset4:
+    08F1 E0E8      LDI	R30,0x8
+    08F2 940C08F8  JMP	pop
+push_gset1:
+    08F4 935A      ST	R21,-Y
+    08F5 934A      ST	R20,-Y
+    08F6 9508      RET
+pop_gset1:
+    08F7 E0E1      LDI	R30,1
+pop:
+    08F8 9149      LD	R20,Y+
+    08F9 9159      LD	R21,Y+
+    08FA FDE0      SBRC	R30,0
+    08FB 9508      RET
+    08FC 9169      LD	R22,Y+
+    08FD 9179      LD	R23,Y+
+    08FE FDE1      SBRC	R30,1
+    08FF 9508      RET
+    0900 90A9      LD	R10,Y+
+    0901 90B9      LD	R11,Y+
+    0902 FDE2      SBRC	R30,2
+    0903 9508      RET
+    0904 90C9      LD	R12,Y+
+    0905 90D9      LD	R13,Y+
+    0906 FDE3      SBRC	R30,3
+    0907 9508      RET
+    0908 90E9      LD	R14,Y+
+    0909 90F9      LD	R15,Y+
+    090A 9508      RET
+push_gset2:
+    090B 937A      ST	R23,-Y
+    090C 936A      ST	R22,-Y
+    090D 940C08F4  JMP	push_gset1
+push_gset3:
+    090F 92BA      ST	R11,-Y
+    0910 92AA      ST	R10,-Y
+    0911 940C090B  JMP	push_gset2
+push_gset4:
+    0913 92DA      ST	R13,-Y
+    0914 92CA      ST	R12,-Y
+    0915 940C090F  JMP	push_gset3
+

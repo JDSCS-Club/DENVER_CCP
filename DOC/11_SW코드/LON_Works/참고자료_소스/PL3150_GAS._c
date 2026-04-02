@@ -1,0 +1,366 @@
+//ICC-AVR application builder : 2006-11-07 오전 11:49:23
+// Target : M8
+// Crystal: 8.0000Mhz
+
+#include <iom8v.h>
+#include <macros.h>
+
+typedef unsigned char 	BYTE;
+typedef unsigned int 	WORD;
+typedef unsigned long 	DWORD;
+
+#define	BIT0	0x01																																																						
+#define	BIT1	0x02																																																						
+#define	BIT2	0x04																																																						
+#define	BIT3	0x08																																																						
+#define	BIT4	0x10																																																						
+#define	BIT5	0x20																																																						
+#define	BIT6	0x40																																																						
+#define	BIT7	0x80		
+
+#define LEVEL0     0x00
+#define LEVEL1     0x01
+#define LEVEL2     0x02
+#define LEVEL3     0x03
+#define LEVEL4     0x04
+#define LEVEL5     0x05
+#define LEVEL6     0x06
+#define LEVEL7     0x07
+#define LEVEL8     0x08
+#define LEVEL9     0x09
+#define LEVEL10    0x0A
+#define LEVEL11    0x0B
+#define LEVEL12    0x0C
+
+#define LEVEL13    0x0D
+#define LEVEL14    0x0E
+#define LEVEL15    0x0F
+#define LEVEL16    0x1F
+#define LEVEL17    0x3F
+#define LEVEL18    0x7F
+#define LEVEL19    0xFF		
+
+#define  GAS    0xE0
+#define  CDS    0xE1
+#define  TEMP   0xE2	
+
+
+#define	 GAS_SEN_DIS 	  PORTC = PORTC & ~BIT1
+#define	 GAS_SEN_EN       PORTC = PORTC |  BIT1
+
+#define	 LED_ON 	   PORTD = PORTD & ~BIT5
+#define	 LED_OFF       PORTD = PORTD |  BIT5
+
+BYTE  flag ;
+BYTE  flagg;
+BYTE  ADC_DATA[7];
+WORD  ADC_DATAS;
+BYTE  T_COUNT;
+BYTE  CDS_DATA;
+BYTE  GAS_DATA;
+BYTE  TEMPER_DATA;
+BYTE  TEMP_HIGH;
+BYTE  TEMP_LOW;
+BYTE  NO_COUNT;
+BYTE  ADC_COUNT;
+
+
+void port_init(void)
+{
+ PORTB = 0xFF;
+ DDRB  = 0x07;
+ PORTC = 0x7F; //m103 output only
+ DDRC  = 0x32;
+ PORTD = 0xFF;
+ DDRD  = 0xFE;
+}
+
+//TIMER1 initialisation - prescale:1024
+// WGM: 0) Normal, TOP=0xFFFF
+// desired value: 1Sec
+// actual value:  1.000Sec (0.0%)
+void timer1_init(void)
+{
+ TCCR1B = 0x00; //stop
+ TCNT1H = 0xCF; //reload counter high value
+ TCNT1L = 0x2C; //reload counter low value
+ //OCR1AH = 0x1E;
+ //OCR1AL = 0x84;
+ //OCR1BH = 0x1E;
+ //OCR1BL = 0x84;
+ //ICR1H  = 0x1E;
+ //ICR1L  = 0x84;
+ TCCR1A = 0x00;
+ //TCCR1B = 0x05; //start Timer
+}
+
+#pragma interrupt_handler timer1_ovf_isr:9
+void timer1_ovf_isr(void)
+{
+ //TIMER1 has overflowed
+ TCNT1H = 0xCF; //reload counter high value
+ TCNT1L = 0x2C; //reload counter low value
+ flag = 1;
+}
+
+//UART0 initialisation
+// desired baud rate: 9600
+// actual: baud rate:9615 (0.2%)
+// char size: 8 bit
+// parity: Disabled
+void uart0_init(void)
+{
+ UCSRB = 0x00; //disable while setting baud rate
+ UCSRA = 0x00;
+ UCSRC = 0x06;
+ UBRRL = 0x33; //set baud rate lo
+ UBRRH = 0x00; //set baud rate hi
+ UCSRB = 0x98;
+}
+
+#pragma interrupt_handler uart0_rx_isr:12
+void uart0_rx_isr(void)
+{
+ //uart has received a character in UDR
+}
+
+//ADC initialisation
+// Conversion time: 13uS
+void adc_init(void)
+{
+ ADCSR = 0x00; //disable adc
+ ADMUX = 0x00; //select adc input 0
+ ACSR  = 0x80;
+ ADCSR = 0x0B;
+}
+
+#pragma interrupt_handler adc_isr:15
+void adc_isr(void)
+{
+ //conversion complete, read value (int) using...
+  ADC_DATAS = ADC;
+  flagg = 1;
+}
+
+void ADC_CONVER(BYTE COMM)
+{
+    WORD  TEMP_DATA;
+	BYTE  TEP_H;
+	
+	ADC_COUNT++;
+	
+	switch(COMM)
+	  {
+	  case GAS :  ADCSRA = 0x9E;     
+                  ADMUX = 0x40;
+                  SEI();     
+                  flagg = 0;
+                  ADCSRA|=0x40;     
+                  while(!(flagg));
+                  ADCSRA&=0xBF;  
+                  CLI();
+	              TEMP_DATA = ADC_DATAS & 0x03FC;
+                  GAS_DATA = TEMP_DATA >> 2; 
+	              ADCSRA = 0x00;
+	              TEMP_DATA = 0x0000;	
+			      SEI();
+			      break;
+	  case CDS :  ADCSRA = 0x9E;     
+                  ADMUX = 0x42; // ADC 2 AD CONVERTER
+                  SEI();     
+                  flagg = 0;
+                  ADCSRA|=0x40;     
+                  while(!(flagg));
+                  ADCSRA&=0xBF;  
+                  CLI();
+	              TEMP_DATA = ADC_DATAS & 0x03FC;
+                  CDS_DATA = TEMP_DATA >> 2; 
+	              ADCSRA = 0x00;	
+	              TEMP_DATA = 0x0000;
+	              SEI();
+			      break;
+	  case TEMP : ADCSRA = 0x9E;     
+                  ADMUX = 0x43;
+                  SEI();     
+                  flagg = 0;
+                  ADCSRA|=0x40;     
+                  while(!(flagg));
+                  ADCSRA&=0xBF;  
+                  CLI();
+	              TEMP_DATA = ADC_DATAS & 0x03FF;
+	              TEP_H  =  TEMP_DATA & 0x0300;
+	              TEMP_HIGH = TEP_H >> 8;
+	              TEMP_LOW  =  TEMP_DATA & 0x00FF;	     
+	              ADCSRA = 0x00;
+	              TEMP_DATA = 0x0000;	
+                  SEI();
+			      ADC_COUNT = 0;
+			      break;
+	  }	   
+}
+
+LEVEL_CONVERT(BYTE LEVEL_V)
+{
+ BYTE LEVEL;
+if(LEVEL_V>= 200)
+      LEVEL = LEVEL0;
+    else if(LEVEL_V >=190 && LEVEL_V < 200)
+        LEVEL = LEVEL1;    
+    else if(LEVEL_V >=180 && LEVEL_V < 190)
+        LEVEL = LEVEL2;  
+    else if(LEVEL_V >=170 && LEVEL_V < 180)
+        LEVEL = LEVEL3;  
+    else if(LEVEL_V >=160 && LEVEL_V < 170)
+        LEVEL = LEVEL4;  
+    else if(LEVEL_V >=150 && LEVEL_V < 160)
+        LEVEL = LEVEL5;
+    else if(LEVEL_V >=140 && LEVEL_V < 150)
+        LEVEL = LEVEL6;       
+    else if(LEVEL_V >=130 && LEVEL_V < 140)
+        LEVEL = LEVEL7; 
+    else if(LEVEL_V >=120 && LEVEL_V < 130)
+        LEVEL = LEVEL8; 
+    else if(LEVEL_V >=110 && LEVEL_V < 120)
+        LEVEL = LEVEL9;  
+    else if(LEVEL_V >=100 && LEVEL_V < 110)
+        LEVEL = LEVEL10;     
+    else if(LEVEL_V >=90 && LEVEL_V < 100)
+        LEVEL = LEVEL11;     
+    else if(LEVEL_V >=80 && LEVEL_V  < 90)
+        LEVEL = LEVEL12;                  
+    else if(LEVEL_V >=70 && LEVEL_V < 80)
+        LEVEL = LEVEL13;         
+    else if(LEVEL_V >=60 && LEVEL_V < 70)
+        LEVEL = LEVEL14;   
+    else if(LEVEL_V >=50 && LEVEL_V < 60)
+        LEVEL = LEVEL15; 
+    else if(LEVEL_V >=40 && LEVEL_V < 50)
+        LEVEL = LEVEL16;  
+    else if(LEVEL_V >=30 && LEVEL_V < 40)
+        LEVEL = LEVEL17;  
+     else if(LEVEL_V >=20 && LEVEL_V < 30)
+        LEVEL = LEVEL18;                                              
+    else if( LEVEL_V < 20)
+        LEVEL = LEVEL19;           
+
+    return LEVEL;
+}
+
+//call this routine to initialise all peripherals
+void init_devices(void)
+{
+ //stop errant interrupts until set up
+ CLI(); //disable all interrupts
+ port_init();
+ timer1_init();
+ uart0_init();
+ adc_init();
+
+ MCUCR = 0x00;
+ GICR  = 0x00;
+ TIMSK = 0x05; //timer interrupt sources
+ 
+ flag = 0; 
+ GAS_SEN_EN;
+ T_COUNT = 0;
+ NO_COUNT = 0;
+ ADC_DATA[0] = 0x02;
+ ADC_DATA[5] = 0x03;
+ 
+ SEI(); //re-enable interrupts
+ //all peripherals are now initialised
+}
+
+// TX 1 BYTE PROGRAM
+void RS232_Send_Byte(BYTE DATA)
+ { 	
+// PORTB = 0x00;
+ while(!(UCSRA & 0x20));
+ UDR = DATA;
+ UCSRA |= 0x20; 
+ //PORTB = 0xFF;
+ }
+     
+
+// TX BYTES PGM
+void RS232_Send_Bytes(BYTE Num)
+{
+BYTE C;
+//LED422_ON;
+for(C=0; C<Num; C++) RS232_Send_Byte(ADC_DATA[C]);  
+//LED422_OFF;
+}
+
+void main(void)
+{
+init_devices();
+
+GAS_SEN_EN;
+
+TCCR1B = 0x00; //stop
+TCNT1H = 0xCF; //reload counter high value
+TCNT1L = 0x20; //reload counter low value
+TCCR1B = 0x03; //start Timer
+TIMSK  = 0x04; // Timer 1 인터럽트시작.
+
+//RS232_Send_Bytes(4);
+
+  for(;;)
+  {  
+  
+  if(flag == 1) 
+    {   
+	T_COUNT++;
+	flag =0;
+    }
+  
+  if(T_COUNT >= 6)
+    {	
+	NO_COUNT++;
+	TCCR1B = 0x00; //stop
+	LED_ON;		
+	switch(NO_COUNT)
+	   {
+	   case 1 : ADC_CONVER(GAS);
+	            ADC_DATA[1] = GAS;    
+	            ADC_DATA[2] = GAS_DATA; 
+	            ADC_DATA[3] = 0xFF;     
+	            ADC_DATA[4] = LEVEL_CONVERT(GAS_DATA); 
+	            break;
+	   case 2 : ADC_CONVER(CDS);	           
+	            ADC_DATA[1] = CDS;    
+	            ADC_DATA[2] = CDS_DATA; 
+	            ADC_DATA[3] = 0xFF;     
+	            ADC_DATA[4] = LEVEL_CONVERT(CDS_DATA); 
+	            break;
+	   case 3 : ADC_CONVER(TEMP);
+	            ADC_DATA[1] = TEMP;    
+	            ADC_DATA[2] = TEMP_HIGH; 
+	            ADC_DATA[3] = TEMP_LOW;     
+	            ADC_DATA[4] = 0xFF; 
+				NO_COUNT = 0;
+	            break;		
+	   }
+	  
+	RS232_Send_Bytes(6);	
+    flag = 0;
+	T_COUNT = 0;
+	LED_OFF;
+	TCCR1B = 0x03; //start Timer
+    }
+
+  }
+  
+}  
+
+
+
+
+
+
+
+
+
+
+
+

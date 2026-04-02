@@ -1,0 +1,953 @@
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 1           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                       LIST OF MEMORY AREAS
+
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+
+SYSTEM IMAGE FLASH           0000 3FFF 4000        - RESERVED - 
+
+OffChip FLASH  (EECODE)      4000 68FF 2900       68AD 68FF 0053
+OffChip FLASH  (Pool)         - AVAILABLE -       6900 7FFF 1700
+
+OffChip RAM    (System)      8000 8E44 0E45          - NONE -   
+OffChip RAM    (DATA)         - AVAILABLE -       8E45 8EFF 00BB
+OffChip RAM    (Pool)         - AVAILABLE -       8F00 BAFF 2C00
+OffChip RAMFAR               BB00 BF0D 040E       BB00 BBF2 00F3
+OffChip RAMNEAR              BF0E BFFF 00F2          - NONE -   
+
+OnChip  RAM    (System)      E800 EA93 0294          - NONE -   
+OnChip  RAMFAR               EA94 EAD3 0040       EA94 EAD3 0040
+OnChip  RAM    (System)      EAD4 EFEC 0519          - NONE -   
+OnChip  RAM    (System)         - WASTE -         EFED EFFF 0013
+
+OnChip  EEPROM (Prolog)      F000 F02D 002E          - NONE -   
+OnChip  EEPROM (Config)      F02E F147 011A          - NONE -   
+OnChip  EECODE               F148 F16F 0028       F16F F16F 0001
+OnChip  EEPROM (MemCtl)      F170 F187 0018          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F188 F1E7 0060
+OnChip  EEFAR                F1E8 F1EC 0005       F1E8 F1EC 0005
+OnChip  EENEAR               F1ED F1EF 0003          - NONE -   
+OnChip  EEPROM (Epilog)      F1F0 F1FF 0010          - NONE -   
+OnChip  EEPROM UNINIT         - AVAILABLE -       F200 FAFF 0900
+
+End of Memory Area List
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 2           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+
+Link Memory Usage Statistics:
+
+EEPROM Usage:  (not necessarily in order of physical layout)
+               (includes application use of external Flash memory)
+        Reserved for System Firmware     16128 bytes
+        System Data and Parameters         126 bytes
+        Domain and Address Tables          105 bytes
+        Network Variable Config Tables     140 bytes
+        Application EEPROM Variables         3 bytes
+        Library EEPROM Variables             0 bytes
+        Application Code and Const Data   9938 bytes
+        Library Code and Const Data        277 bytes
+        Self-Identification Data           234 bytes
+                                         -----
+        Total EEPROM Requirement         26951 bytes
+        EEPROM Requirement w/o firmware  10823 bytes
+        Remaining EEPROM                  6073 bytes
+
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         672 bytes
+        Transaction Control Blocks         251 bytes
+        Appl Timers and I/O Change Events   23 bytes
+        Network and Application Buffers   4672 bytes
+        Flash Memory System RAM Buffer     128 bytes
+        System RAM Fragmentation            19 bytes
+        Application RAM Variables          909 bytes
+        Library RAM Variables                0 bytes
+                                         -----
+        Total RAM Requirement             6674 bytes
+        Remaining RAM                    11758 bytes
+
+
+Successfully linked for FT 3150 512.
+        System RAM Fragmentation (19 bytes) is specific to
+                system use of external RAM.
+        Memory Map (19 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        System Upper EEPROM Area (16 bytes) varies by firmware version.
+        Priority outgoing message transaction control block uses 28 bytes of RAM.
+                Of this amount, 10 bytes varies by firmware version.
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 397 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        Flash support requires an additional 128 bytes of RAM.
+        Default buffer counts vary by Neuron model
+                (resulting in an additional 292 bytes of RAM).
+        FLASH Signature  = 06:A089 @ 4000 .. 4002
+
+
+End of Link Statistics
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 3           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                             LIST OF SEGMENTS
+
+ * FILE *                        * ROM *           * RAM *         * FLASH *
+ Type Name                   From  To   Len    From  To   Len    From  To   Len
+
+C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.no:
+  Rel journal_reset_patch     --   --   --      --   --   --     4003 400A 0008
+  Rel xcvr_patch              --   --   --      --   --   --     400B 401E 0014
+  Rel * Unnamed *             --   --   --      --   --   --     F024 F028 0005
+  Rel %current_offset         --   --   --     BE8C BE8D 0002     --   --   -- 
+  Rel %current_file_size      --   --   --     BE8A BE8B 0002     --   --   -- 
+  Rel %bytes_left             --   --   --     BE88 BE89 0002     --   --   -- 
+  Rel %lookup                 --   --   --      --   --   --     401F 402C 000E
+  Rel %open                   --   --   --      --   --   --     402D 4071 0045
+  Rel %close                  --   --   --      --   --   --     4072 407A 0009
+  Rel %FileDirectory          --   --   --     BE3E BE87 004A     --   --   -- 
+  Rel %nvi00ObjRequest        --   --   --     BE3B BE3D 0003     --   --   -- 
+  Rel %nvo00ObjStatus         --   --   --     BE35 BE3A 0006     --   --   -- 
+  Rel %nvi00CDTCommand        --   --   --     BE32 BE34 0003     --   --   -- 
+  Rel %nvo00TimeStamp         --   --   --     BE2B BE31 0007     --   --   -- 
+  Rel %nvi00FileReqA          --   --   --     BE1F BE2A 000C     --   --   -- 
+  Rel %nvo00FileStatA         --   --   --     BE04 BE1E 001B     --   --   -- 
+  Rel %nvi00FileReqB          --   --   --     BDF8 BE03 000C     --   --   -- 
+  Rel %nvo00FileStatB         --   --   --     BDDD BDF7 001B     --   --   -- 
+  Rel %nvi01Subscribe         --   --   --     BDDA BDDC 0003     --   --   -- 
+  Rel %nvo01StatusBits        --   --   --     BDD2 BDD9 0008     --   --   -- 
+  Rel %nvo01StatusBits2       --   --   --     BDCA BDD1 0008     --   --   -- 
+  Rel %nvi01TransfState       --   --   --     BDC8 BDC9 0002     --   --   -- 
+  Rel %nvo01Parameter         --   --   --     BDC5 BDC7 0003     --   --   -- 
+  Rel %nvi01CDTStBitsA        --   --   --     BDBD BDC4 0008     --   --   -- 
+  Rel %nvi01CDTStBitsB        --   --   --     BDB5 BDBC 0008     --   --   -- 
+  Rel %nvi01CDTParamA         --   --   --     BDB2 BDB4 0003     --   --   -- 
+  Rel %nvi01CDTParamB         --   --   --     BDAF BDB1 0003     --   --   -- 
+  Rel %nvi03SCIVersReq        --   --   --     BDAE BDAE 0001     --   --   -- 
+  Rel %nvo03SCIVersion        --   --   --     BD8F BDAD 001F     --   --   -- 
+  Rel %nvi04WaysidRespA       --   --   --     BD8E BD8E 0001     --   --   -- 
+  Rel %nvo04WaysideReqA       --   --   --     BD89 BD8D 0005     --   --   -- 
+  Rel %nvi04WaysidRespB       --   --   --     BD88 BD88 0001     --   --   -- 
+  Rel %nci00NetConfig         --   --   --      --   --   --     F1EF F1EF 0001
+  Rel %FtpRunning             --   --   --     BFFF BFFF 0001     --   --   -- 
+  Rel %MultiFTP               --   --   --     BFFE BFFE 0001     --   --   -- 
+  Rel %SelectAB               --   --   --     BFFD BFFD 0001     --   --   -- 
+  Rel %CarType                --   --   --     BFFC BFFC 0001     --   --   -- 
+  Rel %CNCS_ACK               --   --   --     BFFB BFFB 0001     --   --   -- 
+  Rel %_Checksum              --   --   --     BFFA BFFA 0001     --   --   -- 
+  Rel %TempTime               --   --   --     BFF6 BFF9 0004     --   --   -- 
+  Rel %WaysideType            --   --   --     BFF5 BFF5 0001     --   --   -- 
+  Rel %InBuffer               --   --   --     BFE1 BFF4 0014     --   --   -- 
+  Rel %OutBuffer              --   --   --     BF5B BFE0 0086     --   --   -- 
+  Rel %nvo04WaysideReqB       --   --   --     BD83 BD87 0005     --   --   -- 
+  Rel %ErrorBuffer            --   --   --     BF47 BF5A 0014     --   --   -- 
+  Rel %BuildVersion           --   --   --     BF41 BF46 0006     --   --   -- 
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 4           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+ * FILE *                        * ROM *           * RAM *         * FLASH *
+ Type Name                   From  To   Len    From  To   Len    From  To   Len
+  Rel %InChars                --   --   --     BF40 BF40 0001     --   --   -- 
+  Rel %OutChars               --   --   --     BF3F BF3F 0001     --   --   -- 
+  Rel %SciCount               --   --   --     BF3E BF3E 0001     --   --   -- 
+  Rel %FtpLength              --   --   --     BF3D BF3D 0001     --   --   -- 
+  Rel %FtpReq_Number          --   --   --     BF3C BF3C 0001     --   --   -- 
+  Rel %bytes_received         --   --   --     BF3B BF3B 0001     --   --   -- 
+  Rel %StatusCopy             --   --   --     BF33 BF3A 0008     --   --   -- 
+  Rel %StatErrCount           --   --   --     BF32 BF32 0001     --   --   -- 
+  Rel %CDTCount               --   --   --     BF31 BF31 0001     --   --   -- 
+  Rel %CDT_A                  --   --   --     BF30 BF30 0001     --   --   -- 
+  Rel %CDT_B                  --   --   --     BF2F BF2F 0001     --   --   -- 
+  Rel %SCI_INDEX              --   --   --     BF2E BF2E 0001     --   --   -- 
+  Rel %DefaultTime            --   --   --     BF2A BF2D 0004     --   --   -- 
+  Rel %ReceivedTime           --   --   --     BF26 BF29 0004     --   --   -- 
+  Rel %LowByte                --   --   --     BF24 BF25 0002     --   --   -- 
+  Rel %HiByte                 --   --   --     BF22 BF23 0002     --   --   -- 
+  Rel %s32Var                 --   --   --     BF1E BF21 0004     --   --   -- 
+  Rel %s32Low                 --   --   --     BF1A BF1D 0004     --   --   -- 
+  Rel %pData                  --   --   --      --   --   --     407B 407C 0002
+  Rel %TxSend                 --   --   --      --   --   --     407D 40B1 0035
+  Rel %TransferEnd            --   --   --      --   --   --     40B2 40D2 0021
+  Rel WHEN1                   --   --   --      --   --   --     40D3 4101 002F
+  Rel WHEN2                   --   --   --      --   --   --     4102 4131 0030
+  Rel WHEN3                   --   --   --      --   --   --     4132 414B 001A
+  Rel WHEN4                   --   --   --      --   --   --     414C 4181 0036
+  Rel WHEN5                   --   --   --      --   --   --     4182 41B7 0036
+  Rel WHEN6                   --   --   --      --   --   --     41B8 41BB 0004
+  Rel WHEN7                   --   --   --      --   --   --     41BC 41D9 001E
+  Rel WHEN8                   --   --   --      --   --   --     41DA 4239 0060
+  Rel WHEN9                   --   --   --      --   --   --     423A 423D 0004
+  Rel WHEN10                  --   --   --      --   --   --     423E 4290 0053
+  Rel WHEN11                  --   --   --      --   --   --     4291 4294 0004
+  Rel WHEN12                  --   --   --      --   --   --     4295 4F5B 0CC7
+  Rel WHEN13                  --   --   --      --   --   --     4F5C 4F65 000A
+  Rel WHEN14                  --   --   --      --   --   --     4F66 4F6F 000A
+  Rel WHEN15                  --   --   --      --   --   --     4F70 53F5 0486
+  Rel WHEN16                  --   --   --      --   --   --     53F6 5435 0040
+  Rel WHEN17                  --   --   --      --   --   --     5436 543E 0009
+  Rel WHEN18                  --   --   --      --   --   --     543F 545D 001F
+  Rel WHEN19                  --   --   --      --   --   --     545E 5498 003B
+  Rel %WaySideOn              --   --   --      --   --   --     5499 554E 00B6
+  Rel %SendTime               --   --   --      --   --   --     554F 56D1 0183
+  Rel %Interrupt              --   --   --      --   --   --     56D2 56DA 0009
+  Rel %CheckSum               --   --   --      --   --   --     56DB 5725 004B
+  Rel %ErrorStatus            --   --   --      --   --   --     5726 5AD5 03B0
+  Rel %Self_Install           --   --   --      --   --   --     5AD6 5AE2 000D
+  Rel %DomainTable            --   --   --      --   --   --     5AE3 5B06 0024
+  Rel %Location               --   --   --      --   --   --     5B07 5B66 0060
+  Rel %AddressTable           --   --   --      --   --   --     5B67 5BFB 0095
+  Rel %s32Hi                  --   --   --     BF16 BF19 0004     --   --   -- 
+  Rel %NvConfig               --   --   --      --   --   --     5BFC 602C 0431
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 5           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+ * FILE *                        * ROM *           * RAM *         * FLASH *
+ Type Name                   From  To   Len    From  To   Len    From  To   Len
+  Rel _%LIC%DATA1             --   --   --      --   --   --     602D 6034 0008
+  Rel %start_transfer         --   --   --      --   --   --     6035 607C 0048
+  Rel %stop_transfer          --   --   --      --   --   --     607D 60E4 0068
+  Rel %process_packet         --   --   --      --   --   --     60E5 623E 015A
+  Rel %setup_status_address   --   --   --      --   --   --     623F 6328 00EA
+  Rel WHEN20                  --   --   --      --   --   --     6329 632D 0005
+  Rel WHEN21                  --   --   --      --   --   --     632E 642A 00FD
+  Rel WHEN22                  --   --   --      --   --   --     642B 652C 0102
+  Rel WHEN23                  --   --   --      --   --   --     652D 65CE 00A2
+  Rel APINIT                  --   --   --      --   --   --     65CF 662A 005C
+  Rel SIDATA                  --   --   --      --   --   --     67C3 68AC 00EA
+  Rel * Unnamed *             --   --   --      --   --   --     662B 66C1 0097
+  Rel _%LIC%INIT              --   --   --      --   --   --     66C2 66D4 0013
+  Rel %fx                     --   --   --     BF0E BF15 0008     --   --   -- 
+  Rel %SCI                    --   --   --     BBF3 BD82 0190     --   --   -- 
+  Rel %ee_config_setup        --   --   --      --   --   --     F1ED F1EE 0002
+  Rel * Unnamed *             --   --   --      --   --   --     F02E F13C 010F
+  Rel * Unnamed *             --   --   --      --   --   --     F029 F02D 0005
+  Abs * Unnamed *             --   --   --      --   --   --     F000 F023 0024
+
+C:\PROGRAM FILES\LONWORKS\IMAGES\EXTARITH.LIB(S32TOUL):
+  Rel %s32_to_ulong           --   --   --      --   --   --     66D5 66DA 0006
+
+C:\PROGRAM FILES\LONWORKS\IMAGES\EXTARITH.LIB(S32FRUL):
+  Rel %s32_from_ulong         --   --   --      --   --   --     66DB 66E9 000F
+
+C:\PROGRAM FILES\LONWORKS\IMAGES\EXTARITH.LIB(U32MUL):
+  Rel %u32_mul                --   --   --      --   --   --     66EA 6748 005F
+
+C:\PROGRAM FILES\LONWORKS\IMAGES\EXTARITH.LIB(U32ADD):
+  Rel %u32_add                --   --   --      --   --   --     6749 6781 0039
+
+C:\PROGRAM FILES\LONWORKS\IMAGES\GEN.LIB(L_FLASH):
+  Rel _flash_rendezvous       --   --   --      --   --   --     F148 F16E 0027
+
+C:\PROGRAM FILES\LONWORKS\IMAGES\EXTARITH.LIB(U32UTIL):
+  Rel %u32_setup              --   --   --      --   --   --     6782 67C2 0041
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 6           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                           SYMBOLS BY ADDRESS
+
+#   0001 _idem_dup                      #   03FF _timer_sset                    
+#   0002 _tx_by_addr                    #   0403 _timer_sset_repeat             
+#   0005 _larva_break                   #   0418 _timer_get                     
+#   0007 _larva_suspend                 #   041F timers_off                     
+#   000B _pushd1                        #   0429 _unpack_nibs                   
+#   000D _pushd                         #   0432 _memcpy                        
+#   0013 _popd1                         #   0435 _memcpy1                       
+#   0015 _popd                          #   043D _memset8                       
+#   001B _push1                         #   0444 _memset                        
+#   001D _push                          #   0445 _memset1                       
+#   0021 _pop1                          #   044E _save_ptrs                     
+#   0023 _pop                           #   0457 _restore_ptrs                  
+#   0027 _alloc                         #   045F _register_call                 
+#   002C _dealloc                       #   0465 _add_8_16                      
+#   002E _drop_n                        #   04B1 delay_1msec                    
+#   0032 _drop_n_return_1               #   04B7 msec_delay                     
+#   0034 _drop_n_preserve_1             #   04C8 delay                          
+#   0038 _drop_n_return_2               #   04CA scaled_delay                   
+#   003A _drop_n_preserve_2             #   04D3 _iteration16                   
+#   0040 _query_stats                   #   0501 flush_cancel                   
+#   0041 _get_sp_net_app                #   0503 _sys_flag_clear                
+#   004C _get_sp                        #   0506 _free_rcvtx_by_domain          
+#   0054 _bump_ptr                      #   0511 _sys_flag_set                  
+#   0054 _add_8_16f                     #   0530 _mip_L4                        
+#   0056 _inc16                         #   0531 _mip_L5                        
+#   0059 _xch_inc_xch                   #   0555 _mip_L1                        
+#   005C _sign_extend16                 #   0576 _mip_L2                        
+#   0062 _dec16                         #   0589 _set_typeout                   
+#   0069 _ldP0_fetchl                   #   05AE _mip_T1                        
+#   0080 _new_binding_constraints       #   05DB _get_address                   
+#   0093 watchdog_update                #   05F5 _get_domain                    
+#   0095 watchdog_update_old            #   0675 _memcmp1                       
+#   0099 _cpu_halt_check                #   0697 _index_to_addr                 
+#   009E _larva_L1                      #   069F _eeprom_write                  
+#   00AB _larva_L2                      #   06A1 _ee_write_int                  
+#   00BE _arb_presf                     #   06A1 _eeprom_far_write              
+#   00CC node_reset                     #   06A4 _eeprom_write_long             
+#   00CC _node_reset                    #   06A6 _ee_write_long                 
+#   00DC _r_shift8_7                    #   06A6 _eeprom_far_write_long         
+#   00DD _r_shift8_6                    #   06B7 _ee_memcpy_uncond              
+#   00DE _r_shift8_5                    #   06BB _ee_memcpy                     
+#   00DF _r_shift8_4                    #   06BB _memcpy8                       
+#   00E0 _r_shift8_3                    #   06BE _get_error_log                 
+#   01AE _mip_L6                        #   06CB _sys_error_log                 
+#   03C4 _timer_events                  #   06CE error_log                      
+#   03E4 _timer_expires                 #   06DF _raw_error_log                 
+#   03F1 _timer_expires_any             #   0748 _change_state                  
+#   03F4 _timer_off                     #   078A _disable_callbacks             
+#   03F8 _timer_mset                    #   078D _enable_callbacks              
+#   03FA _timer_mset_repeat             #   07A1 _check_configured              
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 7           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                       Symbols By Address, cont'd.
+
+#   083E _adjust_checksum1              #   0BE5 _gequ8                         
+#   0853 _get_appsum_location           #   0BEA _less8s                        
+#   092A post_events                    #   0BED _less16s                       
+#   0949 set_eeprom_lock                #   0BF0 _equal8                        
+#   0A58 abs8_twice                     #   0BF2 _equal16                       
+#   0A5F _lshift8by2_add16              #   0BF4 _lognot16                      
+#   0A62 _lshift8by1_add16              #   0BF5 _lognot8                       
+#   0A73 _lshift8_add16                 #   0BF7 _log16                         
+#   0A75 _lshift16_add16                #   0BF8 _log8                          
+#   0A78 _adds_8_16                     #   0BFD _r_shift8                      
+#   0A7A _add16                         #   0C05 _r_shift8s                     
+#   0A81 _mul8l                         #   0C0E _l_shift8                      
+#   0A9E _muls_8_16                     #   0C0E _l_shift8s                     
+#   0AA1 _mul_8_16                      #   0C27 _l_shift16s                    
+#   0AA3 _mul16                         #   0C27 _l_shift16                     
+#   0AA3 _mul16s                        #   0C33 _r_shift16                     
+#   0AB4 _mul8                          #   0C42 _r_shift16s                    
+#   0AD0 _div32_16_core                 #   0C51 _l_shift8_7                    
+#   0B06 _div32_16                      #   0C52 _l_shift8_6                    
+#   0B0B _div8                          #   0C53 _l_shift8_5                    
+#   0B13 _div16                         #   0C54 _l_shift8_4                    
+#   0B25 _div8s                         #   0C55 _l_shift8_3                    
+#   0B2D _mod8s                         #   0C59 random                         
+#   0B37 _abs8                          #   0C5D _msg_free                      
+#   0B3E _mod16                         #   0C6A _resp_free                     
+#   0B45 _div16s                        #   0C77 _clear_apps_flags              
+#   0B50 _mod16s                        #   0C7B _msg_alloc_priority            
+#   0B5E _max8                          #   0C7D _msg_alloc                     
+#   0B63 _min8                          #   0C8A _resp_alloc                    
+#   0B68 _max8s                         #   0CA9 _resp_send                     
+#   0B6D _min8s                         #   0CA9 _msg_send                      
+#   0B73 _mod8                          #   0CDA _msg_alloc_wait                
+#   0B7C _max16                         #   0CE7 _msg_cancel                    
+#   0B81 _min16                         #   0CE7 _resp_cancel                   
+#   0B86 _max16s                        #   0D09 _bound_mt                      
+#   0B8B _min16s                        #   0D2E _wink                          
+#   0B93 _sub16                         #   0D31 _msg_receive                   
+#   0B9F _mul8ls                        #   0D33 _msg_arrives                   
+#   0BA8 _abs16                         #   0D35 _msg_code_arrives              
+#   0BAC _minus16s                      #   0D44 _set_apps_flags                
+#   0BB2 _not16                         #   0D48 _msg_fails                     
+#   0BB7 _and16                         #   0D4B _msg_completes                 
+#   0BBC _or16                          #   0D4E _msg_succeeds                  
+#   0BC1 _xor16                         #   0D51 _resp_receive                  
+#   0BC6 _gequ8s                        #   0D55 _resp_arrives                  
+#   0BCC _gequ16s                       #   0D8F _msg_data_blockset             
+#   0BD3 _less16                        #   0DCC _msg_priority_set              
+#   0BD7 _less8                         #   0DD7 _resp_code_set                 
+#   0BDB _signs_differ16                #   0DD9 _resp_data_set                 
+#   0BE1 _gequ16                        #   0DE1 _msg_code_set                  
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 8           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                       Symbols By Address, cont'd.
+
+#   0DE3 _msg_data_set                  #   11B1 flush                          
+#   0DF4 _msg_auth_set                  #   11BC _flush_completes               
+#   0DF8 _msg_service_set               #   11EE _sleep                         
+#   0DFC _msg_tag_set1                  #   125F retrieve_xcvr_status           
+#   0DFC _msg_tag_set                   #   1733 _alias_count                   
+#   0E01 _msg_byte_set                  #   1737 _nv_count                      
+#   0E01 _msg_addr_set                  #   173B _nv_get_cnfg_p_pri             
+#   0E05 _msg_out_set                   #   1748 _nv_get_cnfg_p                 
+#   0E33 _msg_code_get                  #   1754 _nv_get_cnfg_p1                
+#   0E33 _msg_code_get_ex               #   175B _nv_get_alias_p                
+#   0E35 _msg_data_get                  #   1771 _nv_get_fixed_p                
+#   0E39 _msg_auth_get                  #   1845 _nv_get_alias                  
+#   0E3D _msg_service_get               #   191F _get_auth_std                  
+#   0E42 _msg_byte_get                  #   19F3 _nm_set_nk                     
+#   0E42 _msg_addr_get                  #   1AC7 make_apdu_p                    
+#   0E47 _msg_in_get                    #   1AE1 _service_pin_send              
+#   0E76 _msg_len_get_ex                #   1AE2 _nm_service_send               
+#   0E76 _msg_len_get                   #   1AE9 _bitshift_input                
+#   0E7B _msg_data_blockget             #   1B0A _init_baud                     
+#   0FB4 _nv_update_int                 #   1B0E _A_delay_pd                    
+#   0FB5 _nv_update_int_offset          #   1B10 _A_delay                       
+#   0FBA _nv_update_long                #   1B11 _A_delay_b                     
+#   0FBB _nv_update_long_offset         #   1B17 _sio_load_delay                
+#   0FC0 _nv_update                     #   1B20 set_base_p                     
+#   0FC5 _nv_poll                       #   1B25 _bit_input                     
+#   0FC5 _nv_update_request             #   1B27 _nibble_input                  
+#   0FC5 _nv_update_request1            #   1B3B _byte_input                    
+#   0FD1 _nv_poll_all                   #   1B3F _leveldetect_input             
+#   0FD7 _nv_array_poll                 #   1B55 _init_io_pins                  
+#   1011 _nv_update_occurs              #   1B81 _io_direction_hi2              
+#   1012 _nv_array_update_occurs        #   1B81 _io_direction_hi               
+#   105C _nv_update_fails               #   1B83 _io_direction_lo               
+#   105D _nv_array_update_fails         #   1B85 _bit_output_ext2               
+#   1062 _nv_update_succeeds            #   1B85 _bit_output_ext                
+#   1063 _nv_array_update_succeeds      #   1B89 _bit_output_hi                 
+#   1066 _nv_update_completes           #   1B8B _bit_output_lo2                
+#   1067 _nv_array_update_completes     #   1B8D _bit_output_lo1                
+#   108E _io_change_init                #   1B95 _nibble_output                 
+#   10AE _io_changes_to                 #   1B9D _byte_output                   
+#   10B9 _io_changes_by                 #   1BB1 _set_tco_p                     
+#   10CD _io_changes                    #   1BC4 _loader_prep                   
+#   10D2 _io_update_occurs              #   1BF1 _pulsewidth_output             
+#   10E8 _io_input_value                #   1BFD _triggered_count_output        
+#   10EF application_restart            #   1BFD _frequency_output              
+#   1119 _preempt                       #   1C15 _oneshot_output                
+#   114E offline_confirm                #   1C1A _triac_pulse_output            
+#   115C _offline                       #   1C22 _triac_level_output            
+#   116A _online                        #   1C22 _triac_output                  
+#   116F online_confirm                 #   1C24 _loader_go                     
+#   11AC go_offline                     #   1C2F _pulsecount_output             
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 9           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                       Symbols By Address, cont'd.
+
+#   1C71 _totalize_input                #   3D25 _neurowire_master              
+#   1C7D _ontime_input                  #   3D5F go_configured                  
+#   1C7D _period_input                  #   3D63 go_unconfigured                
+#   1C7D _pulsecount_input              #   3D71 reverse                        
+#   1CAB _quadrature_input              #   3D7C _bitf_sign_ext                 
+#   1CD6 _select_mux                    #   3D83 _memcpy16                      
+#   1CDA _alter_icntrl_g                #   3D96 _memset16                      
+#   1CE2 _select_input_fn               #   3DA8 retrieve_status                
+#   1D01 _io_set_clock                  #   3DB3 _resp_data_blockset            
+#   1D11 _init_timer_counter1           #   3DBC _msg_out_addr_ptr              
+#   1D13 _init_timer_counter2           #   3DCB _resp_in_addr_ptr              
+#   1D5C _parallel_output_request       #   3DCE _msg_in_addr_ptr               
+#   1D5E clear_pio_request              #   3DD4 _msg_duplicate_get             
+#   1D63 _parallel_input_ready          #   3DDB _msg_rcvtx_get                 
+#   1D8F _parallel_output_ready         #   3DE2 _bin2bcd                       
+#   1D9D _parallel_input                #   3E11 _bcd2bin                       
+#   1DB0 _parallel_output               #   3E29 muldivs                        
+#   1F13 _mac_L1                        #   3E43 muldiv                         
+#   21DA _scheduler_loop                #   3E68 _io_abort_clear                
+#   2451 _larva_L3                      #   3E6E access_domain                  
+#   27A9 _net_mgmt_processing           #   3E72 _access_check                  
+#   2839 _update_address                #   3E7C update_nv                      
+#   2899 _self_installation             #   3E84 update_config_data             
+#   289B _calculate_cnfg_checksum       #   3E8B _update_record                 
+#   28A3 _leave_indexed_domain          #   3E9D update_clone_domain            
+#   2920 chksum_recalc_mode             #   3EB0 update_domain                  
+#   2C62 _build_status                  #   3EC3 update_address                 
+#   2CD9 clear_status                   #   3ECD access_alias                   
+#   2D9E _get_prit_p                    #   3ED6 update_alias                   
+#   2DAD _get_prt_p                     #   3EDE access_key                     
+#   2F54 update_xcvr_id                 #   3EF1 access_address                 
+#   2F5F update_program_id              #   3EF6 access_nv                      
+#   2F77 _eefar_init                    #   3EFF retrieve_stat                  
+#   2F79 _extended_version_number       #   3F08 _neurowire_slave               
+#   2F7D _sys_comeup_offline            #   3F43 _muxbus_read                   
+#   2F7E _bitshift_output               #   3F55 _muxbus_reread                 
+#   2FB7 _serial_output                 #   3F60 _muxbus_write                  
+#   2FEA _get_si_data_ptr               #   3F6F _muxbus_rewrite                
+#   2FF5 power_up                       #   3F7A _dualslope_input               
+#   2FFA flush_wait                     #   3F9B _dualslope_start               
+#   3000 _eeprom_image_copy             #   3FF7 _image_upgrade_test_area       
+#   3036 _defCommParms                  #   3FFE _image_checksum                
+#   31FE _boot_id                       #   3FFF _image_end_page                
+#   32BE _get_ext_ee                    #   3FFF _image_end                     
+#   3569 _offchip_eelock_check          .   4003 journal_reset_patch            
+#   39DC _set_ram_ptrs                  .   400B xcvr_patch                     
+#   3AEF _checksum_generate             #   401F %lookup                        
+#   3C8C _serial_input                  #   402D %open                          
+#   3CDC _serial_sub1                   #   4072 %close                         
+#   3CF6 _bitshift_setup                #   407B %pData                         
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 10           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                       Symbols By Address, cont'd.
+
+#   407D %TxSend                        #   6762 %u32_sub                       
+#   40B2 %TransferEnd                   #   6762 %s32_sub                       
+.   40D3 WHEN1                          #   6782 %u32_setup                     
+.   4102 WHEN2                          #   67B1 %u32_finish                    
+.   4132 WHEN3                          .   67C3 SIDATA                         
+.   414C WHEN4                          c   8000 _extended_io_count             
+.   4182 WHEN5                          c   8000 _evn_byte_2                    
+.   41B8 WHEN6                          c   8000 _programmable_lvi              
+.   41BC WHEN7                          c   8000 _sci_spi_supported             
+.   41DA WHEN8                          c   8000 _extended_onchip_eeprom        
+.   423A WHEN9                          c   8000 _sio_near                      
+.   423E WHEN10                         c   8000 _const_mask                    
+.   4291 WHEN11                         c   8000 _size_sys_eevars               
+.   4295 WHEN12                         #   8000 _system_version_minor          
+.   4F5C WHEN13                         #   8000 _programmable_driver_strength  
+.   4F66 WHEN14                         c   8000 _sidata_last_eecode            
+.   4F70 WHEN15                         c   8000 _larva_clear_off               
+.   53F6 WHEN16                         c   8000 _evn_byte_1                    
+.   5436 WHEN17                         c   8001 _extended_onchip_eedata        
+.   543F WHEN18                         c   8001 _feature_set_1                 
+.   545E WHEN19                         c   8001 _feature_set_2                 
+#   5499 %WaySideOn                     c   8001 _field_debug                   
+#   554F %SendTime                      #   8001 _nm_capabilities               
+#   56D2 %Interrupt                     #   8001 _oma                           
+#   56DB %CheckSum                      c   8001 _ram_test_power_up_only        
+#   5726 %ErrorStatus                   c   8001 _set_nv_length_valid           
+#   5AD6 %Self_Install                  c   8001 _size_proxy_route_index_entry  
+#   5AE3 %DomainTable                   #   8001 _system_image_extensions       
+#   5B07 %Location                      c   8001 _sysimgext_phase               
+#   5B67 %AddressTable                  c   8001 _disable_dynamic_xcvr_config   
+#   5BFC %NvConfig                      c   8001 _sysimgext_nv_length_override  
+.   602D _%LIC%DATA1                    c   8001 _memory_forwarding             
+#   6035 %start_transfer                #   8001 _supports_explicit_addressing  
+#   607D %stop_transfer                 #   8001 _alternate_clocking            
+#   60E5 %process_packet                c   8001 _sysimgext_proxy               
+#   623F %setup_status_address          #   8002 _nm_version                    
+.   6329 WHEN20                         c   8002 _read_only_data_struct_version 
+.   632E WHEN21                         c   8003 _size_io_change_event          
+.   642B WHEN22                         c   8003 _size_nv_cnfg                  
+.   652D WHEN23                         c   8003 _size_nv_fix                   
+.   65CF APINIT                         c   8004 _size_nv_alias                 
+.   65D7 RESET                          c   8004 _size_timer                    
+.   6673 TEVT                           c   8004 _size_evn                      
+.   66C2 _%LIC%INIT                     c   8005 _size_addr_tbl_entry           
+#   66D5 %s32_to_ulong                  c   8008 _onchip_eeprom_sector_size     
+#   66DB %s32_from_ulong                c   800C _size_proxy_route_entry        
+#   66EA %u32_mul                       c   800D _size_rcv_tx                   
+#   66EA %s32_mul                       c   800F _size_domain_entry             
+#   6749 %u32_add                       #   8010 _eeJournal_size                
+#   6749 %s32_add                       c   8010 _eevar_offset                  
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 11           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                       Symbols By Address, cont'd.
+
+c   8010 _evn_byte_3                    #   BF2F %CDT_B                         
+c   8010 _evn_byte_4                    #   BF30 %CDT_A                         
+c   8010 _system_version                #   BF31 %CDTCount                      
+c   8010 _ee_reserved_offset            #   BF32 %StatErrCount                  
+c   801C _size_tx_ctl_blk               #   BF33 %StatusCopy                    
+c   8020 _image_file_alignment_boundary #   BF3B %bytes_received                
+c   8040 _size_custom_ram_area          #   BF3C %FtpReq_Number                 
+c   8040 _custom_ram_area_avail         #   BF3D %FtpLength                     
+c   80BE _arbitrary_preempt_safe        #   BF3E %SciCount                      
+#   80FF _nv_count_mask                 #   BF3F %OutChars                      
+#   80FF _nv_all                        #   BF40 %InChars                       
+#   8100 _size_app_basepg               #   BF41 %BuildVersion                  
+c   82E0 _sysram_base_usage             #   BF47 %ErrorBuffer                   
+#   BBF3 %SCI                           #   BF5B %OutBuffer                     
+#   BD83 %nvo04WaysideReqB              #   BFE1 %InBuffer                      
+#   BD88 %nvi04WaysidRespB              #   BFF5 %WaysideType                   
+#   BD89 %nvo04WaysideReqA              #   BFF6 %TempTime                      
+#   BD8E %nvi04WaysidRespA              #   BFFA %_Checksum                     
+#   BD8F %nvo03SCIVersion               #   BFFB %CNCS_ACK                      
+#   BDAE %nvi03SCIVersReq               #   BFFC %CarType                       
+#   BDAF %nvi01CDTParamB                #   BFFD %SelectAB                      
+#   BDB2 %nvi01CDTParamA                #   BFFE %MultiFTP                      
+#   BDB5 %nvi01CDTStBitsB               #   BFFF %FtpRunning                    
+#   BDBD %nvi01CDTStBitsA               #   E800 activate_service_led           
+#   BDC5 %nvo01Parameter                #   E801 _larva_flag                    
+#   BDC8 %nvi01TransfState              #   E80C _xcvr_mode                     
+#   BDCA %nvo01StatusBits2              #   E83C msg_tag_index                  
+#   BDD2 %nvo01StatusBits               #   E83C nv_in_index                    
+#   BDDA %nvi01Subscribe                #   E83D alias_cnt                      
+#   BDDD %nvo00FileStatB                #   E84C ramQElemSizeIn                 
+#   BDF8 %nvi00FileReqB                 #   E84D ramQElemSizeOut                
+#   BE04 %nvo00FileStatA                #   E855 qfree_out                      
+#   BE1F %nvi00FileReqA                 #   E85D qincoming                      
+#   BE2B %nvo00TimeStamp                #   E861 qresponse                      
+#   BE32 %nvi00CDTCommand               #   E877 _larva_L4                      
+#   BE35 %nvo00ObjStatus                #   E8C5 io_pin_event_data              
+#   BE3B %nvi00ObjRequest               #   E8CC input_value                    
+#   BE3E %FileDirectory                 #   E8CC _dbg_input_value               
+#   BE88 %bytes_left                    #   E8CE _nv_array_index                
+#   BE8A %current_file_size             #   E8CE nv_array_index                 
+#   BE8C %current_offset                #   E8CF io_pdata_imgs                  
+#   BF0E %fx                            #   E8D3 _io_gen_img                    
+#   BF16 %s32Hi                         #   E936 _sys_flags                     
+#   BF1A %s32Low                        #   E945 _cpu_sync                      
+#   BF1E %s32Var                        #   E949 nv_in_addr                     
+#   BF22 %HiByte                        #   E951 _sys_stat                      
+#   BF24 %LowByte                       #   E969 ee_lock                        
+#   BF26 %ReceivedTime                  #   E96A nsa_features                   
+#   BF2A %DefaultTime                   #   E96A nsa_relative                   
+#   BF2E %SCI_INDEX                     #   E987 _last_retry_extra_time         
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 12           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                       Symbols By Address, cont'd.
+
+#   E992 _sys_callback_address          #   F024 read_only_data_2               
+#   E994 BASEPG3                        #   F024 eeCustomMac                    
+#   E994 _larva_L5                      #   F029 eeNVCount                      
+#   E99F input_is_new                   #   F029 read_only_data_3               
+#   E99F _dbg_input_is_new              #   F02B eeSNVT2Ptr                     
+#   EA94 _loc_custom_ram_area           #   F02E config_data                    
+#   F000 eeNeuronID                     #   F036 eeCommStart                    
+#   F000 read_only_data                 #   F036 eeClock                        
+#   F008 eeNVFixedPtr                   #   F037 eeAltClock                     
+.   F008 DIRECTORY                      .   F047 DOMAIN                         
+.   F00A PROTECTBIT                     #   F047 eeDomain                       
+#   F00B eeSNVTPtr                      #   F050 eeDomain0Key                   
+.   F00D PROGID                         #   F05F eeDomain1Key                   
+#   F00D eeIDString                     #   F148 _flash_rendezvous              
+.   F015 MODETABLE                      #   F1ED %ee_config_setup               
+#   F015 eeModeFlags                    #   F1EF %nci00NetConfig                
+.   F01A BUFCOUNTS                      #   F1F0 eeErrorLog                     
+.   F01D EENEARBYTES                    #   FBF0 eeJournal                      
+.   F023 TX_CTRL                       
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 13           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                            SYMBOLS BY NAME
+
+#   BFFA %_Checksum                     #   BE2B %nvo00TimeStamp                
+#   5B67 %AddressTable                  #   BDC5 %nvo01Parameter                
+#   BF41 %BuildVersion                  #   BDD2 %nvo01StatusBits               
+#   BE88 %bytes_left                    #   BDCA %nvo01StatusBits2              
+#   BF3B %bytes_received                #   BD8F %nvo03SCIVersion               
+#   BFFC %CarType                       #   BD89 %nvo04WaysideReqA              
+#   BF30 %CDT_A                         #   BD83 %nvo04WaysideReqB              
+#   BF2F %CDT_B                         #   402D %open                          
+#   BF31 %CDTCount                      #   BF5B %OutBuffer                     
+#   56DB %CheckSum                      #   BF3F %OutChars                      
+#   4072 %close                         #   407B %pData                         
+#   BFFB %CNCS_ACK                      #   60E5 %process_packet                
+#   BE8A %current_file_size             #   BF26 %ReceivedTime                  
+#   BE8C %current_offset                #   6749 %s32_add                       
+#   BF2A %DefaultTime                   #   66DB %s32_from_ulong                
+#   5AE3 %DomainTable                   #   66EA %s32_mul                       
+#   F1ED %ee_config_setup               #   6762 %s32_sub                       
+#   BF47 %ErrorBuffer                   #   66D5 %s32_to_ulong                  
+#   5726 %ErrorStatus                   #   BF16 %s32Hi                         
+#   BE3E %FileDirectory                 #   BF1A %s32Low                        
+#   BF3D %FtpLength                     #   BF1E %s32Var                        
+#   BF3C %FtpReq_Number                 #   BBF3 %SCI                           
+#   BFFF %FtpRunning                    #   BF2E %SCI_INDEX                     
+#   BF0E %fx                            #   BF3E %SciCount                      
+#   BF22 %HiByte                        #   BFFD %SelectAB                      
+#   BFE1 %InBuffer                      #   5AD6 %Self_Install                  
+#   BF40 %InChars                       #   554F %SendTime                      
+#   56D2 %Interrupt                     #   623F %setup_status_address          
+#   5B07 %Location                      #   6035 %start_transfer                
+#   401F %lookup                        #   BF32 %StatErrCount                  
+#   BF24 %LowByte                       #   BF33 %StatusCopy                    
+#   BFFE %MultiFTP                      #   607D %stop_transfer                 
+#   F1EF %nci00NetConfig                #   BFF6 %TempTime                      
+#   5BFC %NvConfig                      #   40B2 %TransferEnd                   
+#   BE32 %nvi00CDTCommand               #   407D %TxSend                        
+#   BE1F %nvi00FileReqA                 #   6749 %u32_add                       
+#   BDF8 %nvi00FileReqB                 #   67B1 %u32_finish                    
+#   BE3B %nvi00ObjRequest               #   66EA %u32_mul                       
+#   BDB2 %nvi01CDTParamA                #   6782 %u32_setup                     
+#   BDAF %nvi01CDTParamB                #   6762 %u32_sub                       
+#   BDBD %nvi01CDTStBitsA               #   5499 %WaySideOn                     
+#   BDB5 %nvi01CDTStBitsB               #   BFF5 %WaysideType                   
+#   BDDA %nvi01Subscribe                .   602D _%LIC%DATA1                    
+#   BDC8 %nvi01TransfState              .   66C2 _%LIC%INIT                     
+#   BDAE %nvi03SCIVersReq               #   1B10 _A_delay                       
+#   BD8E %nvi04WaysidRespA              #   1B11 _A_delay_b                     
+#   BD88 %nvi04WaysidRespB              #   1B0E _A_delay_pd                    
+#   BE04 %nvo00FileStatA                #   0BA8 _abs16                         
+#   BDDD %nvo00FileStatB                #   0B37 _abs8                          
+#   BE35 %nvo00ObjStatus                #   3E72 _access_check                  
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 14           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                        Symbols By Name, cont'd.
+
+#   0A7A _add16                         #   0B0B _div8                          
+#   0465 _add_8_16                      #   0B25 _div8s                         
+#   0054 _add_8_16f                     #   002E _drop_n                        
+#   0A78 _adds_8_16                     #   0034 _drop_n_preserve_1             
+#   083E _adjust_checksum1              #   003A _drop_n_preserve_2             
+#   1733 _alias_count                   #   0032 _drop_n_return_1               
+#   0027 _alloc                         #   0038 _drop_n_return_2               
+#   1CDA _alter_icntrl_g                #   3F7A _dualslope_input               
+#   8001 _alternate_clocking            #   3F9B _dualslope_start               
+#   0BB7 _and16                         #   06BB _ee_memcpy                     
+#   00BE _arb_presf                     #   06B7 _ee_memcpy_uncond              
+c   80BE _arbitrary_preempt_safe        c   8010 _ee_reserved_offset            
+#   3E11 _bcd2bin                       #   06A1 _ee_write_int                  
+#   3DE2 _bin2bcd                       #   06A6 _ee_write_long                 
+#   1B25 _bit_input                     #   2F77 _eefar_init                    
+#   1B85 _bit_output_ext                #   8010 _eeJournal_size                
+#   1B85 _bit_output_ext2               #   06A1 _eeprom_far_write              
+#   1B89 _bit_output_hi                 #   06A6 _eeprom_far_write_long         
+#   1B8D _bit_output_lo1                #   3000 _eeprom_image_copy             
+#   1B8B _bit_output_lo2                #   069F _eeprom_write                  
+#   3D7C _bitf_sign_ext                 #   06A4 _eeprom_write_long             
+#   1AE9 _bitshift_input                c   8010 _eevar_offset                  
+#   2F7E _bitshift_output               #   078D _enable_callbacks              
+#   3CF6 _bitshift_setup                #   0BF2 _equal16                       
+#   31FE _boot_id                       #   0BF0 _equal8                        
+#   0D09 _bound_mt                      c   8000 _evn_byte_1                    
+#   2C62 _build_status                  c   8000 _evn_byte_2                    
+#   0054 _bump_ptr                      c   8010 _evn_byte_3                    
+#   1B3B _byte_input                    c   8010 _evn_byte_4                    
+#   1B9D _byte_output                   c   8000 _extended_io_count             
+#   289B _calculate_cnfg_checksum       c   8001 _extended_onchip_eedata        
+#   0748 _change_state                  c   8000 _extended_onchip_eeprom        
+#   07A1 _check_configured              #   2F79 _extended_version_number       
+#   3AEF _checksum_generate             c   8001 _feature_set_1                 
+#   0C77 _clear_apps_flags              c   8001 _feature_set_2                 
+c   8000 _const_mask                    c   8001 _field_debug                   
+#   0099 _cpu_halt_check                #   F148 _flash_rendezvous              
+#   E945 _cpu_sync                      #   11BC _flush_completes               
+c   8040 _custom_ram_area_avail         #   0506 _free_rcvtx_by_domain          
+#   E99F _dbg_input_is_new              #   1BFD _frequency_output              
+#   E8CC _dbg_input_value               #   0BE1 _gequ16                        
+#   002C _dealloc                       #   0BCC _gequ16s                       
+#   0062 _dec16                         #   0BE5 _gequ8                         
+#   3036 _defCommParms                  #   0BC6 _gequ8s                        
+#   078A _disable_callbacks             #   05DB _get_address                   
+c   8001 _disable_dynamic_xcvr_config   #   0853 _get_appsum_location           
+#   0B13 _div16                         #   191F _get_auth_std                  
+#   0B45 _div16s                        #   05F5 _get_domain                    
+#   0B06 _div32_16                      #   06BE _get_error_log                 
+#   0AD0 _div32_16_core                 #   32BE _get_ext_ee                    
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 15           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                        Symbols By Name, cont'd.
+
+#   2D9E _get_prit_p                    #   28A3 _leave_indexed_domain          
+#   2DAD _get_prt_p                     #   0BD3 _less16                        
+#   2FEA _get_si_data_ptr               #   0BED _less16s                       
+#   004C _get_sp                        #   0BD7 _less8                         
+#   0041 _get_sp_net_app                #   0BEA _less8s                        
+#   0001 _idem_dup                      #   1B3F _leveldetect_input             
+#   3FFE _image_checksum                #   1C24 _loader_go                     
+#   3FFF _image_end                     #   1BC4 _loader_prep                   
+#   3FFF _image_end_page                #   EA94 _loc_custom_ram_area           
+c   8020 _image_file_alignment_boundary #   0BF7 _log16                         
+#   3FF7 _image_upgrade_test_area       #   0BF8 _log8                          
+#   0056 _inc16                         #   0BF4 _lognot16                      
+#   0697 _index_to_addr                 #   0BF5 _lognot8                       
+#   1B0A _init_baud                     #   0A75 _lshift16_add16                
+#   1B55 _init_io_pins                  #   0A73 _lshift8_add16                 
+#   1D11 _init_timer_counter1           #   0A62 _lshift8by1_add16              
+#   1D13 _init_timer_counter2           #   0A5F _lshift8by2_add16              
+#   3E68 _io_abort_clear                #   1F13 _mac_L1                        
+#   108E _io_change_init                #   0B7C _max16                         
+#   10CD _io_changes                    #   0B86 _max16s                        
+#   10B9 _io_changes_by                 #   0B5E _max8                          
+#   10AE _io_changes_to                 #   0B68 _max8s                         
+#   1B81 _io_direction_hi               #   0675 _memcmp1                       
+#   1B81 _io_direction_hi2              #   0432 _memcpy                        
+#   1B83 _io_direction_lo               #   0435 _memcpy1                       
+#   E8D3 _io_gen_img                    #   3D83 _memcpy16                      
+#   10E8 _io_input_value                #   06BB _memcpy8                       
+#   1D01 _io_set_clock                  c   8001 _memory_forwarding             
+#   10D2 _io_update_occurs              #   0444 _memset                        
+#   04D3 _iteration16                   #   0445 _memset1                       
+#   0C27 _l_shift16                     #   3D96 _memset16                      
+#   0C27 _l_shift16s                    #   043D _memset8                       
+#   0C0E _l_shift8                      #   0B81 _min16                         
+#   0C55 _l_shift8_3                    #   0B8B _min16s                        
+#   0C54 _l_shift8_4                    #   0B63 _min8                          
+#   0C53 _l_shift8_5                    #   0B6D _min8s                         
+#   0C52 _l_shift8_6                    #   0BAC _minus16s                      
+#   0C51 _l_shift8_7                    #   0555 _mip_L1                        
+#   0C0E _l_shift8s                     #   0576 _mip_L2                        
+#   0005 _larva_break                   #   0530 _mip_L4                        
+c   8000 _larva_clear_off               #   0531 _mip_L5                        
+#   E801 _larva_flag                    #   01AE _mip_L6                        
+#   009E _larva_L1                      #   05AE _mip_T1                        
+#   00AB _larva_L2                      #   0B3E _mod16                         
+#   2451 _larva_L3                      #   0B50 _mod16s                        
+#   E877 _larva_L4                      #   0B73 _mod8                          
+#   E994 _larva_L5                      #   0B2D _mod8s                         
+#   0007 _larva_suspend                 #   0E42 _msg_addr_get                  
+#   E987 _last_retry_extra_time         #   0E01 _msg_addr_set                  
+#   0069 _ldP0_fetchl                   #   0C7D _msg_alloc                     
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 16           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                        Symbols By Name, cont'd.
+
+#   0C7B _msg_alloc_priority            #   1B27 _nibble_input                  
+#   0CDA _msg_alloc_wait                #   1B95 _nibble_output                 
+#   0D33 _msg_arrives                   #   8001 _nm_capabilities               
+#   0E39 _msg_auth_get                  #   1AE2 _nm_service_send               
+#   0DF4 _msg_auth_set                  #   19F3 _nm_set_nk                     
+#   0E42 _msg_byte_get                  #   8002 _nm_version                    
+#   0E01 _msg_byte_set                  #   00CC _node_reset                    
+#   0CE7 _msg_cancel                    #   0BB2 _not16                         
+#   0D35 _msg_code_arrives              #   80FF _nv_all                        
+#   0E33 _msg_code_get                  #   E8CE _nv_array_index                
+#   0E33 _msg_code_get_ex               #   0FD7 _nv_array_poll                 
+#   0DE1 _msg_code_set                  #   1067 _nv_array_update_completes     
+#   0D4B _msg_completes                 #   105D _nv_array_update_fails         
+#   0E7B _msg_data_blockget             #   1012 _nv_array_update_occurs        
+#   0D8F _msg_data_blockset             #   1063 _nv_array_update_succeeds      
+#   0E35 _msg_data_get                  #   1737 _nv_count                      
+#   0DE3 _msg_data_set                  #   80FF _nv_count_mask                 
+#   3DD4 _msg_duplicate_get             #   1845 _nv_get_alias                  
+#   0D48 _msg_fails                     #   175B _nv_get_alias_p                
+#   0C5D _msg_free                      #   1748 _nv_get_cnfg_p                 
+#   3DCE _msg_in_addr_ptr               #   1754 _nv_get_cnfg_p1                
+#   0E47 _msg_in_get                    #   173B _nv_get_cnfg_p_pri             
+#   0E76 _msg_len_get                   #   1771 _nv_get_fixed_p                
+#   0E76 _msg_len_get_ex                #   0FC5 _nv_poll                       
+#   3DBC _msg_out_addr_ptr              #   0FD1 _nv_poll_all                   
+#   0E05 _msg_out_set                   #   0FC0 _nv_update                     
+#   0DCC _msg_priority_set              #   1066 _nv_update_completes           
+#   3DDB _msg_rcvtx_get                 #   105C _nv_update_fails               
+#   0D31 _msg_receive                   #   0FB4 _nv_update_int                 
+#   0CA9 _msg_send                      #   0FB5 _nv_update_int_offset          
+#   0E3D _msg_service_get               #   0FBA _nv_update_long                
+#   0DF8 _msg_service_set               #   0FBB _nv_update_long_offset         
+#   0D4E _msg_succeeds                  #   1011 _nv_update_occurs              
+#   0DFC _msg_tag_set                   #   0FC5 _nv_update_request             
+#   0DFC _msg_tag_set1                  #   0FC5 _nv_update_request1            
+#   0AA3 _mul16                         #   1062 _nv_update_succeeds            
+#   0AA3 _mul16s                        #   3569 _offchip_eelock_check          
+#   0AB4 _mul8                          #   115C _offline                       
+#   0A81 _mul8l                         #   8001 _oma                           
+#   0B9F _mul8ls                        c   8008 _onchip_eeprom_sector_size     
+#   0AA1 _mul_8_16                      #   1C15 _oneshot_output                
+#   0A9E _muls_8_16                     #   116A _online                        
+#   3F43 _muxbus_read                   #   1C7D _ontime_input                  
+#   3F55 _muxbus_reread                 #   0BBC _or16                          
+#   3F6F _muxbus_rewrite                #   1D9D _parallel_input                
+#   3F60 _muxbus_write                  #   1D63 _parallel_input_ready          
+#   27A9 _net_mgmt_processing           #   1DB0 _parallel_output               
+#   3D25 _neurowire_master              #   1D8F _parallel_output_ready         
+#   3F08 _neurowire_slave               #   1D5C _parallel_output_request       
+#   0080 _new_binding_constraints       #   1C7D _period_input                  
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 17           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                        Symbols By Name, cont'd.
+
+#   0023 _pop                           #   0D44 _set_apps_flags                
+#   0021 _pop1                          c   8001 _set_nv_length_valid           
+#   0015 _popd                          #   39DC _set_ram_ptrs                  
+#   0013 _popd1                         #   1BB1 _set_tco_p                     
+#   1119 _preempt                       #   0589 _set_typeout                   
+#   8000 _programmable_driver_strength  c   8000 _sidata_last_eecode            
+c   8000 _programmable_lvi              #   005C _sign_extend16                 
+#   1C7D _pulsecount_input              #   0BDB _signs_differ16                
+#   1C2F _pulsecount_output             #   1B17 _sio_load_delay                
+#   1BF1 _pulsewidth_output             c   8000 _sio_near                      
+#   001D _push                          c   8005 _size_addr_tbl_entry           
+#   001B _push1                         #   8100 _size_app_basepg               
+#   000D _pushd                         c   8040 _size_custom_ram_area          
+#   000B _pushd1                        c   800F _size_domain_entry             
+#   1CAB _quadrature_input              c   8004 _size_evn                      
+#   0040 _query_stats                   c   8003 _size_io_change_event          
+#   0C33 _r_shift16                     c   8004 _size_nv_alias                 
+#   0C42 _r_shift16s                    c   8003 _size_nv_cnfg                  
+#   0BFD _r_shift8                      c   8003 _size_nv_fix                   
+#   00E0 _r_shift8_3                    c   800C _size_proxy_route_entry        
+#   00DF _r_shift8_4                    c   8001 _size_proxy_route_index_entry  
+#   00DE _r_shift8_5                    c   800D _size_rcv_tx                   
+#   00DD _r_shift8_6                    c   8000 _size_sys_eevars               
+#   00DC _r_shift8_7                    c   8004 _size_timer                    
+#   0C05 _r_shift8s                     c   801C _size_tx_ctl_blk               
+c   8001 _ram_test_power_up_only        #   11EE _sleep                         
+#   06DF _raw_error_log                 #   0B93 _sub16                         
+c   8002 _read_only_data_struct_version #   8001 _supports_explicit_addressing  
+#   045F _register_call                 #   E992 _sys_callback_address          
+#   0C8A _resp_alloc                    #   2F7D _sys_comeup_offline            
+#   0D55 _resp_arrives                  #   06CB _sys_error_log                 
+#   0CE7 _resp_cancel                   #   0503 _sys_flag_clear                
+#   0DD7 _resp_code_set                 #   0511 _sys_flag_set                  
+#   3DB3 _resp_data_blockset            #   E936 _sys_flags                     
+#   0DD9 _resp_data_set                 #   E951 _sys_stat                      
+#   0C6A _resp_free                     c   8001 _sysimgext_nv_length_override  
+#   3DCB _resp_in_addr_ptr              c   8001 _sysimgext_phase               
+#   0D51 _resp_receive                  c   8001 _sysimgext_proxy               
+#   0CA9 _resp_send                     c   82E0 _sysram_base_usage             
+#   0457 _restore_ptrs                  #   8001 _system_image_extensions       
+#   044E _save_ptrs                     c   8010 _system_version                
+#   21DA _scheduler_loop                #   8000 _system_version_minor          
+c   8000 _sci_spi_supported             #   03C4 _timer_events                  
+#   1CE2 _select_input_fn               #   03E4 _timer_expires                 
+#   1CD6 _select_mux                    #   03F1 _timer_expires_any             
+#   2899 _self_installation             #   0418 _timer_get                     
+#   3C8C _serial_input                  #   03F8 _timer_mset                    
+#   2FB7 _serial_output                 #   03FA _timer_mset_repeat             
+#   3CDC _serial_sub1                   #   03F4 _timer_off                     
+#   1AE1 _service_pin_send              #   03FF _timer_sset                    
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 18           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                        Symbols By Name, cont'd.
+
+#   0403 _timer_sset_repeat             #   F02B eeSNVT2Ptr                     
+#   1C71 _totalize_input                #   F00B eeSNVTPtr                      
+#   1C22 _triac_level_output            #   06CE error_log                      
+#   1C22 _triac_output                  #   11B1 flush                          
+#   1C1A _triac_pulse_output            #   0501 flush_cancel                   
+#   1BFD _triggered_count_output        #   2FFA flush_wait                     
+#   0002 _tx_by_addr                    #   3D5F go_configured                  
+#   0429 _unpack_nibs                   #   11AC go_offline                     
+#   2839 _update_address                #   3D63 go_unconfigured                
+#   3E8B _update_record                 #   E99F input_is_new                   
+#   0D2E _wink                          #   E8CC input_value                    
+#   0059 _xch_inc_xch                   #   E8CF io_pdata_imgs                  
+#   E80C _xcvr_mode                     #   E8C5 io_pin_event_data              
+#   0BC1 _xor16                         .   4003 journal_reset_patch            
+#   0A58 abs8_twice                     #   1AC7 make_apdu_p                    
+#   3EF1 access_address                 .   F015 MODETABLE                      
+#   3ECD access_alias                   #   04B7 msec_delay                     
+#   3E6E access_domain                  #   E83C msg_tag_index                  
+#   3EDE access_key                     #   3E43 muldiv                         
+#   3EF6 access_nv                      #   3E29 muldivs                        
+#   E800 activate_service_led           #   00CC node_reset                     
+#   E83D alias_cnt                      #   E96A nsa_features                   
+.   65CF APINIT                         #   E96A nsa_relative                   
+#   10EF application_restart            #   E8CE nv_array_index                 
+#   E994 BASEPG3                        #   E949 nv_in_addr                     
+.   F01A BUFCOUNTS                      #   E83C nv_in_index                    
+#   2920 chksum_recalc_mode             #   114E offline_confirm                
+#   1D5E clear_pio_request              #   116F online_confirm                 
+#   2CD9 clear_status                   #   092A post_events                    
+#   F02E config_data                    #   2FF5 power_up                       
+#   04C8 delay                          .   F00D PROGID                         
+#   04B1 delay_1msec                    .   F00A PROTECTBIT                     
+.   F008 DIRECTORY                      #   E855 qfree_out                      
+.   F047 DOMAIN                         #   E85D qincoming                      
+#   E969 ee_lock                        #   E861 qresponse                      
+#   F037 eeAltClock                     #   E84C ramQElemSizeIn                 
+#   F036 eeClock                        #   E84D ramQElemSizeOut                
+#   F036 eeCommStart                    #   0C59 random                         
+#   F024 eeCustomMac                    #   F000 read_only_data                 
+#   F047 eeDomain                       #   F024 read_only_data_2               
+#   F050 eeDomain0Key                   #   F029 read_only_data_3               
+#   F05F eeDomain1Key                   .   65D7 RESET                          
+#   F1F0 eeErrorLog                     #   3EFF retrieve_stat                  
+#   F00D eeIDString                     #   3DA8 retrieve_status                
+#   FBF0 eeJournal                      #   125F retrieve_xcvr_status           
+#   F015 eeModeFlags                    #   3D71 reverse                        
+.   F01D EENEARBYTES                    #   04CA scaled_delay                   
+#   F000 eeNeuronID                     #   1B20 set_base_p                     
+#   F029 eeNVCount                      #   0949 set_eeprom_lock                
+#   F008 eeNVFixedPtr                   .   67C3 SIDATA                         
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+Page 19           Tue May 01 08:50:08 2012C:\Lm\Source\WJ_LIC\LIC\Release\IM\LIC.nxr
+
+                        Symbols By Name, cont'd.
+
+.   6673 TEVT                           .   4F70 WHEN15                         
+#   041F timers_off                     .   53F6 WHEN16                         
+.   F023 TX_CTRL                        .   5436 WHEN17                         
+#   3EC3 update_address                 .   543F WHEN18                         
+#   3ED6 update_alias                   .   545E WHEN19                         
+#   3E9D update_clone_domain            .   4102 WHEN2                          
+#   3E84 update_config_data             .   6329 WHEN20                         
+#   3EB0 update_domain                  .   632E WHEN21                         
+#   3E7C update_nv                      .   642B WHEN22                         
+#   2F5F update_program_id              .   652D WHEN23                         
+#   2F54 update_xcvr_id                 .   4132 WHEN3                          
+#   0093 watchdog_update                .   414C WHEN4                          
+#   0095 watchdog_update_old            .   4182 WHEN5                          
+.   40D3 WHEN1                          .   41B8 WHEN6                          
+.   423E WHEN10                         .   41BC WHEN7                          
+.   4291 WHEN11                         .   41DA WHEN8                          
+.   4295 WHEN12                         .   423A WHEN9                          
+.   4F5C WHEN13                         .   400B xcvr_patch                     
+.   4F66 WHEN14                        
+ 

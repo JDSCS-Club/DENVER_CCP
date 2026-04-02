@@ -1,0 +1,32 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.nadep
+; Created Monday, January 22, 2007, 11:25:53
+
+[Global]
+Provider=NEURON Assembler
+Version=1
+Inputs=1
+Outputs=1
+Switches=1
+Parameters=0
+
+[Input_1]
+Basename=3120_DISPLAY.ns
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.ns
+Type=0
+Size=15774
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3ab2ab8
+
+[Output_1]
+Basename=3120_DISPLAY.no
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY.no
+Type=0
+Size=8215
+TimestampHigh=0x1c73dcc
+TimestampLow=0xa3ab2ab8
+
+[Switches]
+8=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\IM\3120_DISPLAY
+
+[Parameters]

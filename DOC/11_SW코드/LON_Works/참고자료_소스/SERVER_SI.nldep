@@ -1,0 +1,103 @@
+; Echelon Dependency File - do not edit.
+; C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.nldep
+; Created Wednesday, December 06, 2006, 16:21:31
+
+[Global]
+Provider=Neuron Linker
+Version=1
+Inputs=2
+Outputs=4
+Switches=10
+Parameters=30
+
+[Input_1]
+Basename=B3120E4X.sym
+Fullname=C:\LonWorks\Images\Ver14\B3120E4X.sym
+Type=3
+Size=12585
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Input_2]
+Basename=SERVER_SI.no
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.no
+Type=0
+Size=5452
+TimestampHigh=0x1c71907
+TimestampLow=0x2723c1ce
+
+[Output_1]
+Basename=SERVER_SI.dbt
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.dbt
+Type=0
+Size=33648
+TimestampHigh=0x1c71907
+TimestampLow=0x272d4b36
+
+[Output_2]
+Basename=SERVER_SI.nxr
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.nxr
+Type=0
+Size=13
+TimestampHigh=0x1c71907
+TimestampLow=0x272d4b36
+
+[Output_3]
+Basename=SERVER_SI.nxe
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.nxe
+Type=0
+Size=1441
+TimestampHigh=0x1c71907
+TimestampLow=0x272d4b36
+
+[Output_4]
+Basename=SERVER_SI.map
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.map
+Type=0
+Size=64481
+TimestampHigh=0x1c71907
+TimestampLow=0x272d4b36
+
+[Switches]
+32=PL 3120-E4
+0=1
+11=1
+9=1
+15=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.dbg
+30=C:\LonWorks\Images\Ver14\B3120E4X.sym
+27=C:\LonWorks\Images\Ver14\GEN.LIB
+27=C:\LonWorks\Images\EXTARITH.LIB
+27=C:\LonWorks\Images\PSG.LIB
+35=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.no
+
+[Parameters]
+Domains=2
+AddressTable=15
+NeuronModel=15
+NeuronKey=22
+RamStart=232
+RamEnd=239
+EEpromStart=240
+EEpromEnd=251
+ImageVersion=14
+RcvTxSize=13
+TxCtlBlkSize=28
+OnchipRamSpace=1358
+OffchipRamSpace=0
+DomainSize=15
+AddressSize=5
+NvCnfgSize=3
+OnchipEEpromCnfg=158
+AliasSize=4
+RomEnd=95
+OCEEPromStart=0
+OCEEPromEnd=0
+OCRamStart=0
+OCRamEnd=0
+EEWriteTime=10
+FlashEeprom=0
+SectorSize=0
+CapabilityProxy=0
+CapabilityPhaseDetect=0
+CustomMac=0
+PrtCount=0

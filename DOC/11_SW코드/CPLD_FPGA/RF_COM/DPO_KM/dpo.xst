@@ -1,0 +1,30 @@
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn dpo.prj
+-ifmt mixed
+-ofn dpo
+-ofmt NGC
+-p xbr
+-top dpo
+-opt_mode Speed
+-opt_level 1
+-iuc NO
+-keep_hierarchy Yes
+-netlist_hierarchy As_Optimized
+-rtlview Yes
+-hierarchy_separator /
+-bus_delimiter <>
+-case Maintain
+-verilog2001 YES
+-fsm_extract YES -fsm_encoding One-Hot
+-safe_implementation Yes
+-vlgcase Full
+-mux_extract Yes
+-resource_sharing NO
+-iobuf YES
+-pld_mp YES
+-pld_xp YES
+-pld_ce YES
+-wysiwyg YES
+-equivalent_register_removal NO

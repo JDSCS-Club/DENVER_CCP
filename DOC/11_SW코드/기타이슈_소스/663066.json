@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1496697",
+    "ThreadId": "663066",
+    "Html": "Hi all,\r<br />\n<br />\nAs part of the reflash tool for our Linux-based firmware, we have been using TFTP32 as a standalone application.  However this did not work particularly well as a user experience (the user cares about the reflash process, not the underlying TFTP comms) so I'm wanting to improve on this.\r<br />\n<br />\nOf course it would be possible to use TFTPD32 as a service.  However our users will not necessarily have admin rights to their machines, so they will not be able to install the service.  (I've tested that admin rights are necessary for the service install.)\r<br />\n<br />\nInstead, I have modified TFTPD32 to build it as a DLL.  The GUI is completely removed, as are all references to the registry and INI file.  Options are passed with a dictionary of strings.  Running as a DLL allows the application to be run with user permissions without having to install services, but still allows full TFTP functionality.\r<br />\n<br />\nNote that it would have been possible to modify the &quot;GUI&quot; version.  However we would then have been required to release our reflash tool under the open-source license terms, which we do not want to do.  Building TFTPD32 as a DLL allows us to comply with the terms of the license but still retain privacy for our own IP.\r<br />\n<br />\nTo comply with the terms of the license, we will redistribute the modified source code.  However I wondered if anyone would be interested in me pushing this back so that the main tree can get this as well?<br />\n",
+    "PostedDate": "2017-05-24T04:28:11.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

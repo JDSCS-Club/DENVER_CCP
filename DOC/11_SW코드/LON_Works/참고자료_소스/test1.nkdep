@@ -1,0 +1,17 @@
+; Echelon Dependency File - do not edit.
+; E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.nkdep
+; Created Friday, January 19, 2007, 09:39:18
+
+[Global]
+Provider=Echelon NodeBuilder Make Facility
+Version=1
+Inputs=0
+Outputs=0
+Switches=0
+Parameters=2
+
+[Switches]
+
+[Parameters]
+BuildtimeH=29834157
+BuildtimeL=-1333696768

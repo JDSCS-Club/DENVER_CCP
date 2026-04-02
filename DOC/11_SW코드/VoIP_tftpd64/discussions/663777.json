@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1498060",
+    "ThreadId": "663777",
+    "Html": "Hello,\r<br />\n<br />\nI'm having issues with launching portable TFTPD64 4.60 ( 4.61 too ) on Windows 10 Pro.\r<br />\n<br />\nThere is not visible window with error:<br />\n<pre><code>Can't connect to the serviceError 10061 ( Can't establish connection, because remote computer is actively rejecting connection ) </code></pre>\n\nAny idea what can I do to run this app? It's allowed in firewall and I was trying to run it also with disabled firewall.\r<br />\n<br />\nI never had such problems on Windows 7.\r<br />\n<br />\nGreetings<br />\n",
+    "PostedDate": "2017-09-18T01:45:07.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

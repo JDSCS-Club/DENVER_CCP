@@ -1,0 +1,32 @@
+; Echelon Dependency File - do not edit.
+; C:\Lm\Source\Denver\Denver\Development\IM\Denver.nadep
+; Created Tuesday, May 15, 2012, 15:18:16
+
+[Global]
+Provider=NEURON Assembler
+Version=1
+Inputs=1
+Outputs=1
+Switches=1
+Parameters=0
+
+[Input_1]
+Basename=Denver.ns
+Fullname=C:\Lm\Source\Denver\Denver\Development\IM\Denver.ns
+Type=0
+Size=65838
+TimestampHigh=0x1cd3262
+TimestampLow=0x83e60a27
+
+[Output_1]
+Basename=Denver.no
+Fullname=C:\Lm\Source\Denver\Denver\Development\IM\Denver.no
+Type=0
+Size=63858
+TimestampHigh=0x1cd3262
+TimestampLow=0x83eacce8
+
+[Switches]
+8=C:\Lm\Source\Denver\Denver\Development\IM\Denver
+
+[Parameters]

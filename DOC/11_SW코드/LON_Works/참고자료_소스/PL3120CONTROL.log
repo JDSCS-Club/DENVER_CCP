@@ -1,0 +1,81 @@
+Build log E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3120CONTROL\PL3120CONTROL Output\PL3120CONTROL.log
+Created Monday, January 22, 2007, at 11:22:11
+
+Compiling...
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3120CONTROL\PL3120CONTROL.NC  128(  1):
+        The symbol 'temp' was declared but never used [NCC#310]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3120CONTROL\PL3120CONTROL.NC  181( 39):
+        Possible data loss converting long to short [NCC#212]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3120CONTROL\PL3120CONTROL.NC  186( 39):
+        Possible data loss converting long to short [NCC#212]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3120CONTROL\PL3120CONTROL.NC  261(  5):
+        Return value of function was ignored [NCC#174]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3120CONTROL\PL3120CONTROL.NC  272(  5):
+        Return value of function was ignored [NCC#174]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3120CONTROL\PL3120CONTROL.NC  321(  1):
+        The symbol 'comm_data' was declared but never used [NCC#310]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3120CONTROL\PL3120CONTROL.NC  321(  1):
+        The symbol 'temp' was declared but never used [NCC#310]
+Assembling...
+Linking...
+                       LIST OF MEMORY AREAS
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+SYSTEM IMAGE ROM             0000 5FFF 6000        - RESERVED - 
+OnChip  EEPROM (Pool)         - AVAILABLE -       8000 83FF 0400
+OnChip  RAM    (System)      E800 EDC0 05C1          - NONE -   
+OnChip  RAM    (Pool)         - AVAILABLE -       EDC1 EF7C 01BC
+OnChip  RAMNEAR              EF7D EFFF 0083          - NONE -   
+OnChip  EEPROM (Prolog)      F000 F028 0029          - NONE -   
+OnChip  EEPROM (Config)      F029 F0D7 00AF          - NONE -   
+OnChip  EECODE               F0D8 F350 0279       F344 F350 000D
+OnChip  EEPROM (MemCtl)      F351 F357 0007          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F358 FBE7 0890
+OnChip  EEPROM (Epilog)      FBE8 FBFF 0018          - NONE -   
+End of Memory Area List
+Link Memory Usage Statistics:
+EEPROM Usage:  (not necessarily in order of physical layout)
+        System Data and Parameters         110 bytes
+        Domain and Address Tables          105 bytes
+        Network Variable Config Tables      32 bytes
+        Application EEPROM Variables         0 bytes
+        Library EEPROM Variables             0 bytes
+        Application Code and Const Data    564 bytes
+        Library Code and Const Data         33 bytes
+        Self-Identification Data            23 bytes
+                                         -----
+        Total EEPROM Requirement           867 bytes
+        Remaining EEPROM                  3229 bytes
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         688 bytes
+        Transaction Control Blocks         134 bytes
+        Appl Timers and I/O Change Events    3 bytes
+        Network and Application Buffers    648 bytes
+        Application RAM Variables          131 bytes
+        Library RAM Variables                0 bytes
+                                         -----
+        Total RAM Requirement             1604 bytes
+        Remaining RAM                      444 bytes
+Successfully linked for PL 3120-E4.
+        Memory Map (2 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        System Upper EEPROM Area (24 bytes) varies by firmware version.
+        Priority outgoing message transaction control block uses 28 bytes of RAM.
+                Of this amount, 10 bytes varies by firmware version.
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 296 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        Default buffer counts vary by Neuron model
+                (resulting in an additional 216 bytes of RAM).
+End of Link Statistics
+Exporting...
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3120CONTROL\PL3120CONTROL Output\PL3120CONTROL.NXE'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3120CONTROL\PL3120CONTROL Output\PL3120CONTROL.XIF'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3120CONTROL\PL3120CONTROL Output\PL3120CONTROL.XFB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3120CONTROL\PL3120CONTROL Output\PL3120CONTROL.APB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3120CONTROL\PL3120CONTROL Output\PL3120CONTROL.NEI'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3120CONTROL\PL3120CONTROL Output\PL3120CONTROL.NDL'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3120CONTROL\PL3120CONTROL Output\PL3120CONTROL.NFI'... Done.
+

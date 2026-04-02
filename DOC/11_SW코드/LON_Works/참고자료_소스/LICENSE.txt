@@ -1,0 +1,91 @@
+ANSI/EIA 709.1-A-1999 EXAMPLE CODE SOFTWARE LICENSE AGREEMENT 
+
+NOTICE
+
+This is a legal agreement between You and Echelon Corporation.  YOU MUST READ AND AGREE TO THE TERMS OF THIS SOFTWARE LICENSE AGREEMENT BEFORE THE EXAMPLE CODE CAN BE DOWNLOADED OR INSTALLED OR USED. BY DOWNLOADING THE EXAMPLE CODE, OR INSTALLING THE EXAMPLE CODE, OR USING THE EXAMPLE CODE, OR CLICKING ON THE "ACCEPT" BUTTON OF THIS SOFTWARE LICENSE AGREEMENT, YOU ARE AGREEING TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS SOFTWARE LICENSE AGREEMENT.  IF YOU DO NOT AGREE WITH THE TERMS AND CONDITIONS OF THIS SOFTWARE LICENSE AGREEMENT, THEN YOU SHOULD EXIT THIS PAGE AND NOT DOWNLOAD OR INSTALL OR USE THE EXAMPLE CODE.  BY DOING SO, YOU FOREGO ANY IMPLIED OR STATED RIGHTS TO DOWNLOAD OR INSTALL OR USE THE EXAMPLE CODE.
+
+
+SOFTWARE LICENSE AGREEMENT
+
+Echelon Corporation ("Echelon") grants You a limited, non-exclusive, non-transferable license, under Echelon Copyrights, to download, install and use the Example Code and any revisions thereto made available by Echelon according to the terms set forth below.
+
+
+DEFINITIONS
+
+For the purpose of this Agreement, the following terms shall have the following meanings:
+* "Example Code" means the computer software programs in source code form that implement the standard ANSI/EIA 709.1-A-1999 (October 1999), and associated documentation, that are included in the following file: REF709-1.ZIP.
+* "You(r)" means the company, entity or individual who submits the registration form at the end of this Software License Agreement, or on whose behalf such registration form is submitted.
+* "Echelon Copyrights" means Echelon's copyrights in and to the Example Code. 
+* "Echelon Patents" means the following patents: U.S. Patent Nos. 4,918,690 ("Network and Intelligent Cell for Providing Sensing, Bi-Directional Communications and Control"), 4,941,143 ("Protocol for Network Having a Plurality of Intelligent Cells"), 4,955,018 ("Protocol for Network Having a Plurality of Intelligent Cells"), 4,969,147 ("Network and Intelligent Cell for Providing Sensing, Bi-Directional Communications and Control"), 5,182,746 ("Transceiver Interface"), 5,297,143 ("Network Communication Protocol Including a Reliable Multi-Tasking Technique"), 5,319,641 ("Multiaccess Carrier Sensing Network Communication Protocol with Priority Messages"), 5,420,572 ("Configuration Device for Use in a Networked Communication System"), 5,500,852 ("Method and Apparatus for Network Variable Aliasing"), 5,513,324 ("Method and Apparatus Using Network Variables in a Multi-Node Network"), 5,519,878 ("Method and Apparatus for Network Node Identification"); 5,856,972 ("Duplicate Message Detection Method and Apparatus"), 5,737,529 ("Networked Variables"), and foreign patents based upon such U.S. patents and claiming the same inventions.
+
+
+LICENSE
+
+You may:
+(a)     use the Example Code solely for internal evaluation and internal research purposes;
+(b)     create and use derivative works of the Example Code internally solely for the purposes permitted above; and
+(c)     reproduce the Example Code and Your derivative works thereof as reasonably necessary for the purposes permitted above and for backup purposes, provided that You reproduce, unaltered, all proprietary notices on or in the copy. 
+
+You may not, and may not permit others to:
+(a)     use the Example Code for the purposes of product development or commercialization or for any purpose other than internal evaluation and internal research;
+(b) 	reproduce the Example Code except as permitted above; 
+(c) 	create derivative works of or otherwise alter, adapt, modify or translate the Example Code in any way for any purpose except the purposes expressly permitted above; 
+(d) 	distribute, deploy, provide copies of, rent, loan, lease, transfer, or grant any rights in the Example Code or derivative works thereof in any form to any person.
+
+This license is not a sale.  Title, Echelon Patents, Echelon Copyrights and all other rights to the Example Code and any copy made by You remain with Echelon.
+
+
+COMMERCIALIZATION
+
+The Example Code implements the ANSI/EIA 709.1-A-1999 (October 1999). ANSI/EIA 709.1-A-1999 (October 1999) is protected by Echelon Patents.  Echelon hereby reserves all rights in and to Echelon Patents and no license is granted under Echelon Patents in this Software License Agreement.  Echelon generally licenses Echelon Patents for ANSI/EIA 709.1-A-1999 (October 1999) for product development and commercialization pursuant to the terms of Echelon's standard Protocol Patent License Agreement.  A copy of Echelon's standard Protocol Patent License Agreement can be obtained from Echelon's web site at http://www.echelon.com/protocol/protocolpat.pdf. 
+
+
+TERMINATION
+
+This license will continue until terminated.  Unauthorized use, reproduction or distribution of the Example Code or any other failure to comply with the above terms will result in automatic termination of this Agreement and will make available to Echelon other legal remedies.  This license will also automatically terminate if You go into liquidation, suffer or make any winding up petition, make an arrangement with Your creditors, or suffer or file any similar action in any jurisdiction in consequence of debt. Upon termination of this license for any reason You will destroy all copies of the Example Code and all derivative works thereof.  Any use of the Example Code or derivative works thereof after termination is unlawful. 
+
+
+WARRANTY DISCLAIMER
+
+THE EXAMPLE CODE IS PROVIDED ON AN "AS IS" BASIS.  ECHELON AND ITS SUPPLIERS MAKE AND YOU RECEIVE NO OTHER WARRANTIES OR CONDITIONS, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE OR IN ANY COMMUNICATION WITH YOU, AND ECHELON AND ITS SUPPLIERS SPECIFICALLY DISCLAIM ANY IMPLIED WARRANTY OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT AND THEIR EQUIVALENTS.  Echelon does not warrant that the Example Code will (i) comply in all respects with ANSI/EIA 709.1-A-1999 (October 1999), (ii) meet all the requirements of the Protocol Patent License Agreement, (iii) be error free or (iv) meet Your specific requirements.
+
+SOME STATES OR OTHER JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THE ABOVE EXCLUSIONS MAY NOT APPLY TO YOU.  YOU MAY ALSO HAVE OTHER RIGHTS THAT VARY FROM STATE TO STATE AND JURISDICTION TO JURISDICTION.
+
+
+LIMITATION OF LIABILITY
+
+IN NO EVENT WILL ECHELON OR ITS SUPPLIERS BE LIABLE FOR ANY DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF OR CORRUPTION TO DATA, LOST PROFITS, LOSS OF CONTRACTS, COST OF PROCUREMENT OF SUBSTITUTE PRODUCTS OR ANY OTHER DIRECT, SPECIAL, INCIDENTAL, PUNITIVE, CONSEQUENTIAL OR INDIRECT DAMAGES, LOSSES, COSTS OR EXPENSES OF ANY KIND ARISING FROM THE SUPPLY OR USE OF THE EXAMPLE CODE, HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY (INCLUDING WITHOUT LIMITATION NEGLIGENCE).  THIS LIMITATION WILL APPLY EVEN IF ECHELON OR AN AUTHORIZED DISTRIBUTOR HAS BEEN ADVISED OF THEIR POSSIBILITY.  THIS LIMITATION WILL NOT APPLY TO THE EXTENT THAT LIABILITY MAY NOT BY LAW BE LIMITED OR EXCLUDED.
+
+SOME STATES OR OTHER JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATIONS AND EXCLUSIONS MAY NOT APPLY TO YOU.
+
+
+SAFE OPERATION
+
+YOU ASSUME RESPONSIBILITY FOR, AND HEREBY AGREE TO USE YOUR BEST EFFORTS IN, USING THE EXAMPLE CODE TO PROVIDE FOR SAFE OPERATION THEREOF, INCLUDING, BUT NOT LIMITED TO, COMPLIANCE OR QUALIFICATION WITH RESPECT TO ALL SAFETY LAWS, REGULATIONS AND AGENCY APPROVALS, AS APPLICABLE.  THE NEURON CHIP, LONTALK PROTOCOL, NEURON CHIP FIRMWARE AND THE EXAMPLE CODE ARE NOT DESIGNED OR INTENDED FOR USE AS COMPONENTS IN EQUIPMENT INTENDED FOR SURGICAL IMPLANT INTO THE BODY, OR OTHER APPLICATIONS INTENDED TO SUPPORT OR SUSTAIN LIFE, FOR USE IN FLIGHT CONTROL OR ENGINE CONTROL EQUIPMENT WITHIN AN AIRCRAFT, OR FOR ANY OTHER APPLICATION IN WHICH THE FAILURE OF THE NEURON CHIP, LONTALK PROTOCOL, NEURON CHIP FIRMWARE OR THE EXAMPLE CODE COULD CREATE A SITUATION IN WHICH PERSONAL INJURY OR DEATH MAY OCCUR, AND YOU SHALL HAVE NO RIGHTS HEREUNDER FOR ANY SUCH APPLICATIONS.
+
+
+LANGUAGE
+
+The parties hereto confirm that it is their wish that this Agreement, as well as other documents relating hereto, have been and shall be written in the English language only.
+
+Les parties aux présentes confirment leur volonté que cette convention de même que tous les documents y compris tout avis qui s'y rattache, soient rédigés en langue anglaise.
+
+
+SUPPORT
+
+You acknowledge that Echelon offers no support or maintenance of the Example Code.
+
+
+GENERAL
+
+This Agreement shall not be governed by the 1980 U.N. Convention on Contracts for the International Sale of Goods; rather, this Agreement shall be governed by the laws of the State of California, including its Uniform Commercial Code, without reference to conflicts of laws principles.  This Agreement is the entire agreement between us and supersedes any other communications, representations or advertising with respect to the Example Code. The waiver of a breach of any term hereof shall in no way be construed as a waiver of any other term or breach hereof.  If any provision of this Agreement is held invalid or unenforceable, such provision shall be revised to the extent necessary to cure the invalidity or unenforceability, and the remainder of the Agreement shall continue in full force and effect.  If You are acquiring the Example Code on behalf of any part of the U.S. Government, the following provisions apply.  The Example Code programs and documentation are deemed to be "commercial computer software" and "commercial computer software documentation", respectively, pursuant to DFAR Section 227.7202 and FAR 12.212(b), as applicable.  Any use, modification, reproduction, release, performance, display or disclosure of the Example Code programs and/or documentation by the U.S. Government or any of its agencies shall be governed solely by the terms of this Agreement and shall be prohibited except to the extent expressly permitted by the terms of this Agreement.  Any technical data provided that is not covered by the above provisions is deemed to be "technical data-commercial items" pursuant to DFAR Section 227.7015(a). Any use, modification, reproduction, release, performance, display or disclosure of such technical data shall be governed by the terms of DFAR Section 227.7015(b).  You understand that Echelon is subject to regulation by agencies of the U.S. government, including, but not limited to, the U.S. Department of Commerce, which prohibit export or diversion of certain technical products to certain countries.  You warrant that You will comply in all respects with the Export Administration Regulations and all other export and re-export restrictions applicable to the Example Code licensed hereunder.  The person entering into this Software License Agreement represents and warrants that such person is authorized to bind and does so bind his or her principal or employer and has adequate legal capacity to enter this Software License Agreement. You may not assign this Software License Agreement or any rights or obligations hereunder, directly or indirectly, by operation of law or otherwise, without the prior written consent of Echelon.  Subject to the foregoing sentence, this Software License Agreement shall inure to the benefit of and be binding upon the parties and their respective successors and permitted assigns.
+
+
+
+
+
+Echelon, LonTalk, LONWORKS, and Neuron are trademarks of Echelon Corporation registered in the United States and other countries.  Windows and Windows NT are U.S. registered trademarks of Microsoft Corporation.
+
+
+120-0118-01A
+

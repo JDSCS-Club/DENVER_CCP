@@ -1,0 +1,35 @@
+---- PO_TL_TX Matches (34 in 9 files) ----
+pac.c:	GPIO0->PD &= ~(PO_CL_TX + PO_TL_TX);
+pac.c:			GPIO0->PD |= PO_TL_TX;
+pac.c:		GPIO0->PD &= ~PO_TL_TX;
+pac.c:	GPIO0->PD |= PO_TL_TX;
+pac.h:#define	PO_TL_TX		0x0080		// 0.7		// H: TX
+pac.h:#define	PO_P0_OUT		0x10B0		// PO_RESET + PO_MP3_UPDATE + PO_CL_TX + PO_TL_TX
+pac_151110.c:	GPIO0->PD &= ~(PO_CL_TX + PO_TL_TX);
+pac_151110.c:			GPIO0->PD |= PO_TL_TX;
+pac_151110.c:		GPIO0->PD &= ~PO_TL_TX;
+pac_151110.c:	GPIO0->PD |= PO_TL_TX;
+pac_151111_befoeLIC.c:	GPIO0->PD &= ~(PO_CL_TX + PO_TL_TX);
+pac_151111_befoeLIC.c:			GPIO0->PD |= PO_TL_TX;
+pac_151111_befoeLIC.c:		GPIO0->PD &= ~PO_TL_TX;
+pac_151111_befoeLIC.c:	GPIO0->PD |= PO_TL_TX;
+pac_151117_CI_FALUT.c:	GPIO0->PD &= ~(PO_CL_TX + PO_TL_TX);
+pac_151117_CI_FALUT.c:			GPIO0->PD |= PO_TL_TX;
+pac_151117_CI_FALUT.c:		GPIO0->PD &= ~PO_TL_TX;
+pac_151117_CI_FALUT.c:	GPIO0->PD |= PO_TL_TX;
+pac_151118_Ci_Fault.c:	GPIO0->PD &= ~(PO_CL_TX + PO_TL_TX);
+pac_151118_Ci_Fault.c:			GPIO0->PD |= PO_TL_TX;
+pac_151118_Ci_Fault.c:		GPIO0->PD &= ~PO_TL_TX;
+pac_151118_Ci_Fault.c:	GPIO0->PD |= PO_TL_TX;
+pac_160325dbg.c:	GPIO0->PD &= ~(PO_CL_TX + PO_TL_TX);
+pac_160325dbg.c:			GPIO0->PD |= PO_TL_TX;
+pac_160325dbg.c:		GPIO0->PD &= ~PO_TL_TX;
+pac_160325dbg.c:	GPIO0->PD |= PO_TL_TX;
+pac_160615dbg.c:	GPIO0->PD &= ~(PO_CL_TX + PO_TL_TX);
+pac_160615dbg.c:			GPIO0->PD |= PO_TL_TX;
+pac_160615dbg.c:		GPIO0->PD &= ~PO_TL_TX;
+pac_160615dbg.c:	GPIO0->PD |= PO_TL_TX;
+pac_car_151102.c:	GPIO0->PD &= ~(PO_CL_TX + PO_TL_TX);
+pac_car_151102.c:			GPIO0->PD |= PO_TL_TX;
+pac_car_151102.c:		GPIO0->PD &= ~PO_TL_TX;
+pac_car_151102.c:	GPIO0->PD |= PO_TL_TX;

@@ -1,0 +1,79 @@
+Build log E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3120DISPLAY_SI\3120DISPLAY_SI Output\3120DISPLAY_SI.log
+Created Monday, January 22, 2007, at 11:41:02
+
+Compiling...
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\SI_BASE\3120DISPLAY_SI\3120DISPLAY_SI.NC   69(  1):
+        Type defaults to 'int' [NCC#147]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\SI_BASE\3120DISPLAY_SI\3120DISPLAY_SI.NC   91(  1):
+        Type defaults to 'int' [NCC#147]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\SI_BASE\3120DISPLAY_SI\3120DISPLAY_SI.NC  349(  1):
+        The symbol 'len' was declared but never used [NCC#310]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\SI_BASE\3120DISPLAY_SI\3120DISPLAY_SI.NC  349(  1):
+        The symbol 'nodeId' was declared but never used [NCC#310]
+Assembling...
+Linking...
+                       LIST OF MEMORY AREAS
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+SYSTEM IMAGE ROM             0000 5FFF 6000        - RESERVED - 
+OnChip  EEPROM (Pool)         - AVAILABLE -       8000 83FF 0400
+OnChip  RAM    (System)      E800 ED3C 053D          - NONE -   
+OnChip  RAM    (Pool)         - AVAILABLE -       ED3D EFEE 02B2
+OnChip  RAMNEAR              EFEF EFFF 0011          - NONE -   
+OnChip  EEPROM (Prolog)      F000 F028 0029          - NONE -   
+OnChip  EEPROM (Config)      F029 F0F7 00CF          - NONE -   
+OnChip  EECODE               F0F8 F570 0479       F565 F570 000C
+OnChip  EEPROM (MemCtl)      F571 F577 0007          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F578 FBD7 0660
+OnChip  EEFAR                FBD8 FBE6 000F       FBD8 FBE6 000F
+OnChip  EENEAR               FBE7 FBE7 0001          - NONE -   
+OnChip  EEPROM (Epilog)      FBE8 FBFF 0018          - NONE -   
+End of Memory Area List
+Link Memory Usage Statistics:
+EEPROM Usage:  (not necessarily in order of physical layout)
+        System Data and Parameters         113 bytes
+        Domain and Address Tables          105 bytes
+        Network Variable Config Tables      61 bytes
+        Onchip Data Area Fragmentation       8 bytes
+        Application EEPROM Variables         1 byte
+        Library EEPROM Variables             0 bytes
+        Application Code and Const Data   1112 bytes
+        Library Code and Const Data          0 bytes
+        Self-Identification Data            21 bytes
+                                         -----
+        Total EEPROM Requirement          1421 bytes
+        Remaining EEPROM                  2675 bytes
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         688 bytes
+        Transaction Control Blocks         173 bytes
+        Appl Timers and I/O Change Events    0 bytes
+        Network and Application Buffers    480 bytes
+        Application RAM Variables           17 bytes
+        Library RAM Variables                0 bytes
+                                         -----
+        Total RAM Requirement             1358 bytes
+        Remaining RAM                      690 bytes
+Successfully linked for PL 3120-E4.
+        Memory Map (2 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        Onchip EEPROM Data Fragmentation (8 bytes) varies by Neuron model.
+        System Upper EEPROM Area (24 bytes) varies by firmware version.
+        Priority outgoing message transaction control block uses 28 bytes of RAM.
+                Of this amount, 10 bytes varies by firmware version.
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 335 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        Default buffer counts vary by Neuron model
+                (resulting in an additional 124 bytes of RAM).
+End of Link Statistics
+Exporting...
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3120DISPLAY_SI\3120DISPLAY_SI Output\3120DISPLAY_SI.NXE'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3120DISPLAY_SI\3120DISPLAY_SI Output\3120DISPLAY_SI.XIF'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3120DISPLAY_SI\3120DISPLAY_SI Output\3120DISPLAY_SI.XFB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3120DISPLAY_SI\3120DISPLAY_SI Output\3120DISPLAY_SI.APB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3120DISPLAY_SI\3120DISPLAY_SI Output\3120DISPLAY_SI.NEI'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3120DISPLAY_SI\3120DISPLAY_SI Output\3120DISPLAY_SI.NDL'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\SI_Base\3120DISPLAY_SI\3120DISPLAY_SI Output\3120DISPLAY_SI.NFI'... Done.
+

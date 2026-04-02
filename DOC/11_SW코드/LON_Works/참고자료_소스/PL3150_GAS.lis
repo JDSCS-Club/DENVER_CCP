@@ -1,0 +1,1244 @@
+                        .module PL3150_GAS.c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile E:\FW\HN_Device\GAS_ATMEGA8\PL3150_GAS.c
+ 0000                   .dbfunc e port_init _port_init fV
+                        .even
+ 0000           _port_init::
+ 0000                   .dbline -1
+ 0000                   .dbline 71
+ 0000           ; //ICC-AVR application builder : 2006-11-07 오전 11:49:23
+ 0000           ; // Target : M8
+ 0000           ; // Crystal: 8.0000Mhz
+ 0000           ; 
+ 0000           ; #include <iom8v.h>
+ 0000           ; #include <macros.h>
+ 0000           ; 
+ 0000           ; typedef unsigned char         BYTE;
+ 0000           ; typedef unsigned int  WORD;
+ 0000           ; typedef unsigned long         DWORD;
+ 0000           ; 
+ 0000           ; #define       BIT0    0x01                                                                                                                                                                                                                                                                                                                                                                                                                                            
+ 0000           ; #define       BIT1    0x02                                                                                                                                                                                                                                                                                                                                                                                                                                            
+ 0000           ; #define       BIT2    0x04                                                                                                                                                                                                                                                                                                                                                                                                                                            
+ 0000           ; #define       BIT3    0x08                                                                                                                                                                                                                                                                                                                                                                                                                                            
+ 0000           ; #define       BIT4    0x10                                                                                                                                                                                                                                                                                                                                                                                                                                            
+ 0000           ; #define       BIT5    0x20                                                                                                                                                                                                                                                                                                                                                                                                                                            
+ 0000           ; #define       BIT6    0x40                                                                                                                                                                                                                                                                                                                                                                                                                                            
+ 0000           ; #define       BIT7    0x80            
+ 0000           ; 
+ 0000           ; #define LEVEL0     0x00
+ 0000           ; #define LEVEL1     0x01
+ 0000           ; 
+ 0000           ; #define LEVEL2     0x02
+ 0000           ; #define LEVEL3     0x03
+ 0000           ; 
+ 0000           ; #define LEVEL4     0x04
+ 0000           ; #define LEVEL5     0x05
+ 0000           ; #define LEVEL6     0x06
+ 0000           ; #define LEVEL7     0x07
+ 0000           ; #define LEVEL8     0x08
+ 0000           ; #define LEVEL9     0x09
+ 0000           ; #define LEVEL10    0x0A
+ 0000           ; #define LEVEL11    0x0B
+ 0000           ; #define LEVEL12    0x0C
+ 0000           ; 
+ 0000           ; #define LEVEL13    0x0D
+ 0000           ; #define LEVEL14    0x0E
+ 0000           ; #define LEVEL15    0x0F
+ 0000           ; #define LEVEL16    0x1F
+ 0000           ; #define LEVEL17    0x3F
+ 0000           ; #define LEVEL18    0x7F
+ 0000           ; #define LEVEL19    0xFF               
+ 0000           ; 
+ 0000           ; #define  GAS    0xE0
+ 0000           ; #define  CDS    0xE1
+ 0000           ; #define  TEMP   0xE2  
+ 0000           ; 
+ 0000           ; 
+ 0000           ; #define        GAS_SEN_DIS      PORTC = PORTC & ~BIT1
+ 0000           ; #define        GAS_SEN_EN       PORTC = PORTC |  BIT1
+ 0000           ; 
+ 0000           ; #define        LED_ON            PORTD = PORTD & ~BIT5
+ 0000           ; #define        LED_OFF       PORTD = PORTD |  BIT5
+ 0000           ; 
+ 0000           ; BYTE  flag ;
+ 0000           ; BYTE  flagg;
+ 0000           ; BYTE  ADC_DATA[7];
+ 0000           ; WORD  ADC_DATAS;
+ 0000           ; BYTE  T_COUNT;
+ 0000           ; BYTE  CDS_DATA;
+ 0000           ; BYTE  GAS_DATA;
+ 0000           ; BYTE  TEMPER_DATA;
+ 0000           ; BYTE  TEMP_HIGH;
+ 0000           ; BYTE  TEMP_LOW;
+ 0000           ; BYTE  NO_COUNT;
+ 0000           ; BYTE  ADC_COUNT;
+ 0000           ; 
+ 0000           ; 
+ 0000           ; void port_init(void)
+ 0000           ; {
+ 0000                   .dbline 72
+ 0000           ;  PORTB = 0xFF;
+ 0000 8FEF              ldi R24,255
+ 0002 88BB              out 0x18,R24
+ 0004                   .dbline 73
+ 0004           ;  DDRB  = 0x07;
+ 0004 87E0              ldi R24,7
+ 0006 87BB              out 0x17,R24
+ 0008                   .dbline 74
+ 0008           ;  PORTC = 0x7F; //m103 output only
+ 0008 8FE7              ldi R24,127
+ 000A 85BB              out 0x15,R24
+ 000C                   .dbline 75
+ 000C           ;  DDRC  = 0x32;
+ 000C 82E3              ldi R24,50
+ 000E 84BB              out 0x14,R24
+ 0010                   .dbline 76
+ 0010           ;  PORTD = 0xFF;
+ 0010 8FEF              ldi R24,255
+ 0012 82BB              out 0x12,R24
+ 0014                   .dbline 77
+ 0014           ;  DDRD  = 0xFE;
+ 0014 8EEF              ldi R24,254
+ 0016 81BB              out 0x11,R24
+ 0018                   .dbline -2
+ 0018                   .dbline 78
+ 0018           ; }
+ 0018           L1:
+ 0018                   .dbline 0 ; func end
+ 0018 0895              ret
+ 001A                   .dbend
+ 001A                   .dbfunc e timer1_init _timer1_init fV
+                        .even
+ 001A           _timer1_init::
+ 001A                   .dbline -1
+ 001A                   .dbline 85
+ 001A           ; 
+ 001A           ; //TIMER1 initialisation - prescale:1024
+ 001A           ; // WGM: 0) Normal, TOP=0xFFFF
+ 001A           ; // desired value: 1Sec
+ 001A           ; // actual value:  1.000Sec (0.0%)
+ 001A           ; void timer1_init(void)
+ 001A           ; {
+ 001A                   .dbline 86
+ 001A           ;  TCCR1B = 0x00; //stop
+ 001A 2224              clr R2
+ 001C 2EBC              out 0x2e,R2
+ 001E                   .dbline 87
+ 001E           ;  TCNT1H = 0xCF; //reload counter high value
+ 001E 8FEC              ldi R24,207
+ 0020 8DBD              out 0x2d,R24
+ 0022                   .dbline 88
+ 0022           ;  TCNT1L = 0x2C; //reload counter low value
+ 0022 8CE2              ldi R24,44
+ 0024 8CBD              out 0x2c,R24
+ 0026                   .dbline 95
+ 0026           ;  //OCR1AH = 0x1E;
+ 0026           ;  //OCR1AL = 0x84;
+ 0026           ;  //OCR1BH = 0x1E;
+ 0026           ;  //OCR1BL = 0x84;
+ 0026           ;  //ICR1H  = 0x1E;
+ 0026           ;  //ICR1L  = 0x84;
+ 0026           ;  TCCR1A = 0x00;
+ 0026 2FBC              out 0x2f,R2
+ 0028                   .dbline -2
+ 0028                   .dbline 97
+ 0028           ;  //TCCR1B = 0x05; //start Timer
+ 0028           ; }
+ 0028           L2:
+ 0028                   .dbline 0 ; func end
+ 0028 0895              ret
+ 002A                   .dbend
+                        .area vector(rom, abs)
+                        .org 16
+ 0010 15C0              rjmp _timer1_ovf_isr
+                        .area text(rom, con, rel)
+ 002A                   .dbfile E:\FW\HN_Device\GAS_ATMEGA8\PL3150_GAS.c
+ 002A                   .dbfunc e timer1_ovf_isr _timer1_ovf_isr fV
+                        .even
+ 002A           _timer1_ovf_isr::
+ 002A 8A93              st -y,R24
+ 002C 8FB7              in R24,0x3f
+ 002E 8A93              st -y,R24
+ 0030                   .dbline -1
+ 0030                   .dbline 101
+ 0030           ; 
+ 0030           ; #pragma interrupt_handler timer1_ovf_isr:9
+ 0030           ; void timer1_ovf_isr(void)
+ 0030           ; {
+ 0030                   .dbline 103
+ 0030           ;  //TIMER1 has overflowed
+ 0030           ;  TCNT1H = 0xCF; //reload counter high value
+ 0030 8FEC              ldi R24,207
+ 0032 8DBD              out 0x2d,R24
+ 0034                   .dbline 104
+ 0034           ;  TCNT1L = 0x2C; //reload counter low value
+ 0034 8CE2              ldi R24,44
+ 0036 8CBD              out 0x2c,R24
+ 0038                   .dbline 105
+ 0038           ;  flag = 1;
+ 0038 81E0              ldi R24,1
+ 003A 80931200          sts _flag,R24
+ 003E                   .dbline -2
+ 003E                   .dbline 106
+ 003E           ; }
+ 003E           L3:
+ 003E 8991              ld R24,y+
+ 0040 8FBF              out 0x3f,R24
+ 0042 8991              ld R24,y+
+ 0044                   .dbline 0 ; func end
+ 0044 1895              reti
+ 0046                   .dbend
+ 0046                   .dbfunc e uart0_init _uart0_init fV
+                        .even
+ 0046           _uart0_init::
+ 0046                   .dbline -1
+ 0046                   .dbline 114
+ 0046           ; 
+ 0046           ; //UART0 initialisation
+ 0046           ; // desired baud rate: 9600
+ 0046           ; // actual: baud rate:9615 (0.2%)
+ 0046           ; // char size: 8 bit
+ 0046           ; // parity: Disabled
+ 0046           ; void uart0_init(void)
+ 0046           ; {
+ 0046                   .dbline 115
+ 0046           ;  UCSRB = 0x00; //disable while setting baud rate
+ 0046 2224              clr R2
+ 0048 2AB8              out 0xa,R2
+ 004A                   .dbline 116
+ 004A           ;  UCSRA = 0x00;
+ 004A 2BB8              out 0xb,R2
+ 004C                   .dbline 117
+ 004C           ;  UCSRC = 0x06;
+ 004C 86E0              ldi R24,6
+ 004E 80BD              out 0x20,R24
+ 0050                   .dbline 118
+ 0050           ;  UBRRL = 0x33; //set baud rate lo
+ 0050 83E3              ldi R24,51
+ 0052 89B9              out 0x9,R24
+ 0054                   .dbline 119
+ 0054           ;  UBRRH = 0x00; //set baud rate hi
+ 0054 20BC              out 0x20,R2
+ 0056                   .dbline 120
+ 0056           ;  UCSRB = 0x98;
+ 0056 88E9              ldi R24,152
+ 0058 8AB9              out 0xa,R24
+ 005A                   .dbline -2
+ 005A                   .dbline 121
+ 005A           ; }
+ 005A           L4:
+ 005A                   .dbline 0 ; func end
+ 005A 0895              ret
+ 005C                   .dbend
+                        .area vector(rom, abs)
+                        .org 22
+ 0016 2EC0              rjmp _uart0_rx_isr
+                        .area text(rom, con, rel)
+ 005C                   .dbfile E:\FW\HN_Device\GAS_ATMEGA8\PL3150_GAS.c
+ 005C                   .dbfunc e uart0_rx_isr _uart0_rx_isr fV
+                        .even
+ 005C           _uart0_rx_isr::
+ 005C                   .dbline -1
+ 005C                   .dbline 125
+ 005C           ; 
+ 005C           ; #pragma interrupt_handler uart0_rx_isr:12
+ 005C           ; void uart0_rx_isr(void)
+ 005C           ; {
+ 005C                   .dbline -2
+ 005C                   .dbline 127
+ 005C           ;  //uart has received a character in UDR
+ 005C           ; }
+ 005C           L5:
+ 005C                   .dbline 0 ; func end
+ 005C 1895              reti
+ 005E                   .dbend
+ 005E                   .dbfunc e adc_init _adc_init fV
+                        .even
+ 005E           _adc_init::
+ 005E                   .dbline -1
+ 005E                   .dbline 132
+ 005E           ; 
+ 005E           ; //ADC initialisation
+ 005E           ; // Conversion time: 13uS
+ 005E           ; void adc_init(void)
+ 005E           ; {
+ 005E                   .dbline 133
+ 005E           ;  ADCSR = 0x00; //disable adc
+ 005E 2224              clr R2
+ 0060 26B8              out 0x6,R2
+ 0062                   .dbline 134
+ 0062           ;  ADMUX = 0x00; //select adc input 0
+ 0062 27B8              out 0x7,R2
+ 0064                   .dbline 135
+ 0064           ;  ACSR  = 0x80;
+ 0064 80E8              ldi R24,128
+ 0066 88B9              out 0x8,R24
+ 0068                   .dbline 136
+ 0068           ;  ADCSR = 0x0B;
+ 0068 8BE0              ldi R24,11
+ 006A 86B9              out 0x6,R24
+ 006C                   .dbline -2
+ 006C                   .dbline 137
+ 006C           ; }
+ 006C           L6:
+ 006C                   .dbline 0 ; func end
+ 006C 0895              ret
+ 006E                   .dbend
+                        .area vector(rom, abs)
+                        .org 28
+ 001C 37C0              rjmp _adc_isr
+                        .area text(rom, con, rel)
+ 006E                   .dbfile E:\FW\HN_Device\GAS_ATMEGA8\PL3150_GAS.c
+ 006E                   .dbfunc e adc_isr _adc_isr fV
+                        .even
+ 006E           _adc_isr::
+ 006E 2A92              st -y,R2
+ 0070 3A92              st -y,R3
+ 0072 8A93              st -y,R24
+ 0074 2FB6              in R2,0x3f
+ 0076 2A92              st -y,R2
+ 0078                   .dbline -1
+ 0078                   .dbline 141
+ 0078           ; 
+ 0078           ; #pragma interrupt_handler adc_isr:15
+ 0078           ; void adc_isr(void)
+ 0078           ; {
+ 0078                   .dbline 143
+ 0078           ;  //conversion complete, read value (int) using...
+ 0078           ;   ADC_DATAS = ADC;
+ 0078 24B0              in R2,0x4
+ 007A 35B0              in R3,0x5
+ 007C 30920900          sts _ADC_DATAS+1,R3
+ 0080 20920800          sts _ADC_DATAS,R2
+ 0084                   .dbline 144
+ 0084           ;   flagg = 1;
+ 0084 81E0              ldi R24,1
+ 0086 80931100          sts _flagg,R24
+ 008A                   .dbline -2
+ 008A                   .dbline 145
+ 008A           ; }
+ 008A           L7:
+ 008A 2990              ld R2,y+
+ 008C 2FBE              out 0x3f,R2
+ 008E 8991              ld R24,y+
+ 0090 3990              ld R3,y+
+ 0092 2990              ld R2,y+
+ 0094                   .dbline 0 ; func end
+ 0094 1895              reti
+ 0096                   .dbend
+ 0096                   .dbfunc e ADC_CONVER _ADC_CONVER fV
+ 0096           ;          TEP_H -> R20
+ 0096           ;      TEMP_DATA -> R22,R23
+ 0096           ;           COMM -> R16
+                        .even
+ 0096           _ADC_CONVER::
+ 0096 00D0              rcall push_gset2
+ 0098                   .dbline -1
+ 0098                   .dbline 148
+ 0098           ; 
+ 0098           ; void ADC_CONVER(BYTE COMM)
+ 0098           ; {
+ 0098                   .dbline 152
+ 0098           ;     WORD  TEMP_DATA;
+ 0098           ;       BYTE  TEP_H;
+ 0098           ;       
+ 0098           ;       ADC_COUNT++;
+ 0098 80910000          lds R24,_ADC_COUNT
+ 009C 8F5F              subi R24,255    ; addi 1
+ 009E 80930000          sts _ADC_COUNT,R24
+ 00A2                   .dbline 154
+ 00A2           ;       
+ 00A2           ;       switch(COMM)
+ 00A2 402F              mov R20,R16
+ 00A4 5527              clr R21
+ 00A6 403E              cpi R20,224
+ 00A8 E0E0              ldi R30,0
+ 00AA 5E07              cpc R21,R30
+ 00AC 51F0              breq L12
+ 00AE 413E              cpi R20,225
+ 00B0 E0E0              ldi R30,0
+ 00B2 5E07              cpc R21,R30
+ 00B4 51F1              breq L16
+ 00B6 423E              cpi R20,226
+ 00B8 E0E0              ldi R30,0
+ 00BA 5E07              cpc R21,R30
+ 00BC 09F4              brne X1
+ 00BE 49C0              rjmp L20
+ 00C0           X1:
+ 00C0 74C0              rjmp L9
+ 00C2           X0:
+ 00C2                   .dbline 155
+ 00C2           ;         {
+ 00C2           L12:
+ 00C2                   .dbline 156
+ 00C2           ;         case GAS :  ADCSRA = 0x9E;     
+ 00C2 8EE9              ldi R24,158
+ 00C4 86B9              out 0x6,R24
+ 00C6                   .dbline 157
+ 00C6           ;                   ADMUX = 0x40;
+ 00C6 80E4              ldi R24,64
+ 00C8 87B9              out 0x7,R24
+ 00CA                   .dbline 158
+ 00CA           ;                   SEI();     
+ 00CA 7894              sei
+ 00CC                   .dbline 159
+ 00CC           ;                   flagg = 0;
+ 00CC 2224              clr R2
+ 00CE 20921100          sts _flagg,R2
+ 00D2                   .dbline 160
+ 00D2           ;                   ADCSRA|=0x40;     
+ 00D2 369A              sbi 0x6,6
+ 00D4           L13:
+ 00D4                   .dbline 161
+ 00D4           L14:
+ 00D4                   .dbline 161
+ 00D4           ;                   while(!(flagg));
+ 00D4 20901100          lds R2,_flagg
+ 00D8 2220              tst R2
+ 00DA E1F3              breq L13
+ 00DC                   .dbline 162
+ 00DC           ;                   ADCSRA&=0xBF;  
+ 00DC 86B1              in R24,0x6
+ 00DE 8F7B              andi R24,191
+ 00E0 86B9              out 0x6,R24
+ 00E2                   .dbline 163
+ 00E2           ;                   CLI();
+ 00E2 F894              cli
+ 00E4                   .dbline 164
+ 00E4           ;                     TEMP_DATA = ADC_DATAS & 0x03FC;
+ 00E4 60910800          lds R22,_ADC_DATAS
+ 00E8 70910900          lds R23,_ADC_DATAS+1
+ 00EC 6C7F              andi R22,252
+ 00EE 7370              andi R23,3
+ 00F0                   .dbline 165
+ 00F0           ;                   GAS_DATA = TEMP_DATA >> 2; 
+ 00F0 1B01              movw R2,R22
+ 00F2 3694              lsr R3
+ 00F4 2794              ror R2
+ 00F6 3694              lsr R3
+ 00F8 2794              ror R2
+ 00FA 20920500          sts _GAS_DATA,R2
+ 00FE                   .dbline 166
+ 00FE           ;                     ADCSRA = 0x00;
+ 00FE 2224              clr R2
+ 0100 26B8              out 0x6,R2
+ 0102                   .dbline 167
+ 0102           ;                     TEMP_DATA = 0x0000;       
+ 0102 6627              clr R22
+ 0104 7727              clr R23
+ 0106                   .dbline 168
+ 0106           ;                             SEI();
+ 0106 7894              sei
+ 0108                   .dbline 169
+ 0108           ;                             break;
+ 0108 50C0              rjmp L10
+ 010A           L16:
+ 010A                   .dbline 170
+ 010A           ;         case CDS :  ADCSRA = 0x9E;     
+ 010A 8EE9              ldi R24,158
+ 010C 86B9              out 0x6,R24
+ 010E                   .dbline 171
+ 010E           ;                   ADMUX = 0x42; // ADC 2 AD CONVERTER
+ 010E 82E4              ldi R24,66
+ 0110 87B9              out 0x7,R24
+ 0112                   .dbline 172
+ 0112           ;                   SEI();     
+ 0112 7894              sei
+ 0114                   .dbline 173
+ 0114           ;                   flagg = 0;
+ 0114 2224              clr R2
+ 0116 20921100          sts _flagg,R2
+ 011A                   .dbline 174
+ 011A           ;                   ADCSRA|=0x40;     
+ 011A 369A              sbi 0x6,6
+ 011C           L17:
+ 011C                   .dbline 175
+ 011C           L18:
+ 011C                   .dbline 175
+ 011C           ;                   while(!(flagg));
+ 011C 20901100          lds R2,_flagg
+ 0120 2220              tst R2
+ 0122 E1F3              breq L17
+ 0124                   .dbline 176
+ 0124           ;                   ADCSRA&=0xBF;  
+ 0124 86B1              in R24,0x6
+ 0126 8F7B              andi R24,191
+ 0128 86B9              out 0x6,R24
+ 012A                   .dbline 177
+ 012A           ;                   CLI();
+ 012A F894              cli
+ 012C                   .dbline 178
+ 012C           ;                     TEMP_DATA = ADC_DATAS & 0x03FC;
+ 012C 60910800          lds R22,_ADC_DATAS
+ 0130 70910900          lds R23,_ADC_DATAS+1
+ 0134 6C7F              andi R22,252
+ 0136 7370              andi R23,3
+ 0138                   .dbline 179
+ 0138           ;                   CDS_DATA = TEMP_DATA >> 2; 
+ 0138 1B01              movw R2,R22
+ 013A 3694              lsr R3
+ 013C 2794              ror R2
+ 013E 3694              lsr R3
+ 0140 2794              ror R2
+ 0142 20920600          sts _CDS_DATA,R2
+ 0146                   .dbline 180
+ 0146           ;                     ADCSRA = 0x00;    
+ 0146 2224              clr R2
+ 0148 26B8              out 0x6,R2
+ 014A                   .dbline 181
+ 014A           ;                     TEMP_DATA = 0x0000;
+ 014A 6627              clr R22
+ 014C 7727              clr R23
+ 014E                   .dbline 182
+ 014E           ;                     SEI();
+ 014E 7894              sei
+ 0150                   .dbline 183
+ 0150           ;                             break;
+ 0150 2CC0              rjmp L10
+ 0152           L20:
+ 0152                   .dbline 184
+ 0152           ;         case TEMP : ADCSRA = 0x9E;     
+ 0152 8EE9              ldi R24,158
+ 0154 86B9              out 0x6,R24
+ 0156                   .dbline 185
+ 0156           ;                   ADMUX = 0x43;
+ 0156 83E4              ldi R24,67
+ 0158 87B9              out 0x7,R24
+ 015A                   .dbline 186
+ 015A           ;                   SEI();     
+ 015A 7894              sei
+ 015C                   .dbline 187
+ 015C           ;                   flagg = 0;
+ 015C 2224              clr R2
+ 015E 20921100          sts _flagg,R2
+ 0162                   .dbline 188
+ 0162           ;                   ADCSRA|=0x40;     
+ 0162 369A              sbi 0x6,6
+ 0164           L21:
+ 0164                   .dbline 189
+ 0164           L22:
+ 0164                   .dbline 189
+ 0164           ;                   while(!(flagg));
+ 0164 20901100          lds R2,_flagg
+ 0168 2220              tst R2
+ 016A E1F3              breq L21
+ 016C                   .dbline 190
+ 016C           ;                   ADCSRA&=0xBF;  
+ 016C 86B1              in R24,0x6
+ 016E 8F7B              andi R24,191
+ 0170 86B9              out 0x6,R24
+ 0172                   .dbline 191
+ 0172           ;                   CLI();
+ 0172 F894              cli
+ 0174                   .dbline 192
+ 0174           ;                     TEMP_DATA = ADC_DATAS & 0x03FF;
+ 0174 60910800          lds R22,_ADC_DATAS
+ 0178 70910900          lds R23,_ADC_DATAS+1
+ 017C 7370              andi R23,3
+ 017E                   .dbline 193
+ 017E           ;                     TEP_H  =  TEMP_DATA & 0x0300;
+ 017E 462F              mov R20,R22
+ 0180 4070              andi R20,0
+ 0182 5370              andi R21,3
+ 0184                   .dbline 194
+ 0184           ;                     TEMP_HIGH = TEP_H >> 8;
+ 0184 242E              mov R2,R20
+ 0186 3324              clr R3
+ 0188 232C              mov R2,R3
+ 018A 3324              clr R3
+ 018C 27FC              sbrc R2,7
+ 018E 3094              com R3
+ 0190 20920300          sts _TEMP_HIGH,R2
+ 0194                   .dbline 195
+ 0194           ;                     TEMP_LOW  =  TEMP_DATA & 0x00FF;       
+ 0194 CB01              movw R24,R22
+ 0196 9070              andi R25,0
+ 0198 80930200          sts _TEMP_LOW,R24
+ 019C                   .dbline 196
+ 019C           ;                     ADCSRA = 0x00;
+ 019C 2224              clr R2
+ 019E 26B8              out 0x6,R2
+ 01A0                   .dbline 197
+ 01A0           ;                     TEMP_DATA = 0x0000;       
+ 01A0 6627              clr R22
+ 01A2 7727              clr R23
+ 01A4                   .dbline 198
+ 01A4           ;                   SEI();
+ 01A4 7894              sei
+ 01A6                   .dbline 199
+ 01A6           ;                             ADC_COUNT = 0;
+ 01A6 20920000          sts _ADC_COUNT,R2
+ 01AA                   .dbline 200
+ 01AA           ;                             break;
+ 01AA           L9:
+ 01AA           L10:
+ 01AA                   .dbline -2
+ 01AA                   .dbline 202
+ 01AA           ;         }        
+ 01AA           ; }
+ 01AA           L8:
+ 01AA 00D0              rcall pop_gset2
+ 01AC                   .dbline 0 ; func end
+ 01AC 0895              ret
+ 01AE                   .dbsym r TEP_H 20 c
+ 01AE                   .dbsym r TEMP_DATA 22 i
+ 01AE                   .dbsym r COMM 16 c
+ 01AE                   .dbend
+ 01AE                   .dbfunc e LEVEL_CONVERT _LEVEL_CONVERT fI
+ 01AE           ;          LEVEL -> R20
+ 01AE           ;        LEVEL_V -> R16
+                        .even
+ 01AE           _LEVEL_CONVERT::
+ 01AE 00D0              rcall push_gset1
+ 01B0                   .dbline -1
+ 01B0                   .dbline 205
+ 01B0           ; 
+ 01B0           ; LEVEL_CONVERT(BYTE LEVEL_V)
+ 01B0           ; {
+ 01B0                   .dbline 207
+ 01B0           ;  BYTE LEVEL;
+ 01B0           ; if(LEVEL_V>= 200)
+ 01B0 083C              cpi R16,200
+ 01B2 10F0              brlo L25
+ 01B4                   .dbline 208
+ 01B4           ;       LEVEL = LEVEL0;
+ 01B4 4427              clr R20
+ 01B6 6FC0              rjmp L26
+ 01B8           L25:
+ 01B8                   .dbline 209
+ 01B8           ;     else if(LEVEL_V >=190 && LEVEL_V < 200)
+ 01B8 0E3B              cpi R16,190
+ 01BA 20F0              brlo L27
+ 01BC 083C              cpi R16,200
+ 01BE 10F4              brsh L27
+ 01C0                   .dbline 210
+ 01C0           ;         LEVEL = LEVEL1;    
+ 01C0 41E0              ldi R20,1
+ 01C2 69C0              rjmp L28
+ 01C4           L27:
+ 01C4                   .dbline 211
+ 01C4           ;     else if(LEVEL_V >=180 && LEVEL_V < 190)
+ 01C4 043B              cpi R16,180
+ 01C6 20F0              brlo L29
+ 01C8 0E3B              cpi R16,190
+ 01CA 10F4              brsh L29
+ 01CC                   .dbline 212
+ 01CC           ;         LEVEL = LEVEL2;  
+ 01CC 42E0              ldi R20,2
+ 01CE 63C0              rjmp L30
+ 01D0           L29:
+ 01D0                   .dbline 213
+ 01D0           ;     else if(LEVEL_V >=170 && LEVEL_V < 180)
+ 01D0 0A3A              cpi R16,170
+ 01D2 20F0              brlo L31
+ 01D4 043B              cpi R16,180
+ 01D6 10F4              brsh L31
+ 01D8                   .dbline 214
+ 01D8           ;         LEVEL = LEVEL3;  
+ 01D8 43E0              ldi R20,3
+ 01DA 5DC0              rjmp L32
+ 01DC           L31:
+ 01DC                   .dbline 215
+ 01DC           ;     else if(LEVEL_V >=160 && LEVEL_V < 170)
+ 01DC 003A              cpi R16,160
+ 01DE 20F0              brlo L33
+ 01E0 0A3A              cpi R16,170
+ 01E2 10F4              brsh L33
+ 01E4                   .dbline 216
+ 01E4           ;         LEVEL = LEVEL4;  
+ 01E4 44E0              ldi R20,4
+ 01E6 57C0              rjmp L34
+ 01E8           L33:
+ 01E8                   .dbline 217
+ 01E8           ;     else if(LEVEL_V >=150 && LEVEL_V < 160)
+ 01E8 0639              cpi R16,150
+ 01EA 20F0              brlo L35
+ 01EC 003A              cpi R16,160
+ 01EE 10F4              brsh L35
+ 01F0                   .dbline 218
+ 01F0           ;         LEVEL = LEVEL5;
+ 01F0 45E0              ldi R20,5
+ 01F2 51C0              rjmp L36
+ 01F4           L35:
+ 01F4                   .dbline 219
+ 01F4           ;     else if(LEVEL_V >=140 && LEVEL_V < 150)
+ 01F4 0C38              cpi R16,140
+ 01F6 20F0              brlo L37
+ 01F8 0639              cpi R16,150
+ 01FA 10F4              brsh L37
+ 01FC                   .dbline 220
+ 01FC           ;         LEVEL = LEVEL6;       
+ 01FC 46E0              ldi R20,6
+ 01FE 4BC0              rjmp L38
+ 0200           L37:
+ 0200                   .dbline 221
+ 0200           ;     else if(LEVEL_V >=130 && LEVEL_V < 140)
+ 0200 0238              cpi R16,130
+ 0202 20F0              brlo L39
+ 0204 0C38              cpi R16,140
+ 0206 10F4              brsh L39
+ 0208                   .dbline 222
+ 0208           ;         LEVEL = LEVEL7; 
+ 0208 47E0              ldi R20,7
+ 020A 45C0              rjmp L40
+ 020C           L39:
+ 020C                   .dbline 223
+ 020C           ;     else if(LEVEL_V >=120 && LEVEL_V < 130)
+ 020C 0837              cpi R16,120
+ 020E 20F0              brlo L41
+ 0210 0238              cpi R16,130
+ 0212 10F4              brsh L41
+ 0214                   .dbline 224
+ 0214           ;         LEVEL = LEVEL8; 
+ 0214 48E0              ldi R20,8
+ 0216 3FC0              rjmp L42
+ 0218           L41:
+ 0218                   .dbline 225
+ 0218           ;     else if(LEVEL_V >=110 && LEVEL_V < 120)
+ 0218 0E36              cpi R16,110
+ 021A 20F0              brlo L43
+ 021C 0837              cpi R16,120
+ 021E 10F4              brsh L43
+ 0220                   .dbline 226
+ 0220           ;         LEVEL = LEVEL9;  
+ 0220 49E0              ldi R20,9
+ 0222 39C0              rjmp L44
+ 0224           L43:
+ 0224                   .dbline 227
+ 0224           ;     else if(LEVEL_V >=100 && LEVEL_V < 110)
+ 0224 0436              cpi R16,100
+ 0226 20F0              brlo L45
+ 0228 0E36              cpi R16,110
+ 022A 10F4              brsh L45
+ 022C                   .dbline 228
+ 022C           ;         LEVEL = LEVEL10;     
+ 022C 4AE0              ldi R20,10
+ 022E 33C0              rjmp L46
+ 0230           L45:
+ 0230                   .dbline 229
+ 0230           ;     else if(LEVEL_V >=90 && LEVEL_V < 100)
+ 0230 0A35              cpi R16,90
+ 0232 20F0              brlo L47
+ 0234 0436              cpi R16,100
+ 0236 10F4              brsh L47
+ 0238                   .dbline 230
+ 0238           ;         LEVEL = LEVEL11;     
+ 0238 4BE0              ldi R20,11
+ 023A 2DC0              rjmp L48
+ 023C           L47:
+ 023C                   .dbline 231
+ 023C           ;     else if(LEVEL_V >=80 && LEVEL_V  < 90)
+ 023C 0035              cpi R16,80
+ 023E 20F0              brlo L49
+ 0240 0A35              cpi R16,90
+ 0242 10F4              brsh L49
+ 0244                   .dbline 232
+ 0244           ;         LEVEL = LEVEL12;                  
+ 0244 4CE0              ldi R20,12
+ 0246 27C0              rjmp L50
+ 0248           L49:
+ 0248                   .dbline 233
+ 0248           ;     else if(LEVEL_V >=70 && LEVEL_V < 80)
+ 0248 0634              cpi R16,70
+ 024A 20F0              brlo L51
+ 024C 0035              cpi R16,80
+ 024E 10F4              brsh L51
+ 0250                   .dbline 234
+ 0250           ;         LEVEL = LEVEL13;         
+ 0250 4DE0              ldi R20,13
+ 0252 21C0              rjmp L52
+ 0254           L51:
+ 0254                   .dbline 235
+ 0254           ;     else if(LEVEL_V >=60 && LEVEL_V < 70)
+ 0254 0C33              cpi R16,60
+ 0256 20F0              brlo L53
+ 0258 0634              cpi R16,70
+ 025A 10F4              brsh L53
+ 025C                   .dbline 236
+ 025C           ;         LEVEL = LEVEL14;   
+ 025C 4EE0              ldi R20,14
+ 025E 1BC0              rjmp L54
+ 0260           L53:
+ 0260                   .dbline 237
+ 0260           ;     else if(LEVEL_V >=50 && LEVEL_V < 60)
+ 0260 0233              cpi R16,50
+ 0262 20F0              brlo L55
+ 0264 0C33              cpi R16,60
+ 0266 10F4              brsh L55
+ 0268                   .dbline 238
+ 0268           ;         LEVEL = LEVEL15; 
+ 0268 4FE0              ldi R20,15
+ 026A 15C0              rjmp L56
+ 026C           L55:
+ 026C                   .dbline 239
+ 026C           ;     else if(LEVEL_V >=40 && LEVEL_V < 50)
+ 026C 0832              cpi R16,40
+ 026E 20F0              brlo L57
+ 0270 0233              cpi R16,50
+ 0272 10F4              brsh L57
+ 0274                   .dbline 240
+ 0274           ;         LEVEL = LEVEL16;  
+ 0274 4FE1              ldi R20,31
+ 0276 0FC0              rjmp L58
+ 0278           L57:
+ 0278                   .dbline 241
+ 0278           ;     else if(LEVEL_V >=30 && LEVEL_V < 40)
+ 0278 0E31              cpi R16,30
+ 027A 20F0              brlo L59
+ 027C 0832              cpi R16,40
+ 027E 10F4              brsh L59
+ 0280                   .dbline 242
+ 0280           ;         LEVEL = LEVEL17;  
+ 0280 4FE3              ldi R20,63
+ 0282 09C0              rjmp L60
+ 0284           L59:
+ 0284                   .dbline 243
+ 0284           ;      else if(LEVEL_V >=20 && LEVEL_V < 30)
+ 0284 0431              cpi R16,20
+ 0286 20F0              brlo L61
+ 0288 0E31              cpi R16,30
+ 028A 10F4              brsh L61
+ 028C                   .dbline 244
+ 028C           ;         LEVEL = LEVEL18;                                              
+ 028C 4FE7              ldi R20,127
+ 028E 03C0              rjmp L62
+ 0290           L61:
+ 0290                   .dbline 245
+ 0290           ;     else if( LEVEL_V < 20)
+ 0290 0431              cpi R16,20
+ 0292 08F4              brsh L63
+ 0294                   .dbline 246
+ 0294           ;         LEVEL = LEVEL19;           
+ 0294 4FEF              ldi R20,255
+ 0296           L63:
+ 0296           L62:
+ 0296           L60:
+ 0296           L58:
+ 0296           L56:
+ 0296           L54:
+ 0296           L52:
+ 0296           L50:
+ 0296           L48:
+ 0296           L46:
+ 0296           L44:
+ 0296           L42:
+ 0296           L40:
+ 0296           L38:
+ 0296           L36:
+ 0296           L34:
+ 0296           L32:
+ 0296           L30:
+ 0296           L28:
+ 0296           L26:
+ 0296                   .dbline 248
+ 0296           ; 
+ 0296           ;     return LEVEL;
+ 0296 042F              mov R16,R20
+ 0298 1127              clr R17
+ 029A                   .dbline -2
+ 029A           L24:
+ 029A 00D0              rcall pop_gset1
+ 029C                   .dbline 0 ; func end
+ 029C 0895              ret
+ 029E                   .dbsym r LEVEL 20 c
+ 029E                   .dbsym r LEVEL_V 16 c
+ 029E                   .dbend
+ 029E                   .dbfunc e init_devices _init_devices fV
+                        .even
+ 029E           _init_devices::
+ 029E                   .dbline -1
+ 029E                   .dbline 253
+ 029E           ; }
+ 029E           ; 
+ 029E           ; //call this routine to initialise all peripherals
+ 029E           ; void init_devices(void)
+ 029E           ; {
+ 029E                   .dbline 255
+ 029E           ;  //stop errant interrupts until set up
+ 029E           ;  CLI(); //disable all interrupts
+ 029E F894              cli
+ 02A0                   .dbline 256
+ 02A0           ;  port_init();
+ 02A0 AFDE              rcall _port_init
+ 02A2                   .dbline 257
+ 02A2           ;  timer1_init();
+ 02A2 BBDE              rcall _timer1_init
+ 02A4                   .dbline 258
+ 02A4           ;  uart0_init();
+ 02A4 D0DE              rcall _uart0_init
+ 02A6                   .dbline 259
+ 02A6           ;  adc_init();
+ 02A6 DBDE              rcall _adc_init
+ 02A8                   .dbline 261
+ 02A8           ; 
+ 02A8           ;  MCUCR = 0x00;
+ 02A8 2224              clr R2
+ 02AA 25BE              out 0x35,R2
+ 02AC                   .dbline 262
+ 02AC           ;  GICR  = 0x00;
+ 02AC 2BBE              out 0x3b,R2
+ 02AE                   .dbline 263
+ 02AE           ;  TIMSK = 0x05; //timer interrupt sources
+ 02AE 85E0              ldi R24,5
+ 02B0 89BF              out 0x39,R24
+ 02B2                   .dbline 265
+ 02B2           ;  
+ 02B2           ;  flag = 0; 
+ 02B2 20921200          sts _flag,R2
+ 02B6                   .dbline 266
+ 02B6           ;  GAS_SEN_EN;
+ 02B6 A99A              sbi 0x15,1
+ 02B8                   .dbline 267
+ 02B8           ;  T_COUNT = 0;
+ 02B8 20920700          sts _T_COUNT,R2
+ 02BC                   .dbline 268
+ 02BC           ;  NO_COUNT = 0;
+ 02BC 20920100          sts _NO_COUNT,R2
+ 02C0                   .dbline 269
+ 02C0           ;  ADC_DATA[0] = 0x02;
+ 02C0 82E0              ldi R24,2
+ 02C2 80930A00          sts _ADC_DATA,R24
+ 02C6                   .dbline 270
+ 02C6           ;  ADC_DATA[5] = 0x03;
+ 02C6 83E0              ldi R24,3
+ 02C8 80930F00          sts _ADC_DATA+5,R24
+ 02CC                   .dbline 272
+ 02CC           ;  
+ 02CC           ;  SEI(); //re-enable interrupts
+ 02CC 7894              sei
+ 02CE                   .dbline -2
+ 02CE                   .dbline 274
+ 02CE           ;  //all peripherals are now initialised
+ 02CE           ; }
+ 02CE           L65:
+ 02CE                   .dbline 0 ; func end
+ 02CE 0895              ret
+ 02D0                   .dbend
+ 02D0                   .dbfunc e RS232_Send_Byte _RS232_Send_Byte fV
+ 02D0           ;           DATA -> R16
+                        .even
+ 02D0           _RS232_Send_Byte::
+ 02D0                   .dbline -1
+ 02D0                   .dbline 278
+ 02D0           ; 
+ 02D0           ; // TX 1 BYTE PROGRAM
+ 02D0           ; void RS232_Send_Byte(BYTE DATA)
+ 02D0           ;  {    
+ 02D0           L68:
+ 02D0                   .dbline 280
+ 02D0           L69:
+ 02D0                   .dbline 280
+ 02D0           ; // PORTB = 0x00;
+ 02D0           ;  while(!(UCSRA & 0x20));
+ 02D0 5D9B              sbis 0xb,5
+ 02D2 FECF              rjmp L68
+ 02D4                   .dbline 281
+ 02D4           ;  UDR = DATA;
+ 02D4 0CB9              out 0xc,R16
+ 02D6                   .dbline 282
+ 02D6           ;  UCSRA |= 0x20; 
+ 02D6 5D9A              sbi 0xb,5
+ 02D8                   .dbline -2
+ 02D8                   .dbline 284
+ 02D8           ;  //PORTB = 0xFF;
+ 02D8           ;  }
+ 02D8           L67:
+ 02D8                   .dbline 0 ; func end
+ 02D8 0895              ret
+ 02DA                   .dbsym r DATA 16 c
+ 02DA                   .dbend
+ 02DA                   .dbfunc e RS232_Send_Bytes _RS232_Send_Bytes fV
+ 02DA           ;              C -> R20
+ 02DA           ;            Num -> R22
+                        .even
+ 02DA           _RS232_Send_Bytes::
+ 02DA 00D0              rcall push_gset2
+ 02DC 602F              mov R22,R16
+ 02DE                   .dbline -1
+ 02DE                   .dbline 289
+ 02DE           ;      
+ 02DE           ; 
+ 02DE           ; // TX BYTES PGM
+ 02DE           ; void RS232_Send_Bytes(BYTE Num)
+ 02DE           ; {
+ 02DE                   .dbline 292
+ 02DE 4427              clr R20
+ 02E0 09C0              rjmp L75
+ 02E2           L72:
+ 02E2                   .dbline 292
+ 02E2 80E0              ldi R24,<_ADC_DATA
+ 02E4 90E0              ldi R25,>_ADC_DATA
+ 02E6 E42F              mov R30,R20
+ 02E8 FF27              clr R31
+ 02EA E80F              add R30,R24
+ 02EC F91F              adc R31,R25
+ 02EE 0081              ldd R16,z+0
+ 02F0 EFDF              rcall _RS232_Send_Byte
+ 02F2           L73:
+ 02F2                   .dbline 292
+ 02F2 4395              inc R20
+ 02F4           L75:
+ 02F4                   .dbline 292
+ 02F4           ; BYTE C;
+ 02F4           ; //LED422_ON;
+ 02F4           ; for(C=0; C<Num; C++) RS232_Send_Byte(ADC_DATA[C]);  
+ 02F4 4617              cp R20,R22
+ 02F6 A8F3              brlo L72
+ 02F8                   .dbline -2
+ 02F8                   .dbline 294
+ 02F8           ; //LED422_OFF;
+ 02F8           ; }
+ 02F8           L71:
+ 02F8 00D0              rcall pop_gset2
+ 02FA                   .dbline 0 ; func end
+ 02FA 0895              ret
+ 02FC                   .dbsym r C 20 c
+ 02FC                   .dbsym r Num 22 c
+ 02FC                   .dbend
+ 02FC                   .dbfunc e main _main fV
+                        .even
+ 02FC           _main::
+ 02FC                   .dbline -1
+ 02FC                   .dbline 297
+ 02FC           ; 
+ 02FC           ; void main(void)
+ 02FC           ; {
+ 02FC                   .dbline 298
+ 02FC           ; init_devices();
+ 02FC D0DF              rcall _init_devices
+ 02FE                   .dbline 300
+ 02FE           ; 
+ 02FE           ; GAS_SEN_EN;
+ 02FE A99A              sbi 0x15,1
+ 0300                   .dbline 302
+ 0300           ; 
+ 0300           ; TCCR1B = 0x00; //stop
+ 0300 2224              clr R2
+ 0302 2EBC              out 0x2e,R2
+ 0304                   .dbline 303
+ 0304           ; TCNT1H = 0xCF; //reload counter high value
+ 0304 8FEC              ldi R24,207
+ 0306 8DBD              out 0x2d,R24
+ 0308                   .dbline 304
+ 0308           ; TCNT1L = 0x20; //reload counter low value
+ 0308 80E2              ldi R24,32
+ 030A 8CBD              out 0x2c,R24
+ 030C                   .dbline 305
+ 030C           ; TCCR1B = 0x03; //start Timer
+ 030C 83E0              ldi R24,3
+ 030E 8EBD              out 0x2e,R24
+ 0310                   .dbline 306
+ 0310           ; TIMSK  = 0x04; // Timer 1 인터럽트시작.
+ 0310 84E0              ldi R24,4
+ 0312 89BF              out 0x39,R24
+ 0314                   .dbline 310
+ 0314           ; 
+ 0314           ; //RS232_Send_Bytes(4);
+ 0314           ; 
+ 0314           ;   for(;;)
+ 0314           L77:
+ 0314                   .dbline 311
+ 0314           ;   {  
+ 0314                   .dbline 313
+ 0314           ;   
+ 0314           ;   if(flag == 1) 
+ 0314 80911200          lds R24,_flag
+ 0318 8130              cpi R24,1
+ 031A 41F4              brne L81
+ 031C                   .dbline 314
+ 031C           ;     {   
+ 031C                   .dbline 315
+ 031C           ;       T_COUNT++;
+ 031C 80910700          lds R24,_T_COUNT
+ 0320 8F5F              subi R24,255    ; addi 1
+ 0322 80930700          sts _T_COUNT,R24
+ 0326                   .dbline 316
+ 0326           ;       flag =0;
+ 0326 2224              clr R2
+ 0328 20921200          sts _flag,R2
+ 032C                   .dbline 317
+ 032C           ;     }
+ 032C           L81:
+ 032C                   .dbline 319
+ 032C           ;   
+ 032C           ;   if(T_COUNT >= 6)
+ 032C 80910700          lds R24,_T_COUNT
+ 0330 8630              cpi R24,6
+ 0332 80F3              brlo L77
+ 0334                   .dbline 320
+ 0334           ;     { 
+ 0334                   .dbline 321
+ 0334           ;       NO_COUNT++;
+ 0334 80910100          lds R24,_NO_COUNT
+ 0338 8F5F              subi R24,255    ; addi 1
+ 033A 80930100          sts _NO_COUNT,R24
+ 033E                   .dbline 322
+ 033E           ;       TCCR1B = 0x00; //stop
+ 033E 2224              clr R2
+ 0340 2EBC              out 0x2e,R2
+ 0342                   .dbline 323
+ 0342           ;       LED_ON;         
+ 0342 9598              cbi 0x12,5
+ 0344                   .dbline 324
+ 0344           ;       switch(NO_COUNT)
+ 0344 482F              mov R20,R24
+ 0346 5527              clr R21
+ 0348 4130              cpi R20,1
+ 034A E0E0              ldi R30,0
+ 034C 5E07              cpc R21,R30
+ 034E 49F0              breq L88
+ 0350 4230              cpi R20,2
+ 0352 E0E0              ldi R30,0
+ 0354 5E07              cpc R21,R30
+ 0356 B1F0              breq L93
+ 0358 4330              cpi R20,3
+ 035A E0E0              ldi R30,0
+ 035C 5E07              cpc R21,R30
+ 035E 19F1              breq L98
+ 0360 35C0              rjmp L85
+ 0362           X2:
+ 0362                   .dbline 325
+ 0362           ;          {
+ 0362           L88:
+ 0362                   .dbline 326
+ 0362           ;          case 1 : ADC_CONVER(GAS);
+ 0362 00EE              ldi R16,224
+ 0364 98DE              rcall _ADC_CONVER
+ 0366                   .dbline 327
+ 0366           ;                   ADC_DATA[1] = GAS;    
+ 0366 80EE              ldi R24,224
+ 0368 80930B00          sts _ADC_DATA+1,R24
+ 036C                   .dbline 328
+ 036C           ;                   ADC_DATA[2] = GAS_DATA; 
+ 036C 20900500          lds R2,_GAS_DATA
+ 0370 20920C00          sts _ADC_DATA+2,R2
+ 0374                   .dbline 329
+ 0374           ;                   ADC_DATA[3] = 0xFF;     
+ 0374 8FEF              ldi R24,255
+ 0376 80930D00          sts _ADC_DATA+3,R24
+ 037A                   .dbline 330
+ 037A           ;                   ADC_DATA[4] = LEVEL_CONVERT(GAS_DATA); 
+ 037A 022D              mov R16,R2
+ 037C 18DF              rcall _LEVEL_CONVERT
+ 037E 00930E00          sts _ADC_DATA+4,R16
+ 0382                   .dbline 331
+ 0382           ;                   break;
+ 0382 24C0              rjmp L86
+ 0384           L93:
+ 0384                   .dbline 332
+ 0384           ;          case 2 : ADC_CONVER(CDS);               
+ 0384 01EE              ldi R16,225
+ 0386 87DE              rcall _ADC_CONVER
+ 0388                   .dbline 333
+ 0388           ;                   ADC_DATA[1] = CDS;    
+ 0388 81EE              ldi R24,225
+ 038A 80930B00          sts _ADC_DATA+1,R24
+ 038E                   .dbline 334
+ 038E           ;                   ADC_DATA[2] = CDS_DATA; 
+ 038E 20900600          lds R2,_CDS_DATA
+ 0392 20920C00          sts _ADC_DATA+2,R2
+ 0396                   .dbline 335
+ 0396           ;                   ADC_DATA[3] = 0xFF;     
+ 0396 8FEF              ldi R24,255
+ 0398 80930D00          sts _ADC_DATA+3,R24
+ 039C                   .dbline 336
+ 039C           ;                   ADC_DATA[4] = LEVEL_CONVERT(CDS_DATA); 
+ 039C 022D              mov R16,R2
+ 039E 07DF              rcall _LEVEL_CONVERT
+ 03A0 00930E00          sts _ADC_DATA+4,R16
+ 03A4                   .dbline 337
+ 03A4           ;                   break;
+ 03A4 13C0              rjmp L86
+ 03A6           L98:
+ 03A6                   .dbline 338
+ 03A6           ;          case 3 : ADC_CONVER(TEMP);
+ 03A6 02EE              ldi R16,226
+ 03A8 76DE              rcall _ADC_CONVER
+ 03AA                   .dbline 339
+ 03AA           ;                   ADC_DATA[1] = TEMP;    
+ 03AA 82EE              ldi R24,226
+ 03AC 80930B00          sts _ADC_DATA+1,R24
+ 03B0                   .dbline 340
+ 03B0           ;                   ADC_DATA[2] = TEMP_HIGH; 
+ 03B0 20900300          lds R2,_TEMP_HIGH
+ 03B4 20920C00          sts _ADC_DATA+2,R2
+ 03B8                   .dbline 341
+ 03B8           ;                   ADC_DATA[3] = TEMP_LOW;     
+ 03B8 20900200          lds R2,_TEMP_LOW
+ 03BC 20920D00          sts _ADC_DATA+3,R2
+ 03C0                   .dbline 342
+ 03C0           ;                   ADC_DATA[4] = 0xFF; 
+ 03C0 8FEF              ldi R24,255
+ 03C2 80930E00          sts _ADC_DATA+4,R24
+ 03C6                   .dbline 343
+ 03C6           ;                               NO_COUNT = 0;
+ 03C6 2224              clr R2
+ 03C8 20920100          sts _NO_COUNT,R2
+ 03CC                   .dbline 344
+ 03CC           ;                   break;              
+ 03CC           L85:
+ 03CC           L86:
+ 03CC                   .dbline 347
+ 03CC 06E0              ldi R16,6
+ 03CE 85DF              rcall _RS232_Send_Bytes
+ 03D0                   .dbline 348
+ 03D0 2224              clr R2
+ 03D2 20921200          sts _flag,R2
+ 03D6                   .dbline 349
+ 03D6 20920700          sts _T_COUNT,R2
+ 03DA                   .dbline 350
+ 03DA 959A              sbi 0x12,5
+ 03DC                   .dbline 351
+ 03DC 83E0              ldi R24,3
+ 03DE 8EBD              out 0x2e,R24
+ 03E0                   .dbline 352
+ 03E0                   .dbline 354
+ 03E0                   .dbline 310
+ 03E0                   .dbline 310
+ 03E0 99CF              rjmp L77
+ 03E2           X3:
+ 03E2                   .dbline -2
+ 03E2           L76:
+ 03E2                   .dbline 0 ; func end
+ 03E2 0895              ret
+ 03E4                   .dbend
+                        .area bss(ram, con, rel)
+ 0000                   .dbfile E:\FW\HN_Device\GAS_ATMEGA8\PL3150_GAS.c
+ 0000           _ADC_COUNT::
+ 0000                   .blkb 1
+ 0001                   .dbsym e ADC_COUNT _ADC_COUNT c
+ 0001           _NO_COUNT::
+ 0001                   .blkb 1
+ 0002                   .dbsym e NO_COUNT _NO_COUNT c
+ 0002           _TEMP_LOW::
+ 0002                   .blkb 1
+ 0003                   .dbsym e TEMP_LOW _TEMP_LOW c
+ 0003           _TEMP_HIGH::
+ 0003                   .blkb 1
+ 0004                   .dbsym e TEMP_HIGH _TEMP_HIGH c
+ 0004           _TEMPER_DATA::
+ 0004                   .blkb 1
+ 0005                   .dbsym e TEMPER_DATA _TEMPER_DATA c
+ 0005           _GAS_DATA::
+ 0005                   .blkb 1
+ 0006                   .dbsym e GAS_DATA _GAS_DATA c
+ 0006           _CDS_DATA::
+ 0006                   .blkb 1
+ 0007                   .dbsym e CDS_DATA _CDS_DATA c
+ 0007           _T_COUNT::
+ 0007                   .blkb 1
+ 0008                   .dbsym e T_COUNT _T_COUNT c
+ 0008           _ADC_DATAS::
+ 0008                   .blkb 2
+ 000A                   .dbsym e ADC_DATAS _ADC_DATAS i
+ 000A           _ADC_DATA::
+ 000A                   .blkb 7
+ 0011                   .dbsym e ADC_DATA _ADC_DATA A[7:7]c
+ 0011           _flagg::
+ 0011                   .blkb 1
+ 0012                   .dbsym e flagg _flagg c
+ 0012           _flag::
+ 0012                   .blkb 1
+ 0013                   .dbsym e flag _flag c
+

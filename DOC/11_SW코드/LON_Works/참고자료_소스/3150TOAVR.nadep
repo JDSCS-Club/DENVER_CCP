@@ -1,0 +1,32 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.nadep
+; Created Monday, January 22, 2007, 11:25:13
+
+[Global]
+Provider=NEURON Assembler
+Version=1
+Inputs=1
+Outputs=1
+Switches=1
+Parameters=0
+
+[Input_1]
+Basename=3150TOAVR.ns
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.ns
+Type=0
+Size=14068
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8bcc7faa
+
+[Output_1]
+Basename=3150TOAVR.no
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.no
+Type=0
+Size=6857
+TimestampHigh=0x1c73dcc
+TimestampLow=0x8bcc7faa
+
+[Switches]
+8=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR
+
+[Parameters]

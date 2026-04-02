@@ -1,0 +1,1414 @@
+MDF Database:  version 1.0
+MDF_INFO | dpo | XC2C256-7-TQ144
+MACROCELL | 15 | 12 | both_led_MC
+ATTRIBUTES | 151782160 | 0
+INPUTS | 1 | N_PZ_455
+INPUTMC | 1 | 4 | 15
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   !both_led.D = Gnd;	// (0 pt, 0 inp)
+    both_led.LH = !(int_sw_in);	// CTC	(1 pt, 1 inp)
+    both_led.AP = !ext_sw_in;	// CTS	(1 pt, 1 inp)
+    both_led.AR = !N_PZ_455;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 4 | 15 | N_PZ_455_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 2 | 15 | 12 | 15 | 11
+INPUTS | 2 | cancel_sw_in  | both_sw_in
+INPUTP | 2 | 81 | 69
+EQ | 1 | 
+   N_PZ_455 = cancel_sw_in & both_sw_in;	// (1 pt, 2 inp)
+
+MACROCELL | 13 | 15 | cancel_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 4 | cancel_sw_in  | current_st<1>  | current_st<2>  | current_st<0>
+INPUTMC | 3 | 2 | 8 | 0 | 3 | 0 | 13
+INPUTP | 1 | 81
+EQ | 4 | 
+   !cancel_led = cancel_sw_in & current_st<1> & !current_st<2> & 
+	current_st<0>
+	# cancel_sw_in & !current_st<1> & current_st<2> & 
+	!current_st<0>;	// (2 pt, 4 inp)
+
+MACROCELL | 2 | 8 | current_st<1>_MC
+ATTRIBUTES | 2290090768 | 0
+OUTPUTMC | 13 | 2 | 6 | 2 | 12 | 6 | 10 | 2 | 10 | 2 | 11 | 2 | 9 | 0 | 13 | 0 | 3 | 2 | 8 | 13 | 15 | 15 | 5 | 13 | 13 | 15 | 4
+INPUTS | 9 | cancel_sw_in  | current_st<1>  | current_st<2>  | current_st<0>  | ic_sw_in  | pei_sw_in  | rxs_2__or0000/rxs_2__or0000_D.UIM  | txs_mic_3__or0000/txs_mic_3__or0000_D.UIM  | txs_mic_1__or0001/txs_mic_1__or0001_D.UIM
+INPUTMC | 6 | 2 | 8 | 0 | 3 | 0 | 13 | 2 | 3 | 2 | 7 | 2 | 14
+INPUTP | 3 | 81 | 76 | 77
+LCT | 1 | 2 | Internal_Name
+EQ | 23 | 
+   !current_st<1> := !cancel_sw_in & !current_st<1> & current_st<2>
+	# !current_st<1> & current_st<2> & current_st<0>
+	# !cancel_sw_in & current_st<1> & !current_st<2> & 
+	current_st<0>
+	# !cancel_sw_in & !current_st<1> & !current_st<0> & 
+	ic_sw_in
+	# current_st<1> & current_st<2> & !current_st<0> & 
+	!ic_sw_in
+	# current_st<1> & !current_st<2> & current_st<0> & 
+	!pei_sw_in
+	# !current_st<1> & !current_st<2> & !current_st<0> & 
+	!pei_sw_in
+	# !current_st<1> & !current_st<2> & 
+	!rxs_2__or0000/rxs_2__or0000_D.UIM & txs_mic_3__or0000/txs_mic_3__or0000_D.UIM
+	# current_st<2> & current_st<0> & 
+	txs_mic_1__or0001/txs_mic_1__or0001_D.UIM & rxs_2__or0000/rxs_2__or0000_D.UIM
+	# !current_st<1> & !current_st<2> & !current_st<0> & 
+	ic_sw_in & !txs_mic_1__or0001/txs_mic_1__or0001_D.UIM
+	# !current_st<1> & !current_st<2> & !current_st<0> & 
+	!ic_sw_in & txs_mic_1__or0001/txs_mic_1__or0001_D.UIM & 
+	rxs_2__or0000/rxs_2__or0000_D.UIM;	// (11 pt, 9 inp)
+    current_st<1>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    current_st<1>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 0 | 3 | current_st<2>_MC
+ATTRIBUTES | 2189427488 | 0
+OUTPUTMC | 13 | 2 | 6 | 2 | 12 | 6 | 10 | 2 | 10 | 2 | 11 | 2 | 9 | 0 | 13 | 0 | 3 | 2 | 8 | 13 | 15 | 15 | 5 | 13 | 13 | 15 | 4
+INPUTS | 10 | current_st<1>  | current_st<2>  | cancel_sw_in  | current_st<0>  | pei_sw_in  | ic_sw_in  | txs_mic_3__or0000/txs_mic_3__or0000_D.UIM  | dtmf_in<3>  | rxs_2__or0000/rxs_2__or0000_D.UIM  | cnt1ms
+INPUTMC | 7 | 2 | 8 | 0 | 3 | 0 | 13 | 2 | 7 | 5 | 6 | 2 | 3 | 1 | 10
+INPUTP | 3 | 81 | 77 | 76
+LCT | 1 | 4 | Internal_Name
+EQ | 15 | 
+   current_st<2> := current_st<1> & current_st<2>
+	# !cancel_sw_in & current_st<1> & current_st<0>
+	# !cancel_sw_in & current_st<2> & !current_st<0>
+	# current_st<1> & current_st<0> & !pei_sw_in
+	# !current_st<1> & !current_st<2> & !current_st<0> & 
+	!ic_sw_in & pei_sw_in & 
+	!txs_mic_3__or0000/txs_mic_3__or0000_D.UIM
+	# !current_st<1> & !current_st<2> & !current_st<0> & 
+	ic_sw_in & pei_sw_in & 
+	txs_mic_3__or0000/txs_mic_3__or0000_D.UIM & !dtmf_in<3>
+	# !current_st<1> & !current_st<2> & !current_st<0> & 
+	!ic_sw_in & pei_sw_in & rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	dtmf_in<3>;	// (7 pt, 9 inp)
+    current_st<2>.CLK = cnt1ms;	// PTC	(1 pt, 1 inp)
+    current_st<2>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 0 | 13 | current_st<0>_MC
+ATTRIBUTES | 2189427488 | 0
+OUTPUTMC | 13 | 2 | 6 | 5 | 5 | 2 | 12 | 6 | 10 | 2 | 10 | 2 | 11 | 2 | 9 | 0 | 13 | 0 | 3 | 2 | 8 | 13 | 15 | 13 | 13 | 15 | 4
+INPUTS | 12 | current_st<1>  | current_st<2>  | current_st<0>  | ic_sw_in  | pei_sw_in  | cancel_sw_in  | occ_sw_in  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>  | cnt1ms
+INPUTMC | 8 | 2 | 8 | 0 | 3 | 0 | 13 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6 | 1 | 10
+INPUTP | 4 | 76 | 77 | 81 | 82
+LCT | 1 | 4 | Internal_Name
+EQ | 18 | 
+   current_st<0> := current_st<1> & current_st<2> & current_st<0>
+	# current_st<1> & current_st<2> & !ic_sw_in
+	# current_st<1> & current_st<0> & pei_sw_in
+	# !current_st<1> & current_st<2> & !current_st<0>
+	# !cancel_sw_in & current_st<1> & !current_st<2> & 
+	!pei_sw_in
+	# current_st<1> & !current_st<2> & !current_st<0> & 
+	!pei_sw_in
+	# !current_st<1> & !current_st<0> & ic_sw_in & 
+	pei_sw_in & !occ_sw_in
+	# cancel_sw_in & !current_st<1> & !current_st<2> & 
+	current_st<0> & !dtmf_in<0> & dtmf_in<1> & !dtmf_in<2> & 
+	dtmf_in<3>
+	# cancel_sw_in & !current_st<1> & !current_st<0> & 
+	ic_sw_in & pei_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	dtmf_in<2> & !dtmf_in<3>;	// (9 pt, 11 inp)
+    current_st<0>.CLK = cnt1ms;	// PTC	(1 pt, 1 inp)
+    current_st<0>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 5 | 9 | dtmf_in<0>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 15 | 2 | 12 | 0 | 14 | 0 | 7 | 0 | 10 | 0 | 2 | 2 | 7 | 0 | 15 | 2 | 14 | 0 | 13 | 11 | 10 | 0 | 11 | 0 | 12 | 5 | 10 | 2 | 5 | 2 | 13
+INPUTS | 1 | dtmf_inout<0>
+INPUTMC | 1 | 6 | 13
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   dtmf_in<0>.D = dtmf_inout<0>;	// (1 pt, 1 inp)
+    dtmf_in<0>.LH = cancel_sw_in & dtmf_rw;	// CTC	(1 pt, 2 inp)
+
+MACROCELL | 6 | 13 | dtmf_inout<0>_MC
+ATTRIBUTES | 2316043136 | 0
+OUTPUTMC | 1 | 5 | 9
+INPUTS | 2 | N_PZ_427  | dtmf_inout_0__or0000/dtmf_inout_0__or0000_D.UIM
+INPUTMC | 2 | 0 | 8 | 0 | 1
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   dtmf_inout<0>.D = N_PZ_427;	// (1 pt, 1 inp)
+    dtmf_inout<0>.LH = delay_mic2;	// CTC	(1 pt, 1 inp)
+    dtmf_inout<0>.AP = !dtmf_inout_0__or0000/dtmf_inout_0__or0000_D.UIM;	// PTA	(1 pt, 1 inp)
+    dtmf_inout<0>.AR = cancel_sw_in & !N_PZ_427;	// CTR	(1 pt, 2 inp)
+
+MACROCELL | 0 | 8 | N_PZ_427_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 2 | 6 | 13 | 0 | 1
+INPUTS | 11 | dtmf_inout_sp<0>  | ext_mode  | cancel_sw_in  | int_led_0_not0000/int_led_0_not0000_D.UIM  | int_sw_in  | dtmf_in<1>  | int_mode  | delay_mic4  | both_mode  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 9 | 2 | 9 | 0 | 10 | 4 | 14 | 5 | 8 | 0 | 7 | 3 | 7 | 0 | 14 | 5 | 7 | 5 | 6
+INPUTP | 2 | 81 | 75
+EQ | 11 | 
+   N_PZ_427 = dtmf_inout_sp<0> & !ext_mode
+	# cancel_sw_in & 
+	!int_led_0_not0000/int_led_0_not0000_D.UIM & !ext_mode
+	# !int_sw_in & cancel_sw_in & dtmf_in<1> & 
+	!ext_mode
+	# !int_sw_in & cancel_sw_in & int_mode & !ext_mode
+	# !delay_mic4 & !both_mode & !int_mode & !ext_mode
+	# cancel_sw_in & dtmf_in<1> & !dtmf_in<2> & 
+	!dtmf_in<3> & !ext_mode
+	# cancel_sw_in & !dtmf_in<2> & !dtmf_in<3> & 
+	int_mode & !ext_mode;	// (7 pt, 11 inp)
+
+MACROCELL | 2 | 9 | dtmf_inout_sp<0>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 1 | 0 | 8
+INPUTS | 8 | txs_mic_1__or0001/txs_mic_1__or0001_D.UIM  | rxs_0__and0000/rxs_0__and0000_D.UIM  | current_st<1>  | current_st<2>  | pei_mode  | current_st<0>  | txs_mic_3__or0000/txs_mic_3__or0000_D.UIM  | cancel_sw_in
+INPUTMC | 7 | 2 | 14 | 0 | 15 | 2 | 8 | 0 | 3 | 5 | 5 | 0 | 13 | 2 | 7
+INPUTP | 1 | 81
+EQ | 9 | 
+   dtmf_inout_sp<0>.D = !txs_mic_1__or0001/txs_mic_1__or0001_D.UIM & 
+	rxs_0__and0000/rxs_0__and0000_D.UIM
+	# current_st<1> & current_st<2> & !pei_mode
+	# current_st<1> & !current_st<0> & !pei_mode
+	# !current_st<1> & !current_st<2> & !pei_mode
+	# !current_st<1> & current_st<0> & !pei_mode
+	# !current_st<1> & !pei_mode & 
+	txs_mic_3__or0000/txs_mic_3__or0000_D.UIM;	// (6 pt, 7 inp)
+    dtmf_inout_sp<0>.LH = cancel_sw_in;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 5 | 5 | pei_mode_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 4 | 2 | 12 | 2 | 10 | 2 | 11 | 2 | 9
+INPUTS | 3 | cancel_sw_in  | current_st<0>  | pei_mode_or0001/pei_mode_or0001_D.UIM
+INPUTMC | 2 | 0 | 13 | 2 | 6
+INPUTP | 1 | 81
+EQ | 4 | 
+   pei_mode.D = cancel_sw_in & !current_st<0> & 
+	pei_mode_or0001/pei_mode_or0001_D.UIM;	// (1 pt, 3 inp)
+    pei_mode.LH = !(cancel_sw_in & 
+	!pei_mode_or0001/pei_mode_or0001_D.UIM);	// PTC	(1 pt, 2 inp)
+
+MACROCELL | 2 | 6 | pei_mode_or0001/pei_mode_or0001_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 5 | 5
+INPUTS | 5 | current_st<1>  | current_st<2>  | current_st<0>  | pei_sw_in  | hs_sw
+INPUTMC | 3 | 2 | 8 | 0 | 3 | 0 | 13
+INPUTP | 2 | 77 | 134
+EQ | 8 | 
+   pei_mode_or0001/pei_mode_or0001_D.UIM = current_st<1> & !current_st<2> & current_st<0> & 
+	!pei_sw_in
+	# current_st<1> & !current_st<2> & current_st<0> & 
+	!hs_sw
+	# !current_st<1> & current_st<2> & !current_st<0> & 
+	!pei_sw_in
+	# !current_st<1> & current_st<2> & !current_st<0> & 
+	!hs_sw;	// (4 pt, 5 inp)
+
+MACROCELL | 2 | 14 | txs_mic_1__or0001/txs_mic_1__or0001_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 4 | 2 | 9 | 2 | 8 | 2 | 2 | 2 | 4
+INPUTS | 4 | rxs_2__or0000/rxs_2__or0000_D.UIM  | dtmf_in<0>  | N_PZ_281  | dtmf_in<3>
+INPUTMC | 4 | 2 | 3 | 5 | 9 | 0 | 2 | 5 | 6
+EQ | 3 | 
+   txs_mic_1__or0001/txs_mic_1__or0001_D.UIM = !rxs_2__or0000/rxs_2__or0000_D.UIM
+	# dtmf_in<0> & rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	N_PZ_281 & !dtmf_in<3>;	// (2 pt, 4 inp)
+
+MACROCELL | 2 | 3 | rxs_2__or0000/rxs_2__or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 9 | 2 | 7 | 2 | 10 | 2 | 11 | 0 | 9 | 2 | 14 | 0 | 3 | 2 | 8 | 2 | 5 | 2 | 13
+INPUTS | 3 | cancel_sw_in  | dtmf_in<1>  | rxs_0__and0000/rxs_0__and0000_D.UIM
+INPUTMC | 2 | 5 | 8 | 0 | 15
+INPUTP | 1 | 81
+EQ | 3 | 
+   rxs_2__or0000/rxs_2__or0000_D.UIM = cancel_sw_in & !dtmf_in<1>
+	# cancel_sw_in & 
+	!rxs_0__and0000/rxs_0__and0000_D.UIM;	// (2 pt, 3 inp)
+
+MACROCELL | 5 | 8 | dtmf_in<1>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 15 | 2 | 12 | 0 | 14 | 0 | 7 | 0 | 10 | 0 | 2 | 0 | 15 | 0 | 9 | 2 | 3 | 0 | 8 | 0 | 13 | 11 | 10 | 0 | 11 | 0 | 12 | 5 | 10 | 2 | 13
+INPUTS | 1 | dtmf_inout<1>
+INPUTMC | 1 | 6 | 15
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   dtmf_in<1>.D = dtmf_inout<1>;	// (1 pt, 1 inp)
+    dtmf_in<1>.LH = cancel_sw_in & dtmf_rw;	// CTC	(1 pt, 2 inp)
+
+MACROCELL | 6 | 15 | dtmf_inout<1>_MC
+ATTRIBUTES | 2299265808 | 0
+OUTPUTMC | 1 | 5 | 8
+INPUTS | 2 | N_PZ_426  | dtmf_inout_1__or0000/dtmf_inout_1__or0000_D.UIM
+INPUTMC | 2 | 0 | 9 | 0 | 0
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   dtmf_inout<1>.D = N_PZ_426;	// (1 pt, 1 inp)
+    dtmf_inout<1>.LH = delay_mic2;	// CTC	(1 pt, 1 inp)
+    dtmf_inout<1>.AP = N_PZ_426;	// CTS	(1 pt, 1 inp)
+    dtmf_inout<1>.AR = !dtmf_inout_1__or0000/dtmf_inout_1__or0000_D.UIM;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 0 | 9 | N_PZ_426_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 2 | 6 | 15 | 0 | 0
+INPUTS | 12 | dtmf_inout_sp<1>  | int_mode  | cancel_sw_in  | int_led_0_not0000/int_led_0_not0000_D.UIM  | delay_mic4  | both_mode  | ext_mode  | int_sw_in  | rxs_2__or0000/rxs_2__or0000_D.UIM  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 10 | 2 | 11 | 0 | 7 | 4 | 14 | 3 | 7 | 0 | 14 | 0 | 10 | 2 | 3 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTP | 2 | 81 | 75
+EQ | 22 | 
+   N_PZ_426 = dtmf_inout_sp<1> & !int_mode
+	$ cancel_sw_in & int_mode & 
+	!int_led_0_not0000/int_led_0_not0000_D.UIM
+	# cancel_sw_in & !dtmf_inout_sp<1> & delay_mic4 & 
+	!int_led_0_not0000/int_led_0_not0000_D.UIM
+	# cancel_sw_in & !dtmf_inout_sp<1> & both_mode & 
+	!int_led_0_not0000/int_led_0_not0000_D.UIM
+	# cancel_sw_in & !dtmf_inout_sp<1> & 
+	!int_led_0_not0000/int_led_0_not0000_D.UIM & ext_mode
+	# dtmf_inout_sp<1> & !delay_mic4 & !both_mode & 
+	!int_mode & !ext_mode
+	# int_sw_in & rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	dtmf_in<1> & !dtmf_in<2> & !dtmf_in<3> & int_mode
+	# int_sw_in & rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	dtmf_in<1> & !dtmf_inout_sp<1> & !dtmf_in<2> & !dtmf_in<3> & 
+	delay_mic4
+	# int_sw_in & rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	dtmf_in<1> & !dtmf_inout_sp<1> & !dtmf_in<2> & !dtmf_in<3> & 
+	both_mode
+	# int_sw_in & rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	dtmf_in<1> & !dtmf_inout_sp<1> & !dtmf_in<2> & !dtmf_in<3> & 
+	ext_mode;	// (10 pt, 12 inp)
+
+MACROCELL | 2 | 11 | dtmf_inout_sp<1>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 1 | 0 | 9
+INPUTS | 8 | rxs_2__or0000/rxs_2__or0000_D.UIM  | rxs_0__and0000/rxs_0__and0000_D.UIM  | current_st<1>  | current_st<2>  | pei_mode  | txs_mic_3__or0000/txs_mic_3__or0000_D.UIM  | current_st<0>  | cancel_sw_in
+INPUTMC | 7 | 2 | 3 | 0 | 15 | 2 | 8 | 0 | 3 | 5 | 5 | 2 | 7 | 0 | 13
+INPUTP | 1 | 81
+EQ | 7 | 
+   !dtmf_inout_sp<1>.D = rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	rxs_0__and0000/rxs_0__and0000_D.UIM
+	# !current_st<1> & current_st<2> & !pei_mode & 
+	!txs_mic_3__or0000/txs_mic_3__or0000_D.UIM
+	# !current_st<2> & !current_st<0> & !pei_mode & 
+	!txs_mic_3__or0000/txs_mic_3__or0000_D.UIM;	// (3 pt, 7 inp)
+    dtmf_inout_sp<1>.LH = cancel_sw_in;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 15 | rxs_0__and0000/rxs_0__and0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 6 | 2 | 7 | 2 | 10 | 2 | 11 | 2 | 3 | 2 | 9 | 0 | 5
+INPUTS | 5 | cancel_sw_in  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 4 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTP | 1 | 81
+EQ | 4 | 
+   rxs_0__and0000/rxs_0__and0000_D.UIM = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	!dtmf_in<2> & dtmf_in<3>
+	# cancel_sw_in & !dtmf_in<0> & dtmf_in<1> & 
+	!dtmf_in<2> & dtmf_in<3>;	// (2 pt, 5 inp)
+
+MACROCELL | 5 | 7 | dtmf_in<2>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 13 | 0 | 14 | 0 | 7 | 0 | 10 | 0 | 2 | 0 | 15 | 0 | 9 | 0 | 8 | 0 | 13 | 11 | 10 | 0 | 11 | 0 | 12 | 5 | 10 | 2 | 13
+INPUTS | 1 | dtmf_inout<2>
+INPUTMC | 1 | 3 | 11
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   dtmf_in<2>.D = dtmf_inout<2>;	// (1 pt, 1 inp)
+    dtmf_in<2>.LH = cancel_sw_in & dtmf_rw;	// CTC	(1 pt, 2 inp)
+
+MACROCELL | 3 | 11 | dtmf_inout<2>_MC
+ATTRIBUTES | 2165048112 | 0
+OUTPUTMC | 1 | 5 | 7
+INPUTS | 7 | dtmf_inout_sp<2>  | both_mode  | int_mode  | ext_mode  | delay_mic4  | delay_mic2  | dtmf_inout_2__or0000/dtmf_inout_2__or0000_D.UIM
+INPUTMC | 7 | 2 | 10 | 0 | 14 | 0 | 7 | 0 | 10 | 3 | 7 | 3 | 8 | 0 | 6
+LCT | 1 | 1 | Internal_Name
+EQ | 7 | 
+   dtmf_inout<2>.D = dtmf_inout_sp<2> & !both_mode & !int_mode & 
+	!ext_mode
+	# !delay_mic4 & !both_mode & !int_mode & !ext_mode;	// (2 pt, 5 inp)
+    dtmf_inout<2>.LH = delay_mic2;	// PTC	(1 pt, 1 inp)
+    dtmf_inout<2>.AP = dtmf_inout_sp<2> & delay_mic4 & !both_mode & 
+	!int_mode & !ext_mode;	// CTS	(1 pt, 5 inp)
+    dtmf_inout<2>.AR = !dtmf_inout_2__or0000/dtmf_inout_2__or0000_D.UIM;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 2 | 10 | dtmf_inout_sp<2>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 2 | 3 | 11 | 0 | 6
+INPUTS | 8 | current_st<1>  | pei_mode  | rxs_2__or0000/rxs_2__or0000_D.UIM  | rxs_0__and0000/rxs_0__and0000_D.UIM  | current_st<2>  | current_st<0>  | txs_mic_3__or0000/txs_mic_3__or0000_D.UIM  | cancel_sw_in
+INPUTMC | 7 | 2 | 8 | 5 | 5 | 2 | 3 | 0 | 15 | 0 | 3 | 0 | 13 | 2 | 7
+INPUTP | 1 | 81
+EQ | 7 | 
+   dtmf_inout_sp<2>.D = !current_st<1> & !pei_mode & 
+	!rxs_2__or0000/rxs_2__or0000_D.UIM & rxs_0__and0000/rxs_0__and0000_D.UIM
+	# !current_st<1> & !current_st<2> & current_st<0> & 
+	!pei_mode & !txs_mic_3__or0000/txs_mic_3__or0000_D.UIM
+	# !current_st<2> & !current_st<0> & !pei_mode & 
+	!rxs_2__or0000/rxs_2__or0000_D.UIM & rxs_0__and0000/rxs_0__and0000_D.UIM;	// (3 pt, 7 inp)
+    dtmf_inout_sp<2>.LH = cancel_sw_in;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 7 | txs_mic_3__or0000/txs_mic_3__or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 6 | 2 | 10 | 2 | 11 | 2 | 9 | 0 | 3 | 2 | 8 | 5 | 4
+INPUTS | 4 | rxs_0__and0000/rxs_0__and0000_D.UIM  | dtmf_in<0>  | rxs_2__or0000/rxs_2__or0000_D.UIM  | N_PZ_281
+INPUTMC | 4 | 0 | 15 | 5 | 9 | 2 | 3 | 0 | 2
+EQ | 3 | 
+   txs_mic_3__or0000/txs_mic_3__or0000_D.UIM = rxs_0__and0000/rxs_0__and0000_D.UIM
+	# dtmf_in<0> & rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	N_PZ_281;	// (2 pt, 4 inp)
+
+MACROCELL | 0 | 2 | N_PZ_281_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 5 | 2 | 12 | 2 | 7 | 2 | 14 | 2 | 5 | 2 | 13
+INPUTS | 4 | dtmf_in<0>  | dtmf_in<2>  | dtmf_in<3>  | dtmf_in<1>
+INPUTMC | 4 | 5 | 9 | 5 | 7 | 5 | 6 | 5 | 8
+EQ | 4 | 
+   N_PZ_281 = !dtmf_in<0> & !dtmf_in<2> & dtmf_in<3>
+	# !dtmf_in<1> & !dtmf_in<2> & dtmf_in<3>
+	# dtmf_in<0> & !dtmf_in<1> & dtmf_in<2> & 
+	!dtmf_in<3>;	// (3 pt, 4 inp)
+
+MACROCELL | 5 | 6 | dtmf_in<3>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 15 | 0 | 14 | 0 | 7 | 0 | 10 | 0 | 2 | 0 | 15 | 0 | 9 | 2 | 14 | 0 | 8 | 0 | 13 | 0 | 3 | 11 | 10 | 0 | 11 | 0 | 12 | 5 | 10 | 2 | 13
+INPUTS | 1 | dtmf_inout<3>
+INPUTMC | 1 | 3 | 5
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   dtmf_in<3>.D = dtmf_inout<3>;	// (1 pt, 1 inp)
+    dtmf_in<3>.LH = cancel_sw_in & dtmf_rw;	// CTC	(1 pt, 2 inp)
+
+MACROCELL | 3 | 5 | dtmf_inout<3>_MC
+ATTRIBUTES | 2181825440 | 0
+OUTPUTMC | 1 | 5 | 6
+INPUTS | 6 | dtmf_inout_sp<3>  | delay_mic4  | both_mode  | int_mode  | ext_mode  | delay_mic2
+INPUTMC | 6 | 2 | 12 | 3 | 7 | 0 | 14 | 0 | 7 | 0 | 10 | 3 | 8
+LCT | 1 | 4 | Internal_Name
+EQ | 6 | 
+   dtmf_inout<3>.D = dtmf_inout_sp<3> & delay_mic4 & !both_mode & 
+	!int_mode & !ext_mode;	// (1 pt, 5 inp)
+    dtmf_inout<3>.LH = delay_mic2;	// PTC	(1 pt, 1 inp)
+    dtmf_inout<3>.AP = dtmf_inout_sp<3> & delay_mic4 & !both_mode & 
+	!int_mode & !ext_mode;	// PTA	(1 pt, 5 inp)
+    dtmf_inout<3>.AR = !dtmf_inout_3__or0000/dtmf_inout_3__or0000_D.UIM;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 2 | 12 | dtmf_inout_sp<3>_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 2 | 3 | 5 | 0 | 4
+INPUTS | 8 | cancel_sw_in  | current_st<1>  | current_st<2>  | current_st<0>  | pei_mode  | N_PZ_281  | dtmf_in<0>  | dtmf_in<1>
+INPUTMC | 7 | 2 | 8 | 0 | 3 | 0 | 13 | 5 | 5 | 0 | 2 | 5 | 9 | 5 | 8
+INPUTP | 1 | 81
+EQ | 7 | 
+   dtmf_inout_sp<3>.D = !cancel_sw_in & !current_st<1> & current_st<2> & 
+	!current_st<0> & !pei_mode
+	# !current_st<1> & current_st<2> & !current_st<0> & 
+	!pei_mode & !N_PZ_281
+	# !current_st<1> & current_st<2> & !current_st<0> & 
+	!dtmf_in<0> & !pei_mode & !dtmf_in<1>;	// (3 pt, 8 inp)
+    dtmf_inout_sp<3>.LH = cancel_sw_in;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 7 | delay_mic4_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 11 | 3 | 7 | 3 | 5 | 0 | 4 | 3 | 11 | 0 | 6 | 0 | 9 | 0 | 0 | 0 | 8 | 0 | 1 | 3 | 10 | 3 | 14
+INPUTS | 4 | cancel_sw_in  | delay_mic4  | hs_sw  | delay_mic3
+INPUTMC | 2 | 3 | 7 | 14 | 13
+INPUTP | 2 | 81 | 134
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   delay_mic4 := !cancel_sw_in & delay_mic4
+	# cancel_sw_in & !hs_sw & delay_mic3;	// (2 pt, 4 inp)
+    delay_mic4.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 14 | 13 | delay_mic3_MC
+ATTRIBUTES | 2290090048 | 4
+OUTPUTMC | 1 | 3 | 7
+INPUTS | 1 | cancel_sw_in
+INPUTP | 1 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   
+// Direct Input Register
+delay_mic3 := hs_sw;	// (0 pt, 0 inp)
+    delay_mic3.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    delay_mic3.CE = cancel_sw_in;	// (1 pt, 1 inp)
+
+MACROCELL | 1 | 10 | cnt1ms_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 2 | 0 | 13 | 0 | 3
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 15 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 8 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 7 | 1 | 4 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 5 | 
+   cnt1ms.T := !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (1 pt, 16 inp)
+   cnt1ms.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt1ms.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 9 | cnt<0>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 17 | 3 | 9 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 15 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 8 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 7 | 1 | 4 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 5 | 
+   !cnt<0>.T := !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (1 pt, 16 inp)
+   cnt<0>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<0>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 5 | cnt<3>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 15 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<2>  | cnt<1>  | cnt<3>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 0 | 3 | 9 | 1 | 5 | 1 | 15 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 8 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 7 | 1 | 4 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 6 | 
+   cnt<3>.T := cnt<0> & cnt<2> & cnt<1>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (2 pt, 16 inp)
+   cnt<3>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<3>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 0 | cnt<2>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 15 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 2 | cnt<0>  | cnt<1>
+INPUTMC | 2 | 1 | 9 | 3 | 9
+LCT | 1 | 4 | Internal_Name
+EQ | 3 | 
+   cnt<2>.T := cnt<0> & cnt<1>;	// (1 pt, 2 inp)
+   cnt<2>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<2>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 3 | 9 | cnt<1>_MC
+ATTRIBUTES | 2151711504 | 0
+OUTPUTMC | 16 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 2 | cnt<0>  | cancel_sw_in
+INPUTMC | 1 | 1 | 9
+INPUTP | 1 | 81
+EQ | 3 | 
+   cnt<1>.T := cnt<0>;	// (1 pt, 1 inp)
+   cnt<1>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<1>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 15 | cnt<10>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 13 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<10>  | cnt<11>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 15 | 1 | 8 | 1 | 7 | 1 | 4 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<10>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<6> & 
+	cnt<5> & cnt<4> & cnt<7> & cnt<8> & cnt<9>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (2 pt, 16 inp)
+   cnt<10>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<10>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 1 | cnt<6>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 13 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<5>  | cnt<4>  | cnt<10>  | cnt<6>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 3 | 1 | 2 | 1 | 15 | 1 | 1 | 1 | 8 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 7 | 1 | 4 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<6>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<5> & 
+	cnt<4>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (2 pt, 16 inp)
+   cnt<6>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<6>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 3 | cnt<5>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 13 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 5 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<4>
+INPUTMC | 5 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 2
+LCT | 1 | 4 | Internal_Name
+EQ | 3 | 
+   cnt<5>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<4>;	// (1 pt, 5 inp)
+   cnt<5>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<5>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 2 | cnt<4>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 14 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 4 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>
+INPUTMC | 4 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9
+LCT | 1 | 4 | Internal_Name
+EQ | 3 | 
+   cnt<4>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1>;	// (1 pt, 4 inp)
+   cnt<4>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<4>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 8 | cnt<11>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 13 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<11>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 15 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 8 | 1 | 7 | 1 | 4 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<11>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<7> & cnt<8> & cnt<9>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (2 pt, 16 inp)
+   cnt<11>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<11>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 14 | cnt<7>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 13 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<10>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 15 | 1 | 8 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 7 | 1 | 4 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<7>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<6> & 
+	cnt<5> & cnt<4>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (2 pt, 16 inp)
+   cnt<7>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<7>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 13 | cnt<8>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 13 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<7>  | cnt<10>  | cnt<11>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 14 | 1 | 15 | 1 | 8 | 1 | 13 | 1 | 12 | 1 | 7 | 1 | 4 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<8>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<6> & 
+	cnt<5> & cnt<4> & cnt<7>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (2 pt, 16 inp)
+   cnt<8>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<8>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 12 | cnt<9>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 13 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<7>  | cnt<8>  | cnt<10>  | cnt<11>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 14 | 1 | 13 | 1 | 15 | 1 | 8 | 1 | 12 | 1 | 7 | 1 | 4 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 7 | 
+   cnt<9>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<6> & 
+	cnt<5> & cnt<4> & cnt<7> & cnt<8>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (2 pt, 16 inp)
+   cnt<9>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<9>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 7 | cnt<13>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 12 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<12>  | cnt<13>  | cnt<15>  | cnt<14>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 15 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 8 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 4 | 1 | 7 | 1 | 6 | 1 | 11
+LCT | 1 | 4 | Internal_Name
+EQ | 8 | 
+   cnt<13>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<12>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (2 pt, 16 inp)
+   cnt<13>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<13>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 4 | cnt<12>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 12 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 12 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>
+INPUTMC | 12 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 15 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 8 | 1 | 14 | 1 | 13 | 1 | 12
+LCT | 1 | 4 | Internal_Name
+EQ | 5 | 
+   cnt<12>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9>;	// (1 pt, 12 inp)
+   cnt<12>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<12>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 6 | cnt<15>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 16 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>  | cnt<14>  | cnt<15>
+INPUTMC | 16 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 15 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 8 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 7 | 1 | 4 | 1 | 11 | 1 | 6
+LCT | 1 | 4 | Internal_Name
+EQ | 8 | 
+   cnt<15>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12> & cnt<14>
+	# !cnt<0> & cnt<3> & !cnt<2> & !cnt<1> & cnt<10> & 
+	cnt<6> & !cnt<5> & !cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & !cnt<12> & cnt<15> & !cnt<14>;	// (2 pt, 16 inp)
+   cnt<15>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<15>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 11 | cnt<14>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+INPUTS | 14 | cnt<0>  | cnt<3>  | cnt<2>  | cnt<1>  | cnt<10>  | cnt<6>  | cnt<5>  | cnt<4>  | cnt<11>  | cnt<7>  | cnt<8>  | cnt<9>  | cnt<13>  | cnt<12>
+INPUTMC | 14 | 1 | 9 | 1 | 5 | 1 | 0 | 3 | 9 | 1 | 15 | 1 | 1 | 1 | 3 | 1 | 2 | 1 | 8 | 1 | 14 | 1 | 13 | 1 | 12 | 1 | 7 | 1 | 4
+LCT | 1 | 4 | Internal_Name
+EQ | 5 | 
+   cnt<14>.T := cnt<0> & cnt<3> & cnt<2> & cnt<1> & cnt<10> & 
+	cnt<6> & cnt<5> & cnt<4> & cnt<11> & cnt<7> & cnt<8> & 
+	cnt<9> & cnt<13> & cnt<12>;	// (1 pt, 14 inp)
+   cnt<14>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+    cnt<14>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 14 | both_mode_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 14 | 3 | 5 | 0 | 4 | 6 | 10 | 3 | 11 | 0 | 6 | 0 | 9 | 0 | 0 | 0 | 8 | 0 | 1 | 3 | 15 | 2 | 2 | 2 | 4 | 2 | 13 | 5 | 4
+INPUTS | 8 | cancel_sw_in  | both_sw_in  | int_sw_in  | ext_sw_in  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 4 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTP | 4 | 81 | 69 | 75 | 74
+EQ | 3 | 
+   both_mode = cancel_sw_in & !both_sw_in
+	# int_sw_in & cancel_sw_in & ext_sw_in & 
+	dtmf_in<0> & dtmf_in<1> & !dtmf_in<2> & !dtmf_in<3>;	// (2 pt, 8 inp)
+
+MACROCELL | 0 | 7 | int_mode_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 14 | 3 | 5 | 0 | 4 | 6 | 10 | 3 | 11 | 0 | 6 | 0 | 9 | 0 | 0 | 0 | 8 | 0 | 1 | 3 | 15 | 2 | 2 | 2 | 4 | 2 | 13 | 5 | 4
+INPUTS | 6 | int_sw_in  | int_led_0_not0000/int_led_0_not0000_D.UIM  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 5 | 4 | 14 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTP | 1 | 75
+EQ | 4 | 
+   int_mode = !int_sw_in & 
+	int_led_0_not0000/int_led_0_not0000_D.UIM
+	# dtmf_in<0> & !dtmf_in<1> & !dtmf_in<2> & 
+	!dtmf_in<3> & int_led_0_not0000/int_led_0_not0000_D.UIM;	// (2 pt, 6 inp)
+
+MACROCELL | 4 | 14 | int_led_0_not0000/int_led_0_not0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 7 | 0 | 7 | 0 | 4 | 6 | 10 | 0 | 6 | 0 | 9 | 0 | 8 | 15 | 10
+INPUTS | 3 | cancel_sw_in  | both_sw_in  | ext_sw_in
+INPUTP | 3 | 81 | 69 | 74
+EQ | 1 | 
+   int_led_0_not0000/int_led_0_not0000_D.UIM = cancel_sw_in & both_sw_in & ext_sw_in;	// (1 pt, 3 inp)
+
+MACROCELL | 0 | 10 | ext_mode_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 14 | 3 | 5 | 0 | 4 | 6 | 10 | 3 | 11 | 0 | 6 | 0 | 9 | 0 | 0 | 0 | 8 | 0 | 1 | 3 | 15 | 2 | 2 | 2 | 4 | 2 | 13 | 5 | 4
+INPUTS | 8 | cancel_sw_in  | both_sw_in  | ext_sw_in  | int_sw_in  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 4 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTP | 4 | 81 | 69 | 74 | 75
+EQ | 3 | 
+   ext_mode = cancel_sw_in & both_sw_in & !ext_sw_in
+	# int_sw_in & cancel_sw_in & both_sw_in & 
+	!dtmf_in<0> & dtmf_in<1> & !dtmf_in<2> & !dtmf_in<3>;	// (2 pt, 8 inp)
+
+MACROCELL | 3 | 8 | delay_mic2_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 5 | 3 | 8 | 3 | 5 | 3 | 11 | 3 | 12 | 3 | 14
+INPUTS | 4 | cancel_sw_in  | delay_mic2  | hs_sw  | delay_mic1
+INPUTMC | 2 | 3 | 8 | 2 | 1
+INPUTP | 2 | 81 | 134
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   delay_mic2 := !cancel_sw_in & delay_mic2
+	# cancel_sw_in & hs_sw & delay_mic1;	// (2 pt, 4 inp)
+    delay_mic2.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 1 | delay_mic1_MC
+ATTRIBUTES | 2290090816 | 0
+OUTPUTMC | 1 | 3 | 8
+INPUTS | 2 | hs_sw  | cancel_sw_in
+INPUTP | 2 | 134 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   delay_mic1 := !hs_sw;	// (1 pt, 1 inp)
+    delay_mic1.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    delay_mic1.CE = cancel_sw_in;	// (1 pt, 1 inp)
+
+MACROCELL | 0 | 4 | dtmf_inout_3__or0000/dtmf_inout_3__or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+INPUTS | 7 | cancel_sw_in  | delay_mic4  | both_mode  | int_mode  | ext_mode  | dtmf_inout_sp<3>  | int_led_0_not0000/int_led_0_not0000_D.UIM
+INPUTMC | 6 | 3 | 7 | 0 | 14 | 0 | 7 | 0 | 10 | 2 | 12 | 4 | 14
+INPUTP | 1 | 81
+EQ | 4 | 
+   dtmf_inout_3__or0000/dtmf_inout_3__or0000_D.UIM = cancel_sw_in & !delay_mic4 & !both_mode & 
+	!int_mode & !ext_mode
+	# dtmf_inout_sp<3> & !both_mode & !int_mode & 
+	int_led_0_not0000/int_led_0_not0000_D.UIM & !ext_mode;	// (2 pt, 7 inp)
+
+MACROCELL | 6 | 10 | dtmf_rw_MC
+ATTRIBUTES | 1610875648 | 0
+INPUTS | 7 | current_st<1>  | current_st<2>  | current_st<0>  | both_mode  | int_mode  | int_led_0_not0000/int_led_0_not0000_D.UIM  | ext_mode
+INPUTMC | 7 | 2 | 8 | 0 | 3 | 0 | 13 | 0 | 14 | 0 | 7 | 4 | 14 | 0 | 10
+EQ | 3 | 
+   dtmf_rw = !current_st<1> & !current_st<2> & !current_st<0> & 
+	!both_mode & !int_mode & 
+	int_led_0_not0000/int_led_0_not0000_D.UIM & !ext_mode;	// (1 pt, 7 inp)
+
+MACROCELL | 0 | 6 | dtmf_inout_2__or0000/dtmf_inout_2__or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 3 | 11
+INPUTS | 7 | cancel_sw_in  | delay_mic4  | both_mode  | int_mode  | ext_mode  | dtmf_inout_sp<2>  | int_led_0_not0000/int_led_0_not0000_D.UIM
+INPUTMC | 6 | 3 | 7 | 0 | 14 | 0 | 7 | 0 | 10 | 2 | 10 | 4 | 14
+INPUTP | 1 | 81
+EQ | 4 | 
+   dtmf_inout_2__or0000/dtmf_inout_2__or0000_D.UIM = cancel_sw_in & !delay_mic4 & !both_mode & 
+	!int_mode & !ext_mode
+	# dtmf_inout_sp<2> & !both_mode & !int_mode & 
+	int_led_0_not0000/int_led_0_not0000_D.UIM & !ext_mode;	// (2 pt, 7 inp)
+
+MACROCELL | 0 | 0 | dtmf_inout_1__or0000/dtmf_inout_1__or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 6 | 15
+INPUTS | 6 | cancel_sw_in  | N_PZ_426  | delay_mic4  | both_mode  | int_mode  | ext_mode
+INPUTMC | 5 | 0 | 9 | 3 | 7 | 0 | 14 | 0 | 7 | 0 | 10
+INPUTP | 1 | 81
+EQ | 3 | 
+   dtmf_inout_1__or0000/dtmf_inout_1__or0000_D.UIM = cancel_sw_in & N_PZ_426
+	# cancel_sw_in & !delay_mic4 & !both_mode & 
+	!int_mode & !ext_mode;	// (2 pt, 6 inp)
+
+MACROCELL | 0 | 1 | dtmf_inout_0__or0000/dtmf_inout_0__or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 6 | 13
+INPUTS | 6 | cancel_sw_in  | N_PZ_427  | delay_mic4  | both_mode  | int_mode  | ext_mode
+INPUTMC | 5 | 0 | 8 | 3 | 7 | 0 | 14 | 0 | 7 | 0 | 10
+INPUTP | 1 | 81
+EQ | 3 | 
+   dtmf_inout_0__or0000/dtmf_inout_0__or0000_D.UIM = cancel_sw_in & !N_PZ_427
+	# cancel_sw_in & !delay_mic4 & !both_mode & 
+	!int_mode & !ext_mode;	// (2 pt, 6 inp)
+
+MACROCELL | 6 | 11 | dtmf_cs_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 0
+EQ | 1 | 
+   dtmf_cs = Gnd;	// (0 pt, 0 inp)
+
+MACROCELL | 6 | 12 | dtmf_rs0_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 1 | cancel_sw_in
+INPUTP | 1 | 81
+EQ | 1 | 
+   dtmf_rs0 = !cancel_sw_in;	// (1 pt, 1 inp)
+
+MACROCELL | 8 | 1 | dual_mute_sp_MC
+ATTRIBUTES | 2336490240 | 0
+OUTPUTMC | 1 | 8 | 1
+INPUTS | 9 | tone_tx  | cnt_tone<0>  | cnt_tone<3>  | cnt_tone<2>  | cnt_tone<1>  | cnt_tone<5>  | cnt_tone<4>  | cnt_tone<6>  | dual_mute_sp
+INPUTMC | 9 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 0 | 4 | 13 | 4 | 8 | 4 | 2 | 4 | 7 | 8 | 1
+LCT | 3 | 1 | Internal_Name | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   dual_mute_sp.T := tone_tx & !cnt_tone<0> & cnt_tone<3> & 
+	!cnt_tone<2> & !cnt_tone<1> & !cnt_tone<5> & cnt_tone<4> & 
+	!cnt_tone<6> & !dual_mute_sp;	// (1 pt, 9 inp)
+    dual_mute_sp.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    dual_mute_sp.AP = !cancel_sw_in;	// CTS	(1 pt, 1 inp)
+    dual_mute_sp.AR = !dual_mute_sp_or0000/dual_mute_sp_or0000_D.UIM;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 4 | 11 | tone_tx_MC
+ATTRIBUTES | 2302673680 | 0
+OUTPUTMC | 3 | 4 | 11 | 4 | 6 | 8 | 1
+INPUTS | 9 | tone_tx  | cnt_tone<0>  | cnt_tone<3>  | cnt_tone<2>  | cnt_tone<1>  | cnt_tone<5>  | cnt_tone<4>  | cnt_tone<6>  | tone_tx_or0000/tone_tx_or0000_D.UIM
+INPUTMC | 9 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 0 | 4 | 13 | 4 | 8 | 4 | 2 | 4 | 7 | 4 | 12
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   tone_tx.T := tone_tx & !cnt_tone<0> & cnt_tone<3> & 
+	!cnt_tone<2> & !cnt_tone<1> & !cnt_tone<5> & cnt_tone<4> & 
+	!cnt_tone<6>;	// (1 pt, 8 inp)
+    tone_tx.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    tone_tx.AP = !tone_tx_or0001/tone_tx_or0001_D.UIM & 
+	!_mux0000/_mux0000_D.UIM;	// CTS	(1 pt, 2 inp)
+    tone_tx.AR = !tone_tx_or0000/tone_tx_or0000_D.UIM;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 4 | 10 | cnt_tone<0>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 10 | 4 | 13 | 4 | 0 | 4 | 2 | 4 | 7 | 4 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 6 | 8 | 1
+INPUTS | 7 | cnt_tone<0>  | cnt_tone<3>  | cnt_tone<2>  | cnt_tone<1>  | cnt_tone<5>  | cnt_tone<4>  | cnt_tone<6>
+INPUTMC | 7 | 4 | 10 | 4 | 9 | 4 | 0 | 4 | 13 | 4 | 8 | 4 | 2 | 4 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   !cnt_tone<0>.T := !cnt_tone<0> & cnt_tone<3> & !cnt_tone<2> & 
+	!cnt_tone<1> & cnt_tone<5> & !cnt_tone<4> & cnt_tone<6>;	// (1 pt, 7 inp)
+    cnt_tone<0>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    cnt_tone<0>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 4 | 9 | cnt_tone<3>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 8 | 4 | 2 | 4 | 7 | 4 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 6 | 8 | 1
+INPUTS | 7 | cnt_tone<0>  | cnt_tone<2>  | cnt_tone<1>  | cnt_tone<3>  | cnt_tone<5>  | cnt_tone<4>  | cnt_tone<6>
+INPUTMC | 7 | 4 | 10 | 4 | 0 | 4 | 13 | 4 | 9 | 4 | 8 | 4 | 2 | 4 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   cnt_tone<3>.T := cnt_tone<0> & cnt_tone<2> & cnt_tone<1>
+	# !cnt_tone<0> & cnt_tone<3> & !cnt_tone<2> & 
+	!cnt_tone<1> & cnt_tone<5> & !cnt_tone<4> & cnt_tone<6>;	// (2 pt, 7 inp)
+    cnt_tone<3>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    cnt_tone<3>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 4 | 0 | cnt_tone<2>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 8 | 4 | 2 | 4 | 7 | 4 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 6 | 8 | 1
+INPUTS | 2 | cnt_tone<0>  | cnt_tone<1>
+INPUTMC | 2 | 4 | 10 | 4 | 13
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   cnt_tone<2>.T := cnt_tone<0> & cnt_tone<1>;	// (1 pt, 2 inp)
+    cnt_tone<2>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    cnt_tone<2>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 4 | 13 | cnt_tone<1>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 9 | 4 | 0 | 4 | 2 | 4 | 7 | 4 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 6 | 8 | 1
+INPUTS | 1 | cnt_tone<0>
+INPUTMC | 1 | 4 | 10
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   cnt_tone<1>.T := cnt_tone<0>;	// (1 pt, 1 inp)
+    cnt_tone<1>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    cnt_tone<1>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 4 | 8 | cnt_tone<5>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 7 | 4 | 7 | 4 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 6 | 8 | 1
+INPUTS | 7 | cnt_tone<0>  | cnt_tone<3>  | cnt_tone<2>  | cnt_tone<1>  | cnt_tone<4>  | cnt_tone<5>  | cnt_tone<6>
+INPUTMC | 7 | 4 | 10 | 4 | 9 | 4 | 0 | 4 | 13 | 4 | 2 | 4 | 8 | 4 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cnt_tone<5>.T := cnt_tone<0> & cnt_tone<3> & cnt_tone<2> & 
+	cnt_tone<1> & cnt_tone<4>
+	# !cnt_tone<0> & cnt_tone<3> & !cnt_tone<2> & 
+	!cnt_tone<1> & cnt_tone<5> & !cnt_tone<4> & cnt_tone<6>;	// (2 pt, 7 inp)
+    cnt_tone<5>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    cnt_tone<5>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 4 | 2 | cnt_tone<4>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 7 | 4 | 7 | 4 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 6 | 8 | 1
+INPUTS | 4 | cnt_tone<0>  | cnt_tone<3>  | cnt_tone<2>  | cnt_tone<1>
+INPUTMC | 4 | 4 | 10 | 4 | 9 | 4 | 0 | 4 | 13
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   cnt_tone<4>.T := cnt_tone<0> & cnt_tone<3> & cnt_tone<2> & 
+	cnt_tone<1>;	// (1 pt, 4 inp)
+    cnt_tone<4>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    cnt_tone<4>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 4 | 7 | cnt_tone<6>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 7 | 4 | 7 | 4 | 8 | 4 | 9 | 4 | 10 | 4 | 11 | 4 | 6 | 8 | 1
+INPUTS | 7 | cnt_tone<0>  | cnt_tone<3>  | cnt_tone<2>  | cnt_tone<1>  | cnt_tone<5>  | cnt_tone<4>  | cnt_tone<6>
+INPUTMC | 7 | 4 | 10 | 4 | 9 | 4 | 0 | 4 | 13 | 4 | 8 | 4 | 2 | 4 | 7
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   cnt_tone<6>.T := cnt_tone<0> & cnt_tone<3> & cnt_tone<2> & 
+	cnt_tone<1> & cnt_tone<5> & cnt_tone<4>
+	# !cnt_tone<0> & cnt_tone<3> & !cnt_tone<2> & 
+	!cnt_tone<1> & cnt_tone<5> & !cnt_tone<4> & cnt_tone<6>;	// (2 pt, 7 inp)
+    cnt_tone<6>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    cnt_tone<6>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 4 | 12 | tone_tx_or0000/tone_tx_or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 4 | 11
+INPUTS | 3 | cancel_sw_in  | tone_tx_or0001/tone_tx_or0001_D.UIM  | _mux0000/_mux0000_D.UIM
+INPUTMC | 2 | 3 | 15 | 4 | 6
+INPUTP | 1 | 81
+EQ | 3 | 
+   tone_tx_or0000/tone_tx_or0000_D.UIM = cancel_sw_in & 
+	tone_tx_or0001/tone_tx_or0001_D.UIM
+	# cancel_sw_in & !_mux0000/_mux0000_D.UIM;	// (2 pt, 3 inp)
+
+MACROCELL | 3 | 15 | tone_tx_or0001/tone_tx_or0001_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 4 | 12
+INPUTS | 5 | both_mode  | int_mode  | ext_mode  | ptt_mode1  | ptt_mode2
+INPUTMC | 5 | 0 | 14 | 0 | 7 | 0 | 10 | 3 | 12 | 3 | 10
+EQ | 2 | 
+   tone_tx_or0001/tone_tx_or0001_D.UIM = !both_mode & !int_mode & !ext_mode & !ptt_mode1 & 
+	!ptt_mode2;	// (1 pt, 5 inp)
+
+MACROCELL | 3 | 12 | ptt_mode1_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 1 | 3 | 15
+INPUTS | 2 | delay_mic2  | cancel_sw_in
+INPUTMC | 1 | 3 | 8
+INPUTP | 1 | 81
+EQ | 2 | 
+   ptt_mode1.D = delay_mic2;	// (1 pt, 1 inp)
+    ptt_mode1.LH = cancel_sw_in;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 10 | ptt_mode2_MC
+ATTRIBUTES | 2148008736 | 0
+OUTPUTMC | 1 | 3 | 15
+INPUTS | 2 | delay_mic4  | cancel_sw_in
+INPUTMC | 1 | 3 | 7
+INPUTP | 1 | 81
+EQ | 2 | 
+   ptt_mode2.D = delay_mic4;	// (1 pt, 1 inp)
+    ptt_mode2.LH = cancel_sw_in;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 4 | 6 | _mux0000/_mux0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 4 | 12
+INPUTS | 8 | tone_tx  | cnt_tone<0>  | cnt_tone<3>  | cnt_tone<2>  | cnt_tone<1>  | cnt_tone<5>  | cnt_tone<4>  | cnt_tone<6>
+INPUTMC | 8 | 4 | 11 | 4 | 10 | 4 | 9 | 4 | 0 | 4 | 13 | 4 | 8 | 4 | 2 | 4 | 7
+EQ | 3 | 
+   _mux0000/_mux0000_D.UIM = tone_tx & !cnt_tone<0> & cnt_tone<3> & 
+	!cnt_tone<2> & !cnt_tone<1> & cnt_tone<5> & !cnt_tone<4> & 
+	cnt_tone<6>;	// (1 pt, 8 inp)
+
+MACROCELL | 3 | 14 | dual_mute_sp_or0000/dual_mute_sp_or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+INPUTS | 3 | cancel_sw_in  | delay_mic4  | delay_mic2
+INPUTMC | 2 | 3 | 7 | 3 | 8
+INPUTP | 1 | 81
+EQ | 2 | 
+   dual_mute_sp_or0000/dual_mute_sp_or0000_D.UIM = !cancel_sw_in
+	# !delay_mic4 & !delay_mic2;	// (2 pt, 3 inp)
+
+MACROCELL | 15 | 11 | ext_led_MC
+ATTRIBUTES | 168559488 | 0
+INPUTS | 1 | N_PZ_455
+INPUTMC | 1 | 4 | 15
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 4 | 
+   !ext_led.D = Gnd;	// (0 pt, 0 inp)
+    ext_led.LH = !(int_sw_in);	// CTC	(1 pt, 1 inp)
+    ext_led.AP = !N_PZ_455;	// PTA	(1 pt, 1 inp)
+    ext_led.AR = cancel_sw_in & both_sw_in & !ext_sw_in;	// CTR	(1 pt, 3 inp)
+
+MACROCELL | 15 | 5 | ic_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 3 | cancel_sw_in  | current_st<1>  | current_st<2>
+INPUTMC | 2 | 2 | 8 | 0 | 3
+INPUTP | 1 | 81
+EQ | 1 | 
+   !ic_led = cancel_sw_in & current_st<1> & current_st<2>;	// (1 pt, 3 inp)
+
+MACROCELL | 8 | 0 | ic_mute_sp_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 1 | cancel_sw_in
+INPUTP | 1 | 81
+EQ | 1 | 
+   ic_mute_sp = !cancel_sw_in;	// (1 pt, 1 inp)
+
+MACROCELL | 15 | 10 | int_led_MC
+ATTRIBUTES | 135005056 | 0
+INPUTS | 1 | int_led_0_not0000/int_led_0_not0000_D.UIM
+INPUTMC | 1 | 4 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   int_led.D = Gnd;	// (0 pt, 0 inp)
+    int_led.LH = !(int_sw_in);	// CTC	(1 pt, 1 inp)
+    int_led.AP = !int_led_0_not0000/int_led_0_not0000_D.UIM;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 11 | 13 | live_sw_MC
+ATTRIBUTES | 2307130112 | 0
+OUTPUTMC | 1 | 11 | 13
+INPUTS | 2 | hs_sw  | live_sw
+INPUTMC | 1 | 11 | 13
+INPUTP | 1 | 134
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   !live_sw := hs_sw & !live_sw;	// (1 pt, 2 inp)
+    live_sw.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    live_sw.AP = !cancel_sw_in;	// CTS	(1 pt, 1 inp)
+
+MACROCELL | 11 | 14 | mic_sw_MC
+ATTRIBUTES | 159646464 | 0
+INPUTS | 1 | hs_sw
+INPUTP | 1 | 134
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 3 | 
+   mic_sw := hs_sw;	// (1 pt, 1 inp)
+    mic_sw.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    mic_sw.AP = !cancel_sw_in;	// CTS	(1 pt, 1 inp)
+
+MACROCELL | 11 | 11 | mute_sw_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 4 | cancel_sw_in  | int_sw_in  | both_sw_in  | ext_sw_in
+INPUTP | 4 | 81 | 75 | 69 | 74
+EQ | 2 | 
+   !mute_sw = !cancel_sw_in
+	# int_sw_in & both_sw_in & ext_sw_in;	// (2 pt, 4 inp)
+
+MACROCELL | 13 | 13 | occ_led_MC
+ATTRIBUTES | 135004928 | 0
+INPUTS | 5 | cancel_sw_in  | current_st<1>  | current_st<2>  | current_st<0>  | blink_sig
+INPUTMC | 4 | 2 | 8 | 0 | 3 | 0 | 13 | 3 | 0
+INPUTP | 1 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   !occ_led.D = cancel_sw_in & current_st<1> & current_st<2>
+	# cancel_sw_in & current_st<2> & !current_st<0>
+	# cancel_sw_in & current_st<1> & !current_st<2> & 
+	!current_st<0> & !blink_sig
+	# cancel_sw_in & !current_st<1> & !current_st<2> & 
+	current_st<0> & !blink_sig;	// (4 pt, 5 inp)
+    occ_led.LH = !(cancel_sw_in & current_st<1> & current_st<2>);	// CTC	(1 pt, 3 inp)
+
+MACROCELL | 3 | 0 | blink_sig_MC
+ATTRIBUTES | 2285896576 | 0
+OUTPUTMC | 2 | 13 | 13 | 15 | 4
+INPUTS | 11 | blink_cnt<0>  | blink_cnt<2>  | blink_cnt<1>  | blink_cnt<3>  | blink_cnt<5>  | blink_cnt<4>  | blink_cnt<8>  | blink_cnt<7>  | blink_cnt<6>  | blink_cnt<9>  | cancel_sw_in
+INPUTMC | 10 | 3 | 1 | 4 | 5 | 3 | 6 | 4 | 4 | 4 | 3 | 3 | 13 | 4 | 1 | 3 | 3 | 3 | 4 | 3 | 2
+INPUTP | 1 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   blink_sig.T := !blink_cnt<0> & blink_cnt<2> & !blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & !blink_cnt<4> & blink_cnt<8> & 
+	!blink_cnt<7> & !blink_cnt<6> & !blink_cnt<9>;	// (1 pt, 10 inp)
+    blink_sig.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_sig.AP = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 3 | 1 | blink_cnt<0>_MC
+ATTRIBUTES | 2285896464 | 0
+OUTPUTMC | 11 | 3 | 6 | 3 | 13 | 3 | 4 | 3 | 3 | 3 | 2 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 11 | blink_cnt<0>  | blink_cnt<2>  | blink_cnt<1>  | blink_cnt<3>  | blink_cnt<5>  | blink_cnt<4>  | blink_cnt<8>  | blink_cnt<7>  | blink_cnt<6>  | blink_cnt<9>  | cancel_sw_in
+INPUTMC | 10 | 3 | 1 | 4 | 5 | 3 | 6 | 4 | 4 | 4 | 3 | 3 | 13 | 4 | 1 | 3 | 3 | 3 | 4 | 3 | 2
+INPUTP | 1 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   !blink_cnt<0>.T := !blink_cnt<0> & blink_cnt<2> & !blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & !blink_cnt<4> & blink_cnt<8> & 
+	!blink_cnt<7> & !blink_cnt<6> & !blink_cnt<9>;	// (1 pt, 10 inp)
+    blink_cnt<0>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<0>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 4 | 5 | blink_cnt<2>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 10 | 3 | 13 | 3 | 4 | 3 | 3 | 3 | 2 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 10 | blink_cnt<0>  | blink_cnt<1>  | blink_cnt<2>  | blink_cnt<3>  | blink_cnt<5>  | blink_cnt<4>  | blink_cnt<8>  | blink_cnt<7>  | blink_cnt<6>  | blink_cnt<9>
+INPUTMC | 10 | 3 | 1 | 3 | 6 | 4 | 5 | 4 | 4 | 4 | 3 | 3 | 13 | 4 | 1 | 3 | 3 | 3 | 4 | 3 | 2
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   blink_cnt<2>.T := blink_cnt<0> & blink_cnt<1>
+	# !blink_cnt<0> & blink_cnt<2> & !blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & !blink_cnt<4> & blink_cnt<8> & 
+	!blink_cnt<7> & !blink_cnt<6> & !blink_cnt<9>;	// (2 pt, 10 inp)
+    blink_cnt<2>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<2>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 3 | 6 | blink_cnt<1>_MC
+ATTRIBUTES | 2285896464 | 0
+OUTPUTMC | 10 | 3 | 13 | 3 | 4 | 3 | 3 | 3 | 2 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 2 | blink_cnt<0>  | cancel_sw_in
+INPUTMC | 1 | 3 | 1
+INPUTP | 1 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   blink_cnt<1>.T := blink_cnt<0>;	// (1 pt, 1 inp)
+    blink_cnt<1>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<1>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 4 | 4 | blink_cnt<3>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 10 | 3 | 13 | 3 | 4 | 3 | 3 | 3 | 2 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 10 | blink_cnt<0>  | blink_cnt<2>  | blink_cnt<1>  | blink_cnt<3>  | blink_cnt<5>  | blink_cnt<4>  | blink_cnt<8>  | blink_cnt<7>  | blink_cnt<6>  | blink_cnt<9>
+INPUTMC | 10 | 3 | 1 | 4 | 5 | 3 | 6 | 4 | 4 | 4 | 3 | 3 | 13 | 4 | 1 | 3 | 3 | 3 | 4 | 3 | 2
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 6 | 
+   blink_cnt<3>.T := blink_cnt<0> & blink_cnt<2> & blink_cnt<1>
+	# !blink_cnt<0> & blink_cnt<2> & !blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & !blink_cnt<4> & blink_cnt<8> & 
+	!blink_cnt<7> & !blink_cnt<6> & !blink_cnt<9>;	// (2 pt, 10 inp)
+    blink_cnt<3>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<3>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 4 | 3 | blink_cnt<5>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 9 | 3 | 4 | 3 | 3 | 3 | 2 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 10 | blink_cnt<0>  | blink_cnt<2>  | blink_cnt<1>  | blink_cnt<3>  | blink_cnt<4>  | blink_cnt<5>  | blink_cnt<8>  | blink_cnt<7>  | blink_cnt<6>  | blink_cnt<9>
+INPUTMC | 10 | 3 | 1 | 4 | 5 | 3 | 6 | 4 | 4 | 3 | 13 | 4 | 3 | 4 | 1 | 3 | 3 | 3 | 4 | 3 | 2
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   blink_cnt<5>.T := blink_cnt<0> & blink_cnt<2> & blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<4>
+	# !blink_cnt<0> & blink_cnt<2> & !blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & !blink_cnt<4> & blink_cnt<8> & 
+	!blink_cnt<7> & !blink_cnt<6> & !blink_cnt<9>;	// (2 pt, 10 inp)
+    blink_cnt<5>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<5>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 3 | 13 | blink_cnt<4>_MC
+ATTRIBUTES | 2285896464 | 0
+OUTPUTMC | 9 | 3 | 4 | 3 | 3 | 3 | 2 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 5 | blink_cnt<0>  | blink_cnt<2>  | blink_cnt<1>  | blink_cnt<3>  | cancel_sw_in
+INPUTMC | 4 | 3 | 1 | 4 | 5 | 3 | 6 | 4 | 4
+INPUTP | 1 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   blink_cnt<4>.T := blink_cnt<0> & blink_cnt<2> & blink_cnt<1> & 
+	blink_cnt<3>;	// (1 pt, 4 inp)
+    blink_cnt<4>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<4>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 4 | 1 | blink_cnt<8>_MC
+ATTRIBUTES | 2319450880 | 0
+OUTPUTMC | 7 | 3 | 2 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 10 | blink_cnt<0>  | blink_cnt<2>  | blink_cnt<1>  | blink_cnt<3>  | blink_cnt<5>  | blink_cnt<4>  | blink_cnt<7>  | blink_cnt<6>  | blink_cnt<8>  | blink_cnt<9>
+INPUTMC | 10 | 3 | 1 | 4 | 5 | 3 | 6 | 4 | 4 | 4 | 3 | 3 | 13 | 3 | 3 | 3 | 4 | 4 | 1 | 3 | 2
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 8 | 
+   blink_cnt<8>.T := blink_cnt<0> & blink_cnt<2> & blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & blink_cnt<4> & blink_cnt<7> & 
+	blink_cnt<6>
+	# !blink_cnt<0> & blink_cnt<2> & !blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & !blink_cnt<4> & blink_cnt<8> & 
+	!blink_cnt<7> & !blink_cnt<6> & !blink_cnt<9>;	// (2 pt, 10 inp)
+    blink_cnt<8>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<8>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 3 | 3 | blink_cnt<7>_MC
+ATTRIBUTES | 2285896464 | 0
+OUTPUTMC | 7 | 3 | 2 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 8 | blink_cnt<0>  | blink_cnt<2>  | blink_cnt<1>  | blink_cnt<3>  | blink_cnt<5>  | blink_cnt<4>  | blink_cnt<6>  | cancel_sw_in
+INPUTMC | 7 | 3 | 1 | 4 | 5 | 3 | 6 | 4 | 4 | 4 | 3 | 3 | 13 | 3 | 4
+INPUTP | 1 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   blink_cnt<7>.T := blink_cnt<0> & blink_cnt<2> & blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & blink_cnt<4> & blink_cnt<6>;	// (1 pt, 7 inp)
+    blink_cnt<7>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<7>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 3 | 4 | blink_cnt<6>_MC
+ATTRIBUTES | 2285896464 | 0
+OUTPUTMC | 8 | 3 | 3 | 3 | 2 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 7 | blink_cnt<0>  | blink_cnt<2>  | blink_cnt<1>  | blink_cnt<3>  | blink_cnt<5>  | blink_cnt<4>  | cancel_sw_in
+INPUTMC | 6 | 3 | 1 | 4 | 5 | 3 | 6 | 4 | 4 | 4 | 3 | 3 | 13
+INPUTP | 1 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   blink_cnt<6>.T := blink_cnt<0> & blink_cnt<2> & blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & blink_cnt<4>;	// (1 pt, 6 inp)
+    blink_cnt<6>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<6>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 3 | 2 | blink_cnt<9>_MC
+ATTRIBUTES | 2285896464 | 0
+OUTPUTMC | 6 | 4 | 1 | 4 | 3 | 4 | 4 | 4 | 5 | 3 | 1 | 3 | 0
+INPUTS | 10 | blink_cnt<0>  | blink_cnt<2>  | blink_cnt<1>  | blink_cnt<3>  | blink_cnt<5>  | blink_cnt<4>  | blink_cnt<8>  | blink_cnt<7>  | blink_cnt<6>  | cancel_sw_in
+INPUTMC | 9 | 3 | 1 | 4 | 5 | 3 | 6 | 4 | 4 | 4 | 3 | 3 | 13 | 4 | 1 | 3 | 3 | 3 | 4
+INPUTP | 1 | 81
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   blink_cnt<9>.T := blink_cnt<0> & blink_cnt<2> & blink_cnt<1> & 
+	blink_cnt<3> & blink_cnt<5> & blink_cnt<4> & blink_cnt<8> & 
+	blink_cnt<7> & blink_cnt<6>;	// (1 pt, 9 inp)
+    blink_cnt<9>.CLK = cnt1ms;	// CTC	(1 pt, 1 inp)
+    blink_cnt<9>.AR = !cancel_sw_in;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 11 | 10 | pa_sw1_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 5 | cancel_sw_in  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 4 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTP | 1 | 81
+EQ | 2 | 
+   !pa_sw1 = cancel_sw_in & !dtmf_in<0> & dtmf_in<1> & 
+	!dtmf_in<2> & dtmf_in<3>;	// (1 pt, 5 inp)
+
+MACROCELL | 15 | 4 | pei_led_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 5 | cancel_sw_in  | current_st<1>  | current_st<2>  | current_st<0>  | blink_sig
+INPUTMC | 4 | 2 | 8 | 0 | 3 | 0 | 13 | 3 | 0
+INPUTP | 1 | 81
+EQ | 6 | 
+   !pei_led = cancel_sw_in & current_st<1> & !current_st<2> & 
+	current_st<0>
+	# cancel_sw_in & current_st<1> & !current_st<2> & 
+	!blink_sig
+	# cancel_sw_in & !current_st<2> & current_st<0> & 
+	!blink_sig;	// (3 pt, 5 inp)
+
+MACROCELL | 9 | 0 | pei_mute_sp_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 1 | cancel_sw_in
+INPUTP | 1 | 81
+EQ | 1 | 
+   pei_mute_sp = !cancel_sw_in;	// (1 pt, 1 inp)
+
+MACROCELL | 0 | 5 | rxs<0>_MC
+ATTRIBUTES | 168559488 | 0
+INPUTS | 1 | rxs_0__and0000/rxs_0__and0000_D.UIM
+INPUTMC | 1 | 0 | 15
+LCT | 2 | 4 | Internal_Name | 2 | Internal_Name
+EQ | 5 | 
+   !rxs<0>.D = Gnd;	// (0 pt, 0 inp)
+    rxs<0>.LH = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	dtmf_in<2> & !dtmf_in<3>;	// CTC	(1 pt, 5 inp)
+    rxs<0>.AP = rxs_0__and0000/rxs_0__and0000_D.UIM;	// PTA	(1 pt, 1 inp)
+    rxs<0>.AR = !cancel_sw_in;	// CTR	(1 pt, 1 inp)
+
+MACROCELL | 0 | 11 | rxs<1>_MC
+ATTRIBUTES | 151782160 | 0
+INPUTS | 5 | cancel_sw_in  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 4 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTP | 1 | 81
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   !rxs<1>.D = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	!dtmf_in<2> & dtmf_in<3>;	// (1 pt, 5 inp)
+    rxs<1>.LH = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	dtmf_in<2> & !dtmf_in<3>;	// CTC	(1 pt, 5 inp)
+    rxs<1>.AP = !rxs_2__or0000/rxs_2__or0000_D.UIM;	// CTS	(1 pt, 1 inp)
+    rxs<1>.AR = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	!dtmf_in<2> & dtmf_in<3>;	// PTA	(1 pt, 5 inp)
+
+MACROCELL | 0 | 12 | rxs<2>_MC
+ATTRIBUTES | 151782160 | 0
+INPUTS | 5 | cancel_sw_in  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 4 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTP | 1 | 81
+LCT | 2 | 1 | Internal_Name | 2 | Internal_Name
+EQ | 7 | 
+   rxs<2>.D = cancel_sw_in & !dtmf_in<0> & dtmf_in<1> & 
+	!dtmf_in<2> & dtmf_in<3>;	// (1 pt, 5 inp)
+    rxs<2>.LH = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	dtmf_in<2> & !dtmf_in<3>;	// CTC	(1 pt, 5 inp)
+    rxs<2>.AP = !rxs_2__or0000/rxs_2__or0000_D.UIM;	// CTS	(1 pt, 1 inp)
+    rxs<2>.AR = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	!dtmf_in<2> & dtmf_in<3>;	// PTA	(1 pt, 5 inp)
+
+MACROCELL | 2 | 0 | rxs<3>_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 1 | rxs<3>_BUFR
+INPUTMC | 1 | 5 | 10
+EQ | 1 | 
+   rxs<3> = rxs<3>_BUFR;	// (1 pt, 1 inp)
+
+MACROCELL | 5 | 10 | rxs<3>_BUFR_MC
+ATTRIBUTES | 2198340384 | 0
+OUTPUTMC | 1 | 2 | 0
+INPUTS | 5 | cancel_sw_in  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>
+INPUTMC | 4 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTP | 1 | 81
+LCT | 2 | 1 | Internal_Name | 4 | Internal_Name
+EQ | 6 | 
+   rxs<3>_BUFR.D = Gnd;	// (0 pt, 0 inp)
+    rxs<3>_BUFR.LH = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	dtmf_in<2> & !dtmf_in<3>;	// PTC	(1 pt, 5 inp)
+    rxs<3>_BUFR.AP = !cancel_sw_in;	// CTS	(1 pt, 1 inp)
+    rxs<3>_BUFR.AR = cancel_sw_in & 
+	rxs_0__and0000/rxs_0__and0000_D.UIM;	// CTR	(1 pt, 2 inp)
+
+MACROCELL | 2 | 2 | txs_mic<0>_MC
+ATTRIBUTES | 787360 | 0
+INPUTS | 6 | cancel_sw_in  | txs_mic_1__or0001/txs_mic_1__or0001_D.UIM  | both_mode  | int_mode  | ext_mode  | txs_mic_0__or0000/txs_mic_0__or0000_D.UIM
+INPUTMC | 5 | 2 | 14 | 0 | 14 | 0 | 7 | 0 | 10 | 2 | 5
+INPUTP | 1 | 81
+EQ | 4 | 
+   txs_mic<0>.D = cancel_sw_in & 
+	txs_mic_1__or0001/txs_mic_1__or0001_D.UIM;	// (1 pt, 2 inp)
+    txs_mic<0>.LH = !(!both_mode & !int_mode & !ext_mode);	// PTC	(1 pt, 3 inp)
+    txs_mic<0>.AP = txs_mic_0__or0000/txs_mic_0__or0000_D.UIM;	// PTA	(1 pt, 1 inp)
+
+MACROCELL | 2 | 5 | txs_mic_0__or0000/txs_mic_0__or0000_D.UIM_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 2 | 2
+INPUTS | 3 | rxs_2__or0000/rxs_2__or0000_D.UIM  | dtmf_in<0>  | N_PZ_281
+INPUTMC | 3 | 2 | 3 | 5 | 9 | 0 | 2
+EQ | 3 | 
+   txs_mic_0__or0000/txs_mic_0__or0000_D.UIM = !rxs_2__or0000/rxs_2__or0000_D.UIM
+	# dtmf_in<0> & rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	N_PZ_281;	// (2 pt, 3 inp)
+
+MACROCELL | 2 | 4 | txs_mic<1>_MC
+ATTRIBUTES | 34341792 | 0
+INPUTS | 5 | cancel_sw_in  | txs_mic_1__or0001/txs_mic_1__or0001_D.UIM  | both_mode  | int_mode  | ext_mode
+INPUTMC | 4 | 2 | 14 | 0 | 14 | 0 | 7 | 0 | 10
+INPUTP | 1 | 81
+LCT | 1 | 4 | Internal_Name
+EQ | 6 | 
+   txs_mic<1>.D = cancel_sw_in & 
+	txs_mic_1__or0001/txs_mic_1__or0001_D.UIM;	// (1 pt, 2 inp)
+    txs_mic<1>.LH = !(!both_mode & !int_mode & !ext_mode);	// PTC	(1 pt, 3 inp)
+    txs_mic<1>.AP = txs_mic_1__or0001/txs_mic_1__or0001_D.UIM;	// PTA	(1 pt, 1 inp)
+    txs_mic<1>.AR = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	!dtmf_in<2> & dtmf_in<3>;	// CTR	(1 pt, 5 inp)
+
+MACROCELL | 2 | 13 | txs_mic<2>_MC
+ATTRIBUTES | 17564464 | 0
+INPUTS | 10 | cancel_sw_in  | dtmf_in<0>  | dtmf_in<1>  | dtmf_in<2>  | dtmf_in<3>  | both_mode  | int_mode  | ext_mode  | rxs_2__or0000/rxs_2__or0000_D.UIM  | N_PZ_281
+INPUTMC | 9 | 5 | 9 | 5 | 8 | 5 | 7 | 5 | 6 | 0 | 14 | 0 | 7 | 0 | 10 | 2 | 3 | 0 | 2
+INPUTP | 1 | 81
+LCT | 1 | 1 | Internal_Name
+EQ | 6 | 
+   !txs_mic<2>.D = cancel_sw_in & dtmf_in<0> & !dtmf_in<1> & 
+	dtmf_in<2> & !dtmf_in<3>;	// (1 pt, 5 inp)
+    txs_mic<2>.LH = !(!both_mode & !int_mode & !ext_mode);	// PTC	(1 pt, 3 inp)
+    txs_mic<2>.AP = !rxs_2__or0000/rxs_2__or0000_D.UIM;	// CTS	(1 pt, 1 inp)
+    txs_mic<2>.AR = dtmf_in<0> & rxs_2__or0000/rxs_2__or0000_D.UIM & 
+	N_PZ_281;	// PTA	(1 pt, 3 inp)
+
+MACROCELL | 2 | 15 | txs_mic<3>_MC
+ATTRIBUTES | 1074004736 | 0
+INPUTS | 1 | txs_mic<3>_BUFR
+INPUTMC | 1 | 5 | 4
+EQ | 1 | 
+   txs_mic<3> = txs_mic<3>_BUFR;	// (1 pt, 1 inp)
+
+MACROCELL | 5 | 4 | txs_mic<3>_BUFR_MC
+ATTRIBUTES | 2164785968 | 0
+OUTPUTMC | 1 | 2 | 15
+INPUTS | 4 | both_mode  | int_mode  | ext_mode  | txs_mic_3__or0000/txs_mic_3__or0000_D.UIM
+INPUTMC | 4 | 0 | 14 | 0 | 7 | 0 | 10 | 2 | 7
+LCT | 1 | 1 | Internal_Name
+EQ | 4 | 
+   txs_mic<3>_BUFR.D = Gnd;	// (0 pt, 0 inp)
+    txs_mic<3>_BUFR.LH = !(!both_mode & !int_mode & !ext_mode);	// PTC	(1 pt, 3 inp)
+    txs_mic<3>_BUFR.AP = !cancel_sw_in;	// CTS	(1 pt, 1 inp)
+    txs_mic<3>_BUFR.AR = txs_mic_3__or0000/txs_mic_3__or0000_D.UIM;	// PTA	(1 pt, 1 inp)
+
+PIN | int_sw_in | 64 | 0 | LVTTL | 75 | 6 | 0 | 14 | 0 | 7 | 0 | 10 | 0 | 9 | 0 | 8 | 11 | 11
+PIN | cancel_sw_in | 64 | 0 | LVTTL | 81 | 51 | 4 | 15 | 5 | 5 | 2 | 12 | 14 | 13 | 3 | 9 | 3 | 7 | 0 | 14 | 4 | 14 | 0 | 10 | 2 | 1 | 3 | 8 | 0 | 4 | 2 | 10 | 0 | 6 | 0 | 15 | 2 | 11 | 0 | 9 | 0 | 0 | 2 | 3 | 2 | 9 | 0 | 8 | 0 | 1 | 0 | 13 | 0 | 3 | 2 | 8 | 13 | 15 | 6 | 12 | 3 | 12 | 3 | 10 | 4 | 12 | 3 | 14 | 15 | 5 | 8 | 0 | 11 | 11 | 3 | 6 | 3 | 13 | 3 | 4 | 3 | 3 | 3 | 2 | 3 | 1 | 3 | 0 | 13 | 13 | 11 | 10 | 15 | 4 | 9 | 0 | 0 | 11 | 0 | 12 | 5 | 10 | 2 | 2 | 2 | 4 | 2 | 13
+PIN | both_sw_in | 64 | 0 | LVTTL | 69 | 5 | 4 | 15 | 0 | 14 | 4 | 14 | 0 | 10 | 11 | 11
+PIN | ext_sw_in | 64 | 0 | LVTTL | 74 | 4 | 0 | 14 | 4 | 14 | 0 | 10 | 11 | 11
+PIN | ic_sw_in | 64 | 0 | LVTTL | 76 | 3 | 0 | 13 | 0 | 3 | 2 | 8
+PIN | pei_sw_in | 64 | 0 | LVTTL | 77 | 4 | 2 | 6 | 0 | 13 | 0 | 3 | 2 | 8
+PIN | occ_sw_in | 64 | 0 | LVTTL | 82 | 1 | 0 | 13
+PIN | hs_sw | 64 | 0 | LVTTL | 134 | 7 | 2 | 6 | 3 | 7 | 2 | 1 | 3 | 8 | 11 | 13 | 11 | 14 | 14 | 13
+PIN | clk | 4096 | 0 | LVTTL | 48 | 17 | 3 | 9 | 1 | 0 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 6 | 1 | 7 | 1 | 12 | 1 | 13 | 1 | 14 | 1 | 8 | 1 | 1 | 1 | 15 | 1 | 5 | 1 | 9 | 1 | 10
+PIN | both_led | 128 | 0 | LVTTL | 86
+PIN | cancel_led | 128 | 0 | LVTTL | 95
+PIN | dtmf_cs | 128 | 0 | LVTTL | 32
+PIN | dtmf_inout<0> | 128 | 0 | LVTTL | 30
+PIN | dtmf_inout<1> | 128 | 0 | LVTTL | 28
+PIN | dtmf_inout<2> | 128 | 0 | LVTTL | 21
+PIN | dtmf_inout<3> | 128 | 0 | LVTTL | 20
+PIN | dtmf_rs0 | 128 | 0 | LVTTL | 31
+PIN | dtmf_rw | 128 | 0 | LVTTL | 33
+PIN | dual_mute_sp | 128 | 0 | LVTTL | 169
+PIN | ext_led | 128 | 0 | LVTTL | 87
+PIN | ic_led | 128 | 0 | LVTTL | 89
+PIN | ic_mute_sp | 128 | 0 | LVTTL | 168
+PIN | int_led | 128 | 0 | LVTTL | 88
+PIN | live_sw | 128 | 0 | LVTTL | 143
+PIN | mic_sw | 128 | 0 | LVTTL | 142
+PIN | mute_sw | 128 | 0 | LVTTL | 145
+PIN | occ_led | 128 | 0 | LVTTL | 100
+PIN | pa_sw1 | 128 | 0 | LVTTL | 146
+PIN | pei_led | 128 | 0 | LVTTL | 90
+PIN | pei_mute_sp | 128 | 0 | LVTTL | 167
+PIN | rxs<0> | 128 | 0 | LVTTL | 214
+PIN | rxs<1> | 128 | 0 | LVTTL | 213
+PIN | rxs<2> | 128 | 0 | LVTTL | 212
+PIN | rxs<3> | 128 | 0 | LVTTL | 208
+PIN | txs_mic<0> | 128 | 0 | LVTTL | 206
+PIN | txs_mic<1> | 128 | 0 | LVTTL | 204
+PIN | txs_mic<2> | 128 | 0 | LVTTL | 199
+PIN | txs_mic<3> | 128 | 0 | LVTTL | 197

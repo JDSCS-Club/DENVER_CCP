@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/_CPLD/LIC-C3/decoder/DPRAMxA6xD8.xst" -ofn "D:/_CPLD/LIC-C3/decoder/DPRAMxA6xD8.syr" 

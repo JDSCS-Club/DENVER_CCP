@@ -1,0 +1,115 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.nldep
+; Created Monday, January 22, 2007, 11:28:19
+
+[Global]
+Provider=Neuron Linker
+Version=1
+Inputs=3
+Outputs=4
+Switches=13
+Parameters=30
+
+[Input_1]
+Basename=SYS3150A.sym
+Fullname=C:\LonWorks\Images\Ver14\SYS3150A.sym
+Type=3
+Size=9722
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Input_2]
+Basename=FINGER_3150.no
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.no
+Type=0
+Size=7419
+TimestampHigh=0x1c73dcc
+TimestampLow=0xfab5c46c
+
+[Input_3]
+Basename=GEN.LIB
+Fullname=C:\LONWORKS\IMAGES\VER14\GEN.LIB
+Type=3
+Size=74408
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Output_1]
+Basename=FINGER_3150.dbt
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.dbt
+Type=0
+Size=14757
+TimestampHigh=0x1c73dcc
+TimestampLow=0xfabceb7a
+
+[Output_2]
+Basename=FINGER_3150.nxr
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.nxr
+Type=0
+Size=13
+TimestampHigh=0x1c73dcc
+TimestampLow=0xfabceb7a
+
+[Output_3]
+Basename=FINGER_3150.nxe
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.nxe
+Type=0
+Size=2800
+TimestampHigh=0x1c73dcc
+TimestampLow=0xfabceb7a
+
+[Output_4]
+Basename=FINGER_3150.map
+Fullname=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.map
+Type=0
+Size=55588
+TimestampHigh=0x1c73dcc
+TimestampLow=0xfabceb7a
+
+[Switches]
+32=PL 3150
+0=1
+11=1
+9=1
+15=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.dbg
+19=DF
+18=00
+12=128
+30=C:\LonWorks\Images\Ver14\SYS3150A.sym
+27=C:\LonWorks\Images\Ver14\GEN.LIB
+27=C:\LonWorks\Images\EXTARITH.LIB
+27=C:\LonWorks\Images\PSG.LIB
+35=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.no
+
+[Parameters]
+Domains=2
+AddressTable=15
+NeuronModel=1
+NeuronKey=23
+RamStart=232
+RamEnd=239
+EEpromStart=240
+EEpromEnd=241
+ImageVersion=14
+RcvTxSize=13
+TxCtlBlkSize=28
+OnchipRamSpace=746
+OffchipRamSpace=0
+DomainSize=15
+AddressSize=5
+NvCnfgSize=3
+OnchipEEpromCnfg=134
+AliasSize=4
+RomEnd=0
+OCEEPromStart=0
+OCEEPromEnd=223
+OCRamStart=0
+OCRamEnd=0
+EEWriteTime=10
+FlashEeprom=1
+SectorSize=128
+CapabilityProxy=0
+CapabilityPhaseDetect=0
+CustomMac=0
+PrtCount=0
+

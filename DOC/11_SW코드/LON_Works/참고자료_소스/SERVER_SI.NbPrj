@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NBProject>
+	<Contents MajorVersion="0" MinorVersion="0" CreationDate="1165389712" Format="1" Content="1">
+		<FileDescription>Echelon Mini Temporary Project File</FileDescription>
+	</Contents>
+	<IncludeSearchPath></IncludeSearchPath>
+	<DefaultTransceiver></DefaultTransceiver>
+	<DeviceTemplateFileNames>
+		<DeviceTemplateFileName Name="SERVER_SI.NbDt">
+			<OptionFlags>0x0</OptionFlags>
+		</DeviceTemplateFileName>
+	</DeviceTemplateFileNames>
+	<HardwareTemplateFileNames>
+		<HardwareTemplateFileName Name="C:\LonWorks\NodeBuilder\Templates\Hardware\MiniKit\PL 3120 Evaluation Board (CENELEC off).NBHWT">
+			<OptionFlags>0x0</OptionFlags>
+		</HardwareTemplateFileName>
+	</HardwareTemplateFileNames>
+</NBProject>

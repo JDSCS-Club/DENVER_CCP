@@ -1,0 +1,1288 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:12
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_rccu.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW4533.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_rccu.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_rccu.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_rccu.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_rccu.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_rccu.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : This file provides all the RCCU firmware functions.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "71x_rccu.h"
+     18          #include "71x_conf.h"
+     19          
+     20          /* Private typedef -----------------------------------------------------------*/
+     21          /* Private define ------------------------------------------------------------*/
+     22          /* Private macro -------------------------------------------------------------*/
+     23          /* Private variables ---------------------------------------------------------*/
+     24          /* Private function prototypes -----------------------------------------------*/
+     25          /* Private functions ---------------------------------------------------------*/
+     26          
+     27          /*******************************************************************************
+     28          * Function Name  : RCCU_Div2Config
+     29          * Description    : This routine is used to enable or disable the programmable
+     30          *                  clock division of the CLOCK1 input clock signal by 2. It 
+     31          *                  sets or clears the Div2 flag in the CLK_FLAG register.
+     32          * Input          : - NewState: specifies whether the programmable divider can 
+     33          *                     divide the CLOCK1 input clock signal by two or not.
+     34          *                     it can be: 
+     35          *                     ENABLE to enable the division by two of CLK signal. 
+     36          *                     DISABLE to disable the division by two of CLK signal.
+     37          * Output         : None.
+     38          * Return         : None.
+     39          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     40          void RCCU_Div2Config (FunctionalState NewState)
+     41          {
+     42            /* CLK is divided by 2 */	
+     43            if (NewState == ENABLE)
+   \                     RCCU_Div2Config:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0001        CMP      R0,#+1
+   \        0x8   0x1A00'0004        BNE      ??RCCU_Div2Config_0
+     44            {
+     45              RCCU->CFR |= RCCU_Div2_Mask;
+   \        0xC   0xE3A0'028A        MOV      R0,#-1610612728
+   \       0x10   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x14   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x18   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x1C   0xEA00'0003        B        ??RCCU_Div2Config_1
+     46            }  
+     47            /* No division of CLK frequency */
+     48            else
+     49            {
+     50              RCCU->CFR &= ~RCCU_Div2_Mask;
+   \                     ??RCCU_Div2Config_0:
+   \       0x20   0xE3A0'028A        MOV      R0,#-1610612728
+   \       0x24   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x28   0xE3D1'1C80        BICS     R1,R1,#0x8000
+   \       0x2C   0xE580'1000        STR      R1,[R0, #+0]
+     51            }
+     52          }
+   \                     ??RCCU_Div2Config_1:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+     53          
+     54          /*******************************************************************************
+     55          * Function Name  : RCCU_Div2Status
+     56          * Description    : This routine is used to get the current status of the
+     57          *                  programmable clock division by two. It checks the status 
+     58          *                  of the Div2 flag in the CLK_FLAG register.
+     59          * Input          : None.
+     60          * Output         : None.
+     61          * Return         : The Div2 Flag status.
+     62          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     63          FlagStatus RCCU_Div2Status (void)
+     64          {
+     65            if ((RCCU->CFR & RCCU_Div2_Mask) == 0)
+   \                     RCCU_Div2Status:
+   \        0x0   0xE3A0'028A        MOV      R0,#-1610612728
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE310'0C80        TST      R0,#0x8000
+   \        0xC   0x1A00'0001        BNE      ??RCCU_Div2Status_0
+     66            {
+     67              return RESET;
+   \       0x10   0xE3A0'0000        MOV      R0,#+0
+   \       0x14   0xEA00'0000        B        ??RCCU_Div2Status_1
+     68            }
+     69            else
+     70            {
+     71              return SET;	
+   \                     ??RCCU_Div2Status_0:
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \                     ??RCCU_Div2Status_1:
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+     72            }
+     73          }
+     74          
+     75          /*******************************************************************************
+     76          * Function Name  : RCCU_MCLKConfig
+     77          * Description    : This routine is used to configure the MCLK clock divider.
+     78          * Input          : - New_Clock: Specifies the MCLK clock divider value. 
+     79          *                     it can be: 
+     80          *                     RCCU_DEFAULT, RCCU_RCLK_2, RCCU_RCLK_4, RCCU_RCLK_8                   
+     81          * Output         : None.
+     82          * Return         : None.
+     83          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     84          void RCCU_MCLKConfig (RCCU_Clock_Div New_Clock)
+     85          {
+     86            PCU->MDIVR = (PCU->MDIVR & ~RCCU_FACT_Mask) | New_Clock;
+   \                     RCCU_MCLKConfig:
+   \        0x0   0xE3A0'1040        MOV      R1,#+64
+   \        0x4   0xE381'14A0        ORR      R1,R1,#0xA0000000
+   \        0x8   0xE1D1'20B0        LDRH     R2,[R1, #+0]
+   \        0xC   0xE3A0'30FC        MOV      R3,#+252
+   \       0x10   0xE383'3CFF        ORR      R3,R3,#0xFF00
+   \       0x14   0xE013'2002        ANDS     R2,R3,R2
+   \       0x18   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x1C   0xE190'0002        ORRS     R0,R0,R2
+   \       0x20   0xE1C1'00B0        STRH     R0,[R1, #+0]
+     87          }
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+     88          
+     89          /*******************************************************************************
+     90          * Function Name  : RCCU_PCLK1Config
+     91          * Description    : Selects the division factor for RCLK to obtain the
+     92          *                  PCLK1 clock for the APB1 fast peripherals (PCLK1).
+     93          * Input          : - New_Clock : the new PCLK1 clock prescaler division value
+     94          *                     it can be: 
+     95          *                     RCCU_DEFAULT, RCCU_RCLK_2, RCCU_RCLK_4, RCCU_RCLK_8
+     96          * Output         : None.
+     97          * Return         : None.
+     98          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     99          void RCCU_PCLK1Config (RCCU_Clock_Div New_Clock)
+    100          {
+    101            PCU->PDIVR = (PCU->PDIVR & ~RCCU_FACT1_Mask) | New_Clock;
+   \                     RCCU_PCLK1Config:
+   \        0x0   0xE3A0'1044        MOV      R1,#+68
+   \        0x4   0xE381'14A0        ORR      R1,R1,#0xA0000000
+   \        0x8   0xE1D1'20B0        LDRH     R2,[R1, #+0]
+   \        0xC   0xE3A0'30FC        MOV      R3,#+252
+   \       0x10   0xE383'3CFF        ORR      R3,R3,#0xFF00
+   \       0x14   0xE013'2002        ANDS     R2,R3,R2
+   \       0x18   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x1C   0xE190'0002        ORRS     R0,R0,R2
+   \       0x20   0xE1C1'00B0        STRH     R0,[R1, #+0]
+    102          }
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    103          
+    104          /*******************************************************************************
+    105          * Function Name  : RCCU_PCLK2Config
+    106          * Description    : Selects the division factor for RCLK to obtain the
+    107          *                  PCLK2 clock for the APB2 peripherals (PCLK2).
+    108          * Input          : - New_Clock : the new PCLK2 clock prescaler division value
+    109          *                     it can be: 
+    110          *                     RCCU_DEFAULT, RCCU_RCLK_2, RCCU_RCLK_4, RCCU_RCLK_8
+    111          * Output         : None.
+    112          * Return         : None.
+    113          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    114          void RCCU_PCLK2Config (RCCU_Clock_Div New_Clock)
+    115          {
+    116            PCU->PDIVR = (PCU->PDIVR & ~RCCU_FACT2_Mask) | (New_Clock << RCCU_FACT2_Index);
+   \                     RCCU_PCLK2Config:
+   \        0x0   0xE3A0'1044        MOV      R1,#+68
+   \        0x4   0xE381'14A0        ORR      R1,R1,#0xA0000000
+   \        0x8   0xE1D1'20B0        LDRH     R2,[R1, #+0]
+   \        0xC   0xE3A0'30FF        MOV      R3,#+255
+   \       0x10   0xE383'3CFC        ORR      R3,R3,#0xFC00
+   \       0x14   0xE013'2002        ANDS     R2,R3,R2
+   \       0x18   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x1C   0xE192'0400        ORRS     R0,R2,R0, LSL #+8
+   \       0x20   0xE1C1'00B0        STRH     R0,[R1, #+0]
+    117          }
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    118          
+    119          /*******************************************************************************
+    120          * Function Name  : RCCU_PLL1Config
+    121          * Description    : Configures the PLL1 division and multiplication factors.
+    122          * Input          : - New_Mul: the PLL1 multiplication factor it can be: 
+    123          *                     RCCU_PLL1_Mul_12, RCCU_PLL1_Mul_16,RCCU_PLL1_Mul_20,
+    124          *                     RCCU_PLL1_Mul_24
+    125          *                  - New_Div: the PLL1 division factor it can be: 
+    126          *                     RCCU_Div_1, RCCU_Div_2, RCCU_Div_3, RCCU_Div_4,RCCU_Div_5,
+    127          *                     RCCU_Div_6, RCCU_Div_7
+    128          * Output         : None.
+    129          * Return         : None.
+    130          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    131          void RCCU_PLL1Config (RCCU_PLL1_Mul New_Mul, RCCU_PLL_Div New_Div)
+    132          {
+   \                     RCCU_PLL1Config:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    133            /* Turn off the PLL1 by setting bits DX[2:0] */
+    134            RCCU->PLL1CR = 0x0007;
+   \        0x4   0xE3A0'4018        MOV      R4,#+24
+   \        0x8   0xE384'44A0        ORR      R4,R4,#0xA0000000
+   \        0xC   0xE3A0'2007        MOV      R2,#+7
+   \       0x10   0xE584'2000        STR      R2,[R4, #+0]
+    135             
+    136            /* Set the PLL1 multiplication factor */
+    137            RCCU->PLL1CR =  New_Mul << RCCU_MX_Index;
+   \       0x14   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x18   0xE1B0'0200        LSLS     R0,R0,#+4
+   \       0x1C   0xE584'0000        STR      R0,[R4, #+0]
+    138          
+    139            /* Set the PLL1 division factor */
+    140            RCCU->PLL1CR |=  New_Div;
+   \       0x20   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x24   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x28   0xE191'0000        ORRS     R0,R1,R0
+   \       0x2C   0xE584'0000        STR      R0,[R4, #+0]
+    141          
+    142            /* Set the PLL1 FREF_RANGE bit according to the PLL1 input frequency */
+    143            if (RCCU_FrequencyValue(RCCU_CLK2) > 3000000)
+   \       0x30   0xE3A0'0000        MOV      R0,#+0
+   \       0x34   0x....'....        BL       RCCU_FrequencyValue
+   \       0x38   0x....'....        LDR      R1,??DataTable1  ;; 0x2dc6c1
+   \       0x3C   0xE150'0001        CMP      R0,R1
+   \       0x40   0x3A00'0002        BCC      ??RCCU_PLL1Config_0
+    144            {
+    145              RCCU->PLL1CR |= RCCU_FREFRANGE_Mask;
+   \       0x44   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x48   0xE390'0040        ORRS     R0,R0,#0x40
+   \       0x4C   0xE584'0000        STR      R0,[R4, #+0]
+    146            }
+    147             
+    148            /* Set the CK2_16 Bit in the CFR to allow PLL1 to be selected */
+    149            RCCU->CFR |= RCCU_CK2_16_Mask;
+   \                     ??RCCU_PLL1Config_0:
+   \       0x50   0xE3A0'028A        MOV      R0,#-1610612728
+   \       0x54   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x58   0xE391'1008        ORRS     R1,R1,#0x8
+   \       0x5C   0xE580'1000        STR      R1,[R0, #+0]
+    150          }
+   \       0x60   0xE8BD'4010        POP      {R4,LR}
+   \       0x64   0xE12F'FF1E        BX       LR               ;; return
+    151          
+    152          /*******************************************************************************
+    153          * Function Name  : RCCU_PLL2Config
+    154          * Description    : Configures the PLL2 division and multiplication factors.
+    155          * Input          : - New_Mul: the PLL2 multplication factor it can be:
+    156          *                     RCCU_PLL2_Mul_12, RCCU_PLL2_Mul_16, RCCU_PLL2_Mul_20,
+    157          *                     RCCU_Mul_PLL2_28
+    158          *                : - New_Div: the PLL2 division factor it can be:
+    159          *                     RCCU_Div_1, RCCU_Div_2, RCCU_Div_3, RCCU_Div_4,
+    160          *                     RCCU_Div_5, RCCU_Div_6, RCCU_Div_7
+    161          *                  - HCLK_Clock: the clock value present on HCLK pin (in Hz).  
+    162          * Output         : None.
+    163          * Return         : None.
+    164          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    165          void RCCU_PLL2Config (RCCU_PLL2_Mul New_Mul, RCCU_PLL_Div New_Div,
+    166                                 u32 HCLK_Clock)
+    167          {
+    168            u32 Tmp = (PCU->PLL2CR & ~RCCU_MX_Mask) | (New_Mul << RCCU_MX_Index);
+   \                     RCCU_PLL2Config:
+   \        0x0   0xE3A0'304C        MOV      R3,#+76
+   \        0x4   0xE383'34A0        ORR      R3,R3,#0xA0000000
+   \        0x8   0xE1D3'C0B0        LDRH     R12,[R3, #+0]
+   \        0xC   0xE3DC'C030        BICS     R12,R12,#0x30
+   \       0x10   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x14   0xE19C'0200        ORRS     R0,R12,R0, LSL #+4
+    169            PCU->PLL2CR = (Tmp & ~RCCU_DX_Mask) | (New_Div  | RCCU_PLLEN_Mask);
+   \       0x18   0xE3A0'C0F8        MOV      R12,#+248
+   \       0x1C   0xE38C'CCFF        ORR      R12,R12,#0xFF00
+   \       0x20   0xE01C'0000        ANDS     R0,R12,R0
+   \       0x24   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x28   0xE391'1080        ORRS     R1,R1,#0x80
+   \       0x2C   0xE191'0000        ORRS     R0,R1,R0
+   \       0x30   0xE1C3'00B0        STRH     R0,[R3, #+0]
+    170            
+    171            /* Set the PLL2 FRQRNG bit according to the PLL2 input frequency */
+    172            if (HCLK_Clock < 3000000)
+   \       0x34   0xE3A0'09B7        MOV      R0,#+2998272
+   \       0x38   0xE380'0E6C        ORR      R0,R0,#0x6C0
+   \       0x3C   0xE152'0000        CMP      R2,R0
+   \       0x40   0x2A00'0005        BCS      ??RCCU_PLL2Config_0
+    173            {
+    174              PCU->PLL2CR &= ~RCCU_FRQRNG_Mask;
+   \       0x44   0xE1D3'00B0        LDRH     R0,[R3, #+0]
+   \       0x48   0xE3A0'10BF        MOV      R1,#+191
+   \       0x4C   0xE381'1CFF        ORR      R1,R1,#0xFF00
+   \       0x50   0xE011'0000        ANDS     R0,R1,R0
+   \       0x54   0xE1C3'00B0        STRH     R0,[R3, #+0]
+   \       0x58   0xEA00'0002        B        ??RCCU_PLL2Config_1
+    175            }
+    176            else
+    177            {
+    178              PCU->PLL2CR |= RCCU_FRQRNG_Mask;
+   \                     ??RCCU_PLL2Config_0:
+   \       0x5C   0xE1D3'00B0        LDRH     R0,[R3, #+0]
+   \       0x60   0xE390'0040        ORRS     R0,R0,#0x40
+   \       0x64   0xE1C3'00B0        STRH     R0,[R3, #+0]
+    179            }
+    180          }
+   \                     ??RCCU_PLL2Config_1:
+   \       0x68   0xE12F'FF1E        BX       LR               ;; return
+    181          
+    182          /*******************************************************************************
+    183          * Function Name  : RCCU_RCLKSourceConfig
+    184          * Description    : Selects the clock source for the RCLK.
+    185          * Input          : - New_Clock: the RCLK clock source, it can be:
+    186          *                     RCCU_PLL1_Output, RCCU_CLOCK2_16, RCCU_CLOCK2, RCCU_CK_AF                               
+    187          * Output         : None.
+    188          * Return         : None.
+    189          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    190          void RCCU_RCLKSourceConfig (RCCU_RCLK_Clocks New_Clock)
+    191          {
+   \                     RCCU_RCLKSourceConfig:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    192            switch (New_Clock)
+   \        0x4   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x8   0xE350'0003        CMP      R0,#+3
+   \        0xC   0x8A00'0032        BHI      ??RCCU_RCLKSourceConfig_1
+   \       0x10   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \       0x14   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??RCCU_RCLKSourceConfig_0:
+   \       0x18   0x16 0x0D          DC8      0x16,0xD,0x0,0x2B
+   \              0x00 0x2B    
+    193            {
+    194              case RCCU_CLOCK2:
+    195                /* Reset the CSU_CKSEL bit: CLK2 provides the system clock */
+    196                RCCU->CFR &= ~RCCU_CSU_CKSEL_Mask;
+   \                     ??RCCU_RCLKSourceConfig_2:
+   \       0x1C   0xE3A0'028A        MOV      R0,#-1610612728
+   \       0x20   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x24   0xE3D1'1001        BICS     R1,R1,#0x1
+   \       0x28   0xE580'1000        STR      R1,[R0, #+0]
+    197                /* Set the CK2_16 Bit in the CFR */
+    198                RCCU->CFR |= RCCU_CK2_16_Mask;
+   \       0x2C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x30   0xE391'1008        ORRS     R1,R1,#0x8
+   \       0x34   0xE580'1000        STR      R1,[R0, #+0]
+    199                /* Deselect The CKAF */
+    200                RCCU->CCR   &= ~RCCU_CKAF_SEL_Mask;
+   \       0x38   0xE3A0'04A0        MOV      R0,#-1610612736
+   \       0x3C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x40   0xE3D1'1004        BICS     R1,R1,#0x4
+   \       0x44   0xE580'1000        STR      R1,[R0, #+0]
+    201                /* Switch off the PLL1 */
+    202                RCCU_PLL1Disable();
+   \       0x48   0x....'....        BL       RCCU_PLL1Disable
+    203                break;
+   \       0x4C   0xEA00'0022        B        ??RCCU_RCLKSourceConfig_1
+    204              
+    205              case RCCU_CLOCK2_16:
+    206                /* Reset the CK2_16 Bit in the CFR */
+    207                RCCU->CFR &= ~RCCU_CK2_16_Mask;
+   \                     ??RCCU_RCLKSourceConfig_3:
+   \       0x50   0xE3A0'028A        MOV      R0,#-1610612728
+   \       0x54   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x58   0xE3D1'1008        BICS     R1,R1,#0x8
+   \       0x5C   0xE580'1000        STR      R1,[R0, #+0]
+    208                /* Deselect The CKAF */
+    209                RCCU->CCR   &= ~RCCU_CKAF_SEL_Mask;
+   \       0x60   0xE3A0'04A0        MOV      R0,#-1610612736
+   \       0x64   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x68   0xE3D1'1004        BICS     R1,R1,#0x4
+   \       0x6C   0xE580'1000        STR      R1,[R0, #+0]
+    210                break;
+   \       0x70   0xEA00'0019        B        ??RCCU_RCLKSourceConfig_1
+    211          
+    212              case RCCU_PLL1_Output:
+    213                /* Set the CK2_16 Bit in the CFR */
+    214                RCCU->CFR |= RCCU_CK2_16_Mask;
+   \                     ??RCCU_RCLKSourceConfig_4:
+   \       0x74   0xE3A0'028A        MOV      R0,#-1610612728
+   \       0x78   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x7C   0xE391'1008        ORRS     R1,R1,#0x8
+   \       0x80   0xE580'1000        STR      R1,[R0, #+0]
+    215                
+    216                /* If all DX bit are set the PLL lock flag in meaningless */
+    217                if ((RCCU->PLL1CR & 0x0007) != 7)
+   \       0x84   0xE3A0'1018        MOV      R1,#+24
+   \       0x88   0xE381'14A0        ORR      R1,R1,#0xA0000000
+   \       0x8C   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x90   0xE211'1007        ANDS     R1,R1,#0x7
+   \       0x94   0xE351'0007        CMP      R1,#+7
+   \       0x98   0x0A00'0002        BEQ      ??RCCU_RCLKSourceConfig_5
+    218                {
+    219                	/* Waits the PLL1 to lock if DX bits are different from '111' */
+    220                  while (!(RCCU->CFR & RCCU_LOCK_Mask))
+   \                     ??RCCU_RCLKSourceConfig_6:
+   \       0x9C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xA0   0xE311'0002        TST      R1,#0x2
+   \       0xA4   0x0AFF'FFFC        BEQ      ??RCCU_RCLKSourceConfig_6
+    221                  {}
+    222                }
+    223                /* Deselect The CKAF */
+    224                RCCU->CCR  &= ~RCCU_CKAF_SEL_Mask;
+   \                     ??RCCU_RCLKSourceConfig_5:
+   \       0xA8   0xE3A0'14A0        MOV      R1,#-1610612736
+   \       0xAC   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0xB0   0xE3D2'2004        BICS     R2,R2,#0x4
+   \       0xB4   0xE581'2000        STR      R2,[R1, #+0]
+    225                /* Select The CSU_CKSEL */
+    226                RCCU->CFR |= RCCU_CSU_CKSEL_Mask;
+   \       0xB8   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xBC   0xE391'1001        ORRS     R1,R1,#0x1
+   \       0xC0   0xE580'1000        STR      R1,[R0, #+0]
+    227                break;
+   \       0xC4   0xEA00'0004        B        ??RCCU_RCLKSourceConfig_1
+    228              
+    229              case RCCU_CK_AF:
+    230                /* Set CKAF_SEL bit */
+    231                RCCU->CCR |= 0x04;
+   \                     ??RCCU_RCLKSourceConfig_7:
+   \       0xC8   0xE3A0'04A0        MOV      R0,#-1610612736
+   \       0xCC   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xD0   0xE391'1004        ORRS     R1,R1,#0x4
+   \       0xD4   0xE580'1000        STR      R1,[R0, #+0]
+    232                /* Switch off the PLL1 */
+    233                RCCU_PLL1Disable();
+   \       0xD8   0x....'....        BL       RCCU_PLL1Disable
+    234                break;
+    235              
+    236            }
+    237          }
+   \                     ??RCCU_RCLKSourceConfig_1:
+   \       0xDC   0xE8BD'4001        POP      {R0,LR}
+   \       0xE0   0xE12F'FF1E        BX       LR               ;; return
+    238          
+    239          /*******************************************************************************
+    240          * Function Name  : RCCU_RCLKClockSource
+    241          * Description    : Gets and returns the current clock source of the RCLK.
+    242          * Input          : None.
+    243          * Output         : None.
+    244          * Return         : The current RCLK clock source which can be:
+    245          *                  RCCU_PLL1_Output, RCCU_CLOCK2_16, RCCU_CLOCK2, RCCU_CK_AF
+    246          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    247          RCCU_RCLK_Clocks RCCU_RCLKClockSource (void)
+    248          {
+    249            /* RCLK = CK_AF */
+    250            if (RCCU->CCR & RCCU_CKAF_SEL_Mask)
+   \                     RCCU_RCLKClockSource:
+   \        0x0   0xE3A0'04A0        MOV      R0,#-1610612736
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE310'0004        TST      R0,#0x4
+   \        0xC   0x0A00'0001        BEQ      ??RCCU_RCLKClockSource_0
+    251            {
+    252              return RCCU_CK_AF;
+   \       0x10   0xE3A0'0003        MOV      R0,#+3
+   \       0x14   0xEA00'000B        B        ??RCCU_RCLKClockSource_1
+    253            }
+    254            
+    255            /* RCLK = CLK2/16 */
+    256            else if ((RCCU->CFR & RCCU_CK2_16_Mask) == 0)
+   \                     ??RCCU_RCLKClockSource_0:
+   \       0x18   0xE3A0'028A        MOV      R0,#-1610612728
+   \       0x1C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x20   0xE311'0008        TST      R1,#0x8
+   \       0x24   0x1A00'0001        BNE      ??RCCU_RCLKClockSource_2
+    257            {
+    258              return RCCU_CLOCK2_16;
+   \       0x28   0xE3A0'0001        MOV      R0,#+1
+   \       0x2C   0xEA00'0005        B        ??RCCU_RCLKClockSource_1
+    259            }
+    260            
+    261            /* RCLK = PLL1 output */
+    262            else if (RCCU->CFR & RCCU_CSU_CKSEL_Mask)
+   \                     ??RCCU_RCLKClockSource_2:
+   \       0x30   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x34   0xE310'0001        TST      R0,#0x1
+   \       0x38   0x0A00'0001        BEQ      ??RCCU_RCLKClockSource_3
+    263            {
+    264              return RCCU_PLL1_Output;
+   \       0x3C   0xE3A0'0000        MOV      R0,#+0
+   \       0x40   0xEA00'0000        B        ??RCCU_RCLKClockSource_1
+    265            }
+    266            
+    267            /* RCLK = CLK2 */
+    268            else 
+    269            {
+    270              return RCCU_CLOCK2;
+   \                     ??RCCU_RCLKClockSource_3:
+   \       0x44   0xE3A0'0002        MOV      R0,#+2
+   \                     ??RCCU_RCLKClockSource_1:
+   \       0x48   0xE12F'FF1E        BX       LR               ;; return
+    271            }
+    272          }
+    273          
+    274          /*******************************************************************************
+    275          * Function Name  : RCCU_USBCLKConfig
+    276          * Description    : Selects the clock source of the USB peripheral.
+    277          * Input          : - New_Clock: the USB clock source it can be:
+    278          *                     RCCU_PLL2_Output, RCCU_USBCK
+    279          * Output         : None.
+    280          * Return         : None.
+    281          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    282          void RCCU_USBCLKConfig (RCCU_USB_Clocks New_Clock)
+    283          {
+    284            /* PLL2 is the clock source to the USB */
+    285            if (New_Clock == RCCU_PLL2_Output)
+   \                     RCCU_USBCLKConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0001        CMP      R0,#+1
+   \        0x8   0x1A00'0005        BNE      ??RCCU_USBCLKConfig_0
+    286            {
+    287              PCU->PLL2CR |= RCCU_USBEN_Mask;
+   \        0xC   0xE3A0'004C        MOV      R0,#+76
+   \       0x10   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x14   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x18   0xE391'1F40        ORRS     R1,R1,#0x100
+   \       0x1C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+   \       0x20   0xEA00'0006        B        ??RCCU_USBCLKConfig_1
+    288            }
+    289            
+    290            /* USBCLK pin is the clock source to the USB */
+    291            else 
+    292            {
+    293              PCU->PLL2CR &= ~RCCU_USBEN_Mask;
+   \                     ??RCCU_USBCLKConfig_0:
+   \       0x24   0xE3A0'004C        MOV      R0,#+76
+   \       0x28   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x2C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x30   0xE3A0'20FF        MOV      R2,#+255
+   \       0x34   0xE382'2CFE        ORR      R2,R2,#0xFE00
+   \       0x38   0xE012'1001        ANDS     R1,R2,R1
+   \       0x3C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    294            }
+    295          }
+   \                     ??RCCU_USBCLKConfig_1:
+   \       0x40   0xE12F'FF1E        BX       LR               ;; return
+    296          
+    297          /*******************************************************************************
+    298          * Function Name  : RCCU_USBClockSource
+    299          * Description    : Get the clock source of the USB peripheral.
+    300          * Input          : None.
+    301          * Output         : None.
+    302          * Return         : RCCU_USB_Clocks
+    303          *                  it can be: RCCU_PLL2_Output, RCCU_USBCK
+    304          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    305          RCCU_USB_Clocks RCCU_USBClockSource (void)
+    306          {
+    307            if (PCU->PLL2CR & RCCU_USBEN_Mask)
+   \                     RCCU_USBClockSource:
+   \        0x0   0xE3A0'004C        MOV      R0,#+76
+   \        0x4   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \        0x8   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \        0xC   0xE310'0F40        TST      R0,#0x100
+   \       0x10   0x0A00'0001        BEQ      ??RCCU_USBClockSource_0
+    308            {
+    309              return RCCU_PLL2_Output;
+   \       0x14   0xE3A0'0001        MOV      R0,#+1
+   \       0x18   0xEA00'0000        B        ??RCCU_USBClockSource_1
+    310            }
+    311            else
+    312            {
+    313              return RCCU_USBCK;
+   \                     ??RCCU_USBClockSource_0:
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??RCCU_USBClockSource_1:
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    314            }
+    315          }
+    316          
+    317          /*******************************************************************************
+    318          * Function Name  : RCCU_FrequencyValue
+    319          * Description    : Computes and Returns any internal RCCU clock frequency
+    320          *                  value passed in parametres.
+    321          * Input          : - Internal_Clk: the RCCU internal clock to compute the
+    322          *                    frequency.
+    323          *                     it can be:
+    324          *                     RCCU_CLK2, RCCU_RCLK, RCCU_MCLK, RCCU_PCLK2, RCCU_PCLK1
+    325          * Output         : None.
+    326          * Return         : The frequency value of the specified clock in Hz of the 
+    327          *                  internal clock passed in parameter.
+    328          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    329          u32 RCCU_FrequencyValue (RCCU_Clocks Internal_Clk)
+    330          {
+   \                     RCCU_FrequencyValue:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'5000        MOVS     R5,R0
+    331            u32 Tmp;
+    332            u8 Div = 0;
+   \        0x8   0xE3A0'6000        MOV      R6,#+0
+   \        0xC   0xE1B0'7006        MOVS     R7,R6
+    333            u8 Mul = 0;
+    334            RCCU_RCLK_Clocks CurrentRCLK;
+    335           
+    336            if (RCCU_Div2Status() == SET)
+   \       0x10   0x....'....        BL       RCCU_Div2Status
+   \       0x14   0xE350'0001        CMP      R0,#+1
+   \       0x18   0x1A00'0002        BNE      ??RCCU_FrequencyValue_2
+    337            {
+    338              Tmp = RCCU_Main_Osc / 2;	
+   \       0x1C   0xE3A0'487A        MOV      R4,#+7995392
+   \       0x20   0xE384'4D48        ORR      R4,R4,#0x1200
+   \       0x24   0xEA00'0001        B        ??RCCU_FrequencyValue_3
+    339            }
+    340            else
+    341            {
+    342              Tmp = RCCU_Main_Osc;
+   \                     ??RCCU_FrequencyValue_2:
+   \       0x28   0xE3A0'48F4        MOV      R4,#+15990784
+   \       0x2C   0xE384'4D90        ORR      R4,R4,#0x2400
+    343            }
+    344          
+    345            if (Internal_Clk == RCCU_CLK2)
+   \                     ??RCCU_FrequencyValue_3:
+   \       0x30   0xE1B0'0005        MOVS     R0,R5
+   \       0x34   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x38   0xE350'0000        CMP      R0,#+0
+   \       0x3C   0x1A00'0002        BNE      ??RCCU_FrequencyValue_4
+    346            {
+    347              Div = 1;
+   \       0x40   0xE3A0'7001        MOV      R7,#+1
+    348              Mul = 1;
+   \       0x44   0xE3A0'6001        MOV      R6,#+1
+   \       0x48   0xEA00'0043        B        ??RCCU_FrequencyValue_5
+    349            }
+    350            
+    351            else
+    352            {
+    353              CurrentRCLK = RCCU_RCLKClockSource ();
+   \                     ??RCCU_FrequencyValue_4:
+   \       0x4C   0x....'....        BL       RCCU_RCLKClockSource
+    354              switch (CurrentRCLK)
+   \       0x50   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x54   0xE350'0003        CMP      R0,#+3
+   \       0x58   0x8A00'003F        BHI      ??RCCU_FrequencyValue_5
+   \       0x5C   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \       0x60   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??RCCU_FrequencyValue_0:
+   \       0x64   0x06 0x00          DC8      0x6,0x0,0x3,0x3A
+   \              0x03 0x3A    
+    355              {
+    356                case RCCU_CLOCK2_16 :
+    357                  Div = 16;
+   \                     ??RCCU_FrequencyValue_6:
+   \       0x68   0xE3A0'7010        MOV      R7,#+16
+    358                  Mul = 1;
+   \       0x6C   0xE3A0'6001        MOV      R6,#+1
+    359                  break;
+   \       0x70   0xEA00'0039        B        ??RCCU_FrequencyValue_5
+    360                  
+    361                case RCCU_CLOCK2 :
+    362                  Div = 1;
+   \                     ??RCCU_FrequencyValue_7:
+   \       0x74   0xE3A0'7001        MOV      R7,#+1
+    363                  Mul = 1;
+   \       0x78   0xE3A0'6001        MOV      R6,#+1
+    364                  break;
+   \       0x7C   0xEA00'0036        B        ??RCCU_FrequencyValue_5
+    365                  
+    366                case RCCU_PLL1_Output :
+    367                
+    368                 if ((RCCU->PLL1CR & RCCU_DX_Mask)&&(RCCU->PLL1CR & RCCU_FREEN_Mask))
+   \                     ??RCCU_FrequencyValue_8:
+   \       0x80   0xE3A0'0018        MOV      R0,#+24
+   \       0x84   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x88   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x8C   0xE311'0007        TST      R1,#0x7
+   \       0x90   0x0A00'0019        BEQ      ??RCCU_FrequencyValue_9
+   \       0x94   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x98   0xE311'0080        TST      R1,#0x80
+   \       0x9C   0x0A00'0016        BEQ      ??RCCU_FrequencyValue_9
+    369                  {
+    370                    if (RCCU->PLL1CR & 0x10)
+   \       0xA0   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xA4   0xE311'0010        TST      R1,#0x10
+   \       0xA8   0x0A00'0008        BEQ      ??RCCU_FrequencyValue_10
+    371                    {
+    372                      if (RCCU->PLL1CR & RCCU_FREFRANGE_Mask)
+   \       0xAC   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xB0   0xE310'0040        TST      R0,#0x40
+   \       0xB4   0x0A00'0002        BEQ      ??RCCU_FrequencyValue_11
+    373                      {
+    374                        Tmp = 250000;	
+   \       0xB8   0xE3A0'4090        MOV      R4,#+144
+   \       0xBC   0xE384'4BF4        ORR      R4,R4,#0x3D000
+   \       0xC0   0xEA00'000A        B        ??RCCU_FrequencyValue_12
+    375                      }
+    376                      else
+    377                      {
+    378                        Tmp = 125000;	
+   \                     ??RCCU_FrequencyValue_11:
+   \       0xC4   0xE3A0'4048        MOV      R4,#+72
+   \       0xC8   0xE384'4B7A        ORR      R4,R4,#0x1E800
+   \       0xCC   0xEA00'0007        B        ??RCCU_FrequencyValue_12
+    379                      }
+    380                    }
+    381                    else
+    382                    {
+    383                      if (RCCU->PLL1CR & RCCU_FREFRANGE_Mask)
+   \                     ??RCCU_FrequencyValue_10:
+   \       0xD0   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xD4   0xE310'0040        TST      R0,#0x40
+   \       0xD8   0x0A00'0002        BEQ      ??RCCU_FrequencyValue_13
+    384                      {
+    385                        Tmp = 500000;	
+   \       0xDC   0xE3A0'4A7A        MOV      R4,#+499712
+   \       0xE0   0xE384'4F48        ORR      R4,R4,#0x120
+   \       0xE4   0xEA00'0001        B        ??RCCU_FrequencyValue_12
+    386                      }
+    387                      else
+    388                      {
+    389                        Tmp = 250000;	
+   \                     ??RCCU_FrequencyValue_13:
+   \       0xE8   0xE3A0'4090        MOV      R4,#+144
+   \       0xEC   0xE384'4BF4        ORR      R4,R4,#0x3D000
+    390                      }
+    391                    }
+    392                    
+    393                    Div = 1;
+   \                     ??RCCU_FrequencyValue_12:
+   \       0xF0   0xE3A0'7001        MOV      R7,#+1
+    394                    Mul = 1;
+   \       0xF4   0xE3A0'6001        MOV      R6,#+1
+   \       0xF8   0xEA00'0013        B        ??RCCU_FrequencyValue_14
+    395                  }
+    396                  
+    397                 else
+    398                 {
+    399                   Mul = (RCCU->PLL1CR & RCCU_MX_Mask) >> RCCU_MX_Index;
+   \                     ??RCCU_FrequencyValue_9:
+   \       0xFC   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x100   0xE1B0'1221        LSRS     R1,R1,#+4
+   \      0x104   0xE211'6003        ANDS     R6,R1,#0x3
+    400                  
+    401                   switch (Mul)
+   \      0x108   0xE1B0'1006        MOVS     R1,R6
+   \      0x10C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \      0x110   0xE351'0003        CMP      R1,#+3
+   \      0x114   0x8A00'0009        BHI      ??RCCU_FrequencyValue_15
+   \      0x118   0xE7DF'2001        LDRB     R2,[PC, R1]
+   \      0x11C   0xE08F'F102        ADD      PC,PC,R2, LSL #+2
+   \                     ??RCCU_FrequencyValue_1:
+   \      0x120   0x00 0x02          DC8      0x0,0x2,0x4,0x6
+   \              0x04 0x06    
+    402                   {
+    403                     case 0:
+    404                       Mul = 20;
+   \                     ??RCCU_FrequencyValue_16:
+   \      0x124   0xE3A0'6014        MOV      R6,#+20
+    405                       break;
+   \      0x128   0xEA00'0004        B        ??RCCU_FrequencyValue_15
+    406                      
+    407                     case 1:
+    408                       Mul = 12;
+   \                     ??RCCU_FrequencyValue_17:
+   \      0x12C   0xE3A0'600C        MOV      R6,#+12
+    409                       break;
+   \      0x130   0xEA00'0002        B        ??RCCU_FrequencyValue_15
+    410                      
+    411                     case 2:
+    412                       Mul = 24;
+   \                     ??RCCU_FrequencyValue_18:
+   \      0x134   0xE3A0'6018        MOV      R6,#+24
+    413                       break;
+   \      0x138   0xEA00'0000        B        ??RCCU_FrequencyValue_15
+    414                      
+    415                     case 3:
+    416                       Mul = 16;
+   \                     ??RCCU_FrequencyValue_19:
+   \      0x13C   0xE3A0'6010        MOV      R6,#+16
+    417                       break;
+    418                   }
+    419                  
+    420                  Div = (RCCU->PLL1CR & RCCU_DX_Mask) + 1;
+   \                     ??RCCU_FrequencyValue_15:
+   \      0x140   0xE590'0000        LDR      R0,[R0, #+0]
+   \      0x144   0xE210'0007        ANDS     R0,R0,#0x7
+   \      0x148   0xE290'7001        ADDS     R7,R0,#+1
+    421                  }
+    422                  break;
+   \                     ??RCCU_FrequencyValue_14:
+   \      0x14C   0xEA00'0002        B        ??RCCU_FrequencyValue_5
+    423                  
+    424                case RCCU_CK_AF :
+    425                  Mul = 1;
+   \                     ??RCCU_FrequencyValue_20:
+   \      0x150   0xE3A0'6001        MOV      R6,#+1
+    426                  Div = 1;
+   \      0x154   0xE3A0'7001        MOV      R7,#+1
+    427                  Tmp = RCCU_RTC_Osc;
+   \      0x158   0xE3A0'4C80        MOV      R4,#+32768
+    428                  break;
+    429              }
+    430            }
+    431          
+    432            switch (Internal_Clk)
+   \                     ??RCCU_FrequencyValue_5:
+   \      0x15C   0xE215'50FF        ANDS     R5,R5,#0xFF      ;; Zero extend
+   \      0x160   0xE355'0002        CMP      R5,#+2
+   \      0x164   0x0A00'0004        BEQ      ??RCCU_FrequencyValue_21
+   \      0x168   0x3A00'0017        BCC      ??RCCU_FrequencyValue_22
+   \      0x16C   0xE355'0004        CMP      R5,#+4
+   \      0x170   0x0A00'0010        BEQ      ??RCCU_FrequencyValue_23
+   \      0x174   0x3A00'0006        BCC      ??RCCU_FrequencyValue_24
+   \      0x178   0xEA00'0013        B        ??RCCU_FrequencyValue_22
+    433            {
+    434              case RCCU_MCLK :
+    435                Div <<= PCU->MDIVR & RCCU_FACT_Mask;
+   \                     ??RCCU_FrequencyValue_21:
+   \      0x17C   0xE3A0'0040        MOV      R0,#+64
+   \      0x180   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \      0x184   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \      0x188   0xE210'0003        ANDS     R0,R0,#0x3
+   \      0x18C   0xE1B0'7017        LSLS     R7,R7,R0
+    436                break;
+   \      0x190   0xEA00'000D        B        ??RCCU_FrequencyValue_22
+    437                
+    438              case RCCU_PCLK2 :
+    439                Div <<= (PCU->PDIVR & RCCU_FACT2_Mask) >> RCCU_FACT2_Index;
+   \                     ??RCCU_FrequencyValue_24:
+   \      0x194   0xE3A0'0044        MOV      R0,#+68
+   \      0x198   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \      0x19C   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \      0x1A0   0xE1A0'0800        LSL      R0,R0,#+16
+   \      0x1A4   0xE1B0'0820        LSRS     R0,R0,#+16
+   \      0x1A8   0xE1B0'0440        ASRS     R0,R0,#+8
+   \      0x1AC   0xE210'0003        ANDS     R0,R0,#0x3
+   \      0x1B0   0xE1B0'7017        LSLS     R7,R7,R0
+    440                break;
+   \      0x1B4   0xEA00'0004        B        ??RCCU_FrequencyValue_22
+    441          
+    442              case RCCU_PCLK1 :
+    443                Div <<=  PCU->PDIVR & 0x3;
+   \                     ??RCCU_FrequencyValue_23:
+   \      0x1B8   0xE3A0'0044        MOV      R0,#+68
+   \      0x1BC   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \      0x1C0   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \      0x1C4   0xE210'0003        ANDS     R0,R0,#0x3
+   \      0x1C8   0xE1B0'7017        LSLS     R7,R7,R0
+    444                break;
+    445            }
+    446          
+    447            return (Tmp * Mul) / Div;
+   \                     ??RCCU_FrequencyValue_22:
+   \      0x1CC   0xE216'60FF        ANDS     R6,R6,#0xFF      ;; Zero extend
+   \      0x1D0   0xE010'0496        MULS     R0,R6,R4
+   \      0x1D4   0xE217'70FF        ANDS     R7,R7,#0xFF      ;; Zero extend
+   \      0x1D8   0xE1B0'1007        MOVS     R1,R7
+   \      0x1DC   0x....'....        BL       __aeabi_uidiv
+   \      0x1E0   0xE8BD'40F2        POP      {R1,R4-R7,LR}
+   \      0x1E4   0xE12F'FF1E        BX       LR               ;; return
+    448          }
+    449          
+    450          /*******************************************************************************
+    451          * Function Name  : RCCU_ITConfig
+    452          * Description    : Configures the RCCU interrupts
+    453          * Input          : - RCCU_IT: the RCCU interrption source it can be:
+    454          *                     RCCU_CK2_16_IT, RCCU_CKAF_IT, RCCU_PLL1_LOCK_IT,
+    455          *                     RCCU_STOP_IT
+    456          *                  - NewState: the new status of the RCCU interrupt.
+    457          *                     it can be:
+    458          *                     ENABLE: to enable the specified interrupt.
+    459          *                     DISABLE: to disable the specified interrupt.
+    460          * Output         : None.
+    461          * Return         : None.
+    462          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    463          void RCCU_ITConfig (RCCU_Interrupts RCCU_IT, FunctionalState NewState)
+    464          {
+    465            if (NewState == ENABLE)
+   \                     RCCU_ITConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'0006        BNE      ??RCCU_ITConfig_0
+    466            {
+    467              RCCU->CCR |= RCCU_IT;
+   \        0xC   0xE3A0'14A0        MOV      R1,#-1610612736
+   \       0x10   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x14   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x18   0xE1B0'0840        ASRS     R0,R0,#+16
+   \       0x1C   0xE190'0002        ORRS     R0,R0,R2
+   \       0x20   0xE581'0000        STR      R0,[R1, #+0]
+   \       0x24   0xEA00'0005        B        ??RCCU_ITConfig_1
+    468            }
+    469            else
+    470            {
+    471              RCCU->CCR &= ~RCCU_IT;
+   \                     ??RCCU_ITConfig_0:
+   \       0x28   0xE3A0'14A0        MOV      R1,#-1610612736
+   \       0x2C   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x30   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x34   0xE1B0'0840        ASRS     R0,R0,#+16
+   \       0x38   0xE1D2'0000        BICS     R0,R2,R0
+   \       0x3C   0xE581'0000        STR      R0,[R1, #+0]
+    472            }
+    473          }
+   \                     ??RCCU_ITConfig_1:
+   \       0x40   0xE12F'FF1E        BX       LR               ;; return
+    474          
+    475          /*******************************************************************************
+    476          * Function Name  : RCCU_FlagStatus
+    477          * Description    : Checks whether the specified interrupt is enabled or
+    478          *                  disabled.
+    479          * Input          : - RCCU flag: the flag to see its status it can be:
+    480          *                     RCCU_CK2_16_I, RCCU_CKAF_I, RCCU_PLL1_LOCK_I,
+    481          *                     RCCU_CKAF_ST, RCCU_PLL1_LOCK, RCCU_STOP_I
+    482          * Output         : None.
+    483          * Return         : The flag status: SET or RESET
+    484          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    485          FlagStatus RCCU_FlagStatus (RCCU_Flags RCCU_flag)
+    486          {
+    487            if (RCCU->CFR & RCCU_flag)
+   \                     RCCU_FlagStatus:
+   \        0x0   0xE3A0'128A        MOV      R1,#-1610612728
+   \        0x4   0xE591'1000        LDR      R1,[R1, #+0]
+   \        0x8   0xE1A0'0800        LSL      R0,R0,#+16
+   \        0xC   0xE1B0'0840        ASRS     R0,R0,#+16
+   \       0x10   0xE110'0001        TST      R0,R1
+   \       0x14   0x0A00'0001        BEQ      ??RCCU_FlagStatus_0
+    488            {
+    489              return SET;
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \       0x1C   0xEA00'0000        B        ??RCCU_FlagStatus_1
+    490            }
+    491            else
+    492            {
+    493              return RESET;
+   \                     ??RCCU_FlagStatus_0:
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \                     ??RCCU_FlagStatus_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    494            }
+    495          }
+    496          
+    497          /*******************************************************************************
+    498          * Function Name  : RCCU_FlagClear
+    499          * Description    : Clears the specified interrupt flag in the RCCU registers 
+    500          *                  passed in parameter.
+    501          * Input          : - RCCU_Flags: the flag wich will be cleared it can be:
+    502          *                     RCCU_PLL1_LOCK_I, RCCU_CKAF_I, RCCU_CK2_16_I, RCCU_STOP_I
+    503          * Output         : None.
+    504          * Return         : None.
+    505          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    506          void RCCU_FlagClear (RCCU_Flags RCCU_flag)
+    507          {
+    508            RCCU->CFR |= RCCU_flag;
+   \                     RCCU_FlagClear:
+   \        0x0   0xE3A0'128A        MOV      R1,#-1610612728
+   \        0x4   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0x8   0xE1A0'0800        LSL      R0,R0,#+16
+   \        0xC   0xE1B0'0840        ASRS     R0,R0,#+16
+   \       0x10   0xE190'0002        ORRS     R0,R0,R2
+   \       0x14   0xE581'0000        STR      R0,[R1, #+0]
+    509          }
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+    510          
+    511          /*******************************************************************************
+    512          * Function Name  : RCCU_ResetSources
+    513          * Description    : Returns the system reset source.
+    514          * Input          : None.
+    515          * Output         : None.
+    516          * Return         : The reset source.
+    517          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    518          RCCU_ResetSources RCCU_ResetSource (void)
+    519          {
+    520            switch (RCCU->CFR & RCCU_ResetSources_Mask)
+   \                     RCCU_ResetSource:
+   \        0x0   0xE3A0'028A        MOV      R0,#-1610612728
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE210'0E6E        ANDS     R0,R0,#0x6E0
+   \        0xC   0xE350'0020        CMP      R0,#+32
+   \       0x10   0x0A00'0008        BEQ      ??RCCU_ResetSource_0
+   \       0x14   0xE350'0040        CMP      R0,#+64
+   \       0x18   0x0A00'0008        BEQ      ??RCCU_ResetSource_1
+   \       0x1C   0xE350'0080        CMP      R0,#+128
+   \       0x20   0x0A00'0008        BEQ      ??RCCU_ResetSource_2
+   \       0x24   0xE350'0F80        CMP      R0,#+512
+   \       0x28   0x0A00'0008        BEQ      ??RCCU_ResetSource_3
+   \       0x2C   0xE350'0E40        CMP      R0,#+1024
+   \       0x30   0x0A00'0008        BEQ      ??RCCU_ResetSource_4
+   \       0x34   0xEA00'0009        B        ??RCCU_ResetSource_5
+    521            {
+    522              case 0x00000020:
+    523                return RCCU_SoftwareReset;
+   \                     ??RCCU_ResetSource_0:
+   \       0x38   0xE3A0'0020        MOV      R0,#+32
+   \       0x3C   0xEA00'0008        B        ??RCCU_ResetSource_6
+    524              case 0x00000040:
+    525                return RCCU_WDGReset;
+   \                     ??RCCU_ResetSource_1:
+   \       0x40   0xE3A0'0040        MOV      R0,#+64
+   \       0x44   0xEA00'0006        B        ??RCCU_ResetSource_6
+    526              case 0x00000080:
+    527                return RCCU_RTCAlarmReset;
+   \                     ??RCCU_ResetSource_2:
+   \       0x48   0xE3A0'0080        MOV      R0,#+128
+   \       0x4C   0xEA00'0004        B        ??RCCU_ResetSource_6
+    528              case 0x00000200:
+    529                return RCCU_LVDReset;
+   \                     ??RCCU_ResetSource_3:
+   \       0x50   0xE3A0'0F80        MOV      R0,#+512
+   \       0x54   0xEA00'0002        B        ??RCCU_ResetSource_6
+    530              case 0x00000400:
+    531                return RCCU_WKPReset;
+   \                     ??RCCU_ResetSource_4:
+   \       0x58   0xE3A0'0E40        MOV      R0,#+1024
+   \       0x5C   0xEA00'0000        B        ??RCCU_ResetSource_6
+    532              default :
+    533                return RCCU_ExternalReset;
+   \                     ??RCCU_ResetSource_5:
+   \       0x60   0xE3A0'0000        MOV      R0,#+0
+   \                     ??RCCU_ResetSource_6:
+   \       0x64   0xE12F'FF1E        BX       LR               ;; return
+    534            }
+    535          }
+    536          
+    537          /*******************************************************************************
+    538          * Function Name  : RCCU_PLL1FreeRunningModeConfig
+    539          * Description    : This function configures the PLL1 in free runnig mode.
+    540          * Input          : - NewPll1FreeRunningMode: the new free running mode 
+    541          *                     it can be:
+    542          *                      RCCU_PLL1FreeRunning125, RCCU_PLL1FreeRunning250,
+    543          *                      RCCU_PLL1FreeRunning500 
+    544          * Output         : None.
+    545          * Return         : None.
+    546          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    547          void RCCU_PLL1FreeRunningModeConfig(RCCU_PLL1FreeRunningModes
+    548                                              NewPll1FreeRunningMode)
+    549          {
+    550            /* bits DX[2:0] (RCCU_PLL1CR) are set to 111, the PLL1 is switched off */
+    551            RCCU->PLL1CR = RCCU_DX_Mask; 
+   \                     RCCU_PLL1FreeRunningModeConfig:
+   \        0x0   0xE3A0'1018        MOV      R1,#+24
+   \        0x4   0xE381'14A0        ORR      R1,R1,#0xA0000000
+   \        0x8   0xE3A0'2007        MOV      R2,#+7
+   \        0xC   0xE581'2000        STR      R2,[R1, #+0]
+    552                                              
+    553          
+    554            switch (NewPll1FreeRunningMode)
+   \       0x10   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x14   0xE350'0001        CMP      R0,#+1
+   \       0x18   0x0A00'0002        BEQ      ??RCCU_PLL1FreeRunningModeConfig_0
+   \       0x1C   0xE350'0002        CMP      R0,#+2
+   \       0x20   0x0A00'0004        BEQ      ??RCCU_PLL1FreeRunningModeConfig_1
+   \       0x24   0xEA00'0007        B        ??RCCU_PLL1FreeRunningModeConfig_2
+    555            {
+    556              case RCCU_PLL1FreeRunning250:
+    557              {
+    558                   RCCU->PLL1CR |= RCCU_FREEN_Mask | RCCU_FREFRANGE_Mask 
+    559                                   | (3 << RCCU_MX_Index);              
+   \                     ??RCCU_PLL1FreeRunningModeConfig_0:
+   \       0x28   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x2C   0xE390'00F0        ORRS     R0,R0,#0xF0
+   \       0x30   0xE581'0000        STR      R0,[R1, #+0]
+    560                break;
+   \       0x34   0xEA00'0006        B        ??RCCU_PLL1FreeRunningModeConfig_3
+    561              }
+    562              case RCCU_PLL1FreeRunning500:
+    563              {
+    564                 RCCU->PLL1CR |= RCCU_FREEN_Mask | RCCU_FREFRANGE_Mask 
+    565                                 | (2 << RCCU_MX_Index);               
+   \                     ??RCCU_PLL1FreeRunningModeConfig_1:
+   \       0x38   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x3C   0xE390'00E0        ORRS     R0,R0,#0xE0
+   \       0x40   0xE581'0000        STR      R0,[R1, #+0]
+    566                break;
+   \       0x44   0xEA00'0002        B        ??RCCU_PLL1FreeRunningModeConfig_3
+    567              }
+    568              default:
+    569              {
+    570                  RCCU->PLL1CR |= RCCU_FREEN_Mask | (3 << RCCU_MX_Index);                
+   \                     ??RCCU_PLL1FreeRunningModeConfig_2:
+   \       0x48   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x4C   0xE390'00B0        ORRS     R0,R0,#0xB0
+   \       0x50   0xE581'0000        STR      R0,[R1, #+0]
+    571                break;
+    572              }
+    573            }
+    574          }
+   \                     ??RCCU_PLL1FreeRunningModeConfig_3:
+   \       0x54   0xE12F'FF1E        BX       LR               ;; return
+    575          
+    576          /*******************************************************************************
+    577          * Function Name  : RCCU_PLL1Disable
+    578          * Description    : This function switch off the PLL1.
+    579          * Input          : None.
+    580          * Output         : None.
+    581          * Return         : None.
+    582          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    583          void RCCU_PLL1Disable(void)
+    584          {
+    585            /* Stop the PLL1 DX[0..2]=111 and FREEN=0 */
+    586            RCCU->PLL1CR = RCCU_DX_Mask;
+   \                     RCCU_PLL1Disable:
+   \        0x0   0xE3A0'0007        MOV      R0,#+7
+   \        0x4   0xE3A0'1018        MOV      R1,#+24
+   \        0x8   0xE381'14A0        ORR      R1,R1,#0xA0000000
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    587          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    588          
+    589          /*******************************************************************************
+    590          * Function Name  : RCCU_PLL2Disable
+    591          * Description    : This function switch off the PLL2.
+    592          * Input          : None.
+    593          * Output         : None.
+    594          * Return         : None.
+    595          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    596          void RCCU_PLL2Disable(void)
+    597          {
+    598            /* Stop the PLL2 DX[0..2]=111 */
+    599            PCU->PLL2CR |= RCCU_DX_Mask;
+   \                     RCCU_PLL2Disable:
+   \        0x0   0xE3A0'004C        MOV      R0,#+76
+   \        0x4   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \        0x8   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \        0xC   0xE391'1007        ORRS     R1,R1,#0x7
+   \       0x10   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    600          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    601          
+    602          /*******************************************************************************
+    603          * Function Name  : RCCU_GenerateSWReset
+    604          * Description    : This function generates software reset.
+    605          * Input          : None.
+    606          * Output         : None.
+    607          * Return         : None.
+    608          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    609          void RCCU_GenerateSWReset(void)
+    610          {
+    611            /* SRESEN = 1  and EN_HALT = 1 */	
+    612            RCCU->CCR |=0x808;   
+   \                     RCCU_GenerateSWReset:
+   \        0x0   0xE3A0'04A0        MOV      R0,#-1610612736
+   \        0x4   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0x8   0xE391'1008        ORRS     R1,R1,#0x8
+   \        0xC   0xE391'1E80        ORRS     R1,R1,#0x800
+   \       0x10   0xE580'1000        STR      R1,[R0, #+0]
+    613            
+    614            /* HALT =1   ==> software reset generation */
+    615            RCCU->SMR |=0x2;  
+   \       0x14   0xE3A0'0020        MOV      R0,#+32
+   \       0x18   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x1C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x20   0xE391'1002        ORRS     R1,R1,#0x2
+   \       0x24   0xE580'1000        STR      R1,[R0, #+0]
+    616          }
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x002D'C6C1        DC32     0x2dc6c1
+    617          
+    618          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   RCCU_Div2Config
+       0   RCCU_Div2Status
+       0   RCCU_FlagClear
+       0   RCCU_FlagStatus
+      24   RCCU_FrequencyValue
+        24   -> RCCU_Div2Status
+        24   -> RCCU_RCLKClockSource
+        24 __aeabi_uidiv
+       0   RCCU_GenerateSWReset
+       0   RCCU_ITConfig
+       0   RCCU_MCLKConfig
+       0   RCCU_PCLK1Config
+       0   RCCU_PCLK2Config
+       8   RCCU_PLL1Config
+         8   -> RCCU_FrequencyValue
+       0   RCCU_PLL1Disable
+       0   RCCU_PLL1FreeRunningModeConfig
+       0   RCCU_PLL2Config
+       0   RCCU_PLL2Disable
+       0   RCCU_RCLKClockSource
+       8   RCCU_RCLKSourceConfig
+         8   -> RCCU_PLL1Disable
+       0   RCCU_ResetSource
+       0   RCCU_USBCLKConfig
+       0   RCCU_USBClockSource
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+      52  RCCU_Div2Config
+      32  RCCU_Div2Status
+      28  RCCU_FlagClear
+      40  RCCU_FlagStatus
+     488  RCCU_FrequencyValue
+      44  RCCU_GenerateSWReset
+      68  RCCU_ITConfig
+      40  RCCU_MCLKConfig
+      40  RCCU_PCLK1Config
+      40  RCCU_PCLK2Config
+     104  RCCU_PLL1Config
+      20  RCCU_PLL1Disable
+      88  RCCU_PLL1FreeRunningModeConfig
+     108  RCCU_PLL2Config
+      24  RCCU_PLL2Disable
+      76  RCCU_RCLKClockSource
+     228  RCCU_RCLKSourceConfig
+     104  RCCU_ResetSource
+      68  RCCU_USBCLKConfig
+      36  RCCU_USBClockSource
+
+ 
+ 1 732 bytes in section .text
+ 
+ 1 732 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1105 @@
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+taengine -intstyle ise -f dpo -w --format html1 -l dpo_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+taengine -intstyle ise -f dpo -w --format html1 -l dpo_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+taengine -intstyle ise -f dpo -w --format html1 -l dpo_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+taengine -intstyle ise -f dpo -w --format html1 -l dpo_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+taengine -intstyle ise -f dpo -w --format html1 -l dpo_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused pullup -terminate pullup -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+taengine -intstyle ise -f dpo -w --format html1 -l dpo_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+taengine -intstyle ise -f dpo -w --format html1 -l dpo_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 dpo.ngc dpo.ngd  
+cpldfit -intstyle ise -p xc2c256-7-TQ144 -ofmt vhdl -optimize density -keepio -htmlrpt -loc on -slew slow -init low -nomlopt -inputs 32 -pterms 28 -unused ground -terminate float -iostd LVTTL -wysiwyg dpo.ngd 
+XSLTProcess dpo_build.xml 
+tsim -intstyle ise dpo dpo.nga 
+hprep6 -s IEEE1149 -i dpo 

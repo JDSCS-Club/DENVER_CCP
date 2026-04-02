@@ -1,0 +1,81 @@
+NET "ROM_SERIAL_SW"			LOC = "P72";
+NET "H3"					LOC = "P90";
+NET "WDI"					LOC = "P74";
+NET "DSP_RST"				LOC = "P86";
+NET "FPGA_RTS_INIT"			LOC = "P87";
+
+NET "AH<23>"				LOC = "P23";
+NET "AH<22>"				LOC = "P22";
+NET "AH<21>"				LOC = "P21";
+NET "AH<20>"				LOC = "P17";
+
+NET "AL<10>"				LOC = "P42";
+
+NET "AL<9>"					LOC = "P16";
+NET "AL<8>"					LOC = "P15";
+NET "AL<7>"					LOC = "P14";
+NET "AL<6>"					LOC = "P13";
+NET "AL<5>"					LOC = "P12";
+NET "AL<4>"					LOC = "P11";
+NET "AL<3>"					LOC = "P9";
+NET "AL<2>"					LOC = "P8";
+NET "AL<1>"					LOC = "P5";
+NET "AL<0>"					LOC = "P4";
+
+NET "D<7>"					LOC = "P2";
+NET "D<6>"					LOC = "P1";
+NET "D<5>"					LOC = "P97";
+NET "D<4>"					LOC = "P96";
+NET "D<3>"					LOC = "P92";
+NET "D<2>"					LOC = "P91";
+NET "D<1>"					LOC = "P89";
+NET "D<0>"					LOC = "P88";
+
+NET "STRB"					LOC = "P63";
+NET "RW"					LOC = "P64";
+NET "EDGE_MODE"				LOC = "P65";
+NET "RD"					LOC = "P28";
+NET "WR"					LOC = "P27";
+NET "XL16L784_CS"			LOC = "P79";
+NET "FROM_CS"				LOC = "P60";
+NET "NVSRAM_CS"				LOC = "P85";
+NET "W5100_CS"				LOC = "P81";
+NET "INT1"					LOC = "P67";
+NET "INT2"					LOC = "P68";
+NET "INT3"					LOC = "P71";
+NET "XL16L784_INT"			LOC = "P75";
+NET "W5100_INT"				LOC = "P80";
+
+NET "RUN_LED"				LOC = "P30";
+NET "ERR_LED"				LOC = "P32";
+
+NET "DIMA"					LOC = "P61";
+NET "DIMB"					LOC = "P62";
+
+NET "LRST"					LOC = "P59";
+NET "N1SERVICE_IN"			LOC = "P54";
+NET "N1SERVICE_OUT"			LOC = "P53";
+NET "LON_INT"				LOC = "P50";
+NET "LON_IRQ"				LOC = "P49";
+NET "SPI_CLK"				LOC = "P37";
+NET "SPI_SS"				LOC = "P38";
+NET "SPI_DOUT"				LOC = "P36";
+NET "SPI_DIN"				LOC = "P35";
+
+ ################################################
+ # FPGA : LONÀÇ ÇÉ ¸ÅÄ¡
+ ################################################
+ #IO0,50
+ #IO1,49
+ #IO2,47
+ #IO3,44
+ #IO4,43
+ #IO5,40
+ #IO6,39
+ #IO7,38 (SELECT)
+ #IO8,37 (CLOCK)
+ #IO9,36 (DATA OUT)
+ #IO10,35 (DATA IN)
+ #IO11,34
+
+

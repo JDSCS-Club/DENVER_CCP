@@ -1,0 +1,3533 @@
+; LONNCC32 - Echelon Echelon Neuron C Compiler for NodeBuilder FX
+; Copyright (c) Echelon Corporation 1989-2010
+; All Rights Reserved.
+; Assembly code from LONNCC32 Version 5.01.07
+; Code generated from DENVER.NC on Tue Jan 26 13:11:09 2016
+
+	SUBHEAD	Generated from the input file: F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Denver.nc
+
+	RADIX	HEX
+
+	SEG	EECODE_SPCL_1
+	ORG	0F000	; read_only_struct
+
+NBMTS	EQU	000		; number of bindable message tags
+NFBS	EQU	000		; number of functional blocks
+NNVS	EQU	012		; number of network variables
+NALIAS	EQU	00A		; number of aliases
+PROTECT	EQU	000
+RUNUNCNFGED	EQU	040
+EDMF	EQU	000		; DMF feature support required
+RODSV3	EQU	000		; read_only_data_3 required
+PROTBTE	EQU	PROTECT+000		; upper two bits of read_only_struct_2
+
+NEURONID
+	RES	8
+DIRECTORY	EXPORT
+	DATA.B	PTR TEVT-3*NNVS
+PROTECTBIT	EXPORT
+	DATA.B	PROTECT+RUNUNCNFGED+NNVS
+	DATA.B	PTR SIDATA
+PROGID	EXPORT
+	DATA.B	043,04F,04D,04D,000,000,000,000
+MODETABLE	EXPORT
+	DATA.B	07B
+	DATA.B	0A1,08A
+	DATA.B	0BE,0BE
+BUFCOUNTS	EXPORT
+	DATA.B	000,046,046
+EENEARBYTES	EXPORT
+	DATA.B	000
+	DATA.B	000,080
+	DATA.B	082,028,082
+	DATA.B	004 | _tx_by_addr            
+TX_CTRL	EQU	*-1
+	EXPORT	TX_CTRL
+
+	SEG	EECODE_SPCL_2
+	ORG		; read_only_struct_2
+RODS2
+	DATA.B	PROTBTE+NALIAS 
+	DATA.B	000
+	DATA.B	7F,000,000       
+
+	SEG	EECODE_SPCL_2
+	ORG		; read_only_struct_3
+RODS3
+	DATA.B	NNVS,NALIAS,PTR SIDATA,EDMF
+
+	SEG	EECODE_SPCL_3
+	ORG
+LOCATION
+	RES	8
+COMM
+	RES	10
+MSG
+	RES	1
+DOMAIN	EXPORT
+	RES	01E
+ADDR
+	RES	032
+TNVCNFG
+	RES	3*NNVS
+TNVALIASES
+	RES	4*NALIAS
+CONFIGCHECKSUM
+	RES	1
+        PAGE
+; Boilerplate file for compiler-generated assembly output
+; Copyright (c) 1990 - 2008 Echelon Corporation.
+; All Rights Reserved.
+; Date last modified: 
+;       29-Dec-2009  BG  Added _io_spi_get_error
+;       14-Apr-2009  BG  Added io_iaccess_wait
+;       09-Mar-2009  BG  Added io_iaccess, io_irelease
+;       18-Dec-2008  BG  Added fast/slow mode support to I2C
+
+; List of imported symbols - Library functions
+        IMPORT  delay,msec_delay,random,reverse,scaled_delay
+; List of imported symbols - Misc builtin function support
+        IMPORT  _bcd2bin,_bin2bcd,_fblock_director,_sleep
+; List of imported symbols - Compiler helper functions
+        IMPORT  _abs8,_abs16,_add16,_add_8_16f,_adds_8_16,_and16,_alloc
+        IMPORT  _bitf_sign_ext,_dealloc,_dec16,_div8,_div8s,_div16,_div16s
+        IMPORT  _drop_n,_drop_n_preserve_1,_drop_n_preserve_2,_drop_n_return_1
+        IMPORT  _drop_n_return_2,_eeprom_write,_eeprom_write_long
+        IMPORT  _eeprom_far_write,_eeprom_far_write_long,_equal8,_equal16
+        IMPORT  _gequ8,_gequ8s,_gequ16,_gequ16s,_get_sp,_inc16,_ldP0_fetchl
+        IMPORT  _less8,_less8s,_less16,_less16s,_log8,_log16,_lognot8,_lognot16
+        IMPORT  _l_shift8,_l_shift8s,_l_shift16,_l_shift16s,_l_shift8_3
+        IMPORT  _l_shift8_4,_l_shift8_5,_l_shift8_6,_l_shift8_7,_lshift8_add16
+        IMPORT  _lshift16_add16,_lshift8by1_add16,_lshift8by2_add16
+        IMPORT  _max8,_max8s,_max16,_max16s,_min8,_min8s,_min16,_min16s
+        IMPORT  _memcpy,_memcpy8,_memcpy16,_memset,_memset8,_memset16
+        IMPORT  _minus16s,_mod8,_mod8s,_mod16,_mod16s,_mul8,_mul16,_mul_8_16
+        IMPORT  _muls_8_16,_mul8l,_mul8ls,_not16,_or16
+        IMPORT  _pop,_pop1,_popd,_popd1,_push,_push1,_pushd,_pushd1
+        IMPORT  _r_shift8,_r_shift8s,_r_shift16,_r_shift16s
+        IMPORT  _r_shift8_3,_r_shift8_4,_r_shift8_5,_r_shift8_6,_r_shift8_7
+        IMPORT  _register_call,_sign_extend16,_sub16,_xor16
+        PAGE
+; List of imported symbols - I/O functions
+        IMPORT  _bit_input,_bit_output_lo1,_bit_output_lo2,_bit_output_hi
+        IMPORT  _bit_input_ext,_bit_output_ext,_bitshift_input
+        IMPORT  _bitshift_output,burst_sequence_output,_byte_input,_byte_output
+        IMPORT  _dualslope_input,_dualslope_start
+        IMPORT  _edgelog_input,edgelog_input_single,edgelog_setup_single
+        IMPORT  _frequency_output,_ir_input,_i2c_read,_i2c_write
+        IMPORT  _i2c_read0,_i2c_write0,_i2c_read_opt0,_i2c_write_opt0
+        IMPORT  _i2c_read8,_i2c_write8,_i2c_read_opt8,_i2c_write_opt8
+        IMPORT  _i2cs_read0,_i2cs_write0,_i2cs_read_opt0,_i2cs_write_opt0
+        IMPORT  _i2cs_read8,_i2cs_write8,_i2cs_read_opt8,_i2cs_write_opt8
+        IMPORT  _leveldetect_input
+        IMPORT  _magcard_input,_magt1_input,_magt2_input,magx_input
+        IMPORT  _muxbus_read,_muxbus_reread,_muxbus_write,_muxbus_rewrite
+        IMPORT  _neurowire_master,_neurowire_slave,_neurowire_inv_master
+        IMPORT  _neurowire_inv_slave,_nibble_input,_nibble_output
+        IMPORT  _oneshot_output,_parallel_input,_parallel_input_ready
+        IMPORT  _parallel_output,_parallel_output_ready,_parallel_output_request
+        IMPORT  _period_input,_pulsecount_output,_pulsewidth_output
+        IMPORT  _quadrature_input,_io_sci_baud,_io_sci_init,_io_sci_init2, _io_sci_parity
+        IMPORT  _io_sci_get_error,_io_sci_set_buffer_in,_io_sci_set_buffer_out
+        IMPORT  _io_scispi_abort,_io_scispi_input_ready,_io_scispi_output_ready
+        IMPORT  _io_spi_clock,_io_spi_init,_io_spi_init2,_io_spi_set_buffer
+        IMPORT  _io_spi_get_error
+        IMPORT  _serial_input,_serial_output,_totalize_input
+        IMPORT  _touch_bit,_touch_byte,_touch_first,_touch_next,_touch_read
+        IMPORT  _touch_reset,_touch_write,ext_touch_bit,ext_touch_byte
+        IMPORT  ext_touch_first,ext_touch_next,ext_touch_read,ext_touch_reset
+        IMPORT  ext_touch_write,_triac_level_output,_triac_pulse_output
+        IMPORT  _wiegand_input
+; List of imported symbols - I/O control functions
+        IMPORT  io_edgelog_preload
+        IMPORT  _init_baud,_init_timer_counter1,_init_timer_counter2
+        IMPORT  _io_abort_clear,_io_change_init,_io_direction_lo
+        IMPORT  _io_direction_hi,io_idis,io_iena,_io_input_value
+        IMPORT  _io_set_clock,_io_set_clock_x2,_select_input_fn
+; List of imported symbols - Messaging support
+        IMPORT  _bound_mt,_msg_alloc,_msg_alloc_priority,_msg_cancel,_msg_free
+        IMPORT  _msg_receive,_msg_send,_msg_auth_get,_msg_code_get
+        IMPORT  _msg_duplicate_get,_msg_rcvtx_get
+        IMPORT  _msg_data_blockget,_msg_data_get,_msg_len_get,_msg_service_get
+        IMPORT  _msg_auth_set,_msg_code_set,_msg_data_blockset,_msg_data_set
+        IMPORT  _msg_priority_set,_msg_service_set,_msg_tag_set,msg_tag_index
+        IMPORT  _resp_alloc,_resp_cancel,_resp_free,_resp_receive,_resp_send
+        IMPORT  _resp_code_set,_resp_data_blockset,_resp_data_set
+; List of imported symbols - Network Variable support
+        IMPORT  _bound_nv,_nv_array_poll,_nv_array_index
+        IMPORT  _nv_array_update_request,nv_in_addr,nv_in_index,_nv_poll
+        IMPORT  _nv_poll_all,_nv_update,_nv_update_int,_nv_update_int_offset
+        IMPORT  _nv_update_long,_nv_update_long_offset
+        IMPORT  _nv_update_request,_nv_update_request_all
+        PAGE
+; List of imported symbols - Timer support
+        IMPORT  _timer_get,_timer_off
+        IMPORT  _timer_mset,_timer_mset_repeat,_timer_sset,_timer_sset_repeat
+; List of imported symbols - Event support
+        IMPORT  _io_changes,_io_changes_to,_io_changes_by,_io_update_occurs
+        IMPORT  _flush_completes,_msg_arrives,_msg_code_arrives,_msg_completes
+        IMPORT  _msg_fails,_msg_succeeds,_nv_array_update_completes
+        IMPORT  _nv_array_update_fails,_nv_array_update_occurs
+        IMPORT  _nv_array_update_succeeds,_nv_update_completes,_nv_update_fails
+        IMPORT  _nv_update_succeeds,_nv_update_occurs,_offline,_online
+        IMPORT  _resp_arrives,_timer_expires,_timer_expires_any,_wink
+; List of imported symbols - Special symbols support
+        IMPORT  _arb_presf,_idem_dup,_new_binding_constraints,_query_stats
+        IMPORT  _tx_by_addr,get_current_nv_length,init_phase_detection
+        IMPORT  _nv_all
+; List of imported symbols - Debug kernel entries
+        IMPORT  _larva_entry,_larva_entry_exec,_larva_entry_notify
+        IMPORT  _larva_entry_min,_larva_reset
+; List of imported symbols - stretched triac support
+        IMPORT  _triacStrInit, _triacStrOut, _triacStrMax
+; List of imported symbols - hardware semaphore support
+        IMPORT  io_iaccess, io_irelease, io_iaccess_wait
+; End of boilerplate file
+        PAGE
+
+	IMPORT	touch_reset_spu
+	IMPORT	touch_byte_spu
+	IMPORT	touch_read_spu
+	IMPORT	touch_write_spu
+
+	IMPORT	%cp_template_file
+
+	IMPORT	%cp_modifiable_value_file
+
+	IMPORT	%cp_readonly_value_file
+
+	IMPORT	%cp_template_file_len_fake
+
+	IMPORT	%cp_modifiable_value_file_len_fake
+
+	IMPORT	%cp_readonly_value_file_len_fake
+
+	IMPORT	%fblock_index_map
+	IMPORT	%interrupt_control
+	IMPORT	crc16_ccitt
+	IMPORT	set_nv_length
+	IMPORT	get_nv_length
+	IMPORT	get_nv_type
+	IMPORT	%get_nv_length_override
+	IMPORT	%strcmp
+	IMPORT	%strcpy
+	IMPORT	%strlen
+	IMPORT	%strchr
+	IMPORT	%strcat
+	IMPORT	%strncmp
+	IMPORT	%strrchr
+	IMPORT	%strncpy
+	IMPORT	%strncat
+
+	IMPORT	config_data
+
+	IMPORT	read_only_data
+
+	IMPORT	read_only_data_2
+
+	IMPORT	read_only_data_3
+	IMPORT	access_address
+	IMPORT	access_domain
+	IMPORT	access_nv
+	IMPORT	access_alias
+	IMPORT	update_address
+	IMPORT	update_domain
+	IMPORT	update_clone_domain
+	IMPORT	update_nv
+	IMPORT	update_alias
+	IMPORT	update_config_data
+	IMPORT	update_program_id
+	IMPORT	_msg_out_addr_ptr
+	IMPORT	_msg_in_addr_ptr
+	IMPORT	_resp_in_addr_ptr
+
+	IMPORT	%s32_zero
+
+	IMPORT	%s32_one
+
+	IMPORT	%s32_minus_one
+	IMPORT	%s32_to_ascii
+	IMPORT	%s32_from_ascii
+	IMPORT	%s32_to_slong
+	IMPORT	%s32_to_ulong
+	IMPORT	%s32_from_slong
+	IMPORT	%s32_from_ulong
+	IMPORT	%s32_add
+	IMPORT	%s32_sub
+	IMPORT	%s32_mul
+	IMPORT	%s32_div
+	IMPORT	%s32_max
+	IMPORT	%s32_min
+	IMPORT	%s32_rem
+	IMPORT	%s32_abs
+	IMPORT	%s32_neg
+	IMPORT	%s32_sign
+	IMPORT	%s32_inc
+	IMPORT	%s32_dec
+	IMPORT	%s32_mul2
+	IMPORT	%s32_div2
+	IMPORT	%s32_rand
+	IMPORT	%s32_eq
+	IMPORT	%s32_ne
+	IMPORT	%s32_gt
+	IMPORT	%s32_lt
+	IMPORT	%s32_ge
+	IMPORT	%s32_le
+	IMPORT	%s32_is_zero
+	IMPORT	%s32_cmp
+
+	IMPORT	activate_service_led
+	IMPORT	application_restart
+	IMPORT	cvdd_lvi_enable
+	IMPORT	error_log
+	IMPORT	flush
+	IMPORT	flush_cancel
+	IMPORT	flush_wait
+	IMPORT	go_offline
+	IMPORT	go_unconfigured
+	IMPORT	go_configured
+	IMPORT	node_reset
+	IMPORT	offline_confirm
+	IMPORT	post_events
+	IMPORT	refresh_memory
+	IMPORT	reset_stretch_disable
+	IMPORT	service_pin_msg_send
+	IMPORT	service_pin_state
+	IMPORT	set_eeprom_lock
+	IMPORT	set_lvi
+	IMPORT	timers_off
+	IMPORT	watchdog_update
+	IMPORT	watchdog_update_old
+	IMPORT	retrieve_stat
+	IMPORT	power_up
+	IMPORT	preemption_mode
+	IMPORT	retrieve_status
+	IMPORT	clear_status
+	IMPORT	retrieve_xcvr_status
+
+	SEG	RAMFAR
+	ORG
+%current_offset	APEXP
+	RES	2
+
+	SEG	RAMFAR
+	ORG
+%current_file_size	APEXP
+	RES	2
+
+	SEG	RAMFAR
+	ORG
+%bytes_left	APEXP
+	RES	2
+
+	SEG	RAMFAR
+	ORG
+%FileDirectory	APEXP
+	RES	4A
+
+	SEG	CODE
+	ORG
+%lookup	APEXP ; Function body
+	PUSHD	#%FileDirectory+2
+	PUSH	[DSP][-2]
+	PUSH	[DSP][-2]
+	PUSH	#18
+	CALL	_mul_8_16
+	CALL	_add16
+	POP	[DSP][-1]
+	POP	[DSP][-1]
+	RET
+
+	SEG	CODE
+	ORG
+%open	APEXP ; Function body
+	PUSHS	#0
+	PUSH	TOS
+	POP	%current_offset+1
+	POP	%current_offset
+	PUSHD	#%FileDirectory+12
+	PUSH	[DSP][-2]
+	PUSH	[DSP][-2]
+	PUSH	#18
+	CALL	_mul_8_16
+	CALL	_add16
+	CALLF	%s32_to_ulong
+	POP	%current_file_size+1
+	POP	%current_file_size
+	PUSH	%current_file_size
+	PUSH	%current_file_size+1
+	POP	%bytes_left+1
+	POP	%bytes_left
+	PUSH	[DSP][-1]
+	SBRZ	%open+2E
+	PUSH	[DSP][-1]
+	XOR	#5
+	SBRNZ	%open+32
+	PUSH	NEXT
+	PUSH	NEXT
+	BR	%open+42
+	PUSH	[DSP][-1]
+	DEC
+	SBRNZ	%open+38
+	PUSH	NEXT
+	PUSH	NEXT
+	SBR	%open+42
+	PUSH	[DSP][-1]
+	XOR	#6
+	SBRNZ	%open+3F
+	PUSH	NEXT
+	PUSH	NEXT
+	SBR	%open+42
+	PUSHD	#0FFFF
+	POP	[DSP][-2]
+	POP	[DSP][-2]
+	DEALLOC	#1
+
+	SEG	CODE
+	ORG
+%close	APEXP ; Function body
+	PUSHS	#0
+	PUSH	TOS
+	POP	%bytes_left+1
+	POP	%bytes_left
+	DEALLOC	#3
+
+	SEG	EENEAR
+	ORG
+%nci00NetConfig	APEXP
+	DATA.B	0
+
+	SEG	RAMFAR
+	ORG
+%nvi00ObjRequest	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvo00ObjStatus	APEXP
+	RES	6
+
+	SEG	RAMFAR
+	ORG
+%nvi00CDTCommand	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvo00TimeStamp	APEXP
+	RES	7
+
+	SEG	RAMFAR
+	ORG
+%nvi00FileReq	APEXP
+	RES	0C
+
+	SEG	RAMFAR
+	ORG
+%nvo00FileStat	APEXP
+	RES	1B
+
+	SEG	RAMFAR
+	ORG
+%nvi01Subscribe	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvo01StatusBits	APEXP
+	RES	8
+
+	SEG	RAMFAR
+	ORG
+%nvo01StatusBits2	APEXP
+	RES	8
+
+	SEG	RAMFAR
+	ORG
+%nvi01TransfState	APEXP
+	RES	2
+
+	SEG	RAMFAR
+	ORG
+%nvo01Parameter	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvi01CDTStBits	APEXP
+	RES	8
+
+	SEG	RAMFAR
+	ORG
+%nvi01CDTParam	APEXP
+	RES	3
+
+	SEG	RAMFAR
+	ORG
+%nvi03SCIVersReq	APEXP
+	RES	1
+
+	SEG	RAMFAR
+	ORG
+%nvo03SCIVersion	APEXP
+	RES	1F
+
+	SEG	RAMFAR
+	ORG
+%nvi04WaysideResp	APEXP
+	RES	1
+
+	SEG	RAMFAR
+	ORG
+%nvo04WaysideReq	APEXP
+	RES	5
+
+	SEG	EENEAR
+	ORG
+%ee_config_setup	APEXP
+	DATA.B	PTR 0
+
+	SEG	RAMFAR
+	ORG
+%FtpRunning	APEXP
+	RES	1
+
+	SEG	RAMFAR
+	ORG
+%WaysideType	APEXP
+	RES	1
+
+	SEG	RAMFAR
+	ORG
+%CarNumber	APEXP
+	RES	2
+
+	SEG	RAMNEAR
+	ORG
+%InBuffer	APEXP
+	RES	25
+
+	SEG	RAMNEAR
+	ORG
+%OutBuffer	APEXP
+	RES	8C
+
+	SEG	RAMFAR
+	ORG
+%ErrorBuffer	APEXP
+	RES	4
+
+	SEG	RAMFAR
+	ORG
+%FtpLength	APEXP
+	RES	1
+
+	SEG	RAMFAR
+	ORG
+%bytes_received	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%StatusCopy	APEXP
+	RES	8
+
+	SEG	RAMNEAR
+	ORG
+%StatErrCount	APEXP
+	RES	1
+
+	SEG	RAMNEAR
+	ORG
+%SCI_INDEX	APEXP
+	RES	1
+
+	SEG	RAMFAR
+	ORG
+%DefaultTime	APEXP
+	RES	4
+
+	SEG	RAMFAR
+	ORG
+%ReceivedTime	APEXP
+	RES	4
+
+	SEG	RAMNEAR
+	ORG
+%LowByte	APEXP
+	RES	2
+
+	SEG	RAMNEAR
+	ORG
+%HiByte	APEXP
+	RES	2
+
+	SEG	RAMNEAR
+	ORG
+%s32Var	APEXP
+	RES	4
+
+	SEG	RAMNEAR
+	ORG
+%s32Low	APEXP
+	RES	4
+
+	SEG	RAMNEAR
+	ORG
+%s32Hi	APEXP
+	RES	4
+
+	SEG	RAMFAR
+	ORG
+%ReceviedTimeBuf	APEXP
+	RES	4
+	IMPORT	_change_state
+
+	SEG	CODE
+	ORG
+%Self_Install	APEXP ; Function body
+	CALLF	%DomainTable
+	CALLF	%AddressTable
+	CALLF	%NvConfig
+	CALLF	%Location
+	RET
+
+	SEG	CODE
+	ORG
+%DomainTable	APEXP ; Function body
+	ALLOC	#8
+	ALLOC	#7
+	PUSHD	#0F00
+	CALLF	access_domain
+	PUSH	#0EE
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHD	#0F00
+	PUSH	#0EF
+	CALL	_get_sp
+	CALL	_memset
+	PUSHD	#8FF
+	PUSH	#0F8
+	CALL	_get_sp
+	CALL	_memset
+	PUSHS	#0
+	POP	[DSP][-6]
+	PUSH	[DSP][-6]
+	AND	#80
+	OR	#8
+	POP	[DSP][-7]
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%DomainTable+37
+	PUSHS	#1
+	POP	[DSP][-8]
+	SBR	%DomainTable+39
+	PUSHS	#2
+	POP	[DSP][-8]
+	PUSHD	#0F0
+	CALL	_get_sp
+	CALLF	update_domain
+	CALL	watchdog_update
+	PUSH	#0F
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+%Location	APEXP ; Function body
+	ALLOC	#8
+	ALLOC	#8
+	ALLOC	#8
+	ALLOC	#1
+	PUSH	#19
+	PUSHD	#config_data
+	PUSH	#0E4
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHD	#43E8
+	CALL	_pop
+	PUSHD	#4FE9
+	CALL	_pop
+	PUSHD	#4DEA
+	CALL	_pop
+	PUSHD	#4DEB
+	CALL	_pop
+	PUSHD	#20EC
+	CALL	_pop
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%Location+3A
+	PUSHD	#41ED
+	CALL	_pop
+	SBR	%Location+3F
+	PUSHD	#42ED
+	CALL	_pop
+	PUSHS	#0
+	PUSHS	#7
+	CALL	_pop1
+	PUSH	TOS
+	AND	#0F
+	OR	#40
+	DROP	NEXT
+	AND	#0F7
+	PUSH	TOS
+	AND	#0F8
+	OR	#1
+	DROP	NEXT
+	PUSH	#0E7
+	CALL	_get_sp
+	CALLF	update_config_data
+	CALL	watchdog_update
+	PUSHD	#5AC3
+	PUSH	#@NEAR(%ee_config_setup)
+	CALL	_eeprom_write_long
+	PUSH	#19
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+%AddressTable	APEXP ; Function body
+	ALLOC	#5
+	PUSHS	#5
+	PUSHS	#0
+	CALLF	access_address
+	PUSH	#0F8
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHS	#1
+	POP	[DSP][-4]
+	PUSH	[DSP][-2]
+	AND	#7F
+	POP	[DSP][-3]
+	PUSH	[DSP][-2]
+	AND	#80
+	OR	#1
+	POP	[DSP][-3]
+	PUSH	[DSP][-1]
+	AND	#0F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0F0
+	OR	#3
+	POP	[DSP][-2]
+	PUSH	NEXT
+	AND	#0F0
+	OR	#4
+	POP	[DSP][-1]
+	PUSHS	#1
+	DROP	NEXT
+	PUSHD	#0FA
+	CALL	_get_sp
+	CALLF	update_address
+	CALL	watchdog_update
+	PUSHS	#5
+	PUSHS	#1
+	CALLF	access_address
+	PUSH	#0F8
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHS	#1
+	POP	[DSP][-4]
+	PUSH	[DSP][-2]
+	AND	#7F
+	POP	[DSP][-3]
+	PUSH	[DSP][-2]
+	AND	#80
+	OR	#1
+	POP	[DSP][-3]
+	PUSH	[DSP][-1]
+	AND	#0F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0F0
+	OR	#3
+	POP	[DSP][-2]
+	PUSH	NEXT
+	AND	#0F0
+	OR	#4
+	POP	[DSP][-1]
+	PUSHS	#2
+	DROP	NEXT
+	PUSHD	#1FA
+	CALL	_get_sp
+	CALLF	update_address
+	CALL	watchdog_update
+	PUSHS	#5
+	PUSHS	#2
+	CALLF	access_address
+	PUSH	#0F8
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHS	#3
+	POP	[DSP][-4]
+	PUSH	[DSP][-2]
+	AND	#7F
+	POP	[DSP][-3]
+	PUSH	[DSP][-1]
+	AND	#0F
+	OR	#30
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	AND	#0F0
+	OR	#3
+	POP	[DSP][-2]
+	PUSH	NEXT
+	AND	#0F0
+	POP	[DSP][-1]
+	AND	#0
+	PUSHD	#2FA
+	CALL	_get_sp
+	CALLF	update_address
+	CALL	watchdog_update
+	DEALLOC	#5
+
+	SEG	CODE
+	ORG
+%NvConfig	APEXP ; Function body
+	ALLOC	#3
+	PUSHS	#3
+	PUSHS	#0
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+2A
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#16
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+35
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#96
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#0FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#1
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+67
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#1
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+72
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#81
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#1FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#2
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	OR	#40
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+0A4
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#2
+	POP	[DSP][-1]
+	AND	#0F0
+	SBR	%NvConfig+0B3
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#82
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#0F0
+	OR	#1
+	DROP	NEXT
+	PUSHD	#2FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#5
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+0E5
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#4
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+0F0
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#84
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#5FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#6
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	OR	#40
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+122
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#5
+	POP	[DSP][-1]
+	AND	#0F0
+	SBR	%NvConfig+131
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#85
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#0F0
+	OR	#1
+	DROP	NEXT
+	PUSHD	#6FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSH	TOS
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+164
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#11
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+16F
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#91
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#3FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#4
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	TOS
+	AND	#9F
+	OR	#20
+	DROP	NEXT
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+1A9
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#3
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#0F0
+	OR	#2
+	DROP	NEXT
+	SBR	%NvConfig+1B8
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#83
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#0F0
+	OR	#2
+	DROP	NEXT
+	PUSHD	#4FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHS	#3
+	PUSHS	#7
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+1EA
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSHS	#6
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+1F5
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#86
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#7FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#30A
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+22D
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#9
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+238
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#9
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#0AFC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#308
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#7F
+	POP	[DSP][-2]
+	PUSH	[DSP][-1]
+	OR	#40
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+270
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#0A
+	POP	[DSP][-1]
+	AND	#0F0
+	SBR	%NvConfig+27F
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#8A
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#0F0
+	OR	#1
+	DROP	NEXT
+	PUSHD	#8FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#309
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	OR	#40
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+2B3
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#0B
+	POP	[DSP][-1]
+	AND	#0F0
+	SBR	%NvConfig+2C2
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#8B
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#0F0
+	OR	#1
+	DROP	NEXT
+	PUSHD	#9FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#30B
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	OR	#40
+	POP	[DSP][-2]
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+2FA
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#0C
+	POP	[DSP][-1]
+	AND	#0F0
+	SBR	%NvConfig+309
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#8C
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#0F0
+	OR	#1
+	DROP	NEXT
+	PUSHD	#0BFC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#30C
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+341
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#8
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+34C
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#88
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#0CFC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#30D
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	PUSH	TOS
+	AND	#9F
+	OR	#40
+	DROP	NEXT
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+383
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSHS	#7
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+38E
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#87
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#0DFC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#30E
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+3C2
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#0F
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+3CD
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#8F
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#0EFC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#30F
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	OR	#40
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+401
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#10
+	POP	[DSP][-1]
+	AND	#0F0
+	SBR	%NvConfig+410
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#8
+	POP	[DSP][-2]
+	PUSH	#90
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#0F0
+	OR	#1
+	DROP	NEXT
+	PUSHD	#0FFC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#311
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	OR	#40
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+444
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#14
+	POP	[DSP][-1]
+	AND	#0F0
+	SBR	%NvConfig+453
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#94
+	POP	[DSP][-1]
+	PUSH	TOS
+	AND	#0F0
+	OR	#1
+	DROP	NEXT
+	PUSHD	#11FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	PUSHD	#310
+	CALLF	access_nv
+	PUSH	#0FA
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-1]
+	AND	#0BF
+	POP	[DSP][-2]
+	AND	#9F
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%NvConfig+487
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#15
+	POP	[DSP][-1]
+	OR	#0F
+	SBR	%NvConfig+492
+	PUSH	[DSP][-1]
+	AND	#0C0
+	OR	#1
+	POP	[DSP][-2]
+	PUSH	#95
+	POP	[DSP][-1]
+	OR	#0F
+	PUSHD	#10FC
+	CALL	_get_sp
+	CALLF	update_nv
+	CALL	watchdog_update
+	DEALLOC	#3
+
+	SEG	CODE
+	ORG
+%VerBuildDateSetToMpu	APEXP ; Function body
+	PUSH	#21
+	CALL	_alloc
+	PUSHD	#80
+	CALL	_bit_output_lo1
+	PUSHD	#180
+	CALL	_bit_output_lo1
+	AND	#0
+	PUSHS	#0
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSHS	#0
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSHS	#1
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSHS	#0
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSHD	#_%DENVER%STR1
+	PUSH	#0DD
+	CALL	_get_sp
+	CALLF	%strcpy
+	DROP	TOS
+	DROP	TOS
+	PUSH	#0E1
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	AND	#0F
+	PUSH	#0DE
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	CALL	_l_shift8_4
+	OR
+	AND	#0FF
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSH	#0E4
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	AND	#0F
+	PUSH	#0E2
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	CALL	_l_shift8_4
+	OR
+	AND	#0FF
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSHD	#_%DENVER%STR2
+	PUSH	#0DD
+	CALL	_get_sp
+	CALLF	%strcpy
+	DROP	TOS
+	DROP	TOS
+	PUSH	#0E0
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	AND	#0F
+	PUSH	#0DE
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	CALL	_l_shift8_4
+	OR
+	AND	#0FF
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSH	#0E2
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	AND	#0F
+	PUSH	#0E0
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	CALL	_l_shift8_4
+	OR
+	AND	#0FF
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSH	#0E5
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	AND	#0F
+	PUSH	#0E3
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	CALL	_l_shift8_4
+	OR
+	AND	#0FF
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSH	#0E8
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	AND	#0F
+	PUSH	#0E6
+	CALL	_push
+	CALLF	%ConvAsc2Hex
+	CALL	_l_shift8_4
+	OR
+	AND	#0FF
+	PUSH	NEXT
+	PUSH	TOS
+	INC
+	POP	[DSP][-2]
+	ADD	#0EE
+	CALL	_pop
+	PUSH	TOS
+	PUSH	#0EE
+	CALL	_get_sp
+	CALLF	_io_spi_set_buffer
+	DROP	TOS
+	PUSHS	#1
+	CALL	msec_delay
+	PUSH	#21
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+%ConvAsc2Hex	APEXP ; Function body
+	ALLOC	#1
+	AND	#0
+	PUSH	NEXT
+	ADD	#0D0
+	DROP	TOS
+	BRNC	%ConvAsc2Hex+15
+	PUSH	NEXT
+	ADD	#0C6
+	DROP	TOS
+	BRC	%ConvAsc2Hex+15
+	PUSH	NEXT
+	ADD	#0D0
+	DROP	NEXT
+	BR	%ConvAsc2Hex+37
+	PUSH	NEXT
+	ADD	#9F
+	DROP	TOS
+	BRNC	%ConvAsc2Hex+27
+	PUSH	NEXT
+	ADD	#99
+	DROP	TOS
+	BRC	%ConvAsc2Hex+27
+	PUSH	NEXT
+	ADD	#0A9
+	DROP	NEXT
+	BR	%ConvAsc2Hex+37
+	PUSH	NEXT
+	ADD	#0BF
+	DROP	TOS
+	BRNC	%ConvAsc2Hex+37
+	PUSH	NEXT
+	ADD	#0B9
+	DROP	TOS
+	BRC	%ConvAsc2Hex+37
+	PUSH	NEXT
+	ADD	#0C9
+	DROP	NEXT
+	DROP_R	NEXT
+
+	SEG	CODE
+	ORG
+%TxSend	APEXP ; Function body
+	ALLOC	#5
+	PUSHD	#80
+	CALL	_bit_output_lo1
+	PUSHD	#180
+	CALL	_bit_output_lo1
+	PUSHS	#0
+	POP	[DSP][-4]
+	PUSHS	#0
+	POP	[DSP][-3]
+	PUSHS	#0
+	POP	[DSP][-2]
+	PUSHS	#0
+	POP	[DSP][-1]
+	PUSH	[DSP][-6]
+	DROP	NEXT
+	PUSHD	#5FA
+	CALL	_get_sp
+	CALLF	_io_spi_set_buffer
+	DROP	TOS
+	PUSHS	#1
+	CALL	msec_delay
+	PUSHD	#80
+	CALL	_bit_output_lo1
+	PUSHD	#180
+	CALL	_bit_output_lo1
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)]
+	PUSH	[DSP][-5]
+	POP	[1][@NEAR(%OutBuffer)+1]
+	PUSH	[DSP][-4]
+	POP	[1][@NEAR(%OutBuffer)+2]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+3]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	ADD	#0A
+	PUSHD	#%OutBuffer
+	CALLF	_io_spi_set_buffer
+	DROP	TOS
+	PUSHS	#2
+	CALL	msec_delay
+	PUSHS	#0
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	PUSHS	#1
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	DEALLOC	#8
+
+	SEG	CODE
+	ORG
+%ErrorStatus	APEXP ; Function body
+	PUSH	%FtpRunning
+	BRNZ	%ErrorStatus+2C
+	PUSH	%ErrorBuffer
+	POP	[1][@NEAR(%StatusCopy)]
+	PUSH	%ErrorBuffer+1
+	POP	[1][@NEAR(%StatusCopy)+1]
+	PUSH	%ErrorBuffer+2
+	POP	[1][@NEAR(%StatusCopy)+2]
+	PUSH	%ErrorBuffer+3
+	POP	[1][@NEAR(%StatusCopy)+3]
+	PUSH	#8
+	PUSHD	#%StatusCopy
+	PUSHD	#800
+	CALL	_nv_update
+	PUSH	[1][@NEAR(%StatusCopy)+7]
+	INC
+	POP	[1][@NEAR(%StatusCopy)+7]
+	PUSH	#8
+	CALL	_nv_update_request
+	RET
+
+	SEG	CODE
+	ORG
+%WaySideOn	APEXP ; Function body
+	PUSH	TOS
+	BRNEQ	#1,%WaySideOn+5
+	SBR	%WaySideOn+0D
+	BRNEQ	#2,%WaySideOn+0A
+	BR	%WaySideOn+21
+	DROP	TOS
+	BR	%WaySideOn+34
+	PUSH	TOS
+	PUSH	#11
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%DefaultTime
+	PUSHD	#1101
+	CALL	_nv_update
+	PUSHS	#1
+	POP	%WaysideType
+	BR	%WaySideOn+34
+	PUSH	TOS
+	INC
+	PUSH	#11
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSHD	#1101
+	CALL	_nv_update
+	PUSHS	#2
+	POP	%WaysideType
+	DEALLOC	#1
+
+	SEG	CODE
+	ORG
+%SendTime	APEXP ; Function body
+	ALLOC	#4
+	PUSH	%ReceviedTimeBuf
+	POP	[DSP][-3]
+	PUSH	%ReceviedTimeBuf+1
+	POP	[DSP][-2]
+	PUSH	%ReceviedTimeBuf+2
+	POP	[DSP][-1]
+	PUSH	%ReceviedTimeBuf+3
+	DROP	NEXT
+	PUSH	[DSP][-1]
+	PUSH	[DSP][-3]
+	POP	[1][@NEAR(%LowByte)+1]
+	POP	[1][@NEAR(%LowByte)]
+	PUSH	TOS
+	PUSH	[DSP][-1]
+	POP	[1][@NEAR(%HiByte)+1]
+	POP	[1][@NEAR(%HiByte)]
+	PUSHD	#%s32Var
+	PUSHD	#0FFFF
+	CALLF	%s32_from_ulong
+	PUSHD	#%s32Hi
+	PUSH	[1][@NEAR(%HiByte)]
+	PUSH	[1][@NEAR(%HiByte)+1]
+	CALLF	%s32_from_ulong
+	PUSHD	#%s32Low
+	PUSH	[1][@NEAR(%LowByte)]
+	PUSH	[1][@NEAR(%LowByte)+1]
+	CALLF	%s32_from_ulong
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Var
+	PUSHD	#%s32Hi
+	CALLF	%s32_mul
+	PUSHD	#%ReceivedTime
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Hi
+	CALLF	%s32_add
+	PUSHD	#%ReceivedTime
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Low
+	CALLF	%s32_add
+	PUSH	%WaysideType
+	DEC
+	BRNZ	%SendTime+0A6
+	PUSHD	#211
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSHD	#1101
+	CALL	_nv_update
+	PUSH	#11
+	CALL	_nv_update_request
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#6
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	PUSHS	#0
+	POP	%FtpRunning
+	BR	%SendTime+0BF
+	PUSH	%WaysideType
+	XOR	#2
+	BRNZ	%SendTime+0BF
+	PUSHD	#311
+	CALL	_nv_update_int
+	PUSHS	#4
+	PUSHD	#%ReceivedTime
+	PUSHD	#1101
+	CALL	_nv_update
+	PUSH	#11
+	CALL	_nv_update_request
+	DEALLOC	#4
+
+	SEG	CODE
+	ORG
+WHEN1	EXPORT ; When task
+	ALLOC	#4
+	PUSHD	#80
+	CALL	_bit_output_lo1
+	PUSHD	#180
+	CALL	_bit_output_lo1
+	PUSH	#80
+	POP	[DSP][-3]
+	PUSHS	#5
+	POP	[DSP][-2]
+	PUSH	#88
+	POP	[DSP][-1]
+	AND	#0
+	PUSHD	#4FB
+	CALL	_get_sp
+	CALLF	_io_spi_set_buffer
+	DROP	TOS
+	PUSHS	#1
+	CALL	msec_delay
+	PUSH	#25
+	PUSHD	#%InBuffer
+	CALLF	_io_spi_set_buffer
+	DROP	TOS
+	PUSHS	#1
+	CALL	msec_delay
+	PUSH	[1][@NEAR(%InBuffer)]
+	XOR	#2
+	SBRZ	*+4
+	BRF	WHEN1+239
+	PUSH	[1][@NEAR(%InBuffer)+1]
+	BRNEQ	#1,WHEN1+3C
+	BR	WHEN1+70
+	BRNEQ	#9,WHEN1+42
+	BRF	WHEN1+0F9
+	BRNEQ	#0B,WHEN1+48
+	BRF	WHEN1+12C
+	BRNEQ	#0D,WHEN1+4E
+	BRF	WHEN1+13C
+	BRNEQ	#11,WHEN1+54
+	BRF	WHEN1+1BF
+	BRNEQ	#13,WHEN1+5A
+	BRF	WHEN1+1D8
+	BRNEQ	#15,WHEN1+60
+	BRF	WHEN1+1F1
+	BRNEQ	#17,WHEN1+66
+	BRF	WHEN1+214
+	BRNEQ	#0F0,WHEN1+6C
+	BRF	WHEN1+22C
+	DROP	TOS
+	BRF	WHEN1+239
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	PUSH	[1][@NEAR(%InBuffer)+6]
+	PUSH	[1][@NEAR(%InBuffer)+7]
+	POP	[1][@NEAR(%HiByte)+1]
+	POP	[1][@NEAR(%HiByte)]
+	PUSH	[1][@NEAR(%InBuffer)+8]
+	PUSH	[1][@NEAR(%InBuffer)+9]
+	POP	[1][@NEAR(%LowByte)+1]
+	POP	[1][@NEAR(%LowByte)]
+	PUSHD	#%s32Var
+	PUSHD	#0FFFF
+	CALLF	%s32_from_ulong
+	PUSHD	#%s32Hi
+	PUSH	[1][@NEAR(%HiByte)]
+	PUSH	[1][@NEAR(%HiByte)+1]
+	CALLF	%s32_from_ulong
+	PUSHD	#%s32Low
+	PUSH	[1][@NEAR(%LowByte)]
+	PUSH	[1][@NEAR(%LowByte)+1]
+	CALLF	%s32_from_ulong
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Var
+	PUSHD	#%s32Hi
+	CALLF	%s32_mul
+	PUSHD	#%ReceivedTime
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Hi
+	CALLF	%s32_add
+	PUSHD	#%ReceivedTime
+	PUSHD	#%ReceivedTime
+	PUSHD	#%s32Low
+	CALLF	%s32_add
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	POP	%WaysideType
+	PUSH	%WaysideType
+	CALLF	%WaySideOn
+	BRF	WHEN1+239
+	PUSH	%FtpRunning
+	BRNZ	WHEN1+129
+	PUSHD	#7D0
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	CALL	_add_8_16f
+	PUSHS	#4
+	CALL	_nv_update_long
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	PUSHS	#4
+	PUSHS	#2
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%InBuffer)+6]
+	PUSHS	#4
+	PUSHS	#3
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%InBuffer)+7]
+	PUSHS	#4
+	PUSH	TOS
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%InBuffer)+8]
+	PUSHS	#4
+	PUSHS	#5
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%InBuffer)+9]
+	PUSHS	#4
+	PUSHS	#6
+	CALL	_nv_update_int_offset
+	PUSHS	#4
+	CALL	_nv_update_request
+	BRF	WHEN1+239
+	PUSH	%FtpRunning
+	SBRNZ	WHEN1+139
+	PUSHS	#4
+	PUSHD	#%InBuffer+4
+	PUSHD	#%ErrorBuffer
+	CALL	_memcpy
+	BRF	WHEN1+239
+	PUSH	%FtpRunning
+	SBRZ	*+4
+	BRF	WHEN1+239
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	PUSH	[1][@NEAR(%SCI_INDEX)]
+	XOR
+	BRNZ	WHEN1+1BD
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	PUSH	#0F
+	CALL	_nv_update_int
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	PUSHD	#0F01
+	CALL	_nv_update_int_offset
+	AND	#0
+	PUSH	#9
+	PUSH	NEXT
+	CALL	_gequ8s
+	BRNZ	WHEN1+1AB
+	PUSHD	#%InBuffer+4
+	PUSH	[DSP][-1]
+	ADD	#2
+	CALL	_adds_8_16
+	POPD	[0]
+	PUSH	[0][0]
+	PUSHD	#%nvo03SCIVersion+2
+	PUSH	[DSP][-2]
+	CALL	_adds_8_16
+	POPD	[3]
+	POP	[3][0]
+	PUSH	#0F
+	CALL	_nv_update_request
+	PUSHD	#%InBuffer+4
+	PUSH	[DSP][-1]
+	ADD	#0B
+	CALL	_adds_8_16
+	POPD	[0]
+	PUSH	[0][0]
+	PUSHD	#%nvo03SCIVersion+0B
+	PUSH	[DSP][-2]
+	CALL	_adds_8_16
+	POPD	[0]
+	POP	[0][0]
+	PUSH	#0F
+	CALL	_nv_update_request
+	PUSHD	#%InBuffer+4
+	PUSH	[DSP][-1]
+	ADD	#14
+	CALL	_adds_8_16
+	POPD	[3]
+	PUSH	[3][0]
+	PUSHD	#%nvo03SCIVersion+14
+	PUSH	[DSP][-2]
+	CALL	_adds_8_16
+	POPD	[0]
+	POP	[0][0]
+	PUSH	#0F
+	CALL	_nv_update_request
+	INC
+	BR	WHEN1+159
+	PUSH	[1][@NEAR(%InBuffer)+21]
+	PUSHD	#0F1D
+	CALL	_nv_update_int_offset
+	PUSH	[1][@NEAR(%InBuffer)+22]
+	PUSHD	#0F1E
+	CALL	_nv_update_int_offset
+	PUSH	#0F
+	CALL	_nv_update_request
+	BR	WHEN1+239
+	PUSH	%FtpRunning
+	BRNZ	WHEN1+239
+	PUSHD	#10B
+	CALL	_nv_update_int
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	PUSHD	#0B01
+	CALL	_nv_update_long_offset
+	PUSH	#0B
+	CALL	_nv_update_request
+	BR	WHEN1+239
+	PUSH	%FtpRunning
+	BRNZ	WHEN1+239
+	PUSHD	#20B
+	CALL	_nv_update_int
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	PUSHD	#0B01
+	CALL	_nv_update_long_offset
+	PUSH	#0B
+	CALL	_nv_update_request
+	BR	WHEN1+239
+	PUSH	%FtpRunning
+	BRNZ	WHEN1+239
+	PUSHD	#30B
+	CALL	_nv_update_int
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	PUSHD	#0B01
+	CALL	_nv_update_long_offset
+	PUSH	#0B
+	CALL	_nv_update_request
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	POP	%CarNumber+1
+	POP	%CarNumber
+	BR	WHEN1+239
+	PUSH	%FtpRunning
+	BRNZ	WHEN1+239
+	PUSHD	#40B
+	CALL	_nv_update_int
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	PUSHD	#0B01
+	CALL	_nv_update_long_offset
+	PUSH	#0B
+	CALL	_nv_update_request
+	SBR	WHEN1+239
+	PUSH	[1][@NEAR(%InBuffer)+4]
+	PUSH	[1][@NEAR(%InBuffer)+5]
+	POP	%CarNumber+1
+	POP	%CarNumber
+	CALLF	%Self_Install
+	DEALLOC	#4
+
+	SEG	CODE
+	ORG
+WHEN2	EXPORT ; When task
+	PUSH	%nvi00CDTCommand
+	DEC
+	BRNZ	WHEN2+37
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#8
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	PUSHD	#0E10
+	PUSHS	#2
+	CALL	_timer_sset_repeat
+	RET
+
+	SEG	CODE
+	ORG
+WHEN3	EXPORT ; When task
+	PUSH	%nvi01TransfState
+	CALL	_r_shift8_7
+	DEC
+	SBRNZ	WHEN3+12
+	PUSHS	#1
+	POP	%FtpRunning
+	PUSHD	#3C
+	PUSHS	#1
+	CALL	_timer_sset_repeat
+	SBR	WHEN3+1B
+	PUSHS	#0
+	POP	%FtpRunning
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#1
+	CALL	_timer_sset_repeat
+	RET
+
+	SEG	CODE
+	ORG
+WHEN4	EXPORT ; When task
+	PUSHS	#0
+	POP	%FtpRunning
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#1
+	CALL	_timer_sset_repeat
+	RET
+
+	SEG	CODE
+	ORG
+WHEN5	EXPORT ; When task
+	PUSH	%nvi01Subscribe
+	BRNEQ	#0,WHEN5+8
+	BR	WHEN5+22
+	BRNEQ	#1,WHEN5+0D
+	BR	WHEN5+5C
+	BRNEQ	#2,WHEN5+12
+	BR	WHEN5+81
+	BRNEQ	#3,WHEN5+18
+	BRF	WHEN5+0A6
+	BRNEQ	#4,WHEN5+1E
+	BRF	WHEN5+0CC
+	DROP	TOS
+	BRF	WHEN5+0EB
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#0A
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	CALLF	%ErrorStatus
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	PUSHS	#0
+	CALL	_timer_mset_repeat
+	BRF	WHEN5+0EB
+	PUSHS	#3
+	CALL	_timer_get
+	OR
+	SBRNZ	WHEN5+64
+	CALLF	%TrainConfMpuSend
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	OR
+	SBRNZ	WHEN5+72
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#3
+	CALL	_timer_mset_repeat
+	SBR	WHEN5+7F
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	PUSH	#64
+	CALL	_add_8_16f
+	PUSHS	#3
+	CALL	_timer_mset_repeat
+	BR	WHEN5+0EB
+	PUSHS	#4
+	CALL	_timer_get
+	OR
+	SBRNZ	WHEN5+89
+	CALLF	%CiPosMpuSend
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	OR
+	SBRNZ	WHEN5+97
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#4
+	CALL	_timer_mset_repeat
+	SBR	WHEN5+0A4
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	PUSH	#0C8
+	CALL	_add_8_16f
+	PUSHS	#4
+	CALL	_timer_mset_repeat
+	BR	WHEN5+0EB
+	PUSHS	#5
+	CALL	_timer_get
+	OR
+	SBRNZ	WHEN5+0AE
+	CALLF	%CarNoMpuSend
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	OR
+	SBRNZ	WHEN5+0BC
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#5
+	CALL	_timer_mset_repeat
+	SBR	WHEN5+0CA
+	PUSHD	#12C
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	CALL	_add16
+	PUSHS	#5
+	CALL	_timer_mset_repeat
+	BR	WHEN5+0EB
+	PUSHS	#6
+	CALL	_timer_get
+	OR
+	SBRNZ	WHEN5+0D4
+	CALLF	%OtherCiFaultMpuSend
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	OR
+	SBRNZ	WHEN5+0E2
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#6
+	CALL	_timer_mset_repeat
+	SBR	WHEN5+0EB
+	PUSH	%nvi01Subscribe+1
+	PUSH	%nvi01Subscribe+2
+	PUSHS	#6
+	CALL	_timer_mset_repeat
+	RET
+
+	SEG	CODE
+	ORG
+WHEN6	EXPORT ; When task
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#0A
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	CALLF	%ErrorStatus
+	RET
+
+	SEG	CODE
+	ORG
+WHEN7	EXPORT ; When task
+	CALLF	%TrainConfMpuSend
+	RET
+
+	SEG	CODE
+	ORG
+%TrainConfMpuSend	APEXP ; Function body
+	PUSH	%FtpRunning
+	BRNZ	%TrainConfMpuSend+30
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#10
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	RET
+
+	SEG	CODE
+	ORG
+WHEN8	EXPORT ; When task
+	CALLF	%CiPosMpuSend
+	RET
+
+	SEG	CODE
+	ORG
+%CiPosMpuSend	APEXP ; Function body
+	PUSH	%FtpRunning
+	BRNZ	%CiPosMpuSend+30
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#12
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	RET
+
+	SEG	CODE
+	ORG
+WHEN9	EXPORT ; When task
+	CALLF	%CarNoMpuSend
+	RET
+
+	SEG	CODE
+	ORG
+%CarNoMpuSend	APEXP ; Function body
+	PUSH	%FtpRunning
+	BRNZ	%CarNoMpuSend+30
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#14
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	RET
+
+	SEG	CODE
+	ORG
+WHEN10	EXPORT ; When task
+	CALLF	%OtherCiFaultMpuSend
+	RET
+
+	SEG	CODE
+	ORG
+%OtherCiFaultMpuSend	APEXP ; Function body
+	PUSH	%FtpRunning
+	BRNZ	%OtherCiFaultMpuSend+30
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#16
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	RET
+
+	SEG	CODE
+	ORG
+WHEN11	EXPORT ; When task
+	RET
+
+	SEG	CODE
+	ORG
+WHEN12	EXPORT ; When task
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#0E
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#1
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSH	%nvi01CDTStBits
+	SHL
+	AND	#10
+	PUSH	[1][@NEAR(%OutBuffer)+8]
+	OR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSH	%nvi01CDTStBits
+	SHR
+	AND	#8
+	PUSH	[1][@NEAR(%OutBuffer)+8]
+	OR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSH	%nvi01CDTStBits
+	CALL	_r_shift8_5
+	AND	#2
+	PUSH	[1][@NEAR(%OutBuffer)+8]
+	OR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSH	%nvi01CDTStBits
+	CALL	_r_shift8_7
+	PUSH	[1][@NEAR(%OutBuffer)+8]
+	OR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSH	[1][@NEAR(%OutBuffer)+8]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+0A]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	RET
+
+	SEG	CODE
+	ORG
+WHEN13	EXPORT ; When task
+	PUSHS	#0
+	POP	[1][@NEAR(%StatErrCount)]
+	RET
+
+	SEG	CODE
+	ORG
+WHEN14	EXPORT ; When task
+	PUSH	[1][@NEAR(%StatErrCount)]
+	AND	#0FC
+	BRNZ	WHEN14+16
+	PUSH	[1][@NEAR(%StatErrCount)]
+	INC
+	POP	[1][@NEAR(%StatErrCount)]
+	PUSH	[1][@NEAR(%StatErrCount)]
+	XOR	#4
+	SBRNZ	WHEN14+16
+	PUSHD	#2328
+	PUSHS	#0
+	CALL	_timer_mset_repeat
+	RET
+
+	SEG	CODE
+	ORG
+WHEN15	EXPORT ; When task
+	ALLOC	#8
+	ALLOC	#8
+	ALLOC	#1
+	PUSH	%FtpRunning
+	BRNZ	WHEN15+4A
+	PUSH	%nvi03SCIVersReq
+	XOR	#2
+	BRZ	WHEN15+4A
+	PUSH	%nvi03SCIVersReq
+	POP	[1][@NEAR(%SCI_INDEX)]
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#0C
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#1
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	%nvi03SCIVersReq
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSH	[1][@NEAR(%OutBuffer)+8]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+0A]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	BRF	WHEN15+0FC
+	PUSH	%FtpRunning
+	SBRZ	*+4
+	BRF	WHEN15+0FC
+	PUSH	%nvi03SCIVersReq
+	XOR	#2
+	SBRZ	*+4
+	BRF	WHEN15+0FC
+	PUSHD	#20F
+	CALL	_nv_update_int
+	PUSHD	#30F
+	PUSHS	#1
+	CALL	_nv_update_int_offset
+	PUSHD	#_%DENVER%STR3
+	PUSH	#0ED
+	CALL	_get_sp
+	CALLF	%strcpy
+	DROP	TOS
+	DROP	TOS
+	AND	#0
+	PUSH	#0EF
+	CALL	_get_sp
+	CALLF	%strlen
+	PUSH	[DSP][-1]
+	CALL	_sign_extend16
+	CALL	_less16
+	BRZ	WHEN15+96
+	PUSH	TOS
+	ADD	#0EF
+	CALL	_push
+	PUSHD	#%nvo03SCIVersion+2
+	PUSH	[DSP][-2]
+	CALL	_adds_8_16
+	POPD	[0]
+	POP	[0][0]
+	PUSH	#0F
+	CALL	_nv_update_request
+	INC
+	BR	WHEN15+73
+	PUSHD	#_%DENVER%STR1
+	PUSH	#0ED
+	CALL	_get_sp
+	CALLF	%strcpy
+	DROP	TOS
+	DROP	TOS
+	AND	#0
+	PUSH	#0EF
+	CALL	_get_sp
+	CALLF	%strlen
+	PUSH	[DSP][-1]
+	CALL	_sign_extend16
+	CALL	_less16
+	BRZ	WHEN15+0C7
+	PUSH	TOS
+	ADD	#0EF
+	CALL	_push
+	PUSHD	#%nvo03SCIVersion+0B
+	PUSH	[DSP][-2]
+	CALL	_adds_8_16
+	POPD	[0]
+	POP	[0][0]
+	PUSH	#0F
+	CALL	_nv_update_request
+	INC
+	BR	WHEN15+0A4
+	PUSHD	#_%DENVER%STR2
+	PUSH	#0ED
+	CALL	_get_sp
+	CALLF	%strcpy
+	DROP	TOS
+	DROP	TOS
+	AND	#0
+	PUSH	#0EF
+	CALL	_get_sp
+	CALLF	%strlen
+	PUSH	[DSP][-1]
+	CALL	_sign_extend16
+	CALL	_less16
+	BRZ	WHEN15+0F8
+	PUSH	TOS
+	ADD	#0EF
+	CALL	_push
+	PUSHD	#%nvo03SCIVersion+14
+	PUSH	[DSP][-2]
+	CALL	_adds_8_16
+	POPD	[0]
+	POP	[0][0]
+	PUSH	#0F
+	CALL	_nv_update_request
+	INC
+	BR	WHEN15+0D5
+	PUSH	#0F
+	CALL	_nv_update_request
+	PUSH	#11
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+WHEN16	EXPORT ; When task
+	PUSH	%nvi04WaysideResp
+	XOR	#2
+	BRNZ	WHEN16+35
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#6
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	PUSHS	#0
+	POP	%FtpRunning
+	RET
+
+	SEG	CODE
+	ORG
+WHEN17	EXPORT ; When task
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSH	#8
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#0
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+7]
+	PUSH	[1][@NEAR(%OutBuffer)+6]
+	PUSH	[1][@NEAR(%OutBuffer)+5]
+	XOR
+	XOR
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+9]
+	PUSHS	#7
+	PUSHD	#4C0
+	CALLF	%TxSend
+	RET
+
+	SEG	RAMNEAR
+	ORG
+%fx	APEXP
+	RES	8
+
+	SEG	CODE
+	ORG
+_%DENVER%DATA1	EXPORT
+	DATA.B	0FF,0FF,0,0,0,0,0,0
+
+	SEG	CODE
+	ORG
+%start_transfer	APEXP ; Function body
+	PUSH	%nvi00FileReq+0A
+	POP	[1][@NEAR(%fx)+7]
+	PUSH	%nvi00FileReq+3
+	PUSH	%nvi00FileReq+4
+	PUSHS	#7
+	CALL	_timer_mset
+	PUSHS	#4
+	PUSHS	#6
+	CALL	_nv_update_int
+	DEALLOC	#1
+
+	SEG	CODE
+	ORG
+%stop_transfer	APEXP ; Function body
+	PUSH	TOS
+	AND	#0C0
+	SBRNZ	%stop_transfer+0A
+	PUSH	[1][@NEAR(%fx)+2]
+	SBRZ	%stop_transfer+0A
+	PUSH	[1][@NEAR(%fx)+2]
+	DROP	NEXT
+	PUSHS	#0
+	POP	[1][@NEAR(%fx)+2]
+	PUSH	TOS
+	AND	#0C0
+	BRZ	%stop_transfer+2E
+	PUSHS	#0
+	PUSH	NEXT
+	XOR	#40
+	SBRZ	%stop_transfer+1A
+	PUSH	NEXT
+	SBRZ	%stop_transfer+1A
+	INC
+	PUSH	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)+1]
+	CALLF	%close
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#7
+	CALL	_timer_mset
+	PUSHD	#0FFFF
+	POP	[1][@NEAR(%fx)+1]
+	POP	[1][@NEAR(%fx)]
+	SBR	%stop_transfer+38
+	PUSHD	#1388
+	PUSHS	#7
+	CALL	_timer_mset
+	PUSH	#40
+	POP	[1][@NEAR(%fx)+2]
+	PUSH	TOS
+	AND	#3F
+	PUSHS	#6
+	CALL	_nv_update_int
+	DEALLOC	#1
+
+	SEG	CODE
+	ORG
+%process_packet	APEXP ; Function body
+	PUSH	[1][@NEAR(%fx)+5]
+	PUSHS	#0
+	CALL	_msg_data_get
+	AND	#0F
+	XOR
+	SBRZ	*+4
+	BRF	%process_packet+114
+	PUSHS	#0
+	CALL	_msg_len_get
+	DEC
+	PUSHD	#80
+	CALL	_min16s
+	DROP	NEXT
+	POP	%bytes_received
+	PUSH	%bytes_received
+	INC
+	POP	%FtpLength
+	PUSHD	#89
+	PUSHS	#0
+	PUSHD	#%OutBuffer
+	CALLF	_memset16
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+4]
+	PUSHS	#5
+	POP	[1][@NEAR(%OutBuffer)+5]
+	PUSH	[1][@NEAR(%fx)+5]
+	INC
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSH	%FtpLength
+	POP	[1][@NEAR(%OutBuffer)+7]
+	PUSHS	#1
+	PUSHD	#%OutBuffer+9
+	PUSH	%bytes_received
+	CALLF	_msg_data_blockget
+	PUSH	%FtpLength
+	ADD	#0FB
+	PUSHD	#%OutBuffer+8
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	POP	%ReceviedTimeBuf
+	PUSH	%FtpLength
+	ADD	#0FA
+	PUSHD	#%OutBuffer+8
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	POP	%ReceviedTimeBuf+1
+	PUSH	%FtpLength
+	ADD	#0F9
+	PUSHD	#%OutBuffer+8
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	POP	%ReceviedTimeBuf+2
+	PUSH	%FtpLength
+	ADD	#0F8
+	PUSHD	#%OutBuffer+8
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	POP	%ReceviedTimeBuf+3
+	PUSHS	#0
+	PUSHS	#1
+	PUSH	%CarNumber
+	PUSH	%CarNumber+1
+	CALL	_and16
+	OR
+	SBRZ	%process_packet+8D
+	PUSH	#41
+	POP	[1][@NEAR(%OutBuffer)+8]
+	SBR	%process_packet+91
+	PUSH	#42
+	POP	[1][@NEAR(%OutBuffer)+8]
+	PUSH	#0FF
+	PUSH	%FtpLength
+	PUSHD	#%OutBuffer+8
+	POPD	[0]
+	POP	[0][TOS]
+	DROP	TOS
+	PUSHS	#3
+	PUSH	%FtpLength
+	INC
+	PUSHD	#%OutBuffer+8
+	POPD	[0]
+	POP	[0][TOS]
+	DROP	TOS
+	PUSH	[1][@NEAR(%fx)+5]
+	BRNEQ	#0,%process_packet+0AE
+	BR	%process_packet+0CA
+	BRNEQ	#1,%process_packet+0B3
+	BR	%process_packet+0D6
+	BRNEQ	#2,%process_packet+0B8
+	BR	%process_packet+0E2
+	BRNEQ	#3,%process_packet+0BD
+	BR	%process_packet+0EE
+	BRNEQ	#4,%process_packet+0C2
+	BR	%process_packet+0FA
+	BRNEQ	#5,%process_packet+0C7
+	BR	%process_packet+105
+	DROP	TOS
+	BR	%process_packet+10F
+	PUSHS	#1
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#1
+	PUSHD	#10
+	CALLF	%TxSend
+	BR	%process_packet+10F
+	PUSHS	#2
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#2
+	PUSHD	#0D8
+	CALLF	%TxSend
+	BR	%process_packet+10F
+	PUSHS	#3
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#3
+	PUSHD	#1A0
+	CALLF	%TxSend
+	BR	%process_packet+10F
+	PUSHS	#4
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#4
+	PUSHD	#268
+	CALLF	%TxSend
+	BR	%process_packet+10F
+	PUSHS	#5
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#5
+	PUSHD	#330
+	CALLF	%TxSend
+	SBR	%process_packet+10F
+	PUSHS	#6
+	POP	[1][@NEAR(%OutBuffer)+6]
+	PUSHS	#6
+	PUSHD	#3F8
+	CALLF	%TxSend
+	PUSH	[1][@NEAR(%fx)+5]
+	INC
+	POP	[1][@NEAR(%fx)+5]
+	RET
+
+	SEG	CODE
+	ORG
+%setup_status_address	APEXP ; Function body
+	ALLOC	#8
+	ALLOC	#8
+	PUSHS	#1
+	DROP	NEXT
+	PUSH	nv_in_addr+1
+	PUSHD	#60C
+	CALL	_nv_update_int_offset
+	PUSH	nv_in_addr+2
+	AND	#7F
+	PUSHD	#60D
+	CALL	_nv_update_int_offset
+	PUSH	#0F
+	PUSH	nv_in_addr
+	CALL	_r_shift8_7
+	CALLF	access_domain
+	PUSH	#0ED
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSH	[DSP][-6]
+	PUSHD	#60B
+	CALL	_nv_update_int_offset
+	PUSH	nv_in_addr
+	AND	#40
+	SBRZ	%setup_status_address+3C
+	PUSHD	#0FF06
+	PUSH	#0B
+	CALL	_nv_update_int_offset
+	AND	#0
+	SBR	%setup_status_address+48
+	PUSH	[DSP][-6]
+	AND	#7
+	PUSH	#0EF
+	CALL	_get_sp
+	PUSHD	#%nvo00FileStat+5
+	CALL	_memcpy8
+	PUSH	#0F
+	CALL	_drop_n_return_1
+
+	SEG	CODE
+	ORG
+WHEN18	EXPORT ; When task
+	PUSHS	#6
+	CALLF	%stop_transfer
+	RET
+
+	SEG	CODE
+	ORG
+WHEN19	EXPORT ; When task
+	ALLOC	#8
+	ALLOC	#8
+	ALLOC	#6
+	PUSH	%nvi00FileReq
+	XOR	#2
+	SBRZ	WHEN19+10
+	PUSH	%nvi00FileReq
+	XOR	#3
+	BRNZ	WHEN19+21
+	PUSH	%nvo00FileStat+3
+	PUSH	%nvo00FileStat+4
+	PUSH	%nvi00FileReq+1
+	PUSH	%nvi00FileReq+2
+	CALL	_equal16
+	CALL	_lognot8
+	SBR	WHEN19+29
+	PUSH	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)+1]
+	CALL	_inc16
+	CALL	_log16
+	SBRZ	*+4
+	BRF	WHEN19+0F9
+	PUSHS	#0
+	PUSHS	#3
+	PUSHS	#6
+	PUSHS	#1
+	CALL	_nv_update_long_offset
+	PUSH	%nvi00FileReq+1
+	PUSH	%nvi00FileReq+2
+	PUSHS	#6
+	PUSHS	#3
+	CALL	_nv_update_long_offset
+	PUSH	%nvi00FileReq
+	XOR	#6
+	SBRZ	WHEN19+49
+	PUSH	%nvi00FileReq
+	XOR	#5
+	SBRNZ	WHEN19+55
+	CALLF	%setup_status_address
+	DROP	TOS
+	PUSHD	#906
+	CALL	_nv_update_int
+	BRF	WHEN19+0F9
+	PUSH	%nvi00FileReq
+	DEC
+	SBRZ	WHEN19+5F
+	PUSH	%nvi00FileReq
+	BRNZ	WHEN19+94
+	CALLF	%setup_status_address
+	SBRNZ	*+4
+	BRF	WHEN19+0F9
+	PUSHD	#800
+	PUSHD	#%fx
+	CALL	_memset
+	PUSH	%nvi00FileReq
+	POP	[1][@NEAR(%fx)+3]
+	PUSH	[1][@NEAR(%fx)+3]
+	PUSH	%nvi00FileReq+1
+	PUSH	%nvi00FileReq+2
+	CALLF	%open
+	POP	[1][@NEAR(%fx)+1]
+	POP	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)]
+	AND	#80
+	SBRZ	WHEN19+8D
+	PUSHS	#2
+	PUSHS	#6
+	CALL	_nv_update_int
+	BR	WHEN19+0F9
+	PUSH	[1][@NEAR(%fx)+3]
+	CALLF	%start_transfer
+	BR	WHEN19+0F9
+	PUSH	%nvi00FileReq
+	XOR	#2
+	SBRNZ	WHEN19+0A4
+	PUSH	#40
+	CALLF	%stop_transfer
+	CALLF	%SendTime
+	BR	WHEN19+0F9
+	PUSH	%nvi00FileReq
+	XOR	#3
+	SBRNZ	WHEN19+0B1
+	PUSH	#80
+	CALLF	%stop_transfer
+	BR	WHEN19+0F9
+	PUSH	%nvi00FileReq
+	XOR	#4
+	BRNZ	WHEN19+0F9
+	PUSHS	#0
+	PUSHS	#3
+	PUSH	%nvi00FileReq+1
+	PUSH	%nvi00FileReq+2
+	CALL	_gequ16
+	SBRZ	WHEN19+0C9
+	PUSHS	#3
+	PUSHS	#6
+	CALL	_nv_update_int
+	BR	WHEN19+0F9
+	PUSH	#16
+	PUSH	%nvi00FileReq+1
+	PUSH	%nvi00FileReq+2
+	CALLF	%lookup
+	PUSH	#0E7
+	CALL	_get_sp
+	CALL	_memcpy
+	PUSHD	#10E9
+	CALL	_get_sp
+	PUSHD	#%nvo00FileStat+5
+	CALL	_memcpy
+	PUSHD	#4F9
+	CALL	_get_sp
+	PUSHD	#615
+	CALL	_nv_update
+	PUSH	NEXT
+	PUSH	NEXT
+	PUSHD	#619
+	CALL	_nv_update_long_offset
+	PUSHS	#1
+	PUSHS	#6
+	CALL	_nv_update_int
+	PUSH	#16
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+WHEN20	EXPORT ; When task
+	ALLOC	#1
+	CALL	_msg_code_get
+	BRNEQ	#3E,WHEN20+7
+	SBR	WHEN20+0B
+	DROP	TOS
+	BRF	WHEN20+8F
+	PUSH	[1][@NEAR(%fx)]
+	PUSH	[1][@NEAR(%fx)+1]
+	CALL	_inc16
+	OR
+	BRZ	WHEN20+8F
+	PUSH	%nvi00FileReq+3
+	PUSH	%nvi00FileReq+4
+	PUSHS	#7
+	CALL	_timer_mset
+	PUSHS	#0
+	CALL	_msg_data_get
+	AND	#0F0
+	DROP	NEXT
+	PUSH	TOS
+	PUSH	[1][@NEAR(%fx)+4]
+	XOR
+	BRNZ	WHEN20+5F
+	CALL	_msg_service_get
+	XOR	#3
+	BRNZ	WHEN20+5F
+	CALL	_msg_len_get
+	DEC
+	DEC
+	SBRNZ	WHEN20+41
+	PUSH	[1][@NEAR(%fx)+5]
+	CALL	_resp_code_set
+	CALL	_resp_send
+	PUSH	#40
+	CALLF	%stop_transfer
+	BR	WHEN20+8F
+	CALLF	%process_packet
+	PUSH	#14
+	CALL	msec_delay
+	PUSH	[1][@NEAR(%fx)+5]
+	CALL	_resp_code_set
+	CALL	_resp_send
+	PUSHD	#80
+	PUSHS	#0
+	PUSH	%bytes_received
+	CALL	_gequ16s
+	SBRNZ	WHEN20+5D
+	PUSH	#40
+	CALLF	%stop_transfer
+	BR	WHEN20+8F
+	PUSH	TOS
+	PUSH	[1][@NEAR(%fx)+4]
+	XOR
+	SBRNZ	WHEN20+69
+	CALLF	%process_packet
+	BR	WHEN20+8F
+	PUSH	TOS
+	PUSH	[1][@NEAR(%fx)+4]
+	ADD	#10
+	XOR
+	BRNZ	WHEN20+8B
+	PUSH	[1][@NEAR(%fx)+5]
+	XOR	#6
+	SBRZ	WHEN20+79
+	PUSH	[1][@NEAR(%fx)+6]
+	SBRZ	WHEN20+86
+	PUSH	TOS
+	POP	[1][@NEAR(%fx)+4]
+	PUSHS	#0
+	POP	[1][@NEAR(%fx)+5]
+	PUSHS	#0
+	POP	[1][@NEAR(%fx)+6]
+	CALLF	%process_packet
+	SBR	WHEN20+8F
+	PUSHS	#7
+	CALLF	%stop_transfer
+	SBR	WHEN20+8F
+	PUSHS	#7
+	CALLF	%stop_transfer
+	DEALLOC	#1
+
+	SEG	INITCODE
+	ORG
+_%DENVER%INIT	EXPORT ; Initialization segment
+SCISPIINITPARMS	EXPORT
+	NOP
+	NOP
+	NOP
+	PUSHD	#801
+SCISPIINITCALL	EXPORT
+	CALLF	_io_spi_init
+	PUSHD	#2328
+	PUSHS	#0
+	CALL	_timer_mset_repeat
+	PUSHD	#0E10
+	PUSHS	#2
+	CALL	_timer_sset_repeat
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#3
+	CALL	_timer_mset_repeat
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#4
+	CALL	_timer_mset_repeat
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#5
+	CALL	_timer_mset_repeat
+	PUSHS	#0
+	PUSH	TOS
+	PUSHS	#6
+	CALL	_timer_mset_repeat
+	PUSHS	#0
+	PUSHS	#1
+	POP	%CarNumber+1
+	POP	%CarNumber
+	PUSH	#8
+	PUSHD	#_%DENVER%DATA1
+	PUSHD	#%fx
+	CALL	_memcpy
+	BRF	0FD00
+
+	SEG	CODE
+	ORG
+APINIT	EXPORT ; Init start & special event code
+	BRF	0FD00
+; When-unit I/O event function
+	PUSHS	#0
+	PUSH	TOS
+	CALL	_bit_input
+	RET
+RESET	EXPORT ; When-unit body
+	CALL	watchdog_update
+	PUSHD	#2328
+	PUSHS	#0
+	CALL	_timer_mset_repeat
+	CALLF	%VerBuildDateSetToMpu
+	CALLF	%Self_Install
+	CALLF	power_up
+	SBRZ	APINIT+20
+	CALLF	%Self_Install
+	PUSHS	#4
+	CALL	_change_state
+	RET
+
+	SEG	CODE
+	ORG
+TNVFIX ; NV Fixed table
+	DATA.B	1,PTR %nci00NetConfig
+	DATA.B	3,PTR %nvi00ObjRequest
+	DATA.B	6,PTR %nvo00ObjStatus
+	DATA.B	23,PTR %nvi00CDTCommand
+	DATA.B	7,PTR %nvo00TimeStamp
+	DATA.B	2C,PTR %nvi00FileReq
+	DATA.B	1B,PTR %nvo00FileStat
+	DATA.B	23,PTR %nvi01Subscribe
+	DATA.B	0C8,PTR %nvo01StatusBits
+	DATA.B	88,PTR %nvo01StatusBits2
+	DATA.B	22,PTR %nvi01TransfState
+	DATA.B	3,PTR %nvo01Parameter
+	DATA.B	0A8,PTR %nvi01CDTStBits
+	DATA.B	23,PTR %nvi01CDTParam
+	DATA.B	21,PTR %nvi03SCIVersReq
+	DATA.B	1F,PTR %nvo03SCIVersion
+	DATA.B	21,PTR %nvi04WaysideResp
+	DATA.B	5,PTR %nvo04WaysideReq
+
+TEVT	EXPORT ; Event table
+	DATA.B	PTR APINIT-2
+	DATA.B	0,RESET-APINIT+1
+	DATA.B	0,0
+	DATA.B	0,14
+	DATA.B	10,4,PTR WHEN1-1
+	DATA.B	0C3,PTR WHEN2-1
+	DATA.B	0CA,PTR WHEN3-1
+	DATA.B	9,PTR WHEN4-1
+	DATA.B	0C7,PTR WHEN5-1
+	DATA.B	8,PTR WHEN6-1
+	DATA.B	0B,PTR WHEN7-1
+	DATA.B	0C,PTR WHEN8-1
+	DATA.B	0D,PTR WHEN9-1
+	DATA.B	0E,PTR WHEN10-1
+	DATA.B	0CD,PTR WHEN11-1
+	DATA.B	0CC,PTR WHEN12-1
+	DATA.B	6,88,PTR WHEN13-1
+	DATA.B	88,PTR WHEN14-1
+	DATA.B	0CE,PTR WHEN15-1
+	DATA.B	0D0,PTR WHEN16-1
+	DATA.B	0A,PTR WHEN17-1
+	DATA.B	0F,PTR WHEN18-1
+	DATA.B	0C5,PTR WHEN19-1
+	DATA.B	2,PTR WHEN20-1
+
+	SEG	CODE
+	ORG
+_%DENVER%STR3	EXPORT
+	DATA.B	43,52,41,2D,4C,49,43,4C
+	DATA.B	0
+
+	SEG	CODE
+	ORG
+_%DENVER%STR2	EXPORT
+	DATA.B	32,30,31,32,2D,30,35,2D
+	DATA.B	31,37
+	DATA.B	0
+
+	SEG	CODE
+	ORG
+_%DENVER%STR1	EXPORT
+	DATA.B	31,2E,31,2E,30,32
+	DATA.B	0
+
+	SEG	SIDATA
+	ORG
+SIDATA	EXPORT ; SI Data
+	DATA.B	001,0D0,12,0,0
+	DATA.B	8B,0
+	DATA.B	8A,5C
+	DATA.B	8A,5D
+	DATA.B	8A,0
+	DATA.B	8A,54
+	DATA.B	8A,49
+	DATA.B	8A,4A
+	DATA.B	8A,0
+	DATA.B	0CA,0A5
+	DATA.B	0CA,0A5
+	DATA.B	8A,53
+	DATA.B	8A,0
+	DATA.B	0CA,0A5
+	DATA.B	8A,0
+	DATA.B	8A,0
+	DATA.B	8A,0
+	DATA.B	8A,0
+	DATA.B	8A,0
+	DATA.B	43,4F,4D,4D,2C,20,57,4F
+	DATA.B	4F,4A,49,4E,2C,20,4C,49
+	DATA.B	43,2C,20,32,30,31,32,2D
+	DATA.B	30,35,2D,31,37,0
+	DATA.B	30
+	DATA.B	6E,63,69,30,30,4E,65,74
+	DATA.B	43,6F,6E,66,69,67,0
+	DATA.B	26,30,2C,2C,30,90,2C,32
+	DATA.B	35,3B,0
+	DATA.B	30
+	DATA.B	6E,76,69,30,30,4F,62,6A
+	DATA.B	52,65,71,75,65,73,74,0
+	DATA.B	40,30,7C,31,0
+	DATA.B	30
+	DATA.B	6E,76,6F,30,30,4F,62,6A
+	DATA.B	53,74,61,74,75,73,0
+	DATA.B	40,30,7C,32,0
+	DATA.B	30
+	DATA.B	6E,76,69,30,30,43,44,54
+	DATA.B	43,6F,6D,6D,61,6E,64,0
+	DATA.B	40,30,7C,33,0
+	DATA.B	30
+	DATA.B	6E,76,6F,30,30,54,69,6D
+	DATA.B	65,53,74,61,6D,70,0
+	DATA.B	40,30,7C,34,0
+	DATA.B	30
+	DATA.B	6E,76,69,30,30,46,69,6C
+	DATA.B	65,52,65,71,0
+	DATA.B	40,30,7C,35,0
+	DATA.B	30
+	DATA.B	6E,76,6F,30,30,46,69,6C
+	DATA.B	65,53,74,61,74,0
+	DATA.B	40,30,7C,36,0
+	DATA.B	30
+	DATA.B	6E,76,69,30,31,53,75,62
+	DATA.B	73,63,72,69,62,65,0
+	DATA.B	40,31,7C,31,0
+	DATA.B	30
+	DATA.B	6E,76,6F,30,31,53,74,61
+	DATA.B	74,75,73,42,69,74,73,0
+	DATA.B	40,31,7C,32,0
+	DATA.B	30
+	DATA.B	6E,76,6F,30,31,53,74,61
+	DATA.B	74,75,73,42,69,74,73,32
+	DATA.B	0
+	DATA.B	40,31,7C,33,0
+	DATA.B	30
+	DATA.B	6E,76,69,30,31,54,72,61
+	DATA.B	6E,73,66,53,74,61,74,65
+	DATA.B	0
+	DATA.B	40,31,7C,34,0
+	DATA.B	30
+	DATA.B	6E,76,6F,30,31,50,61,72
+	DATA.B	61,6D,65,74,65,72,0
+	DATA.B	40,31,7C,35,0
+	DATA.B	30
+	DATA.B	6E,76,69,30,31,43,44,54
+	DATA.B	53,74,42,69,74,73,0
+	DATA.B	40,31,7C,36,0
+	DATA.B	30
+	DATA.B	6E,76,69,30,31,43,44,54
+	DATA.B	50,61,72,61,6D,0
+	DATA.B	40,31,7C,38,0
+	DATA.B	30
+	DATA.B	6E,76,69,30,33,53,43,49
+	DATA.B	56,65,72,73,52,65,71,0
+	DATA.B	40,33,7C,31,0
+	DATA.B	30
+	DATA.B	6E,76,6F,30,33,53,43,49
+	DATA.B	56,65,72,73,69,6F,6E,0
+	DATA.B	40,33,7C,32,0
+	DATA.B	30
+	DATA.B	6E,76,69,30,34,57,61,79
+	DATA.B	73,69,64,65,52,65,73,70
+	DATA.B	0
+	DATA.B	40,34,7C,31,0
+	DATA.B	30
+	DATA.B	6E,76,6F,30,34,57,61,79
+	DATA.B	73,69,64,65,52,65,71,0
+	DATA.B	40,34,7C,32,0
+	DATA.B	_new_binding_constraints|_query_stats|NALIAS
+
+; Resource usage information
+	RESOURCE	NADDR	0A
+	RESOURCE	NDOM	2
+	RESOURCE	NIOCES	1
+	RESOURCE	NRCVTX	0B
+	RESOURCE	NTMR	8
+	RESOURCE	NNIB	7
+	RESOURCE	NAIB	7
+	RESOURCE	NNOB	3
+	RESOURCE	NAOB	3
+	RESOURCE	NNPOB	0
+	RESOURCE	NAPOB	0
+	RESOURCE	SNIB	92
+	RESOURCE	SNOB	42
+	RESOURCE	SAIB	92
+	RESOURCE	SAOB	42
+	RESOURCE	NNVS	12
+	RESOURCE	ALIAS	0A
+	RESOURCE	RAMT	1
+	RESOURCE	NVADR	1
+	RESOURCE	MINIT	1
+	RESOURCE	XADDR	1
+	RESOURCE	IOSPI	1
+	RESOURCE	UARTFET	1
+	RESOURCE	UARTCLK	4
+	RESOURCE	OPT	0
+	RESOURCE	PULLUP	1
+	RESOURCE	DBGFEAT	0
+
+; End of generated code

@@ -1,0 +1,16 @@
+LONNCC32 - Echelon (R) Neuron (R) C Compiler
+Version 4.03.02
+Copyright (c) 1989 - 2005  Echelon Corp, All Rights Reserved.
+Run on Fri Jan 19 09:39:18 2007
+
+File dependency information:
+S?BPLATE.NS?C:\LONWORKS\NEURONC\INCLUDE\BPLATE.NS?5512 Mon May 30 03:13:10 2005
+A?E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1.nc?E:\ECHELON_LONWORKS\NEURON_C_EXAMPLE\TEST\MY TEST DEVICE\TEST1.NC?46 Fri Jan 19 09:36:37 2007
+S?echelon.h?C:\LONWORKS\NEURONC\INCLUDE\ECHELON.H?18794 Mon May 30 03:13:10 2005
+S?modnvlen.h?C:\LONWORKS\NEURONC\INCLUDE\MODNVLEN.H?6600 Mon May 30 03:13:10 2005
+End of file dependency list.
+
+Post-mortem compiler statistics:
+Total run time = 0 seconds.
+Compiler memory usage = 13388 bytes.
+Program complete.

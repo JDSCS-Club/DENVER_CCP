@@ -1,0 +1,148 @@
+; Echelon Dependency File - do not edit.
+; C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.nxdep
+; Created 수요일, 12월 06, 2006, 16:21:52
+
+[Global]
+Provider=Echelon NEURON CHIP (r) Exporter
+Version=1
+Inputs=8
+Outputs=6
+Switches=20
+Parameters=0
+
+[Input_1]
+Basename=SERVER_SI.NLDEP
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.NLDEP
+Type=0
+Size=2161
+TimestampHigh=0x1c71907
+TimestampLow=0x272d4b36
+
+[Input_2]
+Basename=neuron.xml
+Fullname=C:\LonWorks\types\neuron.xml
+Type=0
+Size=24932
+TimestampHigh=0x1c533c1
+TimestampLow=0xa29f9800
+
+[Input_3]
+Basename=stdxcvr.xml
+Fullname=C:\LonWorks\types\stdxcvr.xml
+Type=0
+Size=39657
+TimestampHigh=0x1c533c1
+TimestampLow=0xa29f9800
+
+[Input_4]
+Basename=SERVER_SI.NXE
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.NXE
+Type=0
+Size=1441
+TimestampHigh=0x1c71907
+TimestampLow=0x272d4b36
+
+[Input_5]
+Basename=SERVER_SI.BF2
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.BF2
+Type=0
+Size=199
+TimestampHigh=0x1c71907
+TimestampLow=0x271efd1a
+
+[Input_6]
+Basename=SERVER_SI.BIF
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.BIF
+Type=0
+Size=256
+TimestampHigh=0x1c71907
+TimestampLow=0x271efd1a
+
+[Input_7]
+Basename=B3120E4X.sym
+Fullname=C:\LonWorks\Images\Ver14\B3120E4X.sym
+Type=0
+Size=12585
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Input_8]
+Basename=SERVER_SI.NEI
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\SERVER_SI.NEI
+Type=0
+Size=1902
+TimestampHigh=0x1c71907
+TimestampLow=0x33def064
+
+[Output_1]
+Basename=SERVER_SI.NXE
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\SERVER_SI.NXE
+Type=0
+Size=1441
+TimestampHigh=0x1c71907
+TimestampLow=0x33dc8e0a
+
+[Output_2]
+Basename=SERVER_SI.XIF
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\SERVER_SI.XIF
+Type=0
+Size=446
+TimestampHigh=0x1c71907
+TimestampLow=0x33dc8e0a
+
+[Output_3]
+Basename=SERVER_SI.XFB
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\SERVER_SI.XFB
+Type=0
+Size=179
+TimestampHigh=0x1c71907
+TimestampLow=0x33dc8e0a
+
+[Output_4]
+Basename=SERVER_SI.APB
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\SERVER_SI.APB
+Type=0
+Size=690
+TimestampHigh=0x1c71907
+TimestampLow=0x33def064
+
+[Output_5]
+Basename=SERVER_SI.NEI
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\SERVER_SI.NEI
+Type=0
+Size=1902
+TimestampHigh=0x1c71907
+TimestampLow=0x33def064
+
+[Output_6]
+Basename=SERVER_SI.NFI
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\SERVER_SI.NFI
+Type=0
+Size=1887
+TimestampHigh=0x1c71907
+TimestampLow=0x33e152be
+
+[Switches]
+29=1024
+30=24626
+31=1
+24=1
+23=0
+22=5
+21=9
+1=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM
+2=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output
+3=SERVER_SI
+33=1
+34=1
+39=1
+37=1
+35=1
+36=1
+38=0
+41=1
+55=1
+17=9F:FF:FF:06:00:06:11:00
+
+[Parameters]
+

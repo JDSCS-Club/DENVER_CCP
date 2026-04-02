@@ -1,0 +1,434 @@
+Release 12.3 - xst M.70d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: dpo.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "dpo.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "dpo"
+Output Format                      : NGC
+Target Device                      : CoolRunner2 CPLDs
+
+---- Source Options
+Top Module Name                    : dpo
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : One-Hot
+Safe Implementation                : Yes
+CASE Implementation Style          : Full
+Mux Extraction                     : Yes
+Resource Sharing                   : NO
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : NO
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : YES
+
+=========================================================================
+
+Setting FSM Encoding Algorithm to : ONE
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.vhd" in Library work.
+Entity <dpo> compiled.
+Entity <dpo> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <dpo> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <dpo> in library <work> (Architecture <behavioral>).
+INFO:Xst:1739 - HDL ADVISOR - "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.vhd" line 12: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:1739 - HDL ADVISOR - "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.vhd" line 13: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:1739 - HDL ADVISOR - "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.vhd" line 14: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:1739 - HDL ADVISOR - "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.vhd" line 29: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+    Set user-defined property "source_node =  yes" for signal <cnt> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <cnt1ms> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <cntms> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <int_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <ext_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <both_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <ptt_mode1> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <ptt_mode2> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <dtmf_in> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <dtmf_inout_sp> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <need_cs> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <init_set> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <tone_tx> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <delay_mic1> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <delay_mic2> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <delay_mic3> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <delay_mic4> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <ic_call_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <ic_rx_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <pei_call_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <cancel_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <current_st> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <next_st> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <blink_cnt> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <blink_sig> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <pei_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <intercom_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <pei_talk_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <dtmf_receive_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <reset> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <clk_1m> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <cnt_1m> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <pa_off> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <pei_listen_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <intercom_off_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <occ_call_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <pei_wait_mode> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <pei_busy> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <occ_pei_call> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <clear_cntms> in unit <dpo>.
+    Set user-defined property "source_node =  yes" for signal <cnt_tone> in unit <dpo>.
+WARNING:Xst:819 - "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.vhd" line 148: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <init_set>, <cntms>, <need_cs>, <dtmf_cs>, <cnt_tone>, <dtmf_inout_sp>, <hs_sw>, <pei_mode>
+WARNING:Xst:819 - "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.vhd" line 690: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <occ_sw_in>
+INFO:Xst:2679 - Register <cnt_1m> in unit <dpo> has a constant value of 000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <clear_cntms> in unit <dpo> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ic_call_mode> in unit <dpo> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ic_rx_mode> in unit <dpo> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <occ_call_mode> in unit <dpo> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <pei_wait_mode> in unit <dpo> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <dpo> analyzed. Unit <dpo> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <clk_1m> in unit <dpo> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <cntms> in unit <dpo> has a constant value of 000000000 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <dpo>.
+    Related source file is "C:/Docs/RF-COMM/DPO/DPO_KM/dpo.vhd".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <pei_wait_mode> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <pei_listen_mode> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <pei_busy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <pa_off> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <occ_pei_call> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <occ_call_mode> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <intercom_off_mode> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <cnt_1m> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <clk_1m> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+INFO:Xst:1608 - Relative priorities of control signals on register <ext_led> differ from those commonly found in the selected device family. This will result in additional logic around the register.
+INFO:Xst:1608 - Relative priorities of control signals on register <dual_mute_sp> differ from those commonly found in the selected device family. This will result in additional logic around the register.
+WARNING:Xst:737 - Found 1-bit latch for signal <ptt_mode2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <int_led>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <ext_led>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <dtmf_inout>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <dtmf_inout_sp>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <rxs>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:1608 - Relative priorities of control signals on register <Q> differ from those commonly found in the selected device family. This will result in additional logic around the register.
+INFO:Xst:1608 - Relative priorities of control signals on register <Q> differ from those commonly found in the selected device family. This will result in additional logic around the register.
+INFO:Xst:1608 - Relative priorities of control signals on register <Q> differ from those commonly found in the selected device family. This will result in additional logic around the register.
+WARNING:Xst:737 - Found 4-bit latch for signal <txs_mic>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 4-bit latch for signal <dtmf_in>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <both_led>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <ptt_mode1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pei_mode>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <occ_led>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <dtmf_rw$mux0007> created at line 276. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <dtmf_rs0$mux0007> created at line 276. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:736 - Found 1-bit latch for signal <dtmf_cs$mux0009> created at line 276. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 1-bit register for signal <mic_sw>.
+    Found 1-bit register for signal <live_sw>.
+    Found 1-bit register for signal <dual_mute_sp>.
+    Found 10-bit up counter for signal <blink_cnt>.
+    Found 1-bit register for signal <blink_sig>.
+    Found 16-bit up counter for signal <cnt>.
+    Found 1-bit register for signal <cnt1ms>.
+    Found 7-bit up counter for signal <cnt_tone>.
+    Found 3-bit register for signal <current_st>.
+    Found 1-bit register for signal <delay_mic1>.
+    Found 1-bit register for signal <delay_mic2>.
+    Found 1-bit register for signal <delay_mic3>.
+    Found 1-bit register for signal <delay_mic4>.
+    Found 1-bit register for signal <init_set>.
+    Found 1-bit register for signal <need_cs>.
+    Found 3-bit 8-to-1 multiplexer for signal <next_st>.
+    Found 1-bit register for signal <tone_tx>.
+    Summary:
+	inferred   3 Counter(s).
+	inferred  12 D-type flip-flop(s).
+Unit <dpo> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 10-bit up counter                                     : 1
+ 16-bit up counter                                     : 1
+ 7-bit up counter                                      : 1
+# Registers                                            : 13
+ 1-bit register                                        : 12
+ 3-bit register                                        : 1
+# Latches                                              : 15
+ 1-bit latch                                           : 10
+ 4-bit latch                                           : 5
+# Multiplexers                                         : 1
+ 3-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block live_sw.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <init_set>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 10-bit up counter                                     : 1
+ 16-bit up counter                                     : 1
+ 7-bit up counter                                      : 1
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+# Latches                                              : 15
+ 1-bit latch                                           : 10
+ 4-bit latch                                           : 5
+# Multiplexers                                         : 1
+ 3-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch live_sw hinder the constant cleaning in the block dpo.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dtmf_rw_mux0007> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dtmf_rs0_mux0007> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dtmf_cs_mux0009> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <dpo> ...
+  implementation constraint: source_node  : dtmf_rs0
+  implementation constraint: source_node  : dtmf_rw
+  implementation constraint: source_node  : ptt_mode1
+  implementation constraint: source_node  : ptt_mode2
+  implementation constraint: source_node  : cancel_mode
+  implementation constraint: source_node  : clear_cntms
+  implementation constraint: source_node  : pei_mode
+  implementation constraint: source_node  : int_mode
+  implementation constraint: source_node  : reset
+  implementation constraint: source_node  : blink_sig
+  implementation constraint: source_node  : pei_talk_mode
+  implementation constraint: source_node  : pei_call_mode
+  implementation constraint: source_node  : tone_tx
+  implementation constraint: source_node  : intercom_mode
+  implementation constraint: source_node  : both_mode
+  implementation constraint: source_node  : ext_mode
+  implementation constraint: source_node  : cnt1ms
+  implementation constraint: source_node  : delay_mic1
+  implementation constraint: source_node  : delay_mic2
+  implementation constraint: source_node  : delay_mic3
+  implementation constraint: source_node  : delay_mic4
+  implementation constraint: source_node  : dtmf_inout_sp<3>
+  implementation constraint: source_node  : dtmf_inout_sp<2>
+  implementation constraint: source_node  : dtmf_inout_sp<1>
+  implementation constraint: source_node  : dtmf_inout_sp<0>
+  implementation constraint: source_node  : cnt<15>
+  implementation constraint: source_node  : cnt<14>
+  implementation constraint: source_node  : cnt<13>
+  implementation constraint: source_node  : cnt<12>
+  implementation constraint: source_node  : cnt<11>
+  implementation constraint: source_node  : cnt<10>
+  implementation constraint: source_node  : cnt<9>
+  implementation constraint: source_node  : cnt<8>
+  implementation constraint: source_node  : cnt<7>
+  implementation constraint: source_node  : cnt<6>
+  implementation constraint: source_node  : cnt<5>
+  implementation constraint: source_node  : cnt<4>
+  implementation constraint: source_node  : cnt<3>
+  implementation constraint: source_node  : cnt<2>
+  implementation constraint: source_node  : cnt<1>
+  implementation constraint: source_node  : cnt<0>
+  implementation constraint: source_node  : blink_cnt<9>
+  implementation constraint: source_node  : blink_cnt<8>
+  implementation constraint: source_node  : blink_cnt<7>
+  implementation constraint: source_node  : blink_cnt<6>
+  implementation constraint: source_node  : blink_cnt<5>
+  implementation constraint: source_node  : blink_cnt<4>
+  implementation constraint: source_node  : blink_cnt<3>
+  implementation constraint: source_node  : blink_cnt<2>
+  implementation constraint: source_node  : blink_cnt<1>
+  implementation constraint: source_node  : blink_cnt<0>
+  implementation constraint: source_node  : cnt_tone<6>
+  implementation constraint: source_node  : cnt_tone<5>
+  implementation constraint: source_node  : cnt_tone<4>
+  implementation constraint: source_node  : cnt_tone<3>
+  implementation constraint: source_node  : cnt_tone<2>
+  implementation constraint: source_node  : cnt_tone<1>
+  implementation constraint: source_node  : cnt_tone<0>
+  implementation constraint: source_node  : current_st<2>
+  implementation constraint: source_node  : current_st<1>
+  implementation constraint: source_node  : current_st<0>
+  implementation constraint: source_node  : dtmf_in<3>
+  implementation constraint: source_node  : dtmf_in<2>
+  implementation constraint: source_node  : dtmf_in<1>
+  implementation constraint: source_node  : dtmf_in<0>
+  implementation constraint: source_node  : next_st<2>
+  implementation constraint: source_node  : next_st<1>
+  implementation constraint: source_node  : next_st<0>
+  implementation constraint: INIT=r	 : current_st_2
+  implementation constraint: INIT=r	 : current_st_0
+  implementation constraint: INIT=r	 : current_st_1
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <init_set> (without init value) has a constant value of 0 in block <dpo>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : dpo.ngr
+Top Level Output File Name         : dpo
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+Target Technology                  : CoolRunner2 CPLDs
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+Clock Enable                       : YES
+wysiwyg                            : YES
+
+Design Statistics
+# IOs                              : 39
+
+Cell Usage :
+# BELS                             : 513
+#      AND2                        : 182
+#      AND3                        : 18
+#      AND4                        : 9
+#      AND5                        : 1
+#      AND8                        : 2
+#      GND                         : 1
+#      INV                         : 190
+#      OR2                         : 63
+#      OR3                         : 8
+#      OR4                         : 3
+#      OR5                         : 2
+#      OR6                         : 2
+#      OR8                         : 1
+#      VCC                         : 1
+#      XOR2                        : 30
+# FlipFlops/Latches                : 75
+#      FDC                         : 36
+#      FDCE                        : 6
+#      FDCPE                       : 3
+#      FDP                         : 1
+#      FDPE                        : 2
+#      LD                          : 12
+#      LDCP                        : 14
+#      LDP                         : 1
+# IO Buffers                       : 38
+#      IBUF                        : 9
+#      OBUF                        : 29
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.64 secs
+ 
+--> 
+
+Total memory usage is 244980 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   48 (   0 filtered)
+Number of infos    :   22 (   0 filtered)
+

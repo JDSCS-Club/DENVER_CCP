@@ -1,0 +1,150 @@
+; Echelon Dependency File - do not edit.
+; F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.nxdep
+; Created Tuesday, January 26, 2016, 13:33:07
+
+[Global]
+Provider=Echelon NEURON CHIP (r) Exporter
+Version=1
+Inputs=7
+Outputs=7
+Switches=23
+Parameters=0
+
+[Input_1]
+Basename=Denver.NLDEP
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.NLDEP
+Type=0
+Size=3147
+TimestampHigh=0x1d157f2
+TimestampLow=0xa60654f0
+
+[Input_2]
+Basename=neuron.xml
+Fullname=C:\Program Files\LonWorks\types\neuron.xml
+Type=0
+Size=75175
+TimestampHigh=0x1cac14d
+TimestampLow=0x3045be00
+
+[Input_3]
+Basename=stdxcvr.xml
+Fullname=C:\Program Files\LonWorks\types\stdxcvr.xml
+Type=0
+Size=43857
+TimestampHigh=0x1cac14d
+TimestampLow=0x3045be00
+
+[Input_4]
+Basename=Denver.NXE
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.NXE
+Type=0
+Size=16649
+TimestampHigh=0x1d157f2
+TimestampLow=0xa604f560
+
+[Input_5]
+Basename=Denver.BF2
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.BF2
+Type=0
+Size=200
+TimestampHigh=0x1d157f2
+TimestampLow=0xa5c30a60
+
+[Input_6]
+Basename=Denver.BIF
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.BIF
+Type=0
+Size=4593
+TimestampHigh=0x1d157f2
+TimestampLow=0xa5c30a60
+
+[Input_7]
+Basename=BFT5000.sym
+Fullname=C:\Program Files\LonWorks\Images\Ver19\BFT5000.sym
+Type=0
+Size=10499
+TimestampHigh=0x1ca566e
+TimestampLow=0xa817be00
+
+[Output_1]
+Basename=Denver.NXE
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.NXE
+Type=0
+Size=16649
+TimestampHigh=0x1d157f2
+TimestampLow=0xa76596d0
+
+[Output_2]
+Basename=Denver.XIF
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.XIF
+Type=0
+Size=4788
+TimestampHigh=0x1d157f2
+TimestampLow=0xa76b1510
+
+[Output_3]
+Basename=Denver.XFB
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.XFB
+Type=0
+Size=3550
+TimestampHigh=0x1d157f2
+TimestampLow=0xa77bddf0
+
+[Output_4]
+Basename=Denver.APB
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.APB
+Type=0
+Size=8074
+TimestampHigh=0x1d157f2
+TimestampLow=0xa7946f00
+
+[Output_5]
+Basename=Denver.NDL
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.NDL
+Type=0
+Size=17214
+TimestampHigh=0x1d157f2
+TimestampLow=0xa79c3730
+
+[Output_6]
+Basename=Denver.NME
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\Denver.NME
+Type=0
+Size=17349
+TimestampHigh=0x1d157f2
+TimestampLow=0xa7a2edf0
+
+[Output_7]
+Basename=Denver.PLF
+Fullname=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.PLF
+Type=0
+Size=28
+TimestampHigh=0x1d157f2
+TimestampLow=0xa7a31500
+
+[Switches]
+29=1024
+30=18877
+31=2
+24=1
+23=0
+22=5
+57=8.000000
+21=7
+1=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development\IM
+2=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Development
+3=Denver
+33=1
+34=1
+39=1
+37=0
+35=1
+36=1
+38=0
+55=1
+59=1
+61=0
+62=255
+17=434f4d4d00000000
+
+[Parameters]

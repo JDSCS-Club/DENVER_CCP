@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1497187",
+    "ThreadId": "663309",
+    "Html": "Ever visitited your own homepage using Google Chrome? Is tftpd now malware? If not why is Google reporting it? Also I have a Zscaler account, it also blocks access to it.\r<br />\n<br />\nI always had a good impression about the tftpd project, it's sad to see it in such a state.\r<br />\n<br />\nHonestly, is an own site still needed for such a project? Have you considered deleting the site and moving the content from there and from the dying codeplex both to github?<br />\n",
+    "PostedDate": "2017-06-25T06:27:32.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1497240",
+    "ThreadId": "663309",
+    "Html": "The warning in Chrome is now gone. Did you change something?<br />\n",
+    "PostedDate": "2017-06-29T00:57:41.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

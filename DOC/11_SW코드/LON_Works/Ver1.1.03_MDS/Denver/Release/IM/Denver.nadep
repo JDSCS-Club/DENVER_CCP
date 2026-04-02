@@ -1,0 +1,32 @@
+; Echelon Dependency File - do not edit.
+; C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver.nadep
+; Created Wednesday, February 22, 2017, 18:45:17
+
+[Global]
+Provider=NEURON Assembler
+Version=1
+Inputs=1
+Outputs=1
+Switches=1
+Parameters=0
+
+[Input_1]
+Basename=Denver.ns
+Fullname=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver.ns
+Type=0
+Size=62306
+TimestampHigh=0x1d28cf0
+TimestampLow=0x5fbb0f20
+
+[Output_1]
+Basename=Denver.no
+Fullname=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver.no
+Type=0
+Size=57210
+TimestampHigh=0x1d28cf0
+TimestampLow=0x5fdca0e0
+
+[Switches]
+8=C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver
+
+[Parameters]

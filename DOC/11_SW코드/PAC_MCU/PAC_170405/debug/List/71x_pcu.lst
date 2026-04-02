@@ -1,0 +1,833 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:11
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_pcu.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW44F3.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_pcu.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_pcu.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_pcu.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_pcu.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_pcu.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : This file provides all the Power Control Unit functions.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "71x_pcu.h"
+     18          #include "71x_rccu.h"
+     19          
+     20          /* Private typedef -----------------------------------------------------------*/
+     21          /* Private define ------------------------------------------------------------*/
+     22          /* Private macro -------------------------------------------------------------*/
+     23          /* Private variables ---------------------------------------------------------*/
+     24          /* Private function prototypes -----------------------------------------------*/
+     25          /* Private functions ---------------------------------------------------------*/
+     26          
+     27          /*******************************************************************************
+     28          * Function Name  : PCU_MVRStatus
+     29          * Description    : This routine is used to check and return the Main Voltage 
+     30          *                  Regulator stability status.
+     31          * Input          : None.
+     32          * Output         : None.
+     33          * Return         : The stability status of the Main Voltage Regulator,
+     34          *                  it can be:
+     35          *                   STABLE, UNSTABLE
+     36          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     37          PCU_VR_Status PCU_MVRStatus (void)
+     38          {
+     39            if ((PCU->PWRCR & PCU_VROK_Mask) == 0x00)
+   \                     PCU_MVRStatus:
+   \        0x0   0xE3A0'0054        MOV      R0,#+84
+   \        0x4   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \        0x8   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \        0xC   0xE310'0D40        TST      R0,#0x1000
+   \       0x10   0x1A00'0001        BNE      ??PCU_MVRStatus_0
+     40            {
+     41              return PCU_UNSTABLE;
+   \       0x14   0xE3A0'0001        MOV      R0,#+1
+   \       0x18   0xEA00'0000        B        ??PCU_MVRStatus_1
+     42            }
+     43           else
+     44            {
+     45              return PCU_STABLE;
+   \                     ??PCU_MVRStatus_0:
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??PCU_MVRStatus_1:
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+     46            }
+     47          }
+     48          
+     49          /*******************************************************************************
+     50          * Function Name  : PCU_FlagStatus
+     51          * Description    : This routine is used to return the PCU register flag
+     52          * Input          : - Xflag: the flag to get the status.
+     53          * Output         : None.
+     54          * Return         : the status of the flag passed in parameter, it can be: 
+     55          *                  SET or RESET 
+     56          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     57          FlagStatus PCU_FlagStatus (PCU_Flags Xflag)
+     58          {
+     59            if ((PCU->PWRCR & Xflag) == 0x00)
+   \                     PCU_FlagStatus:
+   \        0x0   0xE3A0'1054        MOV      R1,#+84
+   \        0x4   0xE381'14A0        ORR      R1,R1,#0xA0000000
+   \        0x8   0xE1D1'10B0        LDRH     R1,[R1, #+0]
+   \        0xC   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x10   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x14   0xE110'0001        TST      R0,R1
+   \       0x18   0x1A00'0001        BNE      ??PCU_FlagStatus_0
+     60            {
+     61              return RESET;	
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \       0x20   0xEA00'0000        B        ??PCU_FlagStatus_1
+     62            }
+     63            else
+     64            {
+     65              return SET;	
+   \                     ??PCU_FlagStatus_0:
+   \       0x24   0xE3A0'0001        MOV      R0,#+1
+   \                     ??PCU_FlagStatus_1:
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+     66            }
+     67          }
+     68          
+     69          /*******************************************************************************
+     70          * Function Name  : PCU_VRConfig
+     71          * Description    : This routine is used to configure PCU voltage regultors.
+     72          * Input          : - Xvr: Specifies the PCU voltage regulator, it can be:
+     73          *                     PCU_MVR : Main voltage Regulator
+     74          *                     PCU_LPR : Low Power Regulator
+     75          *                : - NewState: Specifies whatever the corresponding voltage 
+     76          *                    regulator is enabled or bypassed, it can be:
+     77          *                     ENABLE : Enable the Voltage Regulator.
+     78          *                     DISABLE: Disable ( ByPass ) the VR.
+     79          * Output         : None.
+     80          * Return         : None.
+     81          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     82          void PCU_VRConfig (PCU_VR Xvr, FunctionalState NewState)
+     83          {
+   \                     PCU_VRConfig:
+   \        0x0   0xE24D'D004        SUB      SP,SP,#+4
+     84            vu16 Tmp = PCU->PWRCR;
+   \        0x4   0xE3A0'2054        MOV      R2,#+84
+   \        0x8   0xE382'24A0        ORR      R2,R2,#0xA0000000
+   \        0xC   0xE1D2'30B0        LDRH     R3,[R2, #+0]
+   \       0x10   0xE1CD'30B0        STRH     R3,[SP, #+0]
+     85            
+     86            switch (Xvr)
+   \       0x14   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x18   0xE350'0008        CMP      R0,#+8
+   \       0x1C   0x0A00'0002        BEQ      ??PCU_VRConfig_0
+   \       0x20   0xE350'0010        CMP      R0,#+16
+   \       0x24   0x0A00'000D        BEQ      ??PCU_VRConfig_1
+   \       0x28   0xEA00'0018        B        ??PCU_VRConfig_2
+     87            {
+     88              case PCU_MVR :
+     89                /* Configure the Main Voltage Regulator */
+     90                if (NewState == DISABLE)
+   \                     ??PCU_VRConfig_0:
+   \       0x2C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x30   0xE351'0000        CMP      R1,#+0
+   \       0x34   0x1A00'0003        BNE      ??PCU_VRConfig_3
+     91                {
+     92                  Tmp |= PCU_VRBYP_Mask;
+   \       0x38   0xE1DD'00B0        LDRH     R0,[SP, #+0]
+   \       0x3C   0xE390'0008        ORRS     R0,R0,#0x8
+   \       0x40   0xE1CD'00B0        STRH     R0,[SP, #+0]
+   \       0x44   0xEA00'0004        B        ??PCU_VRConfig_4
+     93                }
+     94                else
+     95                {
+     96                  Tmp &= ~PCU_VRBYP_Mask;
+   \                     ??PCU_VRConfig_3:
+   \       0x48   0xE1DD'00B0        LDRH     R0,[SP, #+0]
+   \       0x4C   0xE3A0'10F7        MOV      R1,#+247
+   \       0x50   0xE381'1CFF        ORR      R1,R1,#0xFF00
+   \       0x54   0xE011'0000        ANDS     R0,R1,R0
+   \       0x58   0xE1CD'00B0        STRH     R0,[SP, #+0]
+     97                }
+     98                break;
+   \                     ??PCU_VRConfig_4:
+   \       0x5C   0xEA00'000B        B        ??PCU_VRConfig_2
+     99                
+    100              case PCU_LPR :
+    101                /* Configure the Low power Voltage Regulator */
+    102                if (NewState == DISABLE)
+   \                     ??PCU_VRConfig_1:
+   \       0x60   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x64   0xE351'0000        CMP      R1,#+0
+   \       0x68   0x1A00'0003        BNE      ??PCU_VRConfig_5
+    103                {
+    104                  Tmp |= PCU_LPRWFI_Mask;
+   \       0x6C   0xE1DD'00B0        LDRH     R0,[SP, #+0]
+   \       0x70   0xE390'0010        ORRS     R0,R0,#0x10
+   \       0x74   0xE1CD'00B0        STRH     R0,[SP, #+0]
+   \       0x78   0xEA00'0004        B        ??PCU_VRConfig_6
+    105                }
+    106                else
+    107                {
+    108                  Tmp &= ~PCU_LPRWFI_Mask;
+   \                     ??PCU_VRConfig_5:
+   \       0x7C   0xE1DD'00B0        LDRH     R0,[SP, #+0]
+   \       0x80   0xE3A0'10EF        MOV      R1,#+239
+   \       0x84   0xE381'1CFF        ORR      R1,R1,#0xFF00
+   \       0x88   0xE011'0000        ANDS     R0,R1,R0
+   \       0x8C   0xE1CD'00B0        STRH     R0,[SP, #+0]
+    109                }
+    110                break;
+    111            }
+    112          
+    113            while ((PCU->PWRCR & PCU_BUSY_Mask) == 1)
+   \                     ??PCU_VRConfig_6:
+   \                     ??PCU_VRConfig_2:
+   \       0x90   0xE1D2'00B0        LDRH     R0,[R2, #+0]
+    114            {
+    115              /* Wait until the previous write operation is completed */
+    116            }
+    117          
+    118            /*  Unlock Power Control Register */
+    119            PCU->PWRCR |= PCU_WREN_Mask;
+   \       0x94   0xE1D2'00B0        LDRH     R0,[R2, #+0]
+   \       0x98   0xE390'0C80        ORRS     R0,R0,#0x8000
+   \       0x9C   0xE1C2'00B0        STRH     R0,[R2, #+0]
+    120            PCU->PWRCR = Tmp | PCU_WREN_Mask;
+   \       0xA0   0xE1DD'00B0        LDRH     R0,[SP, #+0]
+   \       0xA4   0xE390'0C80        ORRS     R0,R0,#0x8000
+   \       0xA8   0xE1C2'00B0        STRH     R0,[R2, #+0]
+    121          }
+   \       0xAC   0xE28D'D004        ADD      SP,SP,#+4
+   \       0xB0   0xE12F'FF1E        BX       LR               ;; return
+    122          
+    123          /*******************************************************************************
+    124          * Function Name  : PCU_LVDDisable
+    125          * Description    : This routine is used to disable the Low Voltage Detector.
+    126          * Input          : None.
+    127          * Output         : None.
+    128          * Return         : None.
+    129          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    130          void PCU_LVDDisable (void)
+    131          {
+    132            
+    133            while ((PCU->PWRCR & PCU_BUSY_Mask) == 1)
+   \                     PCU_LVDDisable:
+   \        0x0   0xE3A0'0054        MOV      R0,#+84
+   \        0x4   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \        0x8   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+    134            {
+    135              /* Wait until the previous write operation will be completed */
+    136            }
+    137          
+    138            /*  Unlock Power Control Register */
+    139            PCU->PWRCR |= PCU_WREN_Mask;
+   \        0xC   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x10   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x14   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    140          
+    141            /*  Set the LVD DIS Flag */
+    142            PCU->PWRCR |= PCU_LVD_DIS_Mask;
+   \       0x18   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x1C   0xE391'1F40        ORRS     R1,R1,#0x100
+   \       0x20   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    143          }
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    144          
+    145          /*******************************************************************************
+    146          * Function Name  : PCU_VRStatus
+    147          * Description    : This routine is used to get the PCU voltage regultors status.
+    148          * Input          : - xVR: the voltage regulator to get its status, it can be:
+    149          *                     PCU_MVR : Main voltage Regulator.
+    150          *                     PCU_LPR : Low Power Regulator.
+    151          * Output         : None.
+    152          * Return         : the status of the voltage regulator passed in parameter.
+    153          *                  It can be:
+    154          *                   ENABLE : the Voltage Regulator is enabled.
+    155          *                   DISABLE: the Voltage Regulator is passed.
+    156          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    157          FunctionalState PCU_VRStatus (PCU_VR xVR)
+    158          {
+    159            if ((PCU->PWRCR & xVR) == 0)
+   \                     PCU_VRStatus:
+   \        0x0   0xE3A0'1054        MOV      R1,#+84
+   \        0x4   0xE381'14A0        ORR      R1,R1,#0xA0000000
+   \        0x8   0xE1D1'10B0        LDRH     R1,[R1, #+0]
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE110'0001        TST      R0,R1
+   \       0x14   0x1A00'0001        BNE      ??PCU_VRStatus_0
+    160            {
+    161              return ENABLE;	
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \       0x1C   0xEA00'0000        B        ??PCU_VRStatus_1
+    162            }
+    163            else
+    164            {
+    165              return DISABLE;
+   \                     ??PCU_VRStatus_0:
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \                     ??PCU_VRStatus_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    166            }	
+    167          }
+    168          
+    169          /*******************************************************************************
+    170          * Function Name  : PCU_LVDStatus
+    171          * Description    : This routine is used to get and return the LVD status.
+    172          * Input          : None.
+    173          * Output         : None.
+    174          * Return         : The LVD status, it can be:
+    175          *                   ENABLE: the LVD is enabled.
+    176          *                   DISABLE: the LVD is disabled.
+    177          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    178          FunctionalState PCU_LVDStatus (void)
+    179          {
+    180            if ((PCU->PWRCR & PCU_LVD_DIS_Mask) == 0)
+   \                     PCU_LVDStatus:
+   \        0x0   0xE3A0'0054        MOV      R0,#+84
+   \        0x4   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \        0x8   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \        0xC   0xE310'0F40        TST      R0,#0x100
+   \       0x10   0x1A00'0001        BNE      ??PCU_LVDStatus_0
+    181            {
+    182              return ENABLE;
+   \       0x14   0xE3A0'0001        MOV      R0,#+1
+   \       0x18   0xEA00'0000        B        ??PCU_LVDStatus_1
+    183            }	
+    184            else
+    185            {
+    186              return DISABLE;
+   \                     ??PCU_LVDStatus_0:
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??PCU_LVDStatus_1:
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    187            }
+    188          }
+    189          
+    190          /*******************************************************************************
+    191          * Function Name  : PCU_LPModesConfig
+    192          * Description    : This routine is used to configure the different STR71x
+    193          *                  low power modes options
+    194          * Input          : - PLL1_State: the state of PLL1 when CK_AF selected.It can be:
+    195          *                     ENABLE : PLL1 is not disabled when CK_AF is selected.
+    196          *                     DISABLE: PLL1 is disabled automaticaty when CK_AF 
+    197          *                     is selected as system clock.
+    198          *                  - MVR_State: the state of the Main Voltage Regulator when 
+    199          *                    CK_AF is selected. It can be:
+    200          *                     ENABLE : MVREG is enabled during LPWFI and STOP modes
+    201          *                     DISABLE: MVREG is disabled during LPWFI and STOP modes
+    202          *                  - FLASH_State: the state of the flash during LPWFI and STOP
+    203          *                    modes. It can be:
+    204          *                     ENABLE : Flash Stand-by mode during LPWFI and STOP modes
+    205          *                     DISABLE: FLASH in powerdown during LPWFI and STOP modes
+    206          *                  - LPWFI_State: the state of low power mode during LPWFI.
+    207          *                    It can be:
+    208          *                     ENABLE : Enable Low power mode during WFI mode (LPWFI)
+    209          *                     DISABLE: Disable Low power modeduring WFI mode (WFI).
+    210          *                  - LPWFI_Clock: the selected clock during LPWFI. It can be:
+    211                                LPWFI_CLK2_16: CLK2/16 is selected during LPWFI.
+    212          *                     LPWFI_CK_AF  : CK_AF is selected during LPWFI.
+    213          * Output         : None.
+    214          * Return         : None.
+    215          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    216          void PCU_LPModesConfig (FunctionalState PLL1_State, FunctionalState MVR_State,
+    217                                 FunctionalState FLASH_State, FunctionalState LPWFI_State,
+    218                                 LPWFI_Clock_Typedef LPWFI_Clock)
+    219          {
+    220          
+    221            /* Configure if the PLL1 is disabled automatically when CK_AF is selected
+    222             as system clock */
+    223            if (PLL1_State == DISABLE)
+   \                     PCU_LPModesConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0000        CMP      R0,#+0
+   \        0x8   0x1A00'0004        BNE      ??PCU_LPModesConfig_0
+    224            {
+    225              /* PLL1 is disabled when CK_AF is selected */
+    226              RCCU->CFR |= 1 << 4;
+   \        0xC   0xE3A0'028A        MOV      R0,#-1610612728
+   \       0x10   0xE590'C000        LDR      R12,[R0, #+0]
+   \       0x14   0xE39C'C010        ORRS     R12,R12,#0x10
+   \       0x18   0xE580'C000        STR      R12,[R0, #+0]
+   \       0x1C   0xEA00'0003        B        ??PCU_LPModesConfig_1
+    227            }
+    228            else
+    229            {
+    230              /* PLL1 is not disabled when CK_AF is selected */
+    231              RCCU->CFR &= ~(1 << 4);
+   \                     ??PCU_LPModesConfig_0:
+   \       0x20   0xE3A0'028A        MOV      R0,#-1610612728
+   \       0x24   0xE590'C000        LDR      R12,[R0, #+0]
+   \       0x28   0xE3DC'C010        BICS     R12,R12,#0x10
+   \       0x2C   0xE580'C000        STR      R12,[R0, #+0]
+    232            }
+    233          
+    234            /* Configure the MVREG state during LPWFI and STOP modes */
+    235            if (MVR_State == DISABLE)
+   \                     ??PCU_LPModesConfig_1:
+   \       0x30   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x34   0xE351'0000        CMP      R1,#+0
+   \       0x38   0x1A00'0009        BNE      ??PCU_LPModesConfig_2
+    236            {
+    237              /* MVREG is disabled during LPWFI and STOP modes */
+    238              /*  Unlock Power Control Register */
+    239              PCU->PWRCR |= PCU_WREN_Mask;
+   \       0x3C   0xE3A0'0054        MOV      R0,#+84
+   \       0x40   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x44   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x48   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x4C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    240              PCU->PWRCR |= PCU_LPRWFI_Mask | PCU_WREN_Mask;
+   \       0x50   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x54   0xE391'1010        ORRS     R1,R1,#0x10
+   \       0x58   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x5C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+   \       0x60   0xEA00'0009        B        ??PCU_LPModesConfig_3
+    241            }
+    242            else
+    243            {
+    244              /* MVREG is enabled during LPWFI and STOP modes */
+    245              /*  Unlock Power Control Register */
+    246              PCU->PWRCR |= PCU_WREN_Mask;
+   \                     ??PCU_LPModesConfig_2:
+   \       0x64   0xE3A0'0054        MOV      R0,#+84
+   \       0x68   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x6C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x70   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x74   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    247              PCU->PWRCR &= (~(1 << 4)) | PCU_WREN_Mask;
+   \       0x78   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x7C   0xE3A0'C0EF        MOV      R12,#+239
+   \       0x80   0xE38C'CCFF        ORR      R12,R12,#0xFF00
+   \       0x84   0xE01C'1001        ANDS     R1,R12,R1
+   \       0x88   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    248            }
+    249          
+    250            /* Configure the FLASH state during LPWFI and STOP modes */
+    251            if (FLASH_State == DISABLE)
+   \                     ??PCU_LPModesConfig_3:
+   \       0x8C   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x90   0xE352'0000        CMP      R2,#+0
+   \       0x94   0x1A00'0005        BNE      ??PCU_LPModesConfig_4
+    252            {
+    253              /* FLASH in PWD mode during LPWFI and STOP modes */
+    254              FLASHR->CR0 |= 1 << 15;
+   \       0x98   0xE3A0'0440        MOV      R0,#+1073741824
+   \       0x9C   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0xA0   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xA4   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0xA8   0xE580'1000        STR      R1,[R0, #+0]
+   \       0xAC   0xEA00'0004        B        ??PCU_LPModesConfig_5
+    255            }
+    256            else
+    257            {
+    258              /* FLASH is enabled during LPWFI and STOP modes */
+    259              FLASHR->CR0 &= ~(1 << 15);
+   \                     ??PCU_LPModesConfig_4:
+   \       0xB0   0xE3A0'0440        MOV      R0,#+1073741824
+   \       0xB4   0xE380'0940        ORR      R0,R0,#0x100000
+   \       0xB8   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xBC   0xE3D1'1C80        BICS     R1,R1,#0x8000
+   \       0xC0   0xE580'1000        STR      R1,[R0, #+0]
+    260            }
+    261            /* Configure the low power mode during WFI mode */
+    262            if (LPWFI_State == ENABLE)
+   \                     ??PCU_LPModesConfig_5:
+   \       0xC4   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0xC8   0xE353'0001        CMP      R3,#+1
+   \       0xCC   0x1A00'0004        BNE      ??PCU_LPModesConfig_6
+    263            {
+    264              /* Set bit LOPWFI for selecting LPWFI mode */
+    265              RCCU->CCR |= 0x1;
+   \       0xD0   0xE3A0'04A0        MOV      R0,#-1610612736
+   \       0xD4   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xD8   0xE391'1001        ORRS     R1,R1,#0x1
+   \       0xDC   0xE580'1000        STR      R1,[R0, #+0]
+   \       0xE0   0xEA00'0003        B        ??PCU_LPModesConfig_7
+    266            }
+    267            else
+    268            {
+    269              RCCU->CCR &= ~0x1;
+   \                     ??PCU_LPModesConfig_6:
+   \       0xE4   0xE3A0'04A0        MOV      R0,#-1610612736
+   \       0xE8   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xEC   0xE3D1'1001        BICS     R1,R1,#0x1
+   \       0xF0   0xE580'1000        STR      R1,[R0, #+0]
+   \                     ??PCU_LPModesConfig_7:
+   \       0xF4   0xE5DD'0000        LDRB     R0,[SP, #+0]
+    270            }
+    271            /* Configure the clock during LPWFI mode */
+    272            if (LPWFI_Clock == LPWFI_CK_AF)
+   \       0xF8   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xFC   0xE350'0001        CMP      R0,#+1
+   \      0x100   0x1A00'0004        BNE      ??PCU_LPModesConfig_8
+    273            {
+    274              /* Select the 32KHz as peripheral clock during LPWFI */
+    275              RCCU->CCR  |= 0x2;
+   \      0x104   0xE3A0'04A0        MOV      R0,#-1610612736
+   \      0x108   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x10C   0xE391'1002        ORRS     R1,R1,#0x2
+   \      0x110   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x114   0xEA00'0003        B        ??PCU_LPModesConfig_9
+    276            }
+    277            else
+    278            {
+    279              /* Select CLK2/16 as peripheral clock during LPWFI */
+    280              RCCU->CCR  &= ~0x2;
+   \                     ??PCU_LPModesConfig_8:
+   \      0x118   0xE3A0'04A0        MOV      R0,#-1610612736
+   \      0x11C   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x120   0xE3D1'1002        BICS     R1,R1,#0x2
+   \      0x124   0xE580'1000        STR      R1,[R0, #+0]
+    281            }
+    282          }
+   \                     ??PCU_LPModesConfig_9:
+   \      0x128   0xE12F'FF1E        BX       LR               ;; return
+    283          
+    284          /*******************************************************************************
+    285          * Function Name  : PCU_WFI
+    286          * Description    : This routine is used to enter into WFI and LPWFI modes.
+    287          * Input          : None.
+    288          * Output         : None.
+    289          * Return         : None.
+    290          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    291          void PCU_WFI (void)
+    292          {
+    293            /* Reset bit WFI in the RCCU_SMR register */
+    294            RCCU->SMR &= 0xFE ;
+   \                     PCU_WFI:
+   \        0x0   0xE3A0'0020        MOV      R0,#+32
+   \        0x4   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE211'10FE        ANDS     R1,R1,#0xFE
+   \       0x10   0xE580'1000        STR      R1,[R0, #+0]
+    295          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    296          
+    297          /*******************************************************************************
+    298          * Function Name  : PCU_STOP
+    299          * Description    : This routine is used to enter into STOP mode.
+    300          * Input          : None.
+    301          * Output         : None.
+    302          * Return         : None.
+    303          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    304          void PCU_STOP (void)
+    305          {
+   \                     PCU_STOP:
+   \        0x0   0xE24D'D004        SUB      SP,SP,#+4
+    306            vu32 temp;
+    307          
+    308            /* Set bit ID1St and WKUP-int bits in XTI_CTRL register */
+    309            XTI->CTRL |= 0x03;
+   \        0x4   0x....'....        LDR      R0,??DataTable1  ;; 0xe0001024
+   \        0x8   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \        0xC   0xE391'1003        ORRS     R1,R1,#0x3
+   \       0x10   0xE5C0'1000        STRB     R1,[R0, #+0]
+    310          
+    311            /* Reset the STOP bit in XTI_CTRL register */
+    312            XTI->CTRL &= 0x03;
+   \       0x14   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \       0x18   0xE211'1003        ANDS     R1,R1,#0x3
+   \       0x1C   0xE5C0'1000        STRB     R1,[R0, #+0]
+    313            
+    314            /* Reset the STOP_I bit in the CLK_FLAG register */
+    315            RCCU->CFR &= 0xBFFF;
+   \       0x20   0xE3A0'128A        MOV      R1,#-1610612728
+   \       0x24   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x28   0xE3A0'30FF        MOV      R3,#+255
+   \       0x2C   0xE383'3CBF        ORR      R3,R3,#0xBF00
+   \       0x30   0xE013'2002        ANDS     R2,R3,R2
+   \       0x34   0xE581'2000        STR      R2,[R1, #+0]
+    316            
+    317            /* Write '1' to Stop Bit */
+    318            XTI->CTRL |= 0x04;
+   \       0x38   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \       0x3C   0xE391'1004        ORRS     R1,R1,#0x4
+   \       0x40   0xE5C0'1000        STRB     R1,[R0, #+0]
+    319            
+    320            /* Write '0' to Stop Bit */
+    321            XTI->CTRL &= 0x03;
+   \       0x44   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \       0x48   0xE211'1003        ANDS     R1,R1,#0x3
+   \       0x4C   0xE5C0'1000        STRB     R1,[R0, #+0]
+    322            
+    323            /* Write '1' to Stop Bit */
+    324            XTI->CTRL |= 0x04;
+   \       0x50   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \       0x54   0xE391'1004        ORRS     R1,R1,#0x4
+   \       0x58   0xE5C0'1000        STRB     R1,[R0, #+0]
+    325            
+    326            /* Some dummy instructions after the STOP sequence */
+    327            temp = 0;
+   \       0x5C   0xE3A0'0000        MOV      R0,#+0
+   \       0x60   0xE58D'0000        STR      R0,[SP, #+0]
+    328            temp = 1;
+   \       0x64   0xE3A0'0001        MOV      R0,#+1
+   \       0x68   0xE58D'0000        STR      R0,[SP, #+0]
+    329            temp = 2;
+   \       0x6C   0xE3A0'0002        MOV      R0,#+2
+   \       0x70   0xE58D'0000        STR      R0,[SP, #+0]
+    330            temp = 3;
+   \       0x74   0xE3A0'0003        MOV      R0,#+3
+   \       0x78   0xE58D'0000        STR      R0,[SP, #+0]
+    331            temp = 4;
+   \       0x7C   0xE3A0'0004        MOV      R0,#+4
+   \       0x80   0xE58D'0000        STR      R0,[SP, #+0]
+    332            temp = 5;
+   \       0x84   0xE3A0'0005        MOV      R0,#+5
+   \       0x88   0xE58D'0000        STR      R0,[SP, #+0]
+    333            temp = 6;
+   \       0x8C   0xE3A0'0006        MOV      R0,#+6
+   \       0x90   0xE58D'0000        STR      R0,[SP, #+0]
+    334            temp = 7;
+   \       0x94   0xE3A0'0007        MOV      R0,#+7
+   \       0x98   0xE58D'0000        STR      R0,[SP, #+0]
+    335            temp = 8;
+   \       0x9C   0xE3A0'0008        MOV      R0,#+8
+   \       0xA0   0xE58D'0000        STR      R0,[SP, #+0]
+    336          }
+   \       0xA4   0xE28D'D004        ADD      SP,SP,#+4
+   \       0xA8   0xE12F'FF1E        BX       LR               ;; return
+    337          
+    338          /*******************************************************************************
+    339          * Function Name  : PCU_STANDBY
+    340          * Description    : This routine is used to enter into STANDBY mode.
+    341          * Input          : None.
+    342          * Output         : None.
+    343          * Return         : None.
+    344          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    345          void PCU_STANDBY (void)
+    346          {
+    347            /* Enter in Standby mode */
+    348            PCU->PWRCR |= 0x8000;
+   \                     PCU_STANDBY:
+   \        0x0   0xE3A0'0054        MOV      R0,#+84
+   \        0x4   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \        0x8   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \        0xC   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x10   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    349            PCU->PWRCR |= 0x0040;
+   \       0x14   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x18   0xE391'1040        ORRS     R1,R1,#0x40
+   \       0x1C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    350          }
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    351          
+    352          /*******************************************************************************
+    353          * Function Name  : PCU_FlashBurstCmd
+    354          * Description    : This routine is used to set the FLASH in LP/BURTS mode
+    355          * Input          : - NewState: specifies whether the FLASH BURST mode is enabled
+    356          *                    or disabled. It can be:
+    357          *                     ENABLE : FLASH in BURST mode (default mode)
+    358          *                     DISABLE: FLASH in LP mode, the maximum allowed execution
+    359          *                     frequency = 33MHz
+    360          * Output         : None.                   
+    361          * Return         : None.
+    362          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    363          void PCU_FlashBurstCmd (FunctionalState NewState)
+    364          {
+    365            if (NewState == DISABLE)
+   \                     PCU_FlashBurstCmd:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0000        CMP      R0,#+0
+   \        0x8   0x1A00'0008        BNE      ??PCU_FlashBurstCmd_0
+    366            {
+    367              PCU->PWRCR |= 0x8000;
+   \        0xC   0xE3A0'0054        MOV      R0,#+84
+   \       0x10   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x14   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x18   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x1C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    368              PCU->PWRCR |= 0x8200;
+   \       0x20   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x24   0xE391'1C82        ORRS     R1,R1,#0x8200
+   \       0x28   0xE1C0'10B0        STRH     R1,[R0, #+0]
+   \       0x2C   0xEA00'0009        B        ??PCU_FlashBurstCmd_1
+    369            }
+    370            else
+    371            {
+    372              PCU->PWRCR |= 0x8000;
+   \                     ??PCU_FlashBurstCmd_0:
+   \       0x30   0xE3A0'0054        MOV      R0,#+84
+   \       0x34   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x38   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x3C   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x40   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    373              PCU->PWRCR &= ~0x8200;
+   \       0x44   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x48   0xE3A0'20FF        MOV      R2,#+255
+   \       0x4C   0xE382'2C7D        ORR      R2,R2,#0x7D00
+   \       0x50   0xE012'1001        ANDS     R1,R2,R1
+   \       0x54   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    374            }
+    375          }
+   \                     ??PCU_FlashBurstCmd_1:
+   \       0x58   0xE12F'FF1E        BX       LR               ;; return
+    376          
+    377          /*******************************************************************************
+    378          * Function Name  : PCU_32OSCCmd
+    379          * Description    : This routine is used to Enable/Disable the 32KHz oscillator
+    380          * Input          : - NewState: specifies whether the 32 kHz oscillator is 
+    381          *                    enabled or disabled. It can be:
+    382          *                     ENABLE  : 32KHz oscillator is enabled
+    383          *                     DISABLE : The 32KHz oscillator is bypassed, and allow an
+    384          *                     external reference clock to feed the Real Time Clock, or 
+    385          *                     a Backup clock source to the whole system.
+    386          * Return         : None
+    387          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    388          void PCU_32OSCCmd (FunctionalState NewState)
+    389          {
+    390            if (NewState == DISABLE)
+   \                     PCU_32OSCCmd:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0000        CMP      R0,#+0
+   \        0x8   0x1A00'0009        BNE      ??PCU_32OSCCmd_0
+    391            {
+    392              PCU->PWRCR |= 0x8000;
+   \        0xC   0xE3A0'0054        MOV      R0,#+84
+   \       0x10   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x14   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x18   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x1C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    393              PCU->PWRCR |= 0x8080;
+   \       0x20   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x24   0xE391'1080        ORRS     R1,R1,#0x80
+   \       0x28   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x2C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+   \       0x30   0xEA00'0009        B        ??PCU_32OSCCmd_1
+    394            }
+    395            else
+    396            {
+    397              PCU->PWRCR |= 0x8000;
+   \                     ??PCU_32OSCCmd_0:
+   \       0x34   0xE3A0'0054        MOV      R0,#+84
+   \       0x38   0xE380'04A0        ORR      R0,R0,#0xA0000000
+   \       0x3C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x40   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x44   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    398              PCU->PWRCR &= ~0x8080;
+   \       0x48   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x4C   0xE3A0'207F        MOV      R2,#+127
+   \       0x50   0xE382'2C7F        ORR      R2,R2,#0x7F00
+   \       0x54   0xE012'1001        ANDS     R1,R2,R1
+   \       0x58   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    399            }
+    400          }
+   \                     ??PCU_32OSCCmd_1:
+   \       0x5C   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0xE000'1024        DC32     0xe0001024
+    401          
+    402          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+    403          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   PCU_32OSCCmd
+       0   PCU_FlagStatus
+       0   PCU_FlashBurstCmd
+       0   PCU_LPModesConfig
+       0   PCU_LVDDisable
+       0   PCU_LVDStatus
+       0   PCU_MVRStatus
+       0   PCU_STANDBY
+       4   PCU_STOP
+       4   PCU_VRConfig
+       0   PCU_VRStatus
+       0   PCU_WFI
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+      96  PCU_32OSCCmd
+      44  PCU_FlagStatus
+      92  PCU_FlashBurstCmd
+     300  PCU_LPModesConfig
+      40  PCU_LVDDisable
+      36  PCU_LVDStatus
+      36  PCU_MVRStatus
+      36  PCU_STANDBY
+     172  PCU_STOP
+     180  PCU_VRConfig
+      40  PCU_VRStatus
+      24  PCU_WFI
+
+ 
+ 1 100 bytes in section .text
+ 
+ 1 100 bytes of CODE memory
+
+Errors: none
+Warnings: none

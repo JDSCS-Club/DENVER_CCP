@@ -1,0 +1,67 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150.ncdep
+; Created Monday, January 22, 2007, 11:28:19
+
+[Global]
+Provider=NEURON C Compiler
+Version=1
+Inputs=5
+Outputs=0
+Switches=11
+Parameters=1
+
+[Input_1]
+Basename=BPLATE.NS
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\BPLATE.NS
+Type=1
+Size=5512
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Input_2]
+Basename=FINGER_3150.NC
+Fullname=E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\FINGER_3150\FINGER_3150.NC
+Type=0
+Size=8337
+TimestampHigh=0x1c712cb
+TimestampLow=0x8f942e52
+
+[Input_3]
+Basename=ECHELON.H
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\ECHELON.H
+Type=1
+Size=18794
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Input_4]
+Basename=MODNVLEN.H
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\MODNVLEN.H
+Type=1
+Size=6600
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Input_5]
+Basename=IO_TYPES.H
+Fullname=C:\LONWORKS\NEURONC\INCLUDE\IO_TYPES.H
+Type=1
+Size=2250
+TimestampHigh=0x1c5647a
+TimestampLow=0x11f53f00
+
+[Switches]
+2=1
+0=0
+10=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150
+10=C:\LonWorks\NeuronC\Include
+11=_MINIKIT
+11=_NEURONC
+14=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150 Output\IM\FINGER_3150
+17=0
+24=1
+15=4
+26=9F:FF:FF:32:00:04:11:01
+
+[Parameters]
+MainSourceFile=E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\FINGER_3150\FINGER_3150.nc

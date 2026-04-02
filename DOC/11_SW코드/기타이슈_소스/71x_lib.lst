@@ -1,0 +1,219 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:11
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_lib.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW4495.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_lib.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_lib.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_lib.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_lib.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_lib.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : Peripherals pointers initialization.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          #define EXT
+     17          
+     18          /* Includes ------------------------------------------------------------------*/
+     19          #include "71x_lib.h"
+     20          
+     21          /* Private typedef -----------------------------------------------------------*/
+     22          /* Private macro -------------------------------------------------------------*/
+     23          /* Private variables ---------------------------------------------------------*/
+     24          /* Extern variables ---------------------------------------------------------*/
+     25          extern u32 T0TIMI_Addr;
+     26          /* Private function prototypes -----------------------------------------------*/
+     27          /* Extern function prototypes ------------------------------------------------*/
+     28          /* Private functions ---------------------------------------------------------*/
+     29          
+     30          #ifdef DEBUG
+     31          /*******************************************************************************
+     32          * Function Name  : debug
+     33          * Description    : Initialize the pointers to peripherals
+     34          * Input          : none
+     35          * Output         : none
+     36          * Return         : none
+     37          *******************************************************************************/
+     38          void debug(void)
+     39          {
+     40            
+     41            
+     42          /************************************* ADC ************************************/
+     43          #ifdef _ADC12
+     44            ADC12 = (ADC12_TypeDef *)   ADC12_BASE;
+     45          #endif
+     46          
+     47          /************************************* APB ************************************/
+     48          #ifdef _APB1
+     49            APB1 = (APB_TypeDef *)    (APB1_BASE + 0x10);
+     50          #endif
+     51          
+     52          #ifdef _APB2
+     53            APB2 = (APB_TypeDef *)    (APB2_BASE + 0x10);
+     54          #endif
+     55          
+     56          /************************************* BSPI ************************************/
+     57           #ifdef _BSPI0
+     58            BSPI0 = (BSPI_TypeDef *)BSPI0_BASE;
+     59          #endif
+     60          
+     61          #ifdef _BSPI1
+     62            BSPI1 = (BSPI_TypeDef *)BSPI1_BASE;
+     63          #endif
+     64          
+     65          /************************************* CAN ************************************/
+     66          #ifdef _CAN
+     67            CAN = (CAN_TypeDef *)CAN_BASE;
+     68          #endif
+     69          
+     70          /************************************* EIC ************************************/
+     71          #ifdef _EIC
+     72            EIC = (EIC_TypeDef *)EIC_BASE;
+     73          #endif
+     74          
+     75          /************************************* EMI ************************************/
+     76          #ifdef _EMI
+     77            EMI = (EMI_TypeDef *)EMI_BASE;
+     78          #endif
+     79          
+     80          /************************************* GPIO ************************************/
+     81          #ifdef _GPIO0
+     82            GPIO0 = (GPIO_TypeDef *)GPIO0_BASE;
+     83          #endif
+     84          
+     85          #ifdef _GPIO1
+     86            GPIO1 = (GPIO_TypeDef *)GPIO1_BASE;
+     87          #endif
+     88          
+     89          #ifdef _GPIO2
+     90            GPIO2 = (GPIO_TypeDef *)GPIO2_BASE;
+     91          #endif
+     92          
+     93          /************************************* I2C ************************************/
+     94          #ifdef _I2C0
+     95            I2C0 = (I2C_TypeDef *)I2C0_BASE;
+     96          #endif
+     97          
+     98          #ifdef _I2C1
+     99            I2C1 = (I2C_TypeDef *)I2C1_BASE;
+    100          #endif
+    101          
+    102          /************************************* PCU ************************************/
+    103           #ifdef _PCU
+    104            PCU = (PCU_TypeDef *)PCU_BASE;
+    105          #endif
+    106          
+    107          /************************************* RCCU ************************************/
+    108          #ifdef _RCCU
+    109            RCCU = (RCCU_TypeDef *)RCCU_BASE;
+    110          #endif
+    111          
+    112          /************************************* RTC ************************************/
+    113          #ifdef _RTC
+    114            RTC = (RTC_TypeDef *)RTC_BASE;
+    115          #endif
+    116          
+    117          /************************************* TIM ************************************/
+    118          #ifdef _TIM0
+    119            TIM0 = (TIM_TypeDef *)TIM0_BASE;
+    120          #endif
+    121          
+    122          #ifdef _TIM1
+    123            TIM1 = (TIM_TypeDef *)TIM1_BASE;
+    124          #endif
+    125          
+    126          #ifdef _TIM2
+    127            TIM2 = (TIM_TypeDef *)TIM2_BASE;
+    128          #endif
+    129          
+    130          #ifdef _TIM3
+    131            TIM3 = (TIM_TypeDef *)TIM3_BASE;
+    132          #endif
+    133          
+    134          /************************************* UART ************************************/
+    135          #ifdef _UART0
+    136            UART0 = (UART_TypeDef *)UART0_BASE;
+    137          #endif
+    138          
+    139          #ifdef _UART1
+    140            UART1 = (UART_TypeDef *)UART1_BASE;
+    141          #endif
+    142          
+    143          #ifdef _UART2
+    144            UART2 = (UART_TypeDef *)UART2_BASE;
+    145          #endif
+    146          
+    147          #ifdef _UART3
+    148            UART3 = (UART_TypeDef *)UART3_BASE;
+    149          #endif
+    150          
+    151          /************************************* WDG ************************************/
+    152          #ifdef _WDG
+    153            WDG = (WDG_TypeDef *)WDG_BASE;
+    154          #endif
+    155          
+    156          /************************************* XTI ************************************/
+    157          #ifdef _XTI
+    158            XTI = (XTI_TypeDef *)XTI_BASE;
+    159          #endif
+    160          
+    161          #ifdef _IRQVectors
+    162            IRQVectors = (IRQVectors_TypeDef *) & T0TIMI_Addr;
+    163          #endif
+    164          }
+    165          
+    166          #endif  /* DEBUG */
+    167          
+    168          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+
+
+ 
+ 
+ 0 bytes of memory
+
+Errors: none
+Warnings: none

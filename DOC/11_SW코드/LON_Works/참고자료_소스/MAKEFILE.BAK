@@ -1,0 +1,138 @@
+# Version:        1.7
+# Makefile to create reference implementation stack,
+# This file can create any number of stacks to be
+# compiled and run and on a single 38360 Chip.
+# There is one version of code but multiple data sets.
+# See readme file for more information about multiple stacks.
+# Usage: Just Change the SDSDIR, ROOTDIR, and NUM_STACKS in DEFS
+#        To create refimp.out, do "make".
+#        To create spm.out, do "make spmonly".
+#        To remove all obect files, do "make clean".
+SHELL      = command.com
+VERSION    = 7
+CPU        = 68360
+CC         = cc68000
+LL         = linker
+ASSEMBLER  = as68000
+
+# Change the following three items to appropriate values.
+SDSDIR     = c:\sds70
+ROOTDIR    = c:\dev\ver1.7
+#DEFS      = -D NUM_STACKS=2 -D SIMULATION
+DEFS     = -D NUM_STACKS=1
+
+# DEFS1 is used for make spmonly
+DEFS1      = -D SPM_TEST
+
+# Errors are appended to the file errors.
+# Optimizations were all turned off. Code was not
+# tested using other combination of -O flags.
+CFLAGS     = -E +errors -I $(SDSDIR)\lib6800\include -I $(ROOTDIR) \
+             -f -V $(CPU) -Oabcefghijlmprtuvy -l
+CFLAGS1    = $(CFLAGS) -L ram=eeprom
+# LFLAGS is used for the final build. -X ==> Cross Ref needed
+LFLAGS     = -E +errors -L $(SDSDIR)\lib68000 -f refimp.spc \
+             -o refimp.out
+# LFLAGS1 is used only for make spmonly
+LFLAGS1    = -E +errors -L $(SDSDIR)\lib68000 -f refimp.spc \
+             -o spm.out
+AFLAGS     = -V $(CPU)
+MAKE       = make
+
+SOURCES    = main.c custom.c node.c queue.c app.c tsa.c netmgmt.c \
+             tcs.c network.c link.c physical.c eeprom.c apppgm.c \
+             spm.c stktimer.c
+
+OBJS       = $(SOURCES:.c=.o) start.o
+
+# Use all when you want to to build refimp.out
+# Simply type "make" and it will use all by default as it
+# is the first target in this file.
+all: delete refimp.out
+
+spmonly: delete deletespm spm.c start.o
+        $(CC) $(CFLAGS) $(DEFS) $(DEFS1) spm.c -o object=spm.o
+        $(LL) $(LFLAGS1) spm.o start.o
+
+# Use "make newapp" if you copied apppgm?.c to apppgm.c and
+# want to build a new refimp.out
+# copy command does not change the timestamp.
+newapp: delapp delete refimp.out
+
+delapp:
+        if EXIST apppgm.o del apppgm.o
+
+delete:
+        if EXIST errors del errors
+
+deletespm:
+        if EXIST spm.out del spm.out
+
+makefile:
+        for %%i in ( $(OBJS) ) do if EXIST %%i del %%i
+
+# Let us have explicit library flags -lc and -lf
+# refimp.out size may look large due to debugging
+# information. The actual size loaded to 68360 is
+# about 175K.
+refimp.out: makefile $(OBJS) refimp.spc
+        $(LL) $(LFLAGS) $(OBJS) -lf -lc
+
+main.o: main.c eia709_1.h node.h api.h custom.h queue.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+custom.o: custom.c custom.h eia709_1.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+node.o: node.c node.h api.h queue.h eia709_1.h custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+queue.o: queue.c queue.h eia709_1.h node.h api.h queue.h custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+netmgmt.o: netmgmt.c netmgmt.h app.h api.h node.h queue.h eia709_1.h  custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+app.o: app.c app.h api.h netmgmt.h node.h queue.h eia709_1.h  custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+tsa.o: tsa.c tsa.h tcs.h app.h eia709_1.h node.h api.h queue.h custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+tcs.o: tcs.c tcs.h eia709_1.h node.h api.h queue.h custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+network.o: network.c network.h eia709_1.h node.h api.h queue.h  custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+link.o: link.c link.h eia709_1.h node.h api.h queue.h custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+physical.o: physical.c physical.h eia709_1.h node.h api.h queue.h custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+eeprom.o: eeprom.c eia709_1.h node.h api.h queue.h custom.h
+        $(CC) $(CFLAGS1) $(DEFS) $< -o object=$@
+
+apppgm.o: apppgm.c eia709_1.h node.h api.h queue.h custom.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+stktimer.o: stktimer.c stktimer.h eia709_1.h node.h api.h custom.h queue.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+spm.o: spm.c physical.h eia709_1.h node.h custom.h link.h queue.h api.h
+        $(CC) $(CFLAGS) $(DEFS) $< -o object=$@
+
+start.o: start.s
+        $(ASSEMBLER) $(AFLAGS) $< -o object=$@
+
+# If you want to delete all object files that were created
+# during a previous build, use "make clean".
+clean:
+        if EXIST refimp.out del refimp.out
+        if EXIST errors del errors
+        for %%i in ( $(OBJS) ) do if EXIST %%i del %%i
+
+.PHONY: clean delete delapp spm.out
+
+

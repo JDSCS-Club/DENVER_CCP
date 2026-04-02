@@ -1,0 +1,98 @@
+Release 13.4 Map O.87xd (nt)
+Xilinx Map Application Log File for Design 'main'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s200-vq100-5 -cm area -ir off -pr off
+-c 100 -o main_map.ncd main.ngd main.pcf 
+Target Device  : xc3s200
+Target Package : vq100
+Target Speed   : -5
+Mapper Version : spartan3 -- $Revision: 1.55 $
+Mapped Date    : Thu May 17 14:38:28 2012
+
+Mapping design into LUTs...
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+WARNING:MapLib:23 - Short on signal FPGA_RTS_INIT detected.
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+Updating timing models...
+WARNING:PhysDesignRules:372 - Gated clock. Clock net NVSRAM_CS_BUF_not0002 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net NVSRAM_CS_BUF_not0003 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net BOOT_2_INT_CS_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net WDI_CS_not0001 is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net INT_READ_CS_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp
+   SPI_DOUT.PAD is set but the tri state is not configured. 
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp LON_INT is
+   set but the tri state is not configured. 
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   12
+Logic Utilization:
+  Total Number Slice Registers:         123 out of   3,840    3%
+    Number used as Flip Flops:          109
+    Number used as Latches:              14
+  Number of 4 input LUTs:               211 out of   3,840    5%
+Logic Distribution:
+  Number of occupied Slices:            158 out of   1,920    8%
+    Number of Slices containing only related logic:     158 out of     158 100%
+    Number of Slices containing unrelated logic:          0 out of     158   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:         276 out of   3,840    7%
+    Number used as logic:               211
+    Number used as a route-thru:         65
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                 63 out of      63  100%
+    IOB Flip Flops:                       6
+    IOB Latches:                          4
+  Number of RAMB16s:                      1 out of      12    8%
+  Number of BUFGMUXs:                     2 out of       8   25%
+
+Average Fanout of Non-Clock Nets:                3.13
+
+Peak Memory Usage:  172 MB
+Total REAL time to MAP completion:  2 secs 
+Total CPU time to MAP completion:   1 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Mapping completed.
+See MAP report file "main_map.mrp" for details.

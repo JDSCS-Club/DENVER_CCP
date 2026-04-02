@@ -1,0 +1,579 @@
+; LONNCC32 - Echelon (R) Neuron (R) C Compiler
+; Copyright (c) 1989 - 2003  Echelon Corp
+; All Rights Reserved.
+; Assembly code from LONNCC32 Version 4.01.64
+; Code generated from 'SERVER_SI.NC' on Wed Dec 06 16:21:31 2006
+
+	SUBHEAD	Generated from the input file: C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI.nc
+
+	RADIX	HEX
+
+	SEG	EECODE_SPCL_1
+	ORG	0F000
+NBMTS	EQU	000
+NFBS	EQU	000
+NNVS	EQU	000
+NALIAS	EQU	00A
+PROTECT	EQU	00
+RUNUNCNFGED	EQU	40
+
+NEURONID
+	RES	8
+DIRECTORY	EXPORT
+	DATA.B	PTR TEVT-3*NNVS
+PROTECTBIT	EXPORT
+	DATA.B	PROTECT+RUNUNCNFGED+NNVS,PTR SIDATA
+PROGID	EXPORT
+	DATA.B	09F,0FF,0FF,006,000,006,011,000
+MODETABLE	EXPORT
+	DATA.B	07B
+	DATA.B	0F0,007
+	DATA.B	0BB,0BB
+BUFCOUNTS	EXPORT
+	DATA.B	033,033,033
+EENEARBYTES	EXPORT
+	DATA.B	000
+	DATA.B	000,000
+	DATA.B	05E,000,040
+	DATA.B	004                          
+TX_CTRL	EQU	*-1
+	EXPORT	TX_CTRL
+
+	SEG	EECODE_SPCL_2
+	ORG
+RODS2
+	DATA.B	PROTECT+00+NALIAS,000
+	DATA.B	7F,000,000       
+
+	SEG	EECODE_SPCL_3
+	ORG
+LOCATION
+	RES	8
+COMM
+	RES	10
+MSG
+	RES	1
+DOMAIN	EXPORT
+	RES	01E
+ADDR
+	RES	04B
+TNVCNFG
+	RES	3*NNVS
+TNVALIASES
+	RES	4*NALIAS
+CONFIGCHECKSUM
+	RES	1
+	PAGE
+; Boilerplate file for compiler-generated assembly output
+; Copyright (c) 1990 - 2003 Echelon Corporation.
+; All Rights Reserved.
+; Date last modified: 26-Aug-2003
+
+; List of imported symbols - Library functions
+	IMPORT	delay,msec_delay,random,reverse,scaled_delay
+; List of imported symbols - Misc builtin function support
+	IMPORT	_bcd2bin,_bin2bcd,_fblock_director,_sleep
+; List of imported symbols - Compiler helper functions
+	IMPORT	_abs8,_abs16,_add16,_add_8_16f,_adds_8_16,_and16,_alloc
+	IMPORT	_bitf_sign_ext,_dealloc,_dec16,_div8,_div8s,_div16,_div16s
+	IMPORT	_drop_n,_drop_n_preserve_1,_drop_n_preserve_2,_drop_n_return_1
+	IMPORT	_drop_n_return_2,_eeprom_write,_eeprom_write_long
+	IMPORT	_eeprom_far_write,_eeprom_far_write_long,_equal8,_equal16
+	IMPORT	_gequ8,_gequ8s,_gequ16,_gequ16s,_get_sp,_inc16,_ldP0_fetchl
+	IMPORT	_less8,_less8s,_less16,_less16s,_log8,_log16,_lognot8,_lognot16
+	IMPORT	_l_shift8,_l_shift8s,_l_shift16,_l_shift16s,_l_shift8_3
+	IMPORT	_l_shift8_4,_l_shift8_5,_l_shift8_6,_l_shift8_7,_lshift8_add16
+	IMPORT	_lshift16_add16,_lshift8by1_add16,_lshift8by2_add16
+	IMPORT	_max8,_max8s,_max16,_max16s,_min8,_min8s,_min16,_min16s
+	IMPORT	_memcpy,_memcpy8,_memcpy16,_memset,_memset8,_memset16
+	IMPORT	_minus16s,_mod8,_mod8s,_mod16,_mod16s,_mul8,_mul16,_mul_8_16
+	IMPORT	_muls_8_16,_mul8l,_mul8ls,_not16,_or16
+	IMPORT	_pop,_pop1,_popd,_popd1,_push,_push1,_pushd,_pushd1
+	IMPORT	_r_shift8,_r_shift8s,_r_shift16,_r_shift16s
+	IMPORT	_r_shift8_3,_r_shift8_4,_r_shift8_5,_r_shift8_6,_r_shift8_7
+	IMPORT	_register_call,_sign_extend16,_sub16,_xor16
+	PAGE
+; List of imported symbols - I/O functions
+	IMPORT	_bit_input,_bit_output_lo1,_bit_output_lo2,_bit_output_hi
+	IMPORT	_bit_input_ext,_bit_output_ext,_bitshift_input
+	IMPORT	_bitshift_output,burst_sequence_output,_byte_input,_byte_output
+	IMPORT	_dualslope_input,_dualslope_start
+	IMPORT	_edgelog_input,edgelog_input_single,edgelog_setup_single
+	IMPORT	_frequency_output,_ir_input,_i2c_read,_i2c_write
+	IMPORT	_i2c_read0,_i2c_write0,_i2c_read_opt0,_i2c_write_opt0
+	IMPORT	_i2c_read8,_i2c_write8,_i2c_read_opt8,_i2c_write_opt8
+	IMPORT	_leveldetect_input
+	IMPORT	_magcard_input,_magt1_input,_magt2_input,magx_input
+	IMPORT	_muxbus_read,_muxbus_reread,_muxbus_write,_muxbus_rewrite
+	IMPORT	_neurowire_master,_neurowire_slave,_neurowire_inv_master
+	IMPORT	_neurowire_inv_slave,_nibble_input,_nibble_output
+	IMPORT	_oneshot_output,_parallel_input,_parallel_input_ready
+	IMPORT	_parallel_output,_parallel_output_ready,_parallel_output_request
+	IMPORT	_period_input,_pulsecount_output,_pulsewidth_output
+	IMPORT	_quadrature_input,_io_sci_baud,_io_sci_init,_io_sci_init2
+	IMPORT	_io_sci_get_error,_io_sci_set_buffer_in,_io_sci_set_buffer_out
+	IMPORT	_io_scispi_abort,_io_scispi_input_ready,_io_scispi_output_ready
+	IMPORT	_io_spi_clock,_io_spi_init,_io_spi_init2,_io_spi_set_buffer
+	IMPORT	_serial_input,_serial_output,_totalize_input
+	IMPORT	_touch_bit,_touch_byte,_touch_first,_touch_next,_touch_read
+	IMPORT	_touch_reset,_touch_write,ext_touch_bit,ext_touch_byte
+	IMPORT	ext_touch_first,ext_touch_next,ext_touch_read,ext_touch_reset
+	IMPORT	ext_touch_write,_triac_level_output,_triac_pulse_output
+	IMPORT	_wiegand_input
+; List of imported symbols - I/O control functions
+	IMPORT	io_edgelog_preload
+	IMPORT	_init_baud,_init_timer_counter1,_init_timer_counter2
+	IMPORT	_io_abort_clear,_io_change_init,_io_direction_lo
+	IMPORT	_io_direction_hi,io_idis,io_iena,_io_input_value
+	IMPORT	_io_set_clock,_io_set_clock_x2,_select_input_fn
+; List of imported symbols - Messaging support
+	IMPORT	_bound_mt,_msg_alloc,_msg_alloc_priority,_msg_cancel,_msg_free
+	IMPORT	_msg_receive,_msg_send,_msg_auth_get,_msg_code_get
+	IMPORT	_msg_duplicate_get,_msg_rcvtx_get
+	IMPORT	_msg_data_blockget,_msg_data_get,_msg_len_get,_msg_service_get
+	IMPORT	_msg_auth_set,_msg_code_set,_msg_data_blockset,_msg_data_set
+	IMPORT	_msg_priority_set,_msg_service_set,_msg_tag_set,msg_tag_index
+	IMPORT	_resp_alloc,_resp_cancel,_resp_free,_resp_receive,_resp_send
+	IMPORT	_resp_code_set,_resp_data_blockset,_resp_data_set
+; List of imported symbols - Network Variable support
+	IMPORT	_bound_nv,_nv_array_poll,_nv_array_index
+	IMPORT	_nv_array_update_request,nv_in_addr,nv_in_index,_nv_poll
+	IMPORT	_nv_poll_all,_nv_update,_nv_update_int,_nv_update_int_offset
+	IMPORT	_nv_update_long,_nv_update_long_offset
+	IMPORT	_nv_update_request,_nv_update_request_all
+	PAGE
+; List of imported symbols - Timer support
+	IMPORT	_timer_get,_timer_off
+	IMPORT	_timer_mset,_timer_mset_repeat,_timer_sset,_timer_sset_repeat
+; List of imported symbols - Event support
+	IMPORT	_io_changes,_io_changes_to,_io_changes_by,_io_update_occurs
+	IMPORT	_flush_completes,_msg_arrives,_msg_code_arrives,_msg_completes
+	IMPORT	_msg_fails,_msg_succeeds,_nv_array_update_completes
+	IMPORT	_nv_array_update_fails,_nv_array_update_occurs
+	IMPORT	_nv_array_update_succeeds,_nv_update_completes,_nv_update_fails
+	IMPORT	_nv_update_succeeds,_nv_update_occurs,_offline,_online
+	IMPORT	_resp_arrives,_timer_expires,_timer_expires_any,_wink
+; List of imported symbols - Special symbols support
+	IMPORT	_arb_presf,_idem_dup,_new_binding_constraints,_query_stats
+	IMPORT	_tx_by_addr,get_current_nv_length,init_phase_detection
+	IMPORT	_nv_all
+; List of imported symbols - Debug kernel entries
+	IMPORT	_larva_entry,_larva_entry_exec,_larva_entry_notify
+	IMPORT	_larva_entry_min,_larva_reset
+
+; End of boilerplate file
+	PAGE
+
+
+	IMPORT	%cp_template_file
+
+	IMPORT	%cp_modifiable_value_file
+
+	IMPORT	%cp_readonly_value_file
+
+	IMPORT	%cp_template_file_len_fake
+
+	IMPORT	%cp_modifiable_value_file_len_fake
+
+	IMPORT	%cp_readonly_value_file_len_fake
+
+	IMPORT	%fblock_index_map
+	IMPORT	set_nv_length
+	IMPORT	get_nv_length
+	IMPORT	get_nv_type
+	IMPORT	%get_nv_length_override
+
+	IMPORT	activate_service_led
+	IMPORT	application_restart
+	IMPORT	cvdd_lvi_enable
+	IMPORT	error_log
+	IMPORT	flush
+	IMPORT	flush_cancel
+	IMPORT	flush_wait
+	IMPORT	go_offline
+	IMPORT	go_unconfigured
+	IMPORT	go_configured
+	IMPORT	node_reset
+	IMPORT	offline_confirm
+	IMPORT	post_events
+	IMPORT	refresh_memory
+	IMPORT	reset_stretch_disable
+	IMPORT	service_pin_msg_send
+	IMPORT	service_pin_state
+	IMPORT	set_eeprom_lock
+	IMPORT	set_lvi
+	IMPORT	timers_off
+	IMPORT	watchdog_update
+	IMPORT	watchdog_update_old
+
+	IMPORT	config_data
+
+	IMPORT	read_only_data
+
+	IMPORT	read_only_data_2
+	IMPORT	access_address
+	IMPORT	access_domain
+	IMPORT	access_nv
+	IMPORT	access_alias
+	IMPORT	update_address
+	IMPORT	update_domain
+	IMPORT	update_clone_domain
+	IMPORT	update_nv
+	IMPORT	update_alias
+	IMPORT	update_config_data
+	IMPORT	update_program_id
+	IMPORT	_msg_out_addr_ptr
+	IMPORT	_msg_in_addr_ptr
+	IMPORT	_resp_in_addr_ptr
+	IMPORT	retrieve_stat
+	IMPORT	power_up
+	IMPORT	preemption_mode
+	IMPORT	retrieve_status
+	IMPORT	clear_status
+	IMPORT	retrieve_xcvr_status
+	IMPORT	_change_state
+
+	SEG	RAMNEAR
+	ORG
+%domain_certify	APEXP
+	RES	1
+
+	SEG	EENEAR
+	ORG
+%Domain_table	APEXP
+	DATA.B	0,0,0,0,0,0,0,0
+	DATA.B	0,0,0,0,0,0,0,0
+	DATA.B	0,0,0,0,0,0,0,0
+	DATA.B	0,0,0,0,0,0
+
+	SEG	EENEAR
+	ORG
+%Domain_code	APEXP
+	DATA.B	0,0,0,0,0,0,0,0
+	DATA.B	0,0,0,0,0,0,0,0
+	DATA.B	0,0,0,0,0,0,0,0
+	DATA.B	0,0,0,0,0,0
+
+	SEG	EENEAR
+	ORG
+%Domain_count	APEXP
+	DATA.B	0
+
+	SEG	RAMNEAR
+	ORG
+%PreviousLEDs	APEXP
+	RES	1
+
+	SEG	CODE
+	ORG
+%SetLEDs	APEXP ; Function body
+	PUSH	NEXT
+	NOT
+	PUSH	[1][@NEAR(%PreviousLEDs)]
+	AND
+	OR
+	PUSH	TOS
+	POP	[1][@NEAR(%PreviousLEDs)]
+	PUSHS	#0
+	PUSH	NEXT
+	NOT
+	PUSHD	#8802
+	CALLF	_bitshift_output
+	PUSHS	#0
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	PUSHS	#1
+	PUSHS	#2
+	CALL	_bit_output_lo1
+	DEALLOC	#2
+
+	SEG	CODE
+	ORG
+%GetButtons	APEXP ; Function body
+	ALLOC	#2
+	PUSH	#0FF
+	POP	[DSP][-1]
+	AND	#0
+	PUSH	TOS
+	ADD	#0FD
+	DROP	TOS
+	BRC	%GetButtons+23
+	PUSHD	#40
+	CALL	_bit_output_lo1
+	PUSHD	#140
+	CALL	_bit_output_lo1
+	PUSHD	#804
+	CALLF	_bitshift_input
+	DROP	NEXT
+	PUSH	[DSP][-1]
+	AND
+	POP	[DSP][-1]
+	INC
+	BR	%GetButtons+6
+	PUSH	NEXT
+	NOT
+	DROP	NEXT
+	DROP_R	NEXT
+
+	SEG	CODE
+	ORG
+%SetDomain	APEXP ; Function body
+	ALLOC	#8
+	ALLOC	#7
+	PUSHD	#0F00
+	PUSH	#0EF
+	CALL	_get_sp
+	CALL	_memset
+	PUSHS	#1
+	PUSHD	#20EF
+	CALL	_get_sp
+	CALL	_memset
+	PUSHD	#8FF
+	PUSH	#0F8
+	CALL	_get_sp
+	CALL	_memset
+	PUSHS	#1
+	POP	[DSP][-6]
+	PUSH	[DSP][-6]
+	AND	#80
+	OR	#0A
+	POP	[DSP][-7]
+	PUSHS	#1
+	POP	[DSP][-8]
+	PUSHD	#0F0
+	CALL	_get_sp
+	CALLF	update_domain
+	PUSH	#0F
+	CALL	_dealloc
+
+	SEG	CODE
+	ORG
+%return_data	APEXP ; Function body
+	ALLOC	#2
+	PUSH	[DSP][-2]
+	POP	[DSP][-1]
+	PUSH	[DSP][-3]
+	DROP	NEXT
+	PUSH	[DSP][-1]
+	CALL	_msg_code_set
+	PUSHS	#1
+	CALL	_msg_service_set
+	PUSHS	#3
+	CALLF	_msg_out_addr_ptr
+	POPD	[0]
+	POP	[0][0]
+	PUSHS	#3
+	CALLF	_msg_out_addr_ptr
+	POPD	[3]
+	POP	[3][0]
+	CALLF	_msg_out_addr_ptr
+	POPD	[2]
+	PUSH	[2][2]
+	AND	#0F0
+	OR	#2
+	POP	[2][2]
+	CALLF	_msg_out_addr_ptr
+	POPD	[2]
+	PUSH	[2][1]
+	AND	#7F
+	POP	[2][1]
+	PUSHD	#0FD
+	CALL	_get_sp
+	PUSHS	#2
+	CALL	_msg_data_blockset
+	CALL	_msg_send
+	DEALLOC	#5
+
+	SEG	CODE
+	ORG
+%delay_func	APEXP ; Function body
+	ALLOC	#4
+	PUSHS	#0
+	PUSHS	#0
+	POP	[DSP][-1]
+	POP	[DSP][-1]
+	PUSH	[DSP][-4]
+	PUSH	[DSP][-4]
+	PUSH	[DSP][-2]
+	PUSH	[DSP][-2]
+	CALL	_less16
+	SBRZ	%delay_func+16
+	PUSH	[DSP][-2]
+	PUSH	[DSP][-2]
+	CALL	_inc16
+	POP	[DSP][-3]
+	POP	[DSP][-3]
+	CALL	_inc16
+	BR	%delay_func+5
+	DEALLOC	#6
+
+	SEG	CODE
+	ORG
+%certify_domain	APEXP ; Function body
+	ALLOC	#2
+	PUSHS	#1
+	POP	[1][@NEAR(%domain_certify)]
+	AND	#0
+	PUSH	TOS
+	ADD	#0E2
+	DROP	TOS
+	BRC	%certify_domain+28
+	PUSH	[DSP][-2]
+	PUSH	[DSP][-2]
+	POPD	[0]
+	PUSH	[0][1]
+	PUSH	NEXT
+	PUSHD	#%Domain_table
+	POPD	[3]
+	PUSH	[3][TOS]
+	DROP	TOS
+	XOR
+	SBRNZ	%certify_domain+25
+	PUSHS	#0
+	POP	[1][@NEAR(%domain_certify)]
+	PUSH	TOS
+	PUSHD	#%Domain_code
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	POP	[DSP][-1]
+	INC
+	BR	%certify_domain+6
+	PUSH	[1][@NEAR(%domain_certify)]
+	BRNEQ	#1,%certify_domain+2E
+	SBR	%certify_domain+36
+	BRNEQ	#0,%certify_domain+33
+	BR	%certify_domain+6F
+	DROP	TOS
+	BR	%certify_domain+7F
+	PUSH	[DSP][-2]
+	PUSH	[DSP][-2]
+	POPD	[0]
+	PUSH	[0][1]
+	PUSHD	#%Domain_table
+	PUSH	%Domain_count
+	CALL	_add_8_16f
+	CALL	_eeprom_far_write
+	PUSH	[DSP][-2]
+	PUSH	[DSP][-2]
+	POPD	[0]
+	PUSH	[0][0]
+	PUSHD	#%Domain_code
+	PUSH	%Domain_count
+	CALL	_add_8_16f
+	CALL	_eeprom_far_write
+	PUSH	%Domain_count
+	INC
+	PUSH	#@NEAR(%Domain_count)
+	CALL	_eeprom_write
+	PUSHS	#1
+	PUSH	[DSP][-3]
+	PUSH	[DSP][-3]
+	POPD	[0]
+	PUSH	[0][0]
+	PUSH	[0][0]
+	CALLF	%return_data
+	PUSHD	#0FF03
+	CALLF	%SetLEDs
+	BR	%certify_domain+7F
+	PUSHS	#0
+	PUSH	[DSP][-1]
+	PUSH	[DSP][-4]
+	PUSH	[DSP][-4]
+	POPD	[0]
+	PUSH	[0][0]
+	CALLF	%return_data
+	PUSHD	#0FF0F
+	CALLF	%SetLEDs
+	DEALLOC	#4
+
+	SEG	CODE
+	ORG
+WHEN1	EXPORT ; When task
+	ALLOC	#4
+	PUSHD	#0FF01
+	CALLF	%SetLEDs
+	CALL	_msg_code_get
+	BRNEQ	#10,WHEN1+0D
+	SBR	WHEN1+10
+	DROP	TOS
+	BR	WHEN1+26
+	PUSHD	#2710
+	CALLF	%delay_func
+	PUSHD	#0FC
+	CALL	_get_sp
+	PUSHS	#2
+	CALLF	_msg_data_blockget
+	PUSH	#0FD
+	CALL	_get_sp
+	CALLF	%certify_domain
+	DEALLOC	#4
+
+	SEG	CODE
+	ORG
+APINIT	EXPORT ; Init start & special event code
+	BRF	0FD00
+RESET	EXPORT ; When-unit body
+	ALLOC	#2
+	CALLF	power_up
+	SBRZ	APINIT+0E
+	PUSHS	#4
+	CALL	_change_state
+	CALLF	%SetDomain
+	PUSHS	#0
+	POP	[DSP][-1]
+	AND	#0
+	PUSH	TOS
+	ADD	#0E2
+	DROP	TOS
+	BRC	APINIT+25
+	PUSH	TOS
+	PUSHD	#%Domain_table
+	POPD	[0]
+	PUSH	[0][TOS]
+	DROP	TOS
+	SBRZ	APINIT+22
+	PUSHS	#1
+	POP	[DSP][-1]
+	INC
+	BR	APINIT+12
+	PUSHD	#0FF00
+	CALLF	%SetLEDs
+	DEALLOC	#2
+
+	SEG	CODE
+	ORG
+TNVFIX ; NV Fixed table
+
+TEVT	EXPORT ; Event table
+	DATA.B	PTR APINIT-2
+	DATA.B	0,RESET-APINIT+1
+	DATA.B	0,0
+	DATA.B	0,1
+	DATA.B	2,PTR WHEN1-1
+
+	SEG	SIDATA
+	ORG
+SIDATA	EXPORT ; SI Data
+	DATA.B	000,007,0,0,0
+	DATA.B	0
+	DATA.B	_new_binding_constraints|_query_stats|NALIAS
+
+; Resource usage information
+	RESOURCE	NADDR	0F
+	RESOURCE	NDOM	2
+	RESOURCE	NRCVTX	8
+	RESOURCE	NNIB	2
+	RESOURCE	NAIB	2
+	RESOURCE	SNIB	42
+	RESOURCE	SNOB	42
+	RESOURCE	SAIB	42
+	RESOURCE	SAOB	42
+	RESOURCE	ALIAS	0A
+	RESOURCE	RAMT	1
+	RESOURCE	MINIT	1
+	RESOURCE	SIOCF	1
+	RESOURCE	XADDR	1
+
+; End of generated code
+

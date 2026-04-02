@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1491831",
+    "ThreadId": "661007",
+    "Html": "Are Tftpd32 and Tftpd64 the same software ?<br />\n",
+    "PostedDate": "2017-01-28T13:29:05.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1491832",
+    "ThreadId": "661007",
+    "Html": "Yes, the only difference is the compilation process. The executables comes from the same source code which is completly released on this site. \r<br />\n<br />\nHowever, <strong>I strongly recommend to use Tftpd64</strong> because of antivirus behaviour: Tftpd32 has a bad rating for historical reasons (due to its minimal footprint, tftpd32 was embedded in the mid 2000 by a real virus for transfer files), whereas it brother compiled in 64 bits has a excellent rating.<br />\n",
+    "PostedDate": "2017-01-28T13:30:36.193-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

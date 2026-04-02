@@ -1,0 +1,25 @@
+"--endian=little" 
+
+"--cpu=ARM7TDMI" 
+
+"--fpu=None" 
+
+"-p" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\arm\CONFIG\debugger\ST\STR710RZ.ddf" 
+
+"--drv_verify_download" 
+
+"--semihosting" 
+
+"--device=STR710RZ" 
+
+"--drv_communication=USB0" 
+
+"--drv_interface_speed=1000" 
+
+"--jlink_reset_strategy=0,0" 
+
+
+
+

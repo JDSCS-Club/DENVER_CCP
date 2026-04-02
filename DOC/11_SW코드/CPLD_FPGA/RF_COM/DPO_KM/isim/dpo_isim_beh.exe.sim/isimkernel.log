@@ -1,0 +1,29 @@
+Command line:
+   dpo_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  51749
+
+Sun Feb 26 02:35:49 2012
+
+
+ Elaboration Time: 0.078 sec
+
+ Current Memory Usage: 816.382 Meg
+
+ Total Signals          : 57
+ Total Nets             : 104
+ Total Signal Drivers   : 46
+ Total Blocks           : 4
+ Total Primitive Blocks : 4
+ Total Processes        : 6
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 482
+Total Line Count : 216
+
+ Total Simulation Time: 0.0936 sec
+
+ Current Memory Usage: 659.096 Meg
+
+Sun Feb 26 02:42:06 2012
+

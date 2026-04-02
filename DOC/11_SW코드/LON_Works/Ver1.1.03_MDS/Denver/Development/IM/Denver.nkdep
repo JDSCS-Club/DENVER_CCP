@@ -1,0 +1,17 @@
+; Echelon Dependency File - do not edit.
+; C:\Users\JDS\Desktop\잡동사니\2012_06_04(lonworks)\Lon-Program\Ver1.1.02\Denver\Development\IM\Denver.nkdep
+; Created Wednesday, February 22, 2017, 18:45:15
+
+[Global]
+Provider=Echelon NodeBuilder Make Facility
+Version=1
+Inputs=0
+Outputs=0
+Switches=0
+Parameters=2
+
+[Switches]
+
+[Parameters]
+BuildtimeH=30575931
+BuildtimeL=-834719872

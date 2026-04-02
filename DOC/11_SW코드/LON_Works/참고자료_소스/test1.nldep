@@ -1,0 +1,114 @@
+; Echelon Dependency File - do not edit.
+; E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.nldep
+; Created Friday, January 19, 2007, 09:39:18
+
+[Global]
+Provider=Neuron Linker
+Version=1
+Inputs=3
+Outputs=4
+Switches=13
+Parameters=30
+
+[Input_1]
+Basename=SYS3150A.sym
+Fullname=C:\LonWorks\Images\Ver14\SYS3150A.sym
+Type=3
+Size=9722
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Input_2]
+Basename=test1.no
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.no
+Type=0
+Size=1082
+TimestampHigh=0x1c73b62
+TimestampLow=0x40aa6f76
+
+[Input_3]
+Basename=GEN.LIB
+Fullname=C:\LONWORKS\IMAGES\VER14\GEN.LIB
+Type=3
+Size=74408
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Output_1]
+Basename=test1.dbt
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.dbt
+Type=0
+Size=10501
+TimestampHigh=0x1c73b62
+TimestampLow=0x40b19684
+
+[Output_2]
+Basename=test1.nxr
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.nxr
+Type=0
+Size=13
+TimestampHigh=0x1c73b62
+TimestampLow=0x40b19684
+
+[Output_3]
+Basename=test1.nxe
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.nxe
+Type=0
+Size=954
+TimestampHigh=0x1c73b62
+TimestampLow=0x40b19684
+
+[Output_4]
+Basename=test1.map
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.map
+Type=0
+Size=50039
+TimestampHigh=0x1c73b62
+TimestampLow=0x40b19684
+
+[Switches]
+32=PL 3150
+0=1
+11=1
+9=1
+15=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.dbg
+19=DF
+18=00
+12=128
+30=C:\LonWorks\Images\Ver14\SYS3150A.sym
+27=C:\LonWorks\Images\Ver14\GEN.LIB
+27=C:\LonWorks\Images\EXTARITH.LIB
+27=C:\LonWorks\Images\PSG.LIB
+35=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.no
+
+[Parameters]
+Domains=2
+AddressTable=15
+NeuronModel=1
+NeuronKey=23
+RamStart=232
+RamEnd=239
+EEpromStart=240
+EEpromEnd=241
+ImageVersion=14
+RcvTxSize=13
+TxCtlBlkSize=28
+OnchipRamSpace=506
+OffchipRamSpace=0
+DomainSize=15
+AddressSize=5
+NvCnfgSize=3
+OnchipEEpromCnfg=158
+AliasSize=4
+RomEnd=0
+OCEEPromStart=0
+OCEEPromEnd=223
+OCRamStart=0
+OCRamEnd=0
+EEWriteTime=10
+FlashEeprom=1
+SectorSize=128
+CapabilityProxy=0
+CapabilityPhaseDetect=0
+CustomMac=0
+PrtCount=0

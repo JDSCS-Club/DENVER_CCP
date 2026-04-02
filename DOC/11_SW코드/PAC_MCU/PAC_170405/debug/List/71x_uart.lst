@@ -1,0 +1,1201 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:12
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_uart.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW4573.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_uart.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_uart.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_uart.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_uart.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_uart.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : This file provides all the UART firmware functions
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "71x_uart.h"
+     18          
+     19          /* Private typedef -----------------------------------------------------------*/
+     20          /* Private define ------------------------------------------------------------*/
+     21          /* Private macro -------------------------------------------------------------*/
+     22          /* Private variables ---------------------------------------------------------*/
+     23          /* Private function prototypes -----------------------------------------------*/
+     24          /* Private functions ---------------------------------------------------------*/
+     25          
+     26          /*******************************************************************************
+     27          * Function Name  : UART_Init
+     28          * Description    : This function initializes the selected UART registers to
+     29          *                  their reset values.
+     30          * Input          : - UARTx: selects the UART to be configured UART
+     31          *                    (x can be 0,1, 2 or 3).
+     32          * Output         : None.
+     33          * Return         : None.
+     34          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     35          void UART_Init(UART_TypeDef *UARTx)
+     36          {
+     37            UARTx->CR = 0x0000;
+   \                     UART_Init:
+   \        0x0   0xE3A0'1000        MOV      R1,#+0
+   \        0x4   0xE1C0'10BC        STRH     R1,[R0, #+12]
+     38            UARTx->IER = 0x0000;
+   \        0x8   0xE1C0'11B0        STRH     R1,[R0, #+16]
+     39            (void)UARTx->RxBUFR;
+   \        0xC   0xE1D0'20B8        LDRH     R2,[R0, #+8]
+     40            UARTx->RxRSTR = 0xFFFF;
+   \       0x10   0xE3A0'20FF        MOV      R2,#+255
+   \       0x14   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x18   0xE1C0'22B4        STRH     R2,[R0, #+36]
+     41            UARTx->TxRSTR = 0xFFFF;
+   \       0x1C   0xE1C0'22B0        STRH     R2,[R0, #+32]
+     42            UARTx->TOR = 0x0000;
+   \       0x20   0xE1C0'11BC        STRH     R1,[R0, #+28]
+     43            UARTx->GTR = 0x0000;
+   \       0x24   0xE1C0'11B8        STRH     R1,[R0, #+24]
+     44          }
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+     45          
+     46          /*******************************************************************************
+     47          * Function Name  : UART_ModeConfig
+     48          * Description    : This function configures the mode of the selected UART.
+     49          * Input          : - UARTx: selects the UART to be configured
+     50          *                    (x can be 0,1, 2 or 3).
+     51          *                  - UART_Mode: selects the UART modeThe UART mode,
+     52          *                    it can be one of the following parameters:
+     53          *                    - UARTM_8D   for 8-bit data format
+     54          *                    - UARTM_7D_P for 7-bit data + parity format
+     55          *                    - UART_9D    for 9-bit data format
+     56          *                    - UART_8D_W  for 8-bit data + wake-up bit format
+     57          *                    - UART_8D_P  for 8-bit data + parity bit format
+     58          * Output         : None.
+     59          * Return         : None.
+     60          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     61          void UART_ModeConfig(UART_TypeDef *UARTx, UARTMode_TypeDef UART_Mode)
+     62          {
+     63            UARTx->CR = (UARTx->CR & 0xFFF8) | (u16)UART_Mode;
+   \                     UART_ModeConfig:
+   \        0x0   0xE1D0'20BC        LDRH     R2,[R0, #+12]
+   \        0x4   0xE3A0'30F8        MOV      R3,#+248
+   \        0x8   0xE383'3CFF        ORR      R3,R3,#0xFF00
+   \        0xC   0xE013'2002        ANDS     R2,R3,R2
+   \       0x10   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x14   0xE191'1002        ORRS     R1,R1,R2
+   \       0x18   0xE1C0'10BC        STRH     R1,[R0, #+12]
+     64          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+     65          
+     66          /*******************************************************************************
+     67          * Function Name  : UART_BaudRateConfig
+     68          * Description    : This function configures the baud rate of the selected UART.
+     69          * Input          : - UARTx: selects the UART to be configured
+     70          *                    (x can be 0,1, 2 or 3).
+     71          *                  - BaudRate: The baudrate value in bps.
+     72          * Output         : None.
+     73          * Return         : None.
+     74          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     75          void UART_BaudRateConfig(UART_TypeDef *UARTx, u32 BaudRate)
+     76          {
+   \                     UART_BaudRateConfig:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     77            u32 tmpBaudRate = 0;
+   \        0xC   0xE3A0'0000        MOV      R0,#+0
+     78          
+     79            /* Configure BaudRate */
+     80            tmpBaudRate = (u32)((RCCU_FrequencyValue(RCCU_PCLK1) * 10) / (16 * BaudRate));
+   \       0x10   0xE3A0'0004        MOV      R0,#+4
+   \       0x14   0x....'....        BL       RCCU_FrequencyValue
+   \       0x18   0xE080'1100        ADD      R1,R0,R0, LSL #+2
+   \       0x1C   0xE1B0'0081        LSLS     R0,R1,#+1
+   \       0x20   0xE1B0'1205        LSLS     R1,R5,#+4
+   \       0x24   0x....'....        BL       __aeabi_uidiv
+   \       0x28   0xE1B0'5000        MOVS     R5,R0
+     81          
+     82            /*Search the reload value (Integer)*/
+     83            if (tmpBaudRate - ((tmpBaudRate / 10) * 10) < 5)
+   \       0x2C   0xE3A0'600A        MOV      R6,#+10
+   \       0x30   0xE1B0'0005        MOVS     R0,R5
+   \       0x34   0xE1B0'1006        MOVS     R1,R6
+   \       0x38   0x....'....        BL       __aeabi_uidiv
+   \       0x3C   0xE080'1100        ADD      R1,R0,R0, LSL #+2
+   \       0x40   0xE055'0081        SUBS     R0,R5,R1, LSL #+1
+   \       0x44   0xE350'0005        CMP      R0,#+5
+   \       0x48   0x2A00'0004        BCS      ??UART_BaudRateConfig_0
+     84            {
+     85              UARTx->BR = tmpBaudRate / 10;
+   \       0x4C   0xE1B0'0005        MOVS     R0,R5
+   \       0x50   0xE1B0'1006        MOVS     R1,R6
+   \       0x54   0x....'....        BL       __aeabi_uidiv
+   \       0x58   0xE1C4'00B0        STRH     R0,[R4, #+0]
+   \       0x5C   0xEA00'0004        B        ??UART_BaudRateConfig_1
+     86            }
+     87            else
+     88            {
+     89              UARTx->BR = (tmpBaudRate / 10) + 1;
+   \                     ??UART_BaudRateConfig_0:
+   \       0x60   0xE1B0'0005        MOVS     R0,R5
+   \       0x64   0xE1B0'1006        MOVS     R1,R6
+   \       0x68   0x....'....        BL       __aeabi_uidiv
+   \       0x6C   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x70   0xE1C4'00B0        STRH     R0,[R4, #+0]
+     90            }
+     91          }
+   \                     ??UART_BaudRateConfig_1:
+   \       0x74   0xE8BD'4070        POP      {R4-R6,LR}
+   \       0x78   0xE12F'FF1E        BX       LR               ;; return
+     92          
+     93          
+     94          /*******************************************************************************
+     95          * Function Name  : UART_ParityConfig
+     96          * Description    : This function configures the data parity of the selected UART.
+     97          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+     98          *                  - Parity: the parity type, it can be:
+     99          *                    - UART_EVEN_PARITY  for even parity configuration.
+    100          *                    - UART_ODD_PARITY   for odd parity configuration.
+    101          *                    - UART_NO_PARITY    for no parity configuration.
+    102          * Output         : None.
+    103          * Return         : None.
+    104          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    105          void UART_ParityConfig(UART_TypeDef *UARTx, UARTParity_TypeDef Parity)
+    106          {
+    107            UARTx->CR = (UARTx->CR & 0xFFDF) | (u16)Parity;
+   \                     UART_ParityConfig:
+   \        0x0   0xE1D0'20BC        LDRH     R2,[R0, #+12]
+   \        0x4   0xE3A0'30DF        MOV      R3,#+223
+   \        0x8   0xE383'3CFF        ORR      R3,R3,#0xFF00
+   \        0xC   0xE013'2002        ANDS     R2,R3,R2
+   \       0x10   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x14   0xE191'1002        ORRS     R1,R1,R2
+   \       0x18   0xE1C0'10BC        STRH     R1,[R0, #+12]
+    108          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    109          
+    110          /*******************************************************************************
+    111          * Function Name  : UART_StopBitsConfig
+    112          * Description    : This function configures the number of stop bits of the
+    113          *                  selected UART.
+    114          * Input          : - UARTx: selects the UART to be configured.
+    115          *                    (x can be 0,1, 2 or 3).
+    116          *                  - StopBits: the number of stop bits, it can be:
+    117          *                    - UART_0_5_StopBits for 0.5 stop bit.
+    118          *                    - UART_1_StopBits for 1 stop bit.
+    119          *                    - UART_1_5_StopBits  for 1.5 stop bits.
+    120          *                    - UART_2_StopBits for 2 stop bits.
+    121          * Output         : None.
+    122          * Return         : None.
+    123          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    124          void UART_StopBitsConfig(UART_TypeDef *UARTx, UARTStopBits_TypeDef StopBits)
+    125          {
+    126            UARTx->CR = (UARTx->CR & 0xFFE7) | (u16)StopBits;
+   \                     UART_StopBitsConfig:
+   \        0x0   0xE1D0'20BC        LDRH     R2,[R0, #+12]
+   \        0x4   0xE3A0'30E7        MOV      R3,#+231
+   \        0x8   0xE383'3CFF        ORR      R3,R3,#0xFF00
+   \        0xC   0xE013'2002        ANDS     R2,R3,R2
+   \       0x10   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x14   0xE191'1002        ORRS     R1,R1,R2
+   \       0x18   0xE1C0'10BC        STRH     R1,[R0, #+12]
+    127          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    128          /*******************************************************************************
+    129          * Function Name  : UART_Config
+    130          * Description    : This function configures the Baud rate, parity mode, 
+    131          *                  the number of stop bits and the UART mode of the selected 
+    132          *                  UART.
+    133          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    134          *                  - BaudRate: the baudrate value in bps.
+    135          *                  - Parity: selects the parity type, it can be:
+    136                               - UART_EVEN_PARITY  for even parity configuration.
+    137          *                    - UART_ODD_PARITY   for odd parity configuration.
+    138          *                    - UART_NO_PARITY    for no parity configuration.
+    139          *                  - StopBits: selects the number of the stop bits, it can be:
+    140          *                    - UART_0_5_StopBits for 0.5 stop bit.
+    141          *                    - UART_1_StopBits for 1 stop bit.
+    142          *                    - UART_1_5_StopBits  for 1.5 stop bits.
+    143          *                    - UART_2_StopBits for 2 stop bits.
+    144          *                  - Mode: selects the UART mode, it can be one of the following 
+    145          *                    parameters:
+    146          *                    - UARTM_8D   for 8-bit data format.
+    147          *                    - UARTM_7D_P for 7-bit data + parity format.
+    148          *                    - UART_9D    for 9-bit data format.
+    149          *                    - UART_8D_W  for 8-bit data + wake-up bit format.
+    150          *                    - UART_8D_P  for 8-bit data + parity bit format.
+    151          * Output         : None.
+    152          * Return         : None.
+    153          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    154          void UART_Config(UART_TypeDef *UARTx, u32 BaudRate, UARTParity_TypeDef Parity,
+    155                           UARTStopBits_TypeDef StopBits, UARTMode_TypeDef Mode)
+    156          {
+   \                     UART_Config:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE5DD'1018        LDRB     R1,[SP, #+24]
+    157            UART_ModeConfig(UARTx, Mode);
+   \       0x18   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x1C   0xE1B0'0004        MOVS     R0,R4
+   \       0x20   0x....'....        BL       UART_ModeConfig
+    158            UART_BaudRateConfig(UARTx, BaudRate);
+   \       0x24   0xE1B0'1005        MOVS     R1,R5
+   \       0x28   0xE1B0'0004        MOVS     R0,R4
+   \       0x2C   0x....'....        BL       UART_BaudRateConfig
+    159            UART_ParityConfig(UARTx, Parity);
+   \       0x30   0xE1B0'1006        MOVS     R1,R6
+   \       0x34   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x38   0xE1B0'0004        MOVS     R0,R4
+   \       0x3C   0x....'....        BL       UART_ParityConfig
+    160            UART_StopBitsConfig(UARTx, StopBits);
+   \       0x40   0xE1B0'1007        MOVS     R1,R7
+   \       0x44   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x48   0xE1B0'0004        MOVS     R0,R4
+   \       0x4C   0x....'....        BL       UART_StopBitsConfig
+    161          }
+   \       0x50   0xE8BD'40F1        POP      {R0,R4-R7,LR}
+   \       0x54   0xE12F'FF1E        BX       LR               ;; return
+    162          
+    163          /*******************************************************************************
+    164          * Function Name  : UART_ItConfig
+    165          * Description    : This function enables or disables one or several interrupt
+    166          *                  sources of the selected UART.
+    167          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    168          *                  - UART_Flag: selects one or several UART interrupt source.
+    169          *                  - NewState: specifies whether the interrupt source is 
+    170          *                    enabled or disabled (ENABLE or DISABLE).
+    171          * Output         : None.
+    172          * Return         : None.
+    173          * Note           : The UART interrupt flags are listed in the file uart.h
+    174          *                  except UART_TxFull flag will have no effect when using 
+    175          *                  this function.
+    176          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    177          void UART_ItConfig(UART_TypeDef *UARTx, u16 UART_Flag, FunctionalState NewState)
+    178          {
+    179            if (NewState == ENABLE)
+   \                     UART_ItConfig:
+   \        0x0   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \        0x4   0xE352'0001        CMP      R2,#+1
+   \        0x8   0x1A00'0003        BNE      ??UART_ItConfig_0
+    180            {
+    181              UARTx->IER |= UART_Flag;
+   \        0xC   0xE1D0'21B0        LDRH     R2,[R0, #+16]
+   \       0x10   0xE191'1002        ORRS     R1,R1,R2
+   \       0x14   0xE1C0'11B0        STRH     R1,[R0, #+16]
+   \       0x18   0xEA00'0002        B        ??UART_ItConfig_1
+    182            }
+    183            else
+    184            {
+    185              UARTx->IER &= ~UART_Flag;
+   \                     ??UART_ItConfig_0:
+   \       0x1C   0xE1D0'21B0        LDRH     R2,[R0, #+16]
+   \       0x20   0xE1D2'1001        BICS     R1,R2,R1
+   \       0x24   0xE1C0'11B0        STRH     R1,[R0, #+16]
+    186            }
+    187          }
+   \                     ??UART_ItConfig_1:
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+    188          
+    189          /*******************************************************************************
+    190          * Function Name  : UART_FifoConfig
+    191          * Description    : This function enables or disables the Rx and Tx FIFOs of
+    192          *                  the selected UART.
+    193          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    194          *                  - NewState: specifies whether the FIFOs are enabled or
+    195          *                    disabled (ENABLE or DISABLE).
+    196          * Output         : None.
+    197          * Return         : None.
+    198          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    199          void UART_FifoConfig(UART_TypeDef *UARTx, FunctionalState NewState)
+    200          {
+    201            if (NewState == ENABLE)
+   \                     UART_FifoConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'0003        BNE      ??UART_FifoConfig_0
+    202            {
+    203              UARTx->CR |= 0x0400;
+   \        0xC   0xE1D0'10BC        LDRH     R1,[R0, #+12]
+   \       0x10   0xE391'1E40        ORRS     R1,R1,#0x400
+   \       0x14   0xE1C0'10BC        STRH     R1,[R0, #+12]
+   \       0x18   0xEA00'0004        B        ??UART_FifoConfig_1
+    204            }
+    205            else
+    206            {
+    207              UARTx->CR &= ~0x0400;
+   \                     ??UART_FifoConfig_0:
+   \       0x1C   0xE1D0'10BC        LDRH     R1,[R0, #+12]
+   \       0x20   0xE3A0'20FF        MOV      R2,#+255
+   \       0x24   0xE382'2CFB        ORR      R2,R2,#0xFB00
+   \       0x28   0xE012'1001        ANDS     R1,R2,R1
+   \       0x2C   0xE1C0'10BC        STRH     R1,[R0, #+12]
+    208            }
+    209          }
+   \                     ??UART_FifoConfig_1:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    210          
+    211          /*******************************************************************************
+    212          * Function Name  : UART_FifoReset
+    213          * Description    : This function resets the Rx and the Tx FIFOs of the
+    214          *                  selected UART.
+    215          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    216          *                  - FIFO: Selects the FIFO to reset, it can be:
+    217          *                    - UART_RxFIFO
+    218          *                    - UART_TxFIFO
+    219          * Output         : None.
+    220          * Return         : None.
+    221          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    222          void UART_FifoReset(UART_TypeDef *UARTx, UARTFIFO_TypeDef FIFO)
+    223          {
+    224            if (FIFO == UART_RxFIFO)
+   \                     UART_FifoReset:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x1A00'0003        BNE      ??UART_FifoReset_0
+    225            {
+    226              UARTx->RxRSTR = 0xFFFF;
+   \        0xC   0xE3A0'10FF        MOV      R1,#+255
+   \       0x10   0xE381'1CFF        ORR      R1,R1,#0xFF00
+   \       0x14   0xE1C0'12B4        STRH     R1,[R0, #+36]
+   \       0x18   0xEA00'0002        B        ??UART_FifoReset_1
+    227            }
+    228            else
+    229            {
+    230              UARTx->TxRSTR = 0xFFFF;
+   \                     ??UART_FifoReset_0:
+   \       0x1C   0xE3A0'10FF        MOV      R1,#+255
+   \       0x20   0xE381'1CFF        ORR      R1,R1,#0xFF00
+   \       0x24   0xE1C0'12B0        STRH     R1,[R0, #+32]
+    231            }
+    232          }
+   \                     ??UART_FifoReset_1:
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+    233          
+    234          /*******************************************************************************
+    235          * Function Name  : UART_LoopBackConfig
+    236          * Description    : This function enables or disables the loop back mode of
+    237          *                  the selected UART.
+    238          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    239          *                  - NewState: specifies whether the loop back is enabled
+    240          *                    or disabled (ENABLE or DISABLE).
+    241          * Output         : None.
+    242          * Return         : None.
+    243          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    244          void UART_LoopBackConfig(UART_TypeDef *UARTx, FunctionalState NewState)
+    245          {
+    246            if (NewState == ENABLE)
+   \                     UART_LoopBackConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'0003        BNE      ??UART_LoopBackConfig_0
+    247            {
+    248              UARTx->CR |= 0x0040;
+   \        0xC   0xE1D0'10BC        LDRH     R1,[R0, #+12]
+   \       0x10   0xE391'1040        ORRS     R1,R1,#0x40
+   \       0x14   0xE1C0'10BC        STRH     R1,[R0, #+12]
+   \       0x18   0xEA00'0004        B        ??UART_LoopBackConfig_1
+    249            }
+    250            else
+    251            {
+    252              UARTx->CR &= ~0x0040;
+   \                     ??UART_LoopBackConfig_0:
+   \       0x1C   0xE1D0'10BC        LDRH     R1,[R0, #+12]
+   \       0x20   0xE3A0'20BF        MOV      R2,#+191
+   \       0x24   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x28   0xE012'1001        ANDS     R1,R2,R1
+   \       0x2C   0xE1C0'10BC        STRH     R1,[R0, #+12]
+    253            }
+    254          }
+   \                     ??UART_LoopBackConfig_1:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    255          
+    256          /*******************************************************************************
+    257          * Function Name  : UART_TimeOutPeriodConfig
+    258          * Description    : This function configures the UART Time Out Period of the
+    259          *                  selected UART.
+    260          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    261          *                  - TimeOutPeriod: the time-out period value.
+    262          * Output         : None.
+    263          * Return         : None.
+    264          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    265          void UART_TimeOutPeriodConfig(UART_TypeDef *UARTx, u16 TimeOutPeriod)
+    266          {
+    267            UARTx->TOR = TimeOutPeriod;
+   \                     UART_TimeOutPeriodConfig:
+   \        0x0   0xE1C0'11BC        STRH     R1,[R0, #+28]
+    268          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    269          
+    270          /*******************************************************************************
+    271          * Function Name  : UART_GuardTimeConfig
+    272          * Description    : This function configures the UART Guard Time.
+    273          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    274          *                  - GuardTime: the guard time value.
+    275          * Output         : None.
+    276          * Return         : None.
+    277          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    278          void UART_GuardTimeConfig(UART_TypeDef *UARTx, u16 GuardTime)
+    279          {
+    280            UARTx->GTR = GuardTime;
+   \                     UART_GuardTimeConfig:
+   \        0x0   0xE1C0'11B8        STRH     R1,[R0, #+24]
+    281          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    282          /*******************************************************************************
+    283          * Function Name  : UART_RxConfig
+    284          * Description    : This function enables or disables the selected UART data
+    285          *                  reception.
+    286          * Input          : - UARTx: selects the UART to be configured
+    287          *                    (x can be 0,1, 2 or 3).
+    288          *                  - NewState: specifies whether the reception is enabled or
+    289          *                    disabled (ENABLE or DISABLE).
+    290          * Output         : None.
+    291          * Return         : None.
+    292          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    293          void UART_RxConfig(UART_TypeDef *UARTx, FunctionalState NewState)
+    294          {
+    295            if (NewState == ENABLE)
+   \                     UART_RxConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'0003        BNE      ??UART_RxConfig_0
+    296            {
+    297              UARTx->CR |= 0x0100;
+   \        0xC   0xE1D0'10BC        LDRH     R1,[R0, #+12]
+   \       0x10   0xE391'1F40        ORRS     R1,R1,#0x100
+   \       0x14   0xE1C0'10BC        STRH     R1,[R0, #+12]
+   \       0x18   0xEA00'0004        B        ??UART_RxConfig_1
+    298            }
+    299            else
+    300            {
+    301              UARTx->CR &= ~0x0100;
+   \                     ??UART_RxConfig_0:
+   \       0x1C   0xE1D0'10BC        LDRH     R1,[R0, #+12]
+   \       0x20   0xE3A0'20FF        MOV      R2,#+255
+   \       0x24   0xE382'2CFE        ORR      R2,R2,#0xFE00
+   \       0x28   0xE012'1001        ANDS     R1,R2,R1
+   \       0x2C   0xE1C0'10BC        STRH     R1,[R0, #+12]
+    302            }
+    303          }
+   \                     ??UART_RxConfig_1:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    304          
+    305          /*******************************************************************************
+    306          * Function Name  : UART_OnOffConfig
+    307          * Description    : This function sets On/Off the selected UART.
+    308          * Input          : - UARTx: selects the UART to be configured
+    309          *                    (x can be 0,1, 2 or 3).
+    310          *                  - NewState: ENABLE or DISABLE.
+    311          * Output         : None.
+    312          * Return         : None.
+    313          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    314          void UART_OnOffConfig(UART_TypeDef *UARTx, FunctionalState NewState)
+    315          {
+    316            if (NewState == ENABLE)
+   \                     UART_OnOffConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'0003        BNE      ??UART_OnOffConfig_0
+    317            {
+    318              UARTx->CR |= 0x0080;
+   \        0xC   0xE1D0'10BC        LDRH     R1,[R0, #+12]
+   \       0x10   0xE391'1080        ORRS     R1,R1,#0x80
+   \       0x14   0xE1C0'10BC        STRH     R1,[R0, #+12]
+   \       0x18   0xEA00'0004        B        ??UART_OnOffConfig_1
+    319            }
+    320            else
+    321            {
+    322              UARTx->CR &= ~0x0080;
+   \                     ??UART_OnOffConfig_0:
+   \       0x1C   0xE1D0'10BC        LDRH     R1,[R0, #+12]
+   \       0x20   0xE3A0'207F        MOV      R2,#+127
+   \       0x24   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x28   0xE012'1001        ANDS     R1,R2,R1
+   \       0x2C   0xE1C0'10BC        STRH     R1,[R0, #+12]
+    323            }
+    324          }
+   \                     ??UART_OnOffConfig_1:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    325          
+    326          /*******************************************************************************
+    327          * Function Name  : UART_ByteSend
+    328          * Description    : This function is used to send a 7-bit byte or an 8-bit byte
+    329          *                  using the selected UART.
+    330          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    331          *                  - Data: a pointer on the data byte to send.
+    332          * Output         : None.
+    333          * Return         : None.
+    334          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    335          void UART_ByteSend(UART_TypeDef *UARTx, u8 *Data)
+    336          {
+    337            /* if FIFO ENABLED */
+    338            if (UARTx->CR & 0x0400)
+   \                     UART_ByteSend:
+   \        0x0   0xE1D0'20BC        LDRH     R2,[R0, #+12]
+   \        0x4   0xE312'0E40        TST      R2,#0x400
+   \        0x8   0x0A00'0003        BEQ      ??UART_ByteSend_0
+    339            {
+    340              
+    341              while ((UARTx->SR & UART_TxFull))
+   \                     ??UART_ByteSend_1:
+   \        0xC   0xE1D0'21B4        LDRH     R2,[R0, #+20]
+   \       0x10   0xE312'0F80        TST      R2,#0x200
+   \       0x14   0x1AFF'FFFC        BNE      ??UART_ByteSend_1
+   \       0x18   0xEA00'0002        B        ??UART_ByteSend_2
+    342              {
+    343                /* Wait until the TxFIFO contains at least 1 free place */
+    344              }
+    345            }
+    346            /* if FIFO DISABLED */
+    347            else
+    348            {
+    349              
+    350              while (!(UARTx->SR & UART_TxEmpty))
+   \                     ??UART_ByteSend_0:
+   \       0x1C   0xE1D0'21B4        LDRH     R2,[R0, #+20]
+   \       0x20   0xE312'0002        TST      R2,#0x2
+   \       0x24   0x0AFF'FFFC        BEQ      ??UART_ByteSend_0
+    351              {
+    352                /* Wait until the transmit shift register is empty */
+    353              }
+    354            }
+    355            UARTx->TxBUFR = *Data;
+   \                     ??UART_ByteSend_2:
+   \       0x28   0xE5D1'1000        LDRB     R1,[R1, #+0]
+   \       0x2C   0xE1C0'10B4        STRH     R1,[R0, #+4]
+    356          }
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    357          
+    358          /*******************************************************************************
+    359          * Function Name  : UART_9BitByteSend
+    360          * Description    : This function sends a 9-bit data using the selected UART.
+    361          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    362          *                  - Data: a pointer on the 9-bit data to send.
+    363          * Output         : None.
+    364          * Return         : None.
+    365          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    366          void UART_9BitByteSend(UART_TypeDef *UARTx, u16 *Data)
+    367          {
+    368            /* if FIFO ENABLED */
+    369            if (UARTx->CR & 0x0400)
+   \                     UART_9BitByteSend:
+   \        0x0   0xE1D0'20BC        LDRH     R2,[R0, #+12]
+   \        0x4   0xE312'0E40        TST      R2,#0x400
+   \        0x8   0x0A00'0003        BEQ      ??UART_9BitByteSend_0
+    370            {
+    371              
+    372              while ((UARTx->SR & UART_TxFull))
+   \                     ??UART_9BitByteSend_1:
+   \        0xC   0xE1D0'21B4        LDRH     R2,[R0, #+20]
+   \       0x10   0xE312'0F80        TST      R2,#0x200
+   \       0x14   0x1AFF'FFFC        BNE      ??UART_9BitByteSend_1
+   \       0x18   0xEA00'0002        B        ??UART_9BitByteSend_2
+    373              {
+    374              /* Wait until the TxFIFO contains at least 1 free place */
+    375              }
+    376            }
+    377            /* if FIFO DISABLED */
+    378            else
+    379            {
+    380              
+    381              while (!(UARTx->SR & UART_TxEmpty))
+   \                     ??UART_9BitByteSend_0:
+   \       0x1C   0xE1D0'21B4        LDRH     R2,[R0, #+20]
+   \       0x20   0xE312'0002        TST      R2,#0x2
+   \       0x24   0x0AFF'FFFC        BEQ      ??UART_9BitByteSend_0
+    382              {
+    383                /* Wait until the transmit shift register is empty */
+    384              }
+    385            }
+    386          
+    387            UARTx->TxBUFR = ((*Data) & 0x01FF);
+   \                     ??UART_9BitByteSend_2:
+   \       0x28   0xE1D1'10B0        LDRH     R1,[R1, #+0]
+   \       0x2C   0xE1B0'1B81        LSLS     R1,R1,#+23
+   \       0x30   0xE1B0'1BA1        LSRS     R1,R1,#+23
+   \       0x34   0xE1C0'10B4        STRH     R1,[R0, #+4]
+    388          }
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    389          
+    390          /*******************************************************************************
+    391          * Function Name  : UART_DataSend
+    392          * Description    : This routine is used to send several 7-bit bytes or 8-bit
+    393          *                  bytes using the selected UART.
+    394          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    395          *                  - Data: the bytes start address.
+    396          *                  - DataLength: the data length in bytes.
+    397          * Output         : None.
+    398          * Return         : None.
+    399          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    400          void UART_DataSend(UART_TypeDef *UARTx, u8 *Data, u8 DataLength)
+    401          {
+   \                     UART_DataSend:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xEA00'0003        B        ??UART_DataSend_0
+    402          
+    403            while (DataLength--)
+    404            {
+    405              UART_ByteSend(UARTx, Data);
+   \                     ??UART_DataSend_1:
+   \       0x14   0xE1B0'1005        MOVS     R1,R5
+   \       0x18   0xE1B0'0004        MOVS     R0,R4
+   \       0x1C   0x....'....        BL       UART_ByteSend
+    406              Data++;
+   \       0x20   0xE295'5001        ADDS     R5,R5,#+1
+    407            }
+   \                     ??UART_DataSend_0:
+   \       0x24   0xE1B0'0006        MOVS     R0,R6
+   \       0x28   0xE250'6001        SUBS     R6,R0,#+1
+   \       0x2C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x30   0xE350'0000        CMP      R0,#+0
+   \       0x34   0x1AFF'FFF6        BNE      ??UART_DataSend_1
+    408          }
+   \       0x38   0xE8BD'4070        POP      {R4-R6,LR}
+   \       0x3C   0xE12F'FF1E        BX       LR               ;; return
+    409          
+    410          /*******************************************************************************
+    411          * Function Name  : UART_9BitDataSend
+    412          * Description    : This function sends several 9-bit data using the selected
+    413          *                  UART.
+    414          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    415          *                  - Data: the bytes start address.
+    416          *                  - DataLength: the data bytes number.
+    417          * Output         : None.
+    418          * Return         : None.
+    419          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    420          void UART_9BitDataSend(UART_TypeDef *UARTx, u16 *Data, u8 DataLength)
+    421          {
+   \                     UART_9BitDataSend:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xEA00'0003        B        ??UART_9BitDataSend_0
+    422            while (DataLength--)
+    423            {
+    424              UART_9BitByteSend(UARTx, Data);
+   \                     ??UART_9BitDataSend_1:
+   \       0x14   0xE1B0'1005        MOVS     R1,R5
+   \       0x18   0xE1B0'0004        MOVS     R0,R4
+   \       0x1C   0x....'....        BL       UART_9BitByteSend
+    425              Data++;
+   \       0x20   0xE295'5002        ADDS     R5,R5,#+2
+    426            }
+   \                     ??UART_9BitDataSend_0:
+   \       0x24   0xE1B0'0006        MOVS     R0,R6
+   \       0x28   0xE250'6001        SUBS     R6,R0,#+1
+   \       0x2C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x30   0xE350'0000        CMP      R0,#+0
+   \       0x34   0x1AFF'FFF6        BNE      ??UART_9BitDataSend_1
+    427          }
+   \       0x38   0xE8BD'4070        POP      {R4-R6,LR}
+   \       0x3C   0xE12F'FF1E        BX       LR               ;; return
+    428          
+    429          /*******************************************************************************
+    430          * Function Name  : UART_StringSend
+    431          * Description    : This function sends a string to the selected UART.
+    432          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    433          *                  - String: a pointer on the string to send.
+    434          * Output         : None.
+    435          * Return         : None.
+    436          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    437          void UART_StringSend(UART_TypeDef *UARTx, u8 *String)
+    438          {
+   \                     UART_StringSend:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    439            u8 *Data = String;
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xEA00'0003        B        ??UART_StringSend_0
+    440            
+    441            while (*Data != '\0')
+    442            {
+    443              UART_ByteSend(UARTx, Data++);
+   \                     ??UART_StringSend_1:
+   \       0x10   0xE1B0'1005        MOVS     R1,R5
+   \       0x14   0xE1B0'0004        MOVS     R0,R4
+   \       0x18   0x....'....        BL       UART_ByteSend
+   \       0x1C   0xE295'5001        ADDS     R5,R5,#+1
+    444            }
+   \                     ??UART_StringSend_0:
+   \       0x20   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1AFF'FFF8        BNE      ??UART_StringSend_1
+    445            
+    446            /* Send the character end of string  */
+    447            *Data = '\0';
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \       0x30   0xE5C5'0000        STRB     R0,[R5, #+0]
+    448            UART_ByteSend(UARTx, Data);
+   \       0x34   0xE1B0'1005        MOVS     R1,R5
+   \       0x38   0xE1B0'0004        MOVS     R0,R4
+   \       0x3C   0x....'....        BL       UART_ByteSend
+    449          }
+   \       0x40   0xE8BD'4031        POP      {R0,R4,R5,LR}
+   \       0x44   0xE12F'FF1E        BX       LR               ;; return
+    450          
+    451          /*******************************************************************************
+    452          * Function Name  : UART_ByteReceive
+    453          * Description    : This routine is used to get a 7 or an 8-bit byte from 
+    454          *                  the selected UART.
+    455          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    456          *                  - Data: a pointer on the data where the data will be stored.
+    457          *                  - TimeOut: The time-out period value.
+    458          * Output         : The received 8-bit data.
+    459          * Return         : The UARTx_SR register content before reading the received
+    460          *                  data.
+    461          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    462          u16 UART_ByteReceive(UART_TypeDef *UARTx, u8 *Data, u8 TimeOut)
+    463          {
+   \                     UART_ByteReceive:
+   \        0x0   0xE1B0'3000        MOVS     R3,R0
+    464            u16 wStatus = 0;
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+    465          
+    466            /* Reload the Timeout counter */
+    467            UARTx->TOR = TimeOut;
+   \        0x8   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \        0xC   0xE1C3'21BC        STRH     R2,[R3, #+28]
+    468          
+    469            /* Wait while the UART_RxFIFO is empty and no Timeoutidle */
+    470            while (!((wStatus = UARTx->SR) & (UART_TimeOutIdle | UART_RxBufNotEmpty)))
+   \                     ??UART_ByteReceive_0:
+   \       0x10   0xE1D3'21B4        LDRH     R2,[R3, #+20]
+   \       0x14   0xE1B0'0002        MOVS     R0,R2
+   \       0x18   0xE312'0081        TST      R2,#0x81
+   \       0x1C   0x0AFF'FFFB        BEQ      ??UART_ByteReceive_0
+    471            {
+    472              /* Wait */
+    473            }
+    474          
+    475            /* then read the Receive Buffer Register */
+    476            *Data = (u8)UARTx->RxBUFR;
+   \       0x20   0xE1D3'20B8        LDRH     R2,[R3, #+8]
+   \       0x24   0xE5C1'2000        STRB     R2,[R1, #+0]
+    477          
+    478            return wStatus;
+   \       0x28   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x2C   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    479          }
+    480          
+    481          /*******************************************************************************
+    482          * Function Name  : UART_9BitByteReceive
+    483          * Description    : This function gets a 9-bit data from the selected UART.
+    484          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    485          *                  - Data: a pointer on the data where the data will be stored.
+    486          *                  - TimeOut: The time-out period value.
+    487          * Output         : The received 9-bit data.
+    488          * Return         : The UARTx_SR register content before reading the received
+    489          *                  data.
+    490          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    491          u16 UART_9BitByteReceive(UART_TypeDef *UARTx, u16 *Data, u8 TimeOut)
+    492          {
+   \                     UART_9BitByteReceive:
+   \        0x0   0xE1B0'3000        MOVS     R3,R0
+    493            u16 wStatus = 0;
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+    494          
+    495            /* Reload the Timeout counter */
+    496            UARTx->TOR = TimeOut;
+   \        0x8   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \        0xC   0xE1C3'21BC        STRH     R2,[R3, #+28]
+    497          
+    498            /* while the UART_RxFIFO is empty and no Timeoutidle */
+    499            while (!((wStatus = UARTx->SR) & (UART_TimeOutIdle | UART_RxBufNotEmpty)))
+   \                     ??UART_9BitByteReceive_0:
+   \       0x10   0xE1D3'21B4        LDRH     R2,[R3, #+20]
+   \       0x14   0xE1B0'0002        MOVS     R0,R2
+   \       0x18   0xE312'0081        TST      R2,#0x81
+   \       0x1C   0x0AFF'FFFB        BEQ      ??UART_9BitByteReceive_0
+    500            {
+    501              /* Wait */
+    502            }
+    503          
+    504            /* then read the RxBUFR*/
+    505            *Data = (u16)UARTx->RxBUFR;
+   \       0x20   0xE1D3'20B8        LDRH     R2,[R3, #+8]
+   \       0x24   0xE1C1'20B0        STRH     R2,[R1, #+0]
+    506            return wStatus;
+   \       0x28   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x2C   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    507          }
+    508          
+    509          /*******************************************************************************
+    510          * Function Name  : UART_DataReceive
+    511          * Description    : This function gets 8 bits data bytes from the selected UART.
+    512          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    513          *                  - Data: a pointer on the buffer where the data will be stored.
+    514          *                  - DataLength: the data length.
+    515          *                  - TimeOut: The time-out period value.
+    516          * Output         : The received 8-bit data buffer.
+    517          * Return         : The UARTx_SR register content before reading the received
+    518          *                  data.
+    519          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    520          u16 UART_DataReceive(UART_TypeDef *UARTx, u8 *Data, u8 DataLength, u8 TimeOut)
+    521          {
+   \                     UART_DataReceive:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+    522            u16 wStatus = 0;
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \       0x18   0xEA00'0005        B        ??UART_DataReceive_0
+    523            while (DataLength--)
+    524            {
+    525              wStatus = UART_ByteReceive(UARTx, Data++, TimeOut);
+   \                     ??UART_DataReceive_1:
+   \       0x1C   0xE1B0'2007        MOVS     R2,R7
+   \       0x20   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x24   0xE1B0'1005        MOVS     R1,R5
+   \       0x28   0xE1B0'0004        MOVS     R0,R4
+   \       0x2C   0x....'....        BL       UART_ByteReceive
+   \       0x30   0xE295'5001        ADDS     R5,R5,#+1
+    526            }
+   \                     ??UART_DataReceive_0:
+   \       0x34   0xE1B0'1006        MOVS     R1,R6
+   \       0x38   0xE251'6001        SUBS     R6,R1,#+1
+   \       0x3C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x40   0xE351'0000        CMP      R1,#+0
+   \       0x44   0x1AFF'FFF4        BNE      ??UART_DataReceive_1
+    527            return wStatus;
+   \       0x48   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x4C   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x50   0xE8BD'40F2        POP      {R1,R4-R7,LR}
+   \       0x54   0xE12F'FF1E        BX       LR               ;; return
+    528          }
+    529          
+    530          /*******************************************************************************
+    531          * Function Name  : UART_9BitDataReceive
+    532          * Description    : This function gets several 9-bits data from the selected UART.
+    533          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    534          *                  - Data: a pointer on the buffer where the data will be stored.
+    535          *                  - DataLength: the number of bytes to receive.
+    536          *                  - TimeOut: the time-out period value.
+    537          * Output         : The received 9-bit data buffer.
+    538          * Return         : The UARTx_SR register contents.
+    539          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    540          u16 UART_9BitDataReceive(UART_TypeDef *UARTx, u16 *Data, u8 DataLength,
+    541                                   u8 TimeOut)
+    542          {
+   \                     UART_9BitDataReceive:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+    543            u16 wStatus = 0;
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \       0x18   0xEA00'0005        B        ??UART_9BitDataReceive_0
+    544          
+    545            while (DataLength--)
+    546            {
+    547              wStatus = UART_9BitByteReceive(UARTx, Data++, TimeOut);
+   \                     ??UART_9BitDataReceive_1:
+   \       0x1C   0xE1B0'2007        MOVS     R2,R7
+   \       0x20   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x24   0xE1B0'1005        MOVS     R1,R5
+   \       0x28   0xE1B0'0004        MOVS     R0,R4
+   \       0x2C   0x....'....        BL       UART_9BitByteReceive
+   \       0x30   0xE295'5002        ADDS     R5,R5,#+2
+    548            }
+   \                     ??UART_9BitDataReceive_0:
+   \       0x34   0xE1B0'1006        MOVS     R1,R6
+   \       0x38   0xE251'6001        SUBS     R6,R1,#+1
+   \       0x3C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x40   0xE351'0000        CMP      R1,#+0
+   \       0x44   0x1AFF'FFF4        BNE      ??UART_9BitDataReceive_1
+    549            return wStatus;
+   \       0x48   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x4C   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x50   0xE8BD'40F2        POP      {R1,R4-R7,LR}
+   \       0x54   0xE12F'FF1E        BX       LR               ;; return
+    550          }
+    551          
+    552          /*******************************************************************************
+    553          * Function Name  : UART_StringReceive
+    554          * Description    : This function gets a string which ends with: End of string
+    555          *                  or Carriage return characters from the selected UART.
+    556          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    557          *                  - Data: a pointer on the buffer where the data will be stored.
+    558          * Output         : The received string.
+    559          * Return         : The UARTx_SR register content before reading the received
+    560          *                  data.
+    561          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    562          u16 UART_StringReceive(UART_TypeDef *UARTx, u8 *Data)
+    563          {
+   \                     UART_StringReceive:
+   \        0x0   0xE1B0'2000        MOVS     R2,R0
+    564            u8 *pSTRING = Data;
+   \        0x4   0xE1B0'3001        MOVS     R3,R1
+    565            u16 wStatus = 0;
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+    566          
+    567            do
+    568            {
+    569              /* while the UART_RxFIFO is empty  */
+    570              while (!((wStatus = UARTx->SR) & (UART_RxHalfFull | UART_RxBufNotEmpty)))
+   \                     ??UART_StringReceive_0:
+   \        0xC   0xE1D2'11B4        LDRH     R1,[R2, #+20]
+   \       0x10   0xE1B0'0001        MOVS     R0,R1
+   \       0x14   0xE3A0'C001        MOV      R12,#+1
+   \       0x18   0xE38C'CF40        ORR      R12,R12,#0x100
+   \       0x1C   0xE11C'0001        TST      R12,R1
+   \       0x20   0x0AFF'FFF9        BEQ      ??UART_StringReceive_0
+    571              {
+    572                /* Wait */
+    573              }
+    574          
+    575              /* then read the RxBUFR */
+    576              *(pSTRING++) = (u8)UARTx->RxBUFR;
+   \       0x24   0xE1D2'10B8        LDRH     R1,[R2, #+8]
+   \       0x28   0xE5C3'1000        STRB     R1,[R3, #+0]
+   \       0x2C   0xE293'3001        ADDS     R3,R3,#+1
+    577          
+    578            } while ((*(pSTRING - 1) != 0x0D) && (*(pSTRING - 1) != '\0'));
+   \       0x30   0xE553'1001        LDRB     R1,[R3, #-1]
+   \       0x34   0xE351'000D        CMP      R1,#+13
+   \       0x38   0x0A00'0002        BEQ      ??UART_StringReceive_1
+   \       0x3C   0xE553'1001        LDRB     R1,[R3, #-1]
+   \       0x40   0xE351'0000        CMP      R1,#+0
+   \       0x44   0x1AFF'FFF0        BNE      ??UART_StringReceive_0
+    579          
+    580            *(pSTRING - 1) = '\0';
+   \                     ??UART_StringReceive_1:
+   \       0x48   0xE3A0'1000        MOV      R1,#+0
+   \       0x4C   0xE543'1001        STRB     R1,[R3, #-1]
+    581          
+    582            return wStatus;
+   \       0x50   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x54   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x58   0xE12F'FF1E        BX       LR               ;; return
+    583          }
+    584          
+    585          /*******************************************************************************
+    586          * Function Name  : UART_FlagStatus
+    587          * Description    : This routine returns the UARTx_SR register content of the
+    588          *                  selected UART.
+    589          * Input          : - UARTx: the selected UART (x can be 0,1, 2 or 3).
+    590          * Output         : None.
+    591          * Return         : None.
+    592          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    593          u16 UART_FlagStatus(UART_TypeDef *UARTx)
+    594          {
+    595            return UARTx->SR;
+   \                     UART_FlagStatus:
+   \        0x0   0xE1D0'01B4        LDRH     R0,[R0, #+20]
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    596          }
+    597          
+    598          #ifdef USE_SERIAL_PORT
+    599          
+    600          /*******************************************************************************
+    601          * Function Name  : SendChar
+    602          * Description    : This function sends a character using  the defined UART.
+    603          * Input          : - ch: a pointer on the character to send.
+    604          * Output         : None.
+    605          * Return         : None.
+    606          *******************************************************************************/
+    607          void SendChar( u8 *ch )
+    608          {
+    609          #ifdef USE_UART0
+    610          #define  UARTx  UART0
+    611          #endif /* Use_UART0 */
+    612          
+    613          #ifdef USE_UART1
+    614          #define  UARTx  UART1
+    615          #endif /* Use_UART1 */
+    616          
+    617          #ifdef USE_UART2
+    618          #define  UARTx  UART2
+    619          #endif /* Use_UART2 */
+    620          
+    621          #ifdef USE_UART3
+    622          #define  UARTx  UART3
+    623          #endif /* Use_UART3 */
+    624          
+    625            UART_ByteSend(UARTx, (u8 *)ch);
+    626          }
+    627          
+    628          #endif /* USE_SERIAL_PORT */
+    629          
+    630          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   UART_9BitByteReceive
+       0   UART_9BitByteSend
+      24   UART_9BitDataReceive
+        24   -> UART_9BitByteReceive
+      16   UART_9BitDataSend
+        16   -> UART_9BitByteSend
+      16   UART_BaudRateConfig
+        16   -> RCCU_FrequencyValue
+        16 __aeabi_uidiv
+       0   UART_ByteReceive
+       0   UART_ByteSend
+      24   UART_Config
+        24   -> UART_BaudRateConfig
+        24   -> UART_ModeConfig
+        24   -> UART_ParityConfig
+        24   -> UART_StopBitsConfig
+      24   UART_DataReceive
+        24   -> UART_ByteReceive
+      16   UART_DataSend
+        16   -> UART_ByteSend
+       0   UART_FifoConfig
+       0   UART_FifoReset
+       0   UART_FlagStatus
+       0   UART_GuardTimeConfig
+       0   UART_Init
+       0   UART_ItConfig
+       0   UART_LoopBackConfig
+       0   UART_ModeConfig
+       0   UART_OnOffConfig
+       0   UART_ParityConfig
+       0   UART_RxConfig
+       0   UART_StopBitsConfig
+       0   UART_StringReceive
+      16   UART_StringSend
+        16   -> UART_ByteSend
+       0   UART_TimeOutPeriodConfig
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      52  UART_9BitByteReceive
+      60  UART_9BitByteSend
+      88  UART_9BitDataReceive
+      64  UART_9BitDataSend
+     124  UART_BaudRateConfig
+      52  UART_ByteReceive
+      52  UART_ByteSend
+      88  UART_Config
+      88  UART_DataReceive
+      64  UART_DataSend
+      52  UART_FifoConfig
+      44  UART_FifoReset
+       8  UART_FlagStatus
+       8  UART_GuardTimeConfig
+      44  UART_Init
+      44  UART_ItConfig
+      52  UART_LoopBackConfig
+      32  UART_ModeConfig
+      52  UART_OnOffConfig
+      32  UART_ParityConfig
+      52  UART_RxConfig
+      32  UART_StopBitsConfig
+      92  UART_StringReceive
+      72  UART_StringSend
+       8  UART_TimeOutPeriodConfig
+
+ 
+ 1 356 bytes in section .text
+ 
+ 1 356 bytes of CODE memory
+
+Errors: none
+Warnings: none

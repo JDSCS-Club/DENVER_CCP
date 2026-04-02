@@ -1,0 +1,532 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:12
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_wdg.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW45D2.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_wdg.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_wdg.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_wdg.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_wdg.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_WDG.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : This file provides all the WDG firmware functions.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "71x_wdg.h"
+     18          
+     19          /* Private typedef -----------------------------------------------------------*/
+     20          /* Private define ------------------------------------------------------------*/
+     21          /* Private macro -------------------------------------------------------------*/
+     22          /* Private variables ---------------------------------------------------------*/
+     23          /* Private function prototypes -----------------------------------------------*/
+     24          /* Private functions ---------------------------------------------------------*/
+     25          
+     26          /*******************************************************************************
+     27          * Function Name  : WDG_Enable
+     28          * Description    : Enables the Watchdog Mode.
+     29          * Input          : None.
+     30          * Output         : None.
+     31          * Return         : None.
+     32          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     33          void WDG_Enable (void)
+     34          {
+     35            WDG->CR |= 0x01;
+   \                     WDG_Enable:
+   \        0x0   0xE3A0'04E0        MOV      R0,#-536870912
+   \        0x4   0xE380'0CE0        ORR      R0,R0,#0xE000
+   \        0x8   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \        0xC   0xE391'1001        ORRS     R1,R1,#0x1
+   \       0x10   0xE1C0'10B0        STRH     R1,[R0, #+0]
+     36          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+     37          
+     38          /*******************************************************************************
+     39          * Function Name  : WDG_CntRefresh
+     40          * Description    : Refreshs and update the WDG counter to avoid a system reset.
+     41          * Input          : None.
+     42          * Output         : None.
+     43          * Return         : None.
+     44          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     45          void WDG_CntRefresh (void)
+     46          {
+     47            /* Write the first value in the key register */
+     48            WDG->KR = 0xA55A;
+   \                     WDG_CntRefresh:
+   \        0x0   0x....'....        LDR      R0,??DataTable4  ;; 0xe000e018
+   \        0x4   0xE3A0'105A        MOV      R1,#+90
+   \        0x8   0xE381'1CA5        ORR      R1,R1,#0xA500
+   \        0xC   0xE1C0'10B0        STRH     R1,[R0, #+0]
+     49          
+     50            /* Write the second value in the key register */
+     51            WDG->KR = 0x5AA5;
+   \       0x10   0xE3A0'10A5        MOV      R1,#+165
+   \       0x14   0xE381'1C5A        ORR      R1,R1,#0x5A00
+   \       0x18   0xE1C0'10B0        STRH     R1,[R0, #+0]
+     52          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+     53          
+     54          /*******************************************************************************
+     55          * Function Name  : WDG_PrescalerConfig
+     56          * Description    : Sets the counter prescaler value. The clock to Timer Counter 
+     57          *                  is divided by (Prescaler + 1)
+     58          * Input          : - Prescaler: specifies the prescaler value (8 bit).
+     59          * Output         : None.
+     60          * Return         : None.
+     61          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     62          void WDG_PrescalerConfig (u8 Prescaler)
+     63          {
+     64            WDG->PR = Prescaler;
+   \                     WDG_PrescalerConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE3A0'124E        MOV      R1,#-536870908
+   \        0x8   0xE381'1CE0        ORR      R1,R1,#0xE000
+   \        0xC   0xE1C1'00B0        STRH     R0,[R1, #+0]
+     65          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+     66          
+     67          /*******************************************************************************
+     68          * Function Name  : WDG_CntReloadUpdate
+     69          * Description    : Updates the counter pre-load value.
+     70          * Input          : - PreLoadValue: specifies the pre-load value (16 bit)
+     71          * Output         : None.
+     72          * Return         : None.
+     73          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     74          void WDG_CntReloadUpdate (u16 PreLoadValue)
+     75          {
+     76            WDG->VR = PreLoadValue;
+   \                     WDG_CntReloadUpdate:
+   \        0x0   0xE3A0'128E        MOV      R1,#-536870904
+   \        0x4   0xE381'1CE0        ORR      R1,R1,#0xE000
+   \        0x8   0xE1C1'00B0        STRH     R0,[R1, #+0]
+     77          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+     78          
+     79          /*******************************************************************************
+     80          * Function Name  : WDG_CntOnOffConfig
+     81          * Description    : Starts or stops the free auto-reload timer to count down.
+     82          * Input          : - NewState: specifies how the timer have to be started 
+     83          *                    or stopped. It can be:
+     84          *                     ENABLE: the counter loads the Timer pre-load value and
+     85          *                     starts counting.
+     86          *                     DISABLE: the counter is stopped.
+     87          * Output         : None.
+     88          * Return         : None.
+     89          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     90          void WDG_CntOnOffConfig (FunctionalState NewState)
+     91          {
+     92            if (NewState == ENABLE)
+   \                     WDG_CntOnOffConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0001        CMP      R0,#+1
+   \        0x8   0x1A00'0005        BNE      ??WDG_CntOnOffConfig_0
+     93            {
+     94              WDG->CR |= 0x0002;
+   \        0xC   0xE3A0'04E0        MOV      R0,#-536870912
+   \       0x10   0xE380'0CE0        ORR      R0,R0,#0xE000
+   \       0x14   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x18   0xE391'1002        ORRS     R1,R1,#0x2
+   \       0x1C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+   \       0x20   0xEA00'0006        B        ??WDG_CntOnOffConfig_1
+     95            }
+     96            else
+     97            {
+     98              WDG->CR &= ~0x0002;
+   \                     ??WDG_CntOnOffConfig_0:
+   \       0x24   0xE3A0'04E0        MOV      R0,#-536870912
+   \       0x28   0xE380'0CE0        ORR      R0,R0,#0xE000
+   \       0x2C   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x30   0xE3A0'20FD        MOV      R2,#+253
+   \       0x34   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x38   0xE012'1001        ANDS     R1,R2,R1
+   \       0x3C   0xE1C0'10B0        STRH     R1,[R0, #+0]
+     99            }
+    100          }
+   \                     ??WDG_CntOnOffConfig_1:
+   \       0x40   0xE12F'FF1E        BX       LR               ;; return
+    101          
+    102          /*******************************************************************************
+    103          * Function Name  : WDG_ECITConfig
+    104          * Description    : Enables or Disables the WDG end of count interrupt.
+    105          * Input          : - NewState: specifies whether the WDG  end of count interrupt
+    106          *                    is enabled or disabled, it can be:
+    107          *                     ENABLE: enables the WDG IRQ interrupt.
+    108          *                     DISABLE: disables the WDG IRQ interrupt.
+    109          * Output         : None.
+    110          * Return         : None.
+    111          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    112          void WDG_ECITConfig (FunctionalState NewState)
+    113          {
+    114            if (NewState == ENABLE)
+   \                     WDG_ECITConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0001        CMP      R0,#+1
+   \        0x8   0x1A00'0004        BNE      ??WDG_ECITConfig_0
+    115            {
+    116              WDG->MR |= 0x0001;
+   \        0xC   0x....'....        LDR      R0,??DataTable4_1  ;; 0xe000e014
+   \       0x10   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x14   0xE391'1001        ORRS     R1,R1,#0x1
+   \       0x18   0xE1C0'10B0        STRH     R1,[R0, #+0]
+   \       0x1C   0xEA00'0005        B        ??WDG_ECITConfig_1
+    117            }
+    118            else
+    119            {
+    120              WDG->MR &= ~0x0001;
+   \                     ??WDG_ECITConfig_0:
+   \       0x20   0x....'....        LDR      R0,??DataTable4_1  ;; 0xe000e014
+   \       0x24   0xE1D0'10B0        LDRH     R1,[R0, #+0]
+   \       0x28   0xE3A0'20FE        MOV      R2,#+254
+   \       0x2C   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x30   0xE012'1001        ANDS     R1,R2,R1
+   \       0x34   0xE1C0'10B0        STRH     R1,[R0, #+0]
+    121            }
+    122          }
+   \                     ??WDG_ECITConfig_1:
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    123          
+    124          /*******************************************************************************
+    125          * Function Name  : WDG_ECFlagClear
+    126          * Description    : Clears the end of count flag.
+    127          * Input          : None.
+    128          * Output         : None.
+    129          * Return         : None.
+    130          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    131          void WDG_ECFlagClear (void)
+    132          {
+    133            WDG->SR = 0x0000;
+   \                     WDG_ECFlagClear:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0x....'....        LDR      R1,??DataTable4_2  ;; 0xe000e010
+   \        0x8   0xE1C1'00B0        STRH     R0,[R1, #+0]
+    134          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    135          
+    136          /*******************************************************************************
+    137          * Function Name  : WDG_ECStatus
+    138          * Description    : Reads and returns the status register.
+    139          * Input          : None.
+    140          * Output         : None.
+    141          * Return         : The end of count status.
+    142          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    143          u16 WDG_ECStatus (void)
+    144          {
+    145            return WDG->SR;
+   \                     WDG_ECStatus:
+   \        0x0   0x....'....        LDR      R0,??DataTable4_2  ;; 0xe000e010
+   \        0x4   0xE1D0'00B0        LDRH     R0,[R0, #+0]
+   \        0x8   0xE1A0'0800        LSL      R0,R0,#+16
+   \        0xC   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    146          }
+    147          
+    148          /*******************************************************************************
+    149          * Function Name  : abs_value
+    150          * Description    : Returns the absolute value of x.
+    151          * Input          :  x: the number to compute its absolute value.
+    152          * Output         : None.
+    153          * Return         : None.
+    154          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    155          static long abs_value(long x)
+    156          {
+    157            if (x > 0)
+   \                     abs_value:
+   \        0x0   0xE350'0001        CMP      R0,#+1
+   \        0x4   0xAA00'0000        BGE      ??abs_value_0
+    158            {
+    159              return x;	
+    160            }	
+    161            else
+    162            {
+    163              return (-x);	
+   \                     ??abs_value_1:
+   \        0x8   0xE270'0000        RSBS     R0,R0,#+0
+   \                     ??abs_value_0:
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    164            }
+    165          }
+    166          
+    167          /*******************************************************************************
+    168          * Function Name  : FindFactors
+    169          * Description    : Searchs for the best (a,b) values that fit n = a*b
+    170          *                  with the following constraints: 1<=a<=256, 1<=b<=65536
+    171          * Input          : - n: the number to decompose.
+    172          * Output         : - a: a pointer to the first factor.
+    173          *                  - b: a pointer to the second factor.
+    174          * Return         : None.
+    175          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    176          static void FindFactors(u32 n, u16 *a, u32 *b)
+    177          {
+   \                     FindFactors:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    178            u32 b0;
+    179            u16 a0;
+    180            long err, err_min = n;
+   \       0x10   0xE1B0'7004        MOVS     R7,R4
+    181          
+    182            *a = a0 = ((n - 1) / 65536ul) + 1;
+   \       0x14   0xE254'0001        SUBS     R0,R4,#+1
+   \       0x18   0xE3A0'1001        MOV      R1,#+1
+   \       0x1C   0xE091'8820        ADDS     R8,R1,R0, LSR #+16
+   \       0x20   0xE1C5'80B0        STRH     R8,[R5, #+0]
+    183            *b = b0 = n / *a;
+   \       0x24   0xE1B0'0004        MOVS     R0,R4
+   \       0x28   0xE1D5'10B0        LDRH     R1,[R5, #+0]
+   \       0x2C   0x....'....        BL       __aeabi_uidiv
+   \       0x30   0xE1B0'9000        MOVS     R9,R0
+   \       0x34   0xE586'9000        STR      R9,[R6, #+0]
+   \       0x38   0xEA00'0002        B        ??FindFactors_0
+    184          
+    185            for (; *a <= 256; (*a)++)
+   \                     ??FindFactors_1:
+   \       0x3C   0xE1D5'00B0        LDRH     R0,[R5, #+0]
+   \       0x40   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x44   0xE1C5'00B0        STRH     R0,[R5, #+0]
+   \                     ??FindFactors_0:
+   \       0x48   0xE1D5'00B0        LDRH     R0,[R5, #+0]
+   \       0x4C   0xE3A0'1001        MOV      R1,#+1
+   \       0x50   0xE381'1F40        ORR      R1,R1,#0x100
+   \       0x54   0xE150'0001        CMP      R0,R1
+   \       0x58   0xAA00'0022        BGE      ??FindFactors_2
+    186            {
+    187              *b = n / *a;
+   \       0x5C   0xE1B0'0004        MOVS     R0,R4
+   \       0x60   0xE1D5'10B0        LDRH     R1,[R5, #+0]
+   \       0x64   0x....'....        BL       __aeabi_uidiv
+   \       0x68   0xE586'0000        STR      R0,[R6, #+0]
+    188              err = (long) * a * (long) * b - (long)n;
+   \       0x6C   0xE1D5'00B0        LDRH     R0,[R5, #+0]
+   \       0x70   0xE596'1000        LDR      R1,[R6, #+0]
+   \       0x74   0xE010'0091        MULS     R0,R1,R0
+   \       0x78   0xE050'A004        SUBS     R10,R0,R4
+    189              if (abs_value(err) > (*a / 2))
+   \       0x7C   0xE1B0'000A        MOVS     R0,R10
+   \       0x80   0x....'....        BL       abs_value
+   \       0x84   0xE1B0'B000        MOVS     R11,R0
+   \       0x88   0xE1D5'00B0        LDRH     R0,[R5, #+0]
+   \       0x8C   0xE3A0'1002        MOV      R1,#+2
+   \       0x90   0x....'....        BL       __aeabi_idiv
+   \       0x94   0xE150'000B        CMP      R0,R11
+   \       0x98   0xAA00'0006        BGE      ??FindFactors_3
+    190              {
+    191                (*b)++;
+   \       0x9C   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0xA0   0xE290'0001        ADDS     R0,R0,#+1
+   \       0xA4   0xE586'0000        STR      R0,[R6, #+0]
+    192                err = (long) * a * (long) * b - (long)n;
+   \       0xA8   0xE1D5'00B0        LDRH     R0,[R5, #+0]
+   \       0xAC   0xE596'1000        LDR      R1,[R6, #+0]
+   \       0xB0   0xE010'0091        MULS     R0,R1,R0
+   \       0xB4   0xE050'A004        SUBS     R10,R0,R4
+    193              }
+    194              if (abs_value(err) < abs_value(err_min))
+   \                     ??FindFactors_3:
+   \       0xB8   0xE1B0'000A        MOVS     R0,R10
+   \       0xBC   0x....'....        BL       abs_value
+   \       0xC0   0xE1B0'B000        MOVS     R11,R0
+   \       0xC4   0xE1B0'0007        MOVS     R0,R7
+   \       0xC8   0x....'....        BL       abs_value
+   \       0xCC   0xE15B'0000        CMP      R11,R0
+   \       0xD0   0xAAFF'FFD9        BGE      ??FindFactors_1
+    195              {
+    196                err_min = err;
+   \       0xD4   0xE1B0'700A        MOVS     R7,R10
+    197                a0 = *a;
+   \       0xD8   0xE1D5'80B0        LDRH     R8,[R5, #+0]
+    198                b0 = *b;
+   \       0xDC   0xE596'9000        LDR      R9,[R6, #+0]
+    199                if (err == 0)
+   \       0xE0   0xE35A'0000        CMP      R10,#+0
+   \       0xE4   0x1AFF'FFD4        BNE      ??FindFactors_1
+    200                {
+    201                  break;
+    202                }
+    203              }
+    204            }
+    205          
+    206            *a = a0;
+   \                     ??FindFactors_2:
+   \       0xE8   0xE1C5'80B0        STRH     R8,[R5, #+0]
+    207            *b = b0;
+   \       0xEC   0xE586'9000        STR      R9,[R6, #+0]
+    208          }
+   \       0xF0   0xE8BD'4FF1        POP      {R0,R4-R11,LR}
+   \       0xF4   0xE12F'FF1E        BX       LR               ;; return
+    209          
+    210          /*******************************************************************************
+    211          * Function Name  : WDG_PeriodValueConfig
+    212          * Description    : Sets the prescaler and counter reload value.
+    213          * Input          : Time: the amount of needed time, in microseconds.
+    214          * Output         : None.
+    215          * Return         : None.
+    216          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    217          void WDG_PeriodValueConfig ( u32 Time )
+    218          {
+   \                     WDG_PeriodValueConfig:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    219            u16 a;
+    220            u32 n, b;
+    221          
+    222            n = Time * (RCCU_FrequencyValue(RCCU_PCLK2) / 1000000);
+   \        0x8   0xE3A0'0003        MOV      R0,#+3
+   \        0xC   0x....'....        BL       RCCU_FrequencyValue
+   \       0x10   0xE3A0'1AF4        MOV      R1,#+999424
+   \       0x14   0xE381'1F90        ORR      R1,R1,#0x240
+   \       0x18   0x....'....        BL       __aeabi_uidiv
+   \       0x1C   0xE1B0'1000        MOVS     R1,R0
+   \       0x20   0xE010'0491        MULS     R0,R1,R4
+    223            FindFactors(n, &a, &b);
+   \       0x24   0xE28D'2004        ADD      R2,SP,#+4
+   \       0x28   0xE1B0'100D        MOVS     R1,SP
+   \       0x2C   0x....'....        BL       FindFactors
+    224            WDG->PR = a - 1;
+   \       0x30   0xE3A0'00FF        MOV      R0,#+255
+   \       0x34   0xE380'0CFF        ORR      R0,R0,#0xFF00
+   \       0x38   0xE1DD'10B0        LDRH     R1,[SP, #+0]
+   \       0x3C   0xE090'1001        ADDS     R1,R0,R1
+   \       0x40   0xE3A0'224E        MOV      R2,#-536870908
+   \       0x44   0xE382'2CE0        ORR      R2,R2,#0xE000
+   \       0x48   0xE1C2'10B0        STRH     R1,[R2, #+0]
+    225            WDG->VR = b - 1;
+   \       0x4C   0xE59D'1004        LDR      R1,[SP, #+4]
+   \       0x50   0xE090'0001        ADDS     R0,R0,R1
+   \       0x54   0xE3A0'128E        MOV      R1,#-536870904
+   \       0x58   0xE381'1CE0        ORR      R1,R1,#0xE000
+   \       0x5C   0xE1C1'00B0        STRH     R0,[R1, #+0]
+    226          }
+   \       0x60   0xE8BD'4013        POP      {R0,R1,R4,LR}
+   \       0x64   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4:
+   \        0x0   0xE000'E018        DC32     0xe000e018
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \        0x0   0xE000'E014        DC32     0xe000e014
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \        0x0   0xE000'E010        DC32     0xe000e010
+    227          
+    228          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      40   FindFactors
+        40   -> abs_value
+        40 __aeabi_idiv
+        40 __aeabi_uidiv
+       0   WDG_CntOnOffConfig
+       0   WDG_CntRefresh
+       0   WDG_CntReloadUpdate
+       0   WDG_ECFlagClear
+       0   WDG_ECITConfig
+       0   WDG_ECStatus
+       0   WDG_Enable
+      16   WDG_PeriodValueConfig
+        16   -> FindFactors
+        16   -> RCCU_FrequencyValue
+        16 __aeabi_uidiv
+       0   WDG_PrescalerConfig
+       0   abs_value
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+     248  FindFactors
+      68  WDG_CntOnOffConfig
+      32  WDG_CntRefresh
+      16  WDG_CntReloadUpdate
+      16  WDG_ECFlagClear
+      60  WDG_ECITConfig
+      20  WDG_ECStatus
+      24  WDG_Enable
+     104  WDG_PeriodValueConfig
+      20  WDG_PrescalerConfig
+      16  abs_value
+
+ 
+ 636 bytes in section .text
+ 
+ 636 bytes of CODE memory
+
+Errors: none
+Warnings: none

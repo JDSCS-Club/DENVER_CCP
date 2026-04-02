@@ -1,0 +1,435 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:12
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_xti.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW466F.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_xti.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_xti.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_xti.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_xti.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_xti.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : This file provides all the XTI firmware functions.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "71x_xti.h"
+     18          
+     19          /* Private typedef -----------------------------------------------------------*/
+     20          /* Private define ------------------------------------------------------------*/
+     21          /* Private macro -------------------------------------------------------------*/
+     22          /* Private variables ---------------------------------------------------------*/
+     23          /* Private function prototypes -----------------------------------------------*/
+     24          /* Private functions ---------------------------------------------------------*/
+     25          
+     26          /*******************************************************************************
+     27          * Function Name  : XTI_Init
+     28          * Description    : This routine is used to initialize the XTI cell:
+     29          *                   -All Wake-Up Lines are disabled
+     30          *                   -Interrupt disabled
+     31          *                   -Walk-up mode disabled
+     32          *                   -Set on the falling edge of the input wake-up line
+     33          *                   -All pending bits are cleared
+     34          * Input          : None.
+     35          * Output         : None.
+     36          * Return         : None.
+     37          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     38          void XTI_Init (void)
+     39          {
+     40            XTI->SR = 0x00;
+   \                     XTI_Init:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0x....'....        LDR      R1,??DataTable6  ;; 0xe000101c
+   \        0x8   0xE5C1'0000        STRB     R0,[R1, #+0]
+     41            XTI->MRH = 0x00;
+   \        0xC   0x....'....        LDR      R1,??DataTable6_1  ;; 0xe0001028
+   \       0x10   0xE5C1'0000        STRB     R0,[R1, #+0]
+     42            XTI->MRL = 0x00;
+   \       0x14   0x....'....        LDR      R1,??DataTable6_2  ;; 0xe000102c
+   \       0x18   0xE5C1'0000        STRB     R0,[R1, #+0]
+     43            XTI->TRH = 0x00;
+   \       0x1C   0x....'....        LDR      R1,??DataTable6_3  ;; 0xe0001030
+   \       0x20   0xE5C1'0000        STRB     R0,[R1, #+0]
+     44            XTI->TRL = 0x00;
+   \       0x24   0x....'....        LDR      R1,??DataTable6_4  ;; 0xe0001034
+   \       0x28   0xE5C1'0000        STRB     R0,[R1, #+0]
+     45            XTI->PRH = 0x00;
+   \       0x2C   0x....'....        LDR      R1,??DataTable6_5  ;; 0xe0001038
+   \       0x30   0xE5C1'0000        STRB     R0,[R1, #+0]
+     46            XTI->PRL = 0x00;
+   \       0x34   0x....'....        LDR      R1,??DataTable6_6  ;; 0xe000103c
+   \       0x38   0xE5C1'0000        STRB     R0,[R1, #+0]
+     47            
+     48            /* Write the STOP bit twice to reset the STOP state machine */
+     49            XTI->CTRL = 0x00;
+   \       0x3C   0x....'....        LDR      R1,??DataTable6_7  ;; 0xe0001024
+   \       0x40   0xE5C1'0000        STRB     R0,[R1, #+0]
+     50            XTI->CTRL = 0x00;
+   \       0x44   0xE5C1'0000        STRB     R0,[R1, #+0]
+     51          }
+   \       0x48   0xE12F'FF1E        BX       LR               ;; return
+     52          
+     53          /*******************************************************************************
+     54          * Function Name  : XTI_ModeConfig
+     55          * Description    : This function is used to enable or disable the interrupt and
+     56          *                  the wake-up mode of the specified input line.
+     57          * Input          : - Mode: this parameter specifies the input line, it can be:
+     58          *                    XTI_WakeUp, XTI_Interrupt or XTI_WakeUpInterrupt.
+     59          *                  - NewState: used to enable or disable the selected mode.
+     60          *                    it can be: ENABLE or DISABLE.
+     61          * Output         : None.
+     62          * Return         : None.
+     63          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     64          void XTI_ModeConfig (XTIMode_TypeDef Mode, FunctionalState NewState)
+     65          {
+     66            if (NewState == ENABLE)
+   \                     XTI_ModeConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'0004        BNE      ??XTI_ModeConfig_0
+     67            {
+     68              XTI->CTRL |= Mode;
+   \        0xC   0x....'....        LDR      R1,??DataTable6_7  ;; 0xe0001024
+   \       0x10   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x14   0xE190'0002        ORRS     R0,R0,R2
+   \       0x18   0xE5C1'0000        STRB     R0,[R1, #+0]
+   \       0x1C   0xEA00'0003        B        ??XTI_ModeConfig_1
+     69            }
+     70            else
+     71            {
+     72              XTI->CTRL &= ~Mode;
+   \                     ??XTI_ModeConfig_0:
+   \       0x20   0x....'....        LDR      R1,??DataTable6_7  ;; 0xe0001024
+   \       0x24   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x28   0xE1D2'0000        BICS     R0,R2,R0
+   \       0x2C   0xE5C1'0000        STRB     R0,[R1, #+0]
+     73            }
+     74          }
+   \                     ??XTI_ModeConfig_1:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+     75          
+     76          /*******************************************************************************
+     77          * Function Name  : XTI_LineModeConfig
+     78          * Description    : This routine is used to configure the trigger edge.
+     79          * Input          : - Lines: lines to be configured.
+     80          *                  - TriggerEdge: specifies the trigger edge polarity of the
+     81          *                    specified wake-up lines. It can be:
+     82          *                     FallingEdge
+     83          *                     RisingEdge
+     84          * Output         : None.
+     85          * Return         : None.
+     86          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     87          void XTI_LineModeConfig (u16 Lines, XTITriggerEdge_TypeDef TriggerEdge)
+     88          {
+     89            if (TriggerEdge == XTI_FallingEdge)
+   \                     XTI_LineModeConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x1A00'000C        BNE      ??XTI_LineModeConfig_0
+     90            {
+     91              XTI->TRL &= ~Lines;
+   \        0xC   0x....'....        LDR      R1,??DataTable6_4  ;; 0xe0001034
+   \       0x10   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x14   0xE1B0'3000        MOVS     R3,R0
+   \       0x18   0xE1D2'2003        BICS     R2,R2,R3
+   \       0x1C   0xE5C1'2000        STRB     R2,[R1, #+0]
+     92              XTI->TRH &= ~(Lines >> 8) & 0x00FF;
+   \       0x20   0x....'....        LDR      R1,??DataTable6_3  ;; 0xe0001030
+   \       0x24   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x28   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x2C   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x30   0xE1B0'0420        LSRS     R0,R0,#+8
+   \       0x34   0xE1D2'0000        BICS     R0,R2,R0
+   \       0x38   0xE5C1'0000        STRB     R0,[R1, #+0]
+   \       0x3C   0xEA00'000B        B        ??XTI_LineModeConfig_1
+     93            }
+     94            else
+     95            {
+     96              XTI->TRL |= Lines;
+   \                     ??XTI_LineModeConfig_0:
+   \       0x40   0x....'....        LDR      R1,??DataTable6_4  ;; 0xe0001034
+   \       0x44   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x48   0xE1B0'3000        MOVS     R3,R0
+   \       0x4C   0xE193'2002        ORRS     R2,R3,R2
+   \       0x50   0xE5C1'2000        STRB     R2,[R1, #+0]
+     97              XTI->TRH |= (Lines >> 8) & 0x00FF;
+   \       0x54   0x....'....        LDR      R1,??DataTable6_3  ;; 0xe0001030
+   \       0x58   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x5C   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x60   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x64   0xE1B0'0420        LSRS     R0,R0,#+8
+   \       0x68   0xE190'0002        ORRS     R0,R0,R2
+   \       0x6C   0xE5C1'0000        STRB     R0,[R1, #+0]
+     98            }
+     99          }
+   \                     ??XTI_LineModeConfig_1:
+   \       0x70   0xE12F'FF1E        BX       LR               ;; return
+    100          
+    101          /*******************************************************************************
+    102          * Function Name  : XTI_LineConfig
+    103          * Description    : This routine is used to enable and disable the interrupts
+    104          *                  lines.
+    105          * Input          : - Lines: specifies the lines to be configured. You can select
+    106          *                    more than one line, by logically OR’ing them.
+    107          *                  - NewState: the input line interrupt new status to be set.
+    108          *                    It can be:
+    109          *                    ENABLE: to enable the input line interrupt.
+    110          *                    DISABLE: to disable the input line interrupt.
+    111          * Output         : None
+    112          * Return         : None
+    113          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    114          void XTI_LineConfig (u16 Lines, FunctionalState NewState)
+    115          {
+    116            if (NewState)
+   \                     XTI_LineConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x0A00'000C        BEQ      ??XTI_LineConfig_0
+    117            {
+    118              XTI->MRL |= Lines;
+   \        0xC   0x....'....        LDR      R1,??DataTable6_2  ;; 0xe000102c
+   \       0x10   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x14   0xE1B0'3000        MOVS     R3,R0
+   \       0x18   0xE193'2002        ORRS     R2,R3,R2
+   \       0x1C   0xE5C1'2000        STRB     R2,[R1, #+0]
+    119              XTI->MRH |= (Lines >> 8 ) & 0x00FF;
+   \       0x20   0x....'....        LDR      R1,??DataTable6_1  ;; 0xe0001028
+   \       0x24   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x28   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x2C   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x30   0xE1B0'0420        LSRS     R0,R0,#+8
+   \       0x34   0xE190'0002        ORRS     R0,R0,R2
+   \       0x38   0xE5C1'0000        STRB     R0,[R1, #+0]
+   \       0x3C   0xEA00'000B        B        ??XTI_LineConfig_1
+    120            }
+    121            else
+    122            {
+    123              XTI->MRL &= ~Lines;
+   \                     ??XTI_LineConfig_0:
+   \       0x40   0x....'....        LDR      R1,??DataTable6_2  ;; 0xe000102c
+   \       0x44   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x48   0xE1B0'3000        MOVS     R3,R0
+   \       0x4C   0xE1D2'2003        BICS     R2,R2,R3
+   \       0x50   0xE5C1'2000        STRB     R2,[R1, #+0]
+    124              XTI->MRH &= ~(Lines >> 8 ) & 0x00FF;
+   \       0x54   0x....'....        LDR      R1,??DataTable6_1  ;; 0xe0001028
+   \       0x58   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x5C   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x60   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x64   0xE1B0'0420        LSRS     R0,R0,#+8
+   \       0x68   0xE1D2'0000        BICS     R0,R2,R0
+   \       0x6C   0xE5C1'0000        STRB     R0,[R1, #+0]
+    125            }
+    126          }
+   \                     ??XTI_LineConfig_1:
+   \       0x70   0xE12F'FF1E        BX       LR               ;; return
+    127          
+    128          /*******************************************************************************
+    129          * Function Name  : XTI_InterruptLineValue
+    130          * Description    : Gets and returns the input line number that generates an 
+    131          *                  Interrupt.
+    132          * Input          : None.
+    133          * Output         : None.
+    134          * Return         : The line number that generates the interrupt.
+    135          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    136          u16 XTI_InterruptLineValue (void)
+    137          {
+    138            u16 Temp1, Temp2;
+    139          
+    140            Temp1 = XTI->PRL;
+   \                     XTI_InterruptLineValue:
+   \        0x0   0x....'....        LDR      R0,??DataTable6_6  ;; 0xe000103c
+   \        0x4   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \        0x8   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+    141            Temp2 = XTI->PRH;
+   \        0xC   0x....'....        LDR      R1,??DataTable6_5  ;; 0xe0001038
+   \       0x10   0xE5D1'1000        LDRB     R1,[R1, #+0]
+   \       0x14   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+    142            return Temp1 | ((u16)Temp2 << 8);
+   \       0x18   0xE190'0401        ORRS     R0,R0,R1, LSL #+8
+   \       0x1C   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x20   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    143          }
+    144          
+    145          /*******************************************************************************
+    146          * Function Name  : XTI_PendingBitClear
+    147          * Description    : This routine is used to clear the XTI interrupt pending bits.
+    148          * Input          : - Lines: specifies the input wake-up lines interrupt 
+    149          *                     the input wake-up lines interrupt. You can select more 
+    150          *                     than one line by logically OR’ing them.
+    151          * Output         : None.
+    152          * Return         : None.
+    153          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    154          void XTI_PendingBitClear (u16 Lines)
+    155          {
+    156            XTI->PRL &= ~Lines;
+   \                     XTI_PendingBitClear:
+   \        0x0   0x....'....        LDR      R1,??DataTable6_6  ;; 0xe000103c
+   \        0x4   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \        0x8   0xE1B0'3000        MOVS     R3,R0
+   \        0xC   0xE1D2'2003        BICS     R2,R2,R3
+   \       0x10   0xE5C1'2000        STRB     R2,[R1, #+0]
+    157            XTI->PRH &= ~((Lines >> 8) & 0x00FF);
+   \       0x14   0x....'....        LDR      R1,??DataTable6_5  ;; 0xe0001038
+   \       0x18   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x1C   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x20   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x24   0xE1B0'0420        LSRS     R0,R0,#+8
+   \       0x28   0xE1D2'0000        BICS     R0,R2,R0
+   \       0x2C   0xE5C1'0000        STRB     R0,[R1, #+0]
+    158          }
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    159          
+    160          /*******************************************************************************
+    161          * Function Name  : XTI_SWIRQGenerate
+    162          * Description    : This routine is used to generate a software IRQ interrupt.
+    163          * Input          : None.
+    164          * Output         : None.
+    165          * Return         : None.
+    166          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    167          void XTI_SWIRQGenerate (void)
+    168          {
+    169            XTI->SR = 0x01;
+   \                     XTI_SWIRQGenerate:
+   \        0x0   0x....'....        LDR      R0,??DataTable6  ;; 0xe000101c
+   \        0x4   0xE3A0'1001        MOV      R1,#+1
+   \        0x8   0xE5C0'1000        STRB     R1,[R0, #+0]
+    170            XTI->SR = 0x00;
+   \        0xC   0xE3A0'1000        MOV      R1,#+0
+   \       0x10   0xE5C0'1000        STRB     R1,[R0, #+0]
+    171          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6:
+   \        0x0   0xE000'101C        DC32     0xe000101c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \        0x0   0xE000'1028        DC32     0xe0001028
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_2:
+   \        0x0   0xE000'102C        DC32     0xe000102c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_3:
+   \        0x0   0xE000'1030        DC32     0xe0001030
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_4:
+   \        0x0   0xE000'1034        DC32     0xe0001034
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_5:
+   \        0x0   0xE000'1038        DC32     0xe0001038
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_6:
+   \        0x0   0xE000'103C        DC32     0xe000103c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_7:
+   \        0x0   0xE000'1024        DC32     0xe0001024
+    172          
+    173          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   XTI_Init
+       0   XTI_InterruptLineValue
+       0   XTI_LineConfig
+       0   XTI_LineModeConfig
+       0   XTI_ModeConfig
+       0   XTI_PendingBitClear
+       0   XTI_SWIRQGenerate
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+       4  ??DataTable6_3
+       4  ??DataTable6_4
+       4  ??DataTable6_5
+       4  ??DataTable6_6
+       4  ??DataTable6_7
+      76  XTI_Init
+      40  XTI_InterruptLineValue
+     116  XTI_LineConfig
+     116  XTI_LineModeConfig
+      52  XTI_ModeConfig
+      52  XTI_PendingBitClear
+      24  XTI_SWIRQGenerate
+
+ 
+ 508 bytes in section .text
+ 
+ 508 bytes of CODE memory
+
+Errors: none
+Warnings: none

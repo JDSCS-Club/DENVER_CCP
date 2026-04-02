@@ -1,0 +1,42 @@
+Release 12.3 ngdbuild M.70d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Tools\Xilinx\12.3\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -uc dpo.ucf -p xc2c256-TQ144-7 DPO_V.ngc DPO_V.ngd
+
+Reading NGO file "C:/Docs/RF-COMM/DPO/DPO_KM/DPO_V.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "dpo.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "reset"  LOC = "P143"  ;> [dpo.ucf(51)]' could not be found and so the
+   Locate constraint will be removed.
+
+WARNING:NgdBuild:1012 - The constraint <NET "reset"  LOC = "P143"  ;>
+   [dpo.ucf(51)] is overridden on the design object cancel_sw_in by the
+   constraint <NET "cancel_sw_in"  LOC = "P53"  ;> [dpo.ucf(26)].
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   2
+
+Total memory usage is 138308 kilobytes
+
+Writing NGD file "DPO_V.ngd" ...
+Total REAL time to NGDBUILD completion:  2 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+Writing NGDBUILD log file "DPO_V.bld"...

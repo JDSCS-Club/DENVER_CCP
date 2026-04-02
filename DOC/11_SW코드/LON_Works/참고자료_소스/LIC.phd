@@ -1,0 +1,15 @@
+Neuron Linker Version 5.01.07 Copyright (c) Echelon Corporation 1992-2010
+
+2 Domains
+15 Address Table Entries
+
+10 E8 EF F0 F1 16 13 28 1292 15107 15 5 3 257 4
+Z 00 e 00 E 7F r 80 R BF y 0A A 01 80
+
+System image symbol file:
+C:\Program Files\LonWorks\Images\Ver16\SYS3150.sym?9909 Tue Oct 27 04:01:00 2009
+
+Object and library file(s):
+C:\Lm\Source\WJ_LIC\LIC\Development\IM\LIC.no?122832 Tue May 01 08:50:06 2012
+C:\PROGRAM FILES\LONWORKS\IMAGES\GEN.LIB?81371 Tue Mar 01 05:02:00 2011
+C:\PROGRAM FILES\LONWORKS\IMAGES\EXTARITH.LIB?56903 Tue Oct 27 04:01:00 2009

@@ -1,0 +1,389 @@
+[CFG360]
+CFGFILE=C:\DEV\SDS70\CMD\68360.cfg
+FILETIME=854638764
+MBAR=0x1000101
+MCR=0x6000EC7F
+SYPCR=0x74
+GMR=0x18840380
+CSR0HIGH=0xFC00003
+CSR0LOW=0x6FC00000
+CSR1HIGH=0x21
+CSR1LOW=0x1FF00009
+CSR2HIGH=0x0
+CSR2LOW=0x0
+CSR3HIGH=0x0
+CSR3LOW=0x0
+CSR4HIGH=0x0
+CSR4LOW=0x0
+CSR5HIGH=0x0
+CSR5LOW=0x0
+CSR6HIGH=0x0
+CSR6LOW=0x0
+CSR7HIGH=0x0
+CSR7LOW=0x0
+CLKOCR=0xF
+PLLCR=0x0
+CDVCR=0x0
+PEPAR=0x3440
+VECTADDR=0x0
+STRAYINT=0x0
+
+[CONFIGURATION]
+PROCESSORS=68360
+LASTPROC=68360
+HEX=TRUE
+
+[DEBUG]
+FILE_NUM_MAX=4
+FILE_NUM=1
+FILE_0=C:\DEV\alphanew\spitest.out
+FILE=C:\DEV\alphanew\spitest.out
+NOFILE=FALSE
+PROC=68360
+COPROC=
+DOWNLOAD=TRUE
+RESET=TRUE
+SYMDB=TRUE
+BREAKEXIT=TRUE
+EXECMAIN=TRUE
+EXACTSYMB=FALSE
+PORTTYPE=2
+PARPORT=LPT1
+PARDELAY=0
+LOGTYPE=0
+LOGFNAME=
+VALID=TRUE
+
+[SRCFINDDLG]
+MDI_LOCATION=0, 0
+
+[SDSICOMPILER]
+Compiler=-V 68360 -Oaceghijlmprtuvy -f
+Other Options=
+Output Directory Name=
+Output Directory Type=0
+MacroList=
+IncludePaths=
+Standard Optimizations=0
+Size Optimizations=0
+Custom Optimizations=0
+Speed Optimizations=0
+No Optimizations=1
+Assume all variables are volatile=0
+Calling functions remove arguments=0
+Custom Optimizations string=
+Preprocessor Output=0
+Assembler Source File=0
+Assembly Listing File=0
+Compiler Cross -Reference=0
+Lint Portability Check=0
+Full Symbol Information=1
+
+[SDSIASSEMBLER]
+Other Options=
+Output Directory Name=
+Output Directory Type=0
+Assembler=-V 68360 -f
+IncludePaths=
+DefinitionList=
+EnableBranchOptimization=1
+ControlMeaningOfPeriod=0
+AlterCommentStyle=0
+SuppressPreprocessor=0
+UndefinedSymbolsImported=0
+CaseSensitiveSymbols=1
+AssemblyListingFile=0
+AssemblySymbolListing=0
+AssemblyCrossReference=0
+FullSymbolTable=1
+
+[SDSILINKER]
+Other Options=
+Output Directory Name=
+Output Directory Type=0
+Linker=
+LibraryPaths=
+InputFiles=
+Output File Name=
+ProcessLibsRepeatedly=0
+ReportPortabilityProblems=0
+SymbolsCaseSensitive=1
+ObjectFileChecking=0
+AssemblySymbolListing=0
+AssemblyCrossReference=0
+LinkerSpecificationFile=
+
+[Make]
+Make=
+UseExternalMakeFile=0
+Project Directory=
+Make Utility=
+MakeArguments=
+
+[Edit]
+Edit=
+
+[Editor]
+Editor=
+SwitchSequence=0
+FileSwitch=
+Line#Switch=
+UseExternalEditor=0
+
+[SDSI]
+Cpu Family=1
+Cpu=11
+Coprocessor=0
+
+[DIABDATACOMPILER]
+Compiler=
+Other Options=
+Output Directory Name=
+Output Directory Type=0
+MacroList=
+IncludePaths=
+No Optimizations=0
+Standard Optimizations=1
+Aggressive Optimizations=0
+Feedback Optimizations=0
+Object File=1
+Preprocessor Output=0
+Assembler Source File=0
+Lint Portability Check=0
+Full Symbol Information=1
+
+[DIABDATAASSEMBLER]
+Other Options=
+Output Directory Name=
+Output Directory Type=0
+Assembler=
+IncludePaths=
+DefinitionList=
+Discard Local Symbols=0
+Discard .L Symbols=0
+Accept  Processor Instructions=0
+Disable Branch Optimization=0
+Assembly Listing File=0
+Motorola Embedded Mnemonics=0
+Motorola UNIX Mnemonics=0
+MIT/GNU Mnemonics=0
+All Mnemonics=0
+
+[DIABDATALINKER]
+Other Options=
+Output Directory Name=
+Output Directory Type=0
+Linker=
+LibraryPaths=
+InputFiles=
+Output File Name=
+Normal Link=1
+Normal Link, Keep Relocation Table=0
+Incremental  Link=0
+Incremental Link, Allocate COMMONs=0
+CreateMapFile=0
+Discard Local Symbols=0
+Discard-Lsymbols=0
+LinkerSpecificationFile=
+
+[DIABDATA]
+Cpu Family=0
+Cpu=0
+Coprocessor=0
+
+[Cpu]
+ELF=1
+COFF=0
+HardwareFloatingPoint=0
+SoftwareFloatingPoint=0
+
+[VERSION]
+VERSION=1796
+
+[MAINFRAME]
+SAVEONEXIT=TRUE
+MDI_ZORDER-0=MAINFRAME
+MDI_ZORDER-1=TB_59419
+MDI_ZORDER-2=TB_59422
+MDI_ZORDER-3=TB_59420
+MDI_ZORDER-4=TB_59421
+MDI_ZORDER-5=TB_59393
+MDI_ZORDER-6=SOURCE1
+MDI_ZORDER-7=WATCH1
+MDI_ZORDER-8=FUNCTIONS1
+MDI_ZORDER-9=REGISTER1
+MDI_ZORDER-10=MEMORY1
+MDI_ZORDER-11=STACK1
+MDI_ZORDER-12=READ1
+MDI_ZORDER-13=EDIT1
+MDI_ZORDER-14=GLOBALS1
+MDI_ZORDER-15=FILES1
+MDI_ZORDER-16=BRKPT1
+MDI_ZORDER-17=COMMAND1
+MDI_ZORDER-18=LOCALS1
+MDI_ZORDER-NUM=19
+MDIWINDOWS=TRUE
+MDI_PLACEMENT=0, 5, 2, 662, 574, -1, -1, -1, -1
+STACK=1
+FILES=1
+LOCALS=1
+FUNCTIONS=1
+GLOBALS=1
+EDIT=1
+READ=1
+WATCH=1
+REGISTER=1
+MEMORY=1
+BRKPT=1
+SOURCE=1
+COMMAND=1
+
+[STACK1]
+MDI_PLACEMENT=1, 0, 297, 209, 594, 349, 0, 0, 0, 0
+COLOR=0,16777215
+FONT=-11,96,"MS Sans Serif",400,0,0,0
+BUTTONS=TRUE
+SEARCH=FALSE
+WRAP=TRUE
+MATCHTYPE=2
+
+[FILES1]
+MDI_PLACEMENT=1, 1, 178, 87, 415, 261, 0, 325, 0, 0
+COLOR=0,16777215
+FONT=-11,96,"MS Sans Serif",400,0,0,0
+BUTTONS=TRUE
+SEARCH=FALSE
+BROWSE=0,0
+WRAP=TRUE
+MATCHTYPE=2
+
+[LOCALS1]
+MDI_PLACEMENT=1, 1, 202, 98, 512, 379, 320, 454, 0, 0
+COLOR=0,16777215,255
+FONT=-11,96,"MS Sans Serif",400,0,0,0
+BUTTONS=TRUE
+SEARCH=FALSE
+BROWSE=0,0
+WRAP=TRUE
+MATCHTYPE=2
+
+[FUNCTIONS1]
+MDI_PLACEMENT=1, 0, 350, 269, 587, 478, 160, 325, 0, 0
+COLOR=0,16777215
+FONT=-11,96,"MS Sans Serif",400,0,0,0
+BUTTONS=TRUE
+SEARCH=FALSE
+BROWSE=0,0
+WRAP=TRUE
+MATCHTYPE=2
+
+[GLOBALS1]
+MDI_PLACEMENT=1, 1, 193, 70, 400, 279, 320, 325, 0, 0
+COLOR=0,16777215
+FONT=-11,96,"MS Sans Serif",400,0,0,0
+BUTTONS=TRUE
+SEARCH=FALSE
+BROWSE=128,104
+WRAP=TRUE
+MATCHTYPE=2
+
+[EDIT1]
+MDI_PLACEMENT=1, 1, 0, 26, 594, 322, 0, 301, 0, 0
+COLOR=0,16777215
+FONT=-16,96,"Courier",400,0,0,0
+
+[READ1]
+MDI_PLACEMENT=1, 1, 119, 70, 475, 279, 160, 301, 0, 0
+COLOR=0,16777215,255
+FONT=-16,96,"Courier",400,0,0,0
+
+[WATCH1]
+MDI_PLACEMENT=1, 0, 0, 258, 343, 473, 320, 301, 0, 0
+COLOR=0,16777215,255
+FONT=-16,96,"Courier",400,0,0,0
+
+[REGISTER1]
+MDI_PLACEMENT=1, 0, 177, 35, 415, 313, 160, 454, 0, 0
+COLOR=0,16777215,255
+FONT=-12,96,"Arial",400,0,0,0
+NGROUPS=1
+GROUP0=General,1
+
+[MEMORY1]
+MDI_PLACEMENT=1, 0, 113, 152, 588, 409, 160, 277, 0, 0
+COLOR=0,16777215,16711680,255
+FONT=-13,96,"Courier",400,0,0,0
+ADDRESS=54848
+MODE=0
+RADIX=3
+SCROLLING=2
+FBYTES=16
+SBYTES=16
+INVALID_CHAR=46
+LENDIAN=FALSE
+ASCII=TRUE
+SIGNED=FALSE
+
+[BRKPT1]
+MDI_PLACEMENT=1, 1, 178, 87, 415, 261, 320, 277, 0, 0
+COLOR=0,16777215
+FONT=-13,96,"Courier",400,0,0,0
+flags=0
+
+[SOURCE1]
+MDI_PLACEMENT=1, 0, -2, 0, 609, 278, 160, 250, 0, 0
+COLOR=0,16777215
+FONT=-11,96,"Courier New",400,49,0,0
+LINENO=TRUE
+TABSIZE=3
+SHOWMEM=FALSE
+SHOWSYM=FALSE
+ABBREV=TRUE
+DISFILE=FALSE
+
+[COMMAND1]
+MDI_PLACEMENT=1, 1, 92, 211, 537, 420, 0, 454, 0, 0
+COLOR=0,16777215
+FONT=-13,96,"Courier",400,0,0,0
+
+[MDI_TOOLBARS-Bar0]
+BarID=59419
+Bars=4
+Bar#0=0
+Bar#1=59398
+Bar#2=59397
+Bar#3=0
+
+[MDI_TOOLBARS-Bar1]
+BarID=59420
+Bars=4
+Bar#0=0
+Bar#1=59396
+Bar#2=59399
+Bar#3=0
+
+[MDI_TOOLBARS-Bar2]
+BarID=59398
+XPos=-2
+YPos=-2
+
+[MDI_TOOLBARS-Bar3]
+BarID=59396
+XPos=-2
+YPos=-2
+
+[MDI_TOOLBARS-Bar4]
+BarID=59399
+XPos=-2
+YPos=152
+
+[MDI_TOOLBARS-Bar5]
+BarID=59397
+XPos=400
+YPos=-2
+
+[MDI_TOOLBARS-Bar6]
+BarID=59393
+
+[MDI_TOOLBARS-Summary]
+Bars=7

@@ -1,0 +1,4 @@
+AR blk_mem_gen_v6_1 blk_mem_gen_v6_1_a C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/LIC-C3/decoder/blk_mem_gen_v6_1.vhd sub00/vhpl01 1337233090
+AR main behavioral C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/LIC-C3/decoder/main.vhd sub00/vhpl03 1337233092
+EN blk_mem_gen_v6_1 NULL C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/LIC-C3/decoder/blk_mem_gen_v6_1.vhd sub00/vhpl00 1337233089
+EN main NULL C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/LIC-C3/decoder/main.vhd sub00/vhpl02 1337233091

@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Docs/RF-COMM/DPO/DPO_KM/DPO_FSM.xst" -ofn "C:/Docs/RF-COMM/DPO/DPO_KM/DPO_FSM.syr" 

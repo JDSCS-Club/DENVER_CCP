@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\Program\LIC\CPLD\LIC-C3\decoder\main.ncd
+OUTFILE=C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\Program\LIC\CPLD\LIC-C3\decoder\main.bit
+FAMILY=Spartan3
+PART=xc3s200-5vq100
+WORKINGDIR=C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\Program\LIC\CPLD\LIC-C3\decoder
+LICENSE=WebPack
+USER_INFO=177278680_0_0_515

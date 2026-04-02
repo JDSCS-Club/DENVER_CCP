@@ -1,0 +1,263 @@
+
+----------------------------------------
+|  P a r t i t i o n    S u c c e e d  |
+----------------------------------------
+0 Group(s)
+
+GCLK0: 1=clk.p
+----------------- B l o c k 0 ------------------
+PLApt(56/56), Fanin(22/38), Clk(0/3), Bct(3/4), Pin(3/6), Mcell(16/16)
+PLApts[56/56] 182 184 171 207 191 180 183 208 38 39 168 41 164 172 174 185 189 192 194 187 195 196 197 215 198 170 199 200 201 204 205 206 42 54 62 165 178 193 202 203 40 43 48 170 176 50 170 175 31 32 33 59 163 34 35 66
+Fanins[22] dtmf_rw.n ic_mute_sp.n N_PZ_578.n N_PZ_799.n N_PZ_844.n cancel_mode.n current_st<0>.n current_st<1>.n current_st<2>.n current_st<3>.n dtmf_data<0>.n dtmf_data<1>.n dtmf_data<2>.n dtmf_data<3>.n pei_wait.n both_sw_in.p cancel_sw_in.p ext_sw_in.p hs_sw.p ic_sw_in.p int_sw_in.p pei_sw_in.p
+clk[0] 
+CTC: (pt=191) N_PZ_799 ;
+CTR: (pt=180) cancel_mode ;
+CTS: (pt=183) N_PZ_578 ;
+CTE: 
+vref: [0]
+Signal[16] [rxs<1>(156),rxs<1>(139)] [rxs<2>(157),rxs<2>(138)] [rxs<0>(150),rxs<0>(140)]  
+           [txs_mic_2__or0000/txs_mic_2__or0000_D.UIM(160)] [txs_mic_0__or0000/txs_mic_0__or0000_D.UIM(159)]  
+           [next_st<1>(155)] [next_st<0>(154)] [next_st<2>(153)] [next_st<3>(152)] [N_PZ_578(151)]  
+           [cancel_mode(149)] [N_PZ_588(146)] [pei_wait(145)] [N_PZ_799(158)] [N_PZ_843(148)]  
+           [N_PZ_844(147)] 
+Signal[16] [ 0: pei_wait(145)  ][ 1: N_PZ_588(146)  ][ 2: N_PZ_844(147) (143)  ][ 3: N_PZ_843(148) (142)  ] 
+           [ 4: cancel_mode(149)  ][ 5: rxs<0>(150) rxs<0>(140)  ][ 6: N_PZ_578(151)  ][ 7: next_st<3>(152)  
+            ][ 8: next_st<2>(153)  ][ 9: next_st<0>(154)  ][ 10: next_st<1>(155)  ][ 11: rxs<1>(156)  
+           rxs<1>(139)  ][ 12: rxs<2>(157) rxs<2>(138)  ][ 13: N_PZ_799(158) (137)  ][ 14:  
+           txs_mic_0__or0000/txs_mic_0__or0000_D.UIM(159)  ][ 15:  
+           txs_mic_2__or0000/txs_mic_2__or0000_D.UIM(160)  ]
+----------------- B l o c k 1 ------------------
+PLApt(19/56), Fanin(34/38), Clk(0/3), Bct(3/4), Pin(0/8), Mcell(16/16)
+PLApts[19/53] 67 68 70 73 19 2 2 () () () 87 () () 95 () () 88 () () 89 () () 90 () () 96 () () 97 () () () () () () () () () () () 97 () () 91 () () 92 () () 93 () () 94
+Fanins[34] clk_1ms.n cnt_blink<0>.n cnt_blink<10>.n cnt_blink<11>.n cnt_blink<12>.n cnt_blink<13>.n cnt_blink<14>.n cnt_blink<15>.n cnt_blink<16>.n cnt_blink<17>.n cnt_blink<18>.n cnt_blink<19>.n cnt_blink<1>.n cnt_blink<20>.n cnt_blink<21>.n cnt_blink<22>.n cnt_blink<23>.n cnt_blink<24>.n cnt_blink<25>.n cnt_blink<26>.n cnt_blink<27>.n cnt_blink<28>.n cnt_blink<29>.n cnt_blink<2>.n cnt_blink<30>.n cnt_blink<31>.n cnt_blink<3>.n cnt_blink<4>.n cnt_blink<5>.n cnt_blink<6>.n cnt_blink<7>.n cnt_blink<8>.n cnt_blink<9>.n cancel_sw_in.p
+clk[0] 
+CTC: (pt=19) clk_1ms ;
+CTR: (pt=2) cancel_sw_in' ;
+CTS: (pt=2) cancel_sw_in' ;
+CTE: 
+vref: [0]
+Signal[16] [cnt_blink<2>(176)] [cnt_blink<0>(171)] [cnt_blink<3>(170)] [cnt_blink<5>(169)]  
+           [cnt_blink<8>(168)] [blink_sig(167)] [cnt_blink<31>(166)] [cnt_blink<30>(162)]  
+           [cnt_blink<29>(175)] [cnt_blink<28>(174)] [cnt_blink<27>(173)] [cnt_blink<26>(172)]  
+           [cnt_blink<25>(165)] [cnt_blink<24>(164)] [cnt_blink<23>(163)] [cnt_blink<22>(161)] 
+Signal[16] [ 0: cnt_blink<22>(161) (2)  ][ 1: cnt_blink<30>(162)  ][ 2: cnt_blink<23>(163) (3)  ][ 3:  
+           cnt_blink<24>(164) (4)  ][ 4: cnt_blink<25>(165) (5)  ][ 5: cnt_blink<31>(166)  ][ 6:  
+           blink_sig(167)  ][ 7: cnt_blink<8>(168)  ][ 8: cnt_blink<5>(169)  ][ 9: cnt_blink<3>(170)  ][ 10:  
+           cnt_blink<0>(171)  ][ 11: cnt_blink<26>(172) (6)  ][ 12: cnt_blink<27>(173) (7)  ][ 13:  
+           cnt_blink<28>(174) (9)  ][ 14: cnt_blink<29>(175) (10)  ][ 15: cnt_blink<2>(176)  ]
+----------------- B l o c k 2 ------------------
+PLApt(31/56), Fanin(30/38), Clk(1/3), Bct(3/4), Pin(5/6), Mcell(16/16)
+PLApts[31/53] () () () () 11 180 183 () () () () 2 () 148 209 () 187 2 () 147 214 () 187 2 () 146 2 () 145 2 () 144 2 () 142 2 () 140 2 () 133 2 () 132 2 () 130 190 () 188 2 () 21
+Fanins[30] ic_mute_sp.n N_PZ_578.n N_PZ_843.n cancel_mode.n cnt<0>.n cnt<10>.n cnt<11>.n cnt<12>.n cnt<13>.n cnt<14>.n cnt<15>.n cnt<16>.n cnt<17>.n cnt<18>.n cnt<19>.n cnt<1>.n cnt<2>.n cnt<3>.n cnt<4>.n cnt<5>.n cnt<6>.n cnt<7>.n cnt<8>.n cnt<9>.n txs_mic_0__or0000/txs_mic_0__or0000_D.UIM.n txs_mic_2__or0000/txs_mic_2__or0000_D.UIM.n both_sw_in.p cancel_sw_in.p ext_sw_in.p int_sw_in.p
+clk[1] clk 
+CTC: (pt=11) int_sw_in ext_sw_in both_sw_in ;
+CTR: (pt=180) cancel_mode ;
+CTS: (pt=183) N_PZ_578 ;
+CTE: 
+vref: [0]
+Signal[16] [txs_mic<1>(181),txs_mic<1>(133)] [txs_mic<0>(179),txs_mic<0>(134)]  
+           [txs_mic<2>(190),txs_mic<2>(132)] [rxs<3>(177),rxs<3>(136)] [txs_mic<3>(192),txs_mic<3>(131)]  
+           [cnt<1>(191)] [cnt<2>(189)] [cnt<4>(188)] [cnt<5>(187)] [cnt<12>(186)] [cnt<14>(185)]  
+           [cnt<16>(184)] [cnt<17>(183)] [cnt<18>(182)] [cnt<19>(180)] [cnt<20>(178)] 
+Signal[16] [ 0: rxs<3>(177) rxs<3>(136)  ][ 1: cnt<20>(178) (135)  ][ 2: txs_mic<0>(179) txs_mic<0>(134)  ] 
+           [ 3: cnt<19>(180)  ][ 4: txs_mic<1>(181) txs_mic<1>(133)  ][ 5: cnt<18>(182)  ][ 6: cnt<17>(183)  
+            ][ 7: cnt<16>(184)  ][ 8: cnt<14>(185)  ][ 9: cnt<12>(186)  ][ 10: cnt<5>(187)  ][ 11:  
+           cnt<4>(188)  ][ 12: cnt<2>(189)  ][ 13: txs_mic<2>(190) txs_mic<2>(132)  ][ 14: cnt<1>(191)  ] 
+           [ 15: txs_mic<3>(192) txs_mic<3>(131)  ]
+----------------- B l o c k 3 ------------------
+PLApt(16/56), Fanin(38/38), Clk(1/3), Bct(3/4), Pin(2/8), Mcell(7/16)
+PLApts[16/56] 3 52 211 212 210 2 213 179 53 57 169 () () () () () () () () () () () () () () () () () () () () () () () () () () 153 () () 152 () () () () () 151 () () () () () 150 () () 149
+Fanins[38] dtmf_rw.n N_PZ_588.n cnt<0>.n cnt<10>.n cnt<11>.n cnt<12>.n cnt<13>.n cnt<14>.n cnt<15>.n cnt<16>.n cnt<17>.n cnt<18>.n cnt<19>.n cnt<1>.n cnt<20>.n cnt<21>.n cnt<22>.n cnt<23>.n cnt<24>.n cnt<2>.n cnt<3>.n cnt<4>.n cnt<5>.n cnt<6>.n cnt<7>.n cnt<8>.n cnt<9>.n current_st<0>.n current_st<1>.n current_st<2>.n current_st<3>.n dtmf_inout_tx_mux0000<2>.n pei_wait.n both_sw_in.p cancel_sw_in.p ext_sw_in.p hs_sw.p int_sw_in.p
+clk[1] clk 
+CTC: (pt=210) N_PZ_588 ;
+CTR: (pt=2) cancel_sw_in' ;
+CTS: 
+CTE: (pt=179) dtmf_rw' ;
+vref: [0]
+Signal[ 7] [dtmf_inout<2>(204),dtmf_inout<2>(17)] [dtmf_inout<3>(198),dtmf_inout<3>(16)] [cnt<21>(208)]  
+           [cnt<22>(207)] [cnt<23>(205)] [cnt<24>(203)] [cnt<25>(202)] 
+Signal[ 7] [ 0: (11)  ][ 1: (12)  ][ 2: (13)  ][ 3: (14)  ][ 4: (15)  ][ 5: dtmf_inout<3>(198)  
+           dtmf_inout<3>(16)  ][ 6:  ][ 7:  ][ 8:  ][ 9: cnt<25>(202)  ][ 10: cnt<24>(203)  ][ 11:  
+           dtmf_inout<2>(204) dtmf_inout<2>(17)  ][ 12: cnt<23>(205)  ][ 13: (18)  ][ 14: cnt<22>(207)  ] 
+           [ 15: cnt<21>(208)  ]
+----------------- B l o c k 4 ------------------
+PLApt(17/56), Fanin(33/38), Clk(1/3), Bct(1/4), Pin(1/5), Mcell(16/16)
+PLApts[17/56] 138 139 141 143 131 2 134 135 136 () () () () () () () () () () () () () () () () () () () () () () 160 () () 160 () () 159 () () 158 () () 157 () () 156 () () () () () 155 () () 154
+Fanins[33] cnt<0>.n cnt<10>.n cnt<11>.n cnt<12>.n cnt<13>.n cnt<14>.n cnt<15>.n cnt<16>.n cnt<17>.n cnt<18>.n cnt<19>.n cnt<1>.n cnt<20>.n cnt<21>.n cnt<22>.n cnt<23>.n cnt<24>.n cnt<25>.n cnt<26>.n cnt<27>.n cnt<28>.n cnt<29>.n cnt<2>.n cnt<30>.n cnt<31>.n cnt<3>.n cnt<4>.n cnt<5>.n cnt<6>.n cnt<7>.n cnt<8>.n cnt<9>.n cancel_sw_in.p
+clk[1] clk 
+CTC: 
+CTR: (pt=2) cancel_sw_in' ;
+CTS: 
+CTE: 
+vref: [0]
+Signal[17] [clk(30)] [cnt<26>(224)] [cnt<27>(223)] [cnt<28>(221)] [cnt<29>(220)] [cnt<30>(219)]  
+           [cnt<31>(218)] [clk_1ms(217)] [cnt<0>(216)] [cnt<10>(215)] [cnt<11>(211)] [cnt<13>(209)]  
+           [cnt<15>(222)] [cnt<3>(214)] [cnt<6>(213)] [cnt<7>(212)] [cnt<8>(210)] 
+Signal[17] [ 0: cnt<13>(209)  ][ 1: cnt<8>(210) (33)  ][ 2: cnt<11>(211)  ][ 3: cnt<7>(212) (32)  ][ 4:  
+           cnt<6>(213) (31)  ][ 5: cnt<3>(214) clk(30)  ][ 6: cnt<10>(215)  ][ 7: cnt<0>(216)  ][ 8:  
+           clk_1ms(217)  ][ 9: cnt<31>(218)  ][ 10: cnt<30>(219)  ][ 11: cnt<29>(220)  ][ 12: cnt<28>(221)  ] 
+           [ 13: cnt<15>(222) (28)  ][ 14: cnt<27>(223)  ][ 15: cnt<26>(224)  ]
+----------------- B l o c k 5 ------------------
+PLApt(18/56), Fanin(34/38), Clk(0/3), Bct(2/4), Pin(0/8), Mcell(16/16)
+PLApts[18/56] 98 101 102 () 19 2 () () () () 116 () () 117 () () 124 () () 118 () () 125 () () 126 () () 127 () () () () () () () () 129 () () () () () 119 () () 120 () () 121 () () 122 () () 123
+Fanins[34] clk_1ms.n cntms<0>.n cntms<10>.n cntms<11>.n cntms<12>.n cntms<13>.n cntms<14>.n cntms<15>.n cntms<16>.n cntms<17>.n cntms<18>.n cntms<19>.n cntms<1>.n cntms<20>.n cntms<21>.n cntms<22>.n cntms<23>.n cntms<24>.n cntms<25>.n cntms<26>.n cntms<27>.n cntms<28>.n cntms<29>.n cntms<2>.n cntms<30>.n cntms<31>.n cntms<3>.n cntms<4>.n cntms<5>.n cntms<6>.n cntms<7>.n cntms<8>.n cntms<9>.n cancel_sw_in.p
+clk[0] 
+CTC: (pt=19) clk_1ms ;
+CTR: (pt=2) cancel_sw_in' ;
+CTS: 
+CTE: 
+vref: [0]
+Signal[16] [cntms<2>(235)] [cntms<0>(234)] [cntms<5>(233)] [cntms<6>(232)] [cntms<31>(231)] [cntms<30>(230)]  
+           [cntms<29>(229)] [cntms<28>(227)] [cntms<27>(240)] [cntms<26>(239)] [cntms<25>(238)]  
+           [cntms<24>(237)] [cntms<23>(236)] [cntms<22>(228)] [cntms<21>(226)] [cntms<20>(225)] 
+Signal[16] [ 0: cntms<20>(225) (34)  ][ 1: cntms<21>(226) (35)  ][ 2: cntms<28>(227)  ][ 3: cntms<22>(228)  
+           (38)  ][ 4: cntms<29>(229)  ][ 5: cntms<30>(230)  ][ 6: cntms<31>(231)  ][ 7: cntms<6>(232)  ] 
+           [ 8: cntms<5>(233)  ][ 9: cntms<0>(234)  ][ 10: cntms<2>(235)  ][ 11: cntms<23>(236) (39)  ][ 12:  
+           cntms<24>(237) (40)  ][ 13: cntms<25>(238) (41)  ][ 14: cntms<26>(239) (42)  ][ 15:  
+           cntms<27>(240) (43)  ]
+----------------- B l o c k 6 ------------------
+PLApt(36/56), Fanin(29/38), Clk(0/3), Bct(3/4), Pin(5/8), Mcell(16/16)
+PLApts[36/56] 6 12 44 51 19 2 56 179 161 162 69 10 14 20 49 58 173 59 63 173 65 166 74 8 15 72 16 17 173 18 () 173 () () 7 () () 7 () () () () () () () () () () () 210 () () 71 () () 210
+Fanins[29] dtmf_rw.n N_PZ_588.n clk_1ms.n cnt_blink<0>.n cnt_blink<1>.n cnt_blink<2>.n cnt_blink<3>.n cnt_blink<4>.n cnt_blink<5>.n cnt_blink<6>.n cnt_blink<7>.n cnt_blink<8>.n current_st<0>.n current_st<1>.n current_st<2>.n current_st<3>.n dtmf_inout_tx_mux0000<0>.n pei_wait.n both_sw_in.p cancel_sw_in.p dtmf_inout<0>.p dtmf_inout<1>.p dtmf_inout<2>.p dtmf_inout<3>.p ext_sw_in.p hs_sw.p ic_sw_in.p int_sw_in.p pei_sw_in.p
+clk[0] 
+CTC: (pt=19) clk_1ms ;
+CTR: (pt=2) cancel_sw_in' ;
+CTS: 
+CTE: (pt=179) dtmf_rw' ;
+vref: [0]
+Signal[16] [dtmf_inout<0>(254),dtmf_inout<0>(21)] [dtmf_inout<1>(256),dtmf_inout<1>(19)]  
+           [dtmf_rw(251),dtmf_rw(24)] [dtmf_cs(252),dtmf_cs(23)] [dtmf_rs0(253),dtmf_rs0(22)]  
+           [dtmf_inout_tx_mux0000<0>(250)] [dtmf_inout_tx_mux0000<2>(249)] [dtmf_data<0>(248)]  
+           [dtmf_data<1>(247)] [dtmf_data<2>(244)] [dtmf_data<3>(243)] [cnt_blink<1>(242)]  
+           [cnt_blink<4>(241)] [cnt_blink<6>(255)] [cnt_blink<7>(246)] [cnt_blink<9>(245)] 
+Signal[16] [ 0: cnt_blink<4>(241)  ][ 1: cnt_blink<1>(242)  ][ 2: dtmf_data<3>(243)  ][ 3: dtmf_data<2>(244)  
+            ][ 4: cnt_blink<9>(245) (26)  ][ 5: cnt_blink<7>(246) (25)  ][ 6: dtmf_data<1>(247)  ][ 7:  
+           dtmf_data<0>(248)  ][ 8: dtmf_inout_tx_mux0000<2>(249)  ][ 9: dtmf_inout_tx_mux0000<0>(250)  ] 
+           [ 10: dtmf_rw(251) dtmf_rw(24)  ][ 11: dtmf_cs(252) dtmf_cs(23)  ][ 12: dtmf_rs0(253)  
+           dtmf_rs0(22)  ][ 13: dtmf_inout<0>(254) dtmf_inout<0>(21)  ][ 14: cnt_blink<6>(255) (20)  ][ 15:  
+           dtmf_inout<1>(256) dtmf_inout<1>(19)  ]
+----------------- B l o c k 7 ------------------
+PLApt(7/56), Fanin(38/38), Clk(1/3), Bct(2/4), Pin(5/8), Mcell(4/16)
+PLApts[7/53] 137 160 () () 19 2 () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () 100 () () () () () () () () () () () 99 () () 22
+Fanins[38] clk_1ms.n cnt<0>.n cnt<10>.n cnt<11>.n cnt<12>.n cnt<13>.n cnt<14>.n cnt<15>.n cnt<16>.n cnt<17>.n cnt<18>.n cnt<19>.n cnt<1>.n cnt<20>.n cnt<21>.n cnt<22>.n cnt<23>.n cnt<24>.n cnt<25>.n cnt<26>.n cnt<27>.n cnt<28>.n cnt<29>.n cnt<2>.n cnt<30>.n cnt<31>.n cnt<3>.n cnt<4>.n cnt<5>.n cnt<6>.n cnt<7>.n cnt<8>.n cnt<9>.n cntms<0>.n cntms<1>.n cntms<2>.n cntms<3>.n cancel_sw_in.p
+clk[1] clk 
+CTC: (pt=19) clk_1ms ;
+CTR: (pt=2) cancel_sw_in' ;
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 9] [both_sw_in(45)] [ext_sw_in(49)] [ic_sw_in(51)] [int_sw_in(50)] [pei_sw_in(52)] [cnt<9>(272)]  
+           [cntms<1>(271)] [cntms<3>(270)] [cntms<4>(266)] 
+Signal[ 9] [ 0: (44)  ][ 1: both_sw_in(45)  ][ 2: (46)  ][ 3:  ][ 4: (48)  ][ 5: ext_sw_in(49)  ][ 6:  ][ 7:  
+            ][ 8:  ][ 9: cntms<4>(266)  ][ 10: int_sw_in(50)  ][ 11: ic_sw_in(51)  ][ 12: pei_sw_in(52)  ] 
+           [ 13: cntms<3>(270)  ][ 14: cntms<1>(271)  ][ 15: cnt<9>(272)  ]
+----------------- B l o c k 8 ------------------
+PLApt(19/56), Fanin(32/38), Clk(0/3), Bct(3/4), Pin(2/8), Mcell(16/16)
+PLApts[19/56] 64 177 () () 19 2 2 () () () () () () () () () 106 () () 112 () () 105 () () 111 () () 104 () () 103 () () 28 () () 26 () () 25 () () 110 () () 109 () () 108 () () 107 () () 24
+Fanins[32] dtmf_rw.n clk_1ms.n cntms<0>.n cntms<10>.n cntms<11>.n cntms<12>.n cntms<13>.n cntms<14>.n cntms<15>.n cntms<1>.n cntms<2>.n cntms<3>.n cntms<4>.n cntms<5>.n cntms<6>.n cntms<7>.n cntms<8>.n cntms<9>.n current_st<0>.n current_st<1>.n current_st<2>.n current_st<3>.n dtmf_data<0>.n dtmf_data<1>.n dtmf_data<2>.n dtmf_data<3>.n next_st<0>.n next_st<1>.n next_st<2>.n next_st<3>.n cancel_sw_in.p ic_sw_in.p
+clk[0] 
+CTC: (pt=19) clk_1ms ;
+CTR: (pt=2) cancel_sw_in' ;
+CTS: (pt=2) cancel_sw_in' ;
+CTE: 
+vref: [0]
+Signal[16] [ic_mute_sp(273),ic_mute_sp(112)] [dual_mute_sp(274),dual_mute_sp(113)] [current_st<0>(288)]  
+           [current_st<1>(283)] [current_st<2>(282)] [current_st<3>(281)] [cntms<7>(280)] [cntms<8>(279)]  
+           [cntms<9>(277)] [cntms<10>(275)] [cntms<11>(287)] [cntms<12>(286)] [cntms<13>(285)]  
+           [cntms<14>(284)] [cntms<15>(278)] [cntms<16>(276)] 
+Signal[16] [ 0: ic_mute_sp(273) ic_mute_sp(112)  ][ 1: dual_mute_sp(274) dual_mute_sp(113)  ][ 2:  
+           cntms<10>(275)  ][ 3: cntms<16>(276) (114)  ][ 4: cntms<9>(277)  ][ 5: cntms<15>(278) (115)  ] 
+           [ 6: cntms<8>(279)  ][ 7: cntms<7>(280)  ][ 8: current_st<3>(281)  ][ 9: current_st<2>(282)  ] 
+           [ 10: current_st<1>(283)  ][ 11: cntms<14>(284) (116)  ][ 12: cntms<13>(285) (117)  ][ 13:  
+           cntms<12>(286) (118)  ][ 14: cntms<11>(287) (119)  ][ 15: current_st<0>(288)  ]
+----------------- B l o c k 9 ------------------
+PLApt(15/56), Fanin(24/38), Clk(0/3), Bct(2/4), Pin(1/9), Mcell(13/16)
+PLApts[15/56] () () () () 19 2 () () () () 183 () () () () () () () () () () () 86 () () 85 () () 81 () () 80 () () 79 () () 78 () () 77 () () 84 () () 76 () () 83 () () 75 () () 82
+Fanins[24] N_PZ_578.n clk_1ms.n cnt_blink<0>.n cnt_blink<10>.n cnt_blink<11>.n cnt_blink<12>.n cnt_blink<13>.n cnt_blink<14>.n cnt_blink<15>.n cnt_blink<16>.n cnt_blink<17>.n cnt_blink<18>.n cnt_blink<19>.n cnt_blink<1>.n cnt_blink<20>.n cnt_blink<2>.n cnt_blink<3>.n cnt_blink<4>.n cnt_blink<5>.n cnt_blink<6>.n cnt_blink<7>.n cnt_blink<8>.n cnt_blink<9>.n cancel_sw_in.p
+clk[0] 
+CTC: (pt=19) clk_1ms ;
+CTR: (pt=2) cancel_sw_in' ;
+CTS: 
+CTE: 
+vref: [0]
+Signal[13] [pei_mute_sp(289),pei_mute_sp(111)] [cnt_blink<10>(303)] [cnt_blink<11>(301)]  
+           [cnt_blink<12>(299)] [cnt_blink<13>(298)] [cnt_blink<14>(297)] [cnt_blink<15>(296)]  
+           [cnt_blink<16>(295)] [cnt_blink<17>(304)] [cnt_blink<18>(302)] [cnt_blink<19>(300)]  
+           [cnt_blink<20>(294)] [cnt_blink<21>(293)] 
+Signal[13] [ 0: pei_mute_sp(289) pei_mute_sp(111)  ][ 1: (110)  ][ 2: (107)  ][ 3: (106)  ][ 4:  
+           cnt_blink<21>(293) (105)  ][ 5: cnt_blink<20>(294) (104)  ][ 6: cnt_blink<16>(295)  ][ 7:  
+           cnt_blink<15>(296)  ][ 8: cnt_blink<14>(297)  ][ 9: cnt_blink<13>(298)  ][ 10: cnt_blink<12>(299)  
+            ][ 11: cnt_blink<19>(300) (103)  ][ 12: cnt_blink<11>(301)  ][ 13: cnt_blink<18>(302) (102)  ] 
+           [ 14: cnt_blink<10>(303)  ][ 15: cnt_blink<17>(304) (101)  ]
+----------------- B l o c k 10 ------------------
+PLApt(5/56), Fanin(21/38), Clk(0/3), Bct(2/4), Pin(0/8), Mcell(3/16)
+PLApts[5/38] () () () () 19 2 () () () () () () () () () () () () () () () () () () () () () () () () () 113 () () 114 () () 115
+Fanins[21] clk_1ms.n cntms<0>.n cntms<10>.n cntms<11>.n cntms<12>.n cntms<13>.n cntms<14>.n cntms<15>.n cntms<16>.n cntms<17>.n cntms<18>.n cntms<1>.n cntms<2>.n cntms<3>.n cntms<4>.n cntms<5>.n cntms<6>.n cntms<7>.n cntms<8>.n cntms<9>.n cancel_sw_in.p
+clk[0] 
+CTC: (pt=19) clk_1ms ;
+CTR: (pt=2) cancel_sw_in' ;
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 3] [cntms<19>(314)] [cntms<18>(313)] [cntms<17>(312)] 
+Signal[ 3] [ 0:  ][ 1:  ][ 2:  ][ 3:  ][ 4: (120)  ][ 5: (121)  ][ 6:  ][ 7: cntms<17>(312)  ][ 8:  
+           cntms<18>(313)  ][ 9: cntms<19>(314)  ][ 10: (124)  ][ 11: (125)  ][ 12: (126)  ][ 13: (128)  ] 
+           [ 14: (129)  ][ 15: (130)  ]
+----------------- B l o c k 11 ------------------
+PLApt(8/56), Fanin(32/38), Clk(0/3), Bct(1/4), Pin(4/6), Mcell(4/16)
+PLApts[8/44] 23 27 29 30 3 128 () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () 4 () () 3
+Fanins[32] cntms<10>.n cntms<11>.n cntms<12>.n cntms<13>.n cntms<14>.n cntms<15>.n cntms<16>.n cntms<17>.n cntms<18>.n cntms<19>.n cntms<1>.n cntms<20>.n cntms<21>.n cntms<22>.n cntms<23>.n cntms<24>.n cntms<25>.n cntms<26>.n cntms<27>.n cntms<28>.n cntms<29>.n cntms<2>.n cntms<30>.n cntms<31>.n cntms<3>.n cntms<4>.n cntms<5>.n cntms<6>.n cntms<7>.n cntms<8>.n cntms<9>.n hs_sw.p
+clk[0] 
+CTC: (pt=3) hs_sw ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 4] [live_sw(334),live_sw(95)] [mute_sw(332),mute_sw(97)] [pa_sw1(331),pa_sw1(98)]  
+           [mic_sw(335),mic_sw(94)] 
+Signal[ 4] [ 0:  ][ 1: (100)  ][ 2:  ][ 3:  ][ 4:  ][ 5:  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10: pa_sw1(331)  
+           pa_sw1(98)  ][ 11: mute_sw(332) mute_sw(97)  ][ 12: (96)  ][ 13: live_sw(334) live_sw(95)  ][ 14:  
+           mic_sw(335) mic_sw(94)  ][ 15:  ]
+----------------- B l o c k 12 ------------------
+----------------- B l o c k 13 ------------------
+PLApt(4/56), Fanin(5/38), Clk(0/3), Bct(0/4), Pin(2/8), Mcell(2/16)
+PLApts[4/4] 36 37 47 55
+Fanins[ 5] blink_sig.n current_st<0>.n current_st<1>.n current_st<2>.n current_st<3>.n
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 2] [occ_led(366),occ_led(64)] [cancel_led(368),cancel_led(61)] 
+Signal[ 2] [ 0: (74)  ][ 1: (71)  ][ 2: (70)  ][ 3: (69)  ][ 4:  ][ 5: (68)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ] 
+           [ 10:  ][ 11:  ][ 12: (66)  ][ 13: occ_led(366) occ_led(64)  ][ 14:  ][ 15: cancel_led(368)  
+           cancel_led(61)  ]
+----------------- B l o c k 14 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(1/7), Mcell(0/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 1] [hs_sw(88)] 
+Signal[ 1] [ 0:  ][ 1: (83)  ][ 2:  ][ 3:  ][ 4:  ][ 5:  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10: (85)  ][ 11:  
+           (86)  ][ 12: (87)  ][ 13: hs_sw(88)  ][ 14: (91)  ][ 15: (92)  ]
+----------------- B l o c k 15 ------------------
+PLApt(8/56), Fanin(8/38), Clk(0/3), Bct(0/4), Pin(7/7), Mcell(5/16)
+PLApts[8/44] 13 46 45 55 60 () () () () () () () () () () () () () () () () () () () () 61 () () () () () () () () () () () () () () 5 () () 9
+Fanins[ 8] blink_sig.n current_st<0>.n current_st<1>.n current_st<2>.n current_st<3>.n both_sw_in.p ext_sw_in.p int_sw_in.p
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 7] [both_led(397),both_led(56)] [pei_led(389),pei_led(60)] [ic_led(390),ic_led(59)]  
+           [ext_led(396),ext_led(57)] [int_led(395),int_led(58)] [cancel_sw_in(53)] [occ_sw_in(54)] 
+Signal[ 7] [ 0:  ][ 1:  ][ 2:  ][ 3:  ][ 4: pei_led(389) pei_led(60)  ][ 5: ic_led(390) ic_led(59)  ][ 6:  ] 
+           [ 7:  ][ 8:  ][ 9:  ][ 10: int_led(395) int_led(58)  ][ 11: ext_led(396) ext_led(57)  ][ 12:  
+           both_led(397) both_led(56)  ][ 13:  ][ 14: occ_sw_in(54)  ][ 15: cancel_sw_in(53)  ]

@@ -1,0 +1,17 @@
+; Echelon Dependency File - do not edit.
+; C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.nkdep
+; Created 수요일, 12월 06, 2006, 16:21:52
+
+[Global]
+Provider=Echelon NodeBuilder Make Facility
+Version=1
+Inputs=0
+Outputs=0
+Switches=0
+Parameters=2
+
+[Switches]
+
+[Parameters]
+BuildtimeH=29825362
+BuildtimeL=-1556328448

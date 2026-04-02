@@ -1,0 +1,246 @@
+
+----------------------------------------
+|  P a r t i t i o n    S u c c e e d  |
+----------------------------------------
+0 Group(s)
+
+GCLK0: 1=clk.p
+----------------- B l o c k 0 ------------------
+PLApt(56/56), Fanin(29/38), Clk(0/3), Bct(3/4), Pin(3/6), Mcell(16/16)
+PLApts[56/56] 10 106 9 107 104 3 159 123 124 125 129 143 155 156 157 158 131 132 133 17 134 135 136 168 141 120 121 142 145 146 150 113 29 32 36 39 50 126 55 61 100 102 105 27 102 35 99 37 52 17 154 178 183 98 101 103
+Fanins[29] N_PZ_426.n N_PZ_427.n both_mode.n cnt1ms.n current_st<0>.n current_st<1>.n current_st<2>.n delay_mic4.n dtmf_in<0>.n dtmf_in<1>.n dtmf_in<2>.n dtmf_in<3>.n dtmf_inout_sp<0>.n dtmf_inout_sp<1>.n dtmf_inout_sp<2>.n dtmf_inout_sp<3>.n ext_mode.n int_led_0_not0000/int_led_0_not0000_D.UIM.n int_mode.n rxs_0__and0000/rxs_0__and0000_D.UIM.n rxs_2__or0000/rxs_2__or0000_D.UIM.n txs_mic_3__or0000/txs_mic_3__or0000_D.UIM.n both_sw_in.p cancel_sw_in.p ext_sw_in.p ic_sw_in.p int_sw_in.p occ_sw_in.p pei_sw_in.p
+clk[0] 
+CTC: (pt=104) cancel_sw_in dtmf_in<0> dtmf_in<1>' dtmf_in<2> dtmf_in<3>' ;
+CTR: (pt=3) cancel_sw_in' ;
+CTS: (pt=159) rxs_2__or0000/rxs_2__or0000_D.UIM' ;
+CTE: 
+vref: [0]
+Signal[16] [rxs<0>(150),rxs<0>(140)] [rxs<1>(156),rxs<1>(139)] [rxs<2>(157),rxs<2>(138)]  
+           [rxs_0__and0000/rxs_0__and0000_D.UIM(160)] [both_mode(159)] [ext_mode(155)] [N_PZ_426(154)]  
+           [N_PZ_427(153)] [int_mode(152)] [dtmf_inout_2__or0000/dtmf_inout_2__or0000_D.UIM(151)]  
+           [dtmf_inout_3__or0000/dtmf_inout_3__or0000_D.UIM(149)]  
+           [dtmf_inout_0__or0000/dtmf_inout_0__or0000_D.UIM(146)]  
+           [dtmf_inout_1__or0000/dtmf_inout_1__or0000_D.UIM(145)] [current_st<0>(158)] [current_st<2>(148)]  
+           [N_PZ_281(147)] 
+Signal[16] [ 0: dtmf_inout_1__or0000/dtmf_inout_1__or0000_D.UIM(145)  ][ 1:  
+           dtmf_inout_0__or0000/dtmf_inout_0__or0000_D.UIM(146)  ][ 2: N_PZ_281(147) (143)  ][ 3:  
+           current_st<2>(148) (142)  ][ 4: dtmf_inout_3__or0000/dtmf_inout_3__or0000_D.UIM(149)  ][ 5:  
+           rxs<0>(150) rxs<0>(140)  ][ 6: dtmf_inout_2__or0000/dtmf_inout_2__or0000_D.UIM(151)  ][ 7:  
+           int_mode(152)  ][ 8: N_PZ_427(153)  ][ 9: N_PZ_426(154)  ][ 10: ext_mode(155)  ][ 11: rxs<1>(156)  
+           rxs<1>(139)  ][ 12: rxs<2>(157) rxs<2>(138)  ][ 13: current_st<0>(158) (137)  ][ 14:  
+           both_mode(159)  ][ 15: rxs_0__and0000/rxs_0__and0000_D.UIM(160)  ]
+----------------- B l o c k 1 ------------------
+PLApt(17/56), Fanin(17/38), Clk(1/3), Bct(1/4), Pin(0/8), Mcell(16/16)
+PLApts[17/44] 72 73 75 77 65 3 68 69 70 71 64 () () () () () 66 () () 67 () () 74 () () () () () () () () () () () () () () 78 () () 78 () () 76
+Fanins[17] cnt<0>.n cnt<10>.n cnt<11>.n cnt<12>.n cnt<13>.n cnt<14>.n cnt<15>.n cnt<1>.n cnt<2>.n cnt<3>.n cnt<4>.n cnt<5>.n cnt<6>.n cnt<7>.n cnt<8>.n cnt<9>.n cancel_sw_in.p
+clk[1] clk 
+CTC: 
+CTR: (pt=3) cancel_sw_in' ;
+CTS: 
+CTE: 
+vref: [0]
+Signal[16] [cnt<10>(176)] [cnt1ms(171)] [cnt<0>(170)] [cnt<11>(169)] [cnt<13>(168)] [cnt<15>(167)]  
+           [cnt<3>(166)] [cnt<6>(162)] [cnt<7>(175)] [cnt<8>(174)] [cnt<9>(173)] [cnt<14>(172)]  
+           [cnt<12>(165)] [cnt<5>(164)] [cnt<4>(163)] [cnt<2>(161)] 
+Signal[16] [ 0: cnt<2>(161) (2)  ][ 1: cnt<6>(162)  ][ 2: cnt<4>(163) (3)  ][ 3: cnt<5>(164) (4)  ][ 4:  
+           cnt<12>(165) (5)  ][ 5: cnt<3>(166)  ][ 6: cnt<15>(167)  ][ 7: cnt<13>(168)  ][ 8: cnt<11>(169)  ] 
+           [ 9: cnt<0>(170)  ][ 10: cnt1ms(171)  ][ 11: cnt<14>(172) (6)  ][ 12: cnt<9>(173) (7)  ][ 13:  
+           cnt<8>(174) (9)  ][ 14: cnt<7>(175) (10)  ][ 15: cnt<10>(176)  ]
+----------------- B l o c k 2 ------------------
+PLApt(53/56), Fanin(24/38), Clk(0/3), Bct(3/4), Pin(5/6), Mcell(16/16)
+PLApts[53/56] 104 164 161 59 17 102 159 97 162 170 187 180 182 2 175 171 137 172 181 30 163 34 137 38 48 173 177 31 40 43 44 49 3 54 63 165 166 2 167 179 2 168 46 2 57 58 2 160 96 137 174 12 () () () 188
+Fanins[24] N_PZ_281.n both_mode.n cnt1ms.n current_st<0>.n current_st<1>.n current_st<2>.n dtmf_in<0>.n dtmf_in<1>.n dtmf_in<2>.n dtmf_in<3>.n ext_mode.n int_mode.n pei_mode.n rxs_0__and0000/rxs_0__and0000_D.UIM.n rxs_2__or0000/rxs_2__or0000_D.UIM.n txs_mic_0__or0000/txs_mic_0__or0000_D.UIM.n txs_mic_1__or0001/txs_mic_1__or0001_D.UIM.n txs_mic_3__or0000/txs_mic_3__or0000_D.UIM.n rxs<3>_BUFR.n txs_mic<3>_BUFR.n cancel_sw_in.p hs_sw.p ic_sw_in.p pei_sw_in.p
+clk[0] 
+CTC: (pt=17) cnt1ms ;
+CTR: (pt=102) cancel_sw_in dtmf_in<0> dtmf_in<1>' dtmf_in<2>' dtmf_in<3> ;
+CTS: (pt=159) rxs_2__or0000/rxs_2__or0000_D.UIM' ;
+CTE: 
+vref: [0]
+Signal[16] [txs_mic<2>(190),txs_mic<2>(132)] [txs_mic<1>(181),txs_mic<1>(133)]  
+           [txs_mic<0>(179),txs_mic<0>(134)] [rxs<3>(177),rxs<3>(136)] [txs_mic<3>(192),txs_mic<3>(131)]  
+           [txs_mic_1__or0001/txs_mic_1__or0001_D.UIM(191)] [dtmf_inout_sp<3>(189)] [dtmf_inout_sp<1>(188)]  
+           [dtmf_inout_sp<2>(187)] [dtmf_inout_sp<0>(186)] [current_st<1>(185)]  
+           [txs_mic_3__or0000/txs_mic_3__or0000_D.UIM(184)] [pei_mode_or0001/pei_mode_or0001_D.UIM(183)]  
+           [txs_mic_0__or0000/txs_mic_0__or0000_D.UIM(182)] [rxs_2__or0000/rxs_2__or0000_D.UIM(180)]  
+           [delay_mic1(178)] 
+Signal[16] [ 0: rxs<3>(177) rxs<3>(136)  ][ 1: delay_mic1(178) (135)  ][ 2: txs_mic<0>(179) txs_mic<0>(134)  
+            ][ 3: rxs_2__or0000/rxs_2__or0000_D.UIM(180)  ][ 4: txs_mic<1>(181) txs_mic<1>(133)  ][ 5:  
+           txs_mic_0__or0000/txs_mic_0__or0000_D.UIM(182)  ][ 6: pei_mode_or0001/pei_mode_or0001_D.UIM(183)  
+            ][ 7: txs_mic_3__or0000/txs_mic_3__or0000_D.UIM(184)  ][ 8: current_st<1>(185)  ][ 9:  
+           dtmf_inout_sp<0>(186)  ][ 10: dtmf_inout_sp<2>(187)  ][ 11: dtmf_inout_sp<1>(188)  ][ 12:  
+           dtmf_inout_sp<3>(189)  ][ 13: txs_mic<2>(190) txs_mic<2>(132)  ][ 14:  
+           txs_mic_1__or0001/txs_mic_1__or0001_D.UIM(191)  ][ 15: txs_mic<3>(192) txs_mic<3>(131)  ]
+----------------- B l o c k 3 ------------------
+PLApt(34/56), Fanin(27/38), Clk(1/3), Bct(3/4), Pin(2/8), Mcell(16/16)
+PLApts[34/56] 138 141 25 21 17 153 139 24 3 108 87 3 22 87 3 109 86 3 () 84 3 () 83 140 () 23 3 () 19 () () () () () () 3 () 18 () () 2 152 () 23 () () 2 3 () 81 () () () () () 144
+Fanins[27] blink_cnt<0>.n blink_cnt<1>.n blink_cnt<2>.n blink_cnt<3>.n blink_cnt<4>.n blink_cnt<5>.n blink_cnt<6>.n blink_cnt<7>.n blink_cnt<8>.n blink_cnt<9>.n both_mode.n cnt1ms.n cnt<0>.n delay_mic1.n delay_mic2.n delay_mic3.n delay_mic4.n dtmf_inout_2__or0000/dtmf_inout_2__or0000_D.UIM.n dtmf_inout_3__or0000/dtmf_inout_3__or0000_D.UIM.n dtmf_inout_sp<2>.n dtmf_inout_sp<3>.n ext_mode.n int_mode.n ptt_mode1.n ptt_mode2.n cancel_sw_in.p hs_sw.p
+clk[1] clk 
+CTC: (pt=17) cnt1ms ;
+CTR: (pt=153) dtmf_inout_3__or0000/dtmf_inout_3__or0000_D.UIM' ;
+CTS: (pt=139) dtmf_inout_sp<2> delay_mic4 both_mode' int_mode' ext_mode' ;
+CTE: 
+vref: [0]
+Signal[16] [dtmf_inout<2>(204),dtmf_inout<2>(17)] [dtmf_inout<3>(198),dtmf_inout<3>(16)]  
+           [tone_tx_or0001/tone_tx_or0001_D.UIM(208)] [dual_mute_sp_or0000/dual_mute_sp_or0000_D.UIM(207)]  
+           [ptt_mode1(205)] [ptt_mode2(203)] [cnt<1>(202)] [delay_mic2(201)] [delay_mic4(200)]  
+           [blink_cnt<1>(199)] [blink_cnt<4>(206)] [blink_cnt<6>(197)] [blink_cnt<7>(196)]  
+           [blink_cnt<9>(195)] [blink_cnt<0>(194)] [blink_sig(193)] 
+Signal[16] [ 0: blink_sig(193) (11)  ][ 1: blink_cnt<0>(194) (12)  ][ 2: blink_cnt<9>(195) (13)  ][ 3:  
+           blink_cnt<7>(196) (14)  ][ 4: blink_cnt<6>(197) (15)  ][ 5: dtmf_inout<3>(198) dtmf_inout<3>(16)  
+            ][ 6: blink_cnt<1>(199)  ][ 7: delay_mic4(200)  ][ 8: delay_mic2(201)  ][ 9: cnt<1>(202)  ][ 10:  
+           ptt_mode2(203)  ][ 11: dtmf_inout<2>(204) dtmf_inout<2>(17)  ][ 12: ptt_mode1(205)  ][ 13:  
+           blink_cnt<4>(206) (18)  ][ 14: dual_mute_sp_or0000/dual_mute_sp_or0000_D.UIM(207)  ][ 15:  
+           tone_tx_or0001/tone_tx_or0001_D.UIM(208)  ]
+----------------- B l o c k 4 ------------------
+PLApt(22/56), Fanin(25/38), Clk(0/3), Bct(3/4), Pin(1/5), Mcell(16/16)
+PLApts[22/56] 115 116 89 91 17 3 117 92 79 87 88 80 82 85 () () 90 () () () () () () () () () () () 95 () () () () () () () () () () () 94 118 () 93 () () () () () 20 () () 7 () () 6
+Fanins[25] _mux0000/_mux0000_D.UIM.n blink_cnt<0>.n blink_cnt<1>.n blink_cnt<2>.n blink_cnt<3>.n blink_cnt<4>.n blink_cnt<5>.n blink_cnt<6>.n blink_cnt<7>.n blink_cnt<8>.n blink_cnt<9>.n cnt1ms.n cnt_tone<0>.n cnt_tone<1>.n cnt_tone<2>.n cnt_tone<3>.n cnt_tone<4>.n cnt_tone<5>.n cnt_tone<6>.n tone_tx.n tone_tx_or0000/tone_tx_or0000_D.UIM.n tone_tx_or0001/tone_tx_or0001_D.UIM.n both_sw_in.p cancel_sw_in.p ext_sw_in.p
+clk[0] 
+CTC: (pt=17) cnt1ms ;
+CTR: (pt=3) cancel_sw_in' ;
+CTS: (pt=117) tone_tx_or0001/tone_tx_or0001_D.UIM' _mux0000/_mux0000_D.UIM' ;
+CTE: 
+vref: [0]
+Signal[17] [clk(30)] [N_PZ_455(224)] [int_led_0_not0000/int_led_0_not0000_D.UIM(223)]  
+           [tone_tx_or0000/tone_tx_or0000_D.UIM(221)] [tone_tx(220)] [cnt_tone<0>(219)] [cnt_tone<3>(218)]  
+           [cnt_tone<5>(217)] [cnt_tone<6>(216)] [_mux0000/_mux0000_D.UIM(215)] [cnt_tone<4>(211)]  
+           [cnt_tone<2>(209)] [cnt_tone<1>(222)] [blink_cnt<2>(214)] [blink_cnt<3>(213)] [blink_cnt<5>(212)]  
+           [blink_cnt<8>(210)] 
+Signal[17] [ 0: cnt_tone<2>(209)  ][ 1: blink_cnt<8>(210) (33)  ][ 2: cnt_tone<4>(211)  ][ 3:  
+           blink_cnt<5>(212) (32)  ][ 4: blink_cnt<3>(213) (31)  ][ 5: blink_cnt<2>(214) clk(30)  ][ 6:  
+           _mux0000/_mux0000_D.UIM(215)  ][ 7: cnt_tone<6>(216)  ][ 8: cnt_tone<5>(217)  ][ 9:  
+           cnt_tone<3>(218)  ][ 10: cnt_tone<0>(219)  ][ 11: tone_tx(220)  ][ 12:  
+           tone_tx_or0000/tone_tx_or0000_D.UIM(221)  ][ 13: cnt_tone<1>(222) (28)  ][ 14:  
+           int_led_0_not0000/int_led_0_not0000_D.UIM(223)  ][ 15: N_PZ_455(224)  ]
+----------------- B l o c k 5 ------------------
+PLApt(12/56), Fanin(17/38), Clk(0/3), Bct(3/4), Pin(0/8), Mcell(7/16)
+PLApts[12/41] 184 () () () 114 169 3 () () () () () () () () () () () () () 176 () 137 () () 185 () () 16 () () 15 () () 14 () () 13 () () 104
+Fanins[17] dtmf_inout<0>.n dtmf_inout<1>.n dtmf_inout<2>.n dtmf_inout<3>.n dtmf_rw.n both_mode.n current_st<0>.n dtmf_in<0>.n dtmf_in<1>.n dtmf_in<2>.n dtmf_in<3>.n ext_mode.n int_mode.n pei_mode_or0001/pei_mode_or0001_D.UIM.n rxs_0__and0000/rxs_0__and0000_D.UIM.n txs_mic_3__or0000/txs_mic_3__or0000_D.UIM.n cancel_sw_in.p
+clk[0] 
+CTC: (pt=114) cancel_sw_in dtmf_rw ;
+CTR: (pt=169) cancel_sw_in rxs_0__and0000/rxs_0__and0000_D.UIM ;
+CTS: (pt=3) cancel_sw_in' ;
+CTE: 
+vref: [0]
+Signal[ 7] [rxs<3>_BUFR(235)] [dtmf_in<0>(234)] [dtmf_in<1>(233)] [dtmf_in<2>(232)] [dtmf_in<3>(231)]  
+           [pei_mode(230)] [txs_mic<3>_BUFR(229)] 
+Signal[ 7] [ 0: (34)  ][ 1: (35)  ][ 2:  ][ 3: (38)  ][ 4: txs_mic<3>_BUFR(229)  ][ 5: pei_mode(230)  ][ 6:  
+           dtmf_in<3>(231)  ][ 7: dtmf_in<2>(232)  ][ 8: dtmf_in<1>(233)  ][ 9: dtmf_in<0>(234)  ][ 10:  
+           rxs<3>_BUFR(235)  ][ 11: (39)  ][ 12: (40)  ][ 13: (41)  ][ 14: (42)  ][ 15: (43)  ]
+----------------- B l o c k 6 ------------------
+PLApt(9/56), Fanin(13/38), Clk(0/3), Bct(3/4), Pin(5/8), Mcell(5/16)
+PLApts[9/56] () () () () 23 150 112 () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () 147 () () () () () 3 151 () 149 () () () 148 () 112
+Fanins[13] N_PZ_426.n N_PZ_427.n both_mode.n current_st<0>.n current_st<1>.n current_st<2>.n delay_mic2.n dtmf_inout_0__or0000/dtmf_inout_0__or0000_D.UIM.n dtmf_inout_1__or0000/dtmf_inout_1__or0000_D.UIM.n ext_mode.n int_led_0_not0000/int_led_0_not0000_D.UIM.n int_mode.n cancel_sw_in.p
+clk[0] 
+CTC: (pt=23) delay_mic2 ;
+CTR: (pt=150) cancel_sw_in N_PZ_427' ;
+CTS: (pt=112) N_PZ_426 ;
+CTE: 
+vref: [0]
+Signal[ 5] [dtmf_inout<0>(254),dtmf_inout<0>(21)] [dtmf_inout<1>(256),dtmf_inout<1>(19)]  
+           [dtmf_rw(251),dtmf_rw(24)] [dtmf_rs0(253),dtmf_rs0(22)] [dtmf_cs(252),dtmf_cs(23)] 
+Signal[ 5] [ 0:  ][ 1:  ][ 2:  ][ 3:  ][ 4: (26)  ][ 5: (25)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10:  
+           dtmf_rw(251) dtmf_rw(24)  ][ 11: dtmf_cs(252) dtmf_cs(23)  ][ 12: dtmf_rs0(253) dtmf_rs0(22)  ] 
+           [ 13: dtmf_inout<0>(254) dtmf_inout<0>(21)  ][ 14: (20)  ][ 15: dtmf_inout<1>(256)  
+           dtmf_inout<1>(19)  ]
+----------------- B l o c k 7 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(5/8), Mcell(0/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 5] [both_sw_in(45)] [ext_sw_in(49)] [ic_sw_in(51)] [int_sw_in(50)] [pei_sw_in(52)] 
+Signal[ 5] [ 0: (44)  ][ 1: both_sw_in(45)  ][ 2: (46)  ][ 3:  ][ 4: (48)  ][ 5: ext_sw_in(49)  ][ 6:  ][ 7:  
+            ][ 8:  ][ 9:  ][ 10: int_sw_in(50)  ][ 11: ic_sw_in(51)  ][ 12: pei_sw_in(52)  ][ 13:  ][ 14:  ] 
+           [ 15:  ]
+----------------- B l o c k 8 ------------------
+PLApt(5/56), Fanin(12/38), Clk(0/3), Bct(3/4), Pin(2/8), Mcell(2/16)
+PLApts[5/14] () () () () 17 119 3 () () () 3 () () 110
+Fanins[12] dual_mute_sp.n cnt1ms.n cnt_tone<0>.n cnt_tone<1>.n cnt_tone<2>.n cnt_tone<3>.n cnt_tone<4>.n cnt_tone<5>.n cnt_tone<6>.n dual_mute_sp_or0000/dual_mute_sp_or0000_D.UIM.n tone_tx.n cancel_sw_in.p
+clk[0] 
+CTC: (pt=17) cnt1ms ;
+CTR: (pt=119) dual_mute_sp_or0000/dual_mute_sp_or0000_D.UIM' ;
+CTS: (pt=3) cancel_sw_in' ;
+CTE: 
+vref: [0]
+Signal[ 2] [dual_mute_sp(274),dual_mute_sp(113)] [ic_mute_sp(273),ic_mute_sp(112)] 
+Signal[ 2] [ 0: ic_mute_sp(273) ic_mute_sp(112)  ][ 1: dual_mute_sp(274) dual_mute_sp(113)  ][ 2:  ][ 3:  
+           (114)  ][ 4:  ][ 5: (115)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10:  ][ 11: (116)  ][ 12: (117)  ][ 13:  
+           (118)  ][ 14: (119)  ][ 15:  ]
+----------------- B l o c k 9 ------------------
+PLApt(1/56), Fanin(1/38), Clk(0/3), Bct(0/4), Pin(1/9), Mcell(1/16)
+PLApts[1/11] () () () () () () () () () () 3
+Fanins[ 1] cancel_sw_in.p
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 1] [pei_mute_sp(289),pei_mute_sp(111)] 
+Signal[ 1] [ 0: pei_mute_sp(289) pei_mute_sp(111)  ][ 1: (110)  ][ 2: (107)  ][ 3: (106)  ][ 4: (105)  ][ 5:  
+           (104)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10:  ][ 11: (103)  ][ 12:  ][ 13: (102)  ][ 14:  ][ 15:  
+           (101)  ]
+----------------- B l o c k 10 ------------------
+----------------- B l o c k 11 ------------------
+PLApt(6/56), Fanin(11/38), Clk(0/3), Bct(2/4), Pin(4/6), Mcell(4/16)
+PLApts[6/53] 8 () () () 17 () 3 () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () 99 () () () () () () () () 111 () () 11
+Fanins[11] live_sw.n cnt1ms.n dtmf_in<0>.n dtmf_in<1>.n dtmf_in<2>.n dtmf_in<3>.n both_sw_in.p cancel_sw_in.p ext_sw_in.p hs_sw.p int_sw_in.p
+clk[0] 
+CTC: (pt=17) cnt1ms ;
+CTR: 
+CTS: (pt=3) cancel_sw_in' ;
+CTE: 
+vref: [0]
+Signal[ 4] [live_sw(334),live_sw(95)] [mic_sw(335),mic_sw(94)] [pa_sw1(331),pa_sw1(98)]  
+           [mute_sw(332),mute_sw(97)] 
+Signal[ 4] [ 0:  ][ 1: (100)  ][ 2:  ][ 3:  ][ 4:  ][ 5:  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10: pa_sw1(331)  
+           pa_sw1(98)  ][ 11: mute_sw(332) mute_sw(97)  ][ 12: (96)  ][ 13: live_sw(334) live_sw(95)  ][ 14:  
+           mic_sw(335) mic_sw(94)  ][ 15:  ]
+----------------- B l o c k 12 ------------------
+----------------- B l o c k 13 ------------------
+PLApt(6/56), Fanin(5/38), Clk(0/3), Bct(1/4), Pin(2/8), Mcell(2/16)
+PLApts[6/6] 47 51 62 42 28 56
+Fanins[ 5] blink_sig.n current_st<0>.n current_st<1>.n current_st<2>.n cancel_sw_in.p
+clk[0] 
+CTC: (pt=28) cancel_sw_in current_st<1> current_st<2> ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 2] [occ_led(366),occ_led(64)] [cancel_led(368),cancel_led(61)] 
+Signal[ 2] [ 0: (74)  ][ 1: (71)  ][ 2: (70)  ][ 3: (69)  ][ 4:  ][ 5: (68)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ] 
+           [ 10:  ][ 11:  ][ 12: (66)  ][ 13: occ_led(366) occ_led(64)  ][ 14:  ][ 15: cancel_led(368)  
+           cancel_led(61)  ]
+----------------- B l o c k 14 ------------------
+PLApt(2/56), Fanin(2/38), Clk(0/3), Bct(1/4), Pin(1/7), Mcell(1/16)
+PLApts[2/50] () () () () 17 () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () 2
+Fanins[ 2] cnt1ms.n cancel_sw_in.p
+clk[0] 
+CTC: (pt=17) cnt1ms ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 2] [delay_mic3,hs_sw(88)] 
+Signal[ 2] [ 0:  ][ 1: (83)  ][ 2:  ][ 3:  ][ 4:  ][ 5:  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10: (85)  ][ 11:  
+           (86)  ][ 12: (87)  ][ 13: delay_mic3(382) hs_sw(88)  ][ 14: (91)  ][ 15: (92)  ]
+----------------- B l o c k 15 ------------------
+PLApt(10/56), Fanin(10/38), Clk(0/3), Bct(3/4), Pin(7/7), Mcell(5/16)
+PLApts[10/45] 33 41 42 () 4 9 5 () () () () () () () () () () () () () () () () () () 28 () () () () () () () () () () () () 122 () () 186 () () 186
+Fanins[10] N_PZ_455.n blink_sig.n current_st<0>.n current_st<1>.n current_st<2>.n int_led_0_not0000/int_led_0_not0000_D.UIM.n both_sw_in.p cancel_sw_in.p ext_sw_in.p int_sw_in.p
+clk[0] 
+CTC: (pt=4) int_sw_in ;
+CTR: (pt=9) cancel_sw_in ext_sw_in' both_sw_in ;
+CTS: (pt=5) ext_sw_in' ;
+CTE: 
+vref: [0]
+Signal[ 7] [ext_led(396),ext_led(57)] [both_led(397),both_led(56)] [int_led(395),int_led(58)]  
+           [pei_led(389),pei_led(60)] [ic_led(390),ic_led(59)] [cancel_sw_in(53)] [occ_sw_in(54)] 
+Signal[ 7] [ 0:  ][ 1:  ][ 2:  ][ 3:  ][ 4: pei_led(389) pei_led(60)  ][ 5: ic_led(390) ic_led(59)  ][ 6:  ] 
+           [ 7:  ][ 8:  ][ 9:  ][ 10: int_led(395) int_led(58)  ][ 11: ext_led(396) ext_led(57)  ][ 12:  
+           both_led(397) both_led(56)  ][ 13:  ][ 14: occ_sw_in(54)  ][ 15: cancel_sw_in(53)  ]

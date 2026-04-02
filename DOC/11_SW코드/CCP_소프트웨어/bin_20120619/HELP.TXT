@@ -1,0 +1,122 @@
+#HOME
+The HOME Screen is the default screen that is displayed by the CCP.
+It provides the crew with real time Train Operational & Status Data including; Train Number, Crew Number, Route, Destination, ETA, Delay, Current Time, Origin, Current Station and Next Station. 
+
+Additionally, this screen displays the current operational status of various Communications System devices and alerts the crew of any PEI calls.
+
+#TRAIN
+The TRAIN Screen allows the operator to enter a TRAIN NUMBER.
+The TRAIN Screen can be displayed at any time by pressing the TRAIN button on the CCP Menu Bar.
+Upon system start-up, the HOME screen will automatically prompt the operator to enter the train number.
+
+When the TRAIN Button is pressed, the CCP will display a touch panel number pad allowing for the entry of a valid six digit Train Number.
+After entering the desired number, press the ENTER key to accept.
+If the entered number is not valid, the CCP will indicate that the entry is invalid and will prompt the operator to enter a valid number.
+If the entered Train Number is valid, the CCP will load the corresponding route schedule and initiate the Route Processing functionality.
+
+#CREW
+The CREW Screen allows the operator to enter a CREW ID.
+The CREW Screen can be displayed at any time by pressing the CREW button on the CCP Menu Bar.
+Upon system start-up and after the Train Number has been entered, the HOME screen will automatically prompt the operator to enter the Crew ID Number.
+ 
+When the CREW button is pressed, the CCP will display a touch panel number pad allowing for the entry of a six digit CREW ID Number.
+After entering the CREW ID Number, press the Enter key to accept.
+The system does not check or verify the validity of the entered CREW ID Number.
+ 
+The entered CREW ID is utilized by the Communications System for identification purposes within the system activity log files.
+
+#ROUTE
+The ROUTE Screen allows the operator to set several attributes pertaining to each station included within the defined route for the currently selected Train Number.
+The ROUTE Screen can be displayed at any time by pressing the ROUTE button on the CCP Menu Bar.  
+
+When the ROUTE button is pressed, the CCP will display a detailed Route Editing screen.  A scroll bar is provided allowing the operator to scroll through all of the defined stations within the route.  The operator can set the following attributes for each station within the displayed station list:
+
+1) STOP/SKIP: Each station within a defined Train Number route will default to the state established within the Denver RTD master schedule. The operator can toggle the parameter for any station between STOP and SKIP by pressing the STOP/SKIP buttons.
+The current state will be highlighted and stored into the current operating parameter table. If the parameter is set to STOP, the Communications System will initiate all AVL messages associated with the specified station for the selected route.
+If the parameter is set to SKIP, the Communications System will ignore all AVL messages associated with the specified station for the selected route.
+
+2) EXP/ LOCAL:  Each station within a defined Train Number route will default to the state established within the Denver RTD master schedule.
+The operator can toggle the parameter for any station between EXPRESS and LOCAL by pressing the EXP/LOCAL buttons.
+The current state will be highlighted and stored into the current operating parameter table.
+If the parameter is set to EXP, then the Communications System will consider this to be an EXPRESS Train Route and will ignore all AVL messages associated with the specified stations between the current station and the station designated as EXP. If the parameter is set to LOCAL, the Communications System will initiate all AVL messages associated with the specified station for the selected route.
+
+#CONFIG
+The CONFIG Screen allows the operator to review and set several user defined Communications System operating parameters.
+The CONFIG Screen can be displayed at any time by pressing the CONFIG button on the CCP Menu Bar.  
+
+The following parameters can be set via the CONFIG Screen:
+
+1) SPEAKER VOLUME:
+a) CAB SPEAKER: There are two audio output settings for the cab speakers. By pressing the appropriate button, the Communications System can be set to NORMAL or SOFT cab speaker audio output.
+
+i) NORMAL: Sets the cab speaker volume to the default setting.
+ii) SOFT: Sets the cab speaker volume to a setting that is a predefined percentage less than the default setting.
+
+b) INTERIOR SPEAKERS: There are two audio output settings for the interior speakers. By pressing the appropriate button, the Communications System can be set to NORMAL or SOFT interior speaker audio output.
+	 
+i)  NORMAL: Sets the interior speakers volume to the default setting.
+ii) SOFT: Sets the interior speakers volume to a settings that is a predefined percentage less than the default setting.
+             
+c) EXTERIOR SPEAKERS: There are three audio output settings for the Exterior Speakers. 
+By pressing the appropriate button the Communications System can be set to NORMAL, SOFT, or MUTE.
+
+i)   NORMAL: Sets the exterior speakers volume to the default setting.
+ii)  SOFT: Sets the exterior speakers volume to a settings that is a predefined percentage less than the default setting.
+iii) MUTE: Sets the exterior speakers volume to OFF. 
+This will prevent Automated Announcements from being heard on the Exterior Speakers.
+		
+2) LCD DIMMER:
+a) Use the slide bar to set the CCP LCD screen dimming level.
+By sliding the bar in either direction, the LCD brightness can be adjusted from 20?100% of available brightness.
+b) The number at the center of the CONFIG / LCD DIMMER screen indicates the currently selected setting as a percentage of total available brightness.
+	 
+3) SYSTEM RESET:
+a) By pressing the SYSTEM RESET button, ALL operator adjustable Communications System settings are reset to their default settings.
+b) An automatic reset of the Communications System settings also occurs after complete power down and reboot of the system, or when a new Train Number is entered.
+
+4) SIMULATION
+The SIMULATION screen allows the setting of the automatic announcement time period during Simulation mode to 10, 20 or 30 seconds.
+
+5) C/I SETTING
+The C/I SETTING screen allows the operator to identify and revise the Converter/Inverter (C/I) phase angle order of all connected vehicles in the train consist.
+The C/I SETTING screen displays, for all connected vehicles (maximum of 8), the C/I phase angle order and vehicle number information.
+The C/I order may be manually changed by the operator by selecting a vehicle icon, changing the order of the vehicle using the number pad and pressing the APPLY button.
+
+#CHECK
+The CHECK screen allows the operator to check the status of each car in the connected train consist, as well as visually inspect the physical devices of the Communications System in each car to confirm that each is functioning properly.
+In the event that a critical component is in a failure state, the fault will be displayed on the CCP for the operator to review. 
+
+1) CAR STATUS: 
+a. Press the CHECK button to navigate to the Consist Overview page, which allows the operator to see what car numbers make up the current train consist.
+b. If there is an error or fault on any Communications System component, the Icon for the car number that has the error or fault will be illuminated yellow.
+
+2) DEVICE STATUS: 
+a. Press the Car Number Icon button to navigate to the Device Status screen corresponding to that car number.
+b. The Device Status screen allows the crew to view the current status for ALL Communications System components monitored on the selected car.
+c. Component icons in red indicate an error or fault.
+
+3) SIMULATION:
+a. The SIMULATION button allows the crew to simulate the currently selected Route Trigger Points in order to test the content playlist and verify that all information displays correctly on all Passenger Information Displays and Destination Indicators, as well as verifying that PA System Automated Announcements are working properly.
+
+#PEI
+The PEI screen allows the operator to see where in the train consist an Active PEI Call was initiated from. Car Number and PEI Box ID are displayed.
+ 
+a. When a PEI Call is initiated by a passenger, the CCP in the active cab will display the following message:
+"Passenger Emergency Intercom XXXX Call" (XXXX = Car Number). This message provides the operator with an alert that a PEI Call has been initiated by a passenger along with the location of the PEI Call. 
+The following Automated PA Announcement in the cab will be heard each time a PEI
+Call is initiated by a passenger: 
+"A passenger needs assistance in Car Number XXXX." (XXXX = Car Number)
+	
+b. The PEI Screen, which displays where in the train consist the PEI Call was initiated, can be accessed by pressing the PEI button on the CCP menu bar.
+	
+c. The specific PEI Icon that is displayed in red indicates an active PEI Call.
+
+#CM
+The CM screen allows the operator to send custom preset messages to the LED and LCD displays.
+
+a. Pre-defined messages will be listed on the CM screen. The operator is able to view the possible custom message options by using the scroll bar.
+
+b. A selected message will be immediately sent to LED and LCD displays when the operator presses the ACTIVATE button next to one of the custom present messages.
+
+Only one message activation is available at one time. Any previous message will be cancelled when activating a new custom preset message.
+#

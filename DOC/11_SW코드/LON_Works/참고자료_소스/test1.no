@@ -1,0 +1,144 @@
+!nas 3.11.07
+R0 f
+R1 2
+R3 2
+R5 2
+R8 2
+Rb 16
+Rc 14
+Rd 42
+Re 2a
+R10 1
+R15 1
+R24 a
+
+.F008DIRECTORY
+.F00APROTECTBIT
+.F00DPROGID
+.F015MODETABLE
+.F01ABUFCOUNTS
+.F01DEENEARBYTES
+.F023TX_CTRL
+
+o0000 0005
+
+^E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.ns
+@50
+0Aj
+@51
+00j
+@52
+7Fj
+00j
+00j
+
+s0000 0003
+.0000APINIT
+
+@200
+75FD00
+
+r0000 0007
+.0000SIDATA
+
+@215
+00j
+07j
+00j
+00j
+00j
+@216
+00j
+@217
+00j_new_binding_constraints _query_stats |0A |
+
+s0000 0008
+.0000TEVT
+
+@207
+00jAPINIT 02 -@1
+00jAPINIT 02 -@0
+@208
+00j
+00j
+@209
+00j
+00j
+@210
+00j
+00j
+
+p0000 00AB
+.0019DOMAIN
+
+@62
+*8
+@64
+*10
+@66
+*1
+@68
+*1E
+@70
+*4B
+@72
+*0
+@74
+*28
+@76
+*1
+
+o0000 0005
+
+@57
+00j
+0Aj
+00jSIDATA @1
+00jSIDATA @0
+00j
+
+NF000 0024
+@25
+*8
+@27
+00jTEVT 00 -@1
+00jTEVT 00 -@0
+@29
+00j
+@30
+00jSIDATA @1
+00jSIDATA @0
+@32
+9Fj
+FFj
+FFj
+28j
+00j
+03j
+11j
+00j
+@34
+53j
+@35
+F0j
+01j
+@36
+24j
+9Bj
+@38
+33j
+33j
+33j
+@40
+00j
+@41
+00j
+00j
+@42
+00j
+00j
+00j
+@43
+00j04 _tx_by_addr |
+!
+

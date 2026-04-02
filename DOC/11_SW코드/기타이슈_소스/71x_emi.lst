@@ -1,0 +1,187 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:11
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_emi.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW43C4.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_emi.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_emi.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_emi.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_emi.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_emi.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : This file provides all the EMI firmware functions
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "71x_emi.h"
+     18          
+     19          /* Private typedef -----------------------------------------------------------*/
+     20          /* Private define ------------------------------------------------------------*/
+     21          /* Private macro -------------------------------------------------------------*/
+     22          #define EMI_BankConfig(Bank)  *(vu16 *)(EMI_BASE + (4 * Bank))
+     23          
+     24          /* Private variables ---------------------------------------------------------*/
+     25          /* Private function prototypes -----------------------------------------------*/
+     26          /* Private functions ---------------------------------------------------------*/
+     27          
+     28          /*******************************************************************************
+     29          * Function Name  : EMI_Config
+     30          * Description    : This routine is used, for each bank, to configure cycle
+     31          *                  length and bus size.
+     32          * Input          : - Bank_n: selects the bank to be configured, it can be:
+     33          *                     EMI_BANK0, EMI_BANK1, EMI_BANK2, EMI_BANK3
+     34          *                  - B_SIZE: specifies the effective external bus size for 
+     35          *                    an access to Bank n. It can be:
+     36          *                     EMI_SIZE_8: 8-bit bus length.
+     37          *                     EMI_SIZE_16: 16-bit bus lenght.
+     38          *                  - C_LENGTH: specifies the number of wait states to be 
+     39          *                    inserted in any read/write cycle performed in Bank n.
+     40          * Output         : None.
+     41          * Return         : None.
+     42          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     43          void EMI_Config (u8 Bank_n, u16 B_SIZE, u16 C_LENGTH)
+     44          {   
+     45            EMI_BankConfig(Bank_n) = (B_SIZE & 0x03) | ((C_LENGTH & 0x0F) << 2);
+   \                     EMI_Config:
+   \        0x0   0xE211'1003        ANDS     R1,R1,#0x3
+   \        0x4   0xE3A0'303C        MOV      R3,#+60
+   \        0x8   0xE013'2102        ANDS     R2,R3,R2, LSL #+2
+   \        0xC   0xE192'1001        ORRS     R1,R2,R1
+   \       0x10   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x14   0xE3A0'2004        MOV      R2,#+4
+   \       0x18   0xE010'0092        MULS     R0,R2,R0
+   \       0x1C   0xE290'046C        ADDS     R0,R0,#+1811939328
+   \       0x20   0xE1C0'10B0        STRH     R1,[R0, #+0]
+     46          }
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+     47          
+     48          /*******************************************************************************
+     49          * Function Name  : EMI_Enable
+     50          * Description    : This routine is used, for each bank, to enable or disable 
+     51          *                  the specified EMI bank.
+     52          * Input          : - Bank_n: selects the bank to be configured, it can be:
+     53          *                     EMI_BANK0, EMI_BANK1, EMI_BANK2, EMI_BANK3
+     54          *                  - NewState: specifies wether the EMI bank will be enabled or
+     55          *                    disabled. It can be:
+     56          *                     ENABLE: enable the specified EMI bank.
+     57          *                     DISABLE: disable the specified EMI bank.
+     58          * Output         : None.
+     59          * Return         : None.
+     60          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     61          void EMI_Enable (u8 Bank_n, FunctionalState NewState)
+     62          {
+     63            if (NewState == ENABLE)
+   \                     EMI_Enable:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'000C        BNE      ??EMI_Enable_0
+     64            {
+     65              EMI_BankConfig(Bank_n) |= EMI_ENABLE;
+   \        0xC   0xE1B0'1000        MOVS     R1,R0
+   \       0x10   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x14   0xE3A0'2004        MOV      R2,#+4
+   \       0x18   0xE011'0192        MULS     R1,R2,R1
+   \       0x1C   0xE291'146C        ADDS     R1,R1,#+1811939328
+   \       0x20   0xE1D1'10B0        LDRH     R1,[R1, #+0]
+   \       0x24   0xE391'1C80        ORRS     R1,R1,#0x8000
+   \       0x28   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x2C   0xE3A0'2004        MOV      R2,#+4
+   \       0x30   0xE010'0092        MULS     R0,R2,R0
+   \       0x34   0xE290'046C        ADDS     R0,R0,#+1811939328
+   \       0x38   0xE1C0'10B0        STRH     R1,[R0, #+0]
+   \       0x3C   0xEA00'000C        B        ??EMI_Enable_1
+     66            }
+     67            else
+     68            {
+     69              EMI_BankConfig(Bank_n) &= ~EMI_ENABLE;
+   \                     ??EMI_Enable_0:
+   \       0x40   0xE1B0'1000        MOVS     R1,R0
+   \       0x44   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x48   0xE3A0'2004        MOV      R2,#+4
+   \       0x4C   0xE011'0192        MULS     R1,R2,R1
+   \       0x50   0xE291'146C        ADDS     R1,R1,#+1811939328
+   \       0x54   0xE1D1'10B0        LDRH     R1,[R1, #+0]
+   \       0x58   0xE1B0'1881        LSLS     R1,R1,#+17
+   \       0x5C   0xE1B0'18A1        LSRS     R1,R1,#+17
+   \       0x60   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x64   0xE3A0'2004        MOV      R2,#+4
+   \       0x68   0xE010'0092        MULS     R0,R2,R0
+   \       0x6C   0xE290'046C        ADDS     R0,R0,#+1811939328
+   \       0x70   0xE1C0'10B0        STRH     R1,[R0, #+0]
+     70            }
+     71          }
+   \                     ??EMI_Enable_1:
+   \       0x74   0xE12F'FF1E        BX       LR               ;; return
+     72          
+     73          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   EMI_Config
+       0   EMI_Enable
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      40  EMI_Config
+     120  EMI_Enable
+
+ 
+ 160 bytes in section .text
+ 
+ 160 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CCP">
+</Property><Property Name="솔루션 파일" Value="C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\자료\CCP_1.0.0.0\CCP.sln">
+</Property><Property Name="사용자 옵션 파일" Value="C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\자료\CCP_1.0.0.0\CCP.suo">
+</Property><Property Name="Date" Value="2012년 6월 21일 목요일">
+</Property><Property Name="Time" Value="오전 9:38">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="CCP.sln" Description="파일을 C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\자료\CCP_1.0.0.0\CCP.sln.old(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="" Source="CCP.suo" Description="파일을 C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\자료\CCP_1.0.0.0\CCP.suo.old(으)로 백업했습니다.">
+</Event><Event ErrorLevel="0" Project="CCP" Source="CCP.vcproj" Description="Converting project file 'C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\자료\CCP_1.0.0.0\CCP.vcproj'.">
+</Event><Event ErrorLevel="1" Project="CCP" Source="CCP.vcproj" Description="Failed to upgrade platform 'Syso_6410 (ARMV4I)'. Please make sure you have it installed under '%vctargetspath%\platforms\Syso_6410 (ARMV4I)'">
+</Event><Event ErrorLevel="1" Project="CCP" Source="CCP.vcproj" Description="Failed to upgrade platform 'MVC100 (ARMV4I)'. Please make sure you have it installed under '%vctargetspath%\platforms\MVC100 (ARMV4I)'">
+</Event><Event ErrorLevel="1" Project="CCP" Source="CCP.vcproj" Description="Failed to upgrade 'Debug|Syso_6410 (ARMV4I)'. Please make sure you have the corresponding platform installed under '%vctargetspath%\platforms\Syso_6410 (ARMV4I)'">
+</Event><Event ErrorLevel="1" Project="C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\자료\CCP_1.0.0.0\CCP.vcproj" Source="" Description="Cannot load the project due to a corrupt project file.">
+</Event><Event ErrorLevel="2" Project="CCP" Source="CCP.vcproj" Description="The project configuration dimension name/value &quot;(Platform, Win32)&quot; was not found in the project manifest.">
+</Event><Event ErrorLevel="2" Project="C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\자료\CCP_1.0.0.0\CCP.vcproj" Source="" Description="The following error has occurred during XML parsing:&#xA;&#xA;File: C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\자료\CCP_1.0.0.0\CCP.vcproj&#xA;Line: 32&#xA;Column: 5&#xA;Error Message:&#xA;시스템 오류: -2147154677.&#xA;&#xA;The file 'C:\Users\JDS_SSD\Desktop\JDS_PRO\DENVER\자료\CCP_1.0.0.0\CCP.vcproj' has failed to load.">
+</Event><Event ErrorLevel="2" Project="CCP" Source="CCP.vcproj" Description="프로젝트를 업그레이드하지 못했습니다.">
+</Event><Event ErrorLevel="3" Project="CCP" Source="CCP.vcproj" Description="변환되지 않음">
+</Event><Event ErrorLevel="0" Project="" Source="CCP.sln" Description="솔루션을 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="" Source="CCP.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,139 @@
+; Echelon Dependency File - do not edit.
+; E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.nxdep
+; Created Friday, January 19, 2007, 09:39:18
+
+[Global]
+Provider=Echelon NEURON CHIP (r) Exporter
+Version=1
+Inputs=8
+Outputs=5
+Switches=19
+Parameters=0
+
+[Input_1]
+Basename=test1.NLDEP
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.NLDEP
+Type=0
+Size=2411
+TimestampHigh=0x1c73b62
+TimestampLow=0x40b19684
+
+[Input_2]
+Basename=neuron.xml
+Fullname=C:\LonWorks\types\neuron.xml
+Type=0
+Size=24932
+TimestampHigh=0x1c533c1
+TimestampLow=0xa29f9800
+
+[Input_3]
+Basename=stdxcvr.xml
+Fullname=C:\LonWorks\types\stdxcvr.xml
+Type=0
+Size=39657
+TimestampHigh=0x1c533c1
+TimestampLow=0xa29f9800
+
+[Input_4]
+Basename=test1.NXE
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.NXE
+Type=0
+Size=954
+TimestampHigh=0x1c73b62
+TimestampLow=0x40b19684
+
+[Input_5]
+Basename=test1.BF2
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.BF2
+Type=0
+Size=195
+TimestampHigh=0x1c73b62
+TimestampLow=0x40aa6f76
+
+[Input_6]
+Basename=test1.BIF
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM\test1.BIF
+Type=0
+Size=249
+TimestampHigh=0x1c73b62
+TimestampLow=0x40aa6f76
+
+[Input_7]
+Basename=SYS3150A.sym
+Fullname=C:\LonWorks\Images\Ver14\SYS3150A.sym
+Type=0
+Size=9722
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Input_8]
+Basename=SYS3150A.NX
+Fullname=C:\LonWorks\Images\Ver14\SYS3150A.NX
+Type=0
+Size=39437
+TimestampHigh=0x1c5ae57
+TimestampLow=0xa5faec00
+
+[Output_1]
+Basename=test1.NXE
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\test1.NXE
+Type=0
+Size=954
+TimestampHigh=0x1c73b62
+TimestampLow=0x40c70bae
+
+[Output_2]
+Basename=test1.XIF
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\test1.XIF
+Type=0
+Size=438
+TimestampHigh=0x1c73b62
+TimestampLow=0x40c70bae
+
+[Output_3]
+Basename=test1.XFB
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\test1.XFB
+Type=0
+Size=179
+TimestampHigh=0x1c73b62
+TimestampLow=0x40c70bae
+
+[Output_4]
+Basename=test1.APB
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\test1.APB
+Type=0
+Size=457
+TimestampHigh=0x1c73b62
+TimestampLow=0x40c96e08
+
+[Output_5]
+Basename=test1.NEI
+Fullname=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\test1.NEI
+Type=0
+Size=137997
+TimestampHigh=0x1c73b62
+TimestampLow=0x40cbd062
+
+[Switches]
+29=1024
+30=32547
+31=1
+24=1
+23=0
+22=5
+21=9
+1=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output\IM
+2=E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1 Output
+3=test1
+33=1
+34=1
+39=1
+37=1
+35=1
+36=1
+38=0
+55=1
+17=9F:FF:FF:28:00:03:11:00
+
+[Parameters]
+

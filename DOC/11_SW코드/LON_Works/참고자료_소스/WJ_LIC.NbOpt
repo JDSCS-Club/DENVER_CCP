@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NBProjectOptions LoadAfterBuild="TRUE" LoadOnlyNBDevices="TRUE" StopOnWarning="FALSE" StopOnError="TRUE">
+	<Contents MajorVersion="0" MinorVersion="0" CreationDate="1267505153" Format="1" Content="1">
+		<FileDescription>NodeBuilder Project Options File</FileDescription>
+		<UpgradeStatus>0</UpgradeStatus>
+	</Contents>
+	<BuildType>0x3</BuildType>
+	<NBNetworks>
+		<NBNetwork Name="woojin">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="5">
+					<AppDeviceName>Subsystem 1.LIC</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+				<DeviceItem AppDeviceHandle="11">
+					<AppDeviceName>Subsystem 1.Device 1</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+							<Breakpoint Name="0" SourceFileName="C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC" LineNumber="-1224" Enabled="TRUE">
+							</Breakpoint>
+							<Breakpoint Name="1" SourceFileName="C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC" LineNumber="-1451" Enabled="TRUE">
+							</Breakpoint>
+							<Breakpoint Name="2" SourceFileName="C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC" LineNumber="-1451" Enabled="TRUE">
+							</Breakpoint>
+						</Breakpoints>
+						<WatchItems>
+							<WatchItem Name="InBuffer" Type="Unassigned">
+							</WatchItem>
+							<WatchItem Name="InChars" Type="Unassigned">
+							</WatchItem>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="WJ_FTP">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="24">
+					<AppDeviceName>Subsystem 1.LIC</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+							<Breakpoint Name="0" SourceFileName="C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC" LineNumber="1583" Enabled="TRUE">
+							</Breakpoint>
+							<Breakpoint Name="1" SourceFileName="C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC" LineNumber="1584" Enabled="TRUE">
+							</Breakpoint>
+							<Breakpoint Name="2" SourceFileName="C:\LM\SOURCE\WJ_LIC\LIC\LIC.NC" LineNumber="1586" Enabled="TRUE">
+							</Breakpoint>
+						</Breakpoints>
+						<WatchItems>
+							<WatchItem Name="FtpLength" Type="Unassigned">
+							</WatchItem>
+							<WatchItem Name="OutBuffer" Type="Unassigned">
+							</WatchItem>
+							<WatchItem Name="nvo03SCIVersion" Type="Unassigned">
+							</WatchItem>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+				<DeviceItem AppDeviceHandle="35">
+					<AppDeviceName>Subsystem 1.LIC</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+				<DeviceItem AppDeviceHandle="43">
+					<AppDeviceName>Subsystem 1.LIC</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="LIC">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="24">
+					<AppDeviceName>Subsystem 1.LIC</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+		<NBNetwork Name="Network 1">
+			<DeviceItems>
+				<DeviceItem AppDeviceHandle="98">
+					<AppDeviceName>Subsystem 1.Device 1</AppDeviceName>
+					<AppLoaderArgs></AppLoaderArgs>
+					<DeviceDebugSettings FlashWarningGiven="FALSE">
+						<Breakpoints>
+						</Breakpoints>
+						<WatchItems>
+						</WatchItems>
+					</DeviceDebugSettings>
+				</DeviceItem>
+			</DeviceItems>
+			<DeviceTemplateFlags>
+			</DeviceTemplateFlags>
+		</NBNetwork>
+	</NBNetworks>
+</NBProjectOptions>

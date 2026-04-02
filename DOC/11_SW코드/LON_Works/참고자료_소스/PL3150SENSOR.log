@@ -1,0 +1,90 @@
+Build log E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3150SENSOR\PL3150SENSOR Output\PL3150SENSOR.log
+Created Monday, January 22, 2007, at 11:23:15
+
+Compiling...
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3150SENSOR\PL3150SENSOR.NC  179(  1):
+        The symbol 'i' was declared but never used [NCC#310]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3150SENSOR\PL3150SENSOR.NC  179(  1):
+        The symbol 'tempp' was declared but never used [NCC#310]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3150SENSOR\PL3150SENSOR.NC  193(  5):
+        Return value of function was ignored [NCC#174]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3150SENSOR\PL3150SENSOR.NC  204(  5):
+        Return value of function was ignored [NCC#174]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3150SENSOR\PL3150SENSOR.NC  224(  1):
+        The symbol 'obuffer' was declared but never used [NCC#310]
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\PL3150SENSOR\PL3150SENSOR.NC  224(  1):
+        The symbol 'GetButtons' was declared but never used [NCC#310]
+Assembling...
+Linking...
+                       LIST OF MEMORY AREAS
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+SYSTEM IMAGE FLASH           0000 3FFF 4000        - RESERVED - 
+OffChip FLASH  (EECODE)      4000 42FF 0300       42D4 42FF 002C
+OffChip FLASH  (Pool)         - AVAILABLE -       4300 DFFF 9D00
+OnChip  RAM    (System)      E800 EA6D 026E          - NONE -   
+OnChip  RAMFAR               EA6E EAAD 0040       EA6E EAAD 0040
+OnChip  RAM    (System)      EAAE ECB3 0206          - NONE -   
+OnChip  RAMFAR               ECB4 EDA5 00F2          - NONE -   
+OnChip  RAM    (Pool)         - AVAILABLE -       EDA6 EFE3 023E
+OnChip  RAMNEAR              EFE4 EFFF 001C          - NONE -   
+OnChip  EEPROM (Prolog)      F000 F028 0029          - NONE -   
+OnChip  EEPROM (Config)      F029 F0C7 009F          - NONE -   
+OnChip  EECODE               F0C8 F0EE 0027          - NONE -   
+OnChip  EEPROM (MemCtl)      F0EF F101 0013          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F102 F1EF 00EE
+OnChip  EEPROM (Epilog)      F1F0 F1FF 0010          - NONE -   
+End of Memory Area List
+Link Memory Usage Statistics:
+EEPROM Usage:  (not necessarily in order of physical layout)
+               (includes application use of external Flash memory)
+        Reserved for System Firmware     16128 bytes
+        System Data and Parameters         116 bytes
+        Domain and Address Tables          105 bytes
+        Network Variable Config Tables      17 bytes
+        Application EEPROM Variables         0 bytes
+        Library EEPROM Variables             0 bytes
+        Application Code and Const Data    469 bytes
+        Library Code and Const Data        278 bytes
+        Self-Identification Data            13 bytes
+                                         -----
+        Total EEPROM Requirement         17126 bytes
+        Remaining EEPROM                 40474 bytes
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         634 bytes
+        Transaction Control Blocks          82 bytes
+        Appl Timers and I/O Change Events    0 bytes
+        Network and Application Buffers    424 bytes
+        Flash Memory System RAM Buffer     128 bytes
+        ISR RAM Buffer                     105 bytes
+        Application RAM Variables           28 bytes
+        Library RAM Variables                9 bytes
+                                         -----
+        Total RAM Requirement             1410 bytes
+        Remaining RAM                      638 bytes
+Successfully linked for PL 3150.
+        Memory Map (14 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        System Upper EEPROM Area (16 bytes) varies by firmware version.
+        Priority outgoing message transaction control block uses 28 bytes of RAM.
+                Of this amount, 10 bytes varies by firmware version.
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 190 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        Flash support requires an additional 128 bytes of RAM.
+        Due to code in flash or EEPROM memory,
+                SCI or SPI I/O model ISR requires a buffer of 105 bytes of RAM.
+        Default buffer counts vary by Neuron model
+                (resulting in an additional 124 bytes of RAM).
+        FLASH Signature  = A7:00A8 @ 4000 .. 4002
+End of Link Statistics
+Exporting...
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3150SENSOR\PL3150SENSOR Output\PL3150SENSOR.NXE'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3150SENSOR\PL3150SENSOR Output\PL3150SENSOR.XIF'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3150SENSOR\PL3150SENSOR Output\PL3150SENSOR.XFB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3150SENSOR\PL3150SENSOR Output\PL3150SENSOR.APB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3150SENSOR\PL3150SENSOR Output\PL3150SENSOR.NEI'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\PL3150SENSOR\PL3150SENSOR Output\PL3150SENSOR.NDL'... Done.
+

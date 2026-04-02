@@ -1,0 +1,32 @@
+; Echelon Dependency File - do not edit.
+; C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.nadep
+; Created Wednesday, December 06, 2006, 16:21:31
+
+[Global]
+Provider=NEURON Assembler
+Version=1
+Inputs=1
+Outputs=1
+Switches=1
+Parameters=0
+
+[Input_1]
+Basename=SERVER_SI.ns
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.ns
+Type=0
+Size=13447
+TimestampHigh=0x1c71907
+TimestampLow=0x271efd1a
+
+[Output_1]
+Basename=SERVER_SI.no
+Fullname=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI.no
+Type=0
+Size=5452
+TimestampHigh=0x1c71907
+TimestampLow=0x2723c1ce
+
+[Switches]
+8=C:\Lm\Source\SI_TEST1130\SERVER_SI\SERVER_SI Output\IM\SERVER_SI
+
+[Parameters]

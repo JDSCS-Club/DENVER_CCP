@@ -1,0 +1,267 @@
+; Echelon Dependency File - do not edit.
+; F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver.ncdep
+; Created Tuesday, January 26, 2016, 13:11:11
+
+[Global]
+Provider=NEURON C Compiler
+Version=1
+Inputs=30
+Outputs=0
+Switches=11
+Parameters=1
+
+[Input_1]
+Basename=BPLATE.NS
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\BPLATE.NS
+Type=1
+Size=6796
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_2]
+Basename=DENVER.NC
+Fullname=F:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\DENVER.NC
+Type=0
+Size=55611
+TimestampHigh=0x1d157ef
+TimestampLow=0x88b57a50
+
+[Input_3]
+Basename=ECHELON.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\ECHELON.H
+Type=1
+Size=21408
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_4]
+Basename=MODNVLEN.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\MODNVLEN.H
+Type=1
+Size=6600
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_5]
+Basename=STRING.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\STRING.H
+Type=1
+Size=1449
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_6]
+Basename=ADDRDEFS.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\ADDRDEFS.H
+Type=1
+Size=3118
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_7]
+Basename=ACCESS.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\ACCESS.H
+Type=1
+Size=8362
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_8]
+Basename=MSG_ADDR.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\MSG_ADDR.H
+Type=1
+Size=3236
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_9]
+Basename=S32.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\S32.H
+Type=1
+Size=3302
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_10]
+Basename=NM_STE.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_STE.H
+Type=1
+Size=1047
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_11]
+Basename=CONTROL.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\CONTROL.H
+Type=1
+Size=2739
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_12]
+Basename=IO_TYPES.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\IO_TYPES.H
+Type=1
+Size=2250
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_13]
+Basename=NETMGMT.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NETMGMT.H
+Type=1
+Size=13216
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_14]
+Basename=NM_CKM.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_CKM.H
+Type=1
+Size=479
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_15]
+Basename=NM_ERR.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_ERR.H
+Type=1
+Size=1638
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_16]
+Basename=NM_FM.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_FM.H
+Type=1
+Size=591
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_17]
+Basename=NM_INST.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_INST.H
+Type=1
+Size=462
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_18]
+Basename=NM_MOD.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_MOD.H
+Type=1
+Size=535
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_19]
+Basename=NM_NMO.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_NMO.H
+Type=1
+Size=534
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_20]
+Basename=NM_RQR.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_RQR.H
+Type=1
+Size=465
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_21]
+Basename=NM_SEL.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_SEL.H
+Type=1
+Size=480
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_22]
+Basename=NM_SUB.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_SUB.H
+Type=1
+Size=474
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_23]
+Basename=NM_WCH.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_WCH.H
+Type=1
+Size=452
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_24]
+Basename=NM_MODEL.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\NM_MODEL.H
+Type=1
+Size=927
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_25]
+Basename=STATUS.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\STATUS.H
+Type=1
+Size=2414
+TimestampHigh=0x1cac155
+TimestampLow=0x920a2600
+
+[Input_26]
+Basename=SNVT_FR.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\SNVT_FR.H
+Type=1
+Size=728
+TimestampHigh=0x1c6b1f8
+TimestampLow=0xaf700e00
+
+[Input_27]
+Basename=SNVT_FS.H
+Fullname=C:\PROGRAM FILES\LONWORKS\NEURONC\INCLUDE\SNVT_FS.H
+Type=1
+Size=821
+TimestampHigh=0x1c6b1f8
+TimestampLow=0xaf700e00
+
+[Input_28]
+Basename=COMM.H
+Fullname=F:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\COMM.H
+Type=2
+Size=2521
+TimestampHigh=0x1d11755
+TimestampLow=0x7fd01f60
+
+[Input_29]
+Basename=FILE.H
+Fullname=F:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\FILE.H
+Type=2
+Size=3504
+TimestampHigh=0x1cd41f5
+TimestampLow=0x78050400
+
+[Input_30]
+Basename=FSYS.H
+Fullname=F:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\2012_06_04(케나다 출장 완료)\LON-PROGRAM\VER1.1.02\DENVER\FSYS.H
+Type=2
+Size=1136
+TimestampHigh=0x1cd20f6
+TimestampLow=0x92c46300
+
+[Switches]
+2=1
+0=0
+10=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver
+10=C:\Program Files\LonWorks\NodeBuilder\CodeWizard\Include
+10=C:\Program Files\LonWorks\NeuronC\Include
+11=_NEURONC
+14=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Release\IM\Denver
+17=0
+24=1
+15=4
+26=434f4d4d00000000
+
+[Parameters]
+MainSourceFile=F:\Dropbox\회사\JDS_PRO\해외 프로젝트\DENVER\Program\2012_06_04(케나다 출장 완료)\Lon-Program\Ver1.1.02\Denver\Denver.nc

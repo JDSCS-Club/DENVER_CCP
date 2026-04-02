@@ -1,0 +1,4 @@
+---- PCRA_STATION Matches (3 in 2 files) ----
+User.c:void USer_UnitState(PCRA_STATION pCarState)
+User.h:}CRA_STATION,*PCRA_STATION; //1랑에 대한 각 장치 상태 정보.
+User.h:void USer_UnitState(PCRA_STATION pCarState);

@@ -1,0 +1,17 @@
+; Echelon Dependency File - do not edit.
+; E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3150TOAVR\3150TOAVR Output\IM\3150TOAVR.nkdep
+; Created Monday, January 22, 2007, 11:25:13
+
+[Global]
+Provider=Echelon NodeBuilder Make Facility
+Version=1
+Inputs=0
+Outputs=0
+Switches=0
+Parameters=2
+
+[Switches]
+
+[Parameters]
+BuildtimeH=29834775
+BuildtimeL=-73485696

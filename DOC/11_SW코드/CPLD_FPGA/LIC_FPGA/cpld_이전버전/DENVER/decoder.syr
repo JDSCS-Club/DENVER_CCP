@@ -1,0 +1,253 @@
+Release 11.5 - xst L.70 (nt)
+Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Reading design: decoder.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "decoder.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "decoder"
+Output Format                      : NGC
+Target Device                      : XC9500XL CPLDs
+
+---- Source Options
+Top Module Name                    : decoder
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : decoder.lso
+Keep Hierarchy                     : YES
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/DENVER/decoder.vhd" in Library work.
+Architecture behavioral of Entity decoder is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <decoder> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <decoder> in library <work> (Architecture <behavioral>).
+INFO:Xst:1739 - HDL ADVISOR - "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/DENVER/decoder.vhd" line 51: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:1739 - HDL ADVISOR - "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/DENVER/decoder.vhd" line 66: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:1739 - HDL ADVISOR - "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/DENVER/decoder.vhd" line 67: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:1739 - HDL ADVISOR - "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/DENVER/decoder.vhd" line 68: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:1739 - HDL ADVISOR - "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/DENVER/decoder.vhd" line 69: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+WARNING:Xst:819 - "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/DENVER/decoder.vhd" line 186: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <ROM_SERIAL_SW>
+WARNING:Xst:819 - "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/DENVER/decoder.vhd" line 213: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <LONWK_CS>
+Entity <decoder> analyzed. Unit <decoder> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <decoder>.
+    Related source file is "C:/Users/JDS_SSD/Desktop/JDS_PRO/DENVER/Program/LIC/CPLD/DENVER/decoder.vhd".
+WARNING:Xst:2565 - Inout <IO<4>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<5>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<6>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<7>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<8>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<9>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<10>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<11>> is never assigned.
+WARNING:Xst:1306 - Output <CSO_LON> is never assigned.
+WARNING:Xst:2565 - Inout <IO<0>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<1>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<2>> is never assigned.
+WARNING:Xst:2565 - Inout <IO<3>> is never assigned.
+WARNING:Xst:646 - Signal <LONWK_CS> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 1-bit latch for signal <WDI_SEL_FLAG>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <NVSRAM_CS_BUF>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <BOOT_2_INT_SEL>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <FROM_CS_BUF>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <BOOT_2_INT_CS>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <LED_CS>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <WDI_CS>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <XL16L784_CS_BUF>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <W5100_CS_BUF>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <INT_READ_CS>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 1-bit tristate buffer for signal <LRST>.
+    Found 8-bit tristate buffer for signal <$mux0000>.
+    Found 1-bit register for signal <ERR_LED_BUF>.
+    Found 1-bit register for signal <RUN_LED_BUF>.
+    Found 2-bit register for signal <WR_BUFS>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   9 Tristate(s).
+Unit <decoder> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 3
+ 1-bit register                                        : 2
+ 2-bit register                                        : 1
+# Latches                                              : 10
+ 1-bit latch                                           : 10
+# Tristates                                            : 2
+ 1-bit tristate buffer                                 : 1
+ 8-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 2
+ Flip-Flops                                            : 2
+# Latches                                              : 10
+ 1-bit latch                                           : 10
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <decoder> ...
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : decoder.ngr
+Top Level Output File Name         : decoder
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : YES
+Target Technology                  : XC9500XL CPLDs
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 52
+
+Cell Usage :
+# BELS                             : 192
+#      AND2                        : 28
+#      AND3                        : 10
+#      GND                         : 1
+#      INV                         : 92
+#      OR2                         : 47
+#      OR3                         : 13
+#      VCC                         : 1
+# FlipFlops/Latches                : 14
+#      FDCE                        : 2
+#      FDP                         : 2
+#      LD                          : 7
+#      LDC                         : 2
+#      LDP                         : 1
+# IO Buffers                       : 39
+#      IBUF                        : 14
+#      IOBUFE                      : 2
+#      OBUF                        : 16
+#      OBUFE                       : 7
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.28 secs
+ 
+--> 
+
+Total memory usage is 183320 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   26 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
+

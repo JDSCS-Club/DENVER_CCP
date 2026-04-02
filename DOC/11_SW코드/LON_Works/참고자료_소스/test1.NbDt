@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NBDeviceTemplate ManageProgramID="FALSE" ReRegisterPlugIn="FALSE" UseProjectIncludePath="FALSE">
+	<Contents MajorVersion="0" MinorVersion="0" CreationDate="1169167013" Format="2" Content="1">
+		<FileDescription>Echelon Mini Temporary Device Template</FileDescription>
+	</Contents>
+	<SourceFileName>E:\Echelon_Lonworks\Neuron_c_example\TEST\My Test Device\test1.nc</SourceFileName>
+	<Description></Description>
+	<ProgramID>9F:FF:FF:28:00:03:11:00</ProgramID>
+	<OutputFolder>.\</OutputFolder>
+	<LNSDeviceTemplateName></LNSDeviceTemplateName>
+	<IncludeSearchPath></IncludeSearchPath>
+	<MinModelNumber>0</MinModelNumber>
+	<MaxModelNumber>0xFF</MaxModelNumber>
+	<TargetDevices>
+		<TargetDevice Name="test1 Output" HostBased="FALSE">
+			<PreviousLNSTemplateName></PreviousLNSTemplateName>
+			<HardwareTemplate>C:\LonWorks\NodeBuilder\Templates\Hardware\MiniKit\PL 3150 Evaluation Board (CENELEC off).NBHWT</HardwareTemplate>
+			<Compiler DisableOptimizer="FALSE" RelaxedCasting="FALSE">
+				<Defines>_MINIKIT;_NEURONC</Defines>
+				<DebugKernelOptions UseDebugKernel="FALSE" NodeRecoveryOnly="FALSE" NoNodeRecovery="FALSE" NoEventNotify="FALSE" NoResetEvent="FALSE" NoFunctionExecute="FALSE" ExpandStatements="TRUE">
+				</DebugKernelOptions>
+			</Compiler>
+			<Assembler>
+				<ListingOptions GenerateListing="FALSE">
+				</ListingOptions>
+			</Assembler>
+			<Linker Compatible="FALSE" OrderPreserving="FALSE" GenerateSymbolFile="FALSE">
+				<Libraries></Libraries>
+				<ListingOptions UseVerboseMessages="TRUE" GenerateLinkSummary="FALSE" GenerateMapFile="TRUE">
+				</ListingOptions>
+			</Linker>
+			<Exporter ChecksumAllCode="TRUE" AutomaticBootID="TRUE">
+				<BootID>0x7F24</BootID>
+				<RebootConfiguration ChecksumError="FALSE" FatalApplicationError="FALSE" Always="FALSE">
+				</RebootConfiguration>
+				<RebootApplication ApplessIsFatal="FALSE" FatalApplicationError="FALSE" Always="FALSE" RebootEEVars="FALSE">
+				</RebootApplication>
+				<RebootCommParameters ChecksumError="FALSE" TypeRateMismatch="FALSE" Always="FALSE">
+				</RebootCommParameters>
+			</Exporter>
+			<TargetConfiguration ExportConfigured="FALSE" CloneDomain="FALSE" NoDomain="FALSE" DomainID="000000" AuthenticationKey="000000000000" Location="" UseAuthentication="FALSE">
+				<SubnetID>1</SubnetID>
+				<NodeID>1</NodeID>
+				<NonGrpRcvTimer>0x6</NonGrpRcvTimer>
+			</TargetConfiguration>
+		</TargetDevice>
+	</TargetDevices>
+	<LibraryItems>
+	</LibraryItems>
+	<SourceFileList>
+	</SourceFileList>
+	<Interface>
+		<Dependencies>
+			<BIF>0x0</BIF>
+			<BF2>0x0</BF2>
+			<XF2>0x0</XF2>
+			<XF3>0x0</XF3>
+			<DRF>0x76C6831D</DRF>
+		</Dependencies>
+	</Interface>
+	<DeviceTemplatePackage NamedFblocks="TRUE" UseFTPCPMode="FALSE" UseExternalNames="TRUE">
+		<Contents MajorVersion="0" MinorVersion="0" CreationDate="1169167013" Format="3" Content="1">
+			<FileDescription>NodeBuilder Device Packaging File</FileDescription>
+		</Contents>
+		<Name></Name>
+		<Description></Description>
+		<ProgramID></ProgramID>
+		<FBlocks>
+		</FBlocks>
+		<DeviceNVs>
+		</DeviceNVs>
+		<DeviceCPs>
+		</DeviceCPs>
+	</DeviceTemplatePackage>
+</NBDeviceTemplate>
+

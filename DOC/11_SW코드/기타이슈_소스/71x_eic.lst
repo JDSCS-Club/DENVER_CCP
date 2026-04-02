@@ -1,0 +1,555 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:11
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_eic.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW43C3.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\str71x\71x_eic.c" -lCN
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_eic.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_eic.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\71x_eic.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : 71x_eic.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V4.0
+      5          * Date               : 10/09/2007
+      6          * Description        : This file provides all the EIC firmware functions.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "71x_eic.h"
+     18          
+     19          /* Private typedef -----------------------------------------------------------*/
+     20          /* Private define ------------------------------------------------------------*/
+     21          /* Private macro -------------------------------------------------------------*/
+     22          /* Private variables ---------------------------------------------------------*/
+     23          /* Private function prototypes -----------------------------------------------*/
+     24          /* Private functions ---------------------------------------------------------*/
+     25          
+     26          /*******************************************************************************
+     27          * Function Name  : EIC_Init
+     28          * Description    : Initialise the EIC using the load PC instruction
+     29          *                   FIQ and IRQ are disabled, 
+     30          *                   All channel interrupts are disabled, 
+     31          *                   All pending bits are cleared.
+     32          *                   The current priority level set to zero, 
+     33          *                   IVR register initialized with the upper half of the load PC
+     34          *                   instruction op-code, 
+     35          *                   All SIR registers are initialized with the offset to the
+     36          *                   corresponding IRQ routine vector.
+     37          * Input          : None.
+     38          * Output         : None.
+     39          * Return         : None.
+     40          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     41          void EIC_Init (void)
+     42          {
+     43            extern u32 T0TIMI_Addr;
+     44            u8 bCounter;
+     45            u32 dOffset = ((u32) & T0TIMI_Addr);
+   \                     EIC_Init:
+   \        0x0   0x....'....        LDR      R1,??DataTable0
+     46          
+     47            /* Disable FIQ and IRQ interrupts */
+     48            EIC->ICR = 0x00000000;
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+   \        0x8   0xE3E0'20FF        MVN      R2,#+255
+   \        0xC   0xE3C2'2E70        BIC      R2,R2,#0x700
+   \       0x10   0xE582'0000        STR      R0,[R2, #+0]
+     49          
+     50            /* Disable all channels interrupts */
+     51            EIC->IER = 0x00000000;
+   \       0x14   0xE3E0'20DF        MVN      R2,#+223
+   \       0x18   0xE3C2'2E70        BIC      R2,R2,#0x700
+   \       0x1C   0xE582'0000        STR      R0,[R2, #+0]
+     52          
+     53            /* Clear all pending bits */
+     54            EIC->IPR = 0xFFFFFFFF;
+   \       0x20   0xE3E0'2000        MVN      R2,#+0
+   \       0x24   0xE3E0'30BF        MVN      R3,#+191
+   \       0x28   0xE3C3'3E70        BIC      R3,R3,#0x700
+   \       0x2C   0xE583'2000        STR      R2,[R3, #+0]
+     55          
+     56            /* Disable all FIQ channels interrupts and clear FIQ */
+     57            EIC->FIR = 0x0000000C;
+   \       0x30   0xE3A0'200C        MOV      R2,#+12
+   \       0x34   0xE3E0'30E3        MVN      R3,#+227
+   \       0x38   0xE3C3'3E70        BIC      R3,R3,#0x700
+   \       0x3C   0xE583'2000        STR      R2,[R3, #+0]
+     58          
+     59            /* channels pending bits */
+     60            /* Set the current priority level to zero */
+     61            EIC->CIPR = 0x00000000;
+   \       0x40   0xE3E0'20F7        MVN      R2,#+247
+   \       0x44   0xE3C2'2E70        BIC      R2,R2,#0x700
+   \       0x48   0xE582'0000        STR      R0,[R2, #+0]
+     62          
+     63            /* IVR = high half of load PC instruction */
+     64            EIC->IVR  = 0xE59F0000;
+   \       0x4C   0xE3A0'24E5        MOV      R2,#-452984832
+   \       0x50   0xE382'289F        ORR      R2,R2,#0x9F0000
+   \       0x54   0xE3E0'30E7        MVN      R3,#+231
+   \       0x58   0xE3C3'3E70        BIC      R3,R3,#0x700
+   \       0x5C   0xE583'2000        STR      R2,[R3, #+0]
+     65          
+     66            dOffset = (dOffset + 0x00007E0) << 16;
+   \       0x60   0xE291'1E7E        ADDS     R1,R1,#+2016
+   \       0x64   0xE1B0'1801        LSLS     R1,R1,#+16
+     67          
+     68            /* Initialize SIRn registers */
+     69            for (bCounter = 0; bCounter < 32; bCounter++)
+   \       0x68   0xEA00'0008        B        ??EIC_Init_0
+     70            {
+     71              EIC->SIR[bCounter] = dOffset | 0xF0000000;
+   \                     ??EIC_Init_1:
+   \       0x6C   0xE391'24F0        ORRS     R2,R1,#0xF0000000
+   \       0x70   0xE3E0'309F        MVN      R3,#+159
+   \       0x74   0xE3C3'3E70        BIC      R3,R3,#0x700
+   \       0x78   0xE1B0'C000        MOVS     R12,R0
+   \       0x7C   0xE21C'C0FF        ANDS     R12,R12,#0xFF    ;; Zero extend
+   \       0x80   0xE1B0'C10C        LSLS     R12,R12,#+2
+   \       0x84   0xE783'200C        STR      R2,[R3, +R12]
+     72              dOffset += 0x00000004 << 16;
+   \       0x88   0xE291'1A40        ADDS     R1,R1,#+262144
+     73            }
+   \       0x8C   0xE290'0001        ADDS     R0,R0,#+1
+   \                     ??EIC_Init_0:
+   \       0x90   0xE1B0'2000        MOVS     R2,R0
+   \       0x94   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x98   0xE352'0020        CMP      R2,#+32
+   \       0x9C   0xBAFF'FFF2        BLT      ??EIC_Init_1
+     74          }
+   \       0xA0   0xE12F'FF1E        BX       LR               ;; return
+     75          
+     76          /*******************************************************************************
+     77          * Function Name  : EIC_IRQConfig
+     78          * Description    : Enables or Disables IRQ interrupts.
+     79          * Input          : - NewState: specifies whether the IRQ is enabled or disabled
+     80          *                    it can be:
+     81          *                     ENABLE : enables the IRQ interrupt.
+     82          *                     DISABLE : disables the IRQ interrupt.
+     83          * Output         : None.
+     84          * Return         : None.
+     85          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     86          void EIC_IRQConfig (FunctionalState NewState)
+     87          {
+     88            if (NewState == ENABLE)
+   \                     EIC_IRQConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0001        CMP      R0,#+1
+   \        0x8   0x1A00'0005        BNE      ??EIC_IRQConfig_0
+     89            {
+     90              EIC->ICR |= 0x0001;
+   \        0xC   0xE3E0'00FF        MVN      R0,#+255
+   \       0x10   0xE3C0'0E70        BIC      R0,R0,#0x700
+   \       0x14   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x18   0xE391'1001        ORRS     R1,R1,#0x1
+   \       0x1C   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x20   0xEA00'0004        B        ??EIC_IRQConfig_1
+     91            }
+     92            else
+     93            {
+     94              EIC->ICR &= ~0x0001;
+   \                     ??EIC_IRQConfig_0:
+   \       0x24   0xE3E0'00FF        MVN      R0,#+255
+   \       0x28   0xE3C0'0E70        BIC      R0,R0,#0x700
+   \       0x2C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x30   0xE3D1'1001        BICS     R1,R1,#0x1
+   \       0x34   0xE580'1000        STR      R1,[R0, #+0]
+     95            }
+     96          }
+   \                     ??EIC_IRQConfig_1:
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+     97          
+     98          /*******************************************************************************
+     99          * Function Name  : EIC_FIQConfig
+    100          * Description    : Enable or Disable FIQ interrupts.
+    101          * Input          : - NewState: the FIQ interrupt new status to be set. 
+    102          *                    It can be:
+    103          *                     ENABLE: enables the FIQ interrupt.
+    104          *                     DISABLE: disables the FIQ interrupt.
+    105          * Output         : None.
+    106          * Return         : None.
+    107          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    108          void EIC_FIQConfig (FunctionalState NewState)
+    109          {
+    110            if (NewState == ENABLE)
+   \                     EIC_FIQConfig:
+   \        0x0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0x4   0xE350'0001        CMP      R0,#+1
+   \        0x8   0x1A00'0005        BNE      ??EIC_FIQConfig_0
+    111            {
+    112              EIC->ICR |= 0x0002;
+   \        0xC   0xE3E0'00FF        MVN      R0,#+255
+   \       0x10   0xE3C0'0E70        BIC      R0,R0,#0x700
+   \       0x14   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x18   0xE391'1002        ORRS     R1,R1,#0x2
+   \       0x1C   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x20   0xEA00'0004        B        ??EIC_FIQConfig_1
+    113            }
+    114            else
+    115            {
+    116              EIC->ICR &= ~0x0002;
+   \                     ??EIC_FIQConfig_0:
+   \       0x24   0xE3E0'00FF        MVN      R0,#+255
+   \       0x28   0xE3C0'0E70        BIC      R0,R0,#0x700
+   \       0x2C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x30   0xE3D1'1002        BICS     R1,R1,#0x2
+   \       0x34   0xE580'1000        STR      R1,[R0, #+0]
+    117            }
+    118          }
+   \                     ??EIC_FIQConfig_1:
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    119          
+    120          /*******************************************************************************
+    121          * Function Name  : EIC_IRQChannelConfig
+    122          * Description    : Configures the specified IRQ Channel.
+    123          * Input          : - IRQChannel: the channel to be configured.
+    124          *                  - NewState: specifies whether the IRQ channel interrupt will
+    125          *                    be enabled or disabled, t can be:
+    126          *                     ENABLE: enables the channel interrupt.
+    127          *                     DISABLE: disables the channel interrupt.
+    128          * Output         : None.
+    129          * Return         : None.
+    130          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    131          void EIC_IRQChannelConfig (IRQChannel_TypeDef IRQChannel,
+    132                                     FunctionalState NewState)
+    133          {
+    134            if (NewState == ENABLE)
+   \                     EIC_IRQChannelConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'0006        BNE      ??EIC_IRQChannelConfig_0
+    135            {
+    136              EIC->IER |= 0x0001 << IRQChannel;
+   \        0xC   0xE3E0'10DF        MVN      R1,#+223
+   \       0x10   0xE3C1'1E70        BIC      R1,R1,#0x700
+   \       0x14   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x18   0xE3A0'3001        MOV      R3,#+1
+   \       0x1C   0xE192'0013        ORRS     R0,R2,R3, LSL R0
+   \       0x20   0xE581'0000        STR      R0,[R1, #+0]
+   \       0x24   0xEA00'0006        B        ??EIC_IRQChannelConfig_1
+    137            }
+    138            else
+    139            {
+    140              EIC->IER &= ~(0x0001 << IRQChannel);
+   \                     ??EIC_IRQChannelConfig_0:
+   \       0x28   0xE3E0'10DF        MVN      R1,#+223
+   \       0x2C   0xE3C1'1E70        BIC      R1,R1,#0x700
+   \       0x30   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x34   0xE3A0'3001        MOV      R3,#+1
+   \       0x38   0xE1F0'0013        MVNS     R0,R3, LSL R0
+   \       0x3C   0xE010'0002        ANDS     R0,R0,R2
+   \       0x40   0xE581'0000        STR      R0,[R1, #+0]
+    141            }
+    142          }
+   \                     ??EIC_IRQChannelConfig_1:
+   \       0x44   0xE12F'FF1E        BX       LR               ;; return
+    143          
+    144          /*******************************************************************************
+    145          * Function Name  : EIC_FIQChannelConfig
+    146          * Description    : Configure the FIQ Channel
+    147          * Input          : - FIQChannel: the FIQ channel to be configured. It can be:
+    148          *                     T0TIMI_FIQChannel, WDG_FIQChannel, WDGT0TIMI_FIQChannels
+    149          *                  - NewState: specifies whether the FIQ channel interrupt 
+    150          *                    will be enabled or disabled. It can be:
+    151          *                     ENABLE: enables the FIQ channel interrupt.
+    152          *                     DISABLE: disables the FIQ channel interrupt.
+    153          * Output         : None.
+    154          * Return         : None.
+    155          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    156          void EIC_FIQChannelConfig (FIQChannel_TypeDef FIQChannel,
+    157                                    FunctionalState NewState)
+    158          {
+    159            if (NewState == ENABLE)
+   \                     EIC_FIQChannelConfig:
+   \        0x0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x1A00'0006        BNE      ??EIC_FIQChannelConfig_0
+    160            {
+    161              EIC->FIR |= FIQChannel;
+   \        0xC   0xE3E0'10E3        MVN      R1,#+227
+   \       0x10   0xE3C1'1E70        BIC      R1,R1,#0x700
+   \       0x14   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x18   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x1C   0xE190'0002        ORRS     R0,R0,R2
+   \       0x20   0xE581'0000        STR      R0,[R1, #+0]
+   \       0x24   0xEA00'0005        B        ??EIC_FIQChannelConfig_1
+    162            }
+    163            else
+    164            {
+    165              EIC->FIR &= ~FIQChannel;
+   \                     ??EIC_FIQChannelConfig_0:
+   \       0x28   0xE3E0'10E3        MVN      R1,#+227
+   \       0x2C   0xE3C1'1E70        BIC      R1,R1,#0x700
+   \       0x30   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x34   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x38   0xE1D2'0000        BICS     R0,R2,R0
+   \       0x3C   0xE581'0000        STR      R0,[R1, #+0]
+    166            }
+    167          }
+   \                     ??EIC_FIQChannelConfig_1:
+   \       0x40   0xE12F'FF1E        BX       LR               ;; return
+    168          
+    169          /*******************************************************************************
+    170          * Function Name  : EIC_IRQChannelPriorityConfig
+    171          * Description    : Configures the selected IRQ channel priority.
+    172          * Input          : - IRQChannel: the channel to be configured.
+    173          *                  - Priority: specifies the priority of the channel.
+    174          *                    Priority variable must take an integer value in the 
+    175          *                    range [0..15].
+    176          * Output         : None.
+    177          * Return         : None.
+    178          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    179          void EIC_IRQChannelPriorityConfig (IRQChannel_TypeDef IRQChannel, u8 Priority)
+    180          {
+    181            EIC->SIR[IRQChannel] = (EIC->SIR[IRQChannel] & 0xFFFF0000) \
+    182                                   | (u16)Priority & 0x000F;
+   \                     EIC_IRQChannelPriorityConfig:
+   \        0x0   0xE3E0'209F        MVN      R2,#+159
+   \        0x4   0xE3C2'2E70        BIC      R2,R2,#0x700
+   \        0x8   0xE1B0'3000        MOVS     R3,R0
+   \        0xC   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x10   0xE1B0'3103        LSLS     R3,R3,#+2
+   \       0x14   0xE792'2003        LDR      R2,[R2, +R3]
+   \       0x18   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x1C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x20   0xE211'100F        ANDS     R1,R1,#0xF
+   \       0x24   0xE191'1802        ORRS     R1,R1,R2, LSL #+16
+   \       0x28   0xE3E0'209F        MVN      R2,#+159
+   \       0x2C   0xE3C2'2E70        BIC      R2,R2,#0x700
+   \       0x30   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x34   0xE1B0'0100        LSLS     R0,R0,#+2
+   \       0x38   0xE782'1000        STR      R1,[R2, +R0]
+    183          }
+   \       0x3C   0xE12F'FF1E        BX       LR               ;; return
+    184          
+    185          /*******************************************************************************
+    186          * Function Name  : EIC_CurrentPriorityLevelConfig
+    187          * Description    : Changes the current priority level of the served IRQ routine.
+    188          * Input          : - NewPriorityLevelNew: specifies the new priority level.
+    189          *                    It must be an integer in the range [0..15].
+    190          * Output         : None.
+    191          * Return         : None.
+    192          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    193          void EIC_CurrentPriorityLevelConfig (u8 NewPriorityLevel)
+    194          {
+   \                     EIC_CurrentPriorityLevelConfig:
+   \        0x0   0xE24D'D004        SUB      SP,SP,#+4
+    195            vu32 dVal;
+    196          
+    197            /* Save ICR content */
+    198            dVal = EIC->ICR;
+   \        0x4   0xE3E0'10FF        MVN      R1,#+255
+   \        0x8   0xE3C1'1E70        BIC      R1,R1,#0x700
+   \        0xC   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x10   0xE58D'2000        STR      R2,[SP, #+0]
+    199          
+    200            /* Disable IRQ interrupts. */
+    201            EIC->ICR &= ~0x0001;
+   \       0x14   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x18   0xE3D2'2001        BICS     R2,R2,#0x1
+   \       0x1C   0xE581'2000        STR      R2,[R1, #+0]
+    202          
+    203            /* Change the current priority */
+    204            EIC->CIPR = NewPriorityLevel;
+   \       0x20   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x24   0xE3E0'20F7        MVN      R2,#+247
+   \       0x28   0xE3C2'2E70        BIC      R2,R2,#0x700
+   \       0x2C   0xE582'0000        STR      R0,[R2, #+0]
+    205          
+    206            /* Restore ICR content */
+    207            EIC->ICR = dVal;
+   \       0x30   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x34   0xE581'0000        STR      R0,[R1, #+0]
+    208          }
+   \       0x38   0xE28D'D004        ADD      SP,SP,#+4
+   \       0x3C   0xE12F'FF1E        BX       LR               ;; return
+    209          
+    210          /*******************************************************************************
+    211          * Function Name  : EIC_CurrentPriorityLevelValue
+    212          * Description    : Returns the current priority level of the current served IRQ
+    213          *                  routine.
+    214          * Input          : None.
+    215          * Output         : None.
+    216          * Return         : The current priority level
+    217          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    218          u8 EIC_CurrentPriorityLevelValue (void)
+    219          {
+    220            return EIC->CIPR & 0xF;
+   \                     EIC_CurrentPriorityLevelValue:
+   \        0x0   0xE3E0'00F7        MVN      R0,#+247
+   \        0x4   0xE3C0'0E70        BIC      R0,R0,#0x700
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE210'000F        ANDS     R0,R0,#0xF
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    221          }
+    222          
+    223          /*******************************************************************************
+    224          * Function Name  : EIC_CurrentIRQChannelValue
+    225          * Description    : Returns the current served IRQ channel number.
+    226          * Input          : None.
+    227          * Output         : None.
+    228          * Return         : The current served IRQ channel number.
+    229          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    230          IRQChannel_TypeDef EIC_CurrentIRQChannelValue (void)
+    231          {
+    232            return (IRQChannel_TypeDef)(EIC->CICR & 0x1F);
+   \                     EIC_CurrentIRQChannelValue:
+   \        0x0   0xE3E0'00FB        MVN      R0,#+251
+   \        0x4   0xE3C0'0E70        BIC      R0,R0,#0x700
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE210'001F        ANDS     R0,R0,#0x1F
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    233          }
+    234          
+    235          /*******************************************************************************
+    236          * Function Name  : EIC_CurrentFIQChannelValue
+    237          * Description    : Gets and returns the current served FIQ channel.
+    238          * Input          : None.
+    239          * Output         : None.
+    240          * Return         : The current served FIQ channel.
+    241          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    242          FIQChannel_TypeDef EIC_CurrentFIQChannelValue (void)
+    243          {
+    244            return (FIQChannel_TypeDef)((EIC->FIR >> 2) & 0x0003);
+   \                     EIC_CurrentFIQChannelValue:
+   \        0x0   0xE3E0'00E3        MVN      R0,#+227
+   \        0x4   0xE3C0'0E70        BIC      R0,R0,#0x700
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE1B0'0120        LSRS     R0,R0,#+2
+   \       0x10   0xE210'0003        ANDS     R0,R0,#0x3
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    245          }
+    246          
+    247          /*******************************************************************************
+    248          * Function Name  : EIC_FIPendingBitClear
+    249          * Description    : Clears the FIQ pending bit.
+    250          * Input          : - FIQChannel: specifies the FIQ channel to be configured.
+    251          *                    It can be:
+    252          *                     T0TIMI_FIQChannel, WDG_FIQChannel, WDGT0TIMI_FIQChannels
+    253          * Output         : None.
+    254          * Return         : None.
+    255          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    256          void EIC_FIQPendingBitClear (FIQChannel_TypeDef FIQChannel)
+    257          {
+    258            EIC->FIR = (EIC->FIR & 0x0003) | (FIQChannel << 2);
+   \                     EIC_FIQPendingBitClear:
+   \        0x0   0xE3E0'10E3        MVN      R1,#+227
+   \        0x4   0xE3C1'1E70        BIC      R1,R1,#0x700
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0xC   0xE212'2003        ANDS     R2,R2,#0x3
+   \       0x10   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x14   0xE192'0100        ORRS     R0,R2,R0, LSL #+2
+   \       0x18   0xE581'0000        STR      R0,[R1, #+0]
+    259          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \        0x0   0x....'....        DC32     T0TIMI_Addr
+    260          
+    261          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   EIC_CurrentFIQChannelValue
+       0   EIC_CurrentIRQChannelValue
+       4   EIC_CurrentPriorityLevelConfig
+       0   EIC_CurrentPriorityLevelValue
+       0   EIC_FIQChannelConfig
+       0   EIC_FIQConfig
+       0   EIC_FIQPendingBitClear
+       0   EIC_IRQChannelConfig
+       0   EIC_IRQChannelPriorityConfig
+       0   EIC_IRQConfig
+       0   EIC_Init
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+      24  EIC_CurrentFIQChannelValue
+      20  EIC_CurrentIRQChannelValue
+      64  EIC_CurrentPriorityLevelConfig
+      20  EIC_CurrentPriorityLevelValue
+      68  EIC_FIQChannelConfig
+      60  EIC_FIQConfig
+      32  EIC_FIQPendingBitClear
+      72  EIC_IRQChannelConfig
+      64  EIC_IRQChannelPriorityConfig
+      60  EIC_IRQConfig
+     164  EIC_Init
+
+ 
+ 652 bytes in section .text
+ 
+ 652 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,50 @@
+<div class="wikidoc"><h1>Settings</h1>
+The settings window helps you to configure the services you need.<br /><br /><img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=tftpd64&DownloadId=1632574" alt="setup&#32;global.jpg" title="setup&#32;global.jpg" /><br />
+<h1>Tftpd setup</h1>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=tftpd64&DownloadId=1632573" alt="Tftpd32&#32;Advanced&#32;Setup.JPG" title="Tftpd32&#32;Advanced&#32;Setup.JPG" /><br />
+<ul><li>Base directory</li></ul>
+The default directory used by the TFTP client and server. It may be changed from the main window.
+<ul><li>Global Settings</li></ul>
+Enable or disable tftpd32 servers and clients.
+<ul><li>TFTP security
+<ul><li><b>NONE</b>   read and write requests are allowed on all disks/directories (not recommended !!)</li>
+<li><b>Standard</b>  read and write requests are allowed but limited to the current directory. </li>
+<li><b>High</b>  idem standard + write requests are allowed only if the input file exists and is empty. </li>
+<li><b>Read_only</b>    idem standard + write requests are rejected. </li></ul></li></ul>
+<br />
+<ul><li>TFTP Configuration
+<ul><li><b>Timeout</b>                                        The maximum timeout between two retransmissions </li>
+<li><b>Max Retransmit</b>    The maximum retransmission for the same packet </li>
+<li><b>Tftp Port</b>    The port used to listen incoming requests </li>
+<li><b>local ports pool</b>    A range of ports (for example 3000:3030). These ports are used for the file transfers. </li></ul></li></ul>
+
+<ul><li>TFTP advanced Configuration
+<ul><li><b>Option Negotiation</b>    Enables the negotiation between client and server (RFC 2347) </li>
+<li><b>PXE compatibility</b>    Enables only the file size negotiation </li>
+<li><b>Show progress Bar</b>    Creates a gauge window for each transfer </li>
+<li><b>Translate Unix file names</b>    Translates any slash characters to a backslash </li>
+<li><b>Bind Tftpd32 to this address</b>    Enables TFTP only on one interface </li>
+<li><b>Allow &#39;\&#39; As virtual root</b>    A file name beginning with &#39;\&#39; points to the TFTP directory and not to the root of the disk </li>
+<li><b>Use anticipation window of ??? bytes</b>    Tftpd32 is able to send packets before receiving acknowledgements. This feature may dramatically speed up the transfer. </li>
+<li><b>Hide window at startup</b>    Tftpd32 main window remains hidden, but the icon in the tasktray is still present </li>
+<li><b>Create dir.txt files</b>    For each incoming read request, Tftpd32 lists the content of the directory and put the result in a file named &quot;dir.txt&quot;. </li>
+<li><b>Create md5 file</b>    For each successfull read request, Tftpd32 creates a file which is the MD5 signature of the previous file </li>
+<li><b>Beep for long transfer</b>    Tftpd32 sends a beep once a transfer has ended. </li></ul></li></ul>
+
+<h1>DHCP setup </h1>DHCP setup is available through the DHCP tab.<br /><br /><img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=tftpd64&DownloadId=1632575" alt="setup&#32;dhcp.jpg" title="setup&#32;dhcp.jpg" /><br />
+<ul><li><b>IP Pool starting Address</b>    This is the first address which will be distributed. </li>
+<li><b>Size of pool</b>    This is the number of hosts which may be configured by Tftpd32. </li>
+<li><b>Lease</b>    This is the amount of time in minutes the address is leased for. </li>
+<li><b>Boot File</b>    Used by diskless stations. It is the file which will be retrieved by TFTP to start up the boot process.</li></ul>
+    The strings $MAC$ and $IP$ are pseudo variables which are translated into the MAC address of the client and its assignated IP address. 
+<ul><li><b>Default router</b>    The IP address of the LAN gateway. </li>
+<li><b>Mask</b>    The network mask which will be assigned to the DHCP clients. </li>
+<li><b>DNS servers</b>    The IP address of the DNS. Two DNS can be configured. </li>
+<li><b>WINS Server</b>    The IP address of the WINS server. </li>
+<li><b>NTP Server</b>    The IP address of the NTP server used for synchronisation. </li>
+<li><b>SIP Server</b>    The IP address of the SIP server. It concerns mostly IP phones. </li>
+<li><b>Domain Name</b>    Either the NT domain or the internet domain. </li>
+<li><b>Additional Option</b>    The first field is the number of the option to be handled </li></ul>
+    The second filed is the value of the field. The value is prefixed with its type (a for list of IPv4 address, x  for list of hex digits, b for list of decimal bytes, s for an ASCII string) 
+<ul><li><b>More Additional Options ?</b>    Tftpd32 supports up to 10 additionnal options. They have to be configured by editing the tftpd32.ini settings file. Their syntax is similar to the previous one. </li></ul>
+<br /><br /><br /></div><div class="ClearBoth"></div>

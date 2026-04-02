@@ -1,0 +1,568 @@
+#pragma num_alias_table_entries 10
+#pragma specify_io_clock "10 MHz"
+#pragma run_unconfigured
+
+
+#include <io_types.h>	
+#include <control.h>	
+#include <addrdefs.h>	
+#include <netmgmt.h>
+#include <msg_addr.h>
+#include <status.h>	
+//#include <control.h>
+//#include <status.h>	
+//#include <string.h>	
+
+
+
+#define SI_EVK
+
+
+#define DATA_SIZE 13
+//#define DATA_SIZEFIN 13
+#define Cont_Lev1  0x01
+#define Cont_Lev2  0x02
+#define Cont_Lev3  0x03
+#define Cont_Lev4  0x04
+#define Cont_Lev5  0x05
+#define cancel     0x15
+
+#define OK          0X01
+#define FAIL        0X00
+#define Domain_Id   0x30
+#define Mycode      0x11
+#define defult_domain 0x20
+
+//#define	TEMP_SENSOR_HBCORE	500L
+
+//mtimer repeating TEMPSensorTxTimer = TEMP_SENSOR_HBCORE;
+
+//network input SNVT_switch nvilampvalue;
+extern system void _change_state(int state);
+
+
+network input SNVT_switch nviGasdata;
+network input SNVT_lux nviCdsdata;
+network input SNVT_temp_p  nviTempdata;
+network input SNVT_str_asc nvifigudata;
+
+network output SNVT_str_asc nvofigudata;
+network output SNVT_switch nvoGason;
+network output SNVT_switch nvolight;
+network output SNVT_switch nvotempon;
+//network input SNVT_switch nvitestt;
+
+
+IO_8 sci baud(SCI_19200) iosci; 
+IO_0 output bit iobuzzer = 1;
+IO_1 output bit ioLED1 = 1;
+IO_2 output bit ioLED2 = 1;
+IO_3 input  bit ioButton1;
+
+char szRxBufA[DATA_SIZE];
+char szRxBufB[DATA_SIZE];
+char obuffer[DATA_SIZE];
+char comm_data[DATA_SIZE];
+
+char GAS_level;
+char TEMP_level;
+char CDS_level;
+
+eeprom on_config ;
+
+char temp = 0x55;
+
+int bufTog;
+
+
+//  I/O declarations for MiniGizmo buttons
+//
+//  The buttons are connected to a 74HC165 8-bit parallel-in/serial-out
+//  shift register. Data is shifted on IO.4 (clock) and IO.5 (data),
+//  with a latch on IO.6 (low-active to capture parallel input).
+//  The MG_BUTTONS_DEBOUNCE macro determines how many times the buttons
+//  are read for debouncing.
+//  See GetButtons() for example use
+IO_4 input bitshift numbits(8) clockedge(-) ioButtons;
+IO_6 output bit ioButtonLd = 1;
+#define MG_BUTTONS_DEBOUNCE 3
+
+unsigned GetButtons(void) {
+    unsigned Debounce, Buttons;
+    Buttons = 0xFF;
+    for (Debounce = 0; Debounce < MG_BUTTONS_DEBOUNCE; ++Debounce) {
+        // capture parallel lines:
+        io_out(ioButtonLd, 0);
+        // deactivate capture. The 74HC165 requires no more than 100ns for
+        // capture; we cannot beat this even with a 40MHz Smart Transceiver
+        // or Neuron Chip. No need to consider load pulse timing, therefore:
+        io_out(ioButtonLd, 1);
+        // take a sample and debounce:
+        Buttons &= (unsigned)io_in(ioButtons);
+    }
+    return ~Buttons;
+}
+
+void processRxData(char buffer[DATA_SIZE]) 
+{
+	//#pragma relaxed_casting_on
+	//memcpy (nvoData.ascii, buffer, DATA_SIZE);	
+	//#pragma relaxed_casting_off
+	int i;
+	char temp;
+	//unsigned long temp;
+	for (i=0; i<DATA_SIZE; i++) nvofigudata.ascii[i] = buffer[i];
+	
+	if( buffer[0] == 0x40 &&  buffer[12] == 0x0A)
+	   io_out(ioLED1, 0);
+	                               
+	  
+	
+}
+
+void SetDomain()
+{
+domain_struct domain;
+	memset(&domain, 0, sizeof(domain));	
+	memset(domain.id, Domain_Id, 1);
+	memset(domain.key, 0xFF, 8); //AUTHENTICATION
+	
+	domain.len = 1;
+	domain.node = 4;
+	domain.subnet = 1;
+	
+	update_domain(&domain, 0);	
+
+}
+
+void deful_domain(void) 
+{
+domain_struct domain;
+	memset(&domain, 0, sizeof(domain));	
+	memset(domain.id, defult_domain, 1);
+	memset(domain.key, 0xFF, 8); //AUTHENTICATION
+	
+	domain.len = 1;
+	domain.node = 101;
+	domain.subnet = 2;
+	
+	update_domain(&domain, 0);	
+}
+
+void SetAddress()
+{
+	address_struct	adr;
+	address_struct	adr_1;
+    address_struct	adr_2;
+	//set address table for gateway (1/120)
+	
+	memset(&adr, 0, sizeof(adr));
+	adr = *(access_address(0));
+	adr.gp.type = UNBOUND;
+	//adr.gp.size = 1;
+	adr.gp.domain = 0;
+	//adr.gp.member = 2;		
+	//adr.gp.retry = 4;	
+	adr.gp.group = 1;	
+	update_address(&adr, 0);
+	
+	memset(&adr, 1, sizeof(adr));
+	adr = *(access_address(1));
+	adr.gp.type = UNBOUND;
+	//adr.gp.size = 1;
+	adr.gp.domain = 0;
+	//adr.gp.member = 2;		
+	//adr.gp.retry = 4;
+	adr.gp.group = 2;	
+	update_address(&adr, 1);
+
+	memset(&adr, 2, sizeof(adr));
+	adr = *(access_address(2));
+	adr.gp.type = UNBOUND;
+	//adr.gp.size = 1;
+	adr.gp.domain = 0;
+	//adr.gp.member = 2;		
+	//adr.gp.retry = 4;
+	adr.gp.group = 3;	
+	update_address(&adr, 2);
+
+	memset(&adr_1, 0, sizeof(adr));
+	adr_1 = *(access_address(0));
+	adr_1.sn.type = SUBNET_NODE;
+	adr_1.sn.domain = 0;
+	adr_1.sn.node = 3;	
+	adr_1.sn.retry = 2;
+	adr_1.sn.subnet = 1;	
+	update_address(&adr_1, 0);	
+	
+	memset(&adr_2, 0, sizeof(adr));
+	adr_2 = *(access_address(0));
+	adr_2.sn.type = SUBNET_NODE;
+	adr_2.sn.domain = 0;
+	adr_2.sn.node = 5;	
+	adr_2.sn.retry = 2;
+	adr_2.sn.subnet = 1;	
+	update_address(&adr_2, 0);
+	
+	memset(&adr_2, 1, sizeof(adr));
+	adr_2 = *(access_address(1));
+	adr_2.sn.type = SUBNET_NODE;
+	adr_2.sn.domain = 0;
+	adr_2.sn.node = 5;	
+	adr_2.sn.retry = 2;
+	adr_2.sn.subnet = 1;	
+	update_address(&adr_2, 1);	
+	
+	memset(&adr_2, 2, sizeof(adr));
+	adr_2 = *(access_address(2));
+	adr_2.sn.type = SUBNET_NODE;
+	adr_2.sn.domain = 0;
+	adr_2.sn.node = 5;	
+	adr_2.sn.retry = 2;
+	adr_2.sn.subnet = 1;	
+	update_address(&adr_2, 2);	
+	
+	
+	
+}
+
+void SetNvConfig()
+{
+	nv_struct	nv;
+
+	//set nvoStatus : (nv#:1)
+	nv = *(access_nv(0));
+	nv.nv_selector_hi = 0x01;
+	nv.nv_selector_lo = 0x00;
+	nv.nv_addr_index = 0;
+	update_nv(&nv, 0);
+	
+	nv = *(access_nv(1));
+	nv.nv_selector_hi = 0x02;
+	nv.nv_selector_lo = 0x00;
+	nv.nv_addr_index = 0;
+	update_nv(&nv, 1);
+	
+	nv = *(access_nv(2));
+	nv.nv_selector_hi = 0x03;
+	nv.nv_selector_lo = 0x00;
+	nv.nv_addr_index = 0;
+	update_nv(&nv, 2);
+	
+	nv = *(access_nv(3));
+	nv.nv_selector_hi = 0x08;
+	nv.nv_selector_lo = 0x00;
+	nv.nv_addr_index = 0;
+	update_nv(&nv, 3);
+	
+	nv = *(access_nv(4));
+	nv.nv_selector_hi = 0x09;
+	nv.nv_selector_lo = 0x00;
+	nv.nv_addr_index = 0;
+	update_nv(&nv, 4);	
+	
+	
+	nv = *(access_nv(5));
+	nv.nv_selector_hi = 0x0A;
+	nv.nv_selector_lo = 0x00;
+	nv.nv_addr_index = 0;
+	update_nv(&nv, 5);
+	
+	nv = *(access_nv(6));
+	nv.nv_selector_hi = 0x0B;
+	nv.nv_selector_lo = 0x00;
+	nv.nv_addr_index = 0;
+	update_nv(&nv, 6);
+	
+	nv = *(access_nv(7));
+	nv.nv_selector_hi = 0x0C;
+	nv.nv_selector_lo = 0x00;
+	nv.nv_addr_index = 0;
+	update_nv(&nv, 7);
+	
+
+}
+
+
+when(nv_update_occurs(nvifigudata))
+{
+    
+	#pragma relaxed_casting_on
+	memcpy (obuffer, nvifigudata.ascii, DATA_SIZE);
+	#pragma relaxed_casting_off	
+		
+	io_out_request(iosci, obuffer, DATA_SIZE);	
+	            
+	                                       
+}
+
+when(nv_update_occurs(nviGasdata))
+{
+switch(GAS_level)
+  {
+  case Cont_Lev1 : io_out(iobuzzer, 0);
+                   if(nviGasdata.value >= 25)
+                      {
+                      nvoGason.value = 200; 
+                      nvoGason.state = 1;                      
+                      }
+                   else 
+                      {
+                      nvoGason.value = 0;
+                      nvoGason.state = 0;                      
+                      }  
+                   break;
+  case Cont_Lev2 : if(nviGasdata.value >= 35)
+                      {
+                      nvoGason.value = 200; 
+                      nvoGason.state = 1;                      
+                      }
+                   else 
+                      {
+                      nvoGason.value = 0;
+                      nvoGason.state = 0;                      
+                      }  
+                   break;   
+ 
+  }
+  io_out(iobuzzer, 1);
+}
+
+when(nv_update_occurs(nviCdsdata))
+{
+unsigned long temp_1;
+unsigned long temp_2;
+
+switch(CDS_level)
+   {
+   case Cont_Lev1 : io_out(ioLED1, 0);
+                    temp_1 = nviCdsdata;
+                    temp_2 = temp_1 * 10; 
+                    nvolight.value = (temp_2 / 12);
+                    nvolight.state = 1;
+                    break;
+   case Cont_Lev2 : temp_1 = nviCdsdata;
+                    temp_2 = temp_1 * 10; 
+                    nvolight.value = (temp_2 / 15);
+                    nvolight.state = 1;
+   }
+ 
+io_out(ioLED1, 1);
+
+}
+
+when(nv_update_occurs(nviTempdata))
+{
+switch(TEMP_level)
+   {
+   case Cont_Lev1 : io_out(ioLED2, 0);
+                     if(nviTempdata >= 130)
+                      {
+                      nvotempon.state = 1;
+                      nvotempon.value = 200; 
+                      }
+                     else 
+                      {
+                      nvotempon.state = 0;
+                      nvotempon.value = 0; 
+                      }  
+                     break;   
+   
+   case Cont_Lev2 : if(nviTempdata >= 170)
+                      {
+                      nvotempon.state = 1;
+                      nvotempon.value = 200; 
+                      }
+                     else 
+                      {
+                      nvotempon.state = 0;
+                      nvotempon.value = 0; 
+                      }  
+                     break;    
+   
+  
+   }
+io_out(ioLED2, 1);
+
+}
+
+void unconfig_go()
+{
+char cData[2];
+	cData[0] = 0xFF;
+	cData[1] = Domain_Id;
+	
+	//memset(cData, Temp_Domain, sizeof(cData));
+	
+	msg_out.code 		= cancel; // update domain
+	msg_out.service 	= UNACKD_RPT;
+	//msg_out.tag 		= mtag;
+
+	msg_out.dest_addr.no_address = BROADCAST;
+	msg_out.dest_addr.bcast.type = BROADCAST;
+	msg_out.dest_addr.bcast.retry = 3;
+	msg_out.dest_addr.bcast.domain = 0;	//primary domain broadcasting
+	
+	memcpy(msg_out.data, cData, sizeof(cData));
+	//memcpy(msg_out.data, read_only_data.neuron_id, 1);
+	
+	msg_send();	
+	//on_config = 0;	
+    //go_unconfigured();    
+    //io_out(ioLED2, 0);
+
+}
+
+
+
+when (io_changes(ioButton1))
+{
+unsigned Buttons_to;
+unsigned long int de_lay;
+unsigned long int dumy;
+
+Buttons_to = GetButtons();
+
+switch(Buttons_to)
+  {
+  case 0x01 : GAS_level = Cont_Lev1;
+              break;
+  case 0x02 : GAS_level = Cont_Lev2;
+              break;
+  case 0x04 : TEMP_level = Cont_Lev1;
+              break;            
+  case 0x08 : TEMP_level = Cont_Lev2;
+              break;            
+  case 0x10 : CDS_level = Cont_Lev1;
+              break;
+  case 0x20 : CDS_level = Cont_Lev2;
+              break; 
+  case 0x40 : io_out(ioLED1, 0);
+              SetDomain();SetAddress();
+              SetNvConfig();
+              break;                         
+  case 0x80 : io_out(ioLED1, 0);
+                  for( de_lay = 0; de_lay <1000; de_lay++) dumy++; 
+                  unconfig_go();on_config = 0; go_unconfigured();     
+                  break; 
+  }
+  while(!(io_in(ioButton1)));
+}
+
+void dete_domain(char *msg)
+{
+if(msg[0] == Mycode || msg[1] == OK)
+   {  
+   io_out(ioLED2, 0);
+   SetDomain();
+   SetAddress();
+   SetNvConfig();
+   on_config = 1;
+ 	  
+   }
+//else
+   //io_out(ioLED_RFID, 1);
+   //io_out(ioLED_SW, 1);
+//   io_out(ioLED_IR, 1);	    
+ 
+}
+
+when (msg_arrives)
+{
+	//message from gateway to install/uninstall
+	int len;
+	char certify_data[2];
+	int nodeId;
+	io_out(ioLED1, 0);	
+	switch (msg_in.code)
+	   {
+		case Mycode : memcpy(&certify_data, msg_in.data, 2);//Install request	
+			          dete_domain(certify_data);
+			          //io_out(ioLED1, 1);
+		              break;
+		case cancel : on_config = 0;go_unconfigured();
+		               break;           	                      
+			
+	   }
+}
+
+
+
+when(io_in_ready(iosci) == DATA_SIZE)
+{
+ 	// Switch to the other buffer and keep the RX count  rx_count =
+	io_in_request(iosci, (bufTog) ? szRxBufA : szRxBufB, sizeof(szRxBufA));
+ 
+ 	bufTog ^= 1; // toggle this
+ 
+ 	
+	processRxData((bufTog) ? szRxBufA : szRxBufB); 
+}
+
+when (reset)
+{
+    if (power_up())
+	{
+ 	//SetDomain();
+    //SetAddress();
+    //SetNvConfig();
+    //SetDomain();
+    #ifdef SI_EVK
+ 	_change_state(0x04); 
+ 	#endif
+ 	if(!(on_config))
+ 	     deful_domain(); 
+    
+ 	} 	
+	bufTog = 0;	
+ 	io_in_request(iosci, szRxBufA, DATA_SIZE);
+ 	//SetLEDs(0x00, 0xFFu); 
+    io_out(iobuzzer, 1);
+ 	//iobuzzer = 1;
+ 	GAS_level = Cont_Lev1;
+ 	CDS_level = Cont_Lev1;
+ 	TEMP_level = Cont_Lev1;
+ 	nvoGason.state = 0;
+    nvoGason.value = 0; 
+    nvotempon.state = 0;
+    nvotempon.value = 0;
+}
+
+
+/**
+when ( timer_expires(TEMPSensorTxTimer) ) 
+{  
+unsigned Buttons_to; 
+      
+
+    Buttons_to = GetButtons();
+    if(Buttons_to == 0x01)
+       {    
+       //SetLEDs(Buttons_to, 0xFFu);
+       
+       obuffer[0] = 0x40;obuffer[1] = 0x11;obuffer[2] = 0x00;
+	   obuffer[3] = 0x00;obuffer[4] = 0x00;obuffer[5] = 0x00;
+	   obuffer[6] = 0x00;obuffer[7] = 0x00;obuffer[8] = 0x00;
+	   obuffer[9] = 0x00;obuffer[10] = 0x00;obuffer[11] = 0x51;obuffer[12] = 0x0a;  
+	   #pragma relaxed_casting_off	
+		
+	   io_out_request(iosci, obuffer, DATA_SIZEFIN); 
+       }
+    if(Buttons_to == 0x02)
+       {    
+       //SetLEDs(Buttons_to, 0xFFu);
+       
+       obuffer[0] = 0x40;obuffer[1] = 0x05;obuffer[2] = 0x06;
+	   obuffer[3] = 0x00;obuffer[4] = 0x00;obuffer[5] = 0x00;
+	   obuffer[6] = 0x00;obuffer[7] = 0x00;obuffer[8] = 0x00;
+	   obuffer[9] = 0x00;obuffer[10] = 0x00;obuffer[11] = 0x4B;obuffer[12] = 0x0a;  
+	   #pragma relaxed_casting_off	
+		
+	   io_out_request(iosci, obuffer, DATA_SIZEFIN); 
+       }   
+    
+}
+***/
+
+
+

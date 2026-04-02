@@ -1,0 +1,69 @@
+Build log E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.log
+Created Monday, January 22, 2007, at 11:25:53
+
+Compiling...
+Warning: E:\DOCUMENT\PRODUCT_TRANSFER\LONDEVICEDEVELOPTOOL\DATA PROGRAM\LON\3120_DISPLAY\3120_DISPLAY.NC   65(  1):
+        Type defaults to 'int' [NCC#147]
+Assembling...
+Linking...
+                       LIST OF MEMORY AREAS
+  * AREA *                    * ALLOCATED *         * UNUSED *
+                             From  To   Len       From  To   Len
+SYSTEM IMAGE ROM             0000 5FFF 6000        - RESERVED - 
+OnChip  EEPROM (Pool)         - AVAILABLE -       8000 83FF 0400
+OnChip  RAM    (System)      E800 ED04 0505          - NONE -   
+OnChip  RAM    (Pool)         - AVAILABLE -       ED05 EFEE 02EA
+OnChip  RAMNEAR              EFEF EFFF 0011          - NONE -   
+OnChip  EEPROM (Prolog)      F000 F028 0029          - NONE -   
+OnChip  EEPROM (Config)      F029 F0D7 00AF          - NONE -   
+OnChip  EECODE               F0D8 F3D0 02F9       F3C2 F3D0 000F
+OnChip  EEPROM (MemCtl)      F3D1 F3D7 0007          - NONE -   
+OnChip  EEPROM (Pool)         - AVAILABLE -       F3D8 FBE7 0810
+OnChip  EEPROM (Epilog)      FBE8 FBFF 0018          - NONE -   
+End of Memory Area List
+Link Memory Usage Statistics:
+EEPROM Usage:  (not necessarily in order of physical layout)
+        System Data and Parameters         113 bytes
+        Domain and Address Tables          105 bytes
+        Network Variable Config Tables      29 bytes
+        Application EEPROM Variables         0 bytes
+        Library EEPROM Variables             0 bytes
+        Application Code and Const Data    725 bytes
+        Library Code and Const Data          0 bytes
+        Self-Identification Data            21 bytes
+                                         -----
+        Total EEPROM Requirement           993 bytes
+        Remaining EEPROM                  3103 bytes
+RAM Usage:      (not necessarily in order of physical layout)
+        System Data and Parameters         688 bytes
+        Transaction Control Blocks         173 bytes
+        Appl Timers and I/O Change Events    0 bytes
+        Network and Application Buffers    424 bytes
+        Application RAM Variables           17 bytes
+        Library RAM Variables                0 bytes
+                                         -----
+        Total RAM Requirement             1302 bytes
+        Remaining RAM                      746 bytes
+Successfully linked for PL 3120-E4.
+        Memory Map (2 bytes of System EEPROM) supports extended memory.
+                This amount varies by the firmware version.
+        Extended Version Number (4 bytes) varies by firmware version.
+        System Upper EEPROM Area (24 bytes) varies by firmware version.
+        Priority outgoing message transaction control block uses 28 bytes of RAM.
+                Of this amount, 10 bytes varies by firmware version.
+        Some system RAM usage, for System Data and Transaction Blocks
+                (totaling 335 bytes) varies by the Neuron model, the
+                firmware version, and the number of receive
+                transaction control blocks.
+        Default buffer counts vary by Neuron model
+                (resulting in an additional 124 bytes of RAM).
+End of Link Statistics
+Exporting...
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.NXE'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.XIF'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.XFB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.APB'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.NEI'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.NDL'... Done.
+Creating 'E:\Document\Product_Transfer\LonDeviceDevelopTool\DATA Program\Lon\3120_DISPLAY\3120_DISPLAY Output\3120_DISPLAY.NFI'... Done.
+

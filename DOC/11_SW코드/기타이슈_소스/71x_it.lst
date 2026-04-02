@@ -1,0 +1,756 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.30.1.114/W32 for ARM         16/Oct/2018  10:22:11
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  arm
+#    Endian       =  little
+#    Source file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\71x_it.c
+#    Command line =  
+#        -f C:\Users\JDS_DELL\AppData\Local\Temp\EW4484.tmp
+#        ("D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\71x_it.c"
+#        -lCN "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List" -o
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\debug\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI
+#        -e --fpu=None --dlib_config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench 8.1\arm\inc\c\DLib_Config_Normal.h" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\" -I
+#        "D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\str71x\"
+#        --cpu_mode arm -Ol --use_c++_inline)
+#    Locale       =  C
+#    List file    =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\List\71x_it.lst
+#    Object file  =  
+#        D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@
+#        @@\RF_COM NCR @@
+#        @@\@@@@\MCU\PAC_170405\debug\Obj\71x_it.o
+#
+###############################################################################
+
+D:\Dropbox\JDS_PRO\@@ @@@@\denver\@@@@ @@\RF_COM NCR @@ @@\@@@@\MCU\PAC_170405\71x_it.c
+      1          /******************** (C) COPYRIGHT 2003 STMicroelectronics ********************
+      2          * File Name          : 71x_it.c
+      3          * Author             : MCD Application Team
+      4          * Date First Issued  : 16/05/2003
+      5          * Description        : Main Interrupt Service Routines
+      6          *******************************************************************************
+      7          * History:
+      8          * 24/05/05 : V3.0
+      9          * 30/11/04 : V2.0
+     10          * 16/05/03 : Created
+     11          *******************************************************************************
+     12          THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH
+     13          CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     14          AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT
+     15          OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT
+     16          OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION
+     17          CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     18          *******************************************************************************/
+     19          #include "71x_it.h"
+     20          #include "71x_lib.h"
+
+   \                                 In section .bss, align 4
+   \   static __absolute u8 A_RID[38]
+   \                     A_RID:
+   \        0x0                      DS8 40
+
+   \                                 In section .bss, align 4
+   \   static __absolute u8 A_VID[256]
+   \                     A_VID:
+   \        0x0                      DS8 256
+
+   \                                 In section .bss, align 1
+   \   static __absolute u8 CTL_Temp[1]
+   \                     CTL_Temp:
+   \        0x0                      DS8 1
+     21          
+     22          /*******************************************************************************
+     23          * Function Name  : Undefined_Handler
+     24          * Description    : This function handles Undefined instruction exception.
+     25          * Input          : None
+     26          * Output         : None
+     27          * Return         : None
+     28          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     29          void Undefined_Handler(void)
+     30          {
+     31          }
+   \                     Undefined_Handler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     32          
+     33          /*******************************************************************************
+     34          * Function Name  : FIQ_Handler
+     35          * Description    : This function handles FIQ exception.
+     36          * Input          : None
+     37          * Output         : None
+     38          * Return         : None
+     39          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     40          void FIQ_Handler(void)
+     41          {
+     42          }
+   \                     FIQ_Handler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     43          
+     44          /*******************************************************************************
+     45          * Function Name  : SWI_Handler
+     46          * Description    : This function handles SWI exception.
+     47          * Input          : None
+     48          * Output         : None
+     49          * Return         : None
+     50          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     51          void SWI_Handler(void)
+     52          {
+     53          }
+   \                     SWI_Handler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     54          
+     55          /*******************************************************************************
+     56          * Function Name  : Prefetch_Handler
+     57          * Description    : This function handles Prefetch Abort exception.
+     58          * Input          : None
+     59          * Output         : None
+     60          * Return         : None
+     61          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     62          void Prefetch_Handler(void)
+     63          {
+     64          }
+   \                     Prefetch_Handler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     65          
+     66          /*******************************************************************************
+     67          * Function Name  : Abort_Handler
+     68          * Description    : This function handles Data Abort exception.
+     69          * Input          : None
+     70          * Output         : None
+     71          * Return         : None
+     72          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     73          void Abort_Handler(void)
+     74          {
+     75          }
+   \                     Abort_Handler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     76          
+     77          /*******************************************************************************
+     78          * Function Name  : T0TIMI_IRQHandler
+     79          * Description    : This function handles the Timer0 global interrupt.
+     80          * Input          : None
+     81          * Output         : None
+     82          * Return         : None
+     83          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     84          void T0TIMI_IRQHandler(void)
+     85          {
+     86          	CTL_Temp[0] = 0;
+   \                     T0TIMI_IRQHandler:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0x....'....        LDR      R1,??DataTable1
+   \        0x8   0xE5C1'0000        STRB     R0,[R1, #+0]
+     87          	A_RID[37] = 0;
+   \        0xC   0x....'....        LDR      R1,??DataTable1_1
+   \       0x10   0xE5C1'0025        STRB     R0,[R1, #+37]
+     88          	A_VID[255] = 0;
+   \       0x14   0x....'....        LDR      R1,??DataTable1_2
+   \       0x18   0xE5C1'00FF        STRB     R0,[R1, #+255]
+     89          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+     90          
+     91          /*******************************************************************************
+     92          * Function Name  : FLASH_IRQHandler
+     93          * Description    : This function handles the FLASH global interrupt.
+     94          * Input          : None
+     95          * Output         : None
+     96          * Return         : None
+     97          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     98          void FLASH_IRQHandler(void)
+     99          {
+    100          }
+   \                     FLASH_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    101          
+    102          /*******************************************************************************
+    103          * Function Name  : RCCU_IRQHandler
+    104          * Description    : This function handles the RCCU global interrupt.
+    105          * Input          : None
+    106          * Output         : None
+    107          * Return         : None
+    108          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    109          void RCCU_IRQHandler(void)
+    110          {
+    111          }
+   \                     RCCU_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    112          
+    113          /*******************************************************************************
+    114          * Function Name  : RTC_IRQHandler
+    115          * Description    : This function handles the RTC global interrupt.
+    116          * Input          : None
+    117          * Output         : None
+    118          * Return         : None
+    119          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    120          void RTC_IRQHandler(void)
+    121          {
+    122          }
+   \                     RTC_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    123          
+    124          /*******************************************************************************
+    125          * Function Name  : WDG_IRQHandler
+    126          * Description    : This function handles the Watchdog interrupt.
+    127          * Input          : None
+    128          * Output         : None
+    129          * Return         : None
+    130          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    131          void WDG_IRQHandler(void)
+    132          {
+   \                     WDG_IRQHandler:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    133          	WDG_ECFlagClear();
+   \        0x4   0x....'....        BL       WDG_ECFlagClear
+    134          	//PAC_Reboot();
+    135          }
+   \        0x8   0xE8BD'4001        POP      {R0,LR}
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    136          
+    137          /*******************************************************************************
+    138          * Function Name  : XTI_IRQHandler
+    139          * Description    : This function handles the External interrupt.
+    140          * Input          : None
+    141          * Output         : None
+    142          * Return         : None
+    143          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    144          void XTI_IRQHandler(void)
+    145          {
+    146          	//XTI_PendingBitClear(XTI_InterruptLineValue());
+    147          }
+   \                     XTI_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    148          
+    149          /*******************************************************************************
+    150          * Function Name  : USBHP_IRQHandler
+    151          * Description    : This function handles USB high priority interrupt.
+    152          * Input          : None
+    153          * Output         : None
+    154          * Return         : None
+    155          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    156          void USBHP_IRQHandler(void)
+    157          {
+    158          }
+   \                     USBHP_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    159          
+    160          /*******************************************************************************
+    161          * Function Name  : I2C0ITERR_IRQHandler
+    162          * Description    : This function handles the I2C0 error interrupt.
+    163          * Input          : None
+    164          * Output         : None
+    165          * Return         : None
+    166          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    167          void I2C0ITERR_IRQHandler(void)
+    168          {
+    169          }
+   \                     I2C0ITERR_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    170          
+    171          /*******************************************************************************
+    172          * Function Name  : I2C1ITERR_IRQHandler
+    173          * Description    : This function handles the I2C1 error interrupt.
+    174          * Input          : None
+    175          * Output         : None
+    176          * Return         : None
+    177          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    178          void I2C1ITERR_IRQHandler(void)
+    179          {
+    180          }
+   \                     I2C1ITERR_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    181          
+    182          /*******************************************************************************
+    183          * Function Name  : UART0_IRQHandler
+    184          * Description    : This function handles the UART0 global interrupt.
+    185          * Input          : None
+    186          * Output         : None
+    187          * Return         : None
+    188          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    189          void UART0_IRQHandler(void)
+    190          {
+   \                     UART0_IRQHandler:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    191          	u8 bRByte;		// test test
+    192          	UART_ByteReceive(UART0, &bRByte, 0xFF);
+   \        0x4   0xE3A0'20FF        MOV      R2,#+255
+   \        0x8   0xE1B0'100D        MOVS     R1,SP
+   \        0xC   0xE3A0'04C0        MOV      R0,#-1073741824
+   \       0x10   0xE380'0C40        ORR      R0,R0,#0x4000
+   \       0x14   0x....'....        BL       UART_ByteReceive
+    193          #if 0//PTT test code
+    194          	if(bRByte == '1'){
+    195          		OCC_Ptt_Ctrl_SpeakerMode();
+    196          		bRByte = 'S';
+    197          		UART_ByteSend(UART0, &bRByte);
+    198          	}
+    199          	else if(bRByte == '2'){
+    200          		OCC_Ptt_Ctrl_MicMode();
+    201          		bRByte = 'M';
+    202          		UART_ByteSend(UART0, &bRByte);
+    203          	}
+    204          	else{
+    205          		UART_ByteSend(UART3, &bRByte);
+    206          	}
+    207          #else
+    208          	UART_ByteSend(UART3, &bRByte);
+   \       0x18   0xE1B0'100D        MOVS     R1,SP
+   \       0x1C   0xE3A0'04C0        MOV      R0,#-1073741824
+   \       0x20   0xE380'0C70        ORR      R0,R0,#0x7000
+   \       0x24   0x....'....        BL       UART_ByteSend
+    209          #endif
+    210          }
+   \       0x28   0xE8BD'4001        POP      {R0,LR}
+   \       0x2C   0xE12F'FF1E        BX       LR               ;; return
+    211          
+    212          /*******************************************************************************
+    213          * Function Name  : UART1_IRQHandler
+    214          * Description    : This function handles the UART1 global interrupt.
+    215          * Input          : None
+    216          * Output         : None
+    217          * Return         : None
+    218          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    219          void UART1_IRQHandler(void)
+    220          {
+   \                     UART1_IRQHandler:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    221          	CL_RxTxISR();
+   \        0x4   0x....'....        BL       CL_RxTxISR
+    222          	EIC->IPR  = UART1_IRQChannel;
+   \        0x8   0xE3A0'000A        MOV      R0,#+10
+   \        0xC   0xE3E0'10BF        MVN      R1,#+191
+   \       0x10   0xE3C1'1E70        BIC      R1,R1,#0x700
+   \       0x14   0xE581'0000        STR      R0,[R1, #+0]
+    223          }
+   \       0x18   0xE8BD'4001        POP      {R0,LR}
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    224          
+    225          /*******************************************************************************
+    226          * Function Name  : UART2_IRQHandler
+    227          * Description    : This function handles the UART2 global interrupt.
+    228          * Input          : None
+    229          * Output         : None
+    230          * Return         : None
+    231          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    232          void UART2_IRQHandler(void)
+    233          {
+   \                     UART2_IRQHandler:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    234          	TL_RxTxISR();
+   \        0x4   0x....'....        BL       TL_RxTxISR
+    235          	EIC->IPR  = UART2_IRQChannel;
+   \        0x8   0xE3A0'000B        MOV      R0,#+11
+   \        0xC   0xE3E0'10BF        MVN      R1,#+191
+   \       0x10   0xE3C1'1E70        BIC      R1,R1,#0x700
+   \       0x14   0xE581'0000        STR      R0,[R1, #+0]
+    236          }
+   \       0x18   0xE8BD'4001        POP      {R0,LR}
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    237          
+    238          /*******************************************************************************
+    239          * Function Name  : UART3_IRQHandler
+    240          * Description    : This function handles the UART3 global interrupt.
+    241          * Input          : None
+    242          * Output         : None
+    243          * Return         : None
+    244          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    245          void UART3_IRQHandler(void)
+    246          {
+   \                     UART3_IRQHandler:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    247          	u8 bRByte;		// test test
+    248          	UART_ByteReceive(UART3, &bRByte, 0xFF);
+   \        0x4   0xE3A0'20FF        MOV      R2,#+255
+   \        0x8   0xE1B0'100D        MOVS     R1,SP
+   \        0xC   0xE3A0'04C0        MOV      R0,#-1073741824
+   \       0x10   0xE380'0C70        ORR      R0,R0,#0x7000
+   \       0x14   0x....'....        BL       UART_ByteReceive
+    249          	MP3_RxHandler(bRByte);
+   \       0x18   0xE5DD'0000        LDRB     R0,[SP, #+0]
+   \       0x1C   0x....'....        BL       MP3_RxHandler
+    250          	//UART_ByteSend(UART0, &bRByte);
+    251          }
+   \       0x20   0xE8BD'4001        POP      {R0,LR}
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    252          
+    253          /*******************************************************************************
+    254          * Function Name  : BSPI0_IRQHandler
+    255          * Description    : This function handles the BSPI0 global interrupt.
+    256          * Input          : None
+    257          * Output         : None
+    258          * Return         : None
+    259          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    260          void BSPI0_IRQHandler(void)
+    261          {
+    262          }
+   \                     BSPI0_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    263          
+    264          /*******************************************************************************
+    265          * Function Name  : BSPI1_IRQHandler
+    266          * Description    : This function handles the BSPI1 global interrupt.
+    267          * Input          : None
+    268          * Output         : None
+    269          * Return         : None
+    270          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    271          void BSPI1_IRQHandler(void)
+    272          {
+    273          }
+   \                     BSPI1_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    274          
+    275          /*******************************************************************************
+    276          * Function Name  : I2C0_IRQHandler
+    277          * Description    : This function handles the I2C0 global interrupt.
+    278          * Input          : None
+    279          * Output         : None
+    280          * Return         : None
+    281          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    282          void I2C0_IRQHandler(void)
+    283          {
+    284          }
+   \                     I2C0_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    285          
+    286          /*******************************************************************************
+    287          * Function Name  : I2C1_IRQHandler
+    288          * Description    : This function handles the I2C1 global interrupt.
+    289          * Input          : None
+    290          * Output         : None
+    291          * Return         : None
+    292          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    293          void I2C1_IRQHandler(void)
+    294          {
+    295          
+    296          }
+   \                     I2C1_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    297          
+    298          /*******************************************************************************
+    299          * Function Name  : CAN_IRQHandler
+    300          * Description    : This function handles the CAN module global interrupt.
+    301          * Input          : None
+    302          * Output         : None
+    303          * Return         : None
+    304          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    305          void CAN_IRQHandler(void)
+    306          {
+    307          }
+   \                     CAN_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    308          
+    309          /*******************************************************************************
+    310          * Function Name  : ADC12_IRQHandler
+    311          * Description    : This function handles the ADC sample ready interrupt.
+    312          * Input          : None
+    313          * Output         : None
+    314          * Return         : None
+    315          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    316          void ADC12_IRQHandler(void)
+    317          {
+    318          }
+   \                     ADC12_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    319          
+    320          /*******************************************************************************
+    321          * Function Name  : T1TIMI_IRQHandler
+    322          * Description    : This function handles Timer1 global interrupt.
+    323          * Input          : None
+    324          * Output         : None
+    325          * Return         : None
+    326          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    327          void T1TIMI_IRQHandler(void)
+    328          {
+   \                     T1TIMI_IRQHandler:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    329          	Tim1_ISR();
+   \        0x4   0x....'....        BL       Tim1_ISR
+    330          }
+   \        0x8   0xE8BD'4001        POP      {R0,LR}
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    331          
+    332          /*******************************************************************************
+    333          * Function Name  : T2TIMI_IRQHandler
+    334          * Description    : This function handles Timer2 global interrupt.
+    335          * Input          : None
+    336          * Output         : None
+    337          * Return         : None
+    338          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    339          void T2TIMI_IRQHandler(void)
+    340          {
+   \                     T2TIMI_IRQHandler:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    341          	Tim2_ISR();
+   \        0x4   0x....'....        BL       Tim2_ISR
+    342          }
+   \        0x8   0xE8BD'4001        POP      {R0,LR}
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    343          
+    344          /*******************************************************************************
+    345          * Function Name  : T3TIMI_IRQHandler
+    346          * Description    : This function handles Timer3 global interrupt.
+    347          * Input          : None
+    348          * Output         : None
+    349          * Return         : None
+    350          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    351          void T3TIMI_IRQHandler(void)
+    352          {
+    353          }
+   \                     T3TIMI_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    354          
+    355          /*******************************************************************************
+    356          * Function Name  : HDLC_IRQHandler
+    357          * Description    : This function handles HDLC global interrupt.
+    358          * Input          : None
+    359          * Output         : None
+    360          * Return         : None
+    361          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    362          void HDLC_IRQHandler(void)
+    363          {
+    364          }
+   \                     HDLC_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    365          
+    366          /*******************************************************************************
+    367          * Function Name  : USBLP_IRQHandler
+    368          * Description    : This function handles USB low priority event interrupt.
+    369          * Input          : None
+    370          * Output         : None
+    371          * Return         : None
+    372          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    373          void USBLP_IRQHandler(void)
+    374          {
+    375          }
+   \                     USBLP_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    376          
+    377          /*******************************************************************************
+    378          * Function Name  : T0TOI_IRQHandler
+    379          * Description    : This function handles the Timer0 overflow interrupt.
+    380          * Input          : None
+    381          * Output         : None
+    382          * Return         : None
+    383          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    384          void T0TOI_IRQHandler(void)
+    385          {
+    386          }
+   \                     T0TOI_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    387          
+    388          /*******************************************************************************
+    389          * Function Name  : T0OC1_IRQHandler
+    390          * Description    : This function handles the Timer0 Output compare 1 interrupt.
+    391          * Input          : None
+    392          * Output         : None
+    393          * Return         : None
+    394          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    395          void T0OC1_IRQHandler(void)
+    396          {
+    397          }
+   \                     T0OC1_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    398          
+    399          /*******************************************************************************
+    400          * Function Name  : T0OC2_IRQHandler
+    401          * Description    : This function handles the Timer0 Output compare 2 interrupt.
+    402          * Input          : None
+    403          * Output         : None
+    404          * Return         : None
+    405          *******************************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+    406          void T0OC2_IRQHandler(void)
+    407          {
+    408          }
+   \                     T0OC2_IRQHandler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x....'....        DC32     CTL_Temp
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \        0x0   0x....'....        DC32     A_RID
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_2:
+   \        0x0   0x....'....        DC32     A_VID
+    409          
+    410          /******************* (C) COPYRIGHT 2003 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   ADC12_IRQHandler
+       0   Abort_Handler
+       0   BSPI0_IRQHandler
+       0   BSPI1_IRQHandler
+       0   CAN_IRQHandler
+       0   FIQ_Handler
+       0   FLASH_IRQHandler
+       0   HDLC_IRQHandler
+       0   I2C0ITERR_IRQHandler
+       0   I2C0_IRQHandler
+       0   I2C1ITERR_IRQHandler
+       0   I2C1_IRQHandler
+       0   Prefetch_Handler
+       0   RCCU_IRQHandler
+       0   RTC_IRQHandler
+       0   SWI_Handler
+       0   T0OC1_IRQHandler
+       0   T0OC2_IRQHandler
+       0   T0TIMI_IRQHandler
+       0   T0TOI_IRQHandler
+       8   T1TIMI_IRQHandler
+         8   -> Tim1_ISR
+       8   T2TIMI_IRQHandler
+         8   -> Tim2_ISR
+       0   T3TIMI_IRQHandler
+       8   UART0_IRQHandler
+         8   -> UART_ByteReceive
+         8   -> UART_ByteSend
+       8   UART1_IRQHandler
+         8   -> CL_RxTxISR
+       8   UART2_IRQHandler
+         8   -> TL_RxTxISR
+       8   UART3_IRQHandler
+         8   -> MP3_RxHandler
+         8   -> UART_ByteReceive
+       0   USBHP_IRQHandler
+       0   USBLP_IRQHandler
+       0   Undefined_Handler
+       8   WDG_IRQHandler
+         8   -> WDG_ECFlagClear
+       0   XTI_IRQHandler
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+       4  ADC12_IRQHandler
+      40  A_RID
+     256  A_VID
+       4  Abort_Handler
+       4  BSPI0_IRQHandler
+       4  BSPI1_IRQHandler
+       4  CAN_IRQHandler
+       1  CTL_Temp
+       4  FIQ_Handler
+       4  FLASH_IRQHandler
+       4  HDLC_IRQHandler
+       4  I2C0ITERR_IRQHandler
+       4  I2C0_IRQHandler
+       4  I2C1ITERR_IRQHandler
+       4  I2C1_IRQHandler
+       4  Prefetch_Handler
+       4  RCCU_IRQHandler
+       4  RTC_IRQHandler
+       4  SWI_Handler
+       4  T0OC1_IRQHandler
+       4  T0OC2_IRQHandler
+      32  T0TIMI_IRQHandler
+       4  T0TOI_IRQHandler
+      16  T1TIMI_IRQHandler
+      16  T2TIMI_IRQHandler
+       4  T3TIMI_IRQHandler
+      48  UART0_IRQHandler
+      32  UART1_IRQHandler
+      32  UART2_IRQHandler
+      40  UART3_IRQHandler
+       4  USBHP_IRQHandler
+       4  USBLP_IRQHandler
+       4  Undefined_Handler
+      16  WDG_IRQHandler
+       4  XTI_IRQHandler
+
+ 
+ 297 bytes in section .bss
+ 340 bytes in section .text
+ 
+ 340 bytes of CODE memory
+ 297 bytes of DATA memory
+
+Errors: none
+Warnings: none
