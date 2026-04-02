@@ -1,0 +1,172 @@
+\t (00:00:20) sigxp 17.2 P024 Windows SPB 64-bit Edition
+\t (00:00:20)     Journal start - Thu Jun 15 20:17:07 2017
+\t (00:00:20)         Host=DESKTOP-S54TKBQ User=wkd10 Pid=3952 CPUs=8
+\t (00:00:20) CmdLine= c:\cadence\cadence\cadence_spb_17.2-2016\tools\bin\sigxp.exe D:\Dropbox\È¸»ç\JDS_PRO\ÇØ¿Ü ÇÁ·ÎÁ§Æ®\denver\¼³°è\È¸·Îµµ\LIC-C3A-GERBER\LIC-C3.TOP
+\t (00:00:20) 
+\t (00:00:20) Starting new design...
+\i (00:00:20) trapsize 853
+\i (00:00:20) trapsize 832
+\i (00:00:20) trapsize 856
+\i (00:00:20) trapsize 891
+\i (00:00:20) trapsize 1257
+\i (00:00:21) trapsize 6287
+   (00:00:21) *WARNING* (reader): string terminated by illegal char \310 at line 1 of string "..._sxFileOpen "D:/Dropbox/È"
+   (00:00:21) 
+   (00:00:21) (_sxFileOpen "D:/Dropbox/È¸»ç/JDS_PRO/ÇØ¿Ü ÇÁ·ÎÁ§Æ®/denver/¼³°è/È¸·Îµµ/LIC-C3A-GERBER/LIC-C3.TOP")
+   (00:00:21)                                                     ^
+   (00:00:21) SYNTAX ERROR found at line 1 column 53 of file *string*
+   (00:00:21) *Error* lineread/read: syntax error encountered in input
+\i (00:00:21) sigxp background 
+   (00:00:21) Loading sigxp.cxt 
+\i (00:00:27) zoom out 1 
+\i (00:00:27) setwindow sigxp
+\i (00:00:27) zoom out 8009.62 5029.59
+\i (00:00:27) trapsize 6287
+\i (00:00:27) zoom out 1 
+\i (00:00:27) setwindow sigxp
+\i (00:00:27) zoom out 8009.62 5029.59
+\i (00:00:27) trapsize 6287
+\i (00:00:27) zoom out 1 
+\i (00:00:27) setwindow sigxp
+\i (00:00:27) zoom out 8009.62 5029.59
+\i (00:00:27) trapsize 6287
+\i (00:00:27) zoom out 1 
+\i (00:00:27) setwindow sigxp
+\i (00:00:27) zoom out 8009.62 5029.59
+\i (00:00:27) trapsize 6287
+\i (00:00:27) zoom out 1 
+\i (00:00:27) setwindow sigxp
+\i (00:00:27) zoom out 8009.62 5029.59
+\i (00:00:27) trapsize 6287
+\i (00:00:28) zoom out 1 
+\i (00:00:28) setwindow sigxp
+\i (00:00:28) zoom out 8034.76 5117.60
+\i (00:00:28) trapsize 6287
+\i (00:00:28) zoom out 1 
+\i (00:00:28) setwindow sigxp
+\i (00:00:28) zoom out 8034.76 5117.60
+\i (00:00:28) trapsize 6287
+\i (00:00:28) zoom out 1 
+\i (00:00:28) setwindow sigxp
+\i (00:00:28) zoom out 8034.76 5117.60
+\i (00:00:28) trapsize 6287
+\i (00:00:28) zoom out 1 
+\i (00:00:28) setwindow sigxp
+\i (00:00:28) zoom out 8034.76 5117.60
+\i (00:00:28) trapsize 6287
+\i (00:00:28) zoom out 1 
+\i (00:00:28) setwindow sigxp
+\i (00:00:28) zoom out 8034.76 5117.60
+\i (00:00:28) trapsize 6287
+\i (00:00:28) zoom out 1 
+\i (00:00:28) setwindow sigxp
+\i (00:00:28) zoom out 8034.76 5117.60
+\i (00:00:28) trapsize 6287
+\i (00:00:28) zoom out 1 
+\i (00:00:28) setwindow sigxp
+\i (00:00:28) zoom out 8034.76 5117.60
+\i (00:00:28) trapsize 6287
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom out 8034.76 5117.60
+\i (00:00:29) trapsize 6287
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom out 8034.76 5117.60
+\i (00:00:29) trapsize 6287
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom out 8034.76 5117.60
+\i (00:00:29) trapsize 6287
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom out 8034.76 5117.60
+\i (00:00:29) trapsize 6287
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom out 8034.76 5117.60
+\i (00:00:29) trapsize 6287
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom out 8034.76 5117.60
+\i (00:00:29) trapsize 6287
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom out 8034.76 5117.60
+\i (00:00:29) trapsize 6287
+\i (00:00:29) zoom in 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom in 8034.76 5117.60
+\i (00:00:29) trapsize 3143
+\i (00:00:29) zoom in 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom in 7611.31 5117.60
+\i (00:00:29) trapsize 1572
+\i (00:00:29) zoom in 1 
+\i (00:00:29) setwindow sigxp
+\i (00:00:29) zoom in 7611.31 5117.60
+\i (00:00:29) trapsize 786
+\i (00:00:29) zoom in 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom in 7611.32 5117.60
+\i (00:00:30) trapsize 393
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom in 7611.32 5117.60
+\i (00:00:30) trapsize 196
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom in 7611.32 5117.61
+\i (00:00:30) trapsize 98
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom in 7611.32 5117.61
+\i (00:00:30) trapsize 49
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom in 7611.32 5117.61
+\i (00:00:30) trapsize 25
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom in 7611.32 5117.61
+\i (00:00:30) trapsize 12
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom in 7611.32 5117.62
+\i (00:00:30) trapsize 6
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom out 7611.32 5117.62
+\i (00:00:30) trapsize 12
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom out 7611.33 5117.62
+\i (00:00:30) trapsize 25
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom out 7611.34 5117.61
+\i (00:00:30) trapsize 49
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom out 7611.33 5117.61
+\i (00:00:30) trapsize 98
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom out 7611.32 5117.62
+\i (00:00:30) trapsize 196
+\i (00:00:30) zoom out 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom out 7611.33 5117.62
+\i (00:00:30) trapsize 393
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom in 7611.33 5117.62
+\i (00:00:30) trapsize 196
+\i (00:00:30) zoom in 1 
+\i (00:00:30) setwindow sigxp
+\i (00:00:30) zoom in 7611.33 5117.62
+\i (00:00:30) trapsize 98
+\i (00:00:32) exit 
+   (00:00:32) Loading signal.cxt 
+   (00:00:32) Loading axlcore.cxt 
+\t (00:00:32)     Journal end - Thu Jun 15 20:17:20 2017
