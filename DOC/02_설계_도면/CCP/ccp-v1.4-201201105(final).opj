@@ -1,0 +1,161 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\ccp-v1.4-201201105(final).dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify)
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420"))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector)
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\ccp-v1.4-201201105(final).dsn")
+      (Path "Design Resources" ".\ccp-v1.4-201201105(final).dsn" "SCHEMATIC1")
+      (Select "Design Resources" ".\ccp-v1.4-201201105(final).dsn" "SCHEMATIC1"
+         "F-AUDIO/SDCARD"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 483 0 1933"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 88 2028 88 1188")
+        (Scroll "0 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "A-CPU-CONNECTOR-1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 132 2072 132 1232")
+        (Scroll "0 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "C-POWER-1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 264 2204 264 1364")
+        (Scroll "0 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "D-POWER-2"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 220 2160 220 1278")
+        (Scroll "0 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "E-LCD"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 264 2204 264 1322")
+        (Scroll "0 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "B-CPU-CONNECTOR-2"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 308 2248 308 1366")
+        (Scroll "0 0")
+        (Zoom "142")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "H-LAN"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 352 2292 352 1410")
+        (Scroll "0 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "I-UART"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 396 2336 396 1454")
+        (Scroll "0 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "J-UART-RS485"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 490 3075 490 1571")
+        (Scroll "0 0")
+        (Zoom "171")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "F-AUDIO/SDCARD"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 539 3134 539 1734")
+        (Scroll "-153 0")
+        (Zoom "228")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "G-USB"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 0 2595 0 1195")
+        (Scroll "-90 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "K-ALSB"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -13 -58 49 2644 49 1244")
+        (Scroll "-90 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\DROPBOX\회사\JDS_PRO\해외 프로젝트\DENVER\PROGRAM\업체 자료\CCP\CCP-V1.4-201201105(FINAL).DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "L-DIGITAL INPUT/OUTPUT")))
+  (MPSSessionName "JDS_DELL"))
