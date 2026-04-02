@@ -1,0 +1,79 @@
+x-sender: crony22@gmail.com
+x-receiver: dsjang@wjis.co.kr
+Received: from mail-ob0-f171.google.com (209.85.214.171)
+	by WJGROUP with SMTP; Fri, 14 Sep 2012 16:05:21  +0900 (KST)
+Received: by obqv19 with SMTP id v19so7818512obq.30
+        for <dsjang@wjis.co.kr>; Fri, 14 Sep 2012 00:05:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :content-type;
+        bh=ogDgKyFoMqFPK6f6eDPEqBOS1FLGjMLR+w1LCuMEmzc=;
+        b=eNK44JlMt7HG2mUoQpkjKP7d3RDq8Ou5MhfwYV/Sw+jiaP6TFDwoS10gPfKpSLGs08
+         Knj4Na3UmcTDQx7Os6TLZp5fSYPUpvmbF/4YOz4YfLrn7/RkYjx4hDMAD09P++2aUKxI
+         CT5ZQg+c3ztGi9awzFH7vavGGwqdzeuhuvqWOoTWZ1cojuMxOqhJ+vr2gTEwqI+VAQzU
+         pib6ZtayQymMa+LPCznmwoOjwUyx/APH7X4WPXXQGbQIJ97NcdQn4kIEk4GDWbccY9/8
+         SgJpA6ErNTC/bjPdtBbC7cVS4sLkQz7537I3gS59podxxFxilF7KgdrFU44kp5aN0/Vs
+         EJsw==
+MIME-Version: 1.0
+Received: by 10.60.12.42 with SMTP id v10mr1510463oeb.131.1347606321193; Fri,
+ 14 Sep 2012 00:05:21 -0700 (PDT)
+Received: by 10.182.42.98 with HTTP; Fri, 14 Sep 2012 00:05:21 -0700 (PDT)
+In-Reply-To: <50529cb0.c5512b0a.75be.34f1SMTPIN_ADDED@mx.google.com>
+References: <50529cb0.c5512b0a.75be.34f1SMTPIN_ADDED@mx.google.com>
+Date: Fri, 14 Sep 2012 16:05:21 +0900
+Message-ID: <CAN9=m3Lfk6tQA59A+fzvYySySdP5VsJsXvMRgBLyK14Eu41-Tg@mail.gmail.com>
+Subject: =?EUC-KR?B?UmU6ILWnufYgwd+/rCC9w8foIMH4x+Cw/LfDIFRFU1Qgx/nBti4=?=
+From: =?EUC-KR?B?v7C9wsjG?= <crony22@gmail.com>
+To: dsjang@wjis.co.kr
+Content-Type: multipart/alternative; boundary=e89a8fb205241264d004c9a40c6a
+
+--e89a8fb205241264d004c9a40c6a
+Content-Type: text/plain; charset=EUC-KR
+Content-Transfer-Encoding: base64
+
+vsiz58fPvcq0z7HuPyC/or26udnAzLT1IL+wvcLIxsDUtM+02S4KCrO7wdYgv/m/5MDPv6EgVENN
+UyCws7nfILDHwLi3ziDBtry6wdYgwvfA5bTUsPoguczGw8DMIL+5waS1x77uIMDWvcC0z7TZLgoK
+uczGw8DMILi2w8TB9rTCtaW3ziDB37fDvcPH6L+hIML8sKHHz7W1t88gx8+w2r3AtM+02S4KCrz2
+sO3Hz73KvcO/5C4KCr+wvcLIxiC15biyLgoKMjAxMrPiIDm/+SAxNMDPIL/AwPwgMTE6NTUsIMDl
+tPa89iA8ZHNqYW5nQHdqaXMuY28ua3I+tNTAxyC4uzoKCj4gIL7Is+cgx8+8vL/kIL/swfggu+rA
+/CDA5bT2vPYgwNS0z7TZLgo+Cj4gsde1v77IILWnufYgx8G3zsGnxq64piC1tb/NIMHWvMW8rSDA
+3yC4trmruK4gtce+7iCwqbTPtNkuCj4KPgo+Cj4gKrTZwL3B1iC/+S3IrSgxNy0xOCkqIMHft8O9
+w8foIMPWwb4gVEVTVLimIMH4x+Agx8+3wbDtIMfVtM+02S4KPgo+IMf2wOcgvcPH6CCw4bD6IMG2
+sd2+vyC5zLrxx9Egus660MDMIMiuwM4gtce+7iC6uL/PIMfPt8Gw7SDH1bTPtNkuCj4KPgo+Cj4g
+udm72r3DsNrB9ri4IMG2sd24uLT1ILW1v80gwda8zMC4uOkgx9W0z7TZLgo+Cj4KPgo+IMDPwaQg
+yK7AziDHz73DsO0gwMy78yDA1sC4vcUgutDAuiC/rLb0IMHWvLy/5CEhIX5+Cj4KPiCwqLvnIMfV
+tM+02S4KPgo=
+--e89a8fb205241264d004c9a40c6a
+Content-Type: text/html; charset=EUC-KR
+Content-Transfer-Encoding: base64
+
+PGRpdj6+yLPnx8+9yrTPse4/IL+ivbq52cDMtPUgv7C9wsjGwNS0z7TZLjwvZGl2PjxkaXY+Jm5i
+c3A7PC9kaXY+PGRpdj6zu8HWIL/5v+TAz7+hIFRDTVMgsLO53yCwx8C4t84gwba8usHWIML3wOW0
+1LD6ILnMxsPAzCC/ucGktce+7iDA1r3AtM+02S48L2Rpdj48ZGl2PiZuYnNwOzwvZGl2PjxkaXY+
+uczGw8DMILi2w8TB9rTCtaW3ziDB37fDvcPH6L+hIML8sKHHz7W1t88gx8+w2r3AtM+02S48L2Rp
+dj48ZGl2PiZuYnNwOzwvZGl2PjxkaXY+vPaw7cfPvcq9w7/kLjwvZGl2PjxkaXY+Jm5ic3A7PC9k
+aXY+PGRpdj6/sL3CyMYgteW4si48YnI+PGJyPjwvZGl2PjxkaXYgY2xhc3M9ImdtYWlsX3F1b3Rl
+Ij4KMjAxMrPiIDm/+SAxNMDPIL/AwPwgMTE6NTUsIMDltPa89iA8c3BhbiBkaXI9Imx0ciI+Jmx0
+OzxhIGhyZWY9Im1haWx0bzpkc2phbmdAd2ppcy5jby5rciIgdGFyZ2V0PSJfYmxhbmsiPmRzamFu
+Z0B3amlzLmNvLmtyPC9hPiZndDs8L3NwYW4+tNTAxyC4uzo8YnI+PGJsb2NrcXVvdGUgc3R5bGU9
+Im1hcmdpbjowcHggMHB4IDBweCAwLjhleDtwYWRkaW5nLWxlZnQ6MWV4O2JvcmRlci1sZWZ0LWNv
+bG9yOnJnYigyMDQsMjA0LDIwNCk7Ym9yZGVyLWxlZnQtd2lkdGg6MXB4O2JvcmRlci1sZWZ0LXN0
+eWxlOnNvbGlkIiBjbGFzcz0iZ21haWxfcXVvdGUiPgo8aW1nIHNyYz0iaHR0cDovLzIxMS4yMjUu
+MjE0LjIwMjo4MC9rb3Jfd2Vicm9vdC9zcmMvZW0vTmVvQml6TWFpbC9tYWlsL2NoZWNrLmFzcHg/
+cmVjZWl2ZXI9Y3JvbnkyMkBnbWFpbC5jb20mYW1wO2lkPWRzamFuZyZhbXA7ZG9tYWluX2lkeD01
+JmFtcDtpZHg9NTYmYW1wO2tleT05YzM2YzMxY2JjNTA0MGI1OWJjNGVhMDIyZWVjYWU5Y0Bkc2ph
+bmdAd2ppcy5jby5rciIgd2lkdGg9IjAiIGhlaWdodD0iMCI+CiAKCgoKCjxkaXYgc3R5bGU9ImZv
+bnQtZmFtaWx5OrG8uLI7Zm9udC1zaXplOjEwcHQiPgo8cD6+yLPnIMfPvLy/5CC/7MH4ILvqwPwg
+wOW09rz2IMDUtM+02S48L3A+CjxwPrHXtb++yCC1p7n2IMfBt87Bp8auuKYgtbW/zSDB1rzFvK0g
+wN8guLa5q7iuILXHvu4gsKm0z7TZLjwvcD4KPHA+Jm5ic3A7PC9wPgo8cD48c3Ryb25nPjxmb250
+IHN0eWxlPSJmb250LXNpemU6MTRwdDtiYWNrZ3JvdW5kLWNvbG9yOnJnYigyNTUsMCwwKSI+tNnA
+vcHWIL/5LcitKDE3LTE4KTwvZm9udD48L3N0cm9uZz4gwd+3w73Dx+ggw9bBviBURVNUuKYgwfjH
+4CDHz7fBsO0gx9W0z7TZLjwvcD4KPHA+x/bA5yC9w8foILDhsPogwbax3b6/ILnMuvHH0SC6zrrQ
+wMwgyK7AziC1x77uILq4v88gx8+3wbDtIMfVtM+02S48L3A+CjxwPiZuYnNwOzwvcD4KPHA+udm7
+2r3DsNrB9ri4IMG2sd24uLT1ILW1v80gwda8zMC4uOkgx9W0z7TZLjwvcD4KPHA+Jm5ic3A7PC9w
+Pgo8cD7Az8GkIMiuwM4gx8+9w7DtIMDMu/MgwNbAuL3FILrQwLogv6y29CDB1ry8v+QhISF+fjwv
+cD4KPHA+sKi75yDH1bTPtNkuPC9wPjwvZGl2PjwvYmxvY2txdW90ZT48L2Rpdj48YnI+Cg==
+--e89a8fb205241264d004c9a40c6a--
+
+
