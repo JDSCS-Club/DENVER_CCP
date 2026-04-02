@@ -1,0 +1,102 @@
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+?
+[ENTER]      : Move next line after out '->' 
+'?'          : Help 
+'Time'       : Date&time setting , 'Time=YYMMDDHHMNSS', 'EX)Time=120102030405' 
+'t'          : Date&time read 
+'Version     : Version 
+'Recent'     : Recently faults start 
+'Historical' : Historical data start 
+'Rxinfo'     : Recieve info 
+'LnWayClr'   : 'm_nLnWkWaySideOnRxOk' variable clear 
+'LnFtpClr'   : 'm_bLnWkFtpEndFlag' variable clear 
+'HisStTm'    : Historical data start time set(2000/1/1 0:0:0 ~ total second), HisStTm=XXXXXXXX, 'EX)HisStTm=0000000F' 
+'CarNoSet'   : Car number set. CarNoSet=XXXX, EX)CarNoSet=4001 -> [16481[0x4061],A CAR]
+'TrainConf'  : Train Configuration. TrainConf=X(X : 0~3[2,4,6,8Car]) => [0x8000]
+'CarPosSet'  : Car index position. CarPosSet=X(X:1~8) 'EX)CarPosSet=1' => [0x1]
+'CiFaultSet' : Other C/I Fault. CiFaultSet=XX 'EX)CiFaultSet=00' => [0x8000]
+'WaySideON'  : WaySide_ON 
+'CommStSet'  : Comm Status. CommStSet=XXXXXXXX  'EX) CommStSet=FF7F1F53' => [0x00,0x00,0x00,0x00]
+'VerSet'     : Each unit version set. VerSet=XX(incdex):XXXX(Ver):XXXXXX(BuildDate) 
+
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+?
+[ENTER]      : Move next line after out '->' 
+'?'          : Help 
+'Time'       : Date&time setting , 'Time=YYMMDDHHMNSS', 'EX)Time=120102030405' 
+'t'          : Date&time read 
+'Version     : Version 
+'Recent'     : Recently faults start 
+'Historical' : Historical data start 
+'Rxinfo'     : Recieve info 
+'LnWayClr'   : 'm_nLnWkWaySideOnRxOk' variable clear 
+'LnFtpClr'   : 'm_bLnWkFtpEndFlag' variable clear 
+'HisStTm'    : Historical data start time set(2000/1/1 0:0:0 ~ total second), HisStTm=XXXXXXXX, 'EX)HisStTm=0000000F' 
+'CarNoSet'   : Car number set. CarNoSet=XXXX, EX)CarNoSet=4001 -> [16481[0x4061],A CAR]
+'TrainConf'  : Train Configuration. TrainConf=X(X : 0~3[2,4,6,8Car]) => [0x8000]
+'CarPosSet'  : Car index position. CarPosSet=X(X:1~8) 'EX)CarPosSet=1' => [0x1]
+'CiFaultSet' : Other C/I Fault. CiFaultSet=XX 'EX)CiFaultSet=00' => [0x8000]
+'WaySideON'  : WaySide_ON 
+'CommStSet'  : Comm Status. CommStSet=XXXXXXXX  'EX) CommStSet=FF7F1F53' => [0x00,0x00,0x00,0x00]
+'VerSet'     : Each unit version set. VerSet=XX(incdex):XXXX(Ver):XXXXXX(BuildDate) 
+
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
+[RX:06] 02 0A 00 00 0A 03 
+Unit State Data Sending : [TX:14] 02 0B 00 05 00 00 00 00 00 00 00 00 0E 03 
