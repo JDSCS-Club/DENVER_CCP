@@ -1,0 +1,41 @@
+Change time to 2017-03-07.
+10:28:52.093  
+10:28:52.218  OnSharedMemoryEventMainDlg() - Start
+10:28:52.218  	 WorkMode : 3
+10:28:52.218  	 WaysideState : 1
+10:28:52.218  	 CDTDataType : 0
+10:28:52.218  	 nSearchTime : 300
+10:28:52.218  	 nTryTime : 5
+10:28:52.218  
+10:28:52.218  OnSharedMemoryEventMainDlg() - End
+
+10:28:53.375  Clrear Fault Index List...
+10:28:53.375  	Fault Info : D:\WOOJIN\CNCS\CDTDATA\4039-20170307102852[A].Bin
+10:28:53.375  	Fault Info Temp : D:\WOOJIN\TEMPORARY\CDTDATA\4039-20170307102852[A].Bin
+10:28:53.375     Write Fault - Idx : 1, Pos : 0, Len : 128
+10:28:53.515     Write Fault - Idx : 2, Pos : 128, Len : 128
+10:28:53.671     Write Fault - Idx : 3, Pos : 256, Len : 128
+10:28:53.828     Write Fault - Idx : 4, Pos : 384, Len : 128
+10:28:53.968     Write Fault - Idx : 5, Pos : 512, Len : 128
+10:28:54.125     Write Fault - Idx : 6, Pos : 640, Len : 128
+10:28:54.281     Write Fault - Idx : 7, Pos : 768, Len : 128
+10:28:54.421     Write Fault - Idx : 8, Pos : 896, Len : 128
+10:28:54.578     Write Fault - Idx : 9, Pos : 1024, Len : 128
+10:28:54.734     Write Fault - Idx : 10, Pos : 1152, Len : 128
+10:28:54.875     Write Fault - Idx : 11, Pos : 1280, Len : 128
+10:28:55.031     Write Fault - Idx : 12, Pos : 1408, Len : 128
+10:28:55.187     Write Fault - Idx : 13, Pos : 1536, Len : 128
+10:28:55.328     Write Fault - Idx : 14, Pos : 1664, Len : 128
+10:28:55.484     Write Fault - Idx : 15, Pos : 1792, Len : 128
+10:28:55.640     Write Fault - Idx : 16, Pos : 1920, Len : 128
+10:28:55.781     Write Fault - Idx : 17, Pos : 2048, Len : 128
+10:28:55.937     Write Fault - Idx : 18, Pos : 2176, Len : 128
+10:28:56.031     Write Fault - Idx : 19, Pos : 2304, Len : 8
+10:28:56.031  Buffer Size : C[19], B[19]\n
+10:28:56.031  Error Packet List---------------------
+10:28:56.031  --------------------------------------
+10:28:56.031     Fault Packet Retry: 0, 10.
+10:28:56.031     Fault Complate[Retry Err Packet : 0]!
+10:29:01.140  
+10:29:01.140  OnLicToCdtReciveShareMemoryWorking() - Start
+10:29:01.140  OnLicToCdtReciveShareMemoryWorking() - End

@@ -1,0 +1,32 @@
+12:15:14.062  -----------------------------------------------------
+12:15:14.062  >>> Start FTPDATA
+12:15:14.062      Execute File - D:\WOOJIN\CNCS\FTPDATA.EXE
+12:15:14.062  -----------------------------------------------------
+13:15:14.343  13:15:14 : ------------------------
+13:15:14.343             This is GetNetworkParams
+13:15:14.343             ------------------------
+13:15:14.343                 Host Name: D4040
+13:15:14.343                 Domain Name: D4040
+13:15:14.343                 DNS Servers
+13:15:14.343                     168.126.63.1
+13:15:14.359                 Node Type: 
+13:15:14.359                 NetBIOS Scope ID: 
+13:15:14.375                 IP Routing Enabled: No
+13:15:14.375                 WINS Proxy Enabled: No
+13:15:14.375                 NetBIOS Resolution Uses DNS: No
+13:25:17.625  \n
+13:25:17.625  OnSharedMemoryEventMainDlg() - Start
+13:25:17.625  	 Active : 0
+13:25:17.625  	 WorkMode : 3
+13:25:17.625  	 WaysideState : 1
+13:25:17.625  	 CDTDataType : 0
+13:25:17.625  	 nSearchTime : 300
+13:25:17.625  	 nTryTime : 5
+13:25:17.625  OnSharedMemoryEventMainDlg() - End
+13:25:17.625  13:25:17 : SetWaysideTimer()
+13:25:18.625  13:25:18 : Wayside Wait Time : 4
+13:25:19.625  13:25:19 : Wayside Wait Time : 3
+13:25:20.625  13:25:20 : Wayside Wait Time : 2
+13:25:21.625  13:25:21 : Wayside Wait Time : 1
+13:25:22.625  13:25:22 : Wayside Wait Time : 0
+13:25:23.625  13:25:23 : KillWaysideTimer()

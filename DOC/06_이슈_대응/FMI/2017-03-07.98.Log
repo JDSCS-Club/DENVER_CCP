@@ -1,0 +1,26 @@
+Change time to 2017-03-07.
+13:17:21.000  
+13:17:21.109  OnSharedMemoryEventMainDlg() - Start
+13:17:21.109  	 WorkMode : 3
+13:17:21.109  	 WaysideState : 1
+13:17:21.109  	 CDTDataType : 0
+13:17:21.109  	 nSearchTime : 300
+13:17:21.109  	 nTryTime : 5
+13:17:21.109  
+13:17:21.109  OnSharedMemoryEventMainDlg() - End
+
+13:17:21.734  Clrear Fault Index List...
+13:17:21.734  	Fault Info : D:\WOOJIN\CNCS\CDTDATA\4039-20170307131721[A].Bin
+13:17:21.734  	Fault Info Temp : D:\WOOJIN\TEMPORARY\CDTDATA\4039-20170307131721[A].Bin
+13:17:21.734     Write Fault - Idx : 1, Pos : 0, Len : 128
+13:17:21.890     Write Fault - Idx : 2, Pos : 128, Len : 128
+13:17:22.046     Write Fault - Idx : 3, Pos : 256, Len : 128
+13:17:22.187     Write Fault - Idx : 4, Pos : 384, Len : 128
+13:17:22.281  Buffer Size : C[5], B[5]\n
+13:17:22.281  Error Packet List---------------------
+13:17:22.281  --------------------------------------
+13:17:22.281     Fault Packet Retry: 0, 10.
+13:17:22.281     Fault Complate[Retry Err Packet : 0]!
+13:17:27.390  
+13:17:27.390  OnLicToCdtReciveShareMemoryWorking() - Start
+13:17:27.390  OnLicToCdtReciveShareMemoryWorking() - End

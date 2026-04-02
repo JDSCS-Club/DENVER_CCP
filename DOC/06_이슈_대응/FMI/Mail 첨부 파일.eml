@@ -1,0 +1,4198 @@
+Received: from mailserver5.snclavalin.com (unknown [142.242.7.17])	by
+ imsa3.hmc.co.kr (Postfix) with ESMTP id DDB6C900DD;	Tue, 13 Sep 2016 08:57:04
+ +0900 (KST)
+Received: from imsa3.hmc.co.kr (unknown [127.0.0.1])	by IMSVA (Postfix) with
+ ESMTP id D724F900F2;	Tue, 13 Sep 2016 08:57:08 +0900 (KST)
+Received: from [58.87.40.39] ([58.87.40.39])           by
+ watcher01.hyundai-motor.com ([58.87.45.26])           with ESMTP id
+ 1473726065.915768.3038772112.watcher01          for <>;           Tue, 13 Sep
+ 2016 09:18:31 +0900 (KST) 
+Received: from SLI2297.sli.bz ([169.254.3.131]) by SLI2292.sli.bz
+ ([169.254.3.183]) with mapi id 14.03.0294.000; Mon, 12 Sep 2016 19:56:59
+ -0400
+Received: from SLI2292.sli.bz (10.1.10.206) by sli2294.sli.bz (10.1.10.204)
+ with Microsoft SMTP Server (TLS) id 14.3.294.0; Mon, 12 Sep 2016 19:57:00
+ -0400
+Received: from SLI2294.sli.bz (unverified [10.1.13.180]) by SLI1745.sli.bz
+ (Vircom SMTPRS 6.2.83.20478/1944.123.104.1012203) with ESMTP id
+ <B0046296778@SLI1745.sli.bz>; Mon, 12 Sep 2016 19:57:00 -0400
+Received: from FireEye-EX1.localdomain (10.10.220.22) by
+ GW3HUBS01.autos.hmgc.net (10.10.197.81) with Microsoft SMTP Server id
+ 14.3.181.6; Tue, 13 Sep 2016 09:22:15 +0900
+Received: by FireEye-EX1.localdomain (Postfix, from userid 600)	id
+ 3sY53C5HLmzScgS; Tue, 13 Sep 2016 09:21:17 +0900 (KST)
+Received: from watcher01.hyundai-motor.com (unknown [58.87.45.26])	by
+ FireEye-EX1.localdomain (Postfix) with ESMTP id 3sY523751PzScfd;	Tue, 13 Sep
+ 2016 09:21:15 +0900 (KST)
+Return-Path: <Robert.Fauvelle@snclavalin.com>
+From: "Fauvelle, Robert" <Robert.Fauvelle@snclavalin.com>
+To: =?utf-8?B?7KCE7Jyk7IiYIChMZW8gSmVvbik=?= <staranswer@hyundai-rotem.co.kr>
+CC: =?utf-8?B?6rmAIOyduOyynA==?= <ickim@hyundai-rotem.co.kr>,
+	=?utf-8?B?67CVIOyEseuvvA==?= <psmwin@hyundai-rotem.co.kr>,
+	=?utf-8?B?6rmAIOyYpO2YhA==?= <ohkim@hyundai-rotem.co.kr>,
+	=?utf-8?B?6rO1IOuqheyDgQ==?= <mskong@hyundai-rotem.co.kr>,
+	=?utf-8?B?7IugIOq0keq3oA==?= <kkshin@hyundai-rotem.co.kr>
+References: <017401d20710$f2f74c10$d8e5e430$@hyundai-rotem.co.kr> <8F296BD53C25EB4DBACEA1478CDCB39D12F0BC00@SLI2297.sli.bz> <003001d20cdd$cd6aa5f0$683ff1d0$@hyundai-rotem.co.kr> <8F296BD53C25EB4DBACEA1478CDCB39D12F0E9BD@SLI2297.sli.bz> <000e01d20d4b$14ceef60$3e6cce20$@hyundai-rotem.co.kr>
+In-Reply-To: <000e01d20d4b$14ceef60$3e6cce20$@hyundai-rotem.co.kr>
+Subject: RE: [DTS EMU] Provide the test result for poor audio quality in the recorded file
+Date: Tue, 13 Sep 2016 08:56:59 +0900
+Message-ID: <8F296BD53C25EB4DBACEA1478CDCB39D12F0ED5D@SLI2297.sli.bz>
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0026_01D20DA2.C32E4C20"
+X-Mailer: Microsoft Outlook 14.0
+X-MS-Exchange-Organization-AuthSource: GW3HUBS01.autos.hmgc.net
+X-Originating-IP: [142.242.7.50]
+Thread-Index: AQHOyn7mz6daGe06KwTGBp8PzTB/xAJT9XLmAfQKQV4CNeiyqQLVAmdoAmmwvhk=
+Content-Language: en-us
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator: 
+X-TM-AS-Product-Ver: IMSVA-8.5.0.1165-8.0.0.1202-22572.003
+X-TM-AS-Result: No--28.769-7.0-31-10
+X-imss-scan-details: No--28.769-7.0-31-10;No--28.769-6.0-31-10
+X-TM-AS-User-Approved-Sender: No;No
+X-TM-AS-User-Blocked-Sender: No;No;No
+X-TM-AS-Result-Xfilter: Match text exemption rules:No;Match text exemption rules:No
+X-TMASE-Version: IMSVA-8.5.0.1165-8.0.1202-22572.003
+X-TMASE-Result: 10--28.769100-5.000000
+X-TMASE-MatchedRID: OoEa6u7Uk59FuTNU2lqAuTuK5n+Z1hi2Xr5m2oumZk0PjJn3WUSKoRUF
+	8mNaDLLeGnoWKhiTMIVQ/kHEXWEa3eYAh37ZsBDCE4gFxOtbkrm1eX0jEQ9c6muO5ZG5LpVFbmV
+	Cjpn5cnn3tnGPp/Y8nX58XzLlWvfima6DzXaohvPW1GWDdkM5/t9zZd3pUn7KfkldTfrdxDe5yt
+	0wyLZ53N7aTLGQl1Vrtlh87IQoiWyOn1FK/jZMP0XDBOJVUNJLEd+K6O5Nt52S+91twQWe6zGnW
+	JtDaP084qiE0M6Iev6GabYJQKSmhzahjZPEodkX31+ADeMCXbxMKpbdeG3MOvGBGg/m7Dpwd7T+
+	hlIMG3v4UNkiV6d64o/Bk4IfiJapMEK/6tg6I3GUpb//ZJZA4lo9Piixe0zn55pad/I0igHPiwa
+	w8bN2WPzTAr7zQVtjtEvy4aJTV6l2XqsJnwiP2avd3WuZF0KAMxVjmK1sOgO47KvO8jt/nlXXRW
+	ERxVTh559NwXKTeb3bZ2ogMKUNwFPkggZC+/N+wbqSvKoiQPGwucNx4BfFIigIAvPXv5yhqTQaU
+	essnJxggI58ZUEmGcaRhTxDHftCcFEiuPxHjsU0AKed0u9fBxjQD3m2MCf7umlLC5g94HsNDo8R
+	z195x0YsYmd3LiWeBXpU9GSqKtnSJYtKkRD1mM+Yc0J1J7B2nQqircTOm4fxu4bWlx6asAh0djq
+	FvTIDtUF3kVfwyhTXB5bx+HLHWd2pKQTXGeFKghFkp5f+YPYszxfUl348SqynFO15r01l4s9PZD
+	GxSjFmzjLjmiFK1SK9HfDWaGdYlj0PT81HGirG0EHapv1eJ2RinB1Mnjd9lR1cT9YafQUVR7DQW
+	X/WkSrlQZA7I9k5We3zo5eSMXBfo/0aGX6BDNZkTZqBNkSBXLpt0q9zriw3okffvJjWvxnPMkTV
+	9RcV5243XfDOapd0Q2pj4kS/FA==
+X-TERRACE-SPAMMARK: NO       (SR:144.83)                       (by Terrace)                                                 
+
+------=_NextPart_000_0026_01D20DA2.C32E4C20
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_001_0027_01D20DA2.C32E7330"
+
+------=_NextPart_001_0027_01D20DA2.C32E7330
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Leo,
+
+=20
+
+The tests to be performed after the FMI is completed should be defined =
+in the FMI.  Please note the below agreement in the FMI/ECP and submit =
+the FMI/ECP for approval.  I do not have any other comments.
+
+=20
+
+Thanks,
+Bob
+
+=20
+
+From: =EC=A0=84=EC=9C=A4=EC=88=98 (Leo Jeon) =
+[mailto:staranswer@hyundai-rotem.co.kr]=20
+Sent: Monday, September 12, 2016 5:12 PM
+To: Fauvelle, Robert
+Cc: =EA=B9=80 =EC=9D=B8=EC=B2=9C; =EB=B0=95 =EC=84=B1=EB=AF=BC; =
+=EA=B9=80 =EC=98=A4=ED=98=84; =EA=B3=B5 =EB=AA=85=EC=83=81; =EC=8B=A0 =
+=EA=B4=91=EA=B7=A0
+Subject: RE: [DTS EMU] Provide the test result for poor audio quality in =
+the recorded file
+
+=20
+
+Dear Bob,
+
+=20
+
+Thanks for your quick response.
+
+We can check both the static PEI Calls (20 cars) and the dynamic PEI =
+Calls (5 cars).
+
+But, it is impossible to check the evaluation for the two conditions of =
+PEI Calls without approval of the ECP.
+
+The reason is that the checking will be demonstrated to the 20 cars so, =
+we need to perform the FMI to the 20 cars at least.
+
+Can you approve to the ECP before the evaluation?
+
+=20
+
+=20
+
+Regards,
+
+Leo
+
+=20
+
+
+https://www.hyundai-rotem.co.kr/Images/temp/ideaq1.jpg
+
+
+=20
+
+
+ =EC=A0=84=EC=9C=A4=EC=88=98  Jeon Yoonsoo
+
+=09
+
+ =EC=A0=84=EC=9E=A5=ED=92=88=EA=B0=9C=EB=B0=9C=ED=8C=80  |  =
+=EC=B1=85=EC=9E=84=EC=97=B0=EA=B5=AC=EC=9B=90
+
+
+ Electric Equipment Development Team  |  Principal Researcher
+
+
+=20
+
+
+ Hyundai Rotem Company
+
+
+ T 031-596-9396   M 010-3683-7520
+
+
+ staranswer@hyundai-rotem.co.kr
+
+=09
+
+=20
+
+
+=EC=83=81=EA=B8=B0 =EB=A9=94=EC=9D=BC=EC=9D=80 =
+=EC=A7=80=EC=A0=95=EB=90=9C =
+=EC=88=98=EC=8B=A0=EC=9D=B8=EB=A7=8C=EC=9D=84 =EC=9C=84=ED=95=B4 =
+=EB=B0=9C=EC=86=A1=EB=90=98=EB=8A=94 =
+=EA=B2=83=EC=9C=BC=EB=A1=9C=EC=84=9C =EB=B3=B4=EC=95=88=EC=9D=84 =
+=EC=9C=A0=EC=A7=80=ED=95=B4=EC=95=BC =ED=95=98=EB=8A=94 =
+=EC=A0=95=EB=B3=B4 =EB=B0=8F =EA=B4=80=EB=A0=A8 =
+=EB=B2=95=EB=A0=B9=EC=97=90 =EB=94=B0=EB=9D=BC =
+=EB=B3=B4=ED=98=B8=EB=90=98=EB=8A=94 =
+=EC=98=81=EC=97=85=EB=B9=84=EB=B0=80 =EB=93=B1=EC=9D=84 =
+=ED=8F=AC=ED=95=A8=ED=95=98=EA=B3=A0 =EC=9E=88=EC=9D=84 =EC=88=98 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4. =EB=B3=B8 =
+=EB=A9=94=EC=9D=BC=EC=97=90 =ED=8F=AC=ED=95=A8=EB=90=9C =
+=EC=A0=95=EB=B3=B4=EB=A5=BC =EA=B6=8C=ED=95=9C =EC=97=86=EC=9D=B4 =
+=EB=B3=B4=EC=9C=A0, =EC=A0=84=EC=86=A1, =EA=B3=B5=EA=B0=9C, =
+=EB=B0=B0=ED=8F=AC, =EB=B3=B5=EC=82=AC =EB=98=90=EB=8A=94 =
+=EC=82=AC=EC=9A=A9=ED=95=98=EB=8A=94 =EA=B2=83=EC=9D=80 =
+=EC=97=84=EA=B2=A9=ED=95=98=EA=B2=8C =
+=EA=B8=88=EC=A7=80=EB=90=98=EC=96=B4 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4. =EB=A7=8C=EC=95=BD =
+=EA=B7=80=ED=95=98=EA=B0=80 =EC=A7=80=EC=A0=95=EB=90=9C =
+=EC=88=98=EC=8B=A0=EC=9D=B8=EC=9D=B4 =EC=95=84=EB=8B=8C =
+=EA=B2=BD=EC=9A=B0 =ED=9A=8C=EC=8B=A0=EB=A9=94=EC=9D=BC=EB=A1=9C =
+=EB=B0=9C=EC=8B=A0=EC=9E=90=EC=97=90=EA=B2=8C =
+=EC=97=B0=EB=9D=BD=ED=95=98=EC=97=AC =EC=A3=BC=EC=8B=9C=EA=B3=A0, =
+=EC=9B=90=EB=B3=B8 =EB=B0=8F =EC=82=AC=EB=B3=B8=EA=B3=BC =
+=EC=B2=A8=EB=B6=80 =EB=AC=B8=EC=84=9C=EB=A5=BC =EB=AA=A8=EB=91=90 =
+=EC=82=AD=EC=A0=9C=ED=95=98=EC=97=AC =EC=A3=BC=EC=8B=9C=EA=B8=B0 =
+=EB=B0=94=EB=9E=8D=EB=8B=88=EB=8B=A4. =
+=ED=98=91=EC=A1=B0=ED=95=98=EC=97=AC =EC=A3=BC=EC=85=94=EC=84=9C =
+=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4.=20
+
+The above message is intended solely for the named addresses and may =
+contain trade secret or privileged and confidential information =
+otherwise protected under applicable law. Any unauthorized =
+dissemination, distribution, copying or use of the information contained =
+in this e-mail is strictly prohibited. If you have received this e-mail =
+in error, please immediately notify the sender by e-mail and destroy any =
+and all electronic or other copies of the original message and =
+attachments. Thank you for your cooperation.
+
+From: Fauvelle, Robert [mailto:Robert.Fauvelle@snclavalin.com]=20
+Sent: Tuesday, September 13, 2016 3:43 AM
+To: =EC=A0=84=EC=9C=A4=EC=88=98 (Leo Jeon)
+Cc: =EA=B9=80 =EC=9D=B8=EC=B2=9C; =EB=B0=95 =EC=84=B1=EB=AF=BC; =
+=EA=B9=80 =EC=98=A4=ED=98=84; =EA=B3=B5 =EB=AA=85=EC=83=81; =EC=8B=A0 =
+=EA=B4=91=EA=B7=A0
+Subject: RE: [DTS EMU] Provide the test result for poor audio quality in =
+the recorded file
+
+=20
+
+Hi Leo,
+
+
+Thank you for the ECP.  It clarifies the changes that are being made.
+
+=20
+
+I think the recording test should be clarified in the ECP.  I would say =
+that a sampling of recordings from static PEI calls (20 cars?) should be =
+taken, not from every car.  I also think a smaller sampling of =
+recordings while the car is moving should be evaluated.  Maybe from 5 =
+cars?  Trying to check every car may take too long and may require too =
+much coordination.  The Gold Line system performance demonstration will =
+be performed in October, so that is a good opportunity to check the 5 =
+cars.
+
+=20
+
+Please let me know your thoughts.
+
+=20
+
+Thanks,
+Bob
+
+=20
+
+From: =EC=A0=84=EC=9C=A4=EC=88=98 (Leo Jeon) =
+[mailto:staranswer@hyundai-rotem.co.kr]=20
+Sent: Monday, September 12, 2016 4:10 AM
+To: Fauvelle, Robert
+Cc: =EA=B9=80 =EC=9D=B8=EC=B2=9C; =EB=B0=95 =EC=84=B1=EB=AF=BC; =
+=EA=B9=80 =EC=98=A4=ED=98=84; =EA=B3=B5 =EB=AA=85=EC=83=81; =EC=8B=A0 =
+=EA=B4=91=EA=B7=A0
+Subject: RE: [DTS EMU] Provide the test result for poor audio quality in =
+the recorded file
+
+=20
+
+Dear Bob,
+
+=20
+
+Thanks for your advice.
+
+I send the revised ECP for the improved audio quality of the recorded =
+audio files as attached.
+
+Please see the attachment and let me have your opinion.
+
+If you have no comment or objection, then I will submit the revised ECP =
+via ACONEX.
+
+=20
+
+=20
+
+Regards,
+
+Leo
+
+=20
+
+
+https://www.hyundai-rotem.co.kr/Images/temp/ideaq1.jpg
+
+
+=20
+
+
+ =EC=A0=84=EC=9C=A4=EC=88=98  Jeon Yoonsoo
+
+=09
+
+ =EC=A0=84=EC=9E=A5=ED=92=88=EA=B0=9C=EB=B0=9C=ED=8C=80  |  =
+=EC=B1=85=EC=9E=84=EC=97=B0=EA=B5=AC=EC=9B=90
+
+
+ Electric Equipment Development Team  |  Principal Researcher
+
+
+=20
+
+
+ Hyundai Rotem Company
+
+
+ T 031-596-9396   M 010-3683-7520
+
+
+ staranswer@hyundai-rotem.co.kr
+
+=09
+
+=20
+
+
+=EC=83=81=EA=B8=B0 =EB=A9=94=EC=9D=BC=EC=9D=80 =
+=EC=A7=80=EC=A0=95=EB=90=9C =
+=EC=88=98=EC=8B=A0=EC=9D=B8=EB=A7=8C=EC=9D=84 =EC=9C=84=ED=95=B4 =
+=EB=B0=9C=EC=86=A1=EB=90=98=EB=8A=94 =
+=EA=B2=83=EC=9C=BC=EB=A1=9C=EC=84=9C =EB=B3=B4=EC=95=88=EC=9D=84 =
+=EC=9C=A0=EC=A7=80=ED=95=B4=EC=95=BC =ED=95=98=EB=8A=94 =
+=EC=A0=95=EB=B3=B4 =EB=B0=8F =EA=B4=80=EB=A0=A8 =
+=EB=B2=95=EB=A0=B9=EC=97=90 =EB=94=B0=EB=9D=BC =
+=EB=B3=B4=ED=98=B8=EB=90=98=EB=8A=94 =
+=EC=98=81=EC=97=85=EB=B9=84=EB=B0=80 =EB=93=B1=EC=9D=84 =
+=ED=8F=AC=ED=95=A8=ED=95=98=EA=B3=A0 =EC=9E=88=EC=9D=84 =EC=88=98 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4. =EB=B3=B8 =
+=EB=A9=94=EC=9D=BC=EC=97=90 =ED=8F=AC=ED=95=A8=EB=90=9C =
+=EC=A0=95=EB=B3=B4=EB=A5=BC =EA=B6=8C=ED=95=9C =EC=97=86=EC=9D=B4 =
+=EB=B3=B4=EC=9C=A0, =EC=A0=84=EC=86=A1, =EA=B3=B5=EA=B0=9C, =
+=EB=B0=B0=ED=8F=AC, =EB=B3=B5=EC=82=AC =EB=98=90=EB=8A=94 =
+=EC=82=AC=EC=9A=A9=ED=95=98=EB=8A=94 =EA=B2=83=EC=9D=80 =
+=EC=97=84=EA=B2=A9=ED=95=98=EA=B2=8C =
+=EA=B8=88=EC=A7=80=EB=90=98=EC=96=B4 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4. =EB=A7=8C=EC=95=BD =
+=EA=B7=80=ED=95=98=EA=B0=80 =EC=A7=80=EC=A0=95=EB=90=9C =
+=EC=88=98=EC=8B=A0=EC=9D=B8=EC=9D=B4 =EC=95=84=EB=8B=8C =
+=EA=B2=BD=EC=9A=B0 =ED=9A=8C=EC=8B=A0=EB=A9=94=EC=9D=BC=EB=A1=9C =
+=EB=B0=9C=EC=8B=A0=EC=9E=90=EC=97=90=EA=B2=8C =
+=EC=97=B0=EB=9D=BD=ED=95=98=EC=97=AC =EC=A3=BC=EC=8B=9C=EA=B3=A0, =
+=EC=9B=90=EB=B3=B8 =EB=B0=8F =EC=82=AC=EB=B3=B8=EA=B3=BC =
+=EC=B2=A8=EB=B6=80 =EB=AC=B8=EC=84=9C=EB=A5=BC =EB=AA=A8=EB=91=90 =
+=EC=82=AD=EC=A0=9C=ED=95=98=EC=97=AC =EC=A3=BC=EC=8B=9C=EA=B8=B0 =
+=EB=B0=94=EB=9E=8D=EB=8B=88=EB=8B=A4. =
+=ED=98=91=EC=A1=B0=ED=95=98=EC=97=AC =EC=A3=BC=EC=85=94=EC=84=9C =
+=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4.=20
+
+The above message is intended solely for the named addresses and may =
+contain trade secret or privileged and confidential information =
+otherwise protected under applicable law. Any unauthorized =
+dissemination, distribution, copying or use of the information contained =
+in this e-mail is strictly prohibited. If you have received this e-mail =
+in error, please immediately notify the sender by e-mail and destroy any =
+and all electronic or other copies of the original message and =
+attachments. Thank you for your cooperation.
+
+From: Fauvelle, Robert [mailto:Robert.Fauvelle@snclavalin.com]=20
+Sent: Tuesday, September 06, 2016 7:54 AM
+To: =EC=A0=84=EC=9C=A4=EC=88=98 (Leo Jeon)
+Cc: =EA=B9=80 =EC=9D=B8=EC=B2=9C; =EB=B0=95 =EC=84=B1=EB=AF=BC; =
+=EA=B9=80 =EC=98=A4=ED=98=84; =EA=B3=B5 =EB=AA=85=EC=83=81; =EC=8B=A0 =
+=EA=B4=91=EA=B7=A0
+Subject: RE: [DTS EMU] Provide the test result for poor audio quality in =
+the recorded file
+
+=20
+
+Hi Leo,
+
+=20
+
+Thank you for the new audio files.  The audio quality has improved =
+substantially. =20
+
+=20
+
+The attached document explaining the changes is not clear as to what =
+type of change needs to be made to the communication system to provide =
+this same audio quality on all cars.  Please explain what the FMI will =
+involve.
+
+=20
+
+Bob
+
+=20
+
+From: =EC=A0=84=EC=9C=A4=EC=88=98 (Leo Jeon) =
+[mailto:staranswer@hyundai-rotem.co.kr]=20
+Sent: Sunday, September 04, 2016 7:01 PM
+To: Fauvelle, Robert
+Cc: =EA=B9=80 =EC=9D=B8=EC=B2=9C; =EB=B0=95 =EC=84=B1=EB=AF=BC; =
+=EA=B9=80 =EC=98=A4=ED=98=84; =EA=B3=B5 =EB=AA=85=EC=83=81; =EC=8B=A0 =
+=EA=B4=91=EA=B7=A0
+Subject: [DTS EMU] Provide the test result for poor audio quality in the =
+recorded file
+
+=20
+
+Dear Bob,
+
+=20
+
+Thanks for your cooperation and patience.
+
+I provide the test result for poor audio quality in the recorded file =
+both PEI to OCC and PEI to DPO.
+
+Please check the attached recorded files and the explanation for the =
+improvement of Woojin.
+
+These attached files were recorded on Car No. 4046.
+
+Please refer to the below information.
+
+Also, I need to receive your result of review to this improvement.
+
+=20
+
+Thanks again.
+
+Leo
+
+=20
+
+Car No.: 4046
+
+Not Moving / PEI to OCC =E2=80=93 [PEI_B]104240_104320.mp3
+
+Not Moving / PEI to DPO =E2=80=93 [PEI_B]104333_104405.mp3
+
+Moving / PEI to OCC =E2=80=93 [PEI_B]105006_105137.mp3
+
+Moving / PEI to DPO =E2=80=93 [PEI_B]105321_105353.mp3
+
+=20
+
+
+https://www.hyundai-rotem.co.kr/Images/temp/ideaq1.jpg
+
+
+=20
+
+
+ =EC=A0=84=EC=9C=A4=EC=88=98  Jeon Yoonsoo
+
+=09
+
+ =EC=A0=84=EC=9E=A5=ED=92=88=EA=B0=9C=EB=B0=9C=ED=8C=80  |  =
+=EC=B1=85=EC=9E=84=EC=97=B0=EA=B5=AC=EC=9B=90
+
+
+ Electric Equipment Development Team  |  Principal Researcher
+
+
+=20
+
+
+ Hyundai Rotem Company
+
+
+ T 031-596-9396   M 010-3683-7520
+
+
+ staranswer@hyundai-rotem.co.kr
+
+=09
+
+=20
+
+
+=EC=83=81=EA=B8=B0 =EB=A9=94=EC=9D=BC=EC=9D=80 =
+=EC=A7=80=EC=A0=95=EB=90=9C =
+=EC=88=98=EC=8B=A0=EC=9D=B8=EB=A7=8C=EC=9D=84 =EC=9C=84=ED=95=B4 =
+=EB=B0=9C=EC=86=A1=EB=90=98=EB=8A=94 =
+=EA=B2=83=EC=9C=BC=EB=A1=9C=EC=84=9C =EB=B3=B4=EC=95=88=EC=9D=84 =
+=EC=9C=A0=EC=A7=80=ED=95=B4=EC=95=BC =ED=95=98=EB=8A=94 =
+=EC=A0=95=EB=B3=B4 =EB=B0=8F =EA=B4=80=EB=A0=A8 =
+=EB=B2=95=EB=A0=B9=EC=97=90 =EB=94=B0=EB=9D=BC =
+=EB=B3=B4=ED=98=B8=EB=90=98=EB=8A=94 =
+=EC=98=81=EC=97=85=EB=B9=84=EB=B0=80 =EB=93=B1=EC=9D=84 =
+=ED=8F=AC=ED=95=A8=ED=95=98=EA=B3=A0 =EC=9E=88=EC=9D=84 =EC=88=98 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4. =EB=B3=B8 =
+=EB=A9=94=EC=9D=BC=EC=97=90 =ED=8F=AC=ED=95=A8=EB=90=9C =
+=EC=A0=95=EB=B3=B4=EB=A5=BC =EA=B6=8C=ED=95=9C =EC=97=86=EC=9D=B4 =
+=EB=B3=B4=EC=9C=A0, =EC=A0=84=EC=86=A1, =EA=B3=B5=EA=B0=9C, =
+=EB=B0=B0=ED=8F=AC, =EB=B3=B5=EC=82=AC =EB=98=90=EB=8A=94 =
+=EC=82=AC=EC=9A=A9=ED=95=98=EB=8A=94 =EA=B2=83=EC=9D=80 =
+=EC=97=84=EA=B2=A9=ED=95=98=EA=B2=8C =
+=EA=B8=88=EC=A7=80=EB=90=98=EC=96=B4 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4. =EB=A7=8C=EC=95=BD =
+=EA=B7=80=ED=95=98=EA=B0=80 =EC=A7=80=EC=A0=95=EB=90=9C =
+=EC=88=98=EC=8B=A0=EC=9D=B8=EC=9D=B4 =EC=95=84=EB=8B=8C =
+=EA=B2=BD=EC=9A=B0 =ED=9A=8C=EC=8B=A0=EB=A9=94=EC=9D=BC=EB=A1=9C =
+=EB=B0=9C=EC=8B=A0=EC=9E=90=EC=97=90=EA=B2=8C =
+=EC=97=B0=EB=9D=BD=ED=95=98=EC=97=AC =EC=A3=BC=EC=8B=9C=EA=B3=A0, =
+=EC=9B=90=EB=B3=B8 =EB=B0=8F =EC=82=AC=EB=B3=B8=EA=B3=BC =
+=EC=B2=A8=EB=B6=80 =EB=AC=B8=EC=84=9C=EB=A5=BC =EB=AA=A8=EB=91=90 =
+=EC=82=AD=EC=A0=9C=ED=95=98=EC=97=AC =EC=A3=BC=EC=8B=9C=EA=B8=B0 =
+=EB=B0=94=EB=9E=8D=EB=8B=88=EB=8B=A4. =
+=ED=98=91=EC=A1=B0=ED=95=98=EC=97=AC =EC=A3=BC=EC=85=94=EC=84=9C =
+=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4.=20
+
+The above message is intended solely for the named addresses and may =
+contain trade secret or privileged and confidential information =
+otherwise protected under applicable law. Any unauthorized =
+dissemination, distribution, copying or use of the information contained =
+in this e-mail is strictly prohibited. If you have received this e-mail =
+in error, please immediately notify the sender by e-mail and destroy any =
+and all electronic or other copies of the original message and =
+attachments. Thank you for your cooperation.
+
+From: Fauvelle, Robert [mailto:Robert.Fauvelle@snclavalin.com]=20
+Sent: Thursday, July 28, 2016 9:07 AM
+To: Leo Jeon
+Cc: =EA=B9=80 =EC=9D=B8=EC=B2=9C; =EB=B0=95 =EC=84=B1=EB=AF=BC; =
+=EC=9E=A5 =EB=8D=95=EC=88=98; =EC=8B=A0 =EA=B4=91=EA=B7=A0
+Subject: RE: HRU-TRN-001798: Rolling Stock - Engineering Design Change - =
+Mod for Cab heater - REN1002-U532-01, Rev.10
+
+=20
+
+Thanks for the update, Leo!
+
+=20
+
+Bob
+
+=20
+
+From: Leo Jeon [mailto:staranswer@hyundai-rotem.co.kr]=20
+Sent: Wednesday, July 27, 2016 6:00 PM
+To: Fauvelle, Robert
+Cc: =EA=B9=80 =EC=9D=B8=EC=B2=9C; =EB=B0=95 =EC=84=B1=EB=AF=BC; =
+=EC=9E=A5 =EB=8D=95=EC=88=98; =EC=8B=A0 =EA=B4=91=EA=B7=A0
+Subject: RE: HRU-TRN-001798: Rolling Stock - Engineering Design Change - =
+Mod for Cab heater - REN1002-U532-01, Rev.10
+
+=20
+
+Dear Bob,
+
+=20
+
+Sorry for my late response.
+
+For ECP of the recording audio quality, Woojin recently sent the =
+improved audio amplifier board to Denver.
+
+And, they will check and perform the functionality of the PEI to OCC =
+communication after new board temporary installation.
+
+We are developing and trying of the improvement for your satisfaction.
+
+Thanks for your patience and please keep watch our achieve at soon.
+
+=20
+
+=20
+
+Regards,
+
+Leo
+
+=20
+
+
+https://www.hyundai-rotem.co.kr/Images/temp/ideaq1.jpg
+
+
+=20
+
+
+ =EC=A0=84=EC=9C=A4=EC=88=98  Jeon Yoonsoo
+
+=09
+
+ =EC=A0=84=EC=9E=A5=ED=92=88=EA=B0=9C=EB=B0=9C=ED=8C=80  |  =
+=EC=B1=85=EC=9E=84=EC=97=B0=EA=B5=AC=EC=9B=90
+
+
+ Electric Equipment Development Team  |  Principal Researcher
+
+
+=20
+
+
+ Hyundai Rotem Company
+
+
+ T 031-596-9396   M 010-3683-7520
+
+
+ staranswer@hyundai-rotem.co.kr
+
+=09
+
+=20
+
+
+=EC=83=81=EA=B8=B0 =EB=A9=94=EC=9D=BC=EC=9D=80 =
+=EC=A7=80=EC=A0=95=EB=90=9C =
+=EC=88=98=EC=8B=A0=EC=9D=B8=EB=A7=8C=EC=9D=84 =EC=9C=84=ED=95=B4 =
+=EB=B0=9C=EC=86=A1=EB=90=98=EB=8A=94 =
+=EA=B2=83=EC=9C=BC=EB=A1=9C=EC=84=9C =EB=B3=B4=EC=95=88=EC=9D=84 =
+=EC=9C=A0=EC=A7=80=ED=95=B4=EC=95=BC =ED=95=98=EB=8A=94 =
+=EC=A0=95=EB=B3=B4 =EB=B0=8F =EA=B4=80=EB=A0=A8 =
+=EB=B2=95=EB=A0=B9=EC=97=90 =EB=94=B0=EB=9D=BC =
+=EB=B3=B4=ED=98=B8=EB=90=98=EB=8A=94 =
+=EC=98=81=EC=97=85=EB=B9=84=EB=B0=80 =EB=93=B1=EC=9D=84 =
+=ED=8F=AC=ED=95=A8=ED=95=98=EA=B3=A0 =EC=9E=88=EC=9D=84 =EC=88=98 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4. =EB=B3=B8 =
+=EB=A9=94=EC=9D=BC=EC=97=90 =ED=8F=AC=ED=95=A8=EB=90=9C =
+=EC=A0=95=EB=B3=B4=EB=A5=BC =EA=B6=8C=ED=95=9C =EC=97=86=EC=9D=B4 =
+=EB=B3=B4=EC=9C=A0, =EC=A0=84=EC=86=A1, =EA=B3=B5=EA=B0=9C, =
+=EB=B0=B0=ED=8F=AC, =EB=B3=B5=EC=82=AC =EB=98=90=EB=8A=94 =
+=EC=82=AC=EC=9A=A9=ED=95=98=EB=8A=94 =EA=B2=83=EC=9D=80 =
+=EC=97=84=EA=B2=A9=ED=95=98=EA=B2=8C =
+=EA=B8=88=EC=A7=80=EB=90=98=EC=96=B4 =
+=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4. =EB=A7=8C=EC=95=BD =
+=EA=B7=80=ED=95=98=EA=B0=80 =EC=A7=80=EC=A0=95=EB=90=9C =
+=EC=88=98=EC=8B=A0=EC=9D=B8=EC=9D=B4 =EC=95=84=EB=8B=8C =
+=EA=B2=BD=EC=9A=B0 =ED=9A=8C=EC=8B=A0=EB=A9=94=EC=9D=BC=EB=A1=9C =
+=EB=B0=9C=EC=8B=A0=EC=9E=90=EC=97=90=EA=B2=8C =
+=EC=97=B0=EB=9D=BD=ED=95=98=EC=97=AC =EC=A3=BC=EC=8B=9C=EA=B3=A0, =
+=EC=9B=90=EB=B3=B8 =EB=B0=8F =EC=82=AC=EB=B3=B8=EA=B3=BC =
+=EC=B2=A8=EB=B6=80 =EB=AC=B8=EC=84=9C=EB=A5=BC =EB=AA=A8=EB=91=90 =
+=EC=82=AD=EC=A0=9C=ED=95=98=EC=97=AC =EC=A3=BC=EC=8B=9C=EA=B8=B0 =
+=EB=B0=94=EB=9E=8D=EB=8B=88=EB=8B=A4. =
+=ED=98=91=EC=A1=B0=ED=95=98=EC=97=AC =EC=A3=BC=EC=85=94=EC=84=9C =
+=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4.=20
+
+The above message is intended solely for the named addresses and may =
+contain trade secret or privileged and confidential information =
+otherwise protected under applicable law. Any unauthorized =
+dissemination, distribution, copying or use of the information contained =
+in this e-mail is strictly prohibited. If you have received this e-mail =
+in error, please immediately notify the sender by e-mail and destroy any =
+and all electronic or other copies of the original message and =
+attachments. Thank you for your cooperation.
+
+From: Fauvelle, Robert [mailto:Robert.Fauvelle@snclavalin.com]=20
+Sent: Friday, July 15, 2016 7:43 AM
+To: =EA=B9=80=EC=9D=B8=EC=B2=9C; staranswer@hyundai-rotem.co.kr
+Subject: FW: HRU-TRN-001798: Rolling Stock - Engineering Design Change - =
+Mod for Cab heater - REN1002-U532-01, Rev.10
+
+=20
+
+I.C. & Leo,
+
+
+Please provide status on this ECP before you leave on vacation.  Should =
+I reject this ECP until the recording issues are fully resolved and =
+proven?
+
+=20
+
+Thanks,
+Bob
+
+=20
+
+From: Fauvelle, Robert=20
+Sent: Wednesday, July 06, 2016 8:09 PM
+To: '=EA=B9=80=EC=9D=B8=EC=B2=9C'; 'Leo Jeon'
+Cc: 'O-hyun Kim'; =EC=B5=9C=EC=B2=A0=ED=95=9C=EB=B6=80=EC=9E=A5; =
+'=EB=B0=95=EC=84=B1=EB=AF=BC'; 'Peter Strange'
+Subject: FW: HRU-TRN-001798: Rolling Stock - Engineering Design Change - =
+Mod for Cab heater - REN1002-U532-01, Rev.10
+
+=20
+
+I.C. & Leo,
+
+=20
+
+The PEI-OCC call recordings with acceptable audio quality have not been =
+presented for my review.  What is the status?  I heard there is still =
+significant noise in the most recent tests.  I cannot approve this ECP =
+if HR engineering believes all issues are resolved.
+
+=20
+
+Thank you,
+Bob
+
+=20
+
+From: Aconex Notification (Eagle P3) [mailto:noreply@aconex.com]=20
+Sent: Wednesday, July 06, 2016 6:16 PM
+To: Fauvelle, Robert
+Subject: HRU-TRN-001798: Rolling Stock - Engineering Design Change - Mod =
+for Cab heater - REN1002-U532-01, Rev.10
+
+=20
+
+
+=20
+
+Dear Robert,=20
+
+You have received a new  =
+<https://us1.aconex.com/Logon?Action=3DView&ENTITY=3DMAIL&ID=3D1211748398=
+> Transmittal: HRU-TRN-001798=20
+
+
+Project:
+
+ =20
+
+Eagle P3
+
+
+Type:
+
+	Transmittal
+
+
+Mail Number:
+
+	HRU-TRN-001798
+
+
+To:
+
+	Mr Robert Fauvelle, Interfleet Technology=20
+
+
+Cc:
+
+	Mr Will Shannon, Alternate Concepts, Inc.=20
+Josh Lee, DTO - Denver Transit Operators=20
+Mr Peter Strange, DTS - Denver Transit Systems=20
+Mr CH CHOI, Hyundai Rotem USA=20
+Mr YS Jun, Hyundai Rotem USA=20
+Mr I.C. Kim, Hyundai Rotem USA=20
+Mr OHyun KIM, Hyundai Rotem USA=20
+Eric Lee, Hyundai Rotem USA=20
+Mr B.K. Min, Hyundai Rotem USA=20
+SM PARK, Hyundai Rotem USA=20
+Mr Tom Lynch, Interfleet Technology=20
+
+
+From:
+
+	I Kim, Hyundai Rotem USA
+
+
+Sent:
+
+	7/6/16 5:15:42 PM PDT (GMT -07:00)
+
+
+Reason:
+
+	Issued for Approval
+
+
+Attribute 1:
+
+	Rolling Stock=20
+
+
+Attribute 2:
+
+	* EGPW - Eagle P3 - Project Wide=20
+
+
+Attribute 3:
+
+	* Non-CDRL=20
+
+
+Status:
+
+	Outstanding
+
+
+Response:
+
+	Respond by Friday, July 22, 2016
+
+
+Subject:
+
+	Rolling Stock - Engineering Design Change - Mod for Cab heater - =
+REN1002-U532-01, Rev.10
+
+=20
+
+
+Uploaded Documents=20
+
+
+Document No.
+
+Revision
+
+Title
+
+Status=20
+
+=09
+
+EGPW-HRU-RST-RPT-005220=20
+
+00=20
+
+RNE1002-U518-11 New AF board for OCCCRA PEI Recording=20
+
+For Review=20
+
+=09
+
+EGPW-HRU-RST-RPT-005221=20
+
+00=20
+
+42A-2016-0027_FMI#7=20
+
+For Review=20
+
+=09
+
+Your document register has been automatically updated with these =
+revisions.
+
+=09
+
+This is an automatic notification from  <http://www.aconex.com> Aconex .
+
+ <http://www.aconex.com> Aconex=20
+Project success. Easy as Aconex.=20
+
+This email is automatically generated by Aconex.
+If you would like to turn off email messages, log into Aconex and edit =
+your "Notifications" user preferences.
+
+If you need assistance please contact our helpdesk at the following =
+numbers :
+  : 1 888 5 ACONEX
+  Int: 1 888 5 ACONEX
+
+Regards,
+The Aconex Team
+
+This email and any attachments are confidential, subject to copyright =
+and may be privileged. No confidentiality or privilege is lost by an =
+erroneous transmission. If you have received this email in error, please =
+let us know by reply email and delete or destroy this email and all =
+copies. If you are not the intended recipient of this email you must not =
+disseminate, copy or use the information in it.=20
+
+=20
+
+
+------=_NextPart_001_0027_01D20DA2.C32E7330
+Content-Type: text/html;
+	boundary="_004_8F296BD53C25EB4DBACEA1478CDCB39D12F0ED5DSLI2297slibz_";
+	charset="utf-8"; type="multipart/alternative"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Dutf-8">
+
+
+<meta name=3D"Generator" content=3D"Microsoft Word 12 (filtered =
+medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+...shape {behavior:url(#default#VML);}
+</style><![endif]-->
+<title>Aconex Email Notification</title>
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Gulim;
+	panose-1:2 11 6 0 0 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"=EB=A7=91=EC=9D=80 =EA=B3=A0=EB=94=95";}
+@font-face
+	{font-family:"\@Gulim";
+	panose-1:2 11 6 0 0 1 1 1 1 1;}
+@font-face
+	{font-family:"Futura Bk BT";
+	panose-1:2 11 5 2 2 2 4 2 3 3;}
+@font-face
+	{font-family:=EA=B5=B4=EB=A6=BC;}
+@font-face
+	{font-family:=EB=8F=8B=EC=9B=80;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";
+	color:black;}
+p.blueregtext, li.blueregtext, div.blueregtext
+	{mso-style-name:blueregtext;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	line-height:140%;
+	font-size:9.0pt;
+	font-family:"Arial","sans-serif";
+	color:#333333;}
+p.confidentiality, li.confidentiality, div.confidentiality
+	{mso-style-name:confidentiality;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	line-height:125%;
+	font-size:7.5pt;
+	font-family:"Arial","sans-serif";
+	color:#666666;}
+p.pbody, li.pbody, div.pbody
+	{mso-style-name:pbody;
+	mso-style-priority:99;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;}
+p.a, li.a, div.a
+	{mso-style-name:"=ED=92=8D=EC=84=A0 =EB=8F=84=EC=9B=80=EB=A7=90 =
+=ED=85=8D=EC=8A=A4=ED=8A=B8";
+	mso-style-link:"=ED=92=8D=EC=84=A0 =EB=8F=84=EC=9B=80=EB=A7=90 =
+=ED=85=8D=EC=8A=A4=ED=8A=B8 Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;}
+span.Char
+	{mso-style-name:"=ED=92=8D=EC=84=A0 =EB=8F=84=EC=9B=80=EB=A7=90 =
+=ED=85=8D=EC=8A=A4=ED=8A=B8 Char";
+	mso-style-priority:99;
+	mso-style-link:"=ED=92=8D=EC=84=A0 =EB=8F=84=EC=9B=80=EB=A7=90 =
+=ED=85=8D=EC=8A=A4=ED=8A=B8";
+	font-family:"=EB=A7=91=EC=9D=80 =EA=B3=A0=EB=94=95";
+	color:black;}
+span.blueregtext1
+	{mso-style-name:blueregtext1;
+	font-family:"Arial","sans-serif";
+	color:#333333;}
+span.EmailStyle26
+	{mso-style-type:personal;
+	font-family:"Futura Bk BT","sans-serif";
+	color:#1F497D;
+	font-weight:normal;
+	font-style:normal;}
+span.EmailStyle27
+	{mso-style-type:personal;
+	font-family:"Futura Bk BT","sans-serif";
+	color:#1F497D;
+	font-weight:normal;
+	font-style:normal;}
+span.EmailStyle28
+	{mso-style-type:personal;
+	font-family:"=EB=A7=91=EC=9D=80 =EA=B3=A0=EB=94=95";
+	color:#1F497D;}
+span.EmailStyle29
+	{mso-style-type:personal;
+	font-family:"Futura Bk BT","sans-serif";
+	color:#1F497D;
+	font-weight:normal;
+	font-style:normal;}
+span.EmailStyle30
+	{mso-style-type:personal;
+	font-family:"=EB=A7=91=EC=9D=80 =EA=B3=A0=EB=94=95";
+	color:#1F497D;}
+span.EmailStyle31
+	{mso-style-type:personal;
+	font-family:"Futura Bk BT","sans-serif";
+	color:#1F497D;
+	font-weight:normal;
+	font-style:normal;}
+span.EmailStyle32
+	{mso-style-type:personal;
+	font-family:"=EB=A7=91=EC=9D=80 =EA=B3=A0=EB=94=95";
+	color:#1F497D;}
+span.EmailStyle33
+	{mso-style-type:personal;
+	font-family:"Futura Bk BT","sans-serif";
+	color:#1F497D;
+	font-weight:normal;
+	font-style:normal;}
+span.EmailStyle34
+	{mso-style-type:personal;
+	font-family:"=EB=A7=91=EC=9D=80 =EA=B3=A0=EB=94=95";
+	color:#1F497D;}
+span.EmailStyle35
+	{mso-style-type:personal-reply;
+	font-family:"Futura Bk BT","sans-serif";
+	color:#1F497D;
+	font-weight:normal;
+	font-style:normal;}
+...MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body bgcolor=3D"white" lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Hi =
+Leo,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">The tests to be performed =
+after the FMI is completed should be defined in the FMI.&nbsp; Please =
+note the below agreement in the FMI/ECP and submit the FMI/ECP
+ for approval.&nbsp; I do not have any other =
+comments.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Thanks,<br>
+Bob<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=A0=84=EC=9C=A4=EC=88=98</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> (Leo Jeon) =
+[mailto:staranswer@hyundai-rotem.co.kr]
+<br>
+<b>Sent:</b> Monday, September 12, 2016 5:12 PM<br>
+<b>To:</b> Fauvelle, Robert<br>
+<b>Cc:</b> </span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=9D=B8=EC=B2=9C</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=B0=95</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=84=B1=EB=AF=BC</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=98=A4=ED=98=84</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B3=B5</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=AA=85=EC=83=81</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=8B=A0</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B4=91=EA=B7=A0</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"><br>
+<b>Subject:</b> RE: [DTS EMU] Provide the test result for poor audio =
+quality in the recorded file<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Dear Bob,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Thanks for your quick =
+response.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">We can check both the static PEI =
+Calls (20 cars) and the dynamic PEI Calls (5 =
+cars).<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">But, it is impossible to check =
+the evaluation for the two conditions of PEI Calls without approval of =
+the ECP.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">The reason is that the checking =
+will be demonstrated to the 20 cars so, we need to perform the FMI to =
+the 20 cars at least.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Can you approve to the ECP =
+before the evaluation?<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Regards,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Leo<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"text-autospace:ideograph-other"><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><img =
+width=3D"172" height=3D"18" id=3D"_x0000_i1025" =
+src=3D"cid:image001.jpg@01D20D1F.0E0A29A0" =
+alt=3D"https://www.hyundai-rotem.co.kr/Images/temp/ideaq1.jpg"><o:p></o:p=
+></span></p>
+</td>
+</tr>
+<tr style=3D"height:6.0pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:6.0pt">
+<p class=3D"MsoNormal" =
+style=3D"line-height:0%;text-autospace:ideograph-other"><span =
+style=3D"font-size:1.0pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><b><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;</span></b><b><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=9C=A4=EC=88=98</span></b><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;&nbsp;</span=
+><b><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">Je=
+on
+ Yoonsoo</span></b><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;</span><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=9E=A5=ED=92=88=EA=B0=9C=EB=B0=9C=ED=8C=80=
+</span><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;&nbsp;|&nbsp;&nbsp;</span><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=B1=85=EC=9E=84=EC=97=B0=EA=B5=AC=EC=9B=90</span><=
+span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;Electric Equipment Development =
+Team&nbsp;&nbsp;|&nbsp;&nbsp;Principal Researcher</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr style=3D"height:6.0pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:6.0pt">
+<p class=3D"MsoNormal" =
+style=3D"line-height:0%;text-autospace:ideograph-other"><span =
+style=3D"font-size:1.0pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;Hyundai Rotem Company<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;T</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;</span><span=
+ =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">03=
+1-596-9396</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;&nbsp;&nbsp;=
+</span><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">M</sp=
+an><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;</span><span=
+ =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">01=
+0-3683-7520</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;<a =
+href=3D"mailto:staranswer@hyundai-rotem.co.kr">staranswer@hyundai-rotem.c=
+o.kr</a><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:5.25pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:5.25pt"></td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal" style=3D"text-autospace:ideograph-other"><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p>&nbsp;</o:p><=
+/span></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"1" =
+cellpadding=3D"0" width=3D"680" =
+style=3D"width:510.0pt;background:white">
+<tbody>
+<tr>
+<td width=3D"670" style=3D"width:502.5pt;background:#F6F6F6;padding:0in =
+0in 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;text-autospac=
+e:ideograph-other">
+<span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=83=81=EA=B8=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A9=94=EC=9D=BC=EC=9D=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A7=80=EC=A0=95=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98=EC=8B=A0=EC=9D=B8=EB=A7=8C=EC=9D=84</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9C=84=ED=95=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=9C=EC=86=A1=EB=90=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=83=EC=9C=BC=EB=A1=9C=EC=84=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=EC=95=88=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9C=A0=EC=A7=80=ED=95=B4=EC=95=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=95=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=95=EB=B3=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=8F</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B4=80=EB=A0=A8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B2=95=EB=A0=B9=EC=97=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=94=B0=EB=9D=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=ED=98=B8=EB=90=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=98=81=EC=97=85=EB=B9=84=EB=B0=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=93=B1=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=8F=AC=ED=95=A8=ED=95=98=EA=B3=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A9=94=EC=9D=BC=EC=97=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=8F=AC=ED=95=A8=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=95=EB=B3=B4=EB=A5=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B6=8C=ED=95=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=86=EC=9D=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=EC=9C=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=86=A1</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B3=B5=EA=B0=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=B0=ED=8F=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B5=EC=82=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=98=90=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AC=EC=9A=A9=ED=95=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=83=EC=9D=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=84=EA=B2=A9=ED=95=98=EA=B2=8C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B8=88=EC=A7=80=EB=90=98=EC=96=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A7=8C=EC=95=BD</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B7=80=ED=95=98=EA=B0=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A7=80=EC=A0=95=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98=EC=8B=A0=EC=9D=B8=EC=9D=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=95=84=EB=8B=8C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=BD=EC=9A=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=9A=8C=EC=8B=A0=EB=A9=94=EC=9D=BC=EB=A1=9C</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=9C=EC=8B=A0=EC=9E=90=EC=97=90=EA=B2=8C</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=B0=EB=9D=BD=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=8B=9C=EA=B3=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9B=90=EB=B3=B8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=8F</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AC=EB=B3=B8=EA=B3=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=B2=A8=EB=B6=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=AC=B8=EC=84=9C=EB=A5=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=AA=A8=EB=91=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AD=EC=A0=9C=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=8B=9C=EA=B8=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=94=EB=9E=8D=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=98=91=EC=A1=B0=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=85=94=EC=84=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><br>
+<br>
+</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">Th=
+e above message is intended solely for the named addresses and may =
+contain trade secret or privileged and confidential information =
+otherwise protected under applicable law. Any unauthorized
+ dissemination, distribution, copying or use of the information =
+contained in this e-mail is strictly prohibited. If you have received =
+this e-mail in error, please immediately notify the sender by e-mail and =
+destroy any and all electronic or other copies of
+ the original message and attachments. Thank you for your =
+cooperation.</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> Fauvelle, Robert [<a =
+href=3D"mailto:Robert.Fauvelle@snclavalin.com">mailto:Robert.Fauvelle@snc=
+lavalin.com</a>]
+<br>
+<b>Sent:</b> Tuesday, September 13, 2016 3:43 AM<br>
+<b>To:</b> </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=A0=84=EC=9C=A4=EC=88=98</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> (Leo Jeon)<br>
+<b>Cc:</b> </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=9D=B8=EC=B2=9C</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=B0=95</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=84=B1=EB=AF=BC</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=98=A4=ED=98=84</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B3=B5</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=AA=85=EC=83=81</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=8B=A0</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B4=91=EA=B7=A0</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"><br>
+<b>Subject:</b> RE: [DTS EMU] Provide the test result for poor audio =
+quality in the recorded file<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Hi =
+Leo,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><br>
+Thank you for the ECP.&nbsp; It clarifies the changes that are being =
+made.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">I think the recording =
+test should be clarified in the ECP.&nbsp; I would say that a sampling =
+of recordings from static PEI calls (20 cars?) should be taken,
+ not from every car.&nbsp; I also think a smaller sampling of recordings =
+while the car is moving should be evaluated.&nbsp; Maybe from 5 =
+cars?&nbsp; Trying to check every car may take too long and may require =
+too much coordination.&nbsp; The Gold Line system performance =
+demonstration
+ will be performed in October, so that is a good opportunity to check =
+the 5 cars.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Please let me know your =
+thoughts.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Thanks,<br>
+Bob<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=A0=84=EC=9C=A4=EC=88=98</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> (Leo Jeon) [<a =
+href=3D"mailto:staranswer@hyundai-rotem.co.kr">mailto:staranswer@hyundai-=
+rotem.co.kr</a>]
+<br>
+<b>Sent:</b> Monday, September 12, 2016 4:10 AM<br>
+<b>To:</b> Fauvelle, Robert<br>
+<b>Cc:</b> </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=9D=B8=EC=B2=9C</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=B0=95</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=84=B1=EB=AF=BC</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=98=A4=ED=98=84</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B3=B5</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=AA=85=EC=83=81</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=8B=A0</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B4=91=EA=B7=A0</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"><br>
+<b>Subject:</b> RE: [DTS EMU] Provide the test result for poor audio =
+quality in the recorded file<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Dear Bob,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Thanks for your =
+advice.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">I send the revised ECP for the =
+improved audio quality of the recorded audio files as =
+attached.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Please see the attachment and =
+let me have your opinion.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">If you have no comment or =
+objection, then I will submit the revised ECP via =
+ACONEX.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Regards,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Leo<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"text-autospace:ideograph-other"><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><img border=3D"0" =
+width=3D"172" height=3D"18" id=3D"_x0000_i1026" =
+src=3D"cid:image001.jpg@01D20D1F.0E0A29A0" =
+alt=3D"https://www.hyundai-rotem.co.kr/Images/temp/ideaq1.jpg"><o:p></o:p=
+></span></p>
+</td>
+</tr>
+<tr style=3D"height:6.0pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:6.0pt">
+<p class=3D"MsoNormal" =
+style=3D"line-height:0%;text-autospace:ideograph-other"><span =
+style=3D"font-size:1.0pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><b><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;</span></b><b><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=9C=A4=EC=88=98</span></b><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;&nbsp;</span=
+><b><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">Je=
+on
+ Yoonsoo</span></b><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;</span><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=9E=A5=ED=92=88=EA=B0=9C=EB=B0=9C=ED=8C=80=
+</span><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;&nbsp;|&nbsp;&nbsp;</span><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=B1=85=EC=9E=84=EC=97=B0=EA=B5=AC=EC=9B=90</span><=
+span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;Electric Equipment Development =
+Team&nbsp;&nbsp;|&nbsp;&nbsp;Principal Researcher</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr style=3D"height:6.0pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:6.0pt">
+<p class=3D"MsoNormal" =
+style=3D"line-height:0%;text-autospace:ideograph-other"><span =
+style=3D"font-size:1.0pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;Hyundai Rotem Company<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;T</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;</span><span=
+ =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">03=
+1-596-9396</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;&nbsp;&nbsp;=
+</span><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">M</sp=
+an><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;</span><span=
+ =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">01=
+0-3683-7520</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;<a =
+href=3D"mailto:staranswer@hyundai-rotem.co.kr">staranswer@hyundai-rotem.c=
+o.kr</a><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:5.25pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:5.25pt"></td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal" style=3D"text-autospace:ideograph-other"><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p>&nbsp;</o:p><=
+/span></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"1" =
+cellpadding=3D"0" width=3D"680" =
+style=3D"width:510.0pt;background:white">
+<tbody>
+<tr>
+<td width=3D"670" style=3D"width:502.5pt;background:#F6F6F6;padding:0in =
+0in 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;text-autospac=
+e:ideograph-other">
+<span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=83=81=EA=B8=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A9=94=EC=9D=BC=EC=9D=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A7=80=EC=A0=95=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98=EC=8B=A0=EC=9D=B8=EB=A7=8C=EC=9D=84</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9C=84=ED=95=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=9C=EC=86=A1=EB=90=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=83=EC=9C=BC=EB=A1=9C=EC=84=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=EC=95=88=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9C=A0=EC=A7=80=ED=95=B4=EC=95=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=95=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=95=EB=B3=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=8F</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B4=80=EB=A0=A8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B2=95=EB=A0=B9=EC=97=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=94=B0=EB=9D=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=ED=98=B8=EB=90=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=98=81=EC=97=85=EB=B9=84=EB=B0=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=93=B1=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=8F=AC=ED=95=A8=ED=95=98=EA=B3=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A9=94=EC=9D=BC=EC=97=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=8F=AC=ED=95=A8=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=95=EB=B3=B4=EB=A5=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B6=8C=ED=95=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=86=EC=9D=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=EC=9C=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=86=A1</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B3=B5=EA=B0=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=B0=ED=8F=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B5=EC=82=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=98=90=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AC=EC=9A=A9=ED=95=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=83=EC=9D=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=84=EA=B2=A9=ED=95=98=EA=B2=8C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B8=88=EC=A7=80=EB=90=98=EC=96=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A7=8C=EC=95=BD</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B7=80=ED=95=98=EA=B0=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A7=80=EC=A0=95=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98=EC=8B=A0=EC=9D=B8=EC=9D=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=95=84=EB=8B=8C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=BD=EC=9A=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=9A=8C=EC=8B=A0=EB=A9=94=EC=9D=BC=EB=A1=9C</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=9C=EC=8B=A0=EC=9E=90=EC=97=90=EA=B2=8C</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=B0=EB=9D=BD=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=8B=9C=EA=B3=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9B=90=EB=B3=B8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=8F</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AC=EB=B3=B8=EA=B3=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=B2=A8=EB=B6=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=AC=B8=EC=84=9C=EB=A5=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=AA=A8=EB=91=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AD=EC=A0=9C=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=8B=9C=EA=B8=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=94=EB=9E=8D=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=98=91=EC=A1=B0=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=85=94=EC=84=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><br>
+<br>
+</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">Th=
+e above message is intended solely for the named addresses and may =
+contain trade secret or privileged and confidential information =
+otherwise protected under applicable law. Any unauthorized
+ dissemination, distribution, copying or use of the information =
+contained in this e-mail is strictly prohibited. If you have received =
+this e-mail in error, please immediately notify the sender by e-mail and =
+destroy any and all electronic or other copies of
+ the original message and attachments. Thank you for your =
+cooperation.</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> Fauvelle, Robert [<a =
+href=3D"mailto:Robert.Fauvelle@snclavalin.com">mailto:Robert.Fauvelle@snc=
+lavalin.com</a>]
+<br>
+<b>Sent:</b> Tuesday, September 06, 2016 7:54 AM<br>
+<b>To:</b> </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=A0=84=EC=9C=A4=EC=88=98</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> (Leo Jeon)<br>
+<b>Cc:</b> </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=9D=B8=EC=B2=9C</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=B0=95</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=84=B1=EB=AF=BC</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=98=A4=ED=98=84</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B3=B5</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=AA=85=EC=83=81</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=8B=A0</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B4=91=EA=B7=A0</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"><br>
+<b>Subject:</b> RE: [DTS EMU] Provide the test result for poor audio =
+quality in the recorded file<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Hi =
+Leo,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Thank you for the new =
+audio files.&nbsp; The audio quality has improved substantially.&nbsp;
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">The attached document =
+explaining the changes is not clear as to what type of change needs to =
+be made to the communication system to provide this same audio
+ quality on all cars.&nbsp; Please explain what the FMI will =
+involve.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Bob<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=A0=84=EC=9C=A4=EC=88=98</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> (Leo Jeon) [<a =
+href=3D"mailto:staranswer@hyundai-rotem.co.kr">mailto:staranswer@hyundai-=
+rotem.co.kr</a>]
+<br>
+<b>Sent:</b> Sunday, September 04, 2016 7:01 PM<br>
+<b>To:</b> Fauvelle, Robert<br>
+<b>Cc:</b> </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=9D=B8=EC=B2=9C</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=B0=95</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=84=B1=EB=AF=BC</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=98=A4=ED=98=84</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B3=B5</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=AA=85=EC=83=81</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=8B=A0</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B4=91=EA=B7=A0</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"><br>
+<b>Subject:</b> [DTS EMU] Provide the test result for poor audio quality =
+in the recorded file<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Dear Bob,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Thanks for your cooperation and =
+patience.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">I provide the test result for =
+poor audio quality in the recorded file both PEI to OCC and PEI to =
+DPO.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Please check the attached =
+recorded files and the explanation for the improvement of =
+Woojin.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">These attached files were =
+recorded on Car No. 4046.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Please refer to the below =
+information.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Also, I need to receive your =
+result of review to this improvement.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Thanks =
+again.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Leo<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Car No.: =
+4046<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Not Moving / PEI to OCC =
+=E2=80=93 [PEI_B]104240_104320.mp3<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Not Moving / PEI to DPO =
+=E2=80=93 [PEI_B]104333_104405.mp3<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Moving / PEI to OCC =E2=80=93 =
+[PEI_B]105006_105137.mp3<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Moving / PEI to DPO =E2=80=93 =
+[PEI_B]105321_105353.mp3<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"text-autospace:ideograph-other"><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><img border=3D"0" =
+width=3D"172" height=3D"18" id=3D"_x0000_i1027" =
+src=3D"cid:image001.jpg@01D20D1F.0E0A29A0" =
+alt=3D"https://www.hyundai-rotem.co.kr/Images/temp/ideaq1.jpg"><o:p></o:p=
+></span></p>
+</td>
+</tr>
+<tr style=3D"height:6.0pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:6.0pt">
+<p class=3D"MsoNormal" =
+style=3D"line-height:0%;text-autospace:ideograph-other"><span =
+style=3D"font-size:1.0pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><b><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;</span></b><b><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=9C=A4=EC=88=98</span></b><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;&nbsp;</span=
+><b><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">Je=
+on
+ Yoonsoo</span></b><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;</span><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=9E=A5=ED=92=88=EA=B0=9C=EB=B0=9C=ED=8C=80=
+</span><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;&nbsp;|&nbsp;&nbsp;</span><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=B1=85=EC=9E=84=EC=97=B0=EA=B5=AC=EC=9B=90</span><=
+span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;Electric Equipment Development =
+Team&nbsp;&nbsp;|&nbsp;&nbsp;Principal Researcher</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr style=3D"height:6.0pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:6.0pt">
+<p class=3D"MsoNormal" =
+style=3D"line-height:0%;text-autospace:ideograph-other"><span =
+style=3D"font-size:1.0pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;Hyundai Rotem Company<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;T</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;</span><span=
+ =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">03=
+1-596-9396</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;&nbsp;&nbsp;=
+</span><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">M</sp=
+an><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;</span><span=
+ =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">01=
+0-3683-7520</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;<a =
+href=3D"mailto:staranswer@hyundai-rotem.co.kr">staranswer@hyundai-rotem.c=
+o.kr</a><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:5.25pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:5.25pt"></td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal" style=3D"text-autospace:ideograph-other"><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p>&nbsp;</o:p><=
+/span></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"1" =
+cellpadding=3D"0" width=3D"680" =
+style=3D"width:510.0pt;background:white">
+<tbody>
+<tr>
+<td width=3D"670" style=3D"width:502.5pt;background:#F6F6F6;padding:0in =
+0in 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;text-autospac=
+e:ideograph-other">
+<span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=83=81=EA=B8=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A9=94=EC=9D=BC=EC=9D=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A7=80=EC=A0=95=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98=EC=8B=A0=EC=9D=B8=EB=A7=8C=EC=9D=84</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9C=84=ED=95=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=9C=EC=86=A1=EB=90=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=83=EC=9C=BC=EB=A1=9C=EC=84=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=EC=95=88=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9C=A0=EC=A7=80=ED=95=B4=EC=95=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=95=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=95=EB=B3=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=8F</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B4=80=EB=A0=A8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B2=95=EB=A0=B9=EC=97=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=94=B0=EB=9D=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=ED=98=B8=EB=90=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=98=81=EC=97=85=EB=B9=84=EB=B0=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=93=B1=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=8F=AC=ED=95=A8=ED=95=98=EA=B3=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A9=94=EC=9D=BC=EC=97=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=8F=AC=ED=95=A8=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=95=EB=B3=B4=EB=A5=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B6=8C=ED=95=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=86=EC=9D=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=EC=9C=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=86=A1</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B3=B5=EA=B0=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=B0=ED=8F=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B5=EC=82=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=98=90=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AC=EC=9A=A9=ED=95=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=83=EC=9D=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=84=EA=B2=A9=ED=95=98=EA=B2=8C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B8=88=EC=A7=80=EB=90=98=EC=96=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A7=8C=EC=95=BD</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B7=80=ED=95=98=EA=B0=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A7=80=EC=A0=95=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98=EC=8B=A0=EC=9D=B8=EC=9D=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=95=84=EB=8B=8C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=BD=EC=9A=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=9A=8C=EC=8B=A0=EB=A9=94=EC=9D=BC=EB=A1=9C</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=9C=EC=8B=A0=EC=9E=90=EC=97=90=EA=B2=8C</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=B0=EB=9D=BD=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=8B=9C=EA=B3=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9B=90=EB=B3=B8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=8F</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AC=EB=B3=B8=EA=B3=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=B2=A8=EB=B6=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=AC=B8=EC=84=9C=EB=A5=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=AA=A8=EB=91=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AD=EC=A0=9C=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=8B=9C=EA=B8=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=94=EB=9E=8D=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=98=91=EC=A1=B0=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=85=94=EC=84=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><br>
+<br>
+</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">Th=
+e above message is intended solely for the named addresses and may =
+contain trade secret or privileged and confidential information =
+otherwise protected under applicable law. Any unauthorized
+ dissemination, distribution, copying or use of the information =
+contained in this e-mail is strictly prohibited. If you have received =
+this e-mail in error, please immediately notify the sender by e-mail and =
+destroy any and all electronic or other copies of
+ the original message and attachments. Thank you for your =
+cooperation.</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> Fauvelle, Robert [<a =
+href=3D"mailto:Robert.Fauvelle@snclavalin.com">mailto:Robert.Fauvelle@snc=
+lavalin.com</a>]
+<br>
+<b>Sent:</b> Thursday, July 28, 2016 9:07 AM<br>
+<b>To:</b> Leo Jeon<br>
+<b>Cc:</b> </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=9D=B8=EC=B2=9C</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=B0=95</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=84=B1=EB=AF=BC</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=9E=A5</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=8D=95=EC=88=98</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=8B=A0</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B4=91=EA=B7=A0</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"><br>
+<b>Subject:</b> RE: HRU-TRN-001798: Rolling Stock - Engineering Design =
+Change - Mod for Cab heater - REN1002-U532-01, =
+Rev.10<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Thanks for the update, =
+Leo!<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Bob<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> Leo Jeon [<a =
+href=3D"mailto:staranswer@hyundai-rotem.co.kr">mailto:staranswer@hyundai-=
+rotem.co.kr</a>]
+<br>
+<b>Sent:</b> Wednesday, July 27, 2016 6:00 PM<br>
+<b>To:</b> Fauvelle, Robert<br>
+<b>Cc:</b> </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=9D=B8=EC=B2=9C</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=B0=95</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=84=B1=EB=AF=BC</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=9E=A5</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=8D=95=EC=88=98</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=8B=A0</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">
+</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B4=91=EA=B7=A0</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"><br>
+<b>Subject:</b> RE: HRU-TRN-001798: Rolling Stock - Engineering Design =
+Change - Mod for Cab heater - REN1002-U532-01, =
+Rev.10<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Dear Bob,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Sorry for my late =
+response.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">For ECP of the recording audio =
+quality, Woojin recently sent the improved audio amplifier board to =
+Denver.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">And, they will check and perform =
+the functionality of the PEI to OCC communication after new board =
+temporary installation.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">We are developing and trying of =
+the improvement for your satisfaction.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Thanks for your patience and =
+please keep watch our achieve at soon.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Regards,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D">Leo<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:10.0pt;font-family:&quot;=EB=A7=91=EC=9D=80 =
+=EA=B3=A0=EB=94=95&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"text-autospace:ideograph-other"><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><img border=3D"0" =
+width=3D"172" height=3D"18" id=3D"=EA=B7=B8=EB=A6=BC_x0020_1" =
+src=3D"cid:image001.jpg@01D20D1F.0E0A29A0" =
+alt=3D"https://www.hyundai-rotem.co.kr/Images/temp/ideaq1.jpg"><o:p></o:p=
+></span></p>
+</td>
+</tr>
+<tr style=3D"height:6.0pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:6.0pt">
+<p class=3D"MsoNormal" =
+style=3D"line-height:0%;text-autospace:ideograph-other"><span =
+style=3D"font-size:1.0pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><b><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;</span></b><b><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=9C=A4=EC=88=98</span></b><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;&nbsp;</span=
+><b><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">Je=
+on
+ Yoonsoo</span></b><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;</span><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=9E=A5=ED=92=88=EA=B0=9C=EB=B0=9C=ED=8C=80=
+</span><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;&nbsp;|&nbsp;&nbsp;</span><span =
+style=3D"font-size:8.5pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=B1=85=EC=9E=84=EC=97=B0=EA=B5=AC=EC=9B=90</span><=
+span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;Electric Equipment Development =
+Team&nbsp;&nbsp;|&nbsp;&nbsp;Principal Researcher</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr style=3D"height:6.0pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:6.0pt">
+<p class=3D"MsoNormal" =
+style=3D"line-height:0%;text-autospace:ideograph-other"><span =
+style=3D"font-size:1.0pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&n=
+bsp;<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;Hyundai Rotem Company<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;T</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;</span><span=
+ =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">03=
+1-596-9396</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;&nbsp;&nbsp;=
+</span><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">M</sp=
+an><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">&nbsp;</span><span=
+ =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D">01=
+0-3683-7520</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+<tr>
+<td nowrap=3D"" colspan=3D"2" style=3D"padding:0in 11.25pt 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"line-height:12.0pt;text-autospace:ideograph-other"><span =
+style=3D"font-size:8.5pt;font-family:=EA=B5=B4=EB=A6=BC;color:blue">&nbsp=
+;<a =
+href=3D"mailto:staranswer@hyundai-rotem.co.kr">staranswer@hyundai-rotem.c=
+o.kr</a><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:5.25pt">
+<td colspan=3D"2" style=3D"padding:0in 0in 0in 0in;height:5.25pt"></td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal" style=3D"text-autospace:ideograph-other"><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p>&nbsp;</o:p><=
+/span></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"1" =
+cellpadding=3D"0" width=3D"680" =
+style=3D"width:510.0pt;background:white">
+<tbody>
+<tr>
+<td width=3D"670" style=3D"width:502.5pt;background:#F6F6F6;padding:0in =
+0in 0in 0in">
+<p class=3D"MsoNormal" =
+style=3D"mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;text-autospac=
+e:ideograph-other">
+<span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=83=81=EA=B8=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A9=94=EC=9D=BC=EC=9D=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A7=80=EC=A0=95=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98=EC=8B=A0=EC=9D=B8=EB=A7=8C=EC=9D=84</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9C=84=ED=95=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=9C=EC=86=A1=EB=90=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=83=EC=9C=BC=EB=A1=9C=EC=84=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=EC=95=88=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9C=A0=EC=A7=80=ED=95=B4=EC=95=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=95=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=95=EB=B3=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=8F</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B4=80=EB=A0=A8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B2=95=EB=A0=B9=EC=97=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=94=B0=EB=9D=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=ED=98=B8=EB=90=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=98=81=EC=97=85=EB=B9=84=EB=B0=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=93=B1=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=8F=AC=ED=95=A8=ED=95=98=EA=B3=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=9D=84</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A9=94=EC=9D=BC=EC=97=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=8F=AC=ED=95=A8=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=95=EB=B3=B4=EB=A5=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B6=8C=ED=95=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=86=EC=9D=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B4=EC=9C=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A0=84=EC=86=A1</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B3=B5=EA=B0=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=B0=ED=8F=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B3=B5=EC=82=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=98=90=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AC=EC=9A=A9=ED=95=98=EB=8A=94</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=83=EC=9D=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=84=EA=B2=A9=ED=95=98=EA=B2=8C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B8=88=EC=A7=80=EB=90=98=EC=96=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=A7=8C=EC=95=BD</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B7=80=ED=95=98=EA=B0=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A7=80=EC=A0=95=EB=90=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=88=98=EC=8B=A0=EC=9D=B8=EC=9D=B4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=95=84=EB=8B=8C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B2=BD=EC=9A=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=9A=8C=EC=8B=A0=EB=A9=94=EC=9D=BC=EB=A1=9C</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=9C=EC=8B=A0=EC=9E=90=EC=97=90=EA=B2=8C</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=97=B0=EB=9D=BD=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=8B=9C=EA=B3=A0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">,
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=9B=90=EB=B3=B8</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=8F</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AC=EB=B3=B8=EA=B3=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=B2=A8=EB=B6=80</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=AC=B8=EC=84=9C=EB=A5=BC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=AA=A8=EB=91=90</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=82=AD=EC=A0=9C=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=8B=9C=EA=B8=B0</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EB=B0=94=EB=9E=8D=EB=8B=88=EB=8B=A4</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=ED=98=91=EC=A1=B0=ED=95=98=EC=97=AC</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EC=A3=BC=EC=85=94=EC=84=9C</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">
+</span><span =
+style=3D"font-size:8.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&q=
+uot;;color:#1F497D">=EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=A4</span><=
+span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">.
+</span><span style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><br>
+<br>
+</span><span =
+style=3D"font-size:8.0pt;font-family:=EB=8F=8B=EC=9B=80;color:#1F497D">Th=
+e above message is intended solely for the named addresses and may =
+contain trade secret or privileged and confidential information =
+otherwise protected under applicable law. Any unauthorized
+ dissemination, distribution, copying or use of the information =
+contained in this e-mail is strictly prohibited. If you have received =
+this e-mail in error, please immediately notify the sender by e-mail and =
+destroy any and all electronic or other copies of
+ the original message and attachments. Thank you for your =
+cooperation.</span><span =
+style=3D"font-family:=EA=B5=B4=EB=A6=BC;color:#1F497D"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> Fauvelle, Robert [<a =
+href=3D"mailto:Robert.Fauvelle@snclavalin.com">mailto:Robert.Fauvelle@snc=
+lavalin.com</a>]
+<br>
+<b>Sent:</b> Friday, July 15, 2016 7:43 AM<br>
+<b>To:</b> </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80=EC=9D=B8=EC=B2=9C</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">;
+<a =
+href=3D"mailto:staranswer@hyundai-rotem.co.kr">staranswer@hyundai-rotem.c=
+o.kr</a><br>
+<b>Subject:</b> FW: HRU-TRN-001798: Rolling Stock - Engineering Design =
+Change - Mod for Cab heater - REN1002-U532-01, =
+Rev.10<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">I.C. &amp; =
+Leo,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><br>
+Please provide status on this ECP before you leave on vacation.&nbsp; =
+Should I reject this ECP until the recording issues are fully resolved =
+and proven?<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Thanks,<br>
+Bob<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> Fauvelle, Robert
+<br>
+<b>Sent:</b> Wednesday, July 06, 2016 8:09 PM<br>
+<b>To:</b> '</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EA=B9=80=EC=9D=B8=EC=B2=9C</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">'; 'Leo Jeon'<br>
+<b>Cc:</b> 'O-hyun Kim'; </span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EC=B5=9C=EC=B2=A0=ED=95=9C=EB=B6=80=EC=9E=A5</sp=
+an><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">; '</span><span lang=3D"KO" =
+style=3D"font-size:10.0pt;font-family:&quot;Gulim&quot;,&quot;sans-serif&=
+quot;;color:windowtext">=EB=B0=95=EC=84=B1=EB=AF=BC</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">';
+ 'Peter Strange'<br>
+<b>Subject:</b> FW: HRU-TRN-001798: Rolling Stock - Engineering Design =
+Change - Mod for Cab heater - REN1002-U532-01, =
+Rev.10<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">I.C. &amp; =
+Leo,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">The PEI-OCC call =
+recordings with acceptable audio quality have not been presented for my =
+review.&nbsp; What is the status?&nbsp; I heard there is still =
+significant
+ noise in the most recent tests.&nbsp; I cannot approve this ECP if HR =
+engineering believes all issues are resolved.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D">Thank you,<br>
+Bob<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Futura Bk =
+BT&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></=
+p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt =
+0in 0in 0in">
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext">From:</span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif=
+&quot;;color:windowtext"> Aconex Notification (Eagle P3) [<a =
+href=3D"mailto:noreply@aconex.com">mailto:noreply@aconex.com</a>]
+<br>
+<b>Sent:</b> Wednesday, July 06, 2016 6:16 PM<br>
+<b>To:</b> Fauvelle, Robert<br>
+<b>Subject:</b> HRU-TRN-001798: Rolling Stock - Engineering Design =
+Change - Mod for Cab heater - REN1002-U532-01, =
+Rev.10<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal"><span class=3D"blueregtext1"><span =
+style=3D"font-size:9.0pt">Dear
+<b>Robert</b>, </span></span><o:p></o:p></p>
+<p><span class=3D"blueregtext1"><span style=3D"font-size:9.0pt">You have =
+received a new
+<a =
+href=3D"https://us1.aconex.com/Logon?Action=3DView&amp;ENTITY=3DMAIL&amp;=
+ID=3D1211748398" title=3D"Click here to view HRU-TRN-001798">
+<b><span style=3D"color:#E86C16">Transmittal: HRU-TRN-001798 =
+</span></b></a></span></span><o:p></o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"1" =
+cellpadding=3D"0" id=3D"table1">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Project:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">&nbsp;&nbsp;<o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Eagle P3<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Type:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Transmittal<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Mail Number:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">HRU-TRN-001798<o:p></o:p></span></p>=
+
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">To:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Mr Robert Fauvelle, Interfleet =
+Technology
+</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Cc:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Mr Will Shannon, Alternate =
+Concepts, Inc.
+<br>
+Josh Lee, DTO - Denver Transit Operators <br>
+Mr Peter Strange, DTS - Denver Transit Systems <br>
+Mr CH CHOI, Hyundai Rotem USA <br>
+Mr YS Jun, Hyundai Rotem USA <br>
+Mr I.C. Kim, Hyundai Rotem USA <br>
+Mr OHyun KIM, Hyundai Rotem USA <br>
+Eric Lee, Hyundai Rotem USA <br>
+Mr B.K. Min, Hyundai Rotem USA <br>
+SM PARK, Hyundai Rotem USA <br>
+Mr Tom Lynch, Interfleet Technology <o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">From:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">I Kim, Hyundai Rotem =
+USA<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Sent:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">7/6/16 5:15:42 PM PDT (GMT =
+-07:00)<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Reason:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Issued for =
+Approval<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Attribute 1:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Rolling Stock
+<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Attribute 2:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">* EGPW - Eagle P3 - Project Wide
+<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Attribute 3:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">* Non-CDRL
+<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Status:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Outstanding<o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Response:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Respond by Friday, July 22, =
+2016</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" align=3D"right" =
+style=3D"text-align:right;line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Subject:</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Rolling Stock - Engineering Design =
+Change - Mod for Cab heater - REN1002-U532-01, Rev.10</span></b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"100%" =
+style=3D"width:100.0%;background:#F8F8F8">
+<tbody>
+<tr>
+<td colspan=3D"5" style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+class=3D"blueregtext1"><b><span =
+style=3D"font-size:9.0pt;line-height:140%">Uploaded Documents
+</span></b></span><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Document =
+No.<o:p></o:p></span></b></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Revision<o:p></o:p></span></b></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Title<o:p></o:p></span></b></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><b><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Status
+<o:p></o:p></span></b></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">EGPW-HRU-RST-RPT-005220&nbsp;<o:p></=
+o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">00&nbsp;<o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">RNE1002-U518-11 New AF board for =
+OCCCRA PEI Recording&nbsp;<o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">For =
+Review&nbsp;<o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">EGPW-HRU-RST-RPT-005221&nbsp;<o:p></=
+o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">00&nbsp;<o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">42A-2016-0027_FMI#7&nbsp;<o:p></o:p>=
+</span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">For =
+Review&nbsp;<o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+</tr>
+<tr>
+<td colspan=3D"4" style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"line-height:140%"><i><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333">Your document register has been =
+automatically updated with these revisions.</span></i><span =
+style=3D"font-size:9.0pt;line-height:140%;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+</td>
+<td style=3D"padding:0in 0in 0in 0in"></td>
+</tr>
+</tbody>
+</table>
+<p><span class=3D"blueregtext1"><span style=3D"font-size:9.0pt">This is =
+an automatic notification from
+</span></span><span class=3D"blueregtext1"><b><span =
+style=3D"font-size:10.0pt"><a href=3D"http://www.aconex.com"><span =
+style=3D"color:#333333">Aconex</span></a>
+</span></b></span><span class=3D"blueregtext1"><span =
+style=3D"font-size:10.0pt">.</span></span><o:p></o:p></p>
+<p class=3D"MsoNormal"><b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&=
+quot;;color:#333333"><a href=3D"http://www.aconex.com"><span =
+style=3D"color:#333333">Aconex</span></a></span></b><span =
+style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&=
+quot;;color:#333333">
+</span><span =
+style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&=
+quot;;color:#E86C16"><br>
+<b>Project success. Easy as Aconex.</b> </span><o:p></o:p></p>
+<p class=3D"blueregtext">This email is automatically generated by =
+Aconex.<br>
+If you would like to turn off email messages, log into Aconex and edit =
+your &quot;Notifications&quot; user preferences.<o:p></o:p></p>
+<p class=3D"blueregtext">If you need assistance please contact our =
+helpdesk at the following numbers :<br>
+&nbsp;&nbsp;: 1 888 5 ACONEX<br>
+&nbsp;&nbsp;Int: 1 888 5 ACONEX<o:p></o:p></p>
+<p class=3D"blueregtext" style=3D"margin-bottom:12.0pt">Regards,<br>
+The Aconex Team<o:p></o:p></p>
+<p class=3D"blueregtext"><span =
+style=3D"font-size:7.5pt;line-height:140%">This email and any =
+attachments are confidential, subject to copyright and may be =
+privileged. No confidentiality or privilege is lost by an erroneous =
+transmission. If you have received this
+ email in error, please let us know by reply email and delete or destroy =
+this email and all copies. If you are not the intended recipient of this =
+email you must not disseminate, copy or use the information in it.
+<o:p></o:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><span =
+style=3D"color:windowtext"><o:p>&nbsp;</o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_NextPart_001_0027_01D20DA2.C32E7330--
+
+------=_NextPart_000_0026_01D20DA2.C32E4C20
+Content-Type: image/jpeg; name="image001.jpg"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.jpg@01D20D1F.0E0A29A0>
+
+/9j/4AAQSkZJRgABAQEAYABgAAD/4RDcRXhpZgAATU0AKgAAAAgABAE7AAIAAAAKAAAISodpAAQA
+AAABAAAIVJydAAEAAAAIAAAQzOocAAcAAAgMAAAAPgAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOygle2ajOykgAAABZAD
+AAIAAAAUAAAQopAEAAIAAAAUAAAQtpKRAAIAAAADMTYAAJKSAAIAAAADMTYAAOocAAcAAAgMAAAI
+lgAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAADIwMTU6MTI6MjkgMTM6NDk6NDUAMjAxNToxMjoyOSAxMzo0OTo0NQAAABXI
+jNYAyQAA/+ELHGh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8APD94cGFja2V0IGJlZ2luPSfv
+u78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQnPz4NCjx4OnhtcG1ldGEgeG1sbnM6eD0i
+YWRvYmU6bnM6bWV0YS8iPjxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5
+OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+PHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6
+ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxuczpkYz0iaHR0cDovL3B1
+cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iLz48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVp
+ZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOnhtcD0iaHR0cDov
+L25zLmFkb2JlLmNvbS94YXAvMS4wLyI+PHhtcDpDcmVhdGVEYXRlPjIwMTUtMTItMjlUMTM6NDk6
+NDUuMTU4PC94bXA6Q3JlYXRlRGF0ZT48L3JkZjpEZXNjcmlwdGlvbj48cmRmOkRlc2NyaXB0aW9u
+IHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHht
+bG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+PGRjOmNyZWF0b3I+PHJk
+ZjpTZXEgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgt
+bnMjIj48cmRmOmxpPuygle2ajOykgDwvcmRmOmxpPjwvcmRmOlNlcT4NCgkJCTwvZGM6Y3JlYXRv
+cj48L3JkZjpEZXNjcmlwdGlvbj48L3JkZjpSREY+PC94OnhtcG1ldGE+DQogICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgIDw/eHBhY2tldCBlbmQ9J3cn
+Pz7/2wBDAAcFBQYFBAcGBQYIBwcIChELCgkJChUPEAwRGBUaGRgVGBcbHichGx0lHRcYIi4iJSgp
+KywrGiAvMy8qMicqKyr/2wBDAQcICAoJChQLCxQqHBgcKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKir/wAARCAASAKwDASIAAhEBAxEB/8QAHwAAAQUBAQEB
+AQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1Fh
+ByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZ
+WmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAEC
+AwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHB
+CSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0
+dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX
+2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0X4q+L/FPhu+sIfDB08RyoWl8908z
+OcD5WYfL7+td14dvbvUfDdheaiLcXU0CvL9mk3x7iOdrdxXjnx38M63rninTJtI0i7vo47Io7wQl
+wp3k4JFWbPSL21m8Kx65pGty6bBoHlTwWSSgx3G/gMEIwcZpdTjVSSqyT2PbKK8F1DSvGP2rSjd2
+urS6WtzdGCGUSTSxW5C+Ws3lsCTnOOcjvW5r2n+LfE9lpmh+HYLrTbXT7ZZ57qVpLbzJiDsRS25i
+F6kH6Zouae2evunr1Y934r0SyvHtJtQja5QbnhhBldR7hQSPxrl77UfF2s/CS4NlYT2XiRF8iaJl
+2MxU4d4yeDuHIPvXKeEPEdh4M8IrolnZXH/CZXu5pILqPymaYk4LO+BtAwepz+NZyqcsrHr4bCqt
+R9qnd3tbr6vsj1jSfEmj67YyXmk6jBdW8XEjo33O/wAwPI/Gnafr+k6tcywaXqNvdywgNIsMgfYD
+0zivLNH8O6t8NPBWqSW9tcap4m1dBhLSFpI4eoGWAxkbiffius+E3hdfDXgqIzRyLqF6xnvDKhVw
+/TaQeeP8T3pQnJtJr1LxGGoU4znCd1e0fPu/T8zuKiW6t3untkniadBuaIOCyj1I6jqKlrk7PSdZ
+g1q31WVIyZrmX7RAoAeONxgEvuwwGyPgD8626nm9DppL21haRZbmFGiTzJA0gBRf7x9Bweam69K5
+PxDoV/e3Wq3NlDukls44IfnUeYPnDryeMZU89wKkXTtbk8RyNPc3CWjOdrRN8nl7Mbf9aNpz3EZO
+ed2KAZ1FVLrV9NsZRFfaha20hG4JNMqEj1wTXNxad4kfy47iadQ5W3ldLgDbGhQ+aOerYcevzDPS
+rmo2mop4klu7RL/yZLaOPfZm3yWDMSCJfqOlAHRKwZQykEEZBB60tcvPY6tjU7hYruaSaZFgjN6y
+hItq7iFWRRkEHjK555weWwWWtjQ7KO8W8laO5kNxFFdBJnjO7Zh/M7Erxvzx1PcA6Q3dst2tq1xE
+Lhl3rCXG8r6heuKZDqVjcXT2tveW8txHnfEkqs64ODkA5HNYWj6NqMd9Lcai8gmksI4fN84th8v1
+APJAK8465I6mqSWWsodH086aIILIqGvEYH5grKSu0ltrZHJAxzmgDs6imu7e3OLieKI7C+HcL8o6
+nnsMjJrlI4fEZststndFls4IGDXgBaQMd8g2yAk4x1ZSfWmRaVr5sEaVZvtcdrdxpI043hnZTH82
+8noPU4xyaAOxSWOQsI3ViuNwU5xkZH6U6uEvbPUdLu7uaCSeG4vbpUgzc5WYPGEJC7j8yN82ccAd
+cV3EUflQpHuZ9ihdzHJOO5Pc0dBD6KKKBhRRRQAVn6tptjf2+b6yt7kr93zolfH0yKKKiex0Yf8A
+iIuwKqW8aoAqqoAAGABin0UVZg9wooooEFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/Z
+
+------=_NextPart_000_0026_01D20DA2.C32E4C20--

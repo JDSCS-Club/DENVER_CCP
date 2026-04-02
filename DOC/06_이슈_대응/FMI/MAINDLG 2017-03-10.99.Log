@@ -1,0 +1,3072 @@
+Change time to 2017-03-10.
+18:21:07.953  [Audio] Set Trigger Point(0000->0022).
+18:21:08.046  D0 : Direction OFF[0].
+18:21:08.046  Train NO : Change Train No 0000 to 0010.
+18:21:08.046  Station : Change Start station 0 to 276.
+18:21:08.046  Station : Change Next station 0 to 278.
+18:21:08.046  Station : Change Destination station 0 to 257.
+18:21:08.046  PA Vector : Change PAC Audio vector 0000 to 0022.
+18:21:08.046  PA Vector : Change EID Colr vector 0000 to 0001.
+18:21:08.046  PA Vector : Change EDI Display1 vector 0000 to 0102.
+18:21:08.046  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:21:08.046  PA Vector : Change PP Line vector 0000 to 0001.
+18:21:08.046  
+18:21:09.031  [Audio] Set Trigger Point(0000->0022).
+18:21:09.031  [Audio] Play().
+18:21:09.390  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:21:09.421  [Audio] MCI Play : 0.
+18:21:09.421  D1 : Broadcast CNCS ON[1].
+18:21:09.421  D2 : CNCS Auction A ON[1]
+18:21:09.421  
+18:21:11.031  Trip NO : Change Trigger ID 0000 to 1145.
+18:21:11.031  
+18:21:16.156  [Audio] Timer Stop[6646, 6646].
+18:21:16.156  [Audio] Stop().
+18:21:16.156  [Audio] MCI Stop : 0.
+18:21:17.875  D1 : Broadcast CNCS OFF[0].
+18:21:17.875  D2 : CNCS Auction A OFF[0]
+18:21:17.875  
+18:21:29.875  D1 : Broadcast PEI B ON[1].
+18:21:29.875  
+18:21:30.843  [Audio] Set Trigger Point(0022->0017).
+18:21:30.843  Trip NO : Change Trigger ID 1145 to 1144.
+18:21:30.843  PA Vector : Change PAC Audio vector 0022 to 0017.
+18:21:30.843  PA Vector : Change PII vector 0000 to 0136.
+18:21:30.843  PA Vector : Change SP vector 0000 to 0136.
+18:21:30.843  
+18:21:31.843  [Audio] Set Trigger Point(0022->0017).
+18:21:31.843  [Audio] Play().
+18:21:32.015  [Audio] Open : D:\Woojin\AUDIO\017.WAV [Successed:0]
+18:21:32.046  [Audio] MCI Play : 0.
+18:21:32.046  D1 : Broadcast CNCS ON[1].
+18:21:32.046  D2 : CNCS Auction A ON[1]
+18:21:32.046  
+18:21:35.140  [Audio] Timer Stop[3037, 3037].
+18:21:35.140  [Audio] Stop().
+18:21:35.156  [Audio] MCI Stop : 0.
+18:21:36.656  D1 : Broadcast CNCS OFF[0].
+18:21:36.656  D2 : CNCS Auction A OFF[0]
+18:21:36.656  
+18:21:40.718  [Audio] Set Trigger Point(0017->0018).
+18:21:40.718  Trip NO : Change Trigger ID 1144 to 1167.
+18:21:40.718  Station : Change Now station 0 to 278.
+18:21:40.718  Station : Change Next station 278 to 275.
+18:21:40.718  PA Vector : Change PAC Audio vector 0017 to 0018.
+18:21:40.718  PA Vector : Change PII vector 0136 to 0135.
+18:21:40.718  PA Vector : Change SP vector 0136 to 0135.
+18:21:40.718  
+18:21:41.718  [Audio] Set Trigger Point(0017->0018).
+18:21:41.718  [Audio] Play().
+18:21:41.875  [Audio] Open : D:\Woojin\AUDIO\018.WAV [Successed:0]
+18:21:41.906  [Audio] MCI Play : 0.
+18:21:41.906  D1 : Broadcast CNCS ON[1].
+18:21:41.906  D2 : CNCS Auction A ON[1]
+18:21:41.906  
+18:21:44.718  [Audio] Timer Stop[2712, 2712].
+18:21:44.718  [Audio] Stop().
+18:21:44.718  [Audio] MCI Stop : 0.
+18:21:45.578  D0 : All Door Close OFF[0].
+18:21:45.578  D1 : Broadcast CNCS OFF[0].
+18:21:45.578  D2 : CNCS Auction A OFF[0]
+18:21:45.578  
+18:21:51.625  [Audio] Set Trigger Point(0018->0022).
+18:21:51.625  Trip NO : Change Trigger ID 1167 to 1165.
+18:21:51.625  PA Vector : Change PAC Audio vector 0018 to 0022.
+18:21:51.625  PA Vector : Change PII vector 0135 to 0000.
+18:21:51.625  PA Vector : Change SP vector 0135 to 0000.
+18:21:51.625  
+18:21:52.578  [Audio] Set Trigger Point(0018->0022).
+18:21:52.578  [Audio] Play().
+18:21:52.750  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:21:52.765  [Audio] MCI Play : 0.
+18:21:52.765  D1 : Broadcast CNCS ON[1].
+18:21:52.765  D2 : CNCS Auction A ON[1]
+18:21:52.765  
+18:21:59.500  [Audio] Timer Stop[6646, 6646].
+18:21:59.500  [Audio] Stop().
+18:21:59.515  [Audio] MCI Stop : 0.
+18:22:00.515  D1 : Broadcast CNCS OFF[0].
+18:22:00.515  D2 : CNCS Auction A OFF[0]
+18:22:00.515  
+18:22:01.531  [Audio] Set Trigger Point(0022->0014).
+18:22:01.531  Trip NO : Change Trigger ID 1165 to 1164.
+18:22:01.531  PA Vector : Change PAC Audio vector 0022 to 0014.
+18:22:01.531  PA Vector : Change PII vector 0000 to 0114.
+18:22:01.531  PA Vector : Change SP vector 0000 to 0114.
+18:22:01.531  
+18:22:02.484  [Audio] Set Trigger Point(0022->0014).
+18:22:02.484  [Audio] Play().
+18:22:02.671  [Audio] Open : D:\Woojin\AUDIO\014.WAV [Successed:0]
+18:22:02.703  [Audio] MCI Play : 0.
+18:22:02.703  D1 : Broadcast CNCS ON[1].
+18:22:02.703  D2 : CNCS Auction A ON[1]
+18:22:02.703  
+18:22:06.718  [Audio] Timer Stop[3928, 3928].
+18:22:06.718  [Audio] Stop().
+18:22:06.718  [Audio] MCI Stop : 0.
+18:22:12.312  [Audio] Set Trigger Point(0014->0000).
+18:22:12.312  Coupling ID : 0.
+18:22:12.312  D0 : A Cab ON[1].
+18:22:12.312  D0 : B Cab OFF[0].
+18:22:12.312  D0 : All Door Close ON[1].
+18:22:12.312  D1 : Broadcast PEI B OFF[0].
+18:22:12.312  D1 : Broadcast CNCS OFF[0].
+18:22:12.312  D2 : CNCS Auction A OFF[0]
+18:22:12.312  Trip NO : Change Trigger ID 1164 to 0000.
+18:22:12.312  Station : Change Start station 276 to 0.
+18:22:12.312  Station : Change Next station 275 to 0.
+18:22:12.312  Station : Change Destination station 257 to 0.
+18:22:12.312  PA Vector : Change PAC Audio vector 0014 to 0000.
+18:22:12.312  PA Vector : Change EID Colr vector 0001 to 0000.
+18:22:12.312  PA Vector : Change EDI Display1 vector 0102 to 0000.
+18:22:12.312  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:22:12.312  PA Vector : Change PII vector 0114 to 0000.
+18:22:12.312  PA Vector : Change PP Line vector 0001 to 0000.
+18:22:12.312  PA Vector : Change SP vector 0114 to 0000.
+18:22:12.312  
+18:22:13.312  [Audio] Set Trigger Point(0014->0000).
+18:22:15.296  [Audio] Set Trigger Point(0000->0022).
+18:22:15.296  Station : Change Start station 0 to 276.
+18:22:15.296  Station : Change Next station 0 to 278.
+18:22:15.296  Station : Change Destination station 0 to 257.
+18:22:15.296  PA Vector : Change PAC Audio vector 0000 to 0022.
+18:22:15.296  PA Vector : Change EID Colr vector 0000 to 0001.
+18:22:15.296  PA Vector : Change EDI Display1 vector 0000 to 0102.
+18:22:15.296  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:22:15.296  PA Vector : Change PP Line vector 0000 to 0001.
+18:22:15.296  
+18:22:16.265  [Audio] Set Trigger Point(0000->0001).
+18:22:16.265  [Audio] Play().
+18:22:16.421  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:22:16.437  [Audio] MCI Play : 0.
+18:22:16.453  D0 : Direction ON[1].
+18:22:16.453  D1 : Broadcast CNCS ON[1].
+18:22:16.453  D2 : CNCS Auction A ON[1]
+18:22:16.453  Train NO : Change Train No 0010 to 0011.
+18:22:16.453  Station : Change Start station 276 to 257.
+18:22:16.453  Station : Change Next station 278 to 265.
+18:22:16.453  Station : Change Destination station 257 to 276.
+18:22:16.453  PA Vector : Change PAC Audio vector 0022 to 0001.
+18:22:16.453  PA Vector : Change EDI Display1 vector 0102 to 0104.
+18:22:16.453  PA Vector : Change EDI Display2 vector 0101 to 0103.
+18:22:16.453  
+18:22:23.593  [Audio] Timer Stop[7131, 7131].
+18:22:23.593  [Audio] Stop().
+18:22:23.609  [Audio] MCI Stop : 0.
+18:22:25.218  D1 : Broadcast CNCS OFF[0].
+18:22:25.218  D2 : CNCS Auction A OFF[0]
+18:22:25.218  
+18:22:26.187  Coupling ID : 1.
+18:22:26.187  
+18:22:32.156  Trip NO : Change Trigger ID 0000 to 1015.
+18:22:32.156  
+18:22:51.968  [Audio] Set Trigger Point(0001->0002).
+18:22:51.968  Trip NO : Change Trigger ID 1015 to 1016.
+18:22:51.968  PA Vector : Change PAC Audio vector 0001 to 0002.
+18:22:51.968  PA Vector : Change PII vector 0000 to 0122.
+18:22:51.968  PA Vector : Change SP vector 0000 to 0122.
+18:22:51.968  
+18:22:52.968  [Audio] Set Trigger Point(0001->0002).
+18:22:52.968  [Audio] Play().
+18:22:53.140  [Audio] Open : D:\Woojin\AUDIO\002.WAV [Successed:0]
+18:22:53.156  [Audio] MCI Play : 0.
+18:22:53.156  D1 : Broadcast CNCS ON[1].
+18:22:53.156  D2 : CNCS Auction A ON[1]
+18:22:53.156  
+18:22:56.156  [Audio] Timer Stop[2959, 2959].
+18:22:56.171  [Audio] Stop().
+18:22:56.171  [Audio] MCI Stop : 0.
+18:22:56.875  D1 : Broadcast CNCS OFF[0].
+18:22:56.875  D2 : CNCS Auction A OFF[0]
+18:22:56.875  
+18:22:58.828  D0 : All Door Close OFF[0].
+18:22:58.828  
+18:23:02.921  [Audio] Set Trigger Point(0002->0003).
+18:23:02.921  Trip NO : Change Trigger ID 1016 to 1093.
+18:23:02.921  Station : Change Now station 278 to 265.
+18:23:02.921  Station : Change Next station 265 to 272.
+18:23:02.921  PA Vector : Change PAC Audio vector 0002 to 0003.
+18:23:02.921  PA Vector : Change PII vector 0122 to 0121.
+18:23:02.921  PA Vector : Change SP vector 0122 to 0121.
+18:23:02.921  
+18:23:03.906  [Audio] Set Trigger Point(0002->0003).
+18:23:03.906  [Audio] Play().
+18:23:04.062  [Audio] Open : D:\Woojin\AUDIO\003.WAV [Successed:0]
+18:23:04.093  [Audio] MCI Play : 0.
+18:23:04.093  D1 : Broadcast CNCS ON[1].
+18:23:04.093  D2 : CNCS Auction A ON[1]
+18:23:04.093  
+18:23:06.593  [Audio] Timer Stop[2419, 2419].
+18:23:06.593  [Audio] Stop().
+18:23:06.609  [Audio] MCI Stop : 0.
+18:23:07.750  D1 : Broadcast CNCS OFF[0].
+18:23:07.750  D2 : CNCS Auction A OFF[0]
+18:23:07.750  
+18:23:12.828  [Audio] Set Trigger Point(0003->0001).
+18:23:12.828  Trip NO : Change Trigger ID 1093 to 1095.
+18:23:12.828  PA Vector : Change PAC Audio vector 0003 to 0001.
+18:23:12.828  PA Vector : Change PII vector 0121 to 0000.
+18:23:12.828  PA Vector : Change SP vector 0121 to 0000.
+18:23:12.828  
+18:23:13.812  [Audio] Set Trigger Point(0003->0001).
+18:23:13.812  [Audio] Play().
+18:23:13.968  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:23:14.000  [Audio] MCI Play : 0.
+18:23:14.000  D1 : Broadcast CNCS ON[1].
+18:23:14.000  D2 : CNCS Auction A ON[1]
+18:23:14.000  
+18:23:21.125  [Audio] Timer Stop[7131, 7131].
+18:23:21.125  [Audio] Stop().
+18:23:21.125  [Audio] MCI Stop : 0.
+18:23:22.687  [Audio] Set Trigger Point(0001->0005).
+18:23:22.687  D1 : Broadcast CNCS OFF[0].
+18:23:22.687  D2 : CNCS Auction A OFF[0]
+18:23:22.687  Trip NO : Change Trigger ID 1095 to 1096.
+18:23:22.687  PA Vector : Change PAC Audio vector 0001 to 0005.
+18:23:22.687  PA Vector : Change PII vector 0000 to 0120.
+18:23:22.687  PA Vector : Change SP vector 0000 to 0120.
+18:23:22.687  
+18:23:23.656  [Audio] Set Trigger Point(0001->0005).
+18:23:24.687  [Audio] Set Trigger Point(0001->0005).
+18:23:24.687  [Audio] Play().
+18:23:24.859  [Audio] Open : D:\Woojin\AUDIO\005.WAV [Successed:0]
+18:23:24.875  [Audio] MCI Play : 0.
+18:23:24.875  D1 : Broadcast CNCS ON[1].
+18:23:24.875  D2 : CNCS Auction A ON[1]
+18:23:24.875  
+18:23:27.781  [Audio] Timer Stop[2856, 2856].
+18:23:27.781  [Audio] Stop().
+18:23:27.796  [Audio] MCI Stop : 0.
+18:23:28.546  D1 : Broadcast CNCS OFF[0].
+18:23:28.546  D2 : CNCS Auction A OFF[0]
+18:23:28.546  
+18:23:32.625  [Audio] Set Trigger Point(0005->0006).
+18:23:32.625  Trip NO : Change Trigger ID 1096 to 1103.
+18:23:32.625  Station : Change Now station 265 to 272.
+18:23:32.625  Station : Change Next station 272 to 273.
+18:23:32.625  PA Vector : Change PAC Audio vector 0005 to 0006.
+18:23:32.625  PA Vector : Change PII vector 0120 to 0119.
+18:23:32.625  PA Vector : Change SP vector 0120 to 0119.
+18:23:32.625  
+18:23:33.546  [Audio] Set Trigger Point(0005->0006).
+18:23:33.546  [Audio] Play().
+18:23:33.718  [Audio] Open : D:\Woojin\AUDIO\006.WAV [Successed:0]
+18:23:33.750  [Audio] MCI Play : 0.
+18:23:33.750  D1 : Broadcast CNCS ON[1].
+18:23:33.750  D2 : CNCS Auction A ON[1]
+18:23:33.750  
+18:23:40.875  [Audio] Timer Stop[7043, 7043].
+18:23:40.875  [Audio] Stop().
+18:23:40.890  [Audio] MCI Stop : 0.
+18:23:44.359  [Audio] Set Trigger Point(0006->0001).
+18:23:44.359  Coupling ID : 0.
+18:23:44.359  D0 : A Cab OFF[0].
+18:23:44.359  D0 : B Cab ON[1].
+18:23:44.359  D0 : All Door Close ON[1].
+18:23:44.359  Trip NO : Change Trigger ID 1103 to 0000.
+18:23:44.359  Station : Change Next station 273 to 265.
+18:23:44.359  PA Vector : Change PAC Audio vector 0006 to 0001.
+18:23:44.359  PA Vector : Change PII vector 0119 to 0000.
+18:23:44.359  PA Vector : Change SP vector 0119 to 0000.
+18:23:44.359  
+18:23:45.359  [Audio] Set Trigger Point(0006->0000).
+18:23:45.359  D1 : Broadcast CNCS OFF[0].
+18:23:45.359  D2 : CNCS Auction A OFF[0]
+18:23:45.359  Station : Change Start station 257 to 0.
+18:23:45.359  Station : Change Next station 265 to 0.
+18:23:45.359  Station : Change Destination station 276 to 0.
+18:23:45.359  PA Vector : Change PAC Audio vector 0001 to 0000.
+18:23:45.359  PA Vector : Change EID Colr vector 0001 to 0000.
+18:23:45.359  PA Vector : Change EDI Display1 vector 0104 to 0000.
+18:23:45.359  PA Vector : Change EDI Display2 vector 0103 to 0000.
+18:23:45.359  PA Vector : Change PP Line vector 0001 to 0000.
+18:23:45.359  
+18:23:46.328  [Audio] Set Trigger Point(0006->0000).
+18:23:49.234  D0 : Direction OFF[0].
+18:23:49.234  Train NO : Change Train No 0011 to 0010.
+18:23:49.234  
+18:23:58.171  Coupling ID : 1.
+18:23:58.171  
+18:23:59.125  [Audio] Set Trigger Point(0000->0022).
+18:23:59.125  Station : Change Start station 0 to 276.
+18:23:59.125  Station : Change Next station 0 to 278.
+18:23:59.125  Station : Change Destination station 0 to 257.
+18:23:59.125  PA Vector : Change PAC Audio vector 0000 to 0022.
+18:23:59.125  PA Vector : Change EID Colr vector 0000 to 0001.
+18:23:59.125  PA Vector : Change EDI Display1 vector 0000 to 0102.
+18:23:59.125  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:23:59.125  PA Vector : Change PP Line vector 0000 to 0001.
+18:23:59.125  
+18:24:00.078  [Audio] Set Trigger Point(0000->0022).
+18:24:00.078  [Audio] Play().
+18:24:00.234  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:24:00.265  [Audio] MCI Play : 0.
+18:24:00.265  D1 : Broadcast CNCS ON[1].
+18:24:00.265  D2 : CNCS Auction A ON[1]
+18:24:00.265  
+18:24:06.984  [Audio] Timer Stop[6646, 6646].
+18:24:07.000  [Audio] Stop().
+18:24:07.000  [Audio] MCI Stop : 0.
+18:24:07.109  Trip NO : Change Trigger ID 0000 to 1145.
+18:24:07.109  
+18:24:08.062  D1 : Broadcast CNCS OFF[0].
+18:24:08.062  D2 : CNCS Auction A OFF[0]
+18:24:08.062  
+18:24:26.890  [Audio] Set Trigger Point(0022->0017).
+18:24:26.890  Trip NO : Change Trigger ID 1145 to 1144.
+18:24:26.890  PA Vector : Change PAC Audio vector 0022 to 0017.
+18:24:26.890  PA Vector : Change PII vector 0000 to 0136.
+18:24:26.890  PA Vector : Change SP vector 0000 to 0136.
+18:24:26.890  
+18:24:27.812  [Audio] Set Trigger Point(0022->0017).
+18:24:27.812  [Audio] Play().
+18:24:27.968  [Audio] Open : D:\Woojin\AUDIO\017.WAV [Successed:0]
+18:24:28.000  [Audio] MCI Play : 0.
+18:24:28.000  D1 : Broadcast CNCS ON[1].
+18:24:28.000  D2 : CNCS Auction A ON[1]
+18:24:28.000  
+18:24:31.109  [Audio] Timer Stop[3037, 3037].
+18:24:31.109  [Audio] Stop().
+18:24:31.109  [Audio] MCI Stop : 0.
+18:24:32.703  D1 : Broadcast CNCS OFF[0].
+18:24:32.703  D2 : CNCS Auction A OFF[0]
+18:24:32.703  
+18:24:37.718  [Audio] Set Trigger Point(0017->0018).
+18:24:37.718  Trip NO : Change Trigger ID 1144 to 1167.
+18:24:37.718  Station : Change Now station 272 to 278.
+18:24:37.718  Station : Change Next station 278 to 275.
+18:24:37.718  PA Vector : Change PAC Audio vector 0017 to 0018.
+18:24:37.718  PA Vector : Change PII vector 0136 to 0135.
+18:24:37.718  PA Vector : Change SP vector 0136 to 0135.
+18:24:37.718  
+18:24:38.671  [Audio] Set Trigger Point(0017->0018).
+18:24:38.671  [Audio] Play().
+18:24:38.859  [Audio] Open : D:\Woojin\AUDIO\018.WAV [Successed:0]
+18:24:38.890  [Audio] MCI Play : 0.
+18:24:38.890  D1 : Broadcast CNCS ON[1].
+18:24:38.890  D2 : CNCS Auction A ON[1]
+18:24:38.890  
+18:24:41.687  [Audio] Timer Stop[2712, 2712].
+18:24:41.687  [Audio] Stop().
+18:24:41.703  [Audio] MCI Stop : 0.
+18:24:42.625  D0 : All Door Close OFF[0].
+18:24:42.625  D1 : Broadcast CNCS OFF[0].
+18:24:42.625  D2 : CNCS Auction A OFF[0]
+18:24:42.625  
+18:24:47.640  [Audio] Set Trigger Point(0018->0022).
+18:24:47.640  Trip NO : Change Trigger ID 1167 to 1165.
+18:24:47.640  PA Vector : Change PAC Audio vector 0018 to 0022.
+18:24:47.640  PA Vector : Change PII vector 0135 to 0000.
+18:24:47.640  PA Vector : Change SP vector 0135 to 0000.
+18:24:47.640  
+18:24:48.578  [Audio] Set Trigger Point(0018->0022).
+18:24:48.578  [Audio] Play().
+18:24:48.765  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:24:48.796  [Audio] MCI Play : 0.
+18:24:48.796  D1 : Broadcast CNCS ON[1].
+18:24:48.796  D2 : CNCS Auction A ON[1]
+18:24:48.796  
+18:24:55.531  [Audio] Timer Stop[6646, 6646].
+18:24:55.531  [Audio] Stop().
+18:24:55.531  [Audio] MCI Stop : 0.
+18:24:56.531  D1 : Broadcast CNCS OFF[0].
+18:24:56.531  D2 : CNCS Auction A OFF[0]
+18:24:56.531  
+18:24:57.484  [Audio] Set Trigger Point(0022->0014).
+18:24:57.484  Trip NO : Change Trigger ID 1165 to 1164.
+18:24:57.484  PA Vector : Change PAC Audio vector 0022 to 0014.
+18:24:57.484  PA Vector : Change PII vector 0000 to 0114.
+18:24:57.484  PA Vector : Change SP vector 0000 to 0114.
+18:24:57.484  
+18:24:58.437  [Audio] Set Trigger Point(0022->0014).
+18:24:58.437  [Audio] Play().
+18:24:58.593  [Audio] Open : D:\Woojin\AUDIO\014.WAV [Successed:0]
+18:24:58.625  [Audio] MCI Play : 0.
+18:24:58.625  D1 : Broadcast CNCS ON[1].
+18:24:58.625  D2 : CNCS Auction A ON[1]
+18:24:58.625  
+18:25:02.640  [Audio] Timer Stop[3928, 3928].
+18:25:02.640  [Audio] Stop().
+18:25:02.656  [Audio] MCI Stop : 0.
+18:25:03.421  D1 : Broadcast CNCS OFF[0].
+18:25:03.421  D2 : CNCS Auction A OFF[0]
+18:25:03.421  
+18:25:07.375  [Audio] Set Trigger Point(0014->0015).
+18:25:07.375  Trip NO : Change Trigger ID 1164 to 1137.
+18:25:07.375  Station : Change Now station 278 to 275.
+18:25:07.375  Station : Change Next station 275 to 274.
+18:25:07.375  PA Vector : Change PAC Audio vector 0014 to 0015.
+18:25:07.375  PA Vector : Change PII vector 0114 to 0113.
+18:25:07.375  PA Vector : Change SP vector 0114 to 0113.
+18:25:07.375  
+18:25:11.203  [Audio] Set Trigger Point(0014->0000).
+18:25:11.203  Coupling ID : 0.
+18:25:11.203  D0 : A Cab ON[1].
+18:25:11.203  D0 : B Cab OFF[0].
+18:25:11.203  D0 : All Door Close ON[1].
+18:25:11.203  Trip NO : Change Trigger ID 1137 to 0000.
+18:25:11.203  Station : Change Start station 276 to 0.
+18:25:11.203  Station : Change Next station 274 to 0.
+18:25:11.203  Station : Change Destination station 257 to 0.
+18:25:11.203  PA Vector : Change PAC Audio vector 0015 to 0000.
+18:25:11.203  PA Vector : Change EID Colr vector 0001 to 0000.
+18:25:11.203  PA Vector : Change EDI Display1 vector 0102 to 0000.
+18:25:11.203  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:25:11.203  PA Vector : Change PII vector 0113 to 0000.
+18:25:11.203  PA Vector : Change PP Line vector 0001 to 0000.
+18:25:11.203  PA Vector : Change SP vector 0113 to 0000.
+18:25:11.203  
+18:25:12.296  [Audio] Play().
+18:25:12.296  [Audio] Open : D:\Woojin\AUDIO\ [Not find files.]
+18:25:12.296  D1 : Broadcast CNCS ON[1].
+18:25:12.296  D2 : CNCS Auction A ON[1]
+18:25:12.296  
+18:25:13.296  D1 : Broadcast CNCS OFF[0].
+18:25:13.296  D2 : CNCS Auction A OFF[0]
+18:25:13.296  
+18:25:15.281  D0 : Direction ON[1].
+18:25:15.281  Train NO : Change Train No 0010 to 0011.
+18:25:15.281  
+18:25:25.250  Coupling ID : 1.
+18:25:25.250  
+18:25:26.203  [Audio] Set Trigger Point(0000->0001).
+18:25:26.203  Station : Change Start station 0 to 257.
+18:25:26.203  Station : Change Next station 0 to 265.
+18:25:26.203  Station : Change Destination station 0 to 276.
+18:25:26.203  PA Vector : Change PAC Audio vector 0000 to 0001.
+18:25:26.203  PA Vector : Change EID Colr vector 0000 to 0001.
+18:25:26.203  PA Vector : Change EDI Display1 vector 0000 to 0104.
+18:25:26.203  PA Vector : Change EDI Display2 vector 0000 to 0103.
+18:25:26.203  PA Vector : Change PP Line vector 0000 to 0001.
+18:25:26.203  
+18:25:27.156  [Audio] Set Trigger Point(0000->0001).
+18:25:27.156  [Audio] Play().
+18:25:27.312  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:25:27.328  [Audio] MCI Play : 0.
+18:25:27.343  D1 : Broadcast CNCS ON[1].
+18:25:27.343  D2 : CNCS Auction A ON[1]
+18:25:27.343  
+18:25:31.078  Trip NO : Change Trigger ID 0000 to 1015.
+18:25:31.078  
+18:25:34.562  [Audio] Timer Stop[7131, 7131].
+18:25:34.562  [Audio] Stop().
+18:25:34.578  [Audio] MCI Stop : 0.
+18:25:36.093  D1 : Broadcast CNCS OFF[0].
+18:25:36.093  D2 : CNCS Auction A OFF[0]
+18:25:36.093  
+18:25:45.968  D0 : All Door Close OFF[0].
+18:25:45.968  
+18:25:51.937  [Audio] Set Trigger Point(0001->0002).
+18:25:51.937  Trip NO : Change Trigger ID 1015 to 1016.
+18:25:51.937  PA Vector : Change PAC Audio vector 0001 to 0002.
+18:25:51.937  PA Vector : Change PII vector 0000 to 0122.
+18:25:51.937  PA Vector : Change SP vector 0000 to 0122.
+18:25:51.937  
+18:25:52.937  [Audio] Set Trigger Point(0001->0002).
+18:25:52.937  [Audio] Play().
+18:25:53.109  [Audio] Open : D:\Woojin\AUDIO\002.WAV [Successed:0]
+18:25:53.125  [Audio] MCI Play : 0.
+18:25:53.125  D1 : Broadcast CNCS ON[1].
+18:25:53.125  D2 : CNCS Auction A ON[1]
+18:25:53.125  
+18:25:56.140  [Audio] Timer Stop[2959, 2959].
+18:25:56.140  [Audio] Stop().
+18:25:56.140  [Audio] MCI Stop : 0.
+18:25:57.796  D1 : Broadcast CNCS OFF[0].
+18:25:57.796  D2 : CNCS Auction A OFF[0]
+18:25:57.796  
+18:26:01.828  [Audio] Set Trigger Point(0002->0003).
+18:26:01.828  Trip NO : Change Trigger ID 1016 to 1093.
+18:26:01.828  Station : Change Now station 275 to 265.
+18:26:01.828  Station : Change Next station 265 to 272.
+18:26:01.828  PA Vector : Change PAC Audio vector 0002 to 0003.
+18:26:01.828  PA Vector : Change PII vector 0122 to 0121.
+18:26:01.828  PA Vector : Change SP vector 0122 to 0121.
+18:26:01.828  
+18:26:02.843  [Audio] Set Trigger Point(0002->0003).
+18:26:02.843  [Audio] Play().
+18:26:03.000  [Audio] Open : D:\Woojin\AUDIO\003.WAV [Successed:0]
+18:26:03.031  [Audio] MCI Play : 0.
+18:26:03.031  D1 : Broadcast CNCS ON[1].
+18:26:03.031  D2 : CNCS Auction A ON[1]
+18:26:03.031  
+18:26:05.531  [Audio] Timer Stop[2419, 2419].
+18:26:05.531  [Audio] Stop().
+18:26:05.546  [Audio] MCI Stop : 0.
+18:26:06.734  D1 : Broadcast CNCS OFF[0].
+18:26:06.734  D2 : CNCS Auction A OFF[0]
+18:26:06.734  
+18:26:11.750  [Audio] Set Trigger Point(0003->0000).
+18:26:11.750  Trip NO : Change Trigger ID 1093 to 0000.
+18:26:11.750  Station : Change Now station 265 to 0.
+18:26:11.750  Station : Change Next station 272 to 0.
+18:26:11.750  PA Vector : Change PAC Audio vector 0003 to 0000.
+18:26:11.750  PA Vector : Change EID Colr vector 0001 to 0000.
+18:26:11.750  PA Vector : Change EDI Display1 vector 0104 to 0000.
+18:26:11.750  PA Vector : Change EDI Display2 vector 0103 to 0000.
+18:26:11.750  PA Vector : Change PII vector 0121 to 0000.
+18:26:11.750  PA Vector : Change PP Line vector 0001 to 0000.
+18:26:11.750  PA Vector : Change SP vector 0121 to 0000.
+18:26:11.750  
+18:26:20.609  [Audio] Set Trigger Point(0000->0022).
+18:26:20.609  D0 : Direction OFF[0].
+18:26:20.609  Train NO : Change Train No 0011 to 0010.
+18:26:20.609  Station : Change Start station 257 to 276.
+18:26:20.609  Station : Change Next station 0 to 278.
+18:26:20.609  Station : Change Destination station 276 to 257.
+18:26:20.609  PA Vector : Change PAC Audio vector 0000 to 0022.
+18:26:20.609  PA Vector : Change EID Colr vector 0000 to 0001.
+18:26:20.609  PA Vector : Change EDI Display1 vector 0000 to 0102.
+18:26:20.609  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:26:20.609  PA Vector : Change PP Line vector 0000 to 0001.
+18:26:20.609  
+18:26:21.687  [Audio] Set Trigger Point(0000->0022).
+18:26:21.687  [Audio] Play().
+18:26:21.875  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:26:21.890  [Audio] MCI Play : 0.
+18:26:21.890  D1 : Broadcast CNCS ON[1].
+18:26:21.890  D2 : CNCS Auction A ON[1]
+18:26:21.890  
+18:26:24.671  Trip NO : Change Trigger ID 0000 to 1145.
+18:26:24.671  
+18:26:28.625  [Audio] Timer Stop[6646, 6646].
+18:26:28.625  [Audio] Stop().
+18:26:28.625  [Audio] MCI Stop : 0.
+18:26:29.500  D1 : Broadcast CNCS OFF[0].
+18:26:29.500  D2 : CNCS Auction A OFF[0]
+18:26:29.500  
+18:26:44.500  [Audio] Set Trigger Point(0022->0017).
+18:26:44.500  Trip NO : Change Trigger ID 1145 to 1144.
+18:26:44.500  PA Vector : Change PAC Audio vector 0022 to 0017.
+18:26:44.500  PA Vector : Change PII vector 0000 to 0136.
+18:26:44.500  PA Vector : Change SP vector 0000 to 0136.
+18:26:44.500  
+18:26:45.453  [Audio] Set Trigger Point(0022->0017).
+18:26:45.453  [Audio] Play().
+18:26:45.609  [Audio] Open : D:\Woojin\AUDIO\017.WAV [Successed:0]
+18:26:45.640  [Audio] MCI Play : 0.
+18:26:45.640  D1 : Broadcast CNCS ON[1].
+18:26:45.640  D2 : CNCS Auction A ON[1]
+18:26:45.640  
+18:26:48.750  [Audio] Timer Stop[3037, 3037].
+18:26:48.750  [Audio] Stop().
+18:26:48.750  [Audio] MCI Stop : 0.
+18:26:50.343  D1 : Broadcast CNCS OFF[0].
+18:26:50.343  D2 : CNCS Auction A OFF[0]
+18:26:50.343  
+18:26:54.437  [Audio] Set Trigger Point(0017->0018).
+18:26:54.437  Trip NO : Change Trigger ID 1144 to 1167.
+18:26:54.437  Station : Change Now station 0 to 278.
+18:26:54.437  Station : Change Next station 278 to 275.
+18:26:54.437  PA Vector : Change PAC Audio vector 0017 to 0018.
+18:26:54.437  PA Vector : Change PII vector 0136 to 0135.
+18:26:54.437  PA Vector : Change SP vector 0136 to 0135.
+18:26:54.437  
+18:26:55.390  [Audio] Set Trigger Point(0017->0018).
+18:26:55.390  [Audio] Play().
+18:26:55.546  [Audio] Open : D:\Woojin\AUDIO\018.WAV [Successed:0]
+18:26:55.578  [Audio] MCI Play : 0.
+18:26:55.578  D1 : Broadcast CNCS ON[1].
+18:26:55.578  D2 : CNCS Auction A ON[1]
+18:26:55.578  
+18:26:58.375  [Audio] Timer Stop[2712, 2712].
+18:26:58.390  [Audio] Stop().
+18:26:58.390  [Audio] MCI Stop : 0.
+18:26:59.281  D1 : Broadcast CNCS OFF[0].
+18:26:59.281  D2 : CNCS Auction A OFF[0]
+18:26:59.281  
+18:27:04.375  [Audio] Set Trigger Point(0018->0022).
+18:27:04.375  Trip NO : Change Trigger ID 1167 to 1165.
+18:27:04.375  PA Vector : Change PAC Audio vector 0018 to 0022.
+18:27:04.375  PA Vector : Change PII vector 0135 to 0000.
+18:27:04.375  PA Vector : Change SP vector 0135 to 0000.
+18:27:04.375  
+18:27:05.343  [Audio] Set Trigger Point(0018->0022).
+18:27:05.343  [Audio] Play().
+18:27:05.500  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:27:05.531  [Audio] MCI Play : 0.
+18:27:05.531  D1 : Broadcast CNCS ON[1].
+18:27:05.531  D2 : CNCS Auction A ON[1]
+18:27:05.531  
+18:27:12.265  [Audio] Timer Stop[6646, 6646].
+18:27:12.265  [Audio] Stop().
+18:27:12.265  [Audio] MCI Stop : 0.
+18:27:13.359  D1 : Broadcast CNCS OFF[0].
+18:27:13.359  D2 : CNCS Auction A OFF[0]
+18:27:13.359  
+18:27:14.390  [Audio] Set Trigger Point(0022->0014).
+18:27:14.390  Trip NO : Change Trigger ID 1165 to 1164.
+18:27:14.390  PA Vector : Change PAC Audio vector 0022 to 0014.
+18:27:14.390  PA Vector : Change PII vector 0000 to 0114.
+18:27:14.390  PA Vector : Change SP vector 0000 to 0114.
+18:27:14.390  
+18:27:15.343  [Audio] Set Trigger Point(0022->0014).
+18:27:15.343  [Audio] Play().
+18:27:15.500  [Audio] Open : D:\Woojin\AUDIO\014.WAV [Successed:0]
+18:27:15.531  [Audio] MCI Play : 0.
+18:27:15.531  D1 : Broadcast CNCS ON[1].
+18:27:15.531  D2 : CNCS Auction A ON[1]
+18:27:15.531  
+18:27:19.546  [Audio] Timer Stop[3928, 3928].
+18:27:19.546  [Audio] Stop().
+18:27:19.562  [Audio] MCI Stop : 0.
+18:27:23.937  [Audio] Set Trigger Point(0014->0000).
+18:27:23.937  Coupling ID : 0.
+18:27:23.937  D0 : A Cab OFF[0].
+18:27:23.937  D0 : B Cab ON[1].
+18:27:23.937  D0 : Direction ON[1].
+18:27:23.937  D0 : All Door Close ON[1].
+18:27:23.937  D1 : Broadcast CNCS OFF[0].
+18:27:23.937  D2 : CNCS Auction A OFF[0]
+18:27:23.937  Train NO : Change Train No 0010 to 0011.
+18:27:23.937  Trip NO : Change Trigger ID 1164 to 0000.
+18:27:23.937  Station : Change Start station 276 to 0.
+18:27:23.937  Station : Change Next station 275 to 0.
+18:27:23.937  Station : Change Destination station 257 to 0.
+18:27:23.937  PA Vector : Change PAC Audio vector 0014 to 0000.
+18:27:23.937  PA Vector : Change EID Colr vector 0001 to 0000.
+18:27:23.937  PA Vector : Change EDI Display1 vector 0102 to 0000.
+18:27:23.937  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:27:23.937  PA Vector : Change PII vector 0114 to 0000.
+18:27:23.937  PA Vector : Change PP Line vector 0001 to 0000.
+18:27:23.937  PA Vector : Change SP vector 0114 to 0000.
+18:27:23.937  
+18:27:24.890  [Audio] Set Trigger Point(0014->0000).
+18:27:24.890  D0 : Direction OFF[0].
+18:27:24.890  
+18:27:27.890  Train NO : Change Train No 0011 to 0010.
+18:27:27.890  
+18:27:37.781  Coupling ID : 1.
+18:27:37.781  
+18:27:38.843  [Audio] Set Trigger Point(0000->0022).
+18:27:38.843  Station : Change Start station 0 to 276.
+18:27:38.843  Station : Change Next station 0 to 278.
+18:27:38.843  Station : Change Destination station 0 to 257.
+18:27:38.843  PA Vector : Change PAC Audio vector 0000 to 0022.
+18:27:38.843  PA Vector : Change EID Colr vector 0000 to 0001.
+18:27:38.843  PA Vector : Change EDI Display1 vector 0000 to 0102.
+18:27:38.843  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:27:38.843  PA Vector : Change PP Line vector 0000 to 0001.
+18:27:38.843  
+18:27:39.859  [Audio] Set Trigger Point(0000->0022).
+18:27:39.859  [Audio] Play().
+18:27:40.015  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:27:40.046  [Audio] MCI Play : 0.
+18:27:40.046  D1 : Broadcast CNCS ON[1].
+18:27:40.046  D2 : CNCS Auction A ON[1]
+18:27:40.046  
+18:27:46.781  [Audio] Timer Stop[6646, 6646].
+18:27:46.781  [Audio] Stop().
+18:27:46.781  [Audio] MCI Stop : 0.
+18:27:47.640  D1 : Broadcast CNCS OFF[0].
+18:27:47.640  D2 : CNCS Auction A OFF[0]
+18:27:47.640  
+18:28:10.390  [Audio] Set Trigger Point(0022->0001).
+18:28:10.390  D0 : Direction ON[1].
+18:28:10.390  Train NO : Change Train No 0010 to 0011.
+18:28:10.390  Station : Change Start station 276 to 257.
+18:28:10.390  Station : Change Next station 278 to 265.
+18:28:10.390  Station : Change Destination station 257 to 276.
+18:28:10.390  PA Vector : Change PAC Audio vector 0022 to 0001.
+18:28:10.390  PA Vector : Change EDI Display1 vector 0102 to 0104.
+18:28:10.390  PA Vector : Change EDI Display2 vector 0101 to 0103.
+18:28:10.390  
+18:28:11.406  [Audio] Set Trigger Point(0022->0001).
+18:28:11.406  [Audio] Play().
+18:28:11.562  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:28:11.593  [Audio] MCI Play : 0.
+18:28:11.593  D1 : Broadcast CNCS ON[1].
+18:28:11.593  D2 : CNCS Auction A ON[1]
+18:28:11.593  
+18:28:14.265  Trip NO : Change Trigger ID 0000 to 1015.
+18:28:14.265  
+18:28:18.718  [Audio] Timer Stop[7131, 7131].
+18:28:18.718  [Audio] Stop().
+18:28:18.734  [Audio] MCI Stop : 0.
+18:28:20.281  D1 : Broadcast CNCS OFF[0].
+18:28:20.281  D2 : CNCS Auction A OFF[0]
+18:28:20.281  
+18:28:34.046  [Audio] Set Trigger Point(0001->0002).
+18:28:34.046  Trip NO : Change Trigger ID 1015 to 1016.
+18:28:34.046  PA Vector : Change PAC Audio vector 0001 to 0002.
+18:28:34.046  PA Vector : Change PII vector 0000 to 0122.
+18:28:34.046  PA Vector : Change SP vector 0000 to 0122.
+18:28:34.046  
+18:28:35.015  [Audio] Set Trigger Point(0001->0002).
+18:28:35.015  [Audio] Play().
+18:28:35.171  [Audio] Open : D:\Woojin\AUDIO\002.WAV [Successed:0]
+18:28:35.203  [Audio] MCI Play : 0.
+18:28:35.203  D1 : Broadcast CNCS ON[1].
+18:28:35.203  D2 : CNCS Auction A ON[1]
+18:28:35.203  
+18:28:38.218  [Audio] Timer Stop[2959, 2959].
+18:28:38.218  [Audio] Stop().
+18:28:38.218  [Audio] MCI Stop : 0.
+18:28:39.093  D1 : Broadcast CNCS OFF[0].
+18:28:39.093  D2 : CNCS Auction A OFF[0]
+18:28:39.093  
+18:28:42.031  D0 : Forward ON[1].
+18:28:42.031  
+18:28:42.984  D0 : Forward OFF[0].
+18:28:42.984  D0 : All Door Close OFF[0].
+18:28:42.984  
+18:28:43.953  [Audio] Set Trigger Point(0002->0003).
+18:28:43.953  Trip NO : Change Trigger ID 1016 to 1093.
+18:28:43.953  Station : Change Now station 278 to 265.
+18:28:43.953  Station : Change Next station 265 to 272.
+18:28:43.953  PA Vector : Change PAC Audio vector 0002 to 0003.
+18:28:43.953  PA Vector : Change PII vector 0122 to 0121.
+18:28:43.953  PA Vector : Change SP vector 0122 to 0121.
+18:28:43.953  
+18:28:44.906  [Audio] Set Trigger Point(0002->0003).
+18:28:44.906  [Audio] Play().
+18:28:45.078  [Audio] Open : D:\Woojin\AUDIO\003.WAV [Successed:0]
+18:28:45.093  [Audio] MCI Play : 0.
+18:28:45.093  D1 : Broadcast CNCS ON[1].
+18:28:45.093  D2 : CNCS Auction A ON[1]
+18:28:45.093  
+18:28:47.609  [Audio] Timer Stop[2419, 2419].
+18:28:47.609  [Audio] Stop().
+18:28:47.609  [Audio] MCI Stop : 0.
+18:28:48.984  D1 : Broadcast CNCS OFF[0].
+18:28:48.984  D2 : CNCS Auction A OFF[0]
+18:28:48.984  
+18:28:54.812  [Audio] Set Trigger Point(0003->0001).
+18:28:54.812  Coupling ID : 0.
+18:28:54.812  D0 : B Cab OFF[0].
+18:28:54.812  D0 : Reverse ON[1].
+18:28:54.812  Trip NO : Change Trigger ID 1093 to 1095.
+18:28:54.812  PA Vector : Change PAC Audio vector 0003 to 0001.
+18:28:54.812  PA Vector : Change PII vector 0121 to 0000.
+18:28:54.812  PA Vector : Change SP vector 0121 to 0000.
+18:28:54.812  
+18:28:59.015  [Audio] Set Trigger Point(0003->0000).
+18:28:59.015  [Audio] Play().
+18:28:59.015  [Audio] Open : D:\Woojin\AUDIO\ [Not find files.]
+18:28:59.015  D0 : A Cab ON[1].
+18:28:59.015  D0 : Reverse OFF[0].
+18:28:59.015  D0 : Direction OFF[0].
+18:28:59.015  D0 : All Door Close ON[1].
+18:28:59.015  D1 : Broadcast CNCS ON[1].
+18:28:59.015  D2 : CNCS Auction A ON[1]
+18:28:59.015  Train NO : Change Train No 0011 to 0010.
+18:28:59.015  Trip NO : Change Trigger ID 1095 to 0000.
+18:28:59.015  Station : Change Start station 257 to 0.
+18:28:59.015  Station : Change Next station 272 to 0.
+18:28:59.015  Station : Change Destination station 276 to 0.
+18:28:59.015  PA Vector : Change PAC Audio vector 0001 to 0000.
+18:28:59.015  PA Vector : Change EID Colr vector 0001 to 0000.
+18:28:59.015  PA Vector : Change EDI Display1 vector 0104 to 0000.
+18:28:59.015  PA Vector : Change EDI Display2 vector 0103 to 0000.
+18:28:59.015  PA Vector : Change PP Line vector 0001 to 0000.
+18:28:59.015  
+18:29:00.109  D0 : Direction ON[1].
+18:29:00.109  D1 : Broadcast CNCS OFF[0].
+18:29:00.109  D2 : CNCS Auction A OFF[0]
+18:29:00.109  
+18:29:02.078  D0 : Direction OFF[0].
+18:29:02.078  
+18:29:04.046  D0 : Direction ON[1].
+18:29:04.046  Train NO : Change Train No 0010 to 0011.
+18:29:04.046  
+18:29:13.078  Coupling ID : 1.
+18:29:13.078  
+18:29:14.046  [Audio] Set Trigger Point(0000->0001).
+18:29:14.046  Station : Change Start station 0 to 257.
+18:29:14.046  Station : Change Next station 0 to 265.
+18:29:14.046  Station : Change Destination station 0 to 276.
+18:29:14.046  PA Vector : Change PAC Audio vector 0000 to 0001.
+18:29:14.046  PA Vector : Change EID Colr vector 0000 to 0001.
+18:29:14.046  PA Vector : Change EDI Display1 vector 0000 to 0104.
+18:29:14.046  PA Vector : Change EDI Display2 vector 0000 to 0103.
+18:29:14.046  PA Vector : Change PP Line vector 0000 to 0001.
+18:29:14.046  
+18:29:15.000  [Audio] Set Trigger Point(0000->0001).
+18:29:15.000  [Audio] Play().
+18:29:15.156  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:29:15.187  [Audio] MCI Play : 0.
+18:29:15.187  D1 : Broadcast CNCS ON[1].
+18:29:15.187  D2 : CNCS Auction A ON[1]
+18:29:15.187  
+18:29:21.015  Trip NO : Change Trigger ID 0000 to 1015.
+18:29:21.015  
+18:29:22.421  [Audio] Timer Stop[7131, 7131].
+18:29:22.421  [Audio] Stop().
+18:29:22.421  [Audio] MCI Stop : 0.
+18:29:23.937  D1 : Broadcast CNCS OFF[0].
+18:29:23.937  D2 : CNCS Auction A OFF[0]
+18:29:23.937  
+18:29:37.750  [Audio] Set Trigger Point(0001->0022).
+18:29:37.750  D0 : Direction OFF[0].
+18:29:37.750  Train NO : Change Train No 0011 to 0010.
+18:29:37.750  Trip NO : Change Trigger ID 1015 to 0000.
+18:29:37.750  Station : Change Start station 257 to 276.
+18:29:37.750  Station : Change Next station 265 to 278.
+18:29:37.750  Station : Change Destination station 276 to 257.
+18:29:37.750  PA Vector : Change PAC Audio vector 0001 to 0022.
+18:29:37.750  PA Vector : Change EDI Display1 vector 0104 to 0102.
+18:29:37.750  PA Vector : Change EDI Display2 vector 0103 to 0101.
+18:29:37.750  
+18:29:38.765  [Audio] Set Trigger Point(0001->0022).
+18:29:38.765  [Audio] Play().
+18:29:38.937  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:29:38.968  [Audio] MCI Play : 0.
+18:29:38.984  D1 : Broadcast CNCS ON[1].
+18:29:38.984  D2 : CNCS Auction A ON[1]
+18:29:38.984  
+18:29:41.828  Trip NO : Change Trigger ID 0000 to 1145.
+18:29:41.828  
+18:29:45.703  [Audio] Timer Stop[6646, 6646].
+18:29:45.703  [Audio] Stop().
+18:29:45.703  [Audio] MCI Stop : 0.
+18:29:46.703  D1 : Broadcast CNCS OFF[0].
+18:29:46.703  D2 : CNCS Auction A OFF[0]
+18:29:46.703  
+18:29:49.781  D0 : Forward ON[1].
+18:29:49.781  
+18:29:50.781  D0 : Forward OFF[0].
+18:29:50.781  D0 : All Door Close OFF[0].
+18:29:50.781  
+18:29:51.750  [Audio] Set Trigger Point(0022->0017).
+18:29:51.750  Trip NO : Change Trigger ID 1145 to 1144.
+18:29:51.750  PA Vector : Change PAC Audio vector 0022 to 0017.
+18:29:51.750  PA Vector : Change PII vector 0000 to 0136.
+18:29:51.750  PA Vector : Change SP vector 0000 to 0136.
+18:29:51.750  
+18:29:52.750  [Audio] Set Trigger Point(0022->0017).
+18:29:52.750  [Audio] Play().
+18:29:52.906  [Audio] Open : D:\Woojin\AUDIO\017.WAV [Successed:0]
+18:29:52.937  [Audio] MCI Play : 0.
+18:29:52.937  D1 : Broadcast CNCS ON[1].
+18:29:52.937  D2 : CNCS Auction A ON[1]
+18:29:52.937  
+18:29:56.031  [Audio] Timer Stop[3037, 3037].
+18:29:56.046  [Audio] Stop().
+18:29:56.046  [Audio] MCI Stop : 0.
+18:29:57.578  D1 : Broadcast CNCS OFF[0].
+18:29:57.578  D2 : CNCS Auction A OFF[0]
+18:29:57.578  
+18:30:01.671  [Audio] Set Trigger Point(0017->0018).
+18:30:01.671  Trip NO : Change Trigger ID 1144 to 1167.
+18:30:01.671  Station : Change Now station 265 to 278.
+18:30:01.671  Station : Change Next station 278 to 275.
+18:30:01.671  PA Vector : Change PAC Audio vector 0017 to 0018.
+18:30:01.671  PA Vector : Change PII vector 0136 to 0135.
+18:30:01.671  PA Vector : Change SP vector 0136 to 0135.
+18:30:01.671  
+18:30:02.687  [Audio] Set Trigger Point(0017->0018).
+18:30:02.687  [Audio] Play().
+18:30:02.843  [Audio] Open : D:\Woojin\AUDIO\018.WAV [Successed:0]
+18:30:02.875  [Audio] MCI Play : 0.
+18:30:02.875  D1 : Broadcast CNCS ON[1].
+18:30:02.875  D2 : CNCS Auction A ON[1]
+18:30:02.875  
+18:30:05.671  [Audio] Timer Stop[2712, 2712].
+18:30:05.671  [Audio] Stop().
+18:30:05.687  [Audio] MCI Stop : 0.
+18:30:06.546  D1 : Broadcast CNCS OFF[0].
+18:30:06.546  D2 : CNCS Auction A OFF[0]
+18:30:06.546  
+18:30:11.609  [Audio] Set Trigger Point(0018->0022).
+18:30:11.609  Trip NO : Change Trigger ID 1167 to 1165.
+18:30:11.609  PA Vector : Change PAC Audio vector 0018 to 0022.
+18:30:11.609  PA Vector : Change PII vector 0135 to 0000.
+18:30:11.609  PA Vector : Change SP vector 0135 to 0000.
+18:30:11.609  
+18:30:12.609  [Audio] Set Trigger Point(0018->0022).
+18:30:12.609  [Audio] Play().
+18:30:12.765  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:30:12.796  [Audio] MCI Play : 0.
+18:30:12.796  D1 : Broadcast CNCS ON[1].
+18:30:12.796  D2 : CNCS Auction A ON[1]
+18:30:12.796  
+18:30:17.843  [Audio] Set Trigger Point(0022->0000).
+18:30:17.843  Coupling ID : 0.
+18:30:17.843  D0 : A Cab OFF[0].
+18:30:17.843  D0 : B Cab ON[1].
+18:30:17.843  D0 : All Door Close ON[1].
+18:30:17.843  Trip NO : Change Trigger ID 1165 to 0000.
+18:30:17.843  Station : Change Start station 276 to 0.
+18:30:17.843  Station : Change Next station 275 to 0.
+18:30:17.843  Station : Change Destination station 257 to 0.
+18:30:17.843  PA Vector : Change PAC Audio vector 0022 to 0000.
+18:30:17.843  PA Vector : Change EID Colr vector 0001 to 0000.
+18:30:17.843  PA Vector : Change EDI Display1 vector 0102 to 0000.
+18:30:17.843  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:30:17.843  PA Vector : Change PP Line vector 0001 to 0000.
+18:30:17.843  
+18:30:18.875  [Audio] Set Trigger Point(0022->0000).
+18:30:19.515  [Audio] Timer Stop[6646, 6646].
+18:30:19.515  [Audio] Stop().
+18:30:19.531  [Audio] MCI Stop : 0.
+18:30:19.937  [Audio] Set Trigger Point(0022->0000).
+18:30:20.921  [Audio] Set Trigger Point(0022->0000).
+18:30:20.921  D1 : Broadcast CNCS OFF[0].
+18:30:20.921  D2 : CNCS Auction A OFF[0]
+18:30:20.921  
+18:30:21.906  [Audio] Set Trigger Point(0022->0000).
+18:30:21.906  D0 : Direction ON[1].
+18:30:21.906  Train NO : Change Train No 0010 to 0011.
+18:30:21.906  
+18:30:31.750  Coupling ID : 1.
+18:30:31.750  
+18:30:32.750  [Audio] Set Trigger Point(0000->0001).
+18:30:32.750  Station : Change Start station 0 to 257.
+18:30:32.750  Station : Change Next station 0 to 265.
+18:30:32.750  Station : Change Destination station 0 to 276.
+18:30:32.750  PA Vector : Change PAC Audio vector 0000 to 0001.
+18:30:32.750  PA Vector : Change EID Colr vector 0000 to 0001.
+18:30:32.750  PA Vector : Change EDI Display1 vector 0000 to 0104.
+18:30:32.750  PA Vector : Change EDI Display2 vector 0000 to 0103.
+18:30:32.750  PA Vector : Change PP Line vector 0000 to 0001.
+18:30:32.750  
+18:30:33.687  [Audio] Set Trigger Point(0000->0001).
+18:30:33.687  [Audio] Play().
+18:30:33.843  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:30:33.859  [Audio] MCI Play : 0.
+18:30:33.875  D1 : Broadcast CNCS ON[1].
+18:30:33.875  D2 : CNCS Auction A ON[1]
+18:30:33.875  
+18:30:41.000  [Audio] Timer Stop[7131, 7131].
+18:30:41.000  [Audio] Stop().
+18:30:41.015  [Audio] MCI Stop : 0.
+18:30:42.609  D1 : Broadcast CNCS OFF[0].
+18:30:42.609  D2 : CNCS Auction A OFF[0]
+18:30:42.609  
+18:30:46.000  Wayside On : 0
+18:30:50.546  D0 : All Door Close OFF[0].
+18:30:50.546  
+18:30:52.531  Trip NO : Change Trigger ID 0000 to 1015.
+18:30:52.531  
+18:31:12.265  [Audio] Set Trigger Point(0001->0002).
+18:31:12.265  Trip NO : Change Trigger ID 1015 to 1016.
+18:31:12.265  PA Vector : Change PAC Audio vector 0001 to 0002.
+18:31:12.265  PA Vector : Change PII vector 0000 to 0122.
+18:31:12.265  PA Vector : Change SP vector 0000 to 0122.
+18:31:12.265  
+18:31:13.218  [Audio] Set Trigger Point(0001->0002).
+18:31:13.218  [Audio] Play().
+18:31:13.406  [Audio] Open : D:\Woojin\AUDIO\002.WAV [Successed:0]
+18:31:13.421  [Audio] MCI Play : 0.
+18:31:13.421  D1 : Broadcast CNCS ON[1].
+18:31:13.421  D2 : CNCS Auction A ON[1]
+18:31:13.421  
+18:31:16.437  [Audio] Timer Stop[2959, 2959].
+18:31:16.437  [Audio] Stop().
+18:31:16.437  [Audio] MCI Stop : 0.
+18:31:18.125  D1 : Broadcast CNCS OFF[0].
+18:31:18.125  D2 : CNCS Auction A OFF[0]
+18:31:18.125  
+18:31:22.171  [Audio] Set Trigger Point(0002->0003).
+18:31:22.171  Trip NO : Change Trigger ID 1016 to 1093.
+18:31:22.171  Station : Change Now station 278 to 265.
+18:31:22.171  Station : Change Next station 265 to 272.
+18:31:22.171  PA Vector : Change PAC Audio vector 0002 to 0003.
+18:31:22.171  PA Vector : Change PII vector 0122 to 0121.
+18:31:22.171  PA Vector : Change SP vector 0122 to 0121.
+18:31:22.171  
+18:31:23.125  [Audio] Set Trigger Point(0002->0003).
+18:31:23.125  [Audio] Play().
+18:31:23.296  [Audio] Open : D:\Woojin\AUDIO\003.WAV [Successed:0]
+18:31:23.328  [Audio] MCI Play : 0.
+18:31:23.328  D1 : Broadcast CNCS ON[1].
+18:31:23.328  D2 : CNCS Auction A ON[1]
+18:31:23.328  
+18:31:25.828  [Audio] Timer Stop[2419, 2419].
+18:31:25.828  [Audio] Stop().
+18:31:25.843  [Audio] MCI Stop : 0.
+18:31:27.015  D1 : Broadcast CNCS OFF[0].
+18:31:27.015  D2 : CNCS Auction A OFF[0]
+18:31:27.015  
+18:31:32.109  [Audio] Set Trigger Point(0003->0001).
+18:31:32.109  Trip NO : Change Trigger ID 1093 to 1095.
+18:31:32.109  PA Vector : Change PAC Audio vector 0003 to 0001.
+18:31:32.109  PA Vector : Change PII vector 0121 to 0000.
+18:31:32.109  PA Vector : Change SP vector 0121 to 0000.
+18:31:32.109  
+18:31:33.062  [Audio] Set Trigger Point(0003->0001).
+18:31:33.062  [Audio] Play().
+18:31:33.250  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:31:33.296  [Audio] MCI Play : 0.
+18:31:33.296  D1 : Broadcast CNCS ON[1].
+18:31:33.296  D2 : CNCS Auction A ON[1]
+18:31:33.296  
+18:31:40.421  [Audio] Timer Stop[7131, 7131].
+18:31:40.421  [Audio] Stop().
+18:31:40.421  [Audio] MCI Stop : 0.
+18:31:41.531  [Audio] Set Trigger Point(0001->0000).
+18:31:41.531  Coupling ID : 0.
+18:31:41.531  D0 : A Cab ON[1].
+18:31:41.531  D0 : B Cab OFF[0].
+18:31:41.531  Trip NO : Change Trigger ID 1095 to 0000.
+18:31:41.531  Station : Change Start station 257 to 0.
+18:31:41.531  Station : Change Next station 272 to 0.
+18:31:41.531  Station : Change Destination station 276 to 0.
+18:31:41.531  PA Vector : Change PAC Audio vector 0001 to 0000.
+18:31:41.531  PA Vector : Change EID Colr vector 0001 to 0000.
+18:31:41.531  PA Vector : Change EDI Display1 vector 0104 to 0000.
+18:31:41.531  PA Vector : Change EDI Display2 vector 0103 to 0000.
+18:31:41.531  PA Vector : Change PP Line vector 0001 to 0000.
+18:31:41.531  
+18:31:42.484  [Audio] Set Trigger Point(0001->0000).
+18:31:42.484  D1 : Broadcast CNCS OFF[0].
+18:31:42.484  D2 : CNCS Auction A OFF[0]
+18:31:42.484  
+18:31:43.437  [Audio] Set Trigger Point(0001->0000).
+18:31:46.421  D0 : Direction OFF[0].
+18:31:46.421  Train NO : Change Train No 0011 to 0010.
+18:31:46.421  
+18:31:55.343  Coupling ID : 1.
+18:31:55.343  
+18:31:56.359  [Audio] Set Trigger Point(0000->0022).
+18:31:56.359  Station : Change Start station 0 to 276.
+18:31:56.359  Station : Change Next station 0 to 278.
+18:31:56.359  Station : Change Destination station 0 to 257.
+18:31:56.359  PA Vector : Change PAC Audio vector 0000 to 0022.
+18:31:56.359  PA Vector : Change EID Colr vector 0000 to 0001.
+18:31:56.359  PA Vector : Change EDI Display1 vector 0000 to 0102.
+18:31:56.359  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:31:56.359  PA Vector : Change PP Line vector 0000 to 0001.
+18:31:56.359  
+18:31:57.421  [Audio] Set Trigger Point(0000->0022).
+18:31:57.421  [Audio] Play().
+18:31:57.578  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:31:57.609  [Audio] MCI Play : 0.
+18:31:57.609  D1 : Broadcast CNCS ON[1].
+18:31:57.609  D2 : CNCS Auction A ON[1]
+18:31:57.609  
+18:32:04.343  [Audio] Timer Stop[6646, 6646].
+18:32:04.343  [Audio] Stop().
+18:32:04.343  [Audio] MCI Stop : 0.
+18:32:05.218  D1 : Broadcast CNCS OFF[0].
+18:32:05.218  D2 : CNCS Auction A OFF[0]
+18:32:05.218  
+18:32:10.312  Trip NO : Change Trigger ID 0000 to 1145.
+18:32:10.312  
+18:32:30.156  [Audio] Set Trigger Point(0022->0017).
+18:32:30.156  Trip NO : Change Trigger ID 1145 to 1144.
+18:32:30.156  PA Vector : Change PAC Audio vector 0022 to 0017.
+18:32:30.156  PA Vector : Change PII vector 0000 to 0136.
+18:32:30.156  PA Vector : Change SP vector 0000 to 0136.
+18:32:30.156  
+18:32:31.093  [Audio] Set Trigger Point(0022->0017).
+18:32:31.093  [Audio] Play().
+18:32:31.281  [Audio] Open : D:\Woojin\AUDIO\017.WAV [Successed:0]
+18:32:31.296  [Audio] MCI Play : 0.
+18:32:31.296  D1 : Broadcast CNCS ON[1].
+18:32:31.296  D2 : CNCS Auction A ON[1]
+18:32:31.296  
+18:32:34.406  [Audio] Timer Stop[3037, 3037].
+18:32:34.406  [Audio] Stop().
+18:32:34.406  [Audio] MCI Stop : 0.
+18:32:36.046  D1 : Broadcast CNCS OFF[0].
+18:32:36.046  D2 : CNCS Auction A OFF[0]
+18:32:36.046  
+18:32:40.109  [Audio] Set Trigger Point(0017->0018).
+18:32:40.109  Trip NO : Change Trigger ID 1144 to 1167.
+18:32:40.109  Station : Change Now station 265 to 278.
+18:32:40.109  Station : Change Next station 278 to 275.
+18:32:40.109  PA Vector : Change PAC Audio vector 0017 to 0018.
+18:32:40.109  PA Vector : Change PII vector 0136 to 0135.
+18:32:40.109  PA Vector : Change SP vector 0136 to 0135.
+18:32:40.109  
+18:32:41.062  [Audio] Set Trigger Point(0017->0018).
+18:32:41.062  [Audio] Play().
+18:32:41.218  [Audio] Open : D:\Woojin\AUDIO\018.WAV [Successed:0]
+18:32:41.250  [Audio] MCI Play : 0.
+18:32:41.250  D1 : Broadcast CNCS ON[1].
+18:32:41.250  D2 : CNCS Auction A ON[1]
+18:32:41.250  
+18:32:44.062  [Audio] Timer Stop[2712, 2712].
+18:32:44.062  [Audio] Stop().
+18:32:44.078  [Audio] MCI Stop : 0.
+18:32:44.937  D1 : Broadcast CNCS OFF[0].
+18:32:44.937  D2 : CNCS Auction A OFF[0]
+18:32:44.937  
+18:32:50.000  [Audio] Set Trigger Point(0018->0022).
+18:32:50.000  Trip NO : Change Trigger ID 1167 to 1165.
+18:32:50.000  PA Vector : Change PAC Audio vector 0018 to 0022.
+18:32:50.000  PA Vector : Change PII vector 0135 to 0000.
+18:32:50.000  PA Vector : Change SP vector 0135 to 0000.
+18:32:50.000  
+18:32:50.953  [Audio] Set Trigger Point(0018->0022).
+18:32:50.953  [Audio] Play().
+18:32:51.125  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:32:51.140  [Audio] MCI Play : 0.
+18:32:51.140  D1 : Broadcast CNCS ON[1].
+18:32:51.140  D2 : CNCS Auction A ON[1]
+18:32:51.140  
+18:32:57.875  [Audio] Timer Stop[6646, 6646].
+18:32:57.875  [Audio] Stop().
+18:32:57.875  [Audio] MCI Stop : 0.
+18:32:58.875  D1 : Broadcast CNCS OFF[0].
+18:32:58.875  D2 : CNCS Auction A OFF[0]
+18:32:58.875  
+18:32:59.875  [Audio] Set Trigger Point(0022->0014).
+18:32:59.875  Trip NO : Change Trigger ID 1165 to 1164.
+18:32:59.875  PA Vector : Change PAC Audio vector 0022 to 0014.
+18:32:59.875  PA Vector : Change PII vector 0000 to 0114.
+18:32:59.875  PA Vector : Change SP vector 0000 to 0114.
+18:32:59.875  
+18:33:00.828  [Audio] Set Trigger Point(0022->0014).
+18:33:00.828  [Audio] Play().
+18:33:00.984  [Audio] Open : D:\Woojin\AUDIO\014.WAV [Successed:0]
+18:33:01.015  [Audio] MCI Play : 0.
+18:33:01.015  D1 : Broadcast CNCS ON[1].
+18:33:01.015  D2 : CNCS Auction A ON[1]
+18:33:01.015  
+18:33:05.031  [Audio] Timer Stop[3928, 3928].
+18:33:05.031  [Audio] Stop().
+18:33:05.031  [Audio] MCI Stop : 0.
+18:33:06.828  D1 : Broadcast CNCS OFF[0].
+18:33:06.828  D2 : CNCS Auction A OFF[0]
+18:33:06.828  
+18:33:09.812  [Audio] Set Trigger Point(0014->0015).
+18:33:09.812  Trip NO : Change Trigger ID 1164 to 1137.
+18:33:09.812  Station : Change Now station 278 to 275.
+18:33:09.812  Station : Change Next station 275 to 274.
+18:33:09.812  PA Vector : Change PAC Audio vector 0014 to 0015.
+18:33:09.812  PA Vector : Change PII vector 0114 to 0113.
+18:33:09.812  PA Vector : Change SP vector 0114 to 0113.
+18:33:09.812  
+18:33:10.765  [Audio] Set Trigger Point(0014->0015).
+18:33:10.765  [Audio] Play().
+18:33:10.921  [Audio] Open : D:\Woojin\AUDIO\015.WAV [Successed:0]
+18:33:10.953  [Audio] MCI Play : 0.
+18:33:10.953  D1 : Broadcast CNCS ON[1].
+18:33:10.953  D2 : CNCS Auction A ON[1]
+18:33:10.953  
+18:33:19.187  [Audio] Timer Stop[8154, 8154].
+18:33:19.187  [Audio] Stop().
+18:33:19.203  [Audio] MCI Stop : 0.
+18:33:19.734  [Audio] Set Trigger Point(0015->0022).
+18:33:19.734  Trip NO : Change Trigger ID 1137 to 1135.
+18:33:19.734  PA Vector : Change PAC Audio vector 0015 to 0022.
+18:33:19.734  PA Vector : Change PII vector 0113 to 0000.
+18:33:19.734  PA Vector : Change SP vector 0113 to 0000.
+18:33:19.734  
+18:33:20.703  [Audio] Set Trigger Point(0015->0022).
+18:33:20.703  D1 : Broadcast CNCS OFF[0].
+18:33:20.703  D2 : CNCS Auction A OFF[0]
+18:33:20.703  
+18:33:21.656  [Audio] Set Trigger Point(0015->0022).
+18:33:22.640  [Audio] Set Trigger Point(0015->0022).
+18:33:22.640  [Audio] Play().
+18:33:22.796  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:33:22.828  [Audio] MCI Play : 0.
+18:33:22.828  D1 : Broadcast CNCS ON[1].
+18:33:22.828  D2 : CNCS Auction A ON[1]
+18:33:22.828  
+18:33:29.562  [Audio] Timer Stop[6646, 6646].
+18:33:29.562  [Audio] Stop().
+18:33:29.562  [Audio] MCI Stop : 0.
+18:33:29.671  [Audio] Set Trigger Point(0022->0011).
+18:33:29.671  Trip NO : Change Trigger ID 1135 to 1134.
+18:33:29.671  PA Vector : Change PAC Audio vector 0022 to 0011.
+18:33:29.671  PA Vector : Change PII vector 0000 to 0116.
+18:33:29.671  PA Vector : Change SP vector 0000 to 0116.
+18:33:29.671  
+18:33:30.640  [Audio] Set Trigger Point(0022->0011).
+18:33:30.640  D1 : Broadcast CNCS OFF[0].
+18:33:30.640  D2 : CNCS Auction A OFF[0]
+18:33:30.640  
+18:33:31.609  [Audio] Set Trigger Point(0022->0011).
+18:33:32.562  [Audio] Set Trigger Point(0022->0011).
+18:33:32.562  [Audio] Play().
+18:33:32.734  [Audio] Open : D:\Woojin\AUDIO\011.WAV [Successed:0]
+18:33:32.750  [Audio] MCI Play : 0.
+18:33:32.750  D1 : Broadcast CNCS ON[1].
+18:33:32.750  D2 : CNCS Auction A ON[1]
+18:33:32.750  
+18:33:35.062  [Audio] Timer Stop[2279, 2279].
+18:33:35.062  [Audio] Stop().
+18:33:35.062  [Audio] MCI Stop : 0.
+18:33:36.625  D1 : Broadcast CNCS OFF[0].
+18:33:36.625  D2 : CNCS Auction A OFF[0]
+18:33:36.625  
+18:33:39.625  [Audio] Set Trigger Point(0011->0012).
+18:33:39.625  Trip NO : Change Trigger ID 1134 to 1127.
+18:33:39.625  Station : Change Now station 275 to 274.
+18:33:39.625  Station : Change Next station 274 to 273.
+18:33:39.625  PA Vector : Change PAC Audio vector 0011 to 0012.
+18:33:39.625  PA Vector : Change PII vector 0116 to 0115.
+18:33:39.625  PA Vector : Change SP vector 0116 to 0115.
+18:33:39.625  
+18:33:40.593  [Audio] Set Trigger Point(0011->0012).
+18:33:40.593  [Audio] Play().
+18:33:40.750  [Audio] Open : D:\Woojin\AUDIO\012.WAV [Successed:0]
+18:33:40.781  [Audio] MCI Play : 0.
+18:33:40.781  D1 : Broadcast CNCS ON[1].
+18:33:40.781  D2 : CNCS Auction A ON[1]
+18:33:40.781  
+18:33:41.562  [Audio] Set Trigger Point(0012->0000).
+18:33:41.562  D0 : Direction ON[1].
+18:33:41.562  Trip NO : Change Trigger ID 1127 to 0000.
+18:33:41.562  Station : Change Now station 274 to 0.
+18:33:41.562  Station : Change Next station 273 to 0.
+18:33:41.562  PA Vector : Change PAC Audio vector 0012 to 0000.
+18:33:41.562  PA Vector : Change EID Colr vector 0001 to 0000.
+18:33:41.562  PA Vector : Change EDI Display1 vector 0102 to 0000.
+18:33:41.562  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:33:41.562  PA Vector : Change PII vector 0115 to 0000.
+18:33:41.562  PA Vector : Change PP Line vector 0001 to 0000.
+18:33:41.562  PA Vector : Change SP vector 0115 to 0000.
+18:33:41.562  
+18:33:42.546  [Audio] Set Trigger Point(0012->0000).
+18:33:43.531  [Audio] Set Trigger Point(0012->0000).
+18:33:44.515  [Audio] Set Trigger Point(0012->0000).
+18:33:45.531  [Audio] Set Trigger Point(0012->0000).
+18:33:46.609  [Audio] Set Trigger Point(0012->0000).
+18:33:47.609  [Audio] Set Trigger Point(0012->0000).
+18:33:48.578  [Audio] Set Trigger Point(0012->0000).
+18:33:49.015  [Audio] Timer Stop[8153, 8153].
+18:33:49.015  [Audio] Stop().
+18:33:49.031  [Audio] MCI Stop : 0.
+18:33:53.234  [Audio] Set Trigger Point(0012->0000).
+18:33:53.234  Coupling ID : 0.
+18:33:53.234  D0 : A Cab OFF[0].
+18:33:53.234  D0 : B Cab ON[1].
+18:33:53.234  D0 : Direction OFF[0].
+18:33:53.234  Station : Change Start station 276 to 0.
+18:33:53.234  Station : Change Destination station 257 to 0.
+18:33:53.234  
+18:33:54.312  [Audio] Set Trigger Point(0012->0000).
+18:33:54.312  D1 : Broadcast CNCS OFF[0].
+18:33:54.312  D2 : CNCS Auction A OFF[0]
+18:33:54.312  
+18:33:55.312  [Audio] Set Trigger Point(0012->0000).
+18:33:57.265  D0 : Direction ON[1].
+18:33:57.265  Train NO : Change Train No 0010 to 0011.
+18:33:57.265  
+18:34:08.078  Coupling ID : 1.
+18:34:08.078  
+18:34:09.031  [Audio] Set Trigger Point(0000->0001).
+18:34:09.031  Station : Change Start station 0 to 257.
+18:34:09.031  Station : Change Next station 0 to 265.
+18:34:09.031  Station : Change Destination station 0 to 276.
+18:34:09.031  PA Vector : Change PAC Audio vector 0000 to 0001.
+18:34:09.031  PA Vector : Change EID Colr vector 0000 to 0001.
+18:34:09.031  PA Vector : Change EDI Display1 vector 0000 to 0104.
+18:34:09.031  PA Vector : Change EDI Display2 vector 0000 to 0103.
+18:34:09.031  PA Vector : Change PP Line vector 0000 to 0001.
+18:34:09.031  
+18:34:09.968  [Audio] Set Trigger Point(0000->0001).
+18:34:09.968  [Audio] Play().
+18:34:10.125  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:34:10.156  [Audio] MCI Play : 0.
+18:34:10.156  D1 : Broadcast CNCS ON[1].
+18:34:10.156  D2 : CNCS Auction A ON[1]
+18:34:10.156  
+18:34:17.375  [Audio] Timer Stop[7131, 7131].
+18:34:17.375  [Audio] Stop().
+18:34:17.390  [Audio] MCI Stop : 0.
+18:34:18.890  D1 : Broadcast CNCS OFF[0].
+18:34:18.890  D2 : CNCS Auction A OFF[0]
+18:34:18.890  
+18:34:29.734  [Audio] Set Trigger Point(0001->0064).
+18:34:29.734  D0 : Direction OFF[0].
+18:34:29.734  Train NO : Change Train No 0011 to 0050.
+18:34:29.734  Station : Change Start station 257 to 263.
+18:34:29.734  Station : Change Now station 0 to 519.
+18:34:29.734  Station : Change Next station 265 to 518.
+18:34:29.734  Station : Change Destination station 276 to 257.
+18:34:29.734  PA Vector : Change PAC Audio vector 0001 to 0064.
+18:34:29.734  PA Vector : Change EDI Display1 vector 0104 to 0101.
+18:34:29.734  PA Vector : Change EDI Display2 vector 0103 to 0101.
+18:34:29.734  PA Vector : Change PP Line vector 0001 to 0000.
+18:34:29.734  
+18:34:30.703  [Audio] Set Trigger Point(0001->0064).
+18:34:30.703  [Audio] Play().
+18:34:30.859  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO DUS.WAV [Successed:0]
+18:34:30.890  [Audio] MCI Play : 0.
+18:34:30.890  D1 : Broadcast CNCS ON[1].
+18:34:30.890  D2 : CNCS Auction A ON[1]
+18:34:30.890  
+18:34:32.703  Trip NO : Change Trigger ID 0000 to 2075.
+18:34:32.703  
+18:34:33.296  [Audio] Timer Stop[2335, 2335].
+18:34:33.296  [Audio] Stop().
+18:34:33.296  [Audio] MCI Stop : 0.
+18:34:34.750  D1 : Broadcast CNCS OFF[0].
+18:34:34.750  D2 : CNCS Auction A OFF[0]
+18:34:34.750  
+18:34:52.390  [Audio] Set Trigger Point(0064->0051).
+18:34:52.390  Trip NO : Change Trigger ID 2075 to 2074.
+18:34:52.390  PA Vector : Change PAC Audio vector 0064 to 0051.
+18:34:52.390  PA Vector : Change PII vector 0000 to 0128.
+18:34:52.390  PA Vector : Change SP vector 0000 to 0128.
+18:34:52.390  
+18:34:53.453  [Audio] Set Trigger Point(0064->0051).
+18:34:53.453  [Audio] Play().
+18:34:53.625  [Audio] Open : D:\Woojin\AUDIO\NEXT STOP ARVADA RIDGE FROM WHEAT RIDGE.WAV [Successed:0]
+18:34:53.656  [Audio] MCI Play : 0.
+18:34:53.656  D1 : Broadcast CNCS ON[1].
+18:34:53.656  D2 : CNCS Auction A ON[1]
+18:34:53.656  
+18:35:02.484  [Audio] Timer Stop[8744, 8744].
+18:35:02.484  [Audio] Stop().
+18:35:02.500  [Audio] MCI Stop : 0.
+18:35:03.296  [Audio] Set Trigger Point(0051->0061).
+18:35:03.296  D1 : Broadcast CNCS OFF[0].
+18:35:03.296  D2 : CNCS Auction A OFF[0]
+18:35:03.296  Trip NO : Change Trigger ID 2074 to 2067.
+18:35:03.296  Station : Change Now station 519 to 518.
+18:35:03.296  Station : Change Next station 518 to 261.
+18:35:03.296  PA Vector : Change PAC Audio vector 0051 to 0061.
+18:35:03.296  PA Vector : Change PII vector 0128 to 0127.
+18:35:03.296  PA Vector : Change SP vector 0128 to 0127.
+18:35:03.296  
+18:35:04.312  [Audio] Set Trigger Point(0051->0061).
+18:35:05.281  [Audio] Set Trigger Point(0051->0061).
+18:35:05.281  [Audio] Play().
+18:35:05.453  [Audio] Open : D:\Woojin\AUDIO\THIS IS ARVADA RIDGE.WAV [Successed:0]
+18:35:05.468  [Audio] MCI Play : 0.
+18:35:05.468  D1 : Broadcast CNCS ON[1].
+18:35:05.468  D2 : CNCS Auction A ON[1]
+18:35:05.468  
+18:35:09.390  [Audio] Timer Stop[1951, 1951].
+18:35:09.390  [Audio] Stop().
+18:35:09.421  [Audio] MCI Stop : 0.
+18:35:10.140  D1 : Broadcast CNCS OFF[0].
+18:35:10.140  D2 : CNCS Auction A OFF[0]
+18:35:10.140  
+18:35:13.203  [Audio] Set Trigger Point(0061->0064).
+18:35:13.203  Trip NO : Change Trigger ID 2067 to 2065.
+18:35:13.203  PA Vector : Change PAC Audio vector 0061 to 0064.
+18:35:13.203  PA Vector : Change PII vector 0127 to 0000.
+18:35:13.203  PA Vector : Change SP vector 0127 to 0000.
+18:35:13.203  
+18:35:14.203  [Audio] Set Trigger Point(0061->0064).
+18:35:14.203  [Audio] Play().
+18:35:14.359  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO DUS.WAV [Successed:0]
+18:35:14.406  [Audio] MCI Play : 0.
+18:35:14.406  D1 : Broadcast CNCS ON[1].
+18:35:14.406  D2 : CNCS Auction A ON[1]
+18:35:14.406  
+18:35:16.796  [Audio] Timer Stop[2335, 2335].
+18:35:16.796  [Audio] Stop().
+18:35:16.796  [Audio] MCI Stop : 0.
+18:35:20.750  [Audio] Set Trigger Point(0064->0000).
+18:35:20.750  Coupling ID : 0.
+18:35:20.750  D0 : A Cab ON[1].
+18:35:20.750  D0 : B Cab OFF[0].
+18:35:20.750  D0 : Direction ON[1].
+18:35:20.750  Train NO : Change Train No 0050 to 0011.
+18:35:20.750  Trip NO : Change Trigger ID 2065 to 0000.
+18:35:20.750  Station : Change Start station 263 to 0.
+18:35:20.750  Station : Change Next station 261 to 0.
+18:35:20.750  Station : Change Destination station 257 to 0.
+18:35:20.750  PA Vector : Change PAC Audio vector 0064 to 0000.
+18:35:20.750  PA Vector : Change EID Colr vector 0001 to 0000.
+18:35:20.750  PA Vector : Change EDI Display1 vector 0101 to 0000.
+18:35:20.750  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:35:20.750  
+18:35:21.703  [Audio] Set Trigger Point(0064->0000).
+18:35:21.703  D0 : Direction OFF[0].
+18:35:21.703  D1 : Broadcast CNCS OFF[0].
+18:35:21.703  D2 : CNCS Auction A OFF[0]
+18:35:21.703  
+18:35:22.671  [Audio] Set Trigger Point(0064->0000).
+18:35:23.625  D0 : Direction ON[1].
+18:35:23.625  
+18:35:25.562  D0 : Direction OFF[0].
+18:35:25.562  Train NO : Change Train No 0011 to 0010.
+18:35:25.562  
+18:35:35.437  Coupling ID : 1.
+18:35:35.437  
+18:35:36.468  [Audio] Set Trigger Point(0000->0022).
+18:35:36.468  Station : Change Start station 0 to 276.
+18:35:36.468  Station : Change Next station 0 to 278.
+18:35:36.468  Station : Change Destination station 0 to 257.
+18:35:36.468  PA Vector : Change PAC Audio vector 0000 to 0022.
+18:35:36.468  PA Vector : Change EID Colr vector 0000 to 0001.
+18:35:36.468  PA Vector : Change EDI Display1 vector 0000 to 0102.
+18:35:36.468  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:35:36.468  PA Vector : Change PP Line vector 0000 to 0001.
+18:35:36.468  
+18:35:37.531  [Audio] Set Trigger Point(0000->0022).
+18:35:37.531  [Audio] Play().
+18:35:37.687  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:35:37.718  [Audio] MCI Play : 0.
+18:35:37.718  D1 : Broadcast CNCS ON[1].
+18:35:37.718  D2 : CNCS Auction A ON[1]
+18:35:37.718  
+18:35:41.437  Trip NO : Change Trigger ID 0000 to 1145.
+18:35:41.437  
+18:35:44.453  [Audio] Timer Stop[6646, 6646].
+18:35:44.453  [Audio] Stop().
+18:35:44.453  [Audio] MCI Stop : 0.
+18:35:45.296  D1 : Broadcast CNCS OFF[0].
+18:35:45.296  D2 : CNCS Auction A OFF[0]
+18:35:45.296  
+18:36:01.265  [Audio] Set Trigger Point(0022->0017).
+18:36:01.265  Trip NO : Change Trigger ID 1145 to 1144.
+18:36:01.265  PA Vector : Change PAC Audio vector 0022 to 0017.
+18:36:01.265  PA Vector : Change PII vector 0000 to 0136.
+18:36:01.265  PA Vector : Change SP vector 0000 to 0136.
+18:36:01.265  
+18:36:02.250  [Audio] Set Trigger Point(0022->0017).
+18:36:02.250  [Audio] Play().
+18:36:02.406  [Audio] Open : D:\Woojin\AUDIO\017.WAV [Successed:0]
+18:36:02.453  [Audio] MCI Play : 0.
+18:36:02.453  D1 : Broadcast CNCS ON[1].
+18:36:02.453  D2 : CNCS Auction A ON[1]
+18:36:02.453  
+18:36:05.546  [Audio] Timer Stop[3037, 3037].
+18:36:05.546  [Audio] Stop().
+18:36:05.562  [Audio] MCI Stop : 0.
+18:36:07.265  D1 : Broadcast CNCS OFF[0].
+18:36:07.265  D2 : CNCS Auction A OFF[0]
+18:36:07.265  
+18:36:08.281  [Audio] Set Trigger Point(0017->0065).
+18:36:08.281  D0 : Direction ON[1].
+18:36:08.281  Train NO : Change Train No 0010 to 0051.
+18:36:08.281  Trip NO : Change Trigger ID 1144 to 0000.
+18:36:08.281  Station : Change Start station 276 to 257.
+18:36:08.281  Station : Change Next station 278 to 258.
+18:36:08.281  Station : Change Destination station 257 to 263.
+18:36:08.281  PA Vector : Change PAC Audio vector 0017 to 0065.
+18:36:08.281  PA Vector : Change EDI Display1 vector 0102 to 0114.
+18:36:08.281  PA Vector : Change EDI Display2 vector 0101 to 0114.
+18:36:08.281  PA Vector : Change PII vector 0136 to 0000.
+18:36:08.281  PA Vector : Change PP Line vector 0001 to 0000.
+18:36:08.281  PA Vector : Change SP vector 0136 to 0000.
+18:36:08.281  
+18:36:09.218  [Audio] Set Trigger Point(0017->0065).
+18:36:09.218  [Audio] Play().
+18:36:09.375  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO WARD.WAV [Successed:0]
+18:36:09.390  [Audio] MCI Play : 0.
+18:36:09.390  D1 : Broadcast CNCS ON[1].
+18:36:09.390  D2 : CNCS Auction A ON[1]
+18:36:09.390  
+18:36:12.171  Trip NO : Change Trigger ID 0000 to 1015.
+18:36:12.171  
+18:36:12.703  [Audio] Timer Stop[3278, 3278].
+18:36:12.703  [Audio] Stop().
+18:36:12.718  [Audio] MCI Stop : 0.
+18:36:14.109  D1 : Broadcast CNCS OFF[0].
+18:36:14.109  D2 : CNCS Auction A OFF[0]
+18:36:14.109  
+18:36:22.078  [Audio] Set Trigger Point(0065->0058).
+18:36:22.078  Trip NO : Change Trigger ID 1015 to 1016.
+18:36:22.078  PA Vector : Change PAC Audio vector 0065 to 0058.
+18:36:22.078  PA Vector : Change PII vector 0000 to 0104.
+18:36:22.078  PA Vector : Change SP vector 0000 to 0104.
+18:36:22.078  
+18:36:23.046  [Audio] Set Trigger Point(0065->0058).
+18:36:23.046  [Audio] Play().
+18:36:23.218  [Audio] Open : D:\Woojin\AUDIO\NEXT STOP_41ST AND FOX.WAV [Successed:0]
+18:36:23.234  [Audio] MCI Play : 0.
+18:36:23.234  D1 : Broadcast CNCS ON[1].
+18:36:23.234  D2 : CNCS Auction A ON[1]
+18:36:23.234  
+18:36:31.968  [Audio] Set Trigger Point(0058->0059).
+18:36:31.968  Trip NO : Change Trigger ID 1016 to 1023.
+18:36:31.968  Station : Change Now station 518 to 258.
+18:36:31.968  Station : Change Next station 258 to 264.
+18:36:31.968  PA Vector : Change PAC Audio vector 0058 to 0059.
+18:36:31.968  PA Vector : Change PII vector 0104 to 0103.
+18:36:31.968  PA Vector : Change SP vector 0104 to 0103.
+18:36:31.968  
+18:36:32.921  [Audio] Set Trigger Point(0058->0059).
+18:36:32.984  [Audio] Timer Stop[9701, 9701].
+18:36:32.984  [Audio] Stop().
+18:36:33.000  [Audio] MCI Stop : 0.
+18:36:33.890  [Audio] Set Trigger Point(0058->0059).
+18:36:33.890  D1 : Broadcast CNCS OFF[0].
+18:36:33.890  D2 : CNCS Auction A OFF[0]
+18:36:33.890  
+18:36:34.875  [Audio] Set Trigger Point(0058->0059).
+18:36:35.906  [Audio] Set Trigger Point(0058->0059).
+18:36:35.906  [Audio] Play().
+18:36:36.078  [Audio] Open : D:\Woojin\AUDIO\THIS IS 41ST AND FOX.WAV [Successed:0]
+18:36:36.093  [Audio] MCI Play : 0.
+18:36:36.093  D1 : Broadcast CNCS ON[1].
+18:36:36.093  D2 : CNCS Auction A ON[1]
+18:36:36.093  
+18:36:38.593  [Audio] Timer Stop[2471, 2471].
+18:36:38.609  [Audio] Stop().
+18:36:38.609  [Audio] MCI Stop : 0.
+18:36:39.953  D1 : Broadcast CNCS OFF[0].
+18:36:39.953  D2 : CNCS Auction A OFF[0]
+18:36:39.953  
+18:36:42.843  [Audio] Set Trigger Point(0059->0065).
+18:36:42.843  Trip NO : Change Trigger ID 1023 to 1025.
+18:36:42.843  PA Vector : Change PAC Audio vector 0059 to 0065.
+18:36:42.843  PA Vector : Change PII vector 0103 to 0000.
+18:36:42.843  PA Vector : Change SP vector 0103 to 0000.
+18:36:42.843  
+18:36:43.828  [Audio] Set Trigger Point(0059->0065).
+18:36:43.828  [Audio] Play().
+18:36:43.984  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO WARD.WAV [Successed:0]
+18:36:44.015  [Audio] MCI Play : 0.
+18:36:44.015  D1 : Broadcast CNCS ON[1].
+18:36:44.015  D2 : CNCS Auction A ON[1]
+18:36:44.015  
+18:36:47.312  [Audio] Timer Stop[3278, 3278].
+18:36:47.312  [Audio] Stop().
+18:36:47.328  [Audio] MCI Stop : 0.
+18:36:47.765  [Audio] Set Trigger Point(0065->0000).
+18:36:47.765  Coupling ID : 0.
+18:36:47.765  D0 : A Cab OFF[0].
+18:36:47.765  D0 : B Cab ON[1].
+18:36:47.765  D0 : Direction OFF[0].
+18:36:47.765  Train NO : Change Train No 0051 to 0010.
+18:36:47.765  Trip NO : Change Trigger ID 1025 to 0000.
+18:36:47.765  Station : Change Start station 257 to 0.
+18:36:47.765  Station : Change Next station 264 to 0.
+18:36:47.765  Station : Change Destination station 263 to 0.
+18:36:47.765  PA Vector : Change PAC Audio vector 0065 to 0000.
+18:36:47.765  PA Vector : Change EID Colr vector 0001 to 0000.
+18:36:47.765  PA Vector : Change EDI Display1 vector 0114 to 0000.
+18:36:47.765  PA Vector : Change EDI Display2 vector 0114 to 0000.
+18:36:47.765  
+18:36:48.718  [Audio] Set Trigger Point(0065->0000).
+18:36:48.718  D0 : Direction ON[1].
+18:36:48.718  D1 : Broadcast CNCS OFF[0].
+18:36:48.718  D2 : CNCS Auction A OFF[0]
+18:36:48.718  
+18:36:49.703  [Audio] Set Trigger Point(0065->0000).
+18:36:50.656  D0 : Direction OFF[0].
+18:36:50.656  
+18:36:52.671  D0 : Direction ON[1].
+18:36:52.671  Train NO : Change Train No 0010 to 0011.
+18:36:52.671  
+18:37:02.562  Coupling ID : 1.
+18:37:02.562  
+18:37:03.640  [Audio] Set Trigger Point(0000->0001).
+18:37:03.640  Station : Change Start station 0 to 257.
+18:37:03.640  Station : Change Next station 0 to 265.
+18:37:03.640  Station : Change Destination station 0 to 276.
+18:37:03.640  PA Vector : Change PAC Audio vector 0000 to 0001.
+18:37:03.640  PA Vector : Change EID Colr vector 0000 to 0001.
+18:37:03.640  PA Vector : Change EDI Display1 vector 0000 to 0104.
+18:37:03.640  PA Vector : Change EDI Display2 vector 0000 to 0103.
+18:37:03.640  PA Vector : Change PP Line vector 0000 to 0001.
+18:37:03.640  
+18:37:04.656  [Audio] Set Trigger Point(0000->0001).
+18:37:04.656  [Audio] Play().
+18:37:04.812  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:37:04.843  [Audio] MCI Play : 0.
+18:37:04.843  D1 : Broadcast CNCS ON[1].
+18:37:04.843  D2 : CNCS Auction A ON[1]
+18:37:04.843  
+18:37:11.968  [Audio] Timer Stop[7131, 7131].
+18:37:11.984  [Audio] Stop().
+18:37:11.984  [Audio] MCI Stop : 0.
+18:37:13.531  [Audio] Set Trigger Point(0001->0064).
+18:37:13.531  D0 : Direction OFF[0].
+18:37:13.531  D1 : Broadcast CNCS OFF[0].
+18:37:13.531  D2 : CNCS Auction A OFF[0]
+18:37:13.531  Train NO : Change Train No 0011 to 0050.
+18:37:13.531  Station : Change Start station 257 to 263.
+18:37:13.531  Station : Change Now station 258 to 519.
+18:37:13.531  Station : Change Next station 265 to 518.
+18:37:13.531  Station : Change Destination station 276 to 257.
+18:37:13.531  PA Vector : Change PAC Audio vector 0001 to 0064.
+18:37:13.531  PA Vector : Change EDI Display1 vector 0104 to 0101.
+18:37:13.531  PA Vector : Change EDI Display2 vector 0103 to 0101.
+18:37:13.531  PA Vector : Change PP Line vector 0001 to 0000.
+18:37:13.531  
+18:37:14.531  [Audio] Set Trigger Point(0001->0064).
+18:37:15.500  [Audio] Set Trigger Point(0001->0064).
+18:37:15.500  [Audio] Play().
+18:37:15.718  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO DUS.WAV [Successed:0]
+18:37:15.750  [Audio] MCI Play : 0.
+18:37:15.750  D1 : Broadcast CNCS ON[1].
+18:37:15.750  D2 : CNCS Auction A ON[1]
+18:37:15.750  
+18:37:18.140  [Audio] Timer Stop[2335, 2335].
+18:37:18.156  [Audio] Stop().
+18:37:18.156  [Audio] MCI Stop : 0.
+18:37:19.359  D1 : Broadcast CNCS OFF[0].
+18:37:19.359  D2 : CNCS Auction A OFF[0]
+18:37:19.359  Trip NO : Change Trigger ID 0000 to 2075.
+18:37:19.359  
+18:37:39.078  [Audio] Set Trigger Point(0064->0051).
+18:37:39.078  Trip NO : Change Trigger ID 2075 to 2074.
+18:37:39.078  PA Vector : Change PAC Audio vector 0064 to 0051.
+18:37:39.078  PA Vector : Change PII vector 0000 to 0128.
+18:37:39.078  PA Vector : Change SP vector 0000 to 0128.
+18:37:39.078  
+18:37:40.062  [Audio] Set Trigger Point(0064->0051).
+18:37:40.062  [Audio] Play().
+18:37:40.218  [Audio] Open : D:\Woojin\AUDIO\NEXT STOP ARVADA RIDGE FROM WHEAT RIDGE.WAV [Successed:0]
+18:37:40.250  [Audio] MCI Play : 0.
+18:37:40.250  D1 : Broadcast CNCS ON[1].
+18:37:40.250  D2 : CNCS Auction A ON[1]
+18:37:40.250  
+18:37:48.984  [Audio] Set Trigger Point(0051->0061).
+18:37:48.984  Trip NO : Change Trigger ID 2074 to 2067.
+18:37:48.984  Station : Change Now station 519 to 518.
+18:37:48.984  Station : Change Next station 518 to 261.
+18:37:48.984  PA Vector : Change PAC Audio vector 0051 to 0061.
+18:37:48.984  PA Vector : Change PII vector 0128 to 0127.
+18:37:48.984  PA Vector : Change SP vector 0128 to 0127.
+18:37:48.984  
+18:37:49.093  [Audio] Timer Stop[8744, 8744].
+18:37:49.093  [Audio] Stop().
+18:37:49.093  [Audio] MCI Stop : 0.
+18:37:49.953  [Audio] Set Trigger Point(0051->0061).
+18:37:49.953  D1 : Broadcast CNCS OFF[0].
+18:37:49.953  D2 : CNCS Auction A OFF[0]
+18:37:49.953  
+18:37:50.921  [Audio] Set Trigger Point(0051->0061).
+18:37:51.937  [Audio] Set Trigger Point(0051->0061).
+18:37:51.937  [Audio] Play().
+18:37:52.093  [Audio] Open : D:\Woojin\AUDIO\THIS IS ARVADA RIDGE.WAV [Successed:0]
+18:37:52.125  [Audio] MCI Play : 0.
+18:37:52.125  D1 : Broadcast CNCS ON[1].
+18:37:52.125  D2 : CNCS Auction A ON[1]
+18:37:52.125  
+18:37:56.031  [Audio] Timer Stop[1951, 1951].
+18:37:56.031  [Audio] Stop().
+18:37:56.031  [Audio] MCI Stop : 0.
+18:37:56.968  [Audio] Set Trigger Point(0061->0000).
+18:37:56.968  Coupling ID : 0.
+18:37:56.968  D0 : A Cab ON[1].
+18:37:56.968  D0 : B Cab OFF[0].
+18:37:56.968  D0 : Direction ON[1].
+18:37:56.968  Train NO : Change Train No 0050 to 0011.
+18:37:56.968  Trip NO : Change Trigger ID 2067 to 0000.
+18:37:56.968  Station : Change Start station 263 to 0.
+18:37:56.968  Station : Change Next station 261 to 0.
+18:37:56.968  Station : Change Destination station 257 to 0.
+18:37:56.968  PA Vector : Change PAC Audio vector 0061 to 0000.
+18:37:56.968  PA Vector : Change EID Colr vector 0001 to 0000.
+18:37:56.968  PA Vector : Change EDI Display1 vector 0101 to 0000.
+18:37:56.968  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:37:56.968  PA Vector : Change PII vector 0127 to 0000.
+18:37:56.968  PA Vector : Change SP vector 0127 to 0000.
+18:37:56.968  
+18:37:58.015  [Audio] Set Trigger Point(0061->0000).
+18:37:58.015  D0 : Direction OFF[0].
+18:37:58.015  D1 : Broadcast CNCS OFF[0].
+18:37:58.015  D2 : CNCS Auction A OFF[0]
+18:37:58.015  
+18:37:59.109  [Audio] Set Trigger Point(0061->0000).
+18:38:01.078  Train NO : Change Train No 0011 to 0010.
+18:38:01.078  
+18:38:10.906  Coupling ID : 1.
+18:38:10.906  
+18:38:11.921  [Audio] Set Trigger Point(0000->0022).
+18:38:11.921  Station : Change Start station 0 to 276.
+18:38:11.921  Station : Change Next station 0 to 278.
+18:38:11.921  Station : Change Destination station 0 to 257.
+18:38:11.921  PA Vector : Change PAC Audio vector 0000 to 0022.
+18:38:11.921  PA Vector : Change EID Colr vector 0000 to 0001.
+18:38:11.921  PA Vector : Change EDI Display1 vector 0000 to 0102.
+18:38:11.921  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:38:11.921  PA Vector : Change PP Line vector 0000 to 0001.
+18:38:11.921  
+18:38:12.875  [Audio] Set Trigger Point(0000->0022).
+18:38:12.875  [Audio] Play().
+18:38:13.031  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:38:13.062  [Audio] MCI Play : 0.
+18:38:13.062  D1 : Broadcast CNCS ON[1].
+18:38:13.062  D2 : CNCS Auction A ON[1]
+18:38:13.062  
+18:38:16.765  Trip NO : Change Trigger ID 0000 to 1145.
+18:38:16.765  
+18:38:19.781  [Audio] Timer Stop[6646, 6646].
+18:38:19.781  [Audio] Stop().
+18:38:19.796  [Audio] MCI Stop : 0.
+18:38:20.828  D1 : Broadcast CNCS OFF[0].
+18:38:20.828  D2 : CNCS Auction A OFF[0]
+18:38:20.828  
+18:38:36.578  [Audio] Set Trigger Point(0022->0017).
+18:38:36.578  Trip NO : Change Trigger ID 1145 to 1144.
+18:38:36.578  PA Vector : Change PAC Audio vector 0022 to 0017.
+18:38:36.578  PA Vector : Change PII vector 0000 to 0136.
+18:38:36.578  PA Vector : Change SP vector 0000 to 0136.
+18:38:36.578  
+18:38:37.593  [Audio] Set Trigger Point(0022->0017).
+18:38:37.593  [Audio] Play().
+18:38:37.765  [Audio] Open : D:\Woojin\AUDIO\017.WAV [Successed:0]
+18:38:37.796  [Audio] MCI Play : 0.
+18:38:37.796  D1 : Broadcast CNCS ON[1].
+18:38:37.796  D2 : CNCS Auction A ON[1]
+18:38:37.796  
+18:38:40.906  [Audio] Timer Stop[3037, 3037].
+18:38:40.906  [Audio] Stop().
+18:38:40.921  [Audio] MCI Stop : 0.
+18:38:41.656  D1 : Broadcast CNCS OFF[0].
+18:38:41.656  D2 : CNCS Auction A OFF[0]
+18:38:41.656  
+18:38:46.531  [Audio] Set Trigger Point(0017->0018).
+18:38:46.531  Trip NO : Change Trigger ID 1144 to 1167.
+18:38:46.531  Station : Change Now station 518 to 278.
+18:38:46.531  Station : Change Next station 278 to 275.
+18:38:46.531  PA Vector : Change PAC Audio vector 0017 to 0018.
+18:38:46.531  PA Vector : Change PII vector 0136 to 0135.
+18:38:46.531  PA Vector : Change SP vector 0136 to 0135.
+18:38:46.531  
+18:38:47.562  [Audio] Set Trigger Point(0017->0018).
+18:38:47.562  [Audio] Play().
+18:38:47.750  [Audio] Open : D:\Woojin\AUDIO\018.WAV [Successed:0]
+18:38:47.765  [Audio] MCI Play : 0.
+18:38:47.765  D1 : Broadcast CNCS ON[1].
+18:38:47.765  D2 : CNCS Auction A ON[1]
+18:38:47.765  
+18:38:50.578  [Audio] Timer Stop[2712, 2712].
+18:38:50.578  [Audio] Stop().
+18:38:50.578  [Audio] MCI Stop : 0.
+18:38:51.625  D1 : Broadcast CNCS OFF[0].
+18:38:51.625  D2 : CNCS Auction A OFF[0]
+18:38:51.625  
+18:38:55.671  [Audio] Set Trigger Point(0018->0000).
+18:38:55.671  Coupling ID : 0.
+18:38:55.671  D0 : A Cab OFF[0].
+18:38:55.671  D0 : B Cab ON[1].
+18:38:55.671  Trip NO : Change Trigger ID 1167 to 0000.
+18:38:55.671  Station : Change Start station 276 to 0.
+18:38:55.671  Station : Change Next station 275 to 0.
+18:38:55.671  Station : Change Destination station 257 to 0.
+18:38:55.671  PA Vector : Change PAC Audio vector 0018 to 0000.
+18:38:55.671  PA Vector : Change EID Colr vector 0001 to 0000.
+18:38:55.671  PA Vector : Change EDI Display1 vector 0102 to 0000.
+18:38:55.671  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:38:55.671  PA Vector : Change PII vector 0135 to 0000.
+18:38:55.671  PA Vector : Change PP Line vector 0001 to 0000.
+18:38:55.671  PA Vector : Change SP vector 0135 to 0000.
+18:38:55.671  
+18:39:00.515  D0 : Direction ON[1].
+18:39:00.515  Train NO : Change Train No 0010 to 0011.
+18:39:00.515  
+18:39:10.468  Coupling ID : 1.
+18:39:10.468  
+18:39:11.421  [Audio] Set Trigger Point(0000->0001).
+18:39:11.421  Station : Change Start station 0 to 257.
+18:39:11.421  Station : Change Next station 0 to 265.
+18:39:11.421  Station : Change Destination station 0 to 276.
+18:39:11.421  PA Vector : Change PAC Audio vector 0000 to 0001.
+18:39:11.421  PA Vector : Change EID Colr vector 0000 to 0001.
+18:39:11.421  PA Vector : Change EDI Display1 vector 0000 to 0104.
+18:39:11.421  PA Vector : Change EDI Display2 vector 0000 to 0103.
+18:39:11.421  PA Vector : Change PP Line vector 0000 to 0001.
+18:39:11.421  
+18:39:12.406  [Audio] Set Trigger Point(0000->0001).
+18:39:12.406  [Audio] Play().
+18:39:12.562  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:39:12.593  [Audio] MCI Play : 0.
+18:39:12.593  D1 : Broadcast CNCS ON[1].
+18:39:12.593  D2 : CNCS Auction A ON[1]
+18:39:12.593  
+18:39:19.718  [Audio] Timer Stop[7131, 7131].
+18:39:19.718  [Audio] Stop().
+18:39:19.734  [Audio] MCI Stop : 0.
+18:39:21.296  D1 : Broadcast CNCS OFF[0].
+18:39:21.296  D2 : CNCS Auction A OFF[0]
+18:39:21.296  
+18:39:25.343  [Audio] Set Trigger Point(0001->0043).
+18:39:25.343  D0 : Direction OFF[0].
+18:39:25.343  Train NO : Change Train No 0011 to 0080.
+18:39:25.343  Station : Change Start station 257 to 529.
+18:39:25.343  Station : Change Next station 265 to 530.
+18:39:25.343  Station : Change Destination station 276 to 257.
+18:39:25.343  PA Vector : Change PAC Audio vector 0001 to 0043.
+18:39:25.343  PA Vector : Change EDI Display1 vector 0104 to 0115.
+18:39:25.343  PA Vector : Change EDI Display2 vector 0103 to 0101.
+18:39:25.343  PA Vector : Change PP Line vector 0001 to 0000.
+18:39:25.343  
+18:39:26.343  [Audio] Set Trigger Point(0001->0043).
+18:39:26.343  [Audio] Play().
+18:39:26.500  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:39:26.515  [Audio] MCI Play : 0.
+18:39:26.515  D1 : Broadcast CNCS ON[1].
+18:39:26.531  D2 : CNCS Auction A ON[1]
+18:39:26.531  
+18:39:28.312  Trip NO : Change Trigger ID 0000 to 2115.
+18:39:28.312  
+18:39:28.828  [Audio] Timer Stop[2246, 2246].
+18:39:28.828  [Audio] Stop().
+18:39:28.843  [Audio] MCI Stop : 0.
+18:39:30.234  D1 : Broadcast CNCS OFF[0].
+18:39:30.234  D2 : CNCS Auction A OFF[0]
+18:39:30.234  
+18:39:48.125  [Audio] Set Trigger Point(0043->0046).
+18:39:48.125  Trip NO : Change Trigger ID 2115 to 2114.
+18:39:48.125  PA Vector : Change PAC Audio vector 0043 to 0046.
+18:39:48.125  PA Vector : Change PII vector 0000 to 0102.
+18:39:48.125  PA Vector : Change SP vector 0000 to 0102.
+18:39:48.125  
+18:39:49.046  [Audio] Set Trigger Point(0043->0046).
+18:39:49.046  [Audio] Play().
+18:39:49.203  [Audio] Open : D:\Woojin\AUDIO\WELCOME UNION STATION_FARE.WAV [Successed:0]
+18:39:49.234  [Audio] MCI Play : 0.
+18:39:49.234  D1 : Broadcast CNCS ON[1].
+18:39:49.234  D2 : CNCS Auction A ON[1]
+18:39:49.234  
+18:39:58.015  D0 : Forward ON[1].
+18:39:58.015  
+18:39:58.984  [Audio] Set Trigger Point(0046->0000).
+18:39:58.984  D0 : Forward OFF[0].
+18:39:58.984  Trip NO : Change Trigger ID 2114 to 2127.
+18:39:58.984  Station : Change Now station 278 to 530.
+18:39:58.984  Station : Change Next station 530 to 513.
+18:39:58.984  PA Vector : Change PAC Audio vector 0046 to 0000.
+18:39:58.984  PA Vector : Change EID Colr vector 0001 to 0000.
+18:39:58.984  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:39:58.984  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:39:58.984  PA Vector : Change PII vector 0102 to 0000.
+18:39:58.984  PA Vector : Change SP vector 0102 to 0000.
+18:39:58.984  
+18:39:59.953  [Audio] Set Trigger Point(0046->0000).
+18:40:00.890  [Audio] Set Trigger Point(0046->0000).
+18:40:01.843  [Audio] Set Trigger Point(0046->0000).
+18:40:01.984  [Audio] Timer Stop[12756, 12756].
+18:40:02.000  [Audio] Stop().
+18:40:02.000  [Audio] MCI Stop : 0.
+18:40:02.828  [Audio] Set Trigger Point(0046->0000).
+18:40:02.828  D1 : Broadcast CNCS OFF[0].
+18:40:02.828  D2 : CNCS Auction A OFF[0]
+18:40:02.828  
+18:40:03.859  [Audio] Set Trigger Point(0046->0000).
+18:40:08.828  [Audio] Set Trigger Point(0000->0043).
+18:40:08.828  Trip NO : Change Trigger ID 2127 to 2125.
+18:40:08.828  PA Vector : Change PAC Audio vector 0000 to 0043.
+18:40:08.828  PA Vector : Change EID Colr vector 0000 to 0001.
+18:40:08.828  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:40:08.828  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:40:08.828  
+18:40:09.781  [Audio] Set Trigger Point(0000->0043).
+18:40:09.781  [Audio] Play().
+18:40:09.937  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:40:09.968  [Audio] MCI Play : 0.
+18:40:09.968  D1 : Broadcast CNCS ON[1].
+18:40:09.968  D2 : CNCS Auction A ON[1]
+18:40:09.968  
+18:40:12.265  [Audio] Timer Stop[2246, 2246].
+18:40:12.265  [Audio] Stop().
+18:40:12.265  [Audio] MCI Stop : 0.
+18:40:16.703  [Audio] Set Trigger Point(0043->0000).
+18:40:16.703  Coupling ID : 0.
+18:40:16.703  D0 : A Cab ON[1].
+18:40:16.703  D0 : B Cab OFF[0].
+18:40:16.703  D1 : Broadcast CNCS OFF[0].
+18:40:16.703  D2 : CNCS Auction A OFF[0]
+18:40:16.703  Trip NO : Change Trigger ID 2125 to 0000.
+18:40:16.703  Station : Change Start station 529 to 0.
+18:40:16.703  Station : Change Next station 513 to 0.
+18:40:16.703  Station : Change Destination station 257 to 0.
+18:40:16.703  PA Vector : Change PAC Audio vector 0043 to 0000.
+18:40:16.703  PA Vector : Change EID Colr vector 0001 to 0000.
+18:40:16.703  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:40:16.703  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:40:16.703  
+18:40:17.671  [Audio] Set Trigger Point(0043->0000).
+18:40:20.562  D0 : Direction ON[1].
+18:40:20.562  Train NO : Change Train No 0080 to 0081.
+18:40:20.562  
+18:40:30.484  Coupling ID : 1.
+18:40:30.484  
+18:40:31.515  [Audio] Set Trigger Point(0000->0044).
+18:40:31.515  Station : Change Start station 0 to 257.
+18:40:31.515  Station : Change Now station 530 to 513.
+18:40:31.515  Station : Change Next station 0 to 277.
+18:40:31.515  Station : Change Destination station 0 to 529.
+18:40:31.515  PA Vector : Change PAC Audio vector 0000 to 0044.
+18:40:31.515  PA Vector : Change EID Colr vector 0000 to 0001.
+18:40:31.515  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:40:31.515  PA Vector : Change EDI Display2 vector 0000 to 0113.
+18:40:31.515  
+18:40:32.593  [Audio] Set Trigger Point(0000->0044).
+18:40:32.593  [Audio] Play().
+18:40:32.765  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO WM STATION.WAV [Successed:0]
+18:40:32.796  [Audio] MCI Play : 0.
+18:40:32.796  D1 : Broadcast CNCS ON[1].
+18:40:32.796  D2 : CNCS Auction A ON[1]
+18:40:32.796  
+18:40:35.406  [Audio] Timer Stop[2597, 2597].
+18:40:35.406  [Audio] Stop().
+18:40:35.421  [Audio] MCI Stop : 0.
+18:40:35.578  Trip NO : Change Trigger ID 0000 to 2015.
+18:40:35.578  
+18:40:36.546  D1 : Broadcast CNCS OFF[0].
+18:40:36.546  D2 : CNCS Auction A OFF[0]
+18:40:36.546  
+18:40:55.453  [Audio] Set Trigger Point(0044->0047).
+18:40:55.453  Trip NO : Change Trigger ID 2015 to 2016.
+18:40:55.453  PA Vector : Change PAC Audio vector 0044 to 0047.
+18:40:55.453  PA Vector : Change PII vector 0000 to 0110.
+18:40:55.453  PA Vector : Change SP vector 0000 to 0140.
+18:40:55.453  
+18:40:56.406  [Audio] Set Trigger Point(0044->0047).
+18:40:56.406  [Audio] Play().
+18:40:56.562  [Audio] Open : D:\Woojin\AUDIO\WELCOME WM STATION_FARE.WAV [Successed:0]
+18:40:56.593  [Audio] MCI Play : 0.
+18:40:56.593  D1 : Broadcast CNCS ON[1].
+18:40:56.593  D2 : CNCS Auction A ON[1]
+18:40:56.593  
+18:41:05.375  [Audio] Set Trigger Point(0047->0048).
+18:41:05.375  Trip NO : Change Trigger ID 2016 to 1153.
+18:41:05.375  Station : Change Now station 513 to 277.
+18:41:05.375  Station : Change Next station 277 to 0.
+18:41:05.375  PA Vector : Change PAC Audio vector 0047 to 0048.
+18:41:05.375  PA Vector : Change PII vector 0110 to 0109.
+18:41:05.375  PA Vector : Change SP vector 0140 to 0139.
+18:41:05.375  
+18:41:06.328  [Audio] Set Trigger Point(0047->0048).
+18:41:07.296  [Audio] Set Trigger Point(0047->0048).
+18:41:08.234  [Audio] Set Trigger Point(0047->0048).
+18:41:09.203  [Audio] Set Trigger Point(0047->0048).
+18:41:09.656  [Audio] Timer Stop[12980, 12980].
+18:41:09.656  [Audio] Stop().
+18:41:09.671  [Audio] MCI Stop : 0.
+18:41:10.187  [Audio] Set Trigger Point(0047->0048).
+18:41:11.203  [Audio] Set Trigger Point(0047->0048).
+18:41:11.203  D1 : Broadcast CNCS OFF[0].
+18:41:11.203  D2 : CNCS Auction A OFF[0]
+18:41:11.203  
+18:41:12.281  [Audio] Set Trigger Point(0047->0048).
+18:41:13.296  [Audio] Set Trigger Point(0047->0048).
+18:41:13.296  [Audio] Play().
+18:41:13.468  [Audio] Open : D:\Woojin\AUDIO\WM ARRIVAL MESSAGE.WAV [Successed:0]
+18:41:13.484  [Audio] MCI Play : 0.
+18:41:13.500  D1 : Broadcast CNCS ON[1].
+18:41:13.500  D2 : CNCS Auction A ON[1]
+18:41:13.500  
+18:41:15.281  [Audio] Set Trigger Point(0048->0000).
+18:41:15.281  Trip NO : Change Trigger ID 1153 to 1155.
+18:41:15.281  PA Vector : Change PAC Audio vector 0048 to 0000.
+18:41:15.281  PA Vector : Change PII vector 0109 to 0000.
+18:41:15.281  PA Vector : Change SP vector 0139 to 0000.
+18:41:15.281  
+18:41:16.250  [Audio] Set Trigger Point(0048->0000).
+18:41:17.203  [Audio] Set Trigger Point(0048->0000).
+18:41:18.171  [Audio] Set Trigger Point(0048->0000).
+18:41:19.156  [Audio] Set Trigger Point(0048->0000).
+18:41:20.140  [Audio] Set Trigger Point(0048->0000).
+18:41:21.171  [Audio] Set Trigger Point(0048->0000).
+18:41:22.250  [Audio] Set Trigger Point(0048->0000).
+18:41:23.250  [Audio] Set Trigger Point(0048->0000).
+18:41:24.234  [Audio] Set Trigger Point(0048->0000).
+18:41:26.562  [Audio] Timer Stop[13022, 13022].
+18:41:26.562  [Audio] Stop().
+18:41:26.562  [Audio] MCI Stop : 0.
+18:41:28.984  [Audio] Set Trigger Point(0048->0000).
+18:41:28.984  Coupling ID : 0.
+18:41:28.984  D0 : A Cab OFF[0].
+18:41:28.984  D0 : B Cab ON[1].
+18:41:28.984  Trip NO : Change Trigger ID 1155 to 0000.
+18:41:28.984  Station : Change Start station 257 to 0.
+18:41:28.984  Station : Change Destination station 529 to 0.
+18:41:28.984  PA Vector : Change EID Colr vector 0001 to 0000.
+18:41:28.984  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:41:28.984  PA Vector : Change EDI Display2 vector 0113 to 0000.
+18:41:28.984  
+18:41:30.000  [Audio] Set Trigger Point(0048->0000).
+18:41:30.000  D1 : Broadcast CNCS OFF[0].
+18:41:30.000  D2 : CNCS Auction A OFF[0]
+18:41:30.000  
+18:41:31.062  [Audio] Set Trigger Point(0048->0000).
+18:41:33.031  D0 : Direction OFF[0].
+18:41:33.031  Train NO : Change Train No 0081 to 0080.
+18:41:33.031  
+18:41:55.734  Coupling ID : 1.
+18:41:55.734  
+18:41:56.703  [Audio] Set Trigger Point(0000->0043).
+18:41:56.703  Station : Change Start station 0 to 529.
+18:41:56.703  Station : Change Next station 0 to 530.
+18:41:56.703  Station : Change Destination station 0 to 257.
+18:41:56.703  PA Vector : Change PAC Audio vector 0000 to 0043.
+18:41:56.703  PA Vector : Change EID Colr vector 0000 to 0001.
+18:41:56.703  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:41:56.703  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:41:56.703  
+18:41:57.671  [Audio] Set Trigger Point(0000->0043).
+18:41:57.671  [Audio] Play().
+18:41:57.890  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:41:57.921  [Audio] MCI Play : 0.
+18:41:57.921  D1 : Broadcast CNCS ON[1].
+18:41:57.921  D2 : CNCS Auction A ON[1]
+18:41:57.921  
+18:42:00.234  [Audio] Timer Stop[2246, 2246].
+18:42:00.234  [Audio] Stop().
+18:42:00.234  [Audio] MCI Stop : 0.
+18:42:00.734  Trip NO : Change Trigger ID 0000 to 2115.
+18:42:00.734  
+18:42:01.750  D1 : Broadcast CNCS OFF[0].
+18:42:01.750  D2 : CNCS Auction A OFF[0]
+18:42:01.750  
+18:42:21.484  [Audio] Set Trigger Point(0043->0046).
+18:42:21.484  Trip NO : Change Trigger ID 2115 to 2114.
+18:42:21.484  PA Vector : Change PAC Audio vector 0043 to 0046.
+18:42:21.484  PA Vector : Change PII vector 0000 to 0102.
+18:42:21.484  PA Vector : Change SP vector 0000 to 0102.
+18:42:21.484  
+18:42:22.437  [Audio] Set Trigger Point(0043->0046).
+18:42:22.437  [Audio] Play().
+18:42:22.593  [Audio] Open : D:\Woojin\AUDIO\WELCOME UNION STATION_FARE.WAV [Successed:0]
+18:42:22.625  [Audio] MCI Play : 0.
+18:42:22.625  D1 : Broadcast CNCS ON[1].
+18:42:22.625  D2 : CNCS Auction A ON[1]
+18:42:22.625  
+18:42:31.328  [Audio] Set Trigger Point(0046->0000).
+18:42:31.328  Trip NO : Change Trigger ID 2114 to 2127.
+18:42:31.328  Station : Change Now station 277 to 530.
+18:42:31.328  Station : Change Next station 530 to 513.
+18:42:31.328  PA Vector : Change PAC Audio vector 0046 to 0000.
+18:42:31.328  PA Vector : Change EID Colr vector 0001 to 0000.
+18:42:31.328  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:42:31.328  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:42:31.328  PA Vector : Change PII vector 0102 to 0000.
+18:42:31.328  PA Vector : Change SP vector 0102 to 0000.
+18:42:31.328  
+18:42:32.296  [Audio] Set Trigger Point(0046->0000).
+18:42:33.312  [Audio] Set Trigger Point(0046->0000).
+18:42:35.375  [Audio] Timer Stop[12756, 12756].
+18:42:35.375  [Audio] Stop().
+18:42:35.390  [Audio] MCI Stop : 0.
+18:42:37.421  [Audio] Set Trigger Point(0046->0000).
+18:42:37.421  Coupling ID : 0.
+18:42:37.421  D0 : A Cab ON[1].
+18:42:37.421  D0 : B Cab OFF[0].
+18:42:37.421  D2 : CNCS Auction A OFF[0]
+18:42:37.421  Trip NO : Change Trigger ID 2127 to 0000.
+18:42:37.421  Station : Change Start station 529 to 0.
+18:42:37.421  Station : Change Next station 513 to 0.
+18:42:37.421  Station : Change Destination station 257 to 0.
+18:42:37.421  
+18:42:38.375  [Audio] Set Trigger Point(0046->0000).
+18:42:38.375  D1 : Broadcast CNCS OFF[0].
+18:42:38.375  
+18:42:40.328  D0 : Direction ON[1].
+18:42:40.328  Train NO : Change Train No 0080 to 0081.
+18:42:40.328  
+18:42:52.171  Coupling ID : 1.
+18:42:52.171  
+18:42:53.203  [Audio] Set Trigger Point(0000->0044).
+18:42:53.203  Station : Change Start station 0 to 257.
+18:42:53.203  Station : Change Now station 530 to 513.
+18:42:53.203  Station : Change Next station 0 to 277.
+18:42:53.203  Station : Change Destination station 0 to 529.
+18:42:53.203  PA Vector : Change PAC Audio vector 0000 to 0044.
+18:42:53.203  PA Vector : Change EID Colr vector 0000 to 0001.
+18:42:53.203  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:42:53.203  PA Vector : Change EDI Display2 vector 0000 to 0113.
+18:42:53.203  
+18:42:54.281  [Audio] Set Trigger Point(0000->0044).
+18:42:54.281  [Audio] Play().
+18:42:54.437  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO WM STATION.WAV [Successed:0]
+18:42:54.468  [Audio] MCI Play : 0.
+18:42:54.468  D1 : Broadcast CNCS ON[1].
+18:42:54.468  D2 : CNCS Auction A ON[1]
+18:42:54.468  
+18:42:57.062  [Audio] Timer Stop[2597, 2597].
+18:42:57.062  [Audio] Stop().
+18:42:57.093  [Audio] MCI Stop : 0.
+18:42:58.203  D1 : Broadcast CNCS OFF[0].
+18:42:58.203  D2 : CNCS Auction A OFF[0]
+18:42:58.203  Trip NO : Change Trigger ID 0000 to 2015.
+18:42:58.203  
+18:43:11.015  Trip NO : Change Trigger ID 2015 to 0000.
+18:43:11.015  
+18:43:30.906  Trip NO : Change Trigger ID 0000 to 2015.
+18:43:30.906  
+18:43:40.828  Trip NO : Change Trigger ID 2015 to 0000.
+18:43:40.828  
+18:43:54.781  Trip NO : Change Trigger ID 0000 to 2015.
+18:43:54.781  
+18:44:00.640  [Audio] Set Trigger Point(0044->0000).
+18:44:00.640  Trip NO : Change Trigger ID 2015 to 0000.
+18:44:00.640  Station : Change Now station 513 to 0.
+18:44:00.640  Station : Change Next station 277 to 0.
+18:44:00.640  PA Vector : Change PAC Audio vector 0044 to 0000.
+18:44:00.640  PA Vector : Change EID Colr vector 0001 to 0000.
+18:44:00.640  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:44:00.640  PA Vector : Change EDI Display2 vector 0113 to 0000.
+18:44:00.640  
+18:44:18.484  [Audio] Set Trigger Point(0000->0044).
+18:44:18.484  Station : Change Now station 0 to 513.
+18:44:18.484  Station : Change Next station 0 to 277.
+18:44:18.484  PA Vector : Change PAC Audio vector 0000 to 0044.
+18:44:18.484  PA Vector : Change EID Colr vector 0000 to 0001.
+18:44:18.484  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:44:18.484  PA Vector : Change EDI Display2 vector 0000 to 0113.
+18:44:18.484  
+18:44:19.453  [Audio] Set Trigger Point(0000->0044).
+18:44:19.453  [Audio] Play().
+18:44:19.609  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO WM STATION.WAV [Successed:0]
+18:44:19.640  [Audio] MCI Play : 0.
+18:44:19.640  D1 : Broadcast CNCS ON[1].
+18:44:19.640  D2 : CNCS Auction A ON[1]
+18:44:19.640  
+18:44:22.250  [Audio] Timer Stop[2597, 2597].
+18:44:22.250  [Audio] Stop().
+18:44:22.250  [Audio] MCI Stop : 0.
+18:44:23.515  D1 : Broadcast CNCS OFF[0].
+18:44:23.515  D2 : CNCS Auction A OFF[0]
+18:44:23.515  Trip NO : Change Trigger ID 0000 to 2015.
+18:44:23.515  
+18:44:43.390  [Audio] Set Trigger Point(0044->0047).
+18:44:43.390  Trip NO : Change Trigger ID 2015 to 2016.
+18:44:43.390  PA Vector : Change PAC Audio vector 0044 to 0047.
+18:44:43.390  PA Vector : Change PII vector 0000 to 0110.
+18:44:43.390  PA Vector : Change SP vector 0000 to 0140.
+18:44:43.390  
+18:44:44.421  [Audio] Set Trigger Point(0044->0047).
+18:44:44.421  [Audio] Play().
+18:44:44.578  [Audio] Open : D:\Woojin\AUDIO\WELCOME WM STATION_FARE.WAV [Successed:0]
+18:44:44.609  [Audio] MCI Play : 0.
+18:44:44.609  D1 : Broadcast CNCS ON[1].
+18:44:44.609  D2 : CNCS Auction A ON[1]
+18:44:44.609  
+18:44:53.375  [Audio] Set Trigger Point(0047->0048).
+18:44:53.375  Trip NO : Change Trigger ID 2016 to 1153.
+18:44:53.375  Station : Change Now station 513 to 277.
+18:44:53.375  Station : Change Next station 277 to 0.
+18:44:53.375  PA Vector : Change PAC Audio vector 0047 to 0048.
+18:44:53.375  PA Vector : Change PII vector 0110 to 0109.
+18:44:53.375  PA Vector : Change SP vector 0140 to 0139.
+18:44:53.375  
+18:44:54.375  [Audio] Set Trigger Point(0047->0048).
+18:44:55.343  [Audio] Set Trigger Point(0047->0048).
+18:44:56.343  [Audio] Set Trigger Point(0047->0048).
+18:44:57.296  [Audio] Set Trigger Point(0047->0048).
+18:44:57.671  [Audio] Timer Stop[12980, 12980].
+18:44:57.671  [Audio] Stop().
+18:44:57.671  [Audio] MCI Stop : 0.
+18:44:58.250  [Audio] Set Trigger Point(0047->0048).
+18:44:59.218  [Audio] Set Trigger Point(0047->0048).
+18:44:59.218  D1 : Broadcast CNCS OFF[0].
+18:44:59.218  D2 : CNCS Auction A OFF[0]
+18:44:59.218  
+18:45:00.187  [Audio] Set Trigger Point(0047->0048).
+18:45:01.156  [Audio] Set Trigger Point(0047->0048).
+18:45:01.156  [Audio] Play().
+18:45:01.312  [Audio] Open : D:\Woojin\AUDIO\WM ARRIVAL MESSAGE.WAV [Successed:0]
+18:45:01.343  [Audio] MCI Play : 0.
+18:45:01.343  D1 : Broadcast CNCS ON[1].
+18:45:01.343  D2 : CNCS Auction A ON[1]
+18:45:01.343  
+18:45:03.265  [Audio] Set Trigger Point(0048->0000).
+18:45:03.265  Trip NO : Change Trigger ID 1153 to 1155.
+18:45:03.265  PA Vector : Change PAC Audio vector 0048 to 0000.
+18:45:03.265  PA Vector : Change PII vector 0109 to 0000.
+18:45:03.265  PA Vector : Change SP vector 0139 to 0000.
+18:45:03.265  
+18:45:04.265  [Audio] Set Trigger Point(0048->0000).
+18:45:05.234  [Audio] Set Trigger Point(0048->0000).
+18:45:06.250  [Audio] Set Trigger Point(0048->0000).
+18:45:07.218  [Audio] Set Trigger Point(0048->0000).
+18:45:12.062  [Audio] Set Trigger Point(0048->0000).
+18:45:12.062  Coupling ID : 0.
+18:45:12.062  D0 : A Cab OFF[0].
+18:45:12.062  D0 : B Cab ON[1].
+18:45:12.062  Trip NO : Change Trigger ID 1155 to 0000.
+18:45:12.062  Station : Change Start station 257 to 0.
+18:45:12.062  Station : Change Destination station 529 to 0.
+18:45:12.062  PA Vector : Change EID Colr vector 0001 to 0000.
+18:45:12.062  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:45:12.062  PA Vector : Change EDI Display2 vector 0113 to 0000.
+18:45:12.062  
+18:45:13.015  [Audio] Set Trigger Point(0048->0000).
+18:45:13.968  [Audio] Set Trigger Point(0048->0000).
+18:45:14.406  [Audio] Timer Stop[13022, 13022].
+18:45:14.406  [Audio] Stop().
+18:45:14.421  [Audio] MCI Stop : 0.
+18:45:14.937  [Audio] Set Trigger Point(0048->0000).
+18:45:15.906  [Audio] Set Trigger Point(0048->0000).
+18:45:15.906  D0 : Direction OFF[0].
+18:45:15.906  D1 : Broadcast CNCS OFF[0].
+18:45:15.906  D2 : CNCS Auction A OFF[0]
+18:45:15.906  Train NO : Change Train No 0081 to 0080.
+18:45:15.906  
+18:45:16.921  [Audio] Set Trigger Point(0048->0000).
+18:45:25.765  Coupling ID : 1.
+18:45:25.765  
+18:45:26.796  [Audio] Set Trigger Point(0000->0043).
+18:45:26.796  Station : Change Start station 0 to 529.
+18:45:26.796  Station : Change Next station 0 to 530.
+18:45:26.796  Station : Change Destination station 0 to 257.
+18:45:26.796  PA Vector : Change PAC Audio vector 0000 to 0043.
+18:45:26.796  PA Vector : Change EID Colr vector 0000 to 0001.
+18:45:26.796  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:45:26.796  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:45:26.796  
+18:45:27.859  [Audio] Set Trigger Point(0000->0043).
+18:45:27.859  [Audio] Play().
+18:45:28.031  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:45:28.062  [Audio] MCI Play : 0.
+18:45:28.062  D1 : Broadcast CNCS ON[1].
+18:45:28.062  D2 : CNCS Auction A ON[1]
+18:45:28.062  
+18:45:30.359  [Audio] Timer Stop[2246, 2246].
+18:45:30.359  [Audio] Stop().
+18:45:30.375  [Audio] MCI Stop : 0.
+18:45:31.781  D1 : Broadcast CNCS OFF[0].
+18:45:31.781  D2 : CNCS Auction A OFF[0]
+18:45:31.781  
+18:45:37.734  Trip NO : Change Trigger ID 0000 to 2115.
+18:45:37.734  
+18:45:57.562  [Audio] Set Trigger Point(0043->0046).
+18:45:57.562  Trip NO : Change Trigger ID 2115 to 2114.
+18:45:57.562  PA Vector : Change PAC Audio vector 0043 to 0046.
+18:45:57.562  PA Vector : Change PII vector 0000 to 0102.
+18:45:57.562  PA Vector : Change SP vector 0000 to 0102.
+18:45:57.562  
+18:45:58.578  [Audio] Set Trigger Point(0043->0046).
+18:45:58.578  [Audio] Play().
+18:45:58.734  [Audio] Open : D:\Woojin\AUDIO\WELCOME UNION STATION_FARE.WAV [Successed:0]
+18:45:58.765  [Audio] MCI Play : 0.
+18:45:58.765  D1 : Broadcast CNCS ON[1].
+18:45:58.765  D2 : CNCS Auction A ON[1]
+18:45:58.765  
+18:46:07.437  [Audio] Set Trigger Point(0046->0000).
+18:46:07.437  Trip NO : Change Trigger ID 2114 to 2127.
+18:46:07.437  Station : Change Now station 277 to 530.
+18:46:07.437  Station : Change Next station 530 to 513.
+18:46:07.437  PA Vector : Change PAC Audio vector 0046 to 0000.
+18:46:07.437  PA Vector : Change EID Colr vector 0001 to 0000.
+18:46:07.437  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:46:07.437  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:46:07.437  PA Vector : Change PII vector 0102 to 0000.
+18:46:07.437  PA Vector : Change SP vector 0102 to 0000.
+18:46:07.437  
+18:46:08.453  [Audio] Set Trigger Point(0046->0000).
+18:46:09.406  [Audio] Set Trigger Point(0046->0000).
+18:46:10.406  [Audio] Set Trigger Point(0046->0000).
+18:46:11.359  [Audio] Set Trigger Point(0046->0000).
+18:46:11.531  [Audio] Timer Stop[12756, 12756].
+18:46:11.531  [Audio] Stop().
+18:46:11.546  [Audio] MCI Stop : 0.
+18:46:12.312  [Audio] Set Trigger Point(0046->0000).
+18:46:12.312  D1 : Broadcast CNCS OFF[0].
+18:46:12.312  D2 : CNCS Auction A OFF[0]
+18:46:12.312  
+18:46:13.265  [Audio] Set Trigger Point(0046->0000).
+18:46:17.296  [Audio] Set Trigger Point(0000->0043).
+18:46:17.296  Trip NO : Change Trigger ID 2127 to 2125.
+18:46:17.296  PA Vector : Change PAC Audio vector 0000 to 0043.
+18:46:17.296  PA Vector : Change EID Colr vector 0000 to 0001.
+18:46:17.296  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:46:17.296  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:46:17.296  
+18:46:18.296  [Audio] Set Trigger Point(0000->0043).
+18:46:18.296  [Audio] Play().
+18:46:18.453  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:46:18.468  [Audio] MCI Play : 0.
+18:46:18.468  D1 : Broadcast CNCS ON[1].
+18:46:18.484  D2 : CNCS Auction A ON[1]
+18:46:18.484  
+18:46:20.781  [Audio] Timer Stop[2246, 2246].
+18:46:20.781  [Audio] Stop().
+18:46:20.796  [Audio] MCI Stop : 0.
+18:46:22.171  D1 : Broadcast CNCS OFF[0].
+18:46:22.171  D2 : CNCS Auction A OFF[0]
+18:46:22.171  
+18:46:28.156  [Audio] Set Trigger Point(0043->0046).
+18:46:28.156  Trip NO : Change Trigger ID 2125 to 2124.
+18:46:28.156  PA Vector : Change PAC Audio vector 0043 to 0046.
+18:46:28.156  PA Vector : Change PII vector 0000 to 0102.
+18:46:28.156  PA Vector : Change SP vector 0000 to 0102.
+18:46:28.156  
+18:46:29.140  [Audio] Set Trigger Point(0043->0046).
+18:46:29.140  [Audio] Play().
+18:46:29.312  [Audio] Open : D:\Woojin\AUDIO\WELCOME UNION STATION_FARE.WAV [Successed:0]
+18:46:29.328  [Audio] MCI Play : 0.
+18:46:29.328  D1 : Broadcast CNCS ON[1].
+18:46:29.328  D2 : CNCS Auction A ON[1]
+18:46:29.328  
+18:46:37.359  [Audio] Set Trigger Point(0046->0000).
+18:46:37.359  Coupling ID : 0.
+18:46:37.359  D0 : A Cab ON[1].
+18:46:37.359  D0 : B Cab OFF[0].
+18:46:37.359  Trip NO : Change Trigger ID 2124 to 0000.
+18:46:37.359  Station : Change Start station 529 to 0.
+18:46:37.359  Station : Change Next station 513 to 0.
+18:46:37.359  Station : Change Destination station 257 to 0.
+18:46:37.359  PA Vector : Change PAC Audio vector 0046 to 0000.
+18:46:37.359  PA Vector : Change EID Colr vector 0001 to 0000.
+18:46:37.359  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:46:37.359  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:46:37.359  PA Vector : Change PII vector 0102 to 0000.
+18:46:37.359  PA Vector : Change SP vector 0102 to 0000.
+18:46:37.359  
+18:46:38.328  [Audio] Set Trigger Point(0046->0000).
+18:46:39.296  [Audio] Set Trigger Point(0046->0000).
+18:46:40.281  [Audio] Set Trigger Point(0046->0000).
+18:46:41.312  [Audio] Set Trigger Point(0046->0000).
+18:46:41.312  D0 : Direction ON[1].
+18:46:41.312  Train NO : Change Train No 0080 to 0081.
+18:46:41.312  
+18:46:42.093  [Audio] Timer Stop[12756, 12756].
+18:46:42.093  [Audio] Stop().
+18:46:42.109  [Audio] MCI Stop : 0.
+18:46:42.406  [Audio] Set Trigger Point(0046->0000).
+18:46:43.406  [Audio] Set Trigger Point(0046->0000).
+18:46:43.406  D1 : Broadcast CNCS OFF[0].
+18:46:43.406  D2 : CNCS Auction A OFF[0]
+18:46:43.406  
+18:46:44.343  [Audio] Set Trigger Point(0046->0000).
+18:46:51.187  Coupling ID : 1.
+18:46:51.187  
+18:46:52.281  [Audio] Set Trigger Point(0000->0044).
+18:46:52.281  Station : Change Start station 0 to 257.
+18:46:52.281  Station : Change Now station 530 to 513.
+18:46:52.281  Station : Change Next station 0 to 277.
+18:46:52.281  Station : Change Destination station 0 to 529.
+18:46:52.281  PA Vector : Change PAC Audio vector 0000 to 0044.
+18:46:52.281  PA Vector : Change EID Colr vector 0000 to 0001.
+18:46:52.281  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:46:52.281  PA Vector : Change EDI Display2 vector 0000 to 0113.
+18:46:52.281  
+18:46:53.265  [Audio] Set Trigger Point(0000->0044).
+18:46:53.265  [Audio] Play().
+18:46:53.421  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO WM STATION.WAV [Successed:0]
+18:46:53.453  [Audio] MCI Play : 0.
+18:46:53.453  D1 : Broadcast CNCS ON[1].
+18:46:53.453  D2 : CNCS Auction A ON[1]
+18:46:53.453  
+18:46:56.046  [Audio] Timer Stop[2597, 2597].
+18:46:56.046  [Audio] Stop().
+18:46:56.062  [Audio] MCI Stop : 0.
+18:46:57.140  D1 : Broadcast CNCS OFF[0].
+18:46:57.140  D2 : CNCS Auction A OFF[0]
+18:46:57.140  Trip NO : Change Trigger ID 0000 to 2015.
+18:46:57.140  
+18:47:17.000  [Audio] Set Trigger Point(0044->0047).
+18:47:17.000  Trip NO : Change Trigger ID 2015 to 2016.
+18:47:17.000  PA Vector : Change PAC Audio vector 0044 to 0047.
+18:47:17.000  PA Vector : Change PII vector 0000 to 0110.
+18:47:17.000  PA Vector : Change SP vector 0000 to 0140.
+18:47:17.000  
+18:47:17.953  [Audio] Set Trigger Point(0044->0047).
+18:47:17.953  [Audio] Play().
+18:47:18.140  [Audio] Open : D:\Woojin\AUDIO\WELCOME WM STATION_FARE.WAV [Successed:0]
+18:47:18.171  [Audio] MCI Play : 0.
+18:47:18.187  D1 : Broadcast CNCS ON[1].
+18:47:18.187  D2 : CNCS Auction A ON[1]
+18:47:18.187  
+18:47:26.906  [Audio] Set Trigger Point(0047->0048).
+18:47:26.906  Trip NO : Change Trigger ID 2016 to 1153.
+18:47:26.906  Station : Change Now station 513 to 277.
+18:47:26.906  Station : Change Next station 277 to 0.
+18:47:26.906  PA Vector : Change PAC Audio vector 0047 to 0048.
+18:47:26.906  PA Vector : Change PII vector 0110 to 0109.
+18:47:26.906  PA Vector : Change SP vector 0140 to 0139.
+18:47:26.906  
+18:47:27.875  [Audio] Set Trigger Point(0047->0048).
+18:47:28.859  [Audio] Set Trigger Point(0047->0048).
+18:47:29.843  [Audio] Set Trigger Point(0047->0048).
+18:47:30.875  [Audio] Set Trigger Point(0047->0048).
+18:47:31.234  [Audio] Timer Stop[12980, 12980].
+18:47:31.234  [Audio] Stop().
+18:47:31.234  [Audio] MCI Stop : 0.
+18:47:31.937  [Audio] Set Trigger Point(0047->0048).
+18:47:32.937  [Audio] Set Trigger Point(0047->0048).
+18:47:32.937  D1 : Broadcast CNCS OFF[0].
+18:47:32.937  D2 : CNCS Auction A OFF[0]
+18:47:32.937  
+18:47:33.875  [Audio] Set Trigger Point(0047->0048).
+18:47:34.875  [Audio] Set Trigger Point(0047->0048).
+18:47:34.875  [Audio] Play().
+18:47:35.031  [Audio] Open : D:\Woojin\AUDIO\WM ARRIVAL MESSAGE.WAV [Successed:0]
+18:47:35.062  [Audio] MCI Play : 0.
+18:47:35.062  D1 : Broadcast CNCS ON[1].
+18:47:35.062  D2 : CNCS Auction A ON[1]
+18:47:35.062  
+18:47:36.812  [Audio] Set Trigger Point(0048->0000).
+18:47:36.812  Trip NO : Change Trigger ID 1153 to 1155.
+18:47:36.812  PA Vector : Change PAC Audio vector 0048 to 0000.
+18:47:36.812  PA Vector : Change PII vector 0109 to 0000.
+18:47:36.812  PA Vector : Change SP vector 0139 to 0000.
+18:47:36.812  
+18:47:37.781  [Audio] Set Trigger Point(0048->0000).
+18:47:38.750  [Audio] Set Trigger Point(0048->0000).
+18:47:39.734  [Audio] Set Trigger Point(0048->0000).
+18:47:40.734  [Audio] Set Trigger Point(0048->0000).
+18:47:41.812  [Audio] Set Trigger Point(0048->0000).
+18:47:42.828  [Audio] Set Trigger Point(0048->0000).
+18:47:43.812  [Audio] Set Trigger Point(0048->0000).
+18:47:44.812  [Audio] Set Trigger Point(0048->0000).
+18:47:45.765  [Audio] Set Trigger Point(0048->0000).
+18:47:46.734  [Audio] Set Trigger Point(0048->0044).
+18:47:46.734  Trip NO : Change Trigger ID 1155 to 2015.
+18:47:46.734  Station : Change Now station 277 to 513.
+18:47:46.734  Station : Change Next station 0 to 277.
+18:47:46.734  PA Vector : Change PAC Audio vector 0000 to 0044.
+18:47:46.734  
+18:47:47.687  [Audio] Set Trigger Point(0048->0044).
+18:47:48.140  [Audio] Timer Stop[13022, 13022].
+18:47:48.140  [Audio] Stop().
+18:47:48.140  [Audio] MCI Stop : 0.
+18:47:48.656  [Audio] Set Trigger Point(0048->0044).
+18:47:49.656  [Audio] Set Trigger Point(0048->0044).
+18:47:49.656  D1 : Broadcast CNCS OFF[0].
+18:47:49.656  D2 : CNCS Auction A OFF[0]
+18:47:49.656  
+18:47:50.671  [Audio] Set Trigger Point(0048->0044).
+18:47:51.750  [Audio] Set Trigger Point(0048->0044).
+18:47:51.750  [Audio] Play().
+18:47:51.906  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO WM STATION.WAV [Successed:0]
+18:47:51.937  [Audio] MCI Play : 0.
+18:47:51.937  D1 : Broadcast CNCS ON[1].
+18:47:51.937  D2 : CNCS Auction A ON[1]
+18:47:51.937  
+18:47:54.546  [Audio] Timer Stop[2597, 2597].
+18:47:54.546  [Audio] Stop().
+18:47:54.546  [Audio] MCI Stop : 0.
+18:47:55.703  D1 : Broadcast CNCS OFF[0].
+18:47:55.703  D2 : CNCS Auction A OFF[0]
+18:47:55.703  
+18:48:01.750  [Audio] Set Trigger Point(0044->0000).
+18:48:01.750  Coupling ID : 0.
+18:48:01.750  D0 : A Cab OFF[0].
+18:48:01.750  D0 : B Cab ON[1].
+18:48:01.750  Trip NO : Change Trigger ID 2015 to 0000.
+18:48:01.750  Station : Change Start station 257 to 0.
+18:48:01.750  Station : Change Next station 277 to 0.
+18:48:01.750  Station : Change Destination station 529 to 0.
+18:48:01.750  PA Vector : Change PAC Audio vector 0044 to 0000.
+18:48:01.750  PA Vector : Change EID Colr vector 0001 to 0000.
+18:48:01.750  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:48:01.750  PA Vector : Change EDI Display2 vector 0113 to 0000.
+18:48:01.750  
+18:48:05.828  D0 : Direction OFF[0].
+18:48:05.828  Train NO : Change Train No 0081 to 0080.
+18:48:05.828  
+18:48:15.687  Coupling ID : 1.
+18:48:15.687  
+18:48:16.671  [Audio] Set Trigger Point(0000->0043).
+18:48:16.671  Station : Change Start station 0 to 529.
+18:48:16.671  Station : Change Next station 0 to 530.
+18:48:16.671  Station : Change Destination station 0 to 257.
+18:48:16.671  PA Vector : Change PAC Audio vector 0000 to 0043.
+18:48:16.671  PA Vector : Change EID Colr vector 0000 to 0001.
+18:48:16.671  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:48:16.671  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:48:16.671  
+18:48:17.687  [Audio] Set Trigger Point(0000->0043).
+18:48:17.687  [Audio] Play().
+18:48:17.843  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:48:17.875  [Audio] MCI Play : 0.
+18:48:17.875  D1 : Broadcast CNCS ON[1].
+18:48:17.875  D2 : CNCS Auction A ON[1]
+18:48:17.875  
+18:48:20.171  [Audio] Timer Stop[2246, 2246].
+18:48:20.171  [Audio] Stop().
+18:48:20.187  [Audio] MCI Stop : 0.
+18:48:21.515  D1 : Broadcast CNCS OFF[0].
+18:48:21.515  D2 : CNCS Auction A OFF[0]
+18:48:21.515  
+18:48:52.109  [Audio] Set Trigger Point(0043->0022).
+18:48:52.109  Train NO : Change Train No 0080 to 0010.
+18:48:52.109  Station : Change Start station 529 to 276.
+18:48:52.109  Station : Change Next station 530 to 278.
+18:48:52.109  PA Vector : Change PAC Audio vector 0043 to 0022.
+18:48:52.109  PA Vector : Change EDI Display1 vector 0115 to 0102.
+18:48:52.109  PA Vector : Change PP Line vector 0000 to 0001.
+18:48:52.109  
+18:48:53.140  [Audio] Set Trigger Point(0043->0022).
+18:48:53.140  [Audio] Play().
+18:48:53.328  [Audio] Open : D:\Woojin\AUDIO\022.WAV [Successed:0]
+18:48:53.343  [Audio] MCI Play : 0.
+18:48:53.343  D1 : Broadcast CNCS ON[1].
+18:48:53.343  D2 : CNCS Auction A ON[1]
+18:48:53.343  
+18:49:00.078  [Audio] Timer Stop[6646, 6646].
+18:49:00.078  [Audio] Stop().
+18:49:00.093  [Audio] MCI Stop : 0.
+18:49:01.031  D1 : Broadcast CNCS OFF[0].
+18:49:01.031  D2 : CNCS Auction A OFF[0]
+18:49:01.031  
+18:49:02.000  D0 : Forward ON[1].
+18:49:02.000  
+18:49:03.031  D0 : Forward OFF[0].
+18:49:03.031  
+18:49:35.203  [Audio] Set Trigger Point(0022->0000).
+18:49:35.203  Coupling ID : 0.
+18:49:35.203  D0 : A Cab ON[1].
+18:49:35.203  D0 : B Cab OFF[0].
+18:49:35.203  Train NO : Change Train No 0010 to 0080.
+18:49:35.203  Station : Change Start station 276 to 0.
+18:49:35.203  Station : Change Next station 278 to 0.
+18:49:35.203  Station : Change Destination station 257 to 0.
+18:49:35.203  PA Vector : Change PAC Audio vector 0022 to 0000.
+18:49:35.203  PA Vector : Change EID Colr vector 0001 to 0000.
+18:49:35.203  PA Vector : Change EDI Display1 vector 0102 to 0000.
+18:49:35.203  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:49:35.203  PA Vector : Change PP Line vector 0001 to 0000.
+18:49:35.203  
+18:49:39.250  D0 : Direction ON[1].
+18:49:39.250  Train NO : Change Train No 0080 to 0081.
+18:49:39.250  
+18:49:49.218  Coupling ID : 1.
+18:49:49.218  
+18:49:50.234  [Audio] Set Trigger Point(0000->0044).
+18:49:50.234  Station : Change Start station 0 to 257.
+18:49:50.234  Station : Change Now station 513 to 513.
+18:49:50.234  Station : Change Next station 0 to 277.
+18:49:50.234  Station : Change Destination station 0 to 529.
+18:49:50.234  PA Vector : Change PAC Audio vector 0000 to 0044.
+18:49:50.234  PA Vector : Change EID Colr vector 0000 to 0001.
+18:49:50.234  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:49:50.234  PA Vector : Change EDI Display2 vector 0000 to 0113.
+18:49:50.234  
+18:49:51.203  [Audio] Set Trigger Point(0000->0044).
+18:49:51.203  [Audio] Play().
+18:49:51.390  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO WM STATION.WAV [Successed:0]
+18:49:51.406  [Audio] MCI Play : 0.
+18:49:51.406  D1 : Broadcast CNCS ON[1].
+18:49:51.406  D2 : CNCS Auction A ON[1]
+18:49:51.406  
+18:49:54.015  [Audio] Timer Stop[2597, 2597].
+18:49:54.015  [Audio] Stop().
+18:49:54.031  [Audio] MCI Stop : 0.
+18:49:55.093  D1 : Broadcast CNCS OFF[0].
+18:49:55.093  D2 : CNCS Auction A OFF[0]
+18:49:55.093  
+18:50:02.078  [Audio] Set Trigger Point(0044->0001).
+18:50:02.078  Train NO : Change Train No 0081 to 0011.
+18:50:02.078  Station : Change Next station 277 to 265.
+18:50:02.078  Station : Change Destination station 529 to 276.
+18:50:02.078  PA Vector : Change PAC Audio vector 0044 to 0001.
+18:50:02.078  PA Vector : Change EDI Display1 vector 0115 to 0104.
+18:50:02.078  PA Vector : Change EDI Display2 vector 0113 to 0103.
+18:50:02.078  PA Vector : Change PP Line vector 0000 to 0001.
+18:50:02.078  
+18:50:03.031  [Audio] Set Trigger Point(0044->0001).
+18:50:03.031  [Audio] Play().
+18:50:03.187  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:50:03.218  [Audio] MCI Play : 0.
+18:50:03.218  D1 : Broadcast CNCS ON[1].
+18:50:03.218  D2 : CNCS Auction A ON[1]
+18:50:03.218  
+18:50:06.890  Trip NO : Change Trigger ID 0000 to 1015.
+18:50:06.890  
+18:50:10.453  [Audio] Timer Stop[7131, 7131].
+18:50:10.453  [Audio] Stop().
+18:50:10.453  [Audio] MCI Stop : 0.
+18:50:11.968  D1 : Broadcast CNCS OFF[0].
+18:50:11.968  D2 : CNCS Auction A OFF[0]
+18:50:11.968  
+18:50:25.875  [Audio] Set Trigger Point(0001->0000).
+18:50:25.875  Coupling ID : 0.
+18:50:25.875  D0 : A Cab OFF[0].
+18:50:25.875  D0 : B Cab ON[1].
+18:50:25.875  Train NO : Change Train No 0011 to 0081.
+18:50:25.875  Trip NO : Change Trigger ID 1015 to 0000.
+18:50:25.875  Station : Change Start station 257 to 0.
+18:50:25.875  Station : Change Next station 265 to 0.
+18:50:25.875  Station : Change Destination station 276 to 0.
+18:50:25.875  PA Vector : Change PAC Audio vector 0001 to 0000.
+18:50:25.875  PA Vector : Change EID Colr vector 0001 to 0000.
+18:50:25.875  PA Vector : Change EDI Display1 vector 0104 to 0000.
+18:50:25.875  PA Vector : Change EDI Display2 vector 0103 to 0000.
+18:50:25.875  PA Vector : Change PP Line vector 0001 to 0000.
+18:50:25.875  
+18:50:29.953  D0 : Direction OFF[0].
+18:50:29.953  Train NO : Change Train No 0081 to 0080.
+18:50:29.953  
+18:50:40.828  Coupling ID : 1.
+18:50:40.828  
+18:50:41.781  [Audio] Set Trigger Point(0000->0043).
+18:50:41.781  Station : Change Start station 0 to 529.
+18:50:41.781  Station : Change Next station 0 to 530.
+18:50:41.781  Station : Change Destination station 0 to 257.
+18:50:41.781  PA Vector : Change PAC Audio vector 0000 to 0043.
+18:50:41.781  PA Vector : Change EID Colr vector 0000 to 0001.
+18:50:41.781  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:50:41.781  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:50:41.781  
+18:50:42.750  [Audio] Set Trigger Point(0000->0043).
+18:50:42.750  [Audio] Play().
+18:50:42.906  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:50:42.937  [Audio] MCI Play : 0.
+18:50:42.937  D1 : Broadcast CNCS ON[1].
+18:50:42.937  D2 : CNCS Auction A ON[1]
+18:50:42.937  
+18:50:45.234  [Audio] Timer Stop[2246, 2246].
+18:50:45.234  [Audio] Stop().
+18:50:45.250  [Audio] MCI Stop : 0.
+18:50:46.671  D1 : Broadcast CNCS OFF[0].
+18:50:46.671  D2 : CNCS Auction A OFF[0]
+18:50:46.671  
+18:51:29.781  [Audio] Set Trigger Point(0043->0000).
+18:51:29.781  Coupling ID : 0.
+18:51:29.781  D0 : A Cab ON[1].
+18:51:29.781  D0 : B Cab OFF[0].
+18:51:29.781  Station : Change Start station 529 to 0.
+18:51:29.781  Station : Change Next station 530 to 0.
+18:51:29.781  Station : Change Destination station 257 to 0.
+18:51:29.781  PA Vector : Change PAC Audio vector 0043 to 0000.
+18:51:29.781  PA Vector : Change EID Colr vector 0001 to 0000.
+18:51:29.781  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:51:29.781  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:51:29.781  
+18:51:33.656  D0 : Direction ON[1].
+18:51:33.656  Train NO : Change Train No 0080 to 0081.
+18:51:33.656  
+18:51:43.546  Coupling ID : 1.
+18:51:43.546  
+18:51:44.562  [Audio] Set Trigger Point(0000->0044).
+18:51:44.562  Station : Change Start station 0 to 257.
+18:51:44.562  Station : Change Now station 513 to 513.
+18:51:44.562  Station : Change Next station 0 to 277.
+18:51:44.562  Station : Change Destination station 0 to 529.
+18:51:44.562  PA Vector : Change PAC Audio vector 0000 to 0044.
+18:51:44.562  PA Vector : Change EID Colr vector 0000 to 0001.
+18:51:44.562  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:51:44.562  PA Vector : Change EDI Display2 vector 0000 to 0113.
+18:51:44.562  
+18:51:45.656  [Audio] Set Trigger Point(0000->0044).
+18:51:45.656  [Audio] Play().
+18:51:45.812  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO WM STATION.WAV [Successed:0]
+18:51:45.843  [Audio] MCI Play : 0.
+18:51:45.843  D1 : Broadcast CNCS ON[1].
+18:51:45.843  D2 : CNCS Auction A ON[1]
+18:51:45.843  
+18:51:48.437  [Audio] Timer Stop[2597, 2597].
+18:51:48.437  [Audio] Stop().
+18:51:48.453  [Audio] MCI Stop : 0.
+18:51:48.625  [Audio] Set Trigger Point(0044->0001).
+18:51:48.625  Train NO : Change Train No 0081 to 0011.
+18:51:48.625  Station : Change Next station 277 to 265.
+18:51:48.625  Station : Change Destination station 529 to 276.
+18:51:48.625  PA Vector : Change PAC Audio vector 0044 to 0001.
+18:51:48.625  PA Vector : Change EDI Display1 vector 0115 to 0104.
+18:51:48.625  PA Vector : Change EDI Display2 vector 0113 to 0103.
+18:51:48.625  PA Vector : Change PP Line vector 0000 to 0001.
+18:51:48.625  
+18:51:49.609  [Audio] Set Trigger Point(0044->0001).
+18:51:49.609  D1 : Broadcast CNCS OFF[0].
+18:51:49.609  D2 : CNCS Auction A OFF[0]
+18:51:49.609  
+18:51:50.562  [Audio] Set Trigger Point(0044->0001).
+18:51:51.531  [Audio] Set Trigger Point(0044->0001).
+18:51:51.531  [Audio] Play().
+18:51:51.687  [Audio] Open : D:\Woojin\AUDIO\001.WAV [Successed:0]
+18:51:51.718  [Audio] MCI Play : 0.
+18:51:51.718  D1 : Broadcast CNCS ON[1].
+18:51:51.718  D2 : CNCS Auction A ON[1]
+18:51:51.718  
+18:51:53.500  Trip NO : Change Trigger ID 0000 to 1015.
+18:51:53.500  
+18:51:58.953  [Audio] Timer Stop[7131, 7131].
+18:51:58.953  [Audio] Stop().
+18:51:58.953  [Audio] MCI Stop : 0.
+18:52:00.500  D1 : Broadcast CNCS OFF[0].
+18:52:00.500  D2 : CNCS Auction A OFF[0]
+18:52:00.500  
+18:52:13.375  [Audio] Set Trigger Point(0001->0002).
+18:52:13.375  Trip NO : Change Trigger ID 1015 to 1016.
+18:52:13.375  PA Vector : Change PAC Audio vector 0001 to 0002.
+18:52:13.375  PA Vector : Change PII vector 0000 to 0122.
+18:52:13.375  PA Vector : Change SP vector 0000 to 0122.
+18:52:13.375  
+18:52:14.406  [Audio] Set Trigger Point(0001->0002).
+18:52:14.406  [Audio] Play().
+18:52:14.562  [Audio] Open : D:\Woojin\AUDIO\002.WAV [Successed:0]
+18:52:14.593  [Audio] MCI Play : 0.
+18:52:14.593  D1 : Broadcast CNCS ON[1].
+18:52:14.593  D2 : CNCS Auction A ON[1]
+18:52:14.593  
+18:52:17.609  [Audio] Timer Stop[2959, 2959].
+18:52:17.609  [Audio] Stop().
+18:52:17.609  [Audio] MCI Stop : 0.
+18:52:19.312  [Audio] Set Trigger Point(0002->0000).
+18:52:19.312  Coupling ID : 0.
+18:52:19.312  D0 : A Cab OFF[0].
+18:52:19.312  D0 : B Cab ON[1].
+18:52:19.312  D1 : Broadcast CNCS OFF[0].
+18:52:19.312  D2 : CNCS Auction A OFF[0]
+18:52:19.312  Train NO : Change Train No 0011 to 0081.
+18:52:19.312  Trip NO : Change Trigger ID 1016 to 0000.
+18:52:19.312  Station : Change Start station 257 to 0.
+18:52:19.312  Station : Change Next station 265 to 0.
+18:52:19.312  Station : Change Destination station 276 to 0.
+18:52:19.312  PA Vector : Change PAC Audio vector 0002 to 0000.
+18:52:19.312  PA Vector : Change EID Colr vector 0001 to 0000.
+18:52:19.312  PA Vector : Change EDI Display1 vector 0104 to 0000.
+18:52:19.312  PA Vector : Change EDI Display2 vector 0103 to 0000.
+18:52:19.312  PA Vector : Change PII vector 0122 to 0000.
+18:52:19.312  PA Vector : Change PP Line vector 0001 to 0000.
+18:52:19.312  PA Vector : Change SP vector 0122 to 0000.
+18:52:19.312  
+18:52:20.375  [Audio] Set Trigger Point(0002->0000).
+18:52:23.328  D0 : Direction OFF[0].
+18:52:23.328  Train NO : Change Train No 0081 to 0080.
+18:52:23.328  
+18:52:33.156  Coupling ID : 1.
+18:52:33.156  
+18:52:34.125  [Audio] Set Trigger Point(0000->0043).
+18:52:34.125  Station : Change Start station 0 to 529.
+18:52:34.125  Station : Change Next station 0 to 530.
+18:52:34.125  Station : Change Destination station 0 to 257.
+18:52:34.125  PA Vector : Change PAC Audio vector 0000 to 0043.
+18:52:34.125  PA Vector : Change EID Colr vector 0000 to 0001.
+18:52:34.125  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:52:34.125  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:52:34.125  
+18:52:35.078  [Audio] Set Trigger Point(0000->0043).
+18:52:35.078  [Audio] Play().
+18:52:35.234  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:52:35.250  [Audio] MCI Play : 0.
+18:52:35.265  D1 : Broadcast CNCS ON[1].
+18:52:35.265  D2 : CNCS Auction A ON[1]
+18:52:35.265  
+18:52:37.562  [Audio] Timer Stop[2246, 2246].
+18:52:37.562  [Audio] Stop().
+18:52:37.562  [Audio] MCI Stop : 0.
+18:52:39.000  D1 : Broadcast CNCS OFF[0].
+18:52:39.000  D2 : CNCS Auction A OFF[0]
+18:52:39.000  
+18:52:52.968  [Audio] Set Trigger Point(0043->0064).
+18:52:52.968  Train NO : Change Train No 0080 to 0050.
+18:52:52.968  Station : Change Start station 529 to 263.
+18:52:52.968  Station : Change Now station 513 to 519.
+18:52:52.968  Station : Change Next station 530 to 518.
+18:52:52.968  PA Vector : Change PAC Audio vector 0043 to 0064.
+18:52:52.968  PA Vector : Change EDI Display1 vector 0115 to 0101.
+18:52:52.968  
+18:52:53.906  [Audio] Set Trigger Point(0043->0064).
+18:52:53.906  [Audio] Play().
+18:52:54.062  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO DUS.WAV [Successed:0]
+18:52:54.078  [Audio] MCI Play : 0.
+18:52:54.078  D1 : Broadcast CNCS ON[1].
+18:52:54.093  D2 : CNCS Auction A ON[1]
+18:52:54.093  
+18:52:56.484  [Audio] Timer Stop[2335, 2335].
+18:52:56.484  [Audio] Stop().
+18:52:56.500  [Audio] MCI Stop : 0.
+18:52:57.765  D1 : Broadcast CNCS OFF[0].
+18:52:57.765  D2 : CNCS Auction A OFF[0]
+18:52:57.765  
+18:53:38.984  [Audio] Set Trigger Point(0064->0000).
+18:53:38.984  Coupling ID : 0.
+18:53:38.984  D0 : A Cab ON[1].
+18:53:38.984  D0 : B Cab OFF[0].
+18:53:38.984  Station : Change Start station 263 to 0.
+18:53:38.984  Station : Change Next station 518 to 0.
+18:53:38.984  Station : Change Destination station 257 to 0.
+18:53:38.984  PA Vector : Change PAC Audio vector 0064 to 0000.
+18:53:38.984  PA Vector : Change EID Colr vector 0001 to 0000.
+18:53:38.984  PA Vector : Change EDI Display1 vector 0101 to 0000.
+18:53:38.984  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:53:38.984  
+18:53:42.921  D0 : Direction ON[1].
+18:53:42.921  Train NO : Change Train No 0050 to 0051.
+18:53:42.921  
+18:53:49.906  D0 : Forward ON[1].
+18:53:49.906  
+18:53:50.875  D0 : Forward OFF[0].
+18:53:50.875  
+18:53:52.843  Coupling ID : 1.
+18:53:52.843  
+18:53:53.812  [Audio] Set Trigger Point(0000->0065).
+18:53:53.812  Station : Change Start station 0 to 257.
+18:53:53.812  Station : Change Next station 0 to 258.
+18:53:53.812  Station : Change Destination station 0 to 263.
+18:53:53.812  PA Vector : Change PAC Audio vector 0000 to 0065.
+18:53:53.812  PA Vector : Change EID Colr vector 0000 to 0001.
+18:53:53.812  PA Vector : Change EDI Display1 vector 0000 to 0114.
+18:53:53.812  PA Vector : Change EDI Display2 vector 0000 to 0114.
+18:53:53.812  
+18:53:54.781  [Audio] Set Trigger Point(0000->0065).
+18:53:54.781  [Audio] Play().
+18:53:54.937  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO WARD.WAV [Successed:0]
+18:53:54.953  [Audio] MCI Play : 0.
+18:53:54.953  D1 : Broadcast CNCS ON[1].
+18:53:54.953  D2 : CNCS Auction A ON[1]
+18:53:54.953  
+18:53:58.265  [Audio] Timer Stop[3278, 3278].
+18:53:58.265  [Audio] Stop().
+18:53:58.281  [Audio] MCI Stop : 0.
+18:53:59.859  D1 : Broadcast CNCS OFF[0].
+18:53:59.859  D2 : CNCS Auction A OFF[0]
+18:53:59.859  
+18:54:08.906  [Audio] Set Trigger Point(0065->0000).
+18:54:08.906  Coupling ID : 0.
+18:54:08.906  D0 : A Cab OFF[0].
+18:54:08.906  D0 : B Cab ON[1].
+18:54:08.906  Station : Change Start station 257 to 0.
+18:54:08.906  Station : Change Next station 258 to 0.
+18:54:08.906  Station : Change Destination station 263 to 0.
+18:54:08.906  PA Vector : Change PAC Audio vector 0065 to 0000.
+18:54:08.906  PA Vector : Change EID Colr vector 0001 to 0000.
+18:54:08.906  PA Vector : Change EDI Display1 vector 0114 to 0000.
+18:54:08.906  PA Vector : Change EDI Display2 vector 0114 to 0000.
+18:54:08.906  
+18:54:12.953  D0 : Direction OFF[0].
+18:54:12.953  Train NO : Change Train No 0051 to 0050.
+18:54:12.953  
+18:54:22.875  Coupling ID : 1.
+18:54:22.875  
+18:54:23.859  [Audio] Set Trigger Point(0000->0064).
+18:54:23.859  Station : Change Start station 0 to 263.
+18:54:23.859  Station : Change Now station 519 to 519.
+18:54:23.859  Station : Change Next station 0 to 518.
+18:54:23.859  Station : Change Destination station 0 to 257.
+18:54:23.859  PA Vector : Change PAC Audio vector 0000 to 0064.
+18:54:23.859  PA Vector : Change EID Colr vector 0000 to 0001.
+18:54:23.859  PA Vector : Change EDI Display1 vector 0000 to 0101.
+18:54:23.859  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:54:23.859  
+18:54:24.843  [Audio] Set Trigger Point(0000->0064).
+18:54:24.843  [Audio] Play().
+18:54:25.000  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO DUS.WAV [Successed:0]
+18:54:25.031  [Audio] MCI Play : 0.
+18:54:25.031  D1 : Broadcast CNCS ON[1].
+18:54:25.031  D2 : CNCS Auction A ON[1]
+18:54:25.031  
+18:54:27.421  [Audio] Timer Stop[2335, 2335].
+18:54:27.421  [Audio] Stop().
+18:54:27.437  [Audio] MCI Stop : 0.
+18:54:28.734  D1 : Broadcast CNCS OFF[0].
+18:54:28.734  D2 : CNCS Auction A OFF[0]
+18:54:28.734  
+18:54:38.656  Coupling ID : 0.
+18:54:38.656  D0 : B Cab OFF[0].
+18:54:38.656  D0 : Reverse ON[1].
+18:54:38.656  
+18:54:42.500  [Audio] Set Trigger Point(0064->0000).
+18:54:42.500  D0 : A Cab ON[1].
+18:54:42.500  D0 : Reverse OFF[0].
+18:54:42.500  Station : Change Start station 263 to 0.
+18:54:42.500  Station : Change Next station 518 to 0.
+18:54:42.500  Station : Change Destination station 257 to 0.
+18:54:42.500  PA Vector : Change PAC Audio vector 0064 to 0000.
+18:54:42.500  PA Vector : Change EID Colr vector 0001 to 0000.
+18:54:42.500  PA Vector : Change EDI Display1 vector 0101 to 0000.
+18:54:42.500  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:54:42.500  
+18:54:47.578  D0 : Direction ON[1].
+18:54:47.578  Train NO : Change Train No 0050 to 0051.
+18:54:47.578  
+18:54:57.500  Coupling ID : 1.
+18:54:57.500  
+18:54:58.468  [Audio] Set Trigger Point(0000->0065).
+18:54:58.468  Station : Change Start station 0 to 257.
+18:54:58.468  Station : Change Next station 0 to 258.
+18:54:58.468  Station : Change Destination station 0 to 263.
+18:54:58.468  PA Vector : Change PAC Audio vector 0000 to 0065.
+18:54:58.468  PA Vector : Change EID Colr vector 0000 to 0001.
+18:54:58.468  PA Vector : Change EDI Display1 vector 0000 to 0114.
+18:54:58.468  PA Vector : Change EDI Display2 vector 0000 to 0114.
+18:54:58.468  
+18:54:59.453  [Audio] Set Trigger Point(0000->0065).
+18:54:59.453  [Audio] Play().
+18:54:59.640  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO WARD.WAV [Successed:0]
+18:54:59.671  [Audio] MCI Play : 0.
+18:54:59.671  D1 : Broadcast CNCS ON[1].
+18:54:59.671  D2 : CNCS Auction A ON[1]
+18:54:59.671  
+18:55:02.984  [Audio] Timer Stop[3278, 3278].
+18:55:02.984  [Audio] Stop().
+18:55:03.000  [Audio] MCI Stop : 0.
+18:55:04.265  D1 : Broadcast CNCS OFF[0].
+18:55:04.265  D2 : CNCS Auction A OFF[0]
+18:55:04.265  
+18:55:21.203  [Audio] Set Trigger Point(0065->0043).
+18:55:21.203  D0 : Direction OFF[0].
+18:55:21.203  Train NO : Change Train No 0051 to 0080.
+18:55:21.203  Station : Change Start station 257 to 529.
+18:55:21.203  Station : Change Next station 258 to 530.
+18:55:21.203  Station : Change Destination station 263 to 257.
+18:55:21.203  PA Vector : Change PAC Audio vector 0065 to 0043.
+18:55:21.203  PA Vector : Change EDI Display1 vector 0114 to 0115.
+18:55:21.203  PA Vector : Change EDI Display2 vector 0114 to 0101.
+18:55:21.203  
+18:55:22.171  [Audio] Set Trigger Point(0065->0043).
+18:55:22.171  [Audio] Play().
+18:55:22.328  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:55:22.343  [Audio] MCI Play : 0.
+18:55:22.359  D1 : Broadcast CNCS ON[1].
+18:55:22.359  D2 : CNCS Auction A ON[1]
+18:55:22.359  
+18:55:24.656  [Audio] Timer Stop[2246, 2246].
+18:55:24.656  [Audio] Stop().
+18:55:24.671  [Audio] MCI Stop : 0.
+18:55:26.203  D1 : Broadcast CNCS OFF[0].
+18:55:26.203  D2 : CNCS Auction A OFF[0]
+18:55:26.203  
+18:55:33.531  [Audio] Set Trigger Point(0043->0000).
+18:55:33.531  Coupling ID : 0.
+18:55:33.531  D0 : A Cab OFF[0].
+18:55:33.531  D0 : B Cab ON[1].
+18:55:33.531  D0 : Direction ON[1].
+18:55:33.531  Train NO : Change Train No 0080 to 0051.
+18:55:33.531  Station : Change Start station 529 to 0.
+18:55:33.531  Station : Change Next station 530 to 0.
+18:55:33.531  Station : Change Destination station 257 to 0.
+18:55:33.531  PA Vector : Change PAC Audio vector 0043 to 0000.
+18:55:33.531  PA Vector : Change EID Colr vector 0001 to 0000.
+18:55:33.531  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:55:33.531  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:55:33.531  
+18:55:34.500  D0 : Direction OFF[0].
+18:55:34.500  
+18:55:36.437  D0 : Direction ON[1].
+18:55:36.437  
+18:55:38.546  D0 : Direction OFF[0].
+18:55:38.546  Train NO : Change Train No 0051 to 0050.
+18:55:38.546  
+18:55:48.406  Coupling ID : 1.
+18:55:48.406  
+18:55:49.375  [Audio] Set Trigger Point(0000->0064).
+18:55:49.375  Station : Change Start station 0 to 263.
+18:55:49.375  Station : Change Now station 519 to 519.
+18:55:49.375  Station : Change Next station 0 to 518.
+18:55:49.375  Station : Change Destination station 0 to 257.
+18:55:49.375  PA Vector : Change PAC Audio vector 0000 to 0064.
+18:55:49.375  PA Vector : Change EID Colr vector 0000 to 0001.
+18:55:49.375  PA Vector : Change EDI Display1 vector 0000 to 0101.
+18:55:49.375  PA Vector : Change EDI Display2 vector 0000 to 0101.
+18:55:49.375  
+18:55:50.390  [Audio] Set Trigger Point(0000->0064).
+18:55:50.390  [Audio] Play().
+18:55:50.546  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO DUS.WAV [Successed:0]
+18:55:50.562  [Audio] MCI Play : 0.
+18:55:50.562  D1 : Broadcast CNCS ON[1].
+18:55:50.578  D2 : CNCS Auction A ON[1]
+18:55:50.578  
+18:55:52.968  [Audio] Timer Stop[2335, 2335].
+18:55:52.968  [Audio] Stop().
+18:55:52.984  [Audio] MCI Stop : 0.
+18:55:54.250  D1 : Broadcast CNCS OFF[0].
+18:55:54.250  D2 : CNCS Auction A OFF[0]
+18:55:54.250  
+18:55:58.296  [Audio] Set Trigger Point(0064->0044).
+18:55:58.296  D0 : Direction ON[1].
+18:55:58.296  Train NO : Change Train No 0050 to 0081.
+18:55:58.296  Station : Change Start station 263 to 257.
+18:55:58.296  Station : Change Now station 519 to 513.
+18:55:58.296  Station : Change Next station 518 to 277.
+18:55:58.296  Station : Change Destination station 257 to 529.
+18:55:58.296  PA Vector : Change PAC Audio vector 0064 to 0044.
+18:55:58.296  PA Vector : Change EDI Display1 vector 0101 to 0115.
+18:55:58.296  PA Vector : Change EDI Display2 vector 0101 to 0113.
+18:55:58.296  
+18:55:59.265  [Audio] Set Trigger Point(0064->0044).
+18:55:59.265  [Audio] Play().
+18:55:59.421  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO WM STATION.WAV [Successed:0]
+18:55:59.453  [Audio] MCI Play : 0.
+18:55:59.453  D1 : Broadcast CNCS ON[1].
+18:55:59.453  D2 : CNCS Auction A ON[1]
+18:55:59.453  
+18:56:02.046  [Audio] Timer Stop[2597, 2597].
+18:56:02.046  [Audio] Stop().
+18:56:02.062  [Audio] MCI Stop : 0.
+18:56:03.156  D1 : Broadcast CNCS OFF[0].
+18:56:03.156  D2 : CNCS Auction A OFF[0]
+18:56:03.156  
+18:56:17.187  [Audio] Set Trigger Point(0044->0000).
+18:56:17.187  Coupling ID : 0.
+18:56:17.187  D0 : A Cab ON[1].
+18:56:17.187  D0 : B Cab OFF[0].
+18:56:17.187  D0 : Direction OFF[0].
+18:56:17.187  Train NO : Change Train No 0081 to 0050.
+18:56:17.187  Station : Change Start station 257 to 0.
+18:56:17.187  Station : Change Next station 277 to 0.
+18:56:17.187  Station : Change Destination station 529 to 0.
+18:56:17.187  PA Vector : Change PAC Audio vector 0044 to 0000.
+18:56:17.187  PA Vector : Change EID Colr vector 0001 to 0000.
+18:56:17.187  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:56:17.187  PA Vector : Change EDI Display2 vector 0113 to 0000.
+18:56:17.187  
+18:56:18.140  D0 : Direction ON[1].
+18:56:18.140  
+18:56:19.093  D0 : Direction OFF[0].
+18:56:19.093  
+18:56:22.093  D0 : Direction ON[1].
+18:56:22.093  Train NO : Change Train No 0050 to 0051.
+18:56:22.093  
+18:56:31.015  Coupling ID : 1.
+18:56:31.015  
+18:56:32.031  [Audio] Set Trigger Point(0000->0065).
+18:56:32.031  Station : Change Start station 0 to 257.
+18:56:32.031  Station : Change Next station 0 to 258.
+18:56:32.031  Station : Change Destination station 0 to 263.
+18:56:32.031  PA Vector : Change PAC Audio vector 0000 to 0065.
+18:56:32.031  PA Vector : Change EID Colr vector 0000 to 0001.
+18:56:32.031  PA Vector : Change EDI Display1 vector 0000 to 0114.
+18:56:32.031  PA Vector : Change EDI Display2 vector 0000 to 0114.
+18:56:32.031  
+18:56:33.125  [Audio] Set Trigger Point(0000->0065).
+18:56:33.125  [Audio] Play().
+18:56:33.281  [Audio] Open : D:\Woojin\AUDIO\THIS IS G LINE TO WARD.WAV [Successed:0]
+18:56:33.296  [Audio] MCI Play : 0.
+18:56:33.296  D1 : Broadcast CNCS ON[1].
+18:56:33.312  D2 : CNCS Auction A ON[1]
+18:56:33.312  
+18:56:36.609  [Audio] Timer Stop[3278, 3278].
+18:56:36.609  [Audio] Stop().
+18:56:36.625  [Audio] MCI Stop : 0.
+18:56:38.062  D0 : Forward ON[1].
+18:56:38.062  D1 : Broadcast CNCS OFF[0].
+18:56:38.062  D2 : CNCS Auction A OFF[0]
+18:56:38.062  
+18:56:39.031  D0 : Forward OFF[0].
+18:56:39.031  
+18:56:48.937  [Audio] Set Trigger Point(0065->0043).
+18:56:48.937  D0 : Direction OFF[0].
+18:56:48.937  Train NO : Change Train No 0051 to 0080.
+18:56:48.937  Station : Change Start station 257 to 529.
+18:56:48.937  Station : Change Next station 258 to 530.
+18:56:48.937  Station : Change Destination station 263 to 257.
+18:56:48.937  PA Vector : Change PAC Audio vector 0065 to 0043.
+18:56:48.937  PA Vector : Change EDI Display1 vector 0114 to 0115.
+18:56:48.937  PA Vector : Change EDI Display2 vector 0114 to 0101.
+18:56:48.937  
+18:56:49.921  [Audio] Set Trigger Point(0065->0043).
+18:56:49.921  [Audio] Play().
+18:56:50.078  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO UNION STATION.WAV [Successed:0]
+18:56:50.109  [Audio] MCI Play : 0.
+18:56:50.109  D1 : Broadcast CNCS ON[1].
+18:56:50.109  D2 : CNCS Auction A ON[1]
+18:56:50.109  
+18:56:52.406  [Audio] Timer Stop[2246, 2246].
+18:56:52.406  [Audio] Stop().
+18:56:52.421  [Audio] MCI Stop : 0.
+18:56:54.000  D1 : Broadcast CNCS OFF[0].
+18:56:54.000  D2 : CNCS Auction A OFF[0]
+18:56:54.000  
+18:57:00.765  Coupling ID : 0.
+18:57:00.765  D0 : A Cab OFF[0].
+18:57:00.765  D0 : Reverse ON[1].
+18:57:00.765  
+18:57:05.078  [Audio] Set Trigger Point(0043->0000).
+18:57:05.078  D0 : B Cab ON[1].
+18:57:05.078  D0 : Reverse OFF[0].
+18:57:05.078  Station : Change Start station 529 to 0.
+18:57:05.078  Station : Change Next station 530 to 0.
+18:57:05.078  Station : Change Destination station 257 to 0.
+18:57:05.078  PA Vector : Change PAC Audio vector 0043 to 0000.
+18:57:05.078  PA Vector : Change EID Colr vector 0001 to 0000.
+18:57:05.078  PA Vector : Change EDI Display1 vector 0115 to 0000.
+18:57:05.078  PA Vector : Change EDI Display2 vector 0101 to 0000.
+18:57:05.078  
+18:57:10.093  D0 : Direction ON[1].
+18:57:10.093  Train NO : Change Train No 0080 to 0081.
+18:57:10.093  
+18:57:19.062  Coupling ID : 1.
+18:57:19.062  
+18:57:20.015  [Audio] Set Trigger Point(0000->0044).
+18:57:20.015  Station : Change Start station 0 to 257.
+18:57:20.015  Station : Change Now station 513 to 513.
+18:57:20.015  Station : Change Next station 0 to 277.
+18:57:20.015  Station : Change Destination station 0 to 529.
+18:57:20.015  PA Vector : Change PAC Audio vector 0000 to 0044.
+18:57:20.015  PA Vector : Change EID Colr vector 0000 to 0001.
+18:57:20.015  PA Vector : Change EDI Display1 vector 0000 to 0115.
+18:57:20.015  PA Vector : Change EDI Display2 vector 0000 to 0113.
+18:57:20.015  
+18:57:21.015  [Audio] Set Trigger Point(0000->0044).
+18:57:21.015  [Audio] Play().
+18:57:21.171  [Audio] Open : D:\Woojin\AUDIO\THIS IS B LINE TO WM STATION.WAV [Successed:0]
+18:57:21.203  [Audio] MCI Play : 0.
+18:57:21.203  D1 : Broadcast CNCS ON[1].
+18:57:21.203  D2 : CNCS Auction A ON[1]
+18:57:21.203  
+18:57:23.796  [Audio] Timer Stop[2597, 2597].
+18:57:23.796  [Audio] Stop().
+18:57:23.812  [Audio] MCI Stop : 0.
+18:57:24.875  D1 : Broadcast CNCS OFF[0].
+18:57:24.875  D2 : CNCS Auction A OFF[0]
+18:57:24.875  
+18:57:31.875  D0 : Forward ON[1].
+18:57:31.875  
+18:57:32.843  D0 : Forward OFF[0].
+18:57:32.843  
